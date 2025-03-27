@@ -1,0 +1,61 @@
+name: Update Parent Issue Status
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  update-parent-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check linked issues and update parent
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Obtener el número del issue que se cerró
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          REPO=${{ github.repository }}
+          API_URL="https://api.github.com"
+
+          # Obtener issues vinculados
+          LINKS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                        -H "Accept: application/vnd.github.v3+json" \
+                        "$API_URL/repos/$REPO/issues/$ISSUE_NUMBER/timeline" | \
+                        jq -r '.[] | select(.event=="cross-referenced") | .source.issue.number')
+
+          if [ -z "$LINKS" ]; then
+            echo "No linked issues found. Exiting."
+            exit 0
+          fi
+
+          for PARENT_ISSUE in $LINKS; do
+            echo "Checking parent issue: $PARENT_ISSUE"
+
+            # Obtener todos los sub-issues del issue principal
+            SUB_ISSUES=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                              -H "Accept: application/vnd.github.v3+json" \
+                              "$API_URL/repos/$REPO/issues/$PARENT_ISSUE/timeline" | \
+                              jq -r '.[] | select(.event=="cross-referenced") | .source.issue.number')
+
+            ALL_CLOSED=true
+            for SUB in $SUB_ISSUES; do
+              STATUS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                            -H "Accept: application/vnd.github.v3+json" \
+                            "$API_URL/repos/$REPO/issues/$SUB" | jq -r '.state')
+
+              if [ "$STATUS" != "closed" ]; then
+                ALL_CLOSED=false
+                break
+              fi
+            done
+
+            if [ "$ALL_CLOSED" = true ]; then
+              echo "All sub-issues closed. Closing parent issue $PARENT_ISSUE"
+              curl -s -X PATCH -H "Authorization: token $GITHUB_TOKEN" \
+                   -H "Accept: application/vnd.github.v3+json" \
+                   -d '{"state": "closed"}' \
+                   "$API_URL/repos/$REPO/issues/$PARENT_ISSUE"
+            else
+              echo "Some sub-issues are still open. Parent issue will remain open."
+            fi
+          done
