@@ -7,10 +7,13 @@ typedef enum e_command_types
     NONE,
     BIN,
     CD,
-    EXEC,
     ENV,
     EXPORT,
     PWD,
+    ECHOS,
+    EXIT,
+
+    
 } e_command_types;
 
 typedef struct s_command

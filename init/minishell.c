@@ -35,7 +35,7 @@ int main(int args, char **argv, char **env)
         aux = cmd;
         while(aux != NULL)
         {
-            printf("%s\n", aux->cmd);
+            printf("%d\n", aux->cmd_type);
             aux = aux->next;
         }
     }

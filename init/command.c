@@ -2,6 +2,7 @@
 #include "../include/util.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
+#include <stdio.h>
 
 t_command *init_cmd()
 {
@@ -49,6 +50,26 @@ void ft_add_fornt(char *readed, t_command *fst, t_command *new)
         new->cmd = readed;
 }
 
+e_command_types get_comman_type(char *cmd_str)
+{
+    size_t len;
+    len = ft_strlen(cmd_str)-1;
+    if(ft_strncmp(cmd_str, "cd", len) == 0)
+        return CD;
+    else if(ft_strncmp(cmd_str, "pwd", len) == 0)
+        return PWD;
+    else if(ft_strncmp(cmd_str, "export", len) == 0)
+        return EXPORT;
+    else if(ft_strncmp(cmd_str, "env", len) == 0)
+        return ENV;
+    else if(ft_strncmp(cmd_str, "echo", len) == 0)
+        return ECHOS;
+    else if(ft_strncmp(cmd_str, "exit", len) == 0)
+        return EXIT;
+    else
+        return BIN;
+}
+
 void cmd_assignation(char *cmds, t_command *head)
 {
     char **cmd;
@@ -57,10 +78,13 @@ void cmd_assignation(char *cmds, t_command *head)
     i = 0;
     cmd = ft_split2(cmds, '|');
     head->cmd = cmd[i];
+    head->cmd_type = get_comman_type(ft_split(cmd[0], ' ')[0]);
     i++;
     while(cmd[i])
     {
-        ft_add_fornt(cmd[i], head, init_cmd());
+        t_command *new_command = init_cmd();
+        new_command->cmd_type = get_comman_type(ft_split(cmd[i], ' ')[0]);
+        ft_add_fornt(cmd[i], head, new_command);
         i++;
     }
     free(cmd);
