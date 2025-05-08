@@ -7,7 +7,7 @@ RDFLAGS = -lreadline -lncurses
 
 LIBFT_PATH = libft/
 LIBFT_LIB = $(LIBFT_PATH)libft.a
-SRC = 	init/init.c init/minishell.c utils/ft_split2.0.c utils/path_utils.c init/path.c init/command.c init/command_specific.c
+SRC = 	init/init.c init/minishell.c utils/ft_split2.0.c utils/path_utils.c init/path.c init/command.c
 OBJECTS = $(SRC:.c=.o)
 
 all: subsystems $(NAME)

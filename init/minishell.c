@@ -16,8 +16,8 @@
 
 int main(int args, char **argv, char **env)
 {
-    t_comand *cmd;
-    t_comand *aux;
+    t_command *cmd;
+    t_command *aux;
     char *recept;
     char *name;
 

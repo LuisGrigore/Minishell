@@ -16,7 +16,7 @@ static void	execute(char **env, char *cmd, pid_t check);
 static void	children(int *pipes, char **argv, char **env, int part, int ok);
 
 
-void	exec_command(t_comand *cmd, char **env)
+void	exec_command(t_command *cmd, char **env)
 {
 	int		pipes[2];
 	pid_t	check;
@@ -32,7 +32,7 @@ void	exec_command(t_comand *cmd, char **env)
 	parent(pipes, cmd, env, check);
 }
 
- void	parent(int *pipes, t_comand *cmd, char **env, pid_t check)
+ void	parent(int *pipes, t_command *cmd, char **env, pid_t check)
 {
 	int	fd;
 
@@ -45,7 +45,7 @@ void	exec_command(t_comand *cmd, char **env)
 	execute(env, argv[ft_array_len(argv) - 2], check);
 }
 
-static void	children(int *pipes, t_comand *cmd, char **env, int part, int ok)
+static void	children(int *pipes, t_command *cmd, char **env, int part, int ok)
 {
 	int	fd;
 
@@ -79,10 +79,10 @@ static void	execute(char **env, char *cmd, pid_t check)
 	free_double_pointer(cmd2);
 }
 
-void make_the_family(t_comand *cmd, int *pipes , char **env, int ok)
+void make_the_family(t_command *cmd, int *pipes , char **env, int ok)
 {
 	pid_t check[size_of_list(cmd) - 1];
-    t_comand *aux;
+    t_command *aux;
 	int i;
 
 	i = 0;

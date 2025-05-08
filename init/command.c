@@ -3,24 +3,23 @@
 #include "../libft/libft.h"
 #include "stdlib.h"
 
-t_comand *init_cmd()
+t_command *init_cmd()
 {
-    t_comand *aux;
+    t_command *aux;
 
-    aux = ft_caalloc(1, sizeof(t_comand ));
-    aux->bin = NULL;
-    aux->builtin = NULL;
+    aux = ft_caalloc(1, sizeof(t_command ));
+    aux->cmd = NULL;
+    aux->cmd_type = NONE;
     aux->next = NULL;
     aux->redirect = NULL;
-    aux->cmd = NULL;
     return(aux);
 
 }
 
-int size_of_list(t_comand *fst)
+int size_of_list(t_command *fst)
 {
     int i;
-    t_comand *aux;
+    t_command *aux;
 
     aux = fst;
     i = 0;
@@ -35,9 +34,9 @@ int size_of_list(t_comand *fst)
 
 }
 
-void ft_add_fornt(char *readed, t_comand *fst, t_comand *new)
+void ft_add_fornt(char *readed, t_command *fst, t_command *new)
 {
-    t_comand *aux;
+    t_command *aux;
 
     aux = fst;
     if (!fst || !new)
@@ -50,7 +49,7 @@ void ft_add_fornt(char *readed, t_comand *fst, t_comand *new)
         new->cmd = readed;
 }
 
-void cmd_assignation(char *cmds, t_comand *head)
+void cmd_assignation(char *cmds, t_command *head)
 {
     char **cmd;
     int i;
@@ -67,3 +66,4 @@ void cmd_assignation(char *cmds, t_comand *head)
     free(cmd);
 
 }
+
