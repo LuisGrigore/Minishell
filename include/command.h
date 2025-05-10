@@ -28,7 +28,9 @@ t_command *init_cmd();
 int size_of_list(t_command *fst);
 void ft_add_fornt(char *readed, t_command *fst, t_command *new_command);
 void cmd_assignation(char *cmds, t_command *head);
-
 void exec(t_command command);
+void command_destroyer(t_command *cmd);
+t_command *lst_commad(t_command *cmds);
+
 
 #endif

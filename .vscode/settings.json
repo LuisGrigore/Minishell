@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "bin_commandss_execution.h": "c",
+        "envioroment.h": "c",
+        "util.h": "c"
+    }
+}

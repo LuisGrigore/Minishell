@@ -90,4 +90,29 @@ void cmd_assignation(char *cmds, t_command *head)
     free(cmd);
 
 }
+void command_destroyer(t_command *cmd)
+{
+    t_command *aux;
+    if(!cmd)
+        return ;
+    aux = NULL;
+    while(cmd != NULL)
+    {   
+        aux = cmd;
+        cmd = cmd->next;
+        if(aux->cmd)
+            free(aux->cmd);
+        free(aux);
+    }
+
+}
+t_command *lst_commad(t_command *cmds)
+{
+    t_command *aux;
+    
+    aux = cmds;
+    while(aux->next != NULL)
+       aux = aux->next;
+    return(aux);
+}
 

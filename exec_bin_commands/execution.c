@@ -10,76 +10,81 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
+#include "../include/bin_commandss_execution.h"
 
-static void	execute(char **env, char *cmd, pid_t check);
-static void	children(int *pipes, char **argv, char **env, int part, int ok);
+static void make_the_family(t_command *cmd, int *pipes , char **env);
+static void	execute(char **env, t_command *cmd);
+static void	children(int *pipes, t_command *cmd, char **env);
+static void	parent(int *pipes, t_command *cmd, char **env);
 
 
-void	exec_command(t_command *cmd, char **env)
+void	exec_command(t_command *cmd, t_envioroment *envioroment)
 {
 	int		pipes[2];
-	pid_t	check;
+	char	**env;
+	pid_t	check[2];
 
+	check[0] = 0;
+	env = env_to_dbarray(envioroment);
 	if (pipe(pipes) == -1)
 		exit(1);
-
-	check = fork();
-	if (check == -1)
-		exit(-1);
-	if (check == 0)
-		make_the_family(cmd ,pipes ,env, 2);
-	parent(pipes, cmd, env, check);
-}
-
- void	parent(int *pipes, t_command *cmd, char **env, pid_t check)
-{
-	int	fd;
-
-	fd = check_outfile(argv, pipes, check);
-	dup2(fd, 1);
-	dup2(pipes[0], 0);
-	close(pipes[0]);
-	close(pipes[1]);
-	close(fd);
-	execute(env, argv[ft_array_len(argv) - 2], check);
-}
-
-static void	children(int *pipes, t_command *cmd, char **env, int part, int ok)
-{
-	int	fd;
-
-	if (fd == -1)
-	{
-		close(pipes[0]);
-		close(pipes[1]);
-		error_manager(NULL, "Check the privilegies of the  input file", 0);
+	if(size_of_list(cmd) >= 2)
+	{ 	
+		check[0] = fork();
+		if (check[0] == 0)
+			make_the_family(cmd ,pipes ,env);
 	}
-	dup2(pipes[1], 1);
-	close(pipes[0]);
-	close(pipes[1]);
-	execute(env, cmd->cmd, 0);
+	check[1] = fork();
+	if(check[1] == 0)
+		parent(pipes,lst_commad(cmd), env);
+	waitpid(check[0], NULL, 0);
+	waitpid(check[1], NULL, 0);
 	exit(0);
 }
 
-static void	execute(char **env, char *cmd, pid_t check)
+ static void	parent(int *pipes, t_command *cmd, char **env)
+{
+
+	dup2(pipes[0], 0);
+	close(pipes[0]);
+	close(pipes[1]);
+	execute(env, cmd);
+
+}
+
+static void	children(int *pipes, t_command *cmd, char **env)
+{
+	dup2(pipes[1], 1);
+	close(pipes[0]);
+	close(pipes[1]);
+	execute(env, cmd);
+	exit(0);
+}
+
+static void	execute(char **env, t_command *cmd)
 {
 	char	**cmd2;
 	char	*path;
 
-	cmd2 = ft_split(cmd, ' ');
+	cmd2 = ft_split2(cmd->cmd, ' ');
 	if (!cmd2)
-		error_manager(NULL, "Fail to split", check);
-	path = find_command(env, cmd2[0], check);
+	{ 	
+		write(2, "Fail to split\n", 15);
+		exit(1);
+	}
+	path = find_command(env, cmd2[0]);
 	if (path == NULL)
-		error_manager(cmd2, "the command isnt correct", check);
+	{ 	
+		write(2, "Path doesnt found\n", 15);
+		exit(1);
+	}
 	execve(path, cmd2, env);
 	if(path)
 		free(path);
 	free_double_pointer(cmd2);
 }
 
-void make_the_family(t_command *cmd, int *pipes , char **env, int ok)
+void make_the_family(t_command *cmd, int *pipes , char **env)
 {
 	pid_t check[size_of_list(cmd) - 1];
     t_command *aux;
@@ -91,7 +96,7 @@ void make_the_family(t_command *cmd, int *pipes , char **env, int ok)
 	{
 		check[i] = fork();
 		if(check[i] == 0)
-			children(pipes, aux->cmd ,env, i + ok, ok);
+			children(pipes, aux ,env);
 		i++;
         aux = aux->next;
 	}
