@@ -8,5 +8,6 @@
 
 void	exec_command(t_command *cmd, t_envioroment *envioroment);
 char	*find_command(char **env, char *cmd);
+void	children(int *pipes, t_command *cmd, char **env);;
 
 # endif

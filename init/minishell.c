@@ -18,7 +18,7 @@ int main(int args, char **argv, char **env)
 {
     t_command *cmd;
     t_envioroment *envioroment;
-    pid_t check;
+    t_command   *aux;
     char *recept;
     char *name;
 
@@ -35,11 +35,17 @@ int main(int args, char **argv, char **env)
             continue ;
         add_history(recept);
         cmd_assignation(recept, cmd);
-        check = fork();
-        if(check == 0)    
-            exec_command(cmd,envioroment);
-        else
-              waitpid(check,NULL, 0);
+        aux = cmd;
+        while (aux)
+        {
+                while(aux->redirect)
+                {
+                    printf("%s\n%d\n", aux->redirect->file, aux->redirect->redirect_simbol);
+                    aux->redirect = aux->redirect->next;
+                }    
+            aux = aux->next;
+        }
+        
         free(recept);
         recept = NULL;
         command_destroyer(cmd);

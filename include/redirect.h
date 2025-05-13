@@ -6,15 +6,19 @@ typedef enum e_redirect
     LEFT_REDIRECT,
     RIGHT_REDIRECT,
     DOUBLE_LEFT_REDIRECT,
-    DOUBLE_RIGHT_REDIRECT
+    DOUBLE_RIGHT_REDIRECT,
+    NONE,
+    ERROR,
 } e_redirect;
 
 typedef struct s_redirect
 {
-    int input;
-    int output;
-    e_redirect redirect;
+    char *file;
+    e_redirect redirect_simbol;
+    struct s_redirect *next;
 
 } t_redirect;
 
-#endif
+
+
+# endif

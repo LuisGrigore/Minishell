@@ -4,13 +4,14 @@
 #include "stdlib.h"
 #include <stdio.h>
 
+static void get_comman_type(t_command *command, char *cmd);
 t_command *init_cmd()
 {
     t_command *aux;
 
     aux = ft_caalloc(1, sizeof(t_command ));
     aux->cmd = NULL;
-    aux->cmd_type = NONE;
+    aux->t_command_funct = NULL;
     aux->next = NULL;
     aux->redirect = NULL;
     return(aux);
@@ -48,45 +49,57 @@ void ft_add_fornt(char *readed, t_command *fst, t_command *new)
     aux->next = new;
     if(readed)
         new->cmd = readed;
+    clasification_redirections(new);
+    get_comman_type(new, ft_split(new->cmd , ' ')[0]);
 }
 
-e_command_types get_comman_type(char *cmd_str)
+static void get_comman_type(t_command *command, char *cmd)
 {
     size_t len;
-    len = ft_strlen(cmd_str)-1;
-    if(ft_strncmp(cmd_str, "cd", len) == 0)
-        return CD;
-    else if(ft_strncmp(cmd_str, "pwd", len) == 0)
-        return PWD;
-    else if(ft_strncmp(cmd_str, "export", len) == 0)
-        return EXPORT;
-    else if(ft_strncmp(cmd_str, "env", len) == 0)
-        return ENV;
-    else if(ft_strncmp(cmd_str, "echo", len) == 0)
-        return ECHOS;
-    else if(ft_strncmp(cmd_str, "exit", len) == 0)
-        return EXIT;
+
+    len = ft_strlen(cmd)-1;
+    if(ft_strncmp(cmd, "cd", len) == 0)
+        write(2,"Luis esto ya es tuyo\n",22);
+    else if(ft_strncmp(cmd, "pwd", len) == 0)
+        write(2,"Luis esto yaes tuyo\n",22);
+    else if(ft_strncmp(cmd, "export", len) == 0)
+        write(2,"Luis esto ya es tuyo\n",22);
+    else if(ft_strncmp(cmd, "env", len) == 0)
+        write(2,"Luis esto ya es tuyo\n",22);
+    else if(ft_strncmp(cmd, "echo", len) == 0)
+        write(2,"Luis esto ya es tuyo\n",22);
+    else if(ft_strncmp(cmd, "exit", len) == 0)
+        write(2,"Luis esto ya es tuyo\n",22);
     else
-        return BIN;
+        write(2,"Luis esto ya es tuyo\n",22);
+    printf("%s\n", command->cmd);
+
 }
 
-void cmd_assignation(char *cmds, t_command *head)
+void cmd_assignation(char *cmd_line, t_command *head)
 {
     char **cmd;
     int i;
+    char    **aux;
+    t_command *new_command;
 
     i = 0;
-    cmd = ft_split2(cmds, '|');
+    cmd = ft_split2(cmd_line, '|');
     head->cmd = cmd[i];
-    head->cmd_type = get_comman_type(ft_split(cmd[0], ' ')[0]);
+
+    clasification_redirections(head);
+    get_comman_type(head, ft_split(cmd[0], ' ')[0]);
+    free_double_pointer(cmd);
     i++;
     while(cmd[i])
     {
-        t_command *new_command = init_cmd();
-        new_command->cmd_type = get_comman_type(ft_split(cmd[i], ' ')[0]);
+        new_command = init_cmd();
+        aux = ft_split(cmd[i], ' ');
         ft_add_fornt(cmd[i], head, new_command);
+        free_double_pointer(aux);
         i++;
     }
+    
     free(cmd);
 
 }
