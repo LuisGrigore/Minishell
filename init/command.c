@@ -1,131 +1,108 @@
 #include "../include/command.h"
 #include "../include/util.h"
+#include "../include/list.h"
+#include "../include/redirect.h"
+#include "../include/command_functs.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
 #include <stdio.h>
 
-static void get_comman_type(t_command *command, char *cmd);
-t_command *init_cmd()
+
+static t_command *init_command()
 {
-    t_command *aux;
+    t_command *new_command;
 
-    aux = ft_caalloc(1, sizeof(t_command ));
-    aux->cmd = NULL;
-    aux->t_command_funct = NULL;
-    aux->next = NULL;
-    aux->redirect = NULL;
-    return(aux);
+    new_command = ft_calloc(1, sizeof(t_command ));
+    new_command->args = NULL;
+    new_command->command_funct = NULL;
+    new_command->redirects = init_list();
 
+    return(new_command);
 }
 
-int size_of_list(t_command *fst)
-{
-    int i;
-    t_command *aux;
-
-    aux = fst;
-    i = 0;
-    if(!fst)
-        return(0);
-    while(aux != NULL)
-    {
-        aux = aux->next;
-        i++;
-    }
-    return(i);    
-
-}
-
-void ft_add_fornt(char *readed, t_command *fst, t_command *new)
-{
-    t_command *aux;
-
-    aux = fst;
-    if (!fst || !new)
-        return ;
-        
-    while(aux->next != NULL)
-        aux = aux->next;
-    aux->next = new;
-    if(readed)
-        new->cmd = readed;
-    clasification_redirections(new);
-    get_comman_type(new, ft_split(new->cmd , ' ')[0]);
-}
-
-static void get_comman_type(t_command *command, char *cmd)
+static t_command_funct *get_command_funct(char *command_name)
 {
     size_t len;
 
-    len = ft_strlen(cmd)-1;
-    if(ft_strncmp(cmd, "cd", len) == 0)
-        write(2,"Luis esto ya es tuyo\n",22);
-    else if(ft_strncmp(cmd, "pwd", len) == 0)
-        write(2,"Luis esto yaes tuyo\n",22);
-    else if(ft_strncmp(cmd, "export", len) == 0)
-        write(2,"Luis esto ya es tuyo\n",22);
-    else if(ft_strncmp(cmd, "env", len) == 0)
-        write(2,"Luis esto ya es tuyo\n",22);
-    else if(ft_strncmp(cmd, "echo", len) == 0)
-        write(2,"Luis esto ya es tuyo\n",22);
-    else if(ft_strncmp(cmd, "exit", len) == 0)
-        write(2,"Luis esto ya es tuyo\n",22);
+    len = ft_strlen(command_name)-1;
+    //Hay que hacer un if else para cada command_funct
+    if(ft_strncmp(command_name, "cd", len) == 0)
+        return NULL;
+    else if(ft_strncmp(command_name, "pwd", len) == 0)
+        return NULL;
     else
-        write(2,"Luis esto ya es tuyo\n",22);
-    printf("%s\n", command->cmd);
-
+        return NULL;
 }
 
-void cmd_assignation(char *cmd_line, t_command *head)
+static t_gen_list *get_args(char *command_line)
 {
-    char **cmd;
-    int i;
-    char    **aux;
-    t_command *new_command;
+    t_gen_list *args = init_list();
+    int i = 0;
+    int j = 0;
 
-    i = 0;
-    cmd = ft_split2(cmd_line, '|');
-    head->cmd = cmd[i];
-
-    clasification_redirections(head);
-    get_comman_type(head, ft_split(cmd[0], ' ')[0]);
-    free_double_pointer(cmd);
-    i++;
-    while(cmd[i])
+    while(command_line[i] != ' ' && command_line[i] != '<' && command_line[i] != '>')
     {
-        new_command = init_cmd();
-        aux = ft_split(cmd[i], ' ');
-        ft_add_fornt(cmd[i], head, new_command);
-        free_double_pointer(aux);
+        i ++;
+    }
+    if(command_line[i] != ' ')
+        return (args);
+    
+    i ++;
+    j =  i;
+    while(command_line[i] && command_line[i] != '<' && command_line[i] != '>')
+    {
+        while (command_line[i] != ' ')
+        {
+            j++;
+        }
+        insert_end(args, ft_substr(command_line, i, j));
+        i = j;
+    }
+    return (args);
+}
+
+static char *get_command_name(char *str)
+{
+    int i = 0; 
+    while(str[i] != ' ' && str[i] != '<'&& str[i] != '>')
+    {
+        *str++;
+        i ++;
+    }
+    return (ft_substr(str, 0, i));
+}
+
+static t_command *init_command_from_str(char *str)
+{
+    t_command *new_command = init_command();
+
+    new_command->args = get_args(str);
+    new_command->command_funct = get_command_funct(get_command_name(str));
+    new_command->redirects = get_redirects_from_str_arr(str);
+    return(new_command);
+}
+
+
+t_gen_list *get_command_list_from_line(char *line)
+{
+    t_gen_list *command_list = init_list();
+    char **command_str_arr;
+    int i = 0;
+    command_str_arr = ft_split2(line, '|');
+    while (command_str_arr[i])
+    {
+        insert_end(command_list, init_command_from_str(command_str_arr[i]));
         i++;
     }
-    
-    free(cmd);
+    return (command_list);
+}
 
-}
-void command_destroyer(t_command *cmd)
+void destroy_command(t_command *command)
 {
-    t_command *aux;
-    if(!cmd)
-        return ;
-    aux = NULL;
-    while(cmd != NULL)
-    {   
-        aux = cmd;
-        cmd = cmd->next;
-        if(aux->cmd)
-            free(aux->cmd);
-        free(aux);
-    }
+    destroy_gen_list(command->args, free);
+    free(command->command_funct);
+    destroy_gen_list(command->redirects, destroy_redirect);
+    free(command);
+}
 
-}
-t_command *lst_commad(t_command *cmds)
-{
-    t_command *aux;
-    
-    aux = cmds;
-    while(aux->next != NULL)
-       aux = aux->next;
-    return(aux);
-}
 

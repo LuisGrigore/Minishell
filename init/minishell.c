@@ -11,44 +11,113 @@
 /* ************************************************************************** */
 
 
-#include "../include/minishell.h"
+#include "../include/list.h"
+#include "../include/command.h"
 #include "../include/bin_commandss_execution.h"
+#include "../libft/libft.h"
+#include <stdbool.h>
 
-int main(int args, char **argv, char **env)
+static char *history_checker(char *cmd)
 {
-    t_command *cmd;
-    t_envioroment *envioroment;
-    t_command   *aux;
-    char *recept;
+    int i;
+
+    i = 0;
+    if(cmd[0] == '|' || cmd[ft_strlen(cmd)] == '|')
+     {
+        add_history(cmd);
+        return(NULL);
+     }
+
+     while(cmd[i])
+     {
+        if(ft_ispace(cmd[i]) == 0)
+                break;
+        i++;
+     }
+     if(cmd[i] == '\0')
+        return(NULL);
+     return(cmd);
+}
+
+char *check_cmd(char *cmd)
+{
+    int i;
+    int b;
+
+    b = 0;
+    i = 0;
+    if(history_checker(cmd) == NULL)
+        return(NULL);
+    while (cmd[i])
+    {
+        if (cmd [i] == '"' )
+            b = 1;
+        i++;
+        while (cmd[i] && b == 1)
+        {
+            if(cmd[i] == '"')
+                b = 0;
+            i++;
+        }   
+    }
+    if(b != 0)
+    {
+        add_history(cmd);
+        return(NULL);
+    }
+    return(cmd);
+}
+
+char *username(t_gen_list *env)
+{
+    char *username = get_var_value_from_name(env, "LOGNAME=");
+
+    if(!username)
+        return(ft_strdup("minishell%"));
+
+    return(ft_strjoin(username, "%>$"));
+}
+
+int main(int args, char **environment_var_str_array)
+{
+    t_gen_list *current_command_list;
+    t_node *current_command_node;
+    t_command *current_commad;
+    t_gen_list *envioroment_vars;
+
+    bool exit = false;
+
+    char *line;
     char *name;
 
-    name = username(env);
-    envioroment = init_env();
-    env_to_list(env, envioroment);
-    printf("%s\n", argv[args]);
     
-    while(1)
+    envioroment_vars = get_environment_var_lit_from_str_array(envioroment_vars);
+    name = username(envioroment_vars);
+    
+    while(!exit)
     {
-        cmd = init_cmd();
-        recept = readline(name);
-        if(check_cmd(recept) == NULL)
-            continue ;
-        add_history(recept);
-        cmd_assignation(recept, cmd);
-        aux = cmd;
-        while (aux)
+        line = readline(name);
+        if (ft_strncmp(line, "exit", ft_strlen(line)) != 0)
         {
-                while(aux->redirect)
-                {
-                    printf("%s\n%d\n", aux->redirect->file, aux->redirect->redirect_simbol);
-                    aux->redirect = aux->redirect->next;
-                }    
-            aux = aux->next;
+            current_command_list = get_command_list_from_line(line);
+            if(check_cmd(line) == NULL)
+                continue ;
+            add_history(line);
+            current_command_node = current_command_list->head;
+            while (current_command_node)
+            {
+                //Falta hacer fork para cada commando
+                current_commad = (t_command*) current_command_node->value;
+                current_commad->command_funct(current_commad, envioroment_vars);
+                current_command_node = current_command_node->next;
+            }
         }
-        
-        free(recept);
-        recept = NULL;
-        command_destroyer(cmd);
-        cmd = NULL;
+        else
+            exit = true;
+        free(line);
+        line = NULL;
+        destroy_gen_list(current_command_list, destroy_command);
+        current_command_list = NULL;
     }
+    destroy_gen_list(envioroment_vars, destroy_envioroment_var);
 }

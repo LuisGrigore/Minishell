@@ -4,16 +4,16 @@
 typedef struct s_node
 {
     void *value;
-    s_node *next;
+    struct s_node *next;
 } t_node;
 
-typedef struct s_list
+typedef struct s_gen_list
 {
-    t_node *first;
+    t_node *head;
     size_t size;
+} t_gen_list;
 
-} t_list;
 
-
-t_list init_list();
-void destroy_list();
+t_gen_list *init_list();
+void insert_end(t_gen_list* list, void* value);
+void destroy_gen_list(t_gen_list* list, void (*value_destroyer)(void*));

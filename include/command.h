@@ -3,21 +3,18 @@
 # include "redirect.h"
 # include "envioroment.h"
 # include "command_functs.h"
+#include "../include/list.h"
+
 
 typedef struct s_command
 {
-    char *cmd;
-    t_redirect    *redirect;
-    t_command_funct;
-    struct s_command *next;
+    t_gen_list *args;
+    t_gen_list   *redirects;
+    t_command_funct command_funct;
+
 }   t_command;
 
-t_command *init_cmd();
-int size_of_list(t_command *fst);
-void ft_add_fornt(char *readed, t_command *fst, t_command *new_command);
-void cmd_assignation(char *cmds, t_command *head);
-void command_destroyer(t_command *cmd);
-t_command *lst_commad(t_command *cmds); 
-void clasification_redirections(t_command *command);
+t_gen_list *get_command_list_from_line(char *line);
+void destroy_command(t_command *cmd);
 
 #endif

@@ -10,87 +10,65 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/envioroment.h"
+#include "../include/list.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
 #include <stdio.h>
 
-t_envioroment *init_env()
+t_envioroment_var *init_envioroment_var()
 {
-    t_envioroment *aux;
+    t_envioroment_var *new_env = ft_calloc(1, sizeof(t_envioroment_var));
 
-    aux = NULL;
-    aux = ft_calloc(1, sizeof(t_envioroment));
-    aux->path = NULL;
-    aux->next = NULL;
-    return(aux);
+    new_env->var_name = NULL;
+    new_env->var_value = NULL;
+    return(new_env);
 }
-void env_to_list(char **env, t_envioroment *envioroment)
+
+t_envioroment_var *init_envioroment_var_name_value(char *name, char *value)
 {
-    int i;
-    t_envioroment *aux;
-    t_envioroment *aux2;
-    aux = envioroment;
-    i = 1;
-    envioroment->path = ft_strdup(env[i]);
-    while(env[i])
+    t_envioroment_var *new_env = init_envioroment_var();
+
+    new_env->var_name = name;
+    new_env->var_value = value;
+    return(new_env);
+}
+
+t_gen_list *get_environment_var_list_from_str_array(char **str_array)
+{
+    int i = 0;
+    t_gen_list *env_var_list = init_list();
+    char **var_str_name_value_split;
+    while(str_array[i])
     {
-        aux2 = init_env();
-        aux->next = aux2;
-        aux2->path = ft_strdup(env[i]);
-        aux = aux2;
+        var_str_name_value_split = ft_split(str_array[i], '=');
+        insert_end(env_var_list, init_envioroment_var_name_value(var_str_name_value_split[0], var_str_name_value_split[1]));
         i++;
     }
+    return (env_var_list);
 }
-char **env_to_dbarray(t_envioroment *envioroment)
-{
-    char **result;
-    int i;
-    t_envioroment *aux;
 
-    result = NULL;
-    if(!envioroment)
-        return(NULL);
-    result = ft_caalloc(size_of_env(envioroment) + 1, sizeof(char *));
-    i = 0;
-    aux = envioroment;
-    while(aux != NULL)
-    {
-        result[i] = aux->path;
-        i++;
-        aux = aux->next;
-    }
-    env_destroyer(envioroment);
-    return(result);
-}
-int size_of_env(t_envioroment *fst)
+char *get_var_value_from_name(t_gen_list *environment_vars, char *name)
 {
-    int i;
-    t_envioroment *aux;
+    int i = 0;
+    t_node *current_env_node = environment_vars->head;
+    t_envioroment_var *current_env_var;
+    while(current_env_node)
+    {
+        current_env_var = (t_envioroment_var*) current_env_node->value;
+        if(ft_strncmp(current_env_var->var_name, name, ft_strlen(name)) == 0)
+        {
+            return  current_env_var->var_value;
+        }
+        current_env_node = current_env_node->next;
+    }
+    return (NULL);
+}
 
-    aux = fst;
-    i = 0;
-    if(!fst)
-        return(0);
-    while(aux != NULL)
-    {
-        aux = aux->next;
-        i++;
-    }
-    return(i);    
-}
-void env_destroyer(t_envioroment *fst)
+void destroy_envioroment_var(t_envioroment_var *envioroment_var)
 {
-    t_envioroment *aux;
-    if(!fst)
-        return ;
-    aux = NULL;
-    while(fst != NULL)
-    {   
-        aux = fst;
-        fst = fst->next;
-        free(aux);
-    }
+    free(envioroment_var->var_name);
+    free(envioroment_var->var_value);
+    free(envioroment_var);
 }
 

@@ -43,7 +43,7 @@ static void	execute(char **env, t_command *cmd)
 	char	**cmd2;
 	char	*path;
 
-	cmd2 = ft_split2(cmd->cmd, ' ');
+	cmd2 = ft_split2(cmd->command_str, ' ');
 	if (!cmd2)
 	{ 	
 		write(2, "Fail to split\n", 15);
