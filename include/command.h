@@ -11,7 +11,6 @@ typedef struct s_command
     t_gen_list *args;
     t_gen_list   *redirects;
     t_command_funct command_funct;
-
 }   t_command;
 
 t_gen_list *get_command_list_from_line(char *line);
