@@ -66,7 +66,7 @@ static char *get_command_name(char *str)
     int i = 0; 
     while(str[i] != ' ' && str[i] != '<'&& str[i] != '>')
     {
-        *str++;
+        str++;
         i ++;
     }
     return (ft_substr(str, 0, i));
@@ -103,6 +103,22 @@ void destroy_command(t_command *command)
     free(command->command_funct);
     destroy_gen_list(command->redirects, destroy_redirect);
     free(command);
+}
+char **get_str_array_from_gen_list_args(t_gen_list *args)
+{
+    char **result;
+    t_node *current_node;
+    int i;
+
+    i = 0;    
+    result = ft_calloc(args->size, sizeof(char *));
+    current_node = args->head;
+    while(current_node != NULL)
+    {
+        result[i] = ft_strdup(current_node->value);
+        i++;
+    }
+    return(result);
 }
 
 

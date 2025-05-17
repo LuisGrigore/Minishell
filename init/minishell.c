@@ -14,6 +14,7 @@
 #include "../include/list.h"
 #include "../include/command.h"
 #include "../include/bin_commandss_execution.h"
+#include "../include/envioroment.h"
 #include "../libft/libft.h"
 #include <stdbool.h>
 
@@ -91,7 +92,7 @@ int main(int args, char **environment_var_str_array)
     char *name;
 
     
-    envioroment_vars = get_environment_var_lit_from_str_array(envioroment_vars);
+    envioroment_vars = get_environment_var_list_from_str_array(envioroment_vars);
     name = username(envioroment_vars);
     
     while(!exit)

@@ -15,5 +15,8 @@ typedef struct s_command
 
 t_gen_list *get_command_list_from_line(char *line);
 void destroy_command(t_command *cmd);
+char **get_str_array_from_gen_list_args(t_gen_list *args);
+
+
 
 #endif
