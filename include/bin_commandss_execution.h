@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bin_commandss_execution.h                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/02 18:18:01 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/06/02 18:18:03 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BIN_COMMAND_EXECUTION_H
 # define BIN_COMMAND_EXECUTION_H
 
@@ -6,8 +18,6 @@
 #include "util.h"
 
 
-void	exec_command(t_command *cmd, t_envioroment_var *envioroment);
 char	*find_command(char **env, char *cmd);
-void	children(int *pipes, t_command *cmd, char **env);;
 
 # endif

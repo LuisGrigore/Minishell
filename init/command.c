@@ -1,7 +1,7 @@
 #include "../include/command.h"
 #include "../include/util.h"
 #include "../include/list.h"
-#include "../include/redirect.h"
+#include "../include/redirect_asignation.h"
 #include "../include/command_functs.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
@@ -25,13 +25,20 @@ static t_command_funct *get_command_funct(char *command_name)
     size_t len;
 
     len = ft_strlen(command_name)-1;
-    //Hay que hacer un if else para cada command_funct
     if(ft_strncmp(command_name, "cd", len) == 0)
-        return NULL;
+        return (cd_execute);
     else if(ft_strncmp(command_name, "pwd", len) == 0)
-        return NULL;
+        return (pwd_execute);
+    else if(ft_strncmp(command_name, "export", len) == 0)
+        return (export_execute);
+    else if(ft_strncmp(command_name, "unset", len) == 0)
+        return (unset_execute);
+    else if(ft_strncmp(command_name, "env", len) == 0)
+        return (env_execute);
+    else if(ft_strncmp(command_name, "echo", len) == 0)
+        return (echo_execute);
     else
-        return NULL;
+        return (bin_execute);
 }
 
 static t_gen_list *get_args(char *command_line)

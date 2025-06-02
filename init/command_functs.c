@@ -90,3 +90,46 @@ void env_execute(t_command *command, t_gen_list *envioroment)
         current_node = current_node->next;
     }
 }
+void export_execute(t_command *command, t_gen_list *envioroment)
+{
+    t_envioroment_var *new_sport;
+    t_node *current_node;
+    char **new_variable;
+
+    current_node = command->args->head->next;
+    new_variable = ft_split2(current_node->value, '=');
+    new_sport = init_envioroment_var();
+    new_sport->var_name = new_variable[0];
+    new_sport->var_value = new_variable[1];
+    free(new_variable);
+    if(get_var_value_from_name(envioroment, new_variable[0] == NULL))
+        insert_end(envioroment, new_sport);
+    else
+    {
+        change_env_value(envioroment, new_sport->var_value, new_sport->var_name);
+        free(new_sport->var_name);
+        free(new_sport);
+    }
+        
+}
+void unset_execute(t_command *command, t_gen_list *envioroment)
+{
+    t_node *current_node;
+
+    current_node = command->args->head->next;
+    remove_envioroment_var_from_name(envioroment, (char *)current_node->value);
+}
+void echo_execute(t_command *command, t_gen_list *envioroment)
+{   
+    t_node *current_node;
+    size_t len;
+    len = command->args->size--;
+
+    current_node = command->args->head->next;
+  if(ft_strncmp((char *)current_node->value, "-n", 2) == 0)
+    current_node = current_node->next;
+    while(current_node != NULL && len != 1)
+        ft_printf("%s ", current_node->value);
+    if(current_node)
+        ft_printf("%s\n",current_node->value);
+}

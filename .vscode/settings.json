@@ -4,6 +4,8 @@
         "envioroment.h": "c",
         "util.h": "c",
         "redirect.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "command_functs.h": "c",
+        "pipe.h": "c"
     }
 }

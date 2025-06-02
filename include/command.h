@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   command.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/06/02 18:18:12 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef COMMAND_H
 # define COMMAND_H
-# include "redirect.h"
+# include "redirect_asignation.h"
 # include "envioroment.h"
 # include "command_functs.h"
 #include "../include/list.h"

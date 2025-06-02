@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util.h                                             :+:      :+:    :+:   */
+/*   pipe.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 18:19:19 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/06/02 18:19:21 by dmaestro         ###   ########.fr       */
+/*   Created: 2025/06/02 18:18:50 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/06/02 18:18:52 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTIL_H
-# define UTIL_H
+#ifndef PIPE_H
+# define PIPE_H
+# include  "unistd.h"
+# include "fcntl.h"
+# include "sys/wait.h"
 
-char	**ft_split2(char const *s, char c);
-int ft_ispace(char c);
-int special_char(char *str, char *c);
+void command_execution(t_gen_list *command, t_gen_list *envioroment);
 
 #endif

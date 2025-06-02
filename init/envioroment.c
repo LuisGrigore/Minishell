@@ -116,4 +116,28 @@ void change_env_value(t_gen_list *envioroment, char *new_value, char *name)
     }
     
 }
+void remove_envioroment_var_from_name(t_gen_list *envioroment, char *name)
+{
+    t_node *current_node;
+    t_envioroment_var *current_node_value;
+    t_node *last_node;
+    size_t len;
+
+    len = ft_strlen(name);
+    current_node = envioroment->head;
+    while(current_node != NULL)
+    {
+        current_node_value = (t_envioroment_var *)current_node->value;
+        if(ft_strncmp(current_node_value->var_name, name, len))
+        {
+            last_node->next = current_node->next;
+            destroy_envioroment_var(current_node_value);
+            free(current_node);
+            return ;
+        }
+        last_node = current_node;
+        current_node = current_node->next;
+    }
+
+}
 

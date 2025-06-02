@@ -26,6 +26,17 @@ void insert_end(t_gen_list* list, void* value) {
     list->size++;
 }
 
+t_node  *get_last_node_of_list(t_gen_list *list)
+{
+    t_node *current_node;
+
+    if(!list || !list->head)
+        return(NULL);
+    current_node = list->head;
+    while(current_node->next != NULL)
+     current_node = current_node->next;
+    return(current_node);
+}
 void destroy_gen_list(t_gen_list* list, void (*value_destroyer)(void*)) {
     t_node* current = list->head;
     while (current) {

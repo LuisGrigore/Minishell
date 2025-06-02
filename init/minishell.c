@@ -16,6 +16,7 @@
 #include "../include/bin_commandss_execution.h"
 #include "../include/envioroment.h"
 #include "../libft/libft.h"
+#include "../include/pipe.h"
 #include <stdbool.h>
 
 static char *history_checker(char *cmd)
@@ -82,7 +83,6 @@ char *username(t_gen_list *env)
 int main(int args, char **environment_var_str_array)
 {
     t_gen_list *current_command_list;
-    t_node *current_command_node;
     t_command *current_commad;
     t_gen_list *envioroment_vars;
 
@@ -92,7 +92,7 @@ int main(int args, char **environment_var_str_array)
     char *name;
 
     
-    envioroment_vars = get_environment_var_list_from_str_array(envioroment_vars);
+    envioroment_vars = get_environment_var_list_from_str_array(environment_var_str_array);
     name = username(envioroment_vars);
     
     while(!exit)
@@ -104,14 +104,8 @@ int main(int args, char **environment_var_str_array)
             if(check_cmd(line) == NULL)
                 continue ;
             add_history(line);
-            current_command_node = current_command_list->head;
-            while (current_command_node)
-            {
-                //Falta hacer fork para cada commando
-                current_commad = (t_command*) current_command_node->value;
-                current_commad->command_funct(current_commad, envioroment_vars);
-                current_command_node = current_command_node->next;
-            }
+            command_execution(current_command_list, envioroment_vars);
+           
         }
         else
             exit = true;

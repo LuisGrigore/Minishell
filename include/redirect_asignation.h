@@ -1,5 +1,5 @@
-#ifndef REDIRECT_H
-# define REDIRECT_H
+#ifndef REDIRECT_ASIGNATION_H
+# define REDIRECT_ASIGNATION_H
 #include "list.h"
 
 typedef enum e_redirect
@@ -19,7 +19,6 @@ typedef struct s_redirect
 } t_redirect;
 
 t_redirect *init_redirect();
-//Comprobar si cada string no empieza por " o '
 t_gen_list *get_redirects_from_str_arr(char *str);
 void destroy_redirect(t_redirect *redirect);
 
