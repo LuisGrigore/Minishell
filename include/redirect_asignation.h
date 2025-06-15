@@ -20,6 +20,6 @@ typedef struct s_redirect
 
 t_redirect *init_redirect();
 t_gen_list *get_redirects_from_str_arr(char *str);
-void destroy_redirect(t_redirect *redirect);
+void destroy_redirect(void *redirect);
 
 # endif

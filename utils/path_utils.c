@@ -29,7 +29,7 @@ int special_char(char *str, char *c)
 	size_t len;
 
 	if(!str || !c)
-		return (9999);
+		return ((int)ft_strlen(str) + 1);
 	len = ft_strlen(c);
 	i = 0;
 	b1 = 0;
@@ -45,5 +45,21 @@ int special_char(char *str, char *c)
 			return(i);
 		i++;
 	}
-	return((int)len*34);
+	return((int)ft_strlen(str) + 1);
+}
+
+char *get_next_argument(char *c, char *str)
+{
+    int i;
+    size_t len;
+    len = ft_strlen(c);
+
+    i = 0;
+    while(str[i])
+    {
+        if(ft_strncmp(str, c, len))
+            break;
+        i++;
+    }
+    return(str + i + (int)len);
 }

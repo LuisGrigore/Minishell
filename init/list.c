@@ -14,11 +14,13 @@ void insert_end(t_gen_list* list, void* value) {
     new_node->value = value;
     new_node->next = NULL;
 
-    if (list->head == NULL) {
+    if (list->head == NULL) 
         list->head = new_node;
-    } else {
+    else 
+    {
         t_node* current = list->head;
-        while (current->next != NULL) {
+        while (current->next != NULL) 
+        {
             current = current->next;
         }
         current->next = new_node;
@@ -37,12 +39,13 @@ t_node  *get_last_node_of_list(t_gen_list *list)
      current_node = current_node->next;
     return(current_node);
 }
-void destroy_gen_list(t_gen_list* list, void (*value_destroyer)(void*)) {
+void destroy_gen_list(t_gen_list* list, void (*value_destroyer)(void*)) 
+{
     t_node* current = list->head;
     while (current) {
         t_node* next = current->next;
         if (value_destroyer) {
-            free_func(current->value);
+            value_destroyer(current->value);
         }
         free(current);
         current = next;

@@ -13,7 +13,6 @@
 
 #include "../include/command_functs.h"
 #include "../include/bin_commandss_execution.h"
-#include "../include/envioroment.h"
 #include "../libft/libft.h"
 
 void	bin_execute(t_command *cmd ,t_gen_list *envioroment)
@@ -75,6 +74,8 @@ void    cd_execute(t_command *command,t_gen_list *envioroment)
 
 void pwd_execute(t_command *command, t_gen_list *envioroment)
 {
+    if(command == NULL)
+        return ;
     printf("%s\n", get_var_value_from_name(envioroment, "PWD"));
 }
 void env_execute(t_command *command, t_gen_list *envioroment)
@@ -82,6 +83,8 @@ void env_execute(t_command *command, t_gen_list *envioroment)
     t_node *current_node;
     t_envioroment_var *current_node_value;
 
+    if(!command)
+        return ;
     current_node = envioroment->head;
     while(current_node != NULL)
     {
@@ -102,7 +105,7 @@ void export_execute(t_command *command, t_gen_list *envioroment)
     new_sport->var_name = new_variable[0];
     new_sport->var_value = new_variable[1];
     free(new_variable);
-    if(get_var_value_from_name(envioroment, new_variable[0] == NULL))
+    if(get_var_value_from_name(envioroment, new_variable[0]) == NULL)
         insert_end(envioroment, new_sport);
     else
     {
@@ -125,11 +128,17 @@ void echo_execute(t_command *command, t_gen_list *envioroment)
     size_t len;
     len = command->args->size--;
 
+    if(!envioroment)
+        return ;
     current_node = command->args->head->next;
   if(ft_strncmp((char *)current_node->value, "-n", 2) == 0)
     current_node = current_node->next;
-    while(current_node != NULL && len != 1)
-        ft_printf("%s ", current_node->value);
+ while(current_node != NULL && len != 1)
+   {      
+    ft_printf("%s ", current_node->value);
+    current_node = current_node->next;
+    len--;
+   }
     if(current_node)
         ft_printf("%s\n",current_node->value);
 }

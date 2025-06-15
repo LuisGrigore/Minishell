@@ -17,6 +17,9 @@
 #include "../include/envioroment.h"
 #include "../libft/libft.h"
 #include "../include/pipe.h"
+# include "readline/history.h"
+# include "readline/readline.h"
+
 #include <stdbool.h>
 
 static char *history_checker(char *cmd)
@@ -72,7 +75,7 @@ char *check_cmd(char *cmd)
 
 char *username(t_gen_list *env)
 {
-    char *username = get_var_value_from_name(env, "LOGNAME=");
+    char *username = get_var_value_from_name(env, "LOGNAME");
 
     if(!username)
         return(ft_strdup("minishell%"));
@@ -83,19 +86,18 @@ char *username(t_gen_list *env)
 int main(int args, char **environment_var_str_array)
 {
     t_gen_list *current_command_list;
-    t_command *current_commad;
     t_gen_list *envioroment_vars;
 
-    bool exit = false;
-
+    bool finish = false;
     char *line;
     char *name;
 
-    
-    envioroment_vars = get_environment_var_list_from_str_array(environment_var_str_array);
+    if(args > 1)
+        exit(0);    
+    envioroment_vars = get_environment_var_list_from_str_array(environment_var_str_array + 2);
     name = username(envioroment_vars);
     
-    while(!exit)
+    while(!finish)
     {
         line = readline(name);
         if (ft_strncmp(line, "exit", ft_strlen(line)) != 0)
@@ -108,11 +110,11 @@ int main(int args, char **environment_var_str_array)
            
         }
         else
-            exit = true;
+            finish = true;
         free(line);
         line = NULL;
-        destroy_gen_list(current_command_list, destroy_command);
+        destroy_gen_list((void *)current_command_list, destroy_command);
         current_command_list = NULL;
     }
-    destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+   destroy_gen_list(envioroment_vars, destroy_envioroment_var);
 }

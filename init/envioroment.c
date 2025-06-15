@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/envioroment.h"
-#include "../include/list.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
 #include <stdio.h>
@@ -51,7 +50,6 @@ t_gen_list *get_environment_var_list_from_str_array(char **str_array)
 
 char *get_var_value_from_name(t_gen_list *environment_vars, char *name)
 {
-    int i = 0;
     t_node *current_env_node = environment_vars->head;
     t_envioroment_var *current_env_var;
     while(current_env_node)
@@ -74,7 +72,7 @@ char **get_str_array_from_envioroment_var_list(t_gen_list   *envioroment)
     char *aux_of_free;
 
     i = 0;
-    char **result = ft_caalloc(envioroment->size + 1, sizeof(char *));
+    result = ft_caalloc(envioroment->size + 1, sizeof(char *));
     current_env_node = envioroment->head;
     while(current_env_node != NULL)
     {
@@ -88,11 +86,13 @@ char **get_str_array_from_envioroment_var_list(t_gen_list   *envioroment)
     return(result);
 }
 
-void destroy_envioroment_var(t_envioroment_var *envioroment_var)
+void destroy_envioroment_var(void *envioroment_var)
 {
-    free(envioroment_var->var_name);
-    free(envioroment_var->var_value);
-    free(envioroment_var);
+    t_envioroment_var *aux;
+    aux = (t_envioroment_var *)envioroment_var;
+    free(aux->var_name);
+    free(aux->var_value);
+    free(aux);
 }
 void change_env_value(t_gen_list *envioroment, char *new_value, char *name)
 {

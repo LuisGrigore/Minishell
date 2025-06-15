@@ -10,10 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
-#include "envioroment.h"
+#ifndef COMMAND_FUNCTS_H
+# define COMMAND_FUNCTS_H
+
+typedef struct s_command t_command;
+typedef struct s_gen_list t_gen_list;
 
 typedef  void (*t_command_funct)(t_command *, t_gen_list *);
+# include "command.h"
 
 void pwd_execute(t_command *command, t_gen_list *envioroment);
 void	bin_execute(t_command *cmd ,t_gen_list *envioroment);
@@ -23,3 +27,5 @@ void export_execute(t_command *command, t_gen_list *envioroment);
 void unset_execute(t_command *command, t_gen_list *envioroment);
 void env_execute(t_command *command, t_gen_list *envioroment);
 void echo_execute(t_command *command, t_gen_list *envioroment);
+
+# endif

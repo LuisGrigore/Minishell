@@ -13,9 +13,7 @@
 #ifndef BIN_COMMAND_EXECUTION_H
 # define BIN_COMMAND_EXECUTION_H
 
-#include "envioroment.h"
-#include "command.h"
-#include "util.h"
+# include "util.h"
 
 
 char	*find_command(char **env, char *cmd);

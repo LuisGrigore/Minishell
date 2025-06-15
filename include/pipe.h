@@ -15,6 +15,7 @@
 # include  "unistd.h"
 # include "fcntl.h"
 # include "sys/wait.h"
+# include "../include/command_functs.h"
 
 void command_execution(t_gen_list *command, t_gen_list *envioroment);
 

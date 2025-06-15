@@ -9,7 +9,8 @@
 /*   Updated: 2025/06/02 18:18:43 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#ifndef LIST_H
+# define LIST_H
 
 #include <stdlib.h>
 
@@ -28,4 +29,5 @@ typedef struct s_gen_list
 
 t_gen_list *init_list();
 void insert_end(t_gen_list* list, void* value);
-void destroy_gen_list(t_gen_list* list, void (*value_destroyer)(void*));
+void destroy_gen_list(t_gen_list* list, void (value_destroyer)(void*));
+# endif

@@ -15,18 +15,19 @@
 # include "redirect_asignation.h"
 # include "envioroment.h"
 # include "command_functs.h"
-#include "../include/list.h"
+
 
 
 typedef struct s_command
 {
     t_gen_list *args;
     t_gen_list   *redirects;
+    char *command_name;
     t_command_funct command_funct;
 }   t_command;
 
 t_gen_list *get_command_list_from_line(char *line);
-void destroy_command(t_command *cmd);
+void destroy_command(void *command_to_delete);
 char **get_str_array_from_gen_list_args(t_gen_list *args);
 
 

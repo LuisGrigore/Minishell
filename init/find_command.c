@@ -12,6 +12,7 @@
 
 #include "../include/bin_commandss_execution.h"
 #include "unistd.h"
+#include "../libft/libft.h"
 
 static char	*checker_path(char *env, char *cmd);
 static char	*get_final_path(char *path, char *cmd)

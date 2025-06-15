@@ -24,7 +24,7 @@ t_gen_list *get_redirects_from_str_arr(char *str)
          str = str + i;
          current_redirecction = first_redirection(str);
     }
-    if(redirects->head = NULL)
+    if(redirects->head == NULL)
         {    
             free(redirects);
             redirects = NULL;
@@ -52,6 +52,7 @@ static  char *first_redirection(char *str)
         return (">>");
     return(NULL);
 }
+
 static  char *get_file_from_str(char *str, char *redirection)
 {
     int end;
@@ -79,4 +80,21 @@ static  e_redirect    get_redirection_type_from_str(char *str)
         return DOUBLE_LEFT_REDIRECT;
     return ERROR;
 
+}
+t_redirect *init_redirect()
+{
+    t_redirect *result;
+
+    result = ft_calloc(1, sizeof(t_redirect));
+    result->file = NULL;
+    result->redirect_simbol = NONE;
+    return (result);
+}
+void destroy_redirect(void *redirect)
+{
+    t_redirect *aux;
+
+    aux = (t_redirect *)redirect;
+    free(aux->file);
+    free(aux);
 }

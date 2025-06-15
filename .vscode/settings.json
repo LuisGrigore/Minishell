@@ -6,6 +6,11 @@
         "redirect.h": "c",
         "libft.h": "c",
         "command_functs.h": "c",
-        "pipe.h": "c"
+        "pipe.h": "c",
+        "command.h": "c",
+        "list.h": "c",
+        "fcntl.h": "c",
+        "wait.h": "c",
+        "redirect_asignation.h": "c"
     }
 }
