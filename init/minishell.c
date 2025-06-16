@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/05/03 19:56:29 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/06/16 19:44:53 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ int main(int args, char **environment_var_str_array)
     while(!finish)
     {
         line = readline(name);
-        if (ft_strncmp(line, "exit", ft_strlen(line)) != 0)
+       
+        if(ft_strlen(line) != 0 && ft_strncmp(line, "exit", ft_strlen(line)) == 0 )
+            finish = true;
+        else if (ft_strlen(line) != 0 )
         {
             current_command_list = get_command_list_from_line(line);
             if(check_cmd(line) == NULL)
@@ -109,8 +112,6 @@ int main(int args, char **environment_var_str_array)
             command_execution(current_command_list, envioroment_vars);
            
         }
-        else
-            finish = true;
         free(line);
         line = NULL;
         destroy_gen_list((void *)current_command_list, destroy_command);

@@ -41,7 +41,11 @@ t_node  *get_last_node_of_list(t_gen_list *list)
 }
 void destroy_gen_list(t_gen_list* list, void (*value_destroyer)(void*)) 
 {
-    t_node* current = list->head;
+    t_node* current;
+    
+    if(!list)
+        return ;
+    current = list->head;
     while (current) {
         t_node* next = current->next;
         if (value_destroyer) {

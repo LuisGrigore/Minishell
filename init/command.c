@@ -19,27 +19,23 @@ static t_command *init_command()
     new_command->args = NULL;
     new_command->command_funct = NULL;
     new_command->redirects = init_list();
-    new_command->command_name = NULL;
 
     return(new_command);
 }
 
 static t_command_funct get_command_funct(char *command_name)
 {
-    size_t len;
-
-    len = ft_strlen(command_name)-1;
-    if(ft_strncmp(command_name, "cd", len) == 0)
+    if(ft_strncmp(command_name, "cd", 2) == 0)
         return (cd_execute);
-    else if(ft_strncmp(command_name, "pwd", len) == 0)
+    else if(ft_strncmp(command_name, "pwd", 3) == 0)
         return (pwd_execute);
-    else if(ft_strncmp(command_name, "export", len) == 0)
+    else if(ft_strncmp(command_name, "export", 6) == 0)
         return (export_execute);
-    else if(ft_strncmp(command_name, "unset", len) == 0)
+    else if(ft_strncmp(command_name, "unset", 5) == 0)
         return (unset_execute);
-    else if(ft_strncmp(command_name, "env", len) == 0)
+    else if(ft_strncmp(command_name, "env", 3) == 0)
         return (env_execute);
-    else if(ft_strncmp(command_name, "echo", len) == 0)
+    else if(ft_strncmp(command_name, "echo", 4) == 0)
         return (echo_execute);
     else
         return (bin_execute);
@@ -50,28 +46,21 @@ static t_gen_list *get_args(char *command_line)
     t_gen_list *args = init_list();
     int i;
     int j;
-    int aux;
+    char *aux;
+    char **aux_aux;
     
     j = first_redirection_after_string_from_string(command_line);
     i = last_redirecction_before_string_from_string(command_line);
-    
-    
-    while(command_line[i] && ft_ispace(command_line[i]))
+    aux = ft_substr(command_line ,i , (size_t)j - i);
+    aux_aux = ft_split2(aux, ' ');
+    i = 0;
+    free(aux);
+    while(aux_aux[i])
+    {
+        insert_end(args, ft_strdup(aux_aux[i]));
         i++;
-    while(command_line[i] && !ft_ispace(command_line[i]))
-        i++;
-    while(command_line[i] && ft_ispace(command_line[i]))
-        i++;
-        
-    while(command_line[i] && i < j)
-    {   aux = i;
-        while (command_line[i] && !ft_ispace(command_line[aux]))
-            aux++;    
-        insert_end(args, ft_substr(command_line, i, aux));
-        i = aux;
-        while(command_line[i] && ft_ispace(command_line[i]))
-            i++;
     }
+    free_double_pointer(aux_aux);
     return (args);
 }
 static char *get_command_name(char *str)
@@ -95,8 +84,7 @@ static t_command *init_command_from_str(char *str)
     t_command *new_command = init_command();
 
     new_command->args = get_args(str);
-    new_command->command_name = get_command_name(str);
-    new_command->command_funct = get_command_funct(new_command->command_name);
+    new_command->command_funct = get_command_funct(get_command_name(str));
     new_command->redirects = get_redirects_from_str_arr(str);
     return(new_command);
 }
@@ -108,13 +96,11 @@ t_gen_list *get_command_list_from_line(char *line)
     char **command_str_arr;
     int i = 0;
     command_str_arr = ft_split2(line, '|');
-    while(command_str_arr[i])
-        i++;
-    i--;
-    while (i >= 0)
+
+    while (command_str_arr[i])
     {
         insert_end(command_list, init_command_from_str(command_str_arr[i]));
-        i--;
+        i++;
     }
     return (command_list);
 }
@@ -126,9 +112,7 @@ void destroy_command(void *command_to_delete)
     if(command->args)
         destroy_gen_list(command->args, free);
     if(command->redirects)
-        destroy_gen_list(command->redirects, destroy_redirect);
-    if(command->command_name)
-        free(command->command_name);
+        destroy_gen_list(command->redirects, destroy_redirect);;
     free(command);
 }
 char **get_str_array_from_gen_list_args(t_gen_list *args)
@@ -138,11 +122,12 @@ char **get_str_array_from_gen_list_args(t_gen_list *args)
     int i;
 
     i = 0;    
-    result = ft_calloc(args->size, sizeof(char *));
+    result = ft_calloc(args->size + 1, sizeof(char *));
     current_node = args->head;
     while(current_node != NULL)
     {
-        result[i] = ft_strdup(current_node->value);
+        result[i] = ft_strdup((char *)current_node->value);
+        current_node = current_node->next;
         i++;
     }
     return(result);
@@ -198,7 +183,7 @@ static int last_redirecction_before_string_from_string(char *str)
                 aux = get_next_argument("\"", str + i);
                 i = aux - str;
             }
-          else if(str[i] != 39)
+          else if(str[i] == 39)
             {
                 aux = get_next_argument("'", str + i);
                 i = aux - str;
@@ -214,3 +199,16 @@ static int last_redirecction_before_string_from_string(char *str)
 }
 
 
+/*
+    while(command_line[i] && ft_ispace(command_line[i]))
+        i++;
+        
+    while(command_line[i] && i < j)
+    {   aux = i;
+        while (command_line[aux] && !ft_ispace(command_line[aux]))
+            aux++;    
+        insert_end(args, ft_substr(command_line, i, aux));
+        i = aux;
+        while(command_line[i] && ft_ispace(command_line[i]))
+            i++;
+    }*/

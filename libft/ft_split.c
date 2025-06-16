@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:46:00 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/03/09 11:16:52 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:02:20 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char	**ft_rapt(char const *s, char c, char **p3, size_t p)
 				p3[++r] = ft_survivor(s, p, n, c);
 				if (!p3[r])
 				{
-					while (r >= 0)
+					while (r != 0)
 						free(p3[r-- - 1]);
 					free(p3);
 					return (NULL);

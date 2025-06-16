@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/05/13 19:12:55 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:26:54 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	bin_execute(t_command *cmd ,t_gen_list *envioroment)
 		write(2, "Fail to split\n", 15);
 		exit(1);
 	}
-	path = find_command(env, envioroment->head->value);
+	path = find_command(env, cmd2[0]);
 	if (path == NULL)
 	{ 	
-		write(2, "Path doesnt found\n", 15);
+		write(2, "Path doesnt found\n", 19);
 		exit(1);
 	}
 	execve(path, cmd2, env);
@@ -77,6 +77,7 @@ void pwd_execute(t_command *command, t_gen_list *envioroment)
     if(command == NULL)
         return ;
     printf("%s\n", get_var_value_from_name(envioroment, "PWD"));
+    exit(0);
 }
 void env_execute(t_command *command, t_gen_list *envioroment)
 {
@@ -84,7 +85,7 @@ void env_execute(t_command *command, t_gen_list *envioroment)
     t_envioroment_var *current_node_value;
 
     if(!command)
-        return ;
+        exit(1);
     current_node = envioroment->head;
     while(current_node != NULL)
     {
@@ -92,6 +93,7 @@ void env_execute(t_command *command, t_gen_list *envioroment)
         ft_printf("%s=%s\n",current_node_value->var_name, current_node_value->var_value);
         current_node = current_node->next;
     }
+    exit(0);
 }
 void export_execute(t_command *command, t_gen_list *envioroment)
 {
@@ -105,7 +107,7 @@ void export_execute(t_command *command, t_gen_list *envioroment)
     new_sport->var_name = new_variable[0];
     new_sport->var_value = new_variable[1];
     free(new_variable);
-    if(get_var_value_from_name(envioroment, new_variable[0]) == NULL)
+    if(get_var_value_from_name(envioroment, new_sport->var_name) == NULL)
         insert_end(envioroment, new_sport);
     else
     {
@@ -141,4 +143,5 @@ void echo_execute(t_command *command, t_gen_list *envioroment)
    }
     if(current_node)
         ft_printf("%s\n",current_node->value);
+    exit(0);
 }
