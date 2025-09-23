@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/06/16 21:26:54 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/09/23 18:00:23 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	bin_execute(t_command *cmd ,t_gen_list *envioroment)
 
     env = get_str_array_from_envioroment_var_list(envioroment);
     cmd2 = get_str_array_from_gen_list_args(cmd->args);
+    write(1, "hola" ,4);
 	if (!cmd->args)
 	{ 	
 		write(2, "Fail to split\n", 15);
@@ -85,7 +86,7 @@ void env_execute(t_command *command, t_gen_list *envioroment)
     t_envioroment_var *current_node_value;
 
     if(!command)
-        exit(1);
+        write(1,"a",1);
     current_node = envioroment->head;
     while(current_node != NULL)
     {
@@ -93,7 +94,7 @@ void env_execute(t_command *command, t_gen_list *envioroment)
         ft_printf("%s=%s\n",current_node_value->var_name, current_node_value->var_value);
         current_node = current_node->next;
     }
-    exit(0);
+    
 }
 void export_execute(t_command *command, t_gen_list *envioroment)
 {

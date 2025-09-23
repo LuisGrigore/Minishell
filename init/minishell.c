@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/06/16 19:44:53 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:07:11 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,6 @@ int main(int args, char **environment_var_str_array)
                 continue ;
             add_history(line);
             command_execution(current_command_list, envioroment_vars);
-           
         }
         free(line);
         line = NULL;

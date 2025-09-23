@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 19:48:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/03/21 18:27:38 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/09/23 18:17:38 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ static char	*ft_cpi(char *p2, char const *s1, char const *s2)
 
 	t = 0;
 	i = 0;
-	while (s1[i])
+	
+	while (s1 && s1[i])
 	{
 		p2[i] = s1[i];
 		i++;
 	}
-	while (s2[t])
+	while (s2 && s2[t])
 	{
 		p2[i] = s2[t];
 		i++;
@@ -40,6 +41,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s;
 	char	*p1;
 
+	
 	j = ft_strlen(s1);
 	s = ft_strlen(s2);
 	p1 = malloc(j + s + 1);

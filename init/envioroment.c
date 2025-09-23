@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   envioroment.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/05/10 17:35:50 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:15:36 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/envioroment.h"
+#include "../include/command_functs.h"
+
 #include "../libft/libft.h"
 #include "stdlib.h"
 #include <stdio.h>
-
+ 
 t_envioroment_var *init_envioroment_var()
 {
     t_envioroment_var *new_env = ft_calloc(1, sizeof(t_envioroment_var));
@@ -67,12 +69,14 @@ char **get_str_array_from_envioroment_var_list(t_gen_list   *envioroment)
 {
     t_envioroment_var *current_env_value;
     t_node  *current_env_node;
+
     char **result;
     int i;
     char *aux_of_free;
-
+    
     i = 0;
     result = ft_caalloc(envioroment->size + 1, sizeof(char *));
+    printf("%li\n", envioroment->size);
     current_env_node = envioroment->head;
     while(current_env_node != NULL)
     {
@@ -83,7 +87,9 @@ char **get_str_array_from_envioroment_var_list(t_gen_list   *envioroment)
         i++;
         current_env_node = current_env_node->next;
     }
+    
     return(result);
+    
 }
 
 void destroy_envioroment_var(void *envioroment_var)
