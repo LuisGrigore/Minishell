@@ -10,14 +10,14 @@
 static int				last_redirecction_before_string_from_string(char *str);
 static int				first_redirection_after_string_from_string(char *str);
 
-static t_command	*init_command(void)
+static t_command	*init_command(t_gen_list *args, t_command_funct funct, t_gen_list *redirects)
 {
 	t_command	*new_command;
 
 	new_command = ft_calloc(1, sizeof(t_command));
-	new_command->args = NULL;
-	new_command->command_funct = NULL;
-	new_command->redirects = init_list();
+	new_command->args = args;
+	new_command->command_funct = funct;
+	new_command->redirects = redirects;
 	return (new_command);
 }
 
@@ -76,17 +76,6 @@ static char	*get_command_name(char *str)
 	return (ft_substr(str, i, (size_t)(j - i)));
 }
 
-static t_command	*init_command_from_str(char *str)
-{
-	t_command	*new_command;
-
-	new_command = init_command();
-	new_command->args = get_args(str);
-	new_command->command_funct = get_command_funct(get_command_name(str));
-	new_command->redirects = get_redirects_from_str_arr(str);
-	return (new_command);
-}
-
 t_gen_list	*get_command_list_from_line(char *line)
 {
 	t_gen_list	*command_list;
@@ -98,7 +87,7 @@ t_gen_list	*get_command_list_from_line(char *line)
 	command_str_arr = ft_split2(line, '|');
 	while (command_str_arr[i])
 	{
-		push_end(command_list, init_command_from_str(command_str_arr[i]));
+		push_end(command_list, init_command(get_args(command_str_arr[i]), get_command_funct(get_command_name(command_str_arr[i])), get_redirects_from_str_arr(command_str_arr[i])));
 		i++;
 	}
 	return (command_list);
@@ -197,17 +186,3 @@ static int	last_redirecction_before_string_from_string(char *str)
 		i = 0;
 	return (i);
 }
-
-/*
-	while(command_line[i] && ft_ispace(command_line[i]))
-		i++;
-
-	while(command_line[i] && i < j)
-	{   aux = i;
-		while (command_line[aux] && !ft_ispace(command_line[aux]))
-			aux++;
-		insert_end(args, ft_substr(command_line, i, aux));
-		i = aux;
-		while(command_line[i] && ft_ispace(command_line[i]))
-			i++;
-	}*/
