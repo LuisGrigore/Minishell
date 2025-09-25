@@ -10,54 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../include/util.h"
 #include "../libft/libft.h"
 #include "unistd.h"
 
-int	ft_ispace(char c)
+int ft_ispace(char c)
 {
-	if (c == '\n' || c == ' ' || c == 9)
-		return (1);
-	return (0);
+	if(c ==  '\n' || c == ' ' || c == 9)
+		return(1);
+	return(0);
 }
-int	special_char(char *str, char *c)
+int special_char(char *str, char *c)
 {
-	int		i;
-	int		b1;
-	int		b2;
-	size_t	len;
+	int i;
+	int b1;
+	int b2;
+	size_t len;
 
-	if (!str || !c)
+	if(!str || !c)
 		return ((int)ft_strlen(str) + 1);
 	len = ft_strlen(c);
 	i = 0;
 	b1 = 0;
 	b2 = 0;
+
 	while (str[i])
 	{
-		if (str[i] == *"'" && b2 % 2 == 0)
+		if(str[i] == *"'" && b2 % 2 == 0)
 			b1++;
-		if (str[i] == '"' && b1 % 2 == 0)
+		if(str[i] == '"' && b1 % 2 == 0)
 			b2++;
-		if (ft_strncmp(str + i, c, len) == 0 && b1 % 2 == 0 && b2 % 2 == 0)
-			return (i);
+		if(ft_strncmp(str + i, c, len)  == 0 && b1 % 2 == 0 && b2 % 2 == 0)
+			return(i);
 		i++;
 	}
-	return ((int)ft_strlen(str) + 1);
+	return((int)ft_strlen(str) + 1);
 }
 
-char	*get_next_argument(char *c, char *str)
+char *get_next_argument(char *c, char *str)
 {
-	int		i;
-	size_t	len;
+    int i;
+    size_t len;
+    len = ft_strlen(c);
 
-	len = ft_strlen(c);
-	i = 0;
-	while (str[i])
-	{
-		if (ft_strncmp(str, c, len))
-			break ;
-		i++;
-	}
-	return (str + i + (int)len);
+    i = 0;
+    while(str[i])
+    {
+        if(ft_strncmp(str, c, len))
+            break;
+        i++;
+    }
+    return(str + i + (int)len);
 }

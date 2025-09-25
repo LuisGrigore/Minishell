@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
-#include "../libft/libft.h"
 #include "unistd.h"
+#include "../libft/libft.h"
 
 static char	*checker_path(char *env, char *cmd);
 static char	*get_final_path(char *path, char *cmd)
@@ -58,8 +58,8 @@ static char	*checker_path(char *env, char *cmd)
 {
 	if (!env && access(cmd, X_OK) != 0)
 	{
-		write(2, "Path doest find\n", 17);
-		exit(1);
+        write(2, "Path doest find\n", 17);
+        exit(1);
 	}
 	else if (access(cmd, X_OK) == 0)
 		return (cmd);

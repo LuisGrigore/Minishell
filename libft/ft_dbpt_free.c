@@ -24,7 +24,7 @@ void	free_double_pointer(char **dbpt)
 	y--;
 	while (y >= 0)
 	{
-		if (dbpt[y])
+		if(dbpt[y])
 			free(dbpt[y]);
 		y--;
 	}
