@@ -1,30 +1,39 @@
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror
+INCLUDES =  -I./include -I./libft
 
-NAME = Minishell
+OBJ_DIR = obj
+NAME    = minishel
 
-CC = cc 
-CFLAGS = -I include/ -Wall -Werror -Wextra -g
-RDFLAGS = -lreadline -lncurses 
-
-LIBFT_PATH = libft/
-LIBFT_LIB = $(LIBFT_PATH)libft.a
-SRC = 	init/pipe.c init/minishell.c utils/ft_split2.0.c utils/path_utils.c  init/command.c init/envioroment.c  init/redirect_asignation.c init/find_command.c init/command_functs.c init/list.c 
-OBJECTS = $(SRC:.c=.o)
+SRCS    = ./src/init/command.c ./src/init/envioroment.c ./src/init/redirect_asignation.c ./src/init/find_command.c ./src/init/redirect.c ./src/init/pipe.c ./src/init/list.c ./src/init/minishell.c ./src/init/command_functs.c ./src/utils/ft_split2.0.c ./src/utils/path_utils.c 
+OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
+LINK_FLAGS = -lreadline -lncurses
+SUBSYSTEM_PATH = ./libft
+SUBSYSTEM_LIB  = ./libft/libft.a
 
 all: subsystems $(NAME)
 
 subsystems:
-	@make -C $(LIBFT_PATH) all
+	$(MAKE) -C $(SUBSYSTEM_PATH) all
 
-$(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT_LIB) -o $(NAME) $(RDFLAGS)
+$(NAME): $(OBJS) $(SUBSYSTEM_LIB)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LINK_FLAGS)
+
+$(OBJ_DIR)/%.o: %.c
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $@
 
 clean:
-	make -C $(LIBFT_PATH) clean
-	rm -f $(OBJECTS)
+	$(MAKE) -C $(SUBSYSTEM_PATH) clean
+	rm -rf $(OBJ_DIR)
 
-fclean: clean 
-	make -C $(LIBFT_PATH) fclean
+fclean: clean
+	$(MAKE) -C $(SUBSYSTEM_PATH) fclean
 	rm -f $(NAME)
 
 re: fclean all
-.PHONY: re clean fclean all
+
+.PHONY: all clean fclean re subsystems

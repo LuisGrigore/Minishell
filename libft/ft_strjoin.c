@@ -19,7 +19,6 @@ static char	*ft_cpi(char *p2, char const *s1, char const *s2)
 
 	t = 0;
 	i = 0;
-	
 	while (s1 && s1[i])
 	{
 		p2[i] = s1[i];
@@ -41,7 +40,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s;
 	char	*p1;
 
-	
 	j = ft_strlen(s1);
 	s = ft_strlen(s2);
 	p1 = malloc(j + s + 1);
