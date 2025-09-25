@@ -29,7 +29,11 @@ SRC_DIR="./"
 OBJ_DIR="obj"
 
 # Lista de fuentes
-SRCS=$(find "$SRC_DIR" -type f -name "*.c" | tr '\n' ' ')
+if [ -n "$SUBSYSTEM_PATH" ]; then
+    SRCS=$(find "$SRC_DIR" -type f -name "*.c" ! -path "$SUBSYSTEM_PATH/*" | tr '\n' ' ')
+else
+    SRCS=$(find "$SRC_DIR" -type f -name "*.c" | tr '\n' ' ')
+fi
 
 # Generar Makefile
 cat > Makefile <<EOL
