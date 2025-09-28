@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 19:50:01 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 23:15:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,10 +250,20 @@ int	main(int args, char **environment_var_str_array)
 			add_history(line);
 			tokens = tokenize(line);
 			//print_tokens(tokens);
+			if (!tokens)
+			{
+				perror("Tokenization error ");
+				continue ;
+			}
 			current_commands = parse_tokens_to_commands(tokens);
 			destroy_gen_list(tokens, destroy_token_data);
+			if (!current_commands)
+			{
+				perror("Parsing error ");
+				continue ;
+			}
 			//print_commands(current_commands);
-			command_execution(current_commands, envioroment_vars);
+			execute_commands_with_pipes(current_commands, envioroment_vars);
 		}
 		free(line);
 		line = NULL;
