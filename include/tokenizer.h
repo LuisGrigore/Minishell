@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/28 17:42:18 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 19:48:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ typedef struct s_token
 }					t_token;
 
 t_gen_list			*tokenize(const char *line);
+void destroy_token(t_token *token);
 
 #endif
