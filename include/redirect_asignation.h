@@ -2,7 +2,7 @@
 # define REDIRECT_ASIGNATION_H
 # include "list.h"
 
-typedef enum e_redirect
+typedef enum e_redirect_type
 {
 	LEFT_REDIRECT,
 	RIGHT_REDIRECT,
@@ -10,15 +10,15 @@ typedef enum e_redirect
 	DOUBLE_RIGHT_REDIRECT,
 	NONE,
 	ERROR,
-}				e_redirect;
+}				t_redirect_type;
 
 typedef struct s_redirect
 {
 	char		*file;
-	e_redirect	redirect_simbol;
+	t_redirect_type	redirect_simbol;
 }				t_redirect;
 
-t_redirect		*init_redirect(void);
+t_redirect		*init_redirect(char *file, t_redirect_type redirect_type);
 t_gen_list		*get_redirects_from_str_arr(char *str);
 void			destroy_redirect(void *redirect);
 
