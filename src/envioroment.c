@@ -37,8 +37,7 @@ t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
 	while (str_array[i])
 	{
 		var_str_name_value_split = ft_split(str_array[i], '=');
-		push_end(env_var_list,
-			init_envioroment_var(var_str_name_value_split[0],
+		push_end(env_var_list, init_envioroment_var(var_str_name_value_split[0],
 				var_str_name_value_split[1]));
 		free(var_str_name_value_split);
 		i++;
