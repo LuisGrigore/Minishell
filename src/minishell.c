@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 16:11:36 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 17:03:36 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 #include "readline/history.h"
 #include "readline/readline.h"
 #include <stdbool.h>
+#include <signal.h>
+#include <unistd.h>
+
+
+volatile sig_atomic_t g_signal = 0;
 
 static char	*history_checker(char *cmd)
 {
@@ -70,6 +75,7 @@ char	*check_cmd(char *cmd)
 	return (cmd);
 }
 
+
 char	*username(t_gen_list *env)
 {
 	char	*username;
@@ -80,6 +86,32 @@ char	*username(t_gen_list *env)
 	return (ft_strjoin(username, "%>$"));
 }
 
+void sigint_handler(int sig)
+{
+    (void)sig;
+    g_signal = SIGINT;
+    write(1, "\n", 1);
+    rl_on_new_line();
+    rl_replace_line("", 0);
+    rl_redisplay();
+}
+
+void signals_init(void)
+{
+    struct sigaction sa_int;
+    struct sigaction sa_quit;
+
+    sa_int.sa_handler = sigint_handler;
+    sigemptyset(&sa_int.sa_mask);
+    sa_int.sa_flags = SA_RESTART;
+    sigaction(SIGINT, &sa_int, NULL);
+
+    sa_quit.sa_handler = SIG_IGN;
+    sigemptyset(&sa_quit.sa_mask);
+    sa_quit.sa_flags = SA_RESTART;
+    sigaction(SIGQUIT, &sa_quit, NULL);
+}
+
 int	main(int args, char **environment_var_str_array)
 {
 	t_gen_list	*current_command_list;
@@ -88,30 +120,32 @@ int	main(int args, char **environment_var_str_array)
 	char		*line;
 	char		*name;
 
-	finish = false;
+
 	if (args > 1)
 		exit(0);
+	signals_init();
 	envioroment_vars = get_environment_var_list_from_str_array(environment_var_str_array
 			+ 2);
 	name = username(envioroment_vars);
+	finish = false;
 	while (!finish)
 	{
 		line = readline(name);
-		if (ft_strlen(line) != 0 && ft_strncmp(line, "exit",
-				ft_strlen(line)) == 0)
+		if ((ft_strlen(line) != 0 && ft_strncmp(line, "exit",
+				ft_strlen(line)) == 0) || line == NULL)
 			finish = true;
-		// else if (ft_strlen(line) != 0)
-		// {
-		// 	current_command_list = get_command_list_from_line(line);
-		// 	if (check_cmd(line) == NULL)
-		// 		continue ;
-		// 	add_history(line);
-		// 	command_execution(current_command_list, envioroment_vars);
-		// }
-		// free(line);
-		// line = NULL;
-		// destroy_gen_list(current_command_list, destroy_command);
-		// current_command_list = NULL;
+		else if (ft_strlen(line) != 0)
+		{
+			current_command_list = get_command_list_from_line(line);
+			if (check_cmd(line) == NULL)
+				continue ;
+			add_history(line);
+			command_execution(current_command_list, envioroment_vars);
+		}
+		free(line);
+		line = NULL;
+		destroy_gen_list(current_command_list, destroy_command);
+		current_command_list = NULL;
 	}
-	// destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+	destroy_gen_list(envioroment_vars, destroy_envioroment_var);
 }

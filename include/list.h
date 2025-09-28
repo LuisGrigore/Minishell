@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:41 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 16:16:42 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 16:20:35 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIST_H
 
 # include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct s_node
 {
@@ -56,8 +57,7 @@ void	traverse(t_gen_list *list, void (*func)(void *));
  * se retorna el puntero `value` del nodo actual.
  *
  * @param list Puntero a la lista genérica donde se realizará la búsqueda.
- * @param predicate Función que recibe un `void *` y devuelve un `int`
- *                  (0 para falso, distinto de 0 para verdadero).
+ * @param predicate Función que recibe un `void *` y devuelve un `bool`
  *
  * @return 
  * - El puntero `void *` al valor del primer nodo que cumpla la condición.
@@ -65,7 +65,7 @@ void	traverse(t_gen_list *list, void (*func)(void *));
  *
  * @note Esta función retorna el `value` almacenado en el nodo, **no** el puntero al nodo.
  */
-void	*find_in_list(t_gen_list *list, int (*predicate)(void *));
+void	*find_in_list(t_gen_list *list, bool (*predicate)(void *));
 
 
 #endif
