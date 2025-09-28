@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 17:03:24 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 23:29:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,39 @@
 #include "../libft/libft.h"
 #include <signal.h>
 
-void	bin_execute(t_command *cmd, t_gen_list *envioroment)
+void bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
-	char	**cmd2;
-	char	**env;
-	char	*path;
+    char **cmd2;
+    char **env;
+    char *path;
 
-	env = get_str_array_from_envioroment_var_list(envioroment);
-	cmd2 = get_str_array_from_gen_list_args(cmd->args);
-	write(1, "hola", 4);
-	if (!cmd->args)
-	{
-		write(2, "Fail to split\n", 15);
-		exit(1);
-	}
-	path = find_command(env, cmd2[0]);
-	if (path == NULL)
-	{
-		write(2, "Path doesnt found\n", 19);
-		exit(1);
-	}
-	signal(SIGINT, SIG_DFL);
-	signal(SIGQUIT, SIG_DFL);
-	execve(path, cmd2, env);
-	if (path)
-		free(path);
-	free_double_pointer(cmd2);
+    if (!cmd || !cmd->args || !cmd->args->head)
+    {
+        perror("No command args ");
+        exit(1);
+    }
+
+    env = get_str_array_from_envioroment_var_list(envioroment);
+    cmd2 = get_str_array_from_gen_list_args(cmd->args);
+
+    path = find_command(env, cmd2[0]);
+    if (!path)
+    {
+        perror("Path not found ");
+        free_double_pointer(cmd2);
+        exit(127);
+    }
+
+    signal(SIGINT, SIG_DFL);
+    signal(SIGQUIT, SIG_DFL);
+
+    execve(path, cmd2, env);
+
+    // execve falló
+    perror("Failed to execute command ");
+    free(path);
+    free_double_pointer(cmd2);
+    exit(1);
 }
 void	cd_execute(t_command *command, t_gen_list *envioroment)
 {
@@ -126,24 +133,38 @@ void	unset_execute(t_command *command, t_gen_list *envioroment)
 	current_node = command->args->head->next;
 	remove_envioroment_var_from_name(envioroment, (char *)current_node->value);
 }
-void	echo_execute(t_command *command, t_gen_list *envioroment)
+void echo_execute(t_command *command, t_gen_list *envioroment)
 {
-	t_node	*current_node;
-	size_t	len;
+    t_node *current_node;
+    int newline = 1;
+    size_t len;
 
-	len = command->args->size--;
-	if (!envioroment)
-		return ;
-	current_node = command->args->head->next;
-	if (ft_strncmp((char *)current_node->value, "-n", 2) == 0)
-		current_node = current_node->next;
-	while (current_node != NULL && len != 1)
-	{
-		ft_printf("%s ", current_node->value);
-		current_node = current_node->next;
-		len--;
-	}
-	if (current_node)
-		ft_printf("%s\n", current_node->value);
+    if (!command || !command->args || !command->args->head)
+        return;
+
+    current_node = command->args->head->next; // primer argumento real
+    if (!current_node)
+        return;
+
+    // Comprobar -n usando ft_strncmp
+    len = ft_strlen((char *)current_node->value);
+    if (len == 2 && ft_strncmp((char *)current_node->value, "-n", 2) == 0)
+    {
+        newline = 0;
+        current_node = current_node->next;
+    }
+
+    while (current_node)
+    {
+        ft_printf("%s", (char *)current_node->value);
+        if (current_node->next)
+            ft_printf(" ");
+        current_node = current_node->next;
+    }
+
+    if (newline)
+        ft_printf("\n");
+
+    // No hacemos exit aquí; solo en hijos si se hace fork
 	exit(0);
 }

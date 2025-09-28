@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 16:07:55 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 23:30:11 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**get_str_array_from_envioroment_var_list(t_gen_list *envioroment)
 
 	i = 0;
 	result = ft_caalloc(envioroment->size + 1, sizeof(char *));
-	printf("%li\n", envioroment->size);
+	//printf("%li\n", envioroment->size);
 	current_env_node = envioroment->head;
 	while (current_env_node != NULL)
 	{
