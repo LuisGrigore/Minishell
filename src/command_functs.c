@@ -35,8 +35,8 @@ void	bin_execute(t_command *cmd, t_gen_list *envioroment)
 		write(2, "Path doesnt found\n", 19);
 		exit(1);
 	}
-    signal(SIGINT, SIG_DFL);
-    signal(SIGQUIT, SIG_DFL); 
+	signal(SIGINT, SIG_DFL);
+	signal(SIGQUIT, SIG_DFL);
 	execve(path, cmd2, env);
 	if (path)
 		free(path);

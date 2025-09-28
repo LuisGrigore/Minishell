@@ -1,5 +1,5 @@
 CC      = cc
-CFLAGS  = 
+CFLAGS  =
 INCLUDES =  -I./include -I./libft
 
 OBJ_DIR = obj

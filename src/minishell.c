@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 17:03:36 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 17:45:08 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 #include "../include/envioroment.h"
 #include "../include/list.h"
 #include "../include/pipe.h"
+#include "../include/tokenizer.h"
 #include "../libft/libft.h"
 #include "readline/history.h"
 #include "readline/readline.h"
-#include <stdbool.h>
 #include <signal.h>
+#include <stdbool.h>
 #include <unistd.h>
 
-
-volatile sig_atomic_t g_signal = 0;
+volatile sig_atomic_t	g_signal = 0;
 
 static char	*history_checker(char *cmd)
 {
@@ -75,7 +75,6 @@ char	*check_cmd(char *cmd)
 	return (cmd);
 }
 
-
 char	*username(t_gen_list *env)
 {
 	char	*username;
@@ -86,30 +85,71 @@ char	*username(t_gen_list *env)
 	return (ft_strjoin(username, "%>$"));
 }
 
-void sigint_handler(int sig)
+void	sigint_handler(int sig)
 {
-    (void)sig;
-    g_signal = SIGINT;
-    write(1, "\n", 1);
-    rl_on_new_line();
-    rl_replace_line("", 0);
-    rl_redisplay();
+	(void)sig;
+	g_signal = SIGINT;
+	write(1, "\n", 1);
+	rl_on_new_line();
+	rl_replace_line("", 0);
+	rl_redisplay();
 }
 
-void signals_init(void)
+void	signals_init(void)
 {
-    struct sigaction sa_int;
-    struct sigaction sa_quit;
+	struct sigaction	sa_int;
+	struct sigaction	sa_quit;
 
-    sa_int.sa_handler = sigint_handler;
-    sigemptyset(&sa_int.sa_mask);
-    sa_int.sa_flags = SA_RESTART;
-    sigaction(SIGINT, &sa_int, NULL);
+	sa_int.sa_handler = sigint_handler;
+	sigemptyset(&sa_int.sa_mask);
+	sa_int.sa_flags = SA_RESTART;
+	sigaction(SIGINT, &sa_int, NULL);
+	sa_quit.sa_handler = SIG_IGN;
+	sigemptyset(&sa_quit.sa_mask);
+	sa_quit.sa_flags = SA_RESTART;
+	sigaction(SIGQUIT, &sa_quit, NULL);
+}
 
-    sa_quit.sa_handler = SIG_IGN;
-    sigemptyset(&sa_quit.sa_mask);
-    sa_quit.sa_flags = SA_RESTART;
-    sigaction(SIGQUIT, &sa_quit, NULL);
+void	print_tokens(t_gen_list *tokens)
+{
+	t_iter	it;
+	t_token	*tok;
+		const char *type_str;
+
+	if (!tokens)
+		return ;
+	it = iter_start(tokens);
+	while ((tok = (t_token *)iter_next(&it)) != NULL)
+	{
+		switch (tok->type)
+		{
+		case TOKEN_CMD:
+			type_str = "CMD";
+			break ;
+		case TOKEN_ARG:
+			type_str = "ARG";
+			break ;
+		case TOKEN_PIPE:
+			type_str = "PIPE";
+			break ;
+		case TOKEN_REDIR_IN:
+			type_str = "REDIR_IN";
+			break ;
+		case TOKEN_REDIR_OUT:
+			type_str = "REDIR_OUT";
+			break ;
+		case TOKEN_REDIR_APPEND:
+			type_str = "REDIR_APPEND";
+			break ;
+		case TOKEN_HEREDOC:
+			type_str = "HEREDOC";
+			break ;
+		default:
+			type_str = "UNKNOWN";
+			break ;
+		}
+		printf("[%s] : [%s]\n", type_str, tok->value);
+	}
 }
 
 int	main(int args, char **environment_var_str_array)
@@ -119,7 +159,6 @@ int	main(int args, char **environment_var_str_array)
 	bool		finish;
 	char		*line;
 	char		*name;
-
 
 	if (args > 1)
 		exit(0);
@@ -132,20 +171,21 @@ int	main(int args, char **environment_var_str_array)
 	{
 		line = readline(name);
 		if ((ft_strlen(line) != 0 && ft_strncmp(line, "exit",
-				ft_strlen(line)) == 0) || line == NULL)
+					ft_strlen(line)) == 0) || line == NULL)
 			finish = true;
 		else if (ft_strlen(line) != 0)
 		{
-			current_command_list = get_command_list_from_line(line);
+			// current_command_list = get_command_list_from_line(line);
 			if (check_cmd(line) == NULL)
 				continue ;
 			add_history(line);
-			command_execution(current_command_list, envioroment_vars);
+			print_tokens(tokenize(line));
+			// command_execution(current_command_list, envioroment_vars);
 		}
-		free(line);
-		line = NULL;
-		destroy_gen_list(current_command_list, destroy_command);
-		current_command_list = NULL;
+		// free(line);
+		// line = NULL;
+		// destroy_gen_list(current_command_list, destroy_command);
+		// current_command_list = NULL;
 	}
-	destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+	// destroy_gen_list(envioroment_vars, destroy_envioroment_var);
 }
