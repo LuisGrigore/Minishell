@@ -10,7 +10,7 @@
 static int				last_redirecction_before_string_from_string(char *str);
 static int				first_redirection_after_string_from_string(char *str);
 
-static t_command	*init_command(t_gen_list *args, t_command_funct funct,
+t_command	*init_command(t_gen_list *args, t_command_funct funct,
 		t_gen_list *redirects)
 {
 	t_command	*new_command;

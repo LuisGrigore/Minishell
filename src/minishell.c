@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 17:45:08 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 19:08:51 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../include/command.h"
 #include "../include/envioroment.h"
 #include "../include/list.h"
+#include "../include/parser.h"
 #include "../include/pipe.h"
 #include "../include/tokenizer.h"
 #include "../libft/libft.h"
@@ -112,9 +113,9 @@ void	signals_init(void)
 
 void	print_tokens(t_gen_list *tokens)
 {
-	t_iter	it;
-	t_token	*tok;
-		const char *type_str;
+	t_iter		it;
+	t_token		*tok;
+	const char	*type_str;
 
 	if (!tokens)
 		return ;
@@ -152,9 +153,72 @@ void	print_tokens(t_gen_list *tokens)
 	}
 }
 
+void print_redirect(t_redirect *redir) {
+    if (!redir) return;
+    const char *type_str;
+    switch (redir->redirect_simbol) {
+        case LEFT_REDIRECT: type_str = "<"; break;
+        case RIGHT_REDIRECT: type_str = ">"; break;
+        case DOUBLE_LEFT_REDIRECT: type_str = "<<"; break;
+        case DOUBLE_RIGHT_REDIRECT: type_str = ">>"; break;
+        case NONE: type_str = "NONE"; break;
+        case ERROR: type_str = "ERROR"; break;
+        default: type_str = "UNKNOWN"; break;
+    }
+    printf("    Redirect: %s %s\n", type_str, redir->file);
+}
+
+void print_command(t_command *cmd, int index) {
+    if (!cmd) return;
+
+    printf("Command #%d:\n", index);
+
+    //Imprimir args
+    if (cmd->args && cmd->args->size > 0) {
+        printf("  Args:\n");
+        
+		t_iter arg_it = iter_start(cmd->args);
+        char *arg;
+        while ((arg = (char *)iter_next(&arg_it)) != NULL) {
+            printf("    %s\n", arg);
+        }
+    } else {
+        printf("  Args: (none)\n");
+    }
+
+    //Imprimir redirects
+    if (cmd->redirects && cmd->redirects->size > 0) {
+        printf("  Redirects:\n");
+        t_iter red_it = iter_start(cmd->redirects);
+        t_redirect *redir;
+        while ((redir = (t_redirect *)iter_next(&red_it)) != NULL) {
+            print_redirect(redir);
+        }
+    } else {
+        printf("  Redirects: (none)\n");
+    }
+
+    printf("\n");
+}
+
+void print_commands(t_gen_list *commands) {
+    if (!commands || commands->size == 0) {
+        printf("No commands to print.\n");
+        return;
+    }
+
+    t_iter it = iter_start(commands);
+    t_command *cmd;
+    int index = 1;
+    while ((cmd = (t_command *)iter_next(&it)) != NULL) {
+        print_command(cmd, index++);
+    }
+}
+
 int	main(int args, char **environment_var_str_array)
 {
-	t_gen_list	*current_command_list;
+	t_gen_list	*tokens;
+	t_gen_list	*current_commands;
 	t_gen_list	*envioroment_vars;
 	bool		finish;
 	char		*line;
@@ -179,13 +243,16 @@ int	main(int args, char **environment_var_str_array)
 			if (check_cmd(line) == NULL)
 				continue ;
 			add_history(line);
-			print_tokens(tokenize(line));
-			// command_execution(current_command_list, envioroment_vars);
+			tokens = tokenize(line);
+			//print_tokens(tokens);
+			current_commands = parse_tokens_to_commands(tokens);
+			//print_commands(current_commands);
+			command_execution(current_commands, envioroment_vars);
 		}
-		// free(line);
-		// line = NULL;
-		// destroy_gen_list(current_command_list, destroy_command);
-		// current_command_list = NULL;
+		free(line);
+		line = NULL;
+		destroy_gen_list(current_commands, destroy_command);
+		current_commands = NULL;
 	}
-	// destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+	destroy_gen_list(envioroment_vars, destroy_envioroment_var);
 }

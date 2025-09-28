@@ -44,6 +44,7 @@ t_gen_list *tokenize(const char *line) {
     if (!tokens_list) return NULL;
 
     bool expect_cmd = true; // El siguiente token no operador será CMD
+    bool next_is_redir_arg = false; // El siguiente token después de >, >>, <, <<
 
     while (i < len) {
         while (i < len && is_space(line[i])) i++;
@@ -55,6 +56,10 @@ t_gen_list *tokenize(const char *line) {
             t_token *tok = create_token(operator_type(op, 2), op);
             push_end(tokens_list, tok);
             i += 2;
+
+            if (tok->type == TOKEN_REDIR_APPEND || tok->type == TOKEN_HEREDOC)
+                next_is_redir_arg = true;
+
             continue;
         }
 
@@ -64,10 +69,12 @@ t_gen_list *tokenize(const char *line) {
             t_token *tok = create_token(operator_type(op, 1), op);
             push_end(tokens_list, tok);
             i++;
-            if (tok->type == TOKEN_PIPE || tok->type == TOKEN_REDIR_IN ||
-                tok->type == TOKEN_REDIR_OUT || tok->type == TOKEN_REDIR_APPEND ||
-                tok->type == TOKEN_HEREDOC)
-                expect_cmd = true; // después de operador esperamos comando
+
+            if (tok->type == TOKEN_REDIR_IN || tok->type == TOKEN_REDIR_OUT)
+                next_is_redir_arg = true;
+            else if (tok->type == TOKEN_PIPE)
+                expect_cmd = true;
+
             continue;
         }
 
@@ -77,7 +84,6 @@ t_gen_list *tokenize(const char *line) {
 
         while (i < len && !is_space(line[i]) && !is_operator_char(line[i])) {
             char c = line[i];
-            // Manejo de comillas simples, dobles y escapes (igual que antes)
             if (c == '\'') { i++; while(i<len && line[i]!='\''){ if(blen+1>=bcap){ size_t nc=(bcap?bcap*2:64); char*tmp=realloc(buf,nc); buf=tmp;bcap=nc;} buf[blen++]=line[i++]; } if(i<len&&line[i]=='\'') i++; }
             else if(c=='"'){ i++; while(i<len && line[i]!='"'){ if(line[i]=='\\'&&i+1<len){ if(blen+1>=bcap){ size_t nc=(bcap?bcap*2:64); char*tmp=realloc(buf,nc); buf=tmp;bcap=nc; } buf[blen++]=line[i+1]; i+=2; } else { if(blen+1>=bcap){ size_t nc=(bcap?bcap*2:64); char*tmp=realloc(buf,nc); buf=tmp;bcap=nc;} buf[blen++]=line[i++]; } } if(i<len&&line[i]=='"') i++; }
             else if(c=='\\'&&i+1<len){ if(blen+1>=bcap){ size_t nc=(bcap?bcap*2:64); char*tmp=realloc(buf,nc); buf=tmp;bcap=nc;} buf[blen++]=line[i+1]; i+=2; }
@@ -88,8 +94,16 @@ t_gen_list *tokenize(const char *line) {
         if(blen==0){ size_t wlen=i-start; word=ft_strndup(line+start,wlen); if(!word) goto error; }
         else { word=malloc(blen+1); if(!word) goto error; for(size_t k=0;k<blen;k++) word[k]=buf[k]; word[blen]='\0'; free(buf); }
 
-        t_token_type type = expect_cmd ? TOKEN_CMD : TOKEN_ARG;
-        expect_cmd = false; // ya marcamos comando si tocaba
+        t_token_type type;
+        if (next_is_redir_arg) {
+            type = TOKEN_ARG; // siempre argumento si viene después de redirección
+            next_is_redir_arg = false;
+        } else if (expect_cmd) {
+            type = TOKEN_CMD;
+            expect_cmd = false;
+        } else {
+            type = TOKEN_ARG;
+        }
 
         t_token *tok = create_token(type, word);
         push_end(tokens_list, tok);
@@ -101,3 +115,4 @@ error:
     if(tokens_list) destroy_gen_list(tokens_list, free);
     return NULL;
 }
+
