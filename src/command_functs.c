@@ -6,13 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 16:08:43 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 17:03:24 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../include/command_functs.h"
 #include "../libft/libft.h"
+#include <signal.h>
 
 void	bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
@@ -34,6 +35,8 @@ void	bin_execute(t_command *cmd, t_gen_list *envioroment)
 		write(2, "Path doesnt found\n", 19);
 		exit(1);
 	}
+    signal(SIGINT, SIG_DFL);
+    signal(SIGQUIT, SIG_DFL); 
 	execve(path, cmd2, env);
 	if (path)
 		free(path);

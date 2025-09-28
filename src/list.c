@@ -68,7 +68,7 @@ void	traverse(t_gen_list *list, void (*func)(void *))
 	}
 }
 
-void	*find_in_list(t_gen_list *list, int (*predicate)(void *))
+void	*find_in_list(t_gen_list *list, bool (*predicate)(void *))
 {
 	t_node	*current;
 
