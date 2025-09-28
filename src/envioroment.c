@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/25 14:25:16 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 16:07:55 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,11 @@
 #include "stdlib.h"
 #include <stdio.h>
 
-t_envioroment_var	*init_envioroment_var(void)
+t_envioroment_var	*init_envioroment_var(char *name, char *value)
 {
 	t_envioroment_var	*new_env;
 
 	new_env = ft_calloc(1, sizeof(t_envioroment_var));
-	new_env->var_name = NULL;
-	new_env->var_value = NULL;
-	return (new_env);
-}
-
-t_envioroment_var	*init_envioroment_var_name_value(char *name, char *value)
-{
-	t_envioroment_var	*new_env;
-
-	new_env = init_envioroment_var();
 	new_env->var_name = name;
 	new_env->var_value = value;
 	return (new_env);
@@ -48,7 +38,7 @@ t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
 	{
 		var_str_name_value_split = ft_split(str_array[i], '=');
 		push_end(env_var_list,
-			init_envioroment_var_name_value(var_str_name_value_split[0],
+			init_envioroment_var(var_str_name_value_split[0],
 				var_str_name_value_split[1]));
 		free(var_str_name_value_split);
 		i++;

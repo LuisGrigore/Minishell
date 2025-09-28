@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/25 14:25:16 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 16:08:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,7 @@ void	export_execute(t_command *command, t_gen_list *envioroment)
 
 	current_node = command->args->head->next;
 	new_variable = ft_split2(current_node->value, '=');
-	new_sport = init_envioroment_var();
-	new_sport->var_name = new_variable[0];
-	new_sport->var_value = new_variable[1];
+	new_sport = init_envioroment_var(new_variable[0], new_variable[1]);
 	free(new_variable);
 	if (get_var_value_from_name(envioroment, new_sport->var_name) == NULL)
 		push_end(envioroment, new_sport);
