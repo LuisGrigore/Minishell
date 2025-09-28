@@ -10,16 +10,16 @@ typedef enum e_redirect_type
 	DOUBLE_RIGHT_REDIRECT,
 	NONE,
 	ERROR,
-}				t_redirect_type;
+}					t_redirect_type;
 
 typedef struct s_redirect
 {
-	char		*file;
+	char			*file;
 	t_redirect_type	redirect_simbol;
-}				t_redirect;
+}					t_redirect;
 
-t_redirect		*init_redirect(char *file, t_redirect_type redirect_type);
-t_gen_list		*get_redirects_from_str_arr(char *str);
-void			destroy_redirect(void *redirect);
+t_redirect			*init_redirect(char *file, t_redirect_type redirect_type);
+t_gen_list			*get_redirects_from_str_arr(char *str);
+void				destroy_redirect(void *redirect);
 
 #endif

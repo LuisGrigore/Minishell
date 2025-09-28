@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Formatear archivos C
-c_formatter_42 $(find . -type f \( -name "*.c" -o -name "*.h" \))
+# c_formatter_42 $(find . -type f \( -name "*.c" -o -name "*.h" \))
 
 # Nombre del programa
 NAME="${1:-programa}"

@@ -1,0 +1,124 @@
+#include <stdlib.h>
+#include "../include/parser.h"
+#include "../include/tokenizer.h"
+#include "../include/command.h"
+#include "../include/command_functs.h"
+#include "../libft/libft.h" // para ft_strlen, ft_strlcpy
+
+static t_command_funct get_command_function(t_gen_list *args)
+{
+    if (!args || args->size == 0)
+        return NULL;
+
+    char *cmd_name = (char *)args->head->value;
+
+    if (ft_strlen(cmd_name) == 0)
+        return NULL;
+
+    if (ft_strncmp(cmd_name, "echo", 5) == 0)
+        return echo_execute;
+    else if (ft_strncmp(cmd_name, "cd", 3) == 0)
+        return cd_execute;
+    else if (ft_strncmp(cmd_name, "pwd", 4) == 0)
+        return pwd_execute;
+    else if (ft_strncmp(cmd_name, "export", 7) == 0)
+        return export_execute;
+    else if (ft_strncmp(cmd_name, "unset", 6) == 0)
+        return unset_execute;
+    else if (ft_strncmp(cmd_name, "env", 4) == 0)
+        return env_execute;
+    else
+        return bin_execute; // cualquier otro comando es ejecutable externo
+}
+
+t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
+{
+    if (!tokens)
+        return NULL;
+
+    t_gen_list *commands = init_list();
+    if (!commands)
+        return NULL;
+
+    t_gen_list *current_args = init_list();
+    t_gen_list *current_redirects = init_list();
+
+    t_iter it = iter_start(tokens);
+    t_token *tok;
+
+    while ((tok = (t_token *)iter_next(&it)) != NULL)
+    {
+        if (tok->type == TOKEN_ARG || tok->type == TOKEN_CMD)
+        {
+            // Copiar string y añadir a args usando ft_strlcpy
+            size_t len = ft_strlen(tok->value);
+            char *arg_copy = malloc(len + 1);
+            if (!arg_copy)
+                goto error;
+            ft_strlcpy(arg_copy, tok->value, len + 1);
+            push_end(current_args, arg_copy);
+        }
+        else if (tok->type == TOKEN_PIPE)
+        {
+            // Asignar función antes de crear el comando
+            t_command_funct funct = get_command_function(current_args);
+
+            t_command *cmd = init_command(current_args, funct, current_redirects);
+            if (!cmd)
+                goto error;
+            push_end(commands, cmd);
+
+            // Inicializar listas para siguiente comando
+            current_args = init_list();
+            current_redirects = init_list();
+        }
+        else if (tok->type == TOKEN_REDIR_IN ||
+                 tok->type == TOKEN_REDIR_OUT ||
+                 tok->type == TOKEN_REDIR_APPEND ||
+                 tok->type == TOKEN_HEREDOC)
+        {
+            // El siguiente token debe ser el archivo
+            t_token *file_tok = (t_token *)iter_next(&it);
+            if (!file_tok || file_tok->type != TOKEN_ARG)
+                goto error;
+
+            t_redirect_type r_type = NONE;
+            if (tok->type == TOKEN_REDIR_IN)
+                r_type = LEFT_REDIRECT;
+            else if (tok->type == TOKEN_REDIR_OUT)
+                r_type = RIGHT_REDIRECT;
+            else if (tok->type == TOKEN_REDIR_APPEND)
+                r_type = DOUBLE_RIGHT_REDIRECT;
+            else if (tok->type == TOKEN_HEREDOC)
+                r_type = DOUBLE_LEFT_REDIRECT;
+
+            t_redirect *redir = init_redirect(file_tok->value, r_type);
+            if (!redir)
+                goto error;
+            push_end(current_redirects, redir);
+        }
+    }
+
+    // Guardar el último comando si hay args o redirs
+    if (current_args->size > 0 || current_redirects->size > 0)
+    {
+        t_command_funct funct = get_command_function(current_args);
+        t_command *cmd = init_command(current_args, funct, current_redirects);
+        if (!cmd)
+            goto error;
+        push_end(commands, cmd);
+    }
+    else
+    {
+        destroy_gen_list(current_args, free);
+        destroy_gen_list(current_redirects, (void (*)(void *))destroy_command);
+    }
+
+    return commands;
+
+error:
+    destroy_gen_list(current_args, free);
+    destroy_gen_list(current_redirects, (void (*)(void *))destroy_command);
+    destroy_gen_list(commands, (void (*)(void *))destroy_command);
+    return NULL;
+}

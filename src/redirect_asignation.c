@@ -3,8 +3,8 @@
 #include "../libft/libft.h"
 
 static t_redirect_type	get_redirection_type_from_str(char *str);
-static char			*first_redirection(char *str);
-static char			*get_file_from_str(char *str, char *redirection);
+static char				*first_redirection(char *str);
+static char				*get_file_from_str(char *str, char *redirection);
 
 t_gen_list	*get_redirects_from_str_arr(char *str)
 {
@@ -17,7 +17,9 @@ t_gen_list	*get_redirects_from_str_arr(char *str)
 	current_redirecction = first_redirection(str);
 	while (current_redirecction != NULL)
 	{
-		current_node_value = init_redirect(get_file_from_str(str, current_redirecction),get_redirection_type_from_str(current_redirecction));
+		current_node_value = init_redirect(get_file_from_str(str,
+					current_redirecction),
+				get_redirection_type_from_str(current_redirecction));
 		push_end(redirects, current_node_value);
 		i = special_char(str, current_redirecction)
 			+ (int)ft_strlen(current_redirecction);
@@ -79,16 +81,18 @@ static t_redirect_type	get_redirection_type_from_str(char *str)
 		return (DOUBLE_LEFT_REDIRECT);
 	return (ERROR);
 }
-t_redirect	*init_redirect(char *file, t_redirect_type redirect_type)
-{
-	t_redirect	*result;
-
-	result = ft_calloc(1, sizeof(t_redirect));
-	if (!result)
-		return NULL;
-	result->file = file;
-	result->redirect_simbol = redirect_type;
-	return (result);
+t_redirect *init_redirect(char *file, t_redirect_type redirect_type) {
+    t_redirect *r = malloc(sizeof(t_redirect));
+    if (!r) return NULL;
+    r->redirect_simbol = redirect_type;
+    if (file) {
+        r->file = malloc(ft_strlen(file) + 1);
+        if (!r->file) { free(r); return NULL; }
+        ft_strlcpy(r->file, file, ft_strlen(file) + 1);
+    } else {
+        r->file = NULL;
+    }
+    return r;
 }
 void	destroy_redirect(void *redirect)
 {
