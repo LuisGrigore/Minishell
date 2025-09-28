@@ -116,3 +116,16 @@ error:
     return NULL;
 }
 
+void destroy_token(t_token *token)
+{
+    if (!token)
+        return;
+
+    if (token->value)
+    {
+        free(token->value);
+        token->value = NULL;
+    }
+
+    free(token);
+}
