@@ -67,3 +67,19 @@ void	traverse(t_gen_list *list, void (*func)(void *))
 		current = current->next;
 	}
 }
+
+void	*find_in_list(t_gen_list *list, int (*predicate)(void *))
+{
+	t_node	*current;
+
+	if (!list || !predicate)
+		return (NULL);
+	current = list->head;
+	while (current)
+	{
+		if (predicate(current->value))
+			return (current->value);
+		current = current->next;
+	}
+	return (NULL);
+}

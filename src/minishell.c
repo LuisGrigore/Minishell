@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 16:09:47 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/28 16:11:36 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,18 +100,18 @@ int	main(int args, char **environment_var_str_array)
 		if (ft_strlen(line) != 0 && ft_strncmp(line, "exit",
 				ft_strlen(line)) == 0)
 			finish = true;
-		else if (ft_strlen(line) != 0)
-		{
-			current_command_list = get_command_list_from_line(line);
-			if (check_cmd(line) == NULL)
-				continue ;
-			add_history(line);
-			command_execution(current_command_list, envioroment_vars);
-		}
-		free(line);
-		line = NULL;
-		destroy_gen_list(current_command_list, destroy_command);
-		current_command_list = NULL;
+		// else if (ft_strlen(line) != 0)
+		// {
+		// 	current_command_list = get_command_list_from_line(line);
+		// 	if (check_cmd(line) == NULL)
+		// 		continue ;
+		// 	add_history(line);
+		// 	command_execution(current_command_list, envioroment_vars);
+		// }
+		// free(line);
+		// line = NULL;
+		// destroy_gen_list(current_command_list, destroy_command);
+		// current_command_list = NULL;
 	}
-	destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+	// destroy_gen_list(envioroment_vars, destroy_envioroment_var);
 }
