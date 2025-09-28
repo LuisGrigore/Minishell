@@ -1,11 +1,11 @@
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = 
 INCLUDES =  -I./include -I./libft
 
 OBJ_DIR = obj
-NAME    = minishel
+NAME    = minishell
 
-SRCS    = ./src/init/command.c ./src/init/envioroment.c ./src/init/redirect_asignation.c ./src/init/find_command.c ./src/init/redirect.c ./src/init/pipe.c ./src/init/list.c ./src/init/minishell.c ./src/init/command_functs.c ./src/utils/ft_split2.0.c ./src/utils/path_utils.c 
+SRCS    = ./src/command.c ./src/envioroment.c ./src/ft_split2.0.c ./src/redirect_asignation.c ./src/tokenizer.c ./src/find_command.c ./src/redirect.c ./src/pipe.c ./src/path_utils.c ./src/list.c ./src/minishell.c ./src/command_functs.c 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 LINK_FLAGS = -lreadline -lncurses
 SUBSYSTEM_PATH = ./libft

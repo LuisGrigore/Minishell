@@ -10,7 +10,8 @@
 static int				last_redirecction_before_string_from_string(char *str);
 static int				first_redirection_after_string_from_string(char *str);
 
-static t_command	*init_command(t_gen_list *args, t_command_funct funct, t_gen_list *redirects)
+static t_command	*init_command(t_gen_list *args, t_command_funct funct,
+		t_gen_list *redirects)
 {
 	t_command	*new_command;
 
@@ -87,7 +88,9 @@ t_gen_list	*get_command_list_from_line(char *line)
 	command_str_arr = ft_split2(line, '|');
 	while (command_str_arr[i])
 	{
-		push_end(command_list, init_command(get_args(command_str_arr[i]), get_command_funct(get_command_name(command_str_arr[i])), get_redirects_from_str_arr(command_str_arr[i])));
+		push_end(command_list, init_command(get_args(command_str_arr[i]),
+				get_command_funct(get_command_name(command_str_arr[i])),
+				get_redirects_from_str_arr(command_str_arr[i])));
 		i++;
 	}
 	return (command_list);

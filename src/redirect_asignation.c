@@ -92,7 +92,7 @@ t_redirect	*init_redirect(void)
 }
 void	destroy_redirect(void *redirect)
 {
-	t_redirect *aux;
+	t_redirect	*aux;
 
 	aux = (t_redirect *)redirect;
 	free(aux->file);

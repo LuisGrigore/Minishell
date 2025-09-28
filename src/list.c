@@ -54,17 +54,16 @@ void	destroy_gen_list(t_gen_list *list, void (*value_destroyer)(void *))
 	}
 	free(list);
 }
-void traverse(t_gen_list *list, void (*func)(void *))
+void	traverse(t_gen_list *list, void (*func)(void *))
 {
-    t_node *current;
+	t_node	*current;
 
-    if (!list || !func)
-        return;
-
-    current = list->head;
-    while (current)
-    {
-        func(current->value);
-        current = current->next;
-    }
+	if (!list || !func)
+		return ;
+	current = list->head;
+	while (current)
+	{
+		func(current->value);
+		current = current->next;
+	}
 }
