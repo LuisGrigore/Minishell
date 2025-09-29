@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:55:21 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 00:11:26 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int add_var(t_gen_list *env, char *name, char *value)
         return 1;
     }
 
-    new_var = init_envioroment_var(name, value);
+    new_var = init_envioroment_var(ft_strdup(name), ft_strdup(value));
     if (!new_var)
         return 0;
     
@@ -64,10 +64,33 @@ int add_var(t_gen_list *env, char *name, char *value)
     return 1;
 }
 
+static char *env_var_to_string(void *element)
+{
+    t_envioroment_var *env_var = (t_envioroment_var *)element;
+    if (!env_var)
+        return NULL;
 
-t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
+    char *name_eq = ft_strjoin(env_var->var_name, "=");
+    if (!name_eq)
+        return NULL;
+
+    char *result = ft_strjoin(name_eq, env_var->var_value);
+    free(name_eq);
+
+    return result;
+}
+
+char **serialize_environment_vars(t_gen_list *envioroment)
+{
+	if (!envioroment)
+		return(NULL);
+	return (serialize_to_string_array(envioroment, env_var_to_string));
+}
+
+t_gen_list	*deserialize_environment_vars(char **str_array)
 {
 	int			i;
+	size_t			j;
 	t_gen_list	*env_var_list;
 	char		**var_str_name_value_split;
 
@@ -84,6 +107,7 @@ t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
 	return (env_var_list);
 }
 
+
 bool contains_variable(t_gen_list *environment_vars, char *name)
 {
 	return (contains_in_list_ctx(environment_vars,var_name_filter, name));
@@ -97,28 +121,7 @@ char	*get_var_value(t_gen_list *environment_vars, char *name)
 		return (NULL);
 	return (ft_strdup(found_var->var_value));
 }
-char	**get_str_array_from_envioroment_var_list(t_gen_list *envioroment)
-{
-	t_envioroment_var	*current_env_value;
-	t_node				*current_env_node;
-	char				**result;
-	int					i;
-	char				*aux_of_free;
 
-	i = 0;
-	result = ft_caalloc(envioroment->size + 1, sizeof(char *));
-	current_env_node = envioroment->head;
-	while (current_env_node != NULL)
-	{
-		current_env_value = (t_envioroment_var *)current_env_node->value;
-		aux_of_free = ft_strjoin(current_env_value->var_name, "=");
-		result[i] = ft_strjoin(aux_of_free, current_env_value->var_value);
-		free(aux_of_free);
-		i++;
-		current_env_node = current_env_node->next;
-	}
-	return (result);
-}
 
 static void	destroy_envioroment_var(void *envioroment_var)
 {
@@ -130,7 +133,7 @@ static void	destroy_envioroment_var(void *envioroment_var)
 	free(aux);
 }
 
-void	remove_envioroment_var_from_name(t_gen_list *envioroment, char *name)
+void	remove_var(t_gen_list *envioroment, char *name)
 {
 	remove_if_ctx(envioroment, var_name_filter, (void *) name, destroy_envioroment_var);
 }
