@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 01:17:53 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 01:24:21 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
         exit(1);
     }
 
-    env = serialize_environment_vars(envioroment);
+    env = env_serialize(envioroment);
     cmd2 = serialize_to_string_array(cmd->args,serialize_arg);
 
     path = find_command(env, cmd2[0]);
@@ -70,7 +70,7 @@ void cd_execute(t_command *command, t_gen_list *environment)
         fprintf(stderr, "cd: missing argument\n");
         return;
     }
-    old_directory = get_var_value(environment, "PWD");
+    old_directory = env_get(environment, "PWD");
     it = iter_start(command->args);
     iter_next(&it);
     target = iter_next(&it);
@@ -83,8 +83,8 @@ void cd_execute(t_command *command, t_gen_list *environment)
             return;
         }
         if (old_directory)
-            add_var(environment, old_directory, "OLDPWD");
-        add_var(environment, ft_strdup(target), "PWD");
+            env_set(environment, old_directory, "OLDPWD");
+        env_set(environment, ft_strdup(target), "PWD");
         free(old_directory);
         return;
     }
@@ -100,8 +100,8 @@ void cd_execute(t_command *command, t_gen_list *environment)
                 free(old_directory);
                 return;
             }
-            add_var(environment, old_directory, "OLDPWD");
-            add_var(environment, joined_path, "PWD");
+            env_set(environment, old_directory, "OLDPWD");
+            env_set(environment, joined_path, "PWD");
             free(joined_path);
             free(old_directory);
             return;
@@ -117,7 +117,7 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
 	char *current_dir;
 	if (command == NULL)
 		return ;
-	current_dir = get_var_value(envioroment, "PWD");
+	current_dir = env_get(envioroment, "PWD");
 	printf("%s\n", current_dir);
 	free(current_dir);
 	exit(0);
@@ -131,7 +131,7 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 		perror("env :");
 		return;
 	}
-	serialized_env = serialize_environment_vars(envioroment);
+	serialized_env = env_serialize(envioroment);
 	i = 0;
 	while(i < envioroment->size)
 	{
@@ -155,7 +155,7 @@ void export_execute(t_command *command, t_gen_list *envioroment)
     if (!new_variable || !new_variable[0] || !new_variable[1])
         return;
 
-    add_var(envioroment, new_variable[0], new_variable[1]);
+    env_set(envioroment, new_variable[0], new_variable[1]);
     size_t i = 0;
     while (i < 2)
     {
@@ -169,7 +169,7 @@ void	unset_execute(t_command *command, t_gen_list *envioroment)
 	t_node	*current_node;
 
 	current_node = command->args->head->next;
-	remove_var(envioroment, (char *)current_node->value);
+	env_unset(envioroment, (char *)current_node->value);
 }
 void echo_execute(t_command *command, t_gen_list *envioroment)
 {

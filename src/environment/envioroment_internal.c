@@ -6,42 +6,46 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 01:19:14 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 01:21:34 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "environment_internal.h"
 #include "../../libft/libft.h"
+#include "environment_internal.h"
 #include <stdlib.h>
 
-bool var_name_filter(void *var_ptr, void *context)
+bool	var_name_filter(void *var_ptr, void *context)
 {
-    char *name = (char *)context;
-    t_environment_var *var = (t_environment_var *)var_ptr;
-	size_t name_size = ft_strlen(name);
-    if (ft_strlen(var->var_name) == name_size && ft_strncmp(var->var_name, name, name_size) == 0)
-        return true;
-    return false;
+	char		*name;
+	t_env_var	*var;
+	size_t		name_size;
+
+	name = (char *)context;
+	var = (t_env_var *)var_ptr;
+	name_size = ft_strlen(name);
+	if (ft_strlen(var->var_name) == name_size && ft_strncmp(var->var_name, name,
+			name_size) == 0)
+		return (true);
+	return (false);
 }
 
-t_environment_var	*init_environment_var(char *name, char *value)
+t_env_var	*init_environment_var(char *name, char *value)
 {
-	t_environment_var	*new_env;
+	t_env_var	*new_env;
 
-	new_env = ft_calloc(1, sizeof(t_environment_var));
+	new_env = ft_calloc(1, sizeof(t_env_var));
 	if (new_env == NULL)
-	return NULL;
+		return (NULL);
 	new_env->var_name = name;
 	new_env->var_value = value;
 	return (new_env);
 }
 
-
 void	destroy_environment_var(void *envioroment_var)
 {
-	t_environment_var	*aux;
+	t_env_var	*aux;
 
-	aux = (t_environment_var *)envioroment_var;
+	aux = (t_env_var *)envioroment_var;
 	free(aux->var_name);
 	free(aux->var_value);
 	free(aux);
