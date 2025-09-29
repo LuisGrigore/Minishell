@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:54:36 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 00:11:45 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,12 @@ int add_var(t_gen_list *env, char *name, char *value);
  *
  * @param env Environment variable list.
  * @param name Name of the variable.
- * @return 1 if success, error otherwhise. 
  */
-int remove_var(t_gen_list *env, char *name);
+void remove_var(t_gen_list *env, char *name);
 
-t_envioroment_var	*init_envioroment_var(char *name, char *value);
-t_gen_list			*get_environment_var_list_from_str_array(char **str_array);
-char				**get_str_array_from_envioroment_var_list(t_gen_list *envioroment);
+t_gen_list			*deserialize_environment_vars(char **str_array);
+
+char **serialize_environment_vars(t_gen_list *envioroment);
 
 /**
  * @brief Gets the value of an environment variable given its name.
@@ -62,8 +61,6 @@ char				*get_var_value(t_gen_list *environment_vars,
  */
 bool contains_variable(t_gen_list *environment_vars, char *name);
 
-void				remove_envioroment_var_from_name(t_gen_list *envioroment,
-						char *name);
 void destroy_environment(t_gen_list *env);
 
 #endif

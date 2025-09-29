@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:55:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 00:10:30 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,13 @@
 #include "../libft/libft.h"
 #include <signal.h>
 
-static char	**get_str_array_from_gen_list_args(t_gen_list *args)
-{
-	char	**result;
-	t_node	*current_node;
-	int		i;
 
-	i = 0;
-	result = ft_calloc(args->size + 1, sizeof(char *));
-	current_node = args->head;
-	while (current_node != NULL)
-	{
-		result[i] = ft_strdup((char *)current_node->value);
-		current_node = current_node->next;
-		i++;
-	}
-	return (result);
+static char *serialize_arg(void *arg_ptr)
+{
+	char *arg = (char *) arg_ptr;
+	return (ft_strdup(arg));
 }
+
 
 void bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
@@ -47,8 +37,8 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
         exit(1);
     }
 
-    env = get_str_array_from_envioroment_var_list(envioroment);
-    cmd2 = get_str_array_from_gen_list_args(cmd->args);
+    env = serialize_environment_vars(envioroment);
+    cmd2 = serialize_to_string_array(cmd->args,serialize_arg);
 
     path = find_command(env, cmd2[0]);
     if (!path)
@@ -148,32 +138,36 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 		current_node = current_node->next;
 	}
 }
-void	export_execute(t_command *command, t_gen_list *envioroment)
+void export_execute(t_command *command, t_gen_list *envioroment)
 {
-	t_envioroment_var	*new_sport;
-	t_node				*current_node;
-	char				**new_variable;
+    t_node *current_node;
+    char **new_variable;
 
-	current_node = command->args->head->next;
-	new_variable = ft_split2(current_node->value, '=');
-	new_sport = init_envioroment_var(new_variable[0], new_variable[1]);
-	free(new_variable);
-	if (!contains_variable(envioroment, new_sport->var_name))
-		push_end(envioroment, new_sport);
-	else
-	{
-		add_var(envioroment, new_sport->var_value,
-			new_sport->var_name);
-		free(new_sport->var_name);
-		free(new_sport);
-	}
+    if (!command || !command->args || !envioroment)
+        return;
+    current_node = command->args->head->next;
+    if (!current_node || !current_node->value)
+        return;
+
+    new_variable = ft_split2(current_node->value, '=');
+    if (!new_variable || !new_variable[0] || !new_variable[1])
+        return;
+
+    add_var(envioroment, new_variable[0], new_variable[1]);
+    size_t i = 0;
+    while (i < 2)
+    {
+        free(new_variable[i]);
+        i++;
+    }
+    free(new_variable);
 }
 void	unset_execute(t_command *command, t_gen_list *envioroment)
 {
 	t_node	*current_node;
 
 	current_node = command->args->head->next;
-	remove_envioroment_var_from_name(envioroment, (char *)current_node->value);
+	remove_var(envioroment, (char *)current_node->value);
 }
 void echo_execute(t_command *command, t_gen_list *envioroment)
 {

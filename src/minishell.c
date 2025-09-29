@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:40:44 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 00:12:56 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,7 @@ int	main(int args, char **environment_var_str_array)
 	if (args > 1)
 		exit(0);
 	signals_init();
-	envioroment_vars = get_environment_var_list_from_str_array(environment_var_str_array
+	envioroment_vars = deserialize_environment_vars(environment_var_str_array
 			+ 2);
 	name = username(envioroment_vars);
 	finish = false;
@@ -244,7 +244,6 @@ int	main(int args, char **environment_var_str_array)
 			finish = true;
 		else if (ft_strlen(line) != 0)
 		{
-			// current_command_list = get_command_list_from_line(line);
 			if (check_cmd(line) == NULL)
 				continue ;
 			add_history(line);
