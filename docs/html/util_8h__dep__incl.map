@@ -1,0 +1,19 @@
+<map id="include/util.h" name="include/util.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="537,5,644,31"/>
+<area shape="rect" id="Node000002" href="$bin__commandss__execution_8h.html" title=" " alt="" coords="184,79,363,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="532,37,350,81,349,76,531,31"/>
+<area shape="rect" id="Node000006" href="$ft__split2_80_8c.html" title=" " alt="" coords="387,86,507,111"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="559,40,469,88,467,83,556,35"/>
+<area shape="rect" id="Node000007" href="$path__utils_8c.html" title=" " alt="" coords="531,86,651,111"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="593,44,593,86,588,86,588,44"/>
+<area shape="rect" id="Node000008" href="$redirect__asignation_8c.html" title=" " alt="" coords="675,86,856,111"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="630,34,741,84,739,88,628,39"/>
+<area shape="rect" id="Node000009" href="$tokenizer_8c.html" title=" " alt="" coords="880,86,995,111"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="658,30,869,76,897,83,896,89,867,81,657,35"/>
+<area shape="rect" id="Node000003" href="$command__functs_8c.html" title=" " alt="" coords="5,167,173,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,126,118,169,115,164,216,121"/>
+<area shape="rect" id="Node000004" href="$find__command_8c.html" title=" " alt="" coords="197,167,349,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="276,132,276,166,271,166,271,132"/>
+<area shape="rect" id="Node000005" href="$minishell_8c.html" title=" " alt="" coords="374,167,490,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="325,122,410,164,407,169,322,127"/>
+</map>
