@@ -6,12 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:35:27 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:55:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
-// #include "../include/command_functs.h"
 #include "../include/command.h"
 #include "../include/envioroment.h"
 #include "../list/list.h"
@@ -94,8 +93,8 @@ void cd_execute(t_command *command, t_gen_list *environment)
             return;
         }
         if (old_directory)
-            change_env_value(environment, old_directory, "OLDPWD");
-        change_env_value(environment, ft_strdup(target), "PWD");
+            add_var(environment, old_directory, "OLDPWD");
+        add_var(environment, ft_strdup(target), "PWD");
         free(old_directory);
         return;
     }
@@ -111,8 +110,8 @@ void cd_execute(t_command *command, t_gen_list *environment)
                 free(old_directory);
                 return;
             }
-            change_env_value(environment, old_directory, "OLDPWD");
-            change_env_value(environment, joined_path, "PWD");
+            add_var(environment, old_directory, "OLDPWD");
+            add_var(environment, joined_path, "PWD");
             free(joined_path);
             free(old_directory);
             return;
@@ -163,7 +162,7 @@ void	export_execute(t_command *command, t_gen_list *envioroment)
 		push_end(envioroment, new_sport);
 	else
 	{
-		change_env_value(envioroment, new_sport->var_value,
+		add_var(envioroment, new_sport->var_value,
 			new_sport->var_name);
 		free(new_sport->var_name);
 		free(new_sport);

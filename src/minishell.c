@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:04:37 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:40:44 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,6 +270,6 @@ int	main(int args, char **environment_var_str_array)
 		destroy_gen_list(current_commands, destroy_command);
 		current_commands = NULL;
 	}
-	destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+	destroy_environment(envioroment_vars);
 	free(name);
 }

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:09:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:54:36 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,9 @@ char				*get_var_value(t_gen_list *environment_vars,
  * @return True if contains, false if not. 
  */
 bool contains_variable(t_gen_list *environment_vars, char *name);
-void				destroy_envioroment_var(void *envioroment_var);
-void				change_env_value(t_gen_list *envioroment, char *new_value,
-						char *name);
+
 void				remove_envioroment_var_from_name(t_gen_list *envioroment,
 						char *name);
+void destroy_environment(t_gen_list *env);
 
 #endif
