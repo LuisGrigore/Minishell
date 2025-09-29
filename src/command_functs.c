@@ -6,13 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 00:10:30 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 01:17:53 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../include/command.h"
-#include "../include/envioroment.h"
+#include "../include/environment.h"
 #include "../list/list.h"
 #include "../libft/libft.h"
 #include <signal.h>
@@ -124,19 +124,21 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
 }
 void	env_execute(t_command *command, t_gen_list *envioroment)
 {
-	t_node				*current_node;
-	t_envioroment_var	*current_node_value;
-
+	char **serialized_env;
+	int i;
 	if (!command)
-		write(1, "a", 1);
-	current_node = envioroment->head;
-	while (current_node != NULL)
 	{
-		current_node_value = (t_envioroment_var *)current_node->value;
-		ft_printf("%s=%s\n", current_node_value->var_name,
-			current_node_value->var_value);
-		current_node = current_node->next;
+		perror("env :");
+		return;
 	}
+	serialized_env = serialize_environment_vars(envioroment);
+	i = 0;
+	while(i < envioroment->size)
+	{
+		printf("%s", serialized_env[i]);
+		i++;
+	}
+	free_double_pointer(serialized_env);
 }
 void export_execute(t_command *command, t_gen_list *envioroment)
 {
