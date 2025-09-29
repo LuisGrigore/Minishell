@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 15:18:17 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:07:54 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,28 @@
 #include "../libft/libft.h"
 #include "stdlib.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 t_envioroment_var	*init_envioroment_var(char *name, char *value)
 {
 	t_envioroment_var	*new_env;
 
 	new_env = ft_calloc(1, sizeof(t_envioroment_var));
+	if (new_env == NULL)
+	return NULL;
 	new_env->var_name = name;
 	new_env->var_value = value;
 	return (new_env);
+}
+
+int add_var(t_gen_list *env, char *name, char *value)
+{
+	t_envioroment_var *new_var = init_envioroment_var(name, value);
+	
+	if(new_var == NULL)
+		return (0);
+	push_front(env, (void *)new_var);
+	return (1);
 }
 
 t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
@@ -45,22 +58,28 @@ t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
 	return (env_var_list);
 }
 
-char	*get_var_value_from_name(t_gen_list *environment_vars, char *name)
+static bool var_name_filter(void *var_ptr, void *context)
 {
-	t_node				*current_env_node;
-	t_envioroment_var	*current_env_var;
+    char *name = (char *)context;
+    t_envioroment_var *var = (t_envioroment_var *)var_ptr;
+	size_t name_size = ft_strlen(name);
+    if (ft_strlen(var->var_name) == name_size && ft_strncmp(var->var_name, name, name_size) == 0)
+        return true;
+    return false;
+}
 
-	current_env_node = environment_vars->head;
-	while (current_env_node)
-	{
-		current_env_var = (t_envioroment_var *)current_env_node->value;
-		if (ft_strncmp(current_env_var->var_name, name, ft_strlen(name)) == 0)
-		{
-			return (current_env_var->var_value);
-		}
-		current_env_node = current_env_node->next;
-	}
-	return (NULL);
+bool contains_variable(t_gen_list *environment_vars, char *name)
+{
+	return (contains_in_list_ctx(environment_vars,var_name_filter, name));
+}
+
+char	*get_var_value(t_gen_list *environment_vars, char *name)
+{
+	t_envioroment_var	*found_var;
+	found_var = find_in_list_ctx(environment_vars, var_name_filter, name);
+	if(!found_var)
+		return (NULL);
+	return (ft_strdup(found_var->var_value));
 }
 char	**get_str_array_from_envioroment_var_list(t_gen_list *envioroment)
 {

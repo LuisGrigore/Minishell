@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:32:09 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/29 00:18:45 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:13:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,43 @@ void	remove_if(t_gen_list *list, bool (*predicate)(void *),
 	}
 }
 
+void	remove_if_ctx(t_gen_list *list,
+			bool (*predicate)(void *element, void *context),
+			void *context,
+			void (*value_destroyer)(void *))
+{
+	t_node	*current;
+	t_node	*prev;
+	t_node	*next;
+
+	if (!list || !predicate)
+		return ;
+	current = list->head;
+	prev = NULL;
+	while (current)
+	{
+		next = current->next;
+		if (predicate(current->value, context))
+		{
+			if (prev)
+				prev->next = next;
+			else
+				list->head = next;
+			if (current == list->tail)
+				list->tail = prev;
+			if (value_destroyer)
+				value_destroyer(current->value);
+			free(current);
+			list->size--;
+		}
+		else
+		{
+			prev = current;
+		}
+		current = next;
+	}
+}
+
 void	*find_in_list(t_gen_list *list, bool (*predicate)(void *))
 {
 	t_node	*current;
@@ -186,4 +223,30 @@ void	*iter_next(t_iter *it)
 	val = it->current->value;
 	it->current = it->current->next;
 	return (val);
+}
+
+bool	contains_in_list(t_gen_list *list, bool (*predicate)(void *))
+{
+	return (find_in_list(list, predicate) != NULL);
+}
+
+void	*find_in_list_ctx(t_gen_list *list,
+			bool (*predicate)(void *element, void *context),
+			void *context)
+{
+	t_node *curr = list->head;
+
+	while (curr)
+	{
+		if (predicate(curr->value, context))
+			return curr->value;
+		curr = curr->next;
+	}
+	return NULL;
+}
+bool	contains_in_list_ctx(t_gen_list *list,
+			bool (*predicate)(void *element, void *context),
+			void *context)
+{
+	return (find_in_list_ctx(list, predicate, context) != NULL);
 }
