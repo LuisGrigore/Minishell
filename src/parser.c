@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "../include/parser.h"
 #include "../include/tokenizer.h"
+#include "../include/redirect_asignation.h"
 #include "../include/command.h"
-#include "../include/command_functs.h"
 #include "../libft/libft.h" // para ft_strlen, ft_strlcpy
 
 static t_command_funct get_command_function(t_gen_list *args)

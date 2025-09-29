@@ -6,16 +6,16 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 23:15:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 15:18:25 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../include/command.h"
 #include "../include/envioroment.h"
-#include "../include/list.h"
+#include "../list/list.h"
 #include "../include/parser.h"
-#include "../include/pipe.h"
+#include "../include/redirect_asignation.h"
 #include "../include/tokenizer.h"
 #include "../libft/libft.h"
 #include "readline/history.h"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_command.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:33:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/05/10 18:56:49 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/09/29 15:22:49 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "../libft/libft.h"
 #include "unistd.h"
 
-static char	*checker_path(char *env, char *cmd);
 static char	*get_final_path(char *path, char *cmd)
 {
 	char	*aux;
@@ -24,6 +23,18 @@ static char	*get_final_path(char *path, char *cmd)
 	result = ft_strjoin(aux, cmd);
 	free(aux);
 	return (result);
+}
+
+static char	*checker_path(char *env, char *cmd)
+{
+	if (!env && access(cmd, X_OK) != 0)
+	{
+		write(2, "Path doest find\n", 17);
+		exit(1);
+	}
+	else if (access(cmd, X_OK) == 0)
+		return (cmd);
+	return (NULL);
 }
 
 char	*find_command(char **env, char *cmd)
@@ -54,14 +65,3 @@ char	*find_command(char **env, char *cmd)
 	return (NULL);
 }
 
-static char	*checker_path(char *env, char *cmd)
-{
-	if (!env && access(cmd, X_OK) != 0)
-	{
-		write(2, "Path doest find\n", 17);
-		exit(1);
-	}
-	else if (access(cmd, X_OK) == 0)
-		return (cmd);
-	return (NULL);
-}

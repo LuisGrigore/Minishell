@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdbool.h>
-#include "../include/list.h"
+#include "../list/list.h"
 #include "../include/tokenizer.h" 
 #include "../libft/libft.h"
 #include "../include/util.h"

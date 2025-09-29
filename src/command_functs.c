@@ -6,14 +6,35 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 23:29:19 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 01:21:35 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
-#include "../include/command_functs.h"
+// #include "../include/command_functs.h"
+#include "../include/command.h"
+#include "../include/envioroment.h"
+#include "../list/list.h"
 #include "../libft/libft.h"
 #include <signal.h>
+
+static char	**get_str_array_from_gen_list_args(t_gen_list *args)
+{
+	char	**result;
+	t_node	*current_node;
+	int		i;
+
+	i = 0;
+	result = ft_calloc(args->size + 1, sizeof(char *));
+	current_node = args->head;
+	while (current_node != NULL)
+	{
+		result[i] = ft_strdup((char *)current_node->value);
+		current_node = current_node->next;
+		i++;
+	}
+	return (result);
+}
 
 void bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
@@ -43,7 +64,6 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
 
     execve(path, cmd2, env);
 
-    // execve falló
     perror("Failed to execute command ");
     free(path);
     free_double_pointer(cmd2);

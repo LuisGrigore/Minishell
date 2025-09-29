@@ -6,11 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 23:30:11 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 15:18:17 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/command_functs.h"
+#include "../include/command.h"
 #include "../include/envioroment.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
