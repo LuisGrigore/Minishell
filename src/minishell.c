@@ -6,13 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 00:12:56 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 01:17:26 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../include/command.h"
-#include "../include/envioroment.h"
+#include "../include/environment.h"
 #include "../list/list.h"
 #include "../include/parser.h"
 #include "../include/redirect_asignation.h"
