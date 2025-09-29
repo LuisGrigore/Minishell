@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 16:07:54 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:55:21 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 #include "stdlib.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+static bool var_name_filter(void *var_ptr, void *context)
+{
+    char *name = (char *)context;
+    t_envioroment_var *var = (t_envioroment_var *)var_ptr;
+	size_t name_size = ft_strlen(name);
+    if (ft_strlen(var->var_name) == name_size && ft_strncmp(var->var_name, name, name_size) == 0)
+        return true;
+    return false;
+}
 
 t_envioroment_var	*init_envioroment_var(char *name, char *value)
 {
@@ -31,13 +41,29 @@ t_envioroment_var	*init_envioroment_var(char *name, char *value)
 
 int add_var(t_gen_list *env, char *name, char *value)
 {
-	t_envioroment_var *new_var = init_envioroment_var(name, value);
-	
-	if(new_var == NULL)
-		return (0);
-	push_front(env, (void *)new_var);
-	return (1);
+    t_envioroment_var *new_var;
+    t_envioroment_var *found_var;
+    char *previous_val;
+    
+    found_var = (t_envioroment_var *)find_in_list_ctx(env, var_name_filter, name);
+    if (found_var)
+    {
+        previous_val = found_var->var_value;
+        found_var->var_value = ft_strdup(value);
+        if (!found_var->var_value)
+            return 0;
+        free(previous_val);
+        return 1;
+    }
+
+    new_var = init_envioroment_var(name, value);
+    if (!new_var)
+        return 0;
+    
+    push_front(env, (void *)new_var);
+    return 1;
 }
+
 
 t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
 {
@@ -56,16 +82,6 @@ t_gen_list	*get_environment_var_list_from_str_array(char **str_array)
 		i++;
 	}
 	return (env_var_list);
-}
-
-static bool var_name_filter(void *var_ptr, void *context)
-{
-    char *name = (char *)context;
-    t_envioroment_var *var = (t_envioroment_var *)var_ptr;
-	size_t name_size = ft_strlen(name);
-    if (ft_strlen(var->var_name) == name_size && ft_strncmp(var->var_name, name, name_size) == 0)
-        return true;
-    return false;
 }
 
 bool contains_variable(t_gen_list *environment_vars, char *name)
@@ -91,7 +107,6 @@ char	**get_str_array_from_envioroment_var_list(t_gen_list *envioroment)
 
 	i = 0;
 	result = ft_caalloc(envioroment->size + 1, sizeof(char *));
-	//printf("%li\n", envioroment->size);
 	current_env_node = envioroment->head;
 	while (current_env_node != NULL)
 	{
@@ -105,7 +120,7 @@ char	**get_str_array_from_envioroment_var_list(t_gen_list *envioroment)
 	return (result);
 }
 
-void	destroy_envioroment_var(void *envioroment_var)
+static void	destroy_envioroment_var(void *envioroment_var)
 {
 	t_envioroment_var	*aux;
 
@@ -114,46 +129,13 @@ void	destroy_envioroment_var(void *envioroment_var)
 	free(aux->var_value);
 	free(aux);
 }
-void	change_env_value(t_gen_list *envioroment, char *new_value, char *name)
-{
-	t_node				*current_node;
-	t_envioroment_var	*current_node_value;
-	size_t				len;
 
-	len = ft_strlen(name);
-	current_node = envioroment->head;
-	while (current_node != NULL)
-	{
-		current_node_value = (t_envioroment_var *)current_node->value;
-		if (ft_strncmp(current_node_value->var_name, name, len))
-		{
-			free(current_node_value->var_value);
-			current_node_value->var_value = new_value;
-			return ;
-		}
-		current_node = current_node->next;
-	}
-}
 void	remove_envioroment_var_from_name(t_gen_list *envioroment, char *name)
 {
-	t_node				*current_node;
-	t_envioroment_var	*current_node_value;
-	t_node				*last_node;
-	size_t				len;
+	remove_if_ctx(envioroment, var_name_filter, (void *) name, destroy_envioroment_var);
+}
 
-	len = ft_strlen(name);
-	current_node = envioroment->head;
-	while (current_node != NULL)
-	{
-		current_node_value = (t_envioroment_var *)current_node->value;
-		if (ft_strncmp(current_node_value->var_name, name, len))
-		{
-			last_node->next = current_node->next;
-			destroy_envioroment_var(current_node_value);
-			free(current_node);
-			return ;
-		}
-		last_node = current_node;
-		current_node = current_node->next;
-	}
+void destroy_environment(t_gen_list *env)
+{
+	destroy_gen_list(env, destroy_envioroment_var);
 }
