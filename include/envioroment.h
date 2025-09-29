@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/28 16:08:20 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 00:19:44 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENVIOROMENT_H
 # define ENVIOROMENT_H
 
-# include "../include/list.h"
+#include "../list/list.h"
 
 typedef struct s_envioroment_var
 {

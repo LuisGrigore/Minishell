@@ -6,11 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:32:09 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/28 17:32:27 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 00:18:45 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/list.h"
+#include "list.h"
 #include "../libft/libft.h"
 #include <stdlib.h>
 
