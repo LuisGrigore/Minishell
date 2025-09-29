@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 01:21:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:35:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,45 +69,68 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     free_double_pointer(cmd2);
     exit(1);
 }
-void	cd_execute(t_command *command, t_gen_list *envioroment)
+void cd_execute(t_command *command, t_gen_list *environment)
 {
-	char	*new_directory;
-	char	*old_directory;
-	t_node	*current_node;
+    t_iter it;
+    char *old_directory;
+    char *target;
+    char *joined_path;
 
-	old_directory = ft_strdup(get_var_value_from_name(envioroment, "PWD"));
-	current_node = command->args->head->next;
-	if (access(current_node->value, F_OK) == 0)
-	{
-		if (chdir(current_node->value) == -1)
-			perror("This file :Not a directory");
-		else
-		{
-			change_env_value(envioroment, ft_strdup(current_node->value),
-				"PWD");
-			return ;
-		}
-	}
-	new_directory = ft_strjoin(old_directory, current_node->value);
-	if (access(new_directory, F_OK) == 0)
-	{
-		if (chdir(new_directory) == -1)
-			perror("This file :Not a directory");
-		else
-		{
-			change_env_value(envioroment, ft_strdup(current_node->value),
-				"PWD");
-			change_env_value(envioroment, old_directory, "OLD_PWD");
-			return ;
-		}
-	}
+    if (!command->args || command->args->size < 2)
+    {
+        fprintf(stderr, "cd: missing argument\n");
+        return;
+    }
+    old_directory = get_var_value(environment, "PWD");
+    it = iter_start(command->args);
+    iter_next(&it);
+    target = iter_next(&it);
+    if (access(target, F_OK) == 0)
+    {
+        if (chdir(target) == -1)
+        {
+            perror("cd");
+            free(old_directory);
+            return;
+        }
+        if (old_directory)
+            change_env_value(environment, old_directory, "OLDPWD");
+        change_env_value(environment, ft_strdup(target), "PWD");
+        free(old_directory);
+        return;
+    }
+    if (old_directory)
+    {
+        joined_path = ft_strjoin(old_directory, target);
+        if (access(joined_path, F_OK) == 0)
+        {
+            if (chdir(joined_path) == -1)
+            {
+                perror("cd");
+                free(joined_path);
+                free(old_directory);
+                return;
+            }
+            change_env_value(environment, old_directory, "OLDPWD");
+            change_env_value(environment, joined_path, "PWD");
+            free(joined_path);
+            free(old_directory);
+            return;
+        }
+        free(joined_path);
+    }
+    fprintf(stderr, "cd: no such file or directory: %s\n", target);
+    free(old_directory);
 }
 
 void	pwd_execute(t_command *command, t_gen_list *envioroment)
 {
+	char *current_dir;
 	if (command == NULL)
 		return ;
-	printf("%s\n", get_var_value_from_name(envioroment, "PWD"));
+	current_dir = get_var_value(envioroment, "PWD");
+	printf("%s\n", current_dir);
+	free(current_dir);
 	exit(0);
 }
 void	env_execute(t_command *command, t_gen_list *envioroment)
@@ -136,7 +159,7 @@ void	export_execute(t_command *command, t_gen_list *envioroment)
 	new_variable = ft_split2(current_node->value, '=');
 	new_sport = init_envioroment_var(new_variable[0], new_variable[1]);
 	free(new_variable);
-	if (get_var_value_from_name(envioroment, new_sport->var_name) == NULL)
+	if (!contains_variable(envioroment, new_sport->var_name))
 		push_end(envioroment, new_sport);
 	else
 	{

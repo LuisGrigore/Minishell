@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 15:18:25 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:04:37 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*username(t_gen_list *env)
 {
 	char	*username;
 
-	username = get_var_value_from_name(env, "LOGNAME");
+	username = get_var_value(env, "LOGNAME");
 	if (!username)
 		return (ft_strdup("minishell%"));
 	return (ft_strjoin(username, "%>$"));
@@ -271,4 +271,5 @@ int	main(int args, char **environment_var_str_array)
 		current_commands = NULL;
 	}
 	destroy_gen_list(envioroment_vars, destroy_envioroment_var);
+	free(name);
 }
