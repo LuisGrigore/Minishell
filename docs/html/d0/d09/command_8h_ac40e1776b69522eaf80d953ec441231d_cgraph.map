@@ -15,7 +15,7 @@
 <area shape="rect" id="Node000015" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="148,303,287,328"/>
 <area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="63,179,95,232,120,263,150,289,157,294,154,299,146,293,116,266,91,235,58,182"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,106,362,78,364,83,256,111"/>
-<area shape="rect" id="Node000005" href="$d5/d2f/gen__link__list__find_8c.html#acefd4746f60287ce0beba43094b250ae" title="Find the first element that satisfies a predicate with context." alt="" coords="350,153,481,179"/>
+<area shape="rect" id="Node000005" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="350,153,481,179"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="256,124,350,148,349,153,254,130"/>
 <area shape="rect" id="Node000006" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="353,104,477,129"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="255,115,339,115,339,120,255,120"/>
@@ -27,7 +27,7 @@
 <area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="253,156,285,141,299,129,308,116,318,103,333,90,362,77,364,82,336,95,322,107,313,119,303,132,288,146,255,161"/>
 <area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="254,164,336,164,336,169,254,170"/>
 <area shape="poly" id="edge14_Node000008_Node000006" title=" " alt="" coords="253,156,351,130,353,135,255,161"/>
-<area shape="rect" id="Node000009" href="$d5/d02/gen__link__list__insertion_8c.html#a10328f908d6be67ff4b38b53f7a727a1" title="Insert a value at the beginning of the list (O(1))." alt="" coords="341,203,490,228"/>
+<area shape="rect" id="Node000009" href="$d5/d02/gen__link__list__insertion_8c.html#a10328f908d6be67ff4b38b53f7a727a1" title="Insert a value at the beginning of the list." alt="" coords="341,203,490,228"/>
 <area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="255,173,350,197,348,202,253,179"/>
 <area shape="rect" id="Node000010" href="$dd/da9/envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="335,252,496,277"/>
 <area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="255,175,288,190,303,203,313,215,322,227,336,238,348,244,345,249,333,243,318,231,308,219,299,207,285,195,253,180"/>

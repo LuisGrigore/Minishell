@@ -1,0 +1,60 @@
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/utils/utils\+\_\+str.c File Reference}
+\hypertarget{utils__str_8c}{}\label{utils__str_8c}\index{gen\_list/gen\_link\_list/utils/utils\_str.c@{gen\_list/gen\_link\_list/utils/utils\_str.c}}
+{\ttfamily \#include "{}../gen\+\_\+link\+\_\+list\+\_\+internal.\+h"{}}\newline
+Include dependency graph for utils\+\_\+str.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{d7/d9c/utils__str_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{utils__str_8c_a08b8150070493b3bf2dbc420b965b7bb}{str\+\_\+len}} (const char \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Returns the length of a null-\/terminated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils__str_8c_abaa0976f42a35cc0544613739241883f}{str\+\_\+copy\+\_\+at}} (char \texorpdfstring{$\ast$}{*}dest, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t \texorpdfstring{$\ast$}{*}pos)
+\begin{DoxyCompactList}\small\item\em Copies a string into dest at a given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils__str_8c_abaa0976f42a35cc0544613739241883f}\label{utils__str_8c_abaa0976f42a35cc0544613739241883f} 
+\index{utils\_str.c@{utils\_str.c}!str\_copy\_at@{str\_copy\_at}}
+\index{str\_copy\_at@{str\_copy\_at}!utils\_str.c@{utils\_str.c}}
+\doxysubsubsection{\texorpdfstring{str\_copy\_at()}{str\_copy\_at()}}
+{\footnotesize\ttfamily void str\+\_\+copy\+\_\+at (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Copies a string into dest at a given position. 
+
+Appends src into dest starting at \texorpdfstring{$\ast$}{*}pos, updates \texorpdfstring{$\ast$}{*}pos, and null-\/terminates the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Destination buffer. \\
+\hline
+{\em src} & Source string. \\
+\hline
+{\em pos} & Pointer to current write position in dest. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils__str_8c_a08b8150070493b3bf2dbc420b965b7bb}\label{utils__str_8c_a08b8150070493b3bf2dbc420b965b7bb} 
+\index{utils\_str.c@{utils\_str.c}!str\_len@{str\_len}}
+\index{str\_len@{str\_len}!utils\_str.c@{utils\_str.c}}
+\doxysubsubsection{\texorpdfstring{str\_len()}{str\_len()}}
+{\footnotesize\ttfamily size\+\_\+t str\+\_\+len (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})}
+
+
+
+Returns the length of a null-\/terminated string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the input string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of characters before the null terminator. 
+\end{DoxyReturn}

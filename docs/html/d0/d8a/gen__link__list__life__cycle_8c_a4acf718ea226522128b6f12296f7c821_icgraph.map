@@ -1,0 +1,20 @@
+<map id="gen_list_destroy" name="gen_list_destroy">
+<area shape="rect" id="Node000001" title="Destroy the entire list and its nodes." alt="" coords="561,132,691,157"/>
+<area shape="rect" id="Node000002" href="$d5/d2e/command_8c.html#a950465f331fec212ad0507c3e41a0137" title=" " alt="" coords="367,5,509,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="600,124,560,88,512,52,473,33,476,28,515,48,564,84,604,120"/>
+<area shape="rect" id="Node000003" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,107,60,132"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="548,143,513,141,60,123,61,118,513,135,548,137"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,56,315,81"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="585,129,513,103,411,85,314,75,315,70,412,80,514,98,587,124"/>
+<area shape="rect" id="Node000005" href="$dc/d4a/environment__operations_8c.html#ae4211ec5d85586513118f0d5e787347d" title="Destroy the entire environment list and free resources." alt="" coords="160,157,263,183"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="548,152,263,170,263,164,548,147"/>
+<area shape="rect" id="Node000006" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="363,207,513,247"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="585,165,486,210,483,205,583,160"/>
+<area shape="rect" id="Node000007" href="$d7/d58/tokenizer_8c.html#a7f79110e05751dc9e588a9fab750d97d" title=" " alt="" coords="173,239,250,264"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="612,171,573,220,546,244,514,262,480,273,444,280,371,283,303,275,250,264,251,259,304,270,371,277,443,275,478,268,512,257,542,239,569,216,608,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,11,296,10,234,14,170,25,109,46,88,59,70,75,44,108,40,105,66,72,85,54,107,41,169,19,233,8,296,5,353,6"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="368,36,269,59,268,53,366,31"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="153,88,61,114,60,109,152,83"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="152,156,60,129,61,124,153,151"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="169,235,106,196,70,164,43,134,47,130,74,160,110,192,172,230"/>
+</map>

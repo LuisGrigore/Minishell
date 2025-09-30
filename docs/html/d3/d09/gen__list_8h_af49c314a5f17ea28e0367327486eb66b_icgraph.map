@@ -1,22 +1,31 @@
 <map id="gen_list_iter_destroy" name="gen_list_iter_destroy">
-<area shape="rect" id="Node000001" title="Destroys allocated iterator." alt="" coords="629,104,788,129"/>
+<area shape="rect" id="Node000001" title="Destroys allocated iterator." alt="" coords="629,129,788,155"/>
 <area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a0fad0803ff59cff11ab2eb8de7eac854" title=" " alt="" coords="445,5,555,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="676,99,632,71,580,44,550,33,552,28,582,40,635,66,679,94"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="683,122,637,82,580,44,553,33,555,28,583,40,641,78,686,118"/>
 <area shape="rect" id="Node000003" href="$d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="439,104,561,129"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="615,119,562,119,562,114,615,114"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="615,133,561,127,562,121,615,128"/>
 <area shape="rect" id="Node000006" href="$d5/dc3/gen__link__list__iteration_8c.html#ae40d5a3c9a9f7dcdfcf22ffdf4d63747" title="Apply a function to all elements of the list." alt="" coords="432,55,568,80"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="640,103,554,83,555,77,642,98"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="664,126,580,94,546,83,547,78,582,89,666,121"/>
 <area shape="rect" id="Node000009" href="$d5/dc3/gen__link__list__iteration_8c.html#a0264017867021c6816bc65f1a79632b6" title="Apply a function to all elements of the list, with context." alt="" coords="419,153,581,179"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="642,135,555,156,554,151,640,130"/>
-<area shape="rect" id="Node000010" href="$d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="442,203,558,228"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="679,139,635,167,582,194,552,205,550,200,580,189,632,162,676,135"/>
-<area shape="rect" id="Node000004" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="184,150,371,190"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="433,135,362,153,361,147,432,130"/>
-<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="43,157,98,183"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="170,173,98,173,98,167,170,167"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="616,155,582,159,581,154,615,150"/>
+<area shape="rect" id="Node000010" href="$d2/d81/gen__link__list__serialization_8c.html#ad17a22acfef0c3126bdfe6637bf4ff4d" title="Convert a generic list into an array of strings." alt="" coords="433,253,567,293"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="685,166,639,203,583,242,556,255,554,250,580,237,636,199,682,162"/>
+<area shape="rect" id="Node000014" href="$d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="442,203,558,228"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="664,162,582,193,544,205,542,200,580,187,662,157"/>
+<area shape="rect" id="Node000004" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="184,137,371,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,133,371,143,370,137,425,127"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="43,144,98,169"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="170,159,98,159,98,154,170,154"/>
 <area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="215,55,339,80"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="418,70,339,70,339,65,418,65"/>
 <area shape="rect" id="Node000008" href="$d7/d66/minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="5,55,136,80"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="201,70,136,70,136,65,201,65"/>
-<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="427,203,370,192,372,186,428,198"/>
+<area shape="rect" id="Node000011" href="$d7/df6/command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="21,235,121,260"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="419,271,121,253,121,248,419,265"/>
+<area shape="rect" id="Node000012" href="$d8/d4a/environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="223,285,331,311"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="419,284,332,295,331,289,419,279"/>
+<area shape="poly" id="edge12_Node000012_Node000011" title=" " alt="" coords="211,285,120,262,122,257,212,279"/>
+<area shape="rect" id="Node000013" href="$d7/df6/command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="19,285,123,311"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="209,301,123,301,123,295,209,295"/>
+<area shape="poly" id="edge15_Node000014_Node000004" title=" " alt="" coords="437,202,353,179,355,174,439,197"/>
 </map>

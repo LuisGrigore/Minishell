@@ -1,13 +1,12 @@
 \doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/gen\+\_\+link\+\_\+list\+\_\+internal.h File Reference}
 \hypertarget{gen__link__list__internal_8h}{}\label{gen__link__list__internal_8h}\index{gen\_list/gen\_link\_list/gen\_link\_list\_internal.h@{gen\_list/gen\_link\_list/gen\_link\_list\_internal.h}}
-{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
 {\ttfamily \#include "{}../gen\+\_\+list.\+h"{}}\newline
 Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+internal.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{da/d30/gen__link__list__internal_8h__incl}
+\includegraphics[width=216pt]{da/d30/gen__link__list__internal_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -32,6 +31,13 @@ struct \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__
 \item 
 typedef struct \mbox{\hyperlink{gen__link__list__internal_8h_d9/d54/structs__node}{s\+\_\+node}} \mbox{\hyperlink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node}}
 \begin{DoxyCompactList}\small\item\em Node of a generic singly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{gen__link__list__internal_8h_a08b8150070493b3bf2dbc420b965b7bb}{str\+\_\+len}} (const char \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Returns the length of a null-\/terminated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen__link__list__internal_8h_abaa0976f42a35cc0544613739241883f}{str\+\_\+copy\+\_\+at}} (char \texorpdfstring{$\ast$}{*}dest, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t \texorpdfstring{$\ast$}{*}pos)
+\begin{DoxyCompactList}\small\item\em Copies a string into dest at a given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Class Documentation}
@@ -49,8 +55,7 @@ Each node stores a generic value and a pointer to the next node.
 \end{DoxySeeAlso}
 
 
-Collaboration diagram for s\+\_\+node\+:
-\nopagebreak
+Collaboration diagram for s\+\_\+node\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -85,8 +90,7 @@ Holds pointers to the first and last nodes, as well as the total number of store
 \end{DoxySeeAlso}
 
 
-Collaboration diagram for s\+\_\+gen\+\_\+list\+:
-\nopagebreak
+Collaboration diagram for s\+\_\+gen\+\_\+list\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -127,8 +131,7 @@ Stores the current node and is advanced with \doxylink{gen__link__list__iteratio
 \end{DoxySeeAlso}
 
 
-Collaboration diagram for s\+\_\+gen\+\_\+list\+\_\+iter\+:
-\nopagebreak
+Collaboration diagram for s\+\_\+gen\+\_\+list\+\_\+iter\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -163,3 +166,45 @@ Each node stores a generic value and a pointer to the next node.
 
 \doxylink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter} 
 \end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gen__link__list__internal_8h_abaa0976f42a35cc0544613739241883f}\label{gen__link__list__internal_8h_abaa0976f42a35cc0544613739241883f} 
+\index{gen\_link\_list\_internal.h@{gen\_link\_list\_internal.h}!str\_copy\_at@{str\_copy\_at}}
+\index{str\_copy\_at@{str\_copy\_at}!gen\_link\_list\_internal.h@{gen\_link\_list\_internal.h}}
+\doxysubsubsection{\texorpdfstring{str\_copy\_at()}{str\_copy\_at()}}
+{\footnotesize\ttfamily void str\+\_\+copy\+\_\+at (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Copies a string into dest at a given position. 
+
+Appends src into dest starting at \texorpdfstring{$\ast$}{*}pos, updates \texorpdfstring{$\ast$}{*}pos, and null-\/terminates the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Destination buffer. \\
+\hline
+{\em src} & Source string. \\
+\hline
+{\em pos} & Pointer to current write position in dest. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gen__link__list__internal_8h_a08b8150070493b3bf2dbc420b965b7bb}\label{gen__link__list__internal_8h_a08b8150070493b3bf2dbc420b965b7bb} 
+\index{gen\_link\_list\_internal.h@{gen\_link\_list\_internal.h}!str\_len@{str\_len}}
+\index{str\_len@{str\_len}!gen\_link\_list\_internal.h@{gen\_link\_list\_internal.h}}
+\doxysubsubsection{\texorpdfstring{str\_len()}{str\_len()}}
+{\footnotesize\ttfamily size\+\_\+t str\+\_\+len (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})}
+
+
+
+Returns the length of a null-\/terminated string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the input string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of characters before the null terminator. 
+\end{DoxyReturn}

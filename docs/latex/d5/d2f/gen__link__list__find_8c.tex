@@ -6,34 +6,51 @@ Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+find.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{d1/d85/gen__link__list__find_8c__incl}
+\includegraphics[width=219pt]{d1/d85/gen__link__list__find_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1}{gen\+\_\+list\+\_\+find}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}))
-\item 
-void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae}{gen\+\_\+list\+\_\+find\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context), void \texorpdfstring{$\ast$}{*}context)
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__find_8c_a2102327ee709da7dafad283f5b02ce00}{gen\+\_\+list\+\_\+find}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate)
+\begin{DoxyCompactList}\small\item\em Find the first element that satisfies a predicate. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__find_8c_abe06ed3bda440c2bdaf89881a83fddf8}{gen\+\_\+list\+\_\+find\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context)
 \begin{DoxyCompactList}\small\item\em Find the first element that satisfies a predicate with context. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1}\label{gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1} 
+\Hypertarget{gen__link__list__find_8c_a2102327ee709da7dafad283f5b02ce00}\label{gen__link__list__find_8c_a2102327ee709da7dafad283f5b02ce00} 
 \index{gen\_link\_list\_find.c@{gen\_link\_list\_find.c}!gen\_list\_find@{gen\_list\_find}}
 \index{gen\_list\_find@{gen\_list\_find}!gen\_link\_list\_find.c@{gen\_link\_list\_find.c}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_find()}{gen\_list\_find()}}
-{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{bool(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{predicate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate }\end{DoxyParamCaption})}
 
+
+
+Find the first element that satisfies a predicate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function to test each element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the first matching node, or NULL if none found. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate} 
+\end{DoxySeeAlso}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=271pt]{d5/d2f/gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1_icgraph}
+\includegraphics[width=271pt]{d5/d2f/gen__link__list__find_8c_a2102327ee709da7dafad283f5b02ce00_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae}\label{gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae} 
+\Hypertarget{gen__link__list__find_8c_abe06ed3bda440c2bdaf89881a83fddf8}\label{gen__link__list__find_8c_abe06ed3bda440c2bdaf89881a83fddf8} 
 \index{gen\_link\_list\_find.c@{gen\_link\_list\_find.c}!gen\_list\_find\_ctx@{gen\_list\_find\_ctx}}
 \index{gen\_list\_find\_ctx@{gen\_list\_find\_ctx}!gen\_link\_list\_find.c@{gen\_link\_list\_find.c}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_find\_ctx()}{gen\_list\_find\_ctx()}}
@@ -63,6 +80,6 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d5/d2f/gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae_icgraph}
+\includegraphics[width=350pt]{d5/d2f/gen__link__list__find_8c_abe06ed3bda440c2bdaf89881a83fddf8_icgraph}
 \end{center}
 \end{figure}

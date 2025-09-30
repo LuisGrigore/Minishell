@@ -1,0 +1,9 @@
+<map id="gen_list_serialize_to_string_array" name="gen_list_serialize_to_string_array">
+<area shape="rect" id="Node000001" title="Convert a generic list into an array of strings." alt="" coords="5,47,140,87"/>
+<area shape="rect" id="Node000002" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="188,5,347,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,48,203,32,204,37,141,53"/>
+<area shape="rect" id="Node000003" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="198,55,337,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,65,184,65,184,70,140,70"/>
+<area shape="rect" id="Node000004" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="198,104,337,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,82,204,98,203,103,139,87"/>
+</map>

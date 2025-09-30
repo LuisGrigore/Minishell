@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:30:11 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:22:24 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 00:39:11 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ typedef void					(*t_apply_func)(void *element);
 /**
  * @brief Function applied to each list element during traversal, with context.
  *
- * Similar a @ref t_apply_func, pero recibe un puntero de contexto adicional.
- *
  * @param element Pointer to the element to process.
  * @param context Extra pointer passed to the function.
  *
@@ -128,7 +126,7 @@ void							gen_list_destroy(t_gen_list *list,
 ** Operations
 ** ============================================================ */
 /**
- * @brief Insert a value at the end of the list (O(1)).
+ * @brief Insert a value at the end of the list.
  *
  * @param list List where the value will be inserted.
  * @param value Pointer to the value to insert.
@@ -137,7 +135,7 @@ void							gen_list_push_back(t_gen_list *list,
 									void *value);
 
 /**
- * @brief Insert a value at the beginning of the list (O(1)).
+ * @brief Insert a value at the beginning of the list.
  *
  * @param list List where the value will be inserted.
  * @param value Pointer to the value to insert.
@@ -191,6 +189,7 @@ void							gen_list_remove_if_ctx(t_gen_list *list,
  * @param list List to traverse.
  * @param func Function to apply to each value.
  * @see t_apply_func
+ * @see gen_list_for_each_ctx
  */
 void							gen_list_for_each(t_gen_list *list,
 									t_apply_func func);
@@ -198,14 +197,10 @@ void							gen_list_for_each(t_gen_list *list,
 /**
 * @brief Apply a function to all elements of the list, with context.
 *
-* Similar a gen_list_for_each(), pero permite pasar un puntero adicional
-* (contexto) a la función aplicada.
-*
 * @param list List to traverse.
-* @param func Function to apply to each value, with signature (element,
-context).
+* @param func Function to apply to each value with context.
 * @param context Extra pointer passed to the function on each call.
-*
+* @see t_apply_func_ctx
 * @see gen_list_for_each
 */
 void							gen_list_for_each_ctx(t_gen_list *list,
