@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:55:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:27:47 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 23:44:06 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	gen_list_destroy(t_gen_list *list,
 	{
 		tmp = current->next;
 		if (element_destroyer)
-			value_destroyer(current->value);
+			element_destroyer(current->value);
 		free(current);
 		current = tmp;
 	}
