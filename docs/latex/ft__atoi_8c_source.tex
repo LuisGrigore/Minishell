@@ -1,0 +1,42 @@
+\doxysection{ft\+\_\+atoi.\+c}
+\hypertarget{ft__atoi_8c_source}{}\label{ft__atoi_8c_source}\index{libft/ft\_atoi.c@{libft/ft\_atoi.c}}
+\mbox{\hyperlink{ft__atoi_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ ft\_atoi.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ dmaestro\ <marvin@42.fr>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2024/09/20\ 16:30:47\ by\ dmaestro\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2024/09/30\ 18:27:53\ by\ dmaestro\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00013}\mbox{\hyperlink{ft__atoi_8c_add42b4526258474611c3a359785f84eb}{00013}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ft__atoi_8c_add42b4526258474611c3a359785f84eb}{ft\_atoi}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nptr)}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{int}\ nb;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{int}\ t;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00019}00019\ \ \ \ \ nb\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00020}00020\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00021}00021\ \ \ \ \ t\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{while}\ ((nptr[i]\ >=\ 9\ \&\&\ nptr[i]\ <=\ 13)\ ||\ nptr[i]\ ==\ 32)}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (nptr[i]\ ==\ \textcolor{charliteral}{'+'}\ ||\ nptr[i]\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nptr[i]\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ t\ =\ -\/t;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{while}\ ((nptr[i]\ <=\ \textcolor{charliteral}{'9'}\ \&\&\ nptr[i]\ >=\ \textcolor{charliteral}{'0'}))}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ nb\ =\ ((nb\ *\ 10)\ +\ nptr[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ (t\ *\ nb);}
+\DoxyCodeLine{\Hypertarget{ft__atoi_8c_source_l00036}00036\ \}}
+
+\end{DoxyCode}

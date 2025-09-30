@@ -1,0 +1,174 @@
+\doxysection{libft/ft\+\_\+puthexnumax.c File Reference}
+\hypertarget{ft__puthexnumax_8c}{}\label{ft__puthexnumax_8c}\index{libft/ft\_puthexnumax.c@{libft/ft\_puthexnumax.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+puthexnumax.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__puthexnumax_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9}{ft\+\_\+puthex}} (unsigned int pf, char \texorpdfstring{$\ast$}{*}p3, int i)
+\item 
+static int \mbox{\hyperlink{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1}{ft\+\_\+pos}} (unsigned int pf)
+\item 
+int \mbox{\hyperlink{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15}{ft\+\_\+puthexnumax}} (unsigned int pf)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1}\label{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1} 
+\index{ft\_puthexnumax.c@{ft\_puthexnumax.c}!ft\_pos@{ft\_pos}}
+\index{ft\_pos@{ft\_pos}!ft\_puthexnumax.c@{ft\_puthexnumax.c}}
+\doxysubsubsection{\texorpdfstring{ft\_pos()}{ft\_pos()}}
+{\footnotesize\ttfamily static int ft\+\_\+pos (\begin{DoxyParamCaption}\item[{unsigned int}]{pf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__puthexnumax_8c_source_l00038}{38}} of file \mbox{\hyperlink{ft__puthexnumax_8c_source}{ft\+\_\+puthexnumax.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{while}\ (pf\ >\ 0)}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ pf\ =\ pf\ /\ 16;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15}{ft\+\_\+puthexnumax()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9}\label{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9} 
+\index{ft\_puthexnumax.c@{ft\_puthexnumax.c}!ft\_puthex@{ft\_puthex}}
+\index{ft\_puthex@{ft\_puthex}!ft\_puthexnumax.c@{ft\_puthexnumax.c}}
+\doxysubsubsection{\texorpdfstring{ft\_puthex()}{ft\_puthex()}}
+{\footnotesize\ttfamily static void ft\+\_\+puthex (\begin{DoxyParamCaption}\item[{unsigned int}]{pf,  }\item[{char \texorpdfstring{$\ast$}{*}}]{p3,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__puthexnumax_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__puthexnumax_8c_source}{ft\+\_\+puthexnumax.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ p3[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00018\ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (pf\ >=\ 16)}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pf\ \%\ 16\ <=\ 9)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'A'}\ -\/\ 10;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ pf\ =\ pf\ /\ 16;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ ((pf\ \%\ 16)\ <=\ 9)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (pf\ \%\ 16\ >=\ 10)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'A'}\ -\/\ 10;}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\_putstr}}(p3);}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\+\_\+putstr()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15}{ft\+\_\+puthexnumax()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15}\label{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15} 
+\index{ft\_puthexnumax.c@{ft\_puthexnumax.c}!ft\_puthexnumax@{ft\_puthexnumax}}
+\index{ft\_puthexnumax@{ft\_puthexnumax}!ft\_puthexnumax.c@{ft\_puthexnumax.c}}
+\doxysubsubsection{\texorpdfstring{ft\_puthexnumax()}{ft\_puthexnumax()}}
+{\footnotesize\ttfamily int ft\+\_\+puthexnumax (\begin{DoxyParamCaption}\item[{unsigned int}]{pf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__puthexnumax_8c_source_l00051}{51}} of file \mbox{\hyperlink{ft__puthexnumax_8c_source}{ft\+\_\+puthexnumax.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ i;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *p3;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (pf\ ==\ 0)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\_putchar}}(\textcolor{charliteral}{'0'}));}
+\DoxyCodeLine{00058\ \ \ \ \ i\ =\ \mbox{\hyperlink{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1}{ft\_pos}}(pf);}
+\DoxyCodeLine{00059\ \ \ \ \ p3\ =\ malloc(\mbox{\hyperlink{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1}{ft\_pos}}(pf)\ +\ 1);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p3)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ free(p3);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9}{ft\_puthex}}(pf,\ p3,\ i);}
+\DoxyCodeLine{00066\ \ \ \ \ free(p3);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__puthexnumax_8c_a22714b9b4b8fe264a27def969c1d97e1}{ft\+\_\+pos()}}, \mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\+\_\+putchar()}}, and \mbox{\hyperlink{ft__puthexnumax_8c_a188337858f2231144653b22c5ca839e9}{ft\+\_\+puthex()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__selector_8c_a6bca906941b73aee430168c03090a88d}{ft\+\_\+selector()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__puthexnumax_8c_acae1680e62faaf99daa58e76b884dc15_icgraph}
+\end{center}
+\end{figure}

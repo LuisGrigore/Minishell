@@ -1,0 +1,17 @@
+<map id="serialize_to_string_array" name="serialize_to_string_array">
+<area shape="rect" id="Node000001" title="Convert a generic list into an array of strings." alt="" coords="893,22,1035,62"/>
+<area shape="rect" id="Node000002" href="$command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="587,5,687,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="880,39,687,24,688,19,880,33"/>
+<area shape="rect" id="Node000006" href="$environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="737,55,845,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="880,57,846,62,845,57,879,52"/>
+<area shape="rect" id="Node000003" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,31,537,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="574,29,538,34,537,29,573,24"/>
+<area shape="rect" id="Node000004" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="349,46,315,46,315,41,349,41"/>
+<area shape="rect" id="Node000005" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="737,53,677,33,679,28,739,48"/>
+<area shape="rect" id="Node000007" href="$command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="585,55,689,80"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="723,70,690,70,690,65,723,65"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="571,62,537,57,538,52,572,56"/>
+</map>

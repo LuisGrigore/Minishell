@@ -1,0 +1,52 @@
+\doxysection{libft/ft\+\_\+lstadd\+\_\+back\+\_\+bonus.c File Reference}
+\hypertarget{ft__lstadd__back__bonus_8c}{}\label{ft__lstadd__back__bonus_8c}\index{libft/ft\_lstadd\_back\_bonus.c@{libft/ft\_lstadd\_back\_bonus.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+lstadd\+\_\+back\+\_\+bonus.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__lstadd__back__bonus_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__lstadd__back__bonus_8c_a4c10e88fffc3c9467eb16e6debd227a4}{ft\+\_\+lstadd\+\_\+back}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lst, \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} \texorpdfstring{$\ast$}{*}new)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__lstadd__back__bonus_8c_a4c10e88fffc3c9467eb16e6debd227a4}\label{ft__lstadd__back__bonus_8c_a4c10e88fffc3c9467eb16e6debd227a4} 
+\index{ft\_lstadd\_back\_bonus.c@{ft\_lstadd\_back\_bonus.c}!ft\_lstadd\_back@{ft\_lstadd\_back}}
+\index{ft\_lstadd\_back@{ft\_lstadd\_back}!ft\_lstadd\_back\_bonus.c@{ft\_lstadd\_back\_bonus.c}}
+\doxysubsubsection{\texorpdfstring{ft\_lstadd\_back()}{ft\_lstadd\_back()}}
+{\footnotesize\ttfamily void ft\+\_\+lstadd\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lst,  }\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{new }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__lstadd__back__bonus_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__lstadd__back__bonus_8c_source}{ft\+\_\+lstadd\+\_\+back\+\_\+bonus.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{structs__list}{t\_list}}\ \ \ \ *nem;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!lst\ ||\ !\textcolor{keyword}{new})}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (!*lst)}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ *lst\ =\ \textcolor{keyword}{new};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ nem\ =\ *lst;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{while}\ (nem-\/>\mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{next}}\ !=\ NULL)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ nem\ =\ nem-\/>\mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{next}};}
+\DoxyCodeLine{00029\ \ \ \ \ nem-\/>\mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{next}}\ =\ \textcolor{keyword}{new};}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{s\+\_\+list\+::next}}.
+

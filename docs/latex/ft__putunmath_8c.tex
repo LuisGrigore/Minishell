@@ -1,0 +1,145 @@
+\doxysection{libft/ft\+\_\+putunmath.c File Reference}
+\hypertarget{ft__putunmath_8c}{}\label{ft__putunmath_8c}\index{libft/ft\_putunmath.c@{libft/ft\_putunmath.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+putunmath.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putunmath_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{ft__putunmath_8c_ae6bbd08a6bf54b337086882ce6c82f92}{ft\+\_\+count}} (unsigned int i)
+\item 
+static void \mbox{\hyperlink{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}{ft\+\_\+writenub}} (unsigned int i)
+\item 
+int \mbox{\hyperlink{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253}{ft\+\_\+putunmath}} (unsigned int i)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__putunmath_8c_ae6bbd08a6bf54b337086882ce6c82f92}\label{ft__putunmath_8c_ae6bbd08a6bf54b337086882ce6c82f92} 
+\index{ft\_putunmath.c@{ft\_putunmath.c}!ft\_count@{ft\_count}}
+\index{ft\_count@{ft\_count}!ft\_putunmath.c@{ft\_putunmath.c}}
+\doxysubsubsection{\texorpdfstring{ft\_count()}{ft\_count()}}
+{\footnotesize\ttfamily static int ft\+\_\+count (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putunmath_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__putunmath_8c_source}{ft\+\_\+putunmath.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ >\ 9)}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ i\ =\ i\ /\ 10;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (n\ +\ 1);}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253}{ft\+\_\+putunmath()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putunmath_8c_ae6bbd08a6bf54b337086882ce6c82f92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253}\label{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253} 
+\index{ft\_putunmath.c@{ft\_putunmath.c}!ft\_putunmath@{ft\_putunmath}}
+\index{ft\_putunmath@{ft\_putunmath}!ft\_putunmath.c@{ft\_putunmath.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putunmath()}{ft\_putunmath()}}
+{\footnotesize\ttfamily int ft\+\_\+putunmath (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putunmath_8c_source_l00035}{35}} of file \mbox{\hyperlink{ft__putunmath_8c_source}{ft\+\_\+putunmath.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}{ft\_writenub}}(i);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__putunmath_8c_ae6bbd08a6bf54b337086882ce6c82f92}{ft\_count}}(i));}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putunmath_8c_ae6bbd08a6bf54b337086882ce6c82f92}{ft\+\_\+count()}}, and \mbox{\hyperlink{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}{ft\+\_\+writenub()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__selector_8c_a6bca906941b73aee430168c03090a88d}{ft\+\_\+selector()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}\label{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c} 
+\index{ft\_putunmath.c@{ft\_putunmath.c}!ft\_writenub@{ft\_writenub}}
+\index{ft\_writenub@{ft\_writenub}!ft\_putunmath.c@{ft\_putunmath.c}}
+\doxysubsubsection{\texorpdfstring{ft\_writenub()}{ft\_writenub()}}
+{\footnotesize\ttfamily static void ft\+\_\+writenub (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putunmath_8c_source_l00028}{28}} of file \mbox{\hyperlink{ft__putunmath_8c_source}{ft\+\_\+putunmath.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 9)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}{ft\_writenub}}(i\ /\ 10);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\_putchar}}(i\ \%\ 10\ +\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\+\_\+putchar()}}, and \mbox{\hyperlink{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}{ft\+\_\+writenub()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__putunmath_8c_a31cb9d6c2ab8d5253779ad4b4074b253}{ft\+\_\+putunmath()}}, and \mbox{\hyperlink{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c}{ft\+\_\+writenub()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putunmath_8c_a020ccb14c78c94369e810e68a818403c_icgraph}
+\end{center}
+\end{figure}

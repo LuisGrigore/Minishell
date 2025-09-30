@@ -1,0 +1,35 @@
+\doxysection{libft/ft\+\_\+striteri.c File Reference}
+\hypertarget{ft__striteri_8c}{}\label{ft__striteri_8c}\index{libft/ft\_striteri.c@{libft/ft\_striteri.c}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__striteri_8c_ada722cffd2c6c8169ae339afd0f9763c}{ft\+\_\+striteri}} (char \texorpdfstring{$\ast$}{*}s, void(\texorpdfstring{$\ast$}{*}f)(unsigned int, char \texorpdfstring{$\ast$}{*}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__striteri_8c_ada722cffd2c6c8169ae339afd0f9763c}\label{ft__striteri_8c_ada722cffd2c6c8169ae339afd0f9763c} 
+\index{ft\_striteri.c@{ft\_striteri.c}!ft\_striteri@{ft\_striteri}}
+\index{ft\_striteri@{ft\_striteri}!ft\_striteri.c@{ft\_striteri.c}}
+\doxysubsubsection{\texorpdfstring{ft\_striteri()}{ft\_striteri()}}
+{\footnotesize\ttfamily void ft\+\_\+striteri (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{void(\texorpdfstring{$\ast$}{*})(unsigned int, char \texorpdfstring{$\ast$}{*})}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__striteri_8c_source_l00013}{13}} of file \mbox{\hyperlink{ft__striteri_8c_source}{ft\+\_\+striteri.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ i;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{while}\ (*s\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ f(i,\ s);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}

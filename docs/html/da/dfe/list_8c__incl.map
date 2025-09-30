@@ -1,0 +1,21 @@
+<map id="list/list.c" name="list/list.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="111,5,188,31"/>
+<area shape="rect" id="Node000002" href="$da/d23/list_8h.html" title=" " alt="" coords="57,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,33,106,70,102,67,137,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="113,152,183,177"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="152,31,151,138,146,138,147,31"/>
+<area shape="rect" id="Node000005" href="$d6/d7e/libft_8h.html" title=" " alt="" coords="235,79,335,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="172,28,252,70,250,75,170,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,88,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,106,61,141,57,139,75,103"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="97,103,131,140,127,144,93,106"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="264,106,184,148,181,143,262,102"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="207,152,270,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="280,106,256,142,252,139,275,103"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="295,152,369,177"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="295,103,319,139,315,142,291,106"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="393,152,460,177"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="309,102,393,143,390,148,307,106"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="484,152,559,177"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="324,101,472,146,470,151,322,107"/>
+</map>

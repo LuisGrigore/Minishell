@@ -1,0 +1,49 @@
+\doxysection{libft/ft\+\_\+strrchr.c File Reference}
+\hypertarget{ft__strrchr_8c}{}\label{ft__strrchr_8c}\index{libft/ft\_strrchr.c@{libft/ft\_strrchr.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strrchr.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strrchr_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strrchr_8c_a49c260cf80f9997975d6f3ec74ead582}{ft\+\_\+strrchr}} (const char \texorpdfstring{$\ast$}{*}s, int c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strrchr_8c_a49c260cf80f9997975d6f3ec74ead582}\label{ft__strrchr_8c_a49c260cf80f9997975d6f3ec74ead582} 
+\index{ft\_strrchr.c@{ft\_strrchr.c}!ft\_strrchr@{ft\_strrchr}}
+\index{ft\_strrchr@{ft\_strrchr}!ft\_strrchr.c@{ft\_strrchr.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strrchr()}{ft\_strrchr()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} ft\+\_\+strrchr (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strrchr_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strrchr_8c_source}{ft\+\_\+strrchr.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *t;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00021\ \ \ \ \ t\ =\ NULL;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (*s)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*s\ ==\ (\textcolor{keywordtype}{char})c)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ t\ =\ (\textcolor{keywordtype}{char}\ *)s;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (*s\ ==\ (\textcolor{keywordtype}{char})c)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ t\ =\ ((\textcolor{keywordtype}{char}\ *)s);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ (t);}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

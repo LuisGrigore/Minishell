@@ -1,0 +1,68 @@
+\doxysection{libft/ft\+\_\+strlcat.c File Reference}
+\hypertarget{ft__strlcat_8c}{}\label{ft__strlcat_8c}\index{libft/ft\_strlcat.c@{libft/ft\_strlcat.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strlcat.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strlcat_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{ft__strlcat_8c_a5ec5cb64412b189edcc4c4bd56183f54}{ft\+\_\+strlcat}} (char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strlcat_8c_a5ec5cb64412b189edcc4c4bd56183f54}\label{ft__strlcat_8c_a5ec5cb64412b189edcc4c4bd56183f54} 
+\index{ft\_strlcat.c@{ft\_strlcat.c}!ft\_strlcat@{ft\_strlcat}}
+\index{ft\_strlcat@{ft\_strlcat}!ft\_strlcat.c@{ft\_strlcat.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strlcat()}{ft\_strlcat()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlcat (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strlcat_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strlcat_8c_source}{ft\+\_\+strlcat.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *jumpei;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ j;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ len1;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ j\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ jumpei\ =\ (\textcolor{keywordtype}{char}\ *)src;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (dst[i]\ \&\&\ i\ <\ size)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00027\ \ \ \ \ len1\ =\ i;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (len1\ ==\ size)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(src)\ +\ size);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{while}\ (jumpei[j]\ \&\&\ i\ <\ (size\ -\/\ 1))}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ dst[i]\ =\ jumpei[j];}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ dst[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ (len1\ +\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(src));}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{ft__strlcat_8c_a5ec5cb64412b189edcc4c4bd56183f54_cgraph}
+\end{center}
+\end{figure}

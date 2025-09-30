@@ -1,0 +1,58 @@
+\doxysection{libft/ft\+\_\+strchr.c File Reference}
+\hypertarget{ft__strchr_8c}{}\label{ft__strchr_8c}\index{libft/ft\_strchr.c@{libft/ft\_strchr.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strchr.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strchr_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d}{ft\+\_\+strchr}} (const char \texorpdfstring{$\ast$}{*}s, int c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d}\label{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d} 
+\index{ft\_strchr.c@{ft\_strchr.c}!ft\_strchr@{ft\_strchr}}
+\index{ft\_strchr@{ft\_strchr}!ft\_strchr.c@{ft\_strchr.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strchr()}{ft\_strchr()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} ft\+\_\+strchr (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strchr_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strchr_8c_source}{ft\+\_\+strchr.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (*s)}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*s\ ==\ (\textcolor{keywordtype}{char})c)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)s);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (*s\ ==\ (\textcolor{keywordtype}{char})c)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)s);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{get__next__line_8c_afaf66bd0b4bcc9071dd3234d1076776a}{ft\+\_\+ssubnstr()}}, and \mbox{\hyperlink{ft__strtrim_8c_a60352c5b39fab08469b3e28131a79e25}{ft\+\_\+strtrim()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d_icgraph}
+\end{center}
+\end{figure}

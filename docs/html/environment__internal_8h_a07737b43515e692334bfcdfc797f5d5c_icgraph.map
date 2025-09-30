@@ -1,0 +1,23 @@
+<map id="init_environment_var" name="init_environment_var">
+<area shape="rect" id="Node000001" title="Create a new environment variable." alt="" coords="889,29,1051,55"/>
+<area shape="rect" id="Node000002" href="$environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="149,5,273,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="875,42,273,23,273,17,875,36"/>
+<area shape="rect" id="Node000004" href="$environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="768,55,841,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="876,59,842,64,841,59,875,54"/>
+<area shape="rect" id="Node000003" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,37,109,45,61,60,59,55,107,39,138,31"/>
+<area shape="rect" id="Node000005" href="$command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="611,55,706,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="754,70,706,70,706,65,754,65"/>
+<area shape="rect" id="Node000009" href="$command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="597,104,720,129"/>
+<area shape="poly" id="edge10_Node000004_Node000009" title=" " alt="" coords="756,86,698,106,696,101,754,81"/>
+<area shape="rect" id="Node000006" href="$pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="363,105,549,145"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="601,86,528,107,526,102,599,81"/>
+<area shape="rect" id="Node000007" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="369,55,543,80"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="597,70,544,70,544,65,597,65"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="349,124,232,115,107,95,60,81,61,75,109,90,233,109,349,119"/>
+<area shape="rect" id="Node000008" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,55,315,80"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="355,70,315,70,315,65,355,65"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="94,70,60,70,60,65,94,65"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="584,122,550,124,549,118,584,117"/>
+<area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="592,103,508,83,510,77,594,98"/>
+</map>

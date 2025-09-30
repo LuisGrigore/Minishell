@@ -1,0 +1,387 @@
+\doxysection{src/tokenizer.c File Reference}
+\hypertarget{tokenizer_8c}{}\label{tokenizer_8c}\index{src/tokenizer.c@{src/tokenizer.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}../list/list.\+h"{}}\newline
+{\ttfamily \#include "{}../include/tokenizer.\+h"{}}\newline
+{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
+{\ttfamily \#include "{}../include/util.\+h"{}}\newline
+Include dependency graph for tokenizer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tokenizer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\+\_\+strndup}} (const char \texorpdfstring{$\ast$}{*}s, size\+\_\+t n)
+\item 
+static int \mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\+\_\+space}} (char c)
+\item 
+static int \mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\+\_\+operator\+\_\+char}} (char c)
+\item 
+static int \mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\+\_\+two\+\_\+char\+\_\+op}} (const char \texorpdfstring{$\ast$}{*}s, size\+\_\+t pos, const char \texorpdfstring{$\ast$}{*}op)
+\item 
+static \mbox{\hyperlink{tokenizer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\+\_\+token}} (\mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} type, char \texorpdfstring{$\ast$}{*}value)
+\item 
+static \mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} \mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\+\_\+type}} (const char \texorpdfstring{$\ast$}{*}op, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tokenizer_8c_a7f79110e05751dc9e588a9fab750d97d}{tokenize}} (const char \texorpdfstring{$\ast$}{*}line)
+\item 
+void \mbox{\hyperlink{tokenizer_8c_af0886495b353f179f845206ad2969d3e}{destroy\+\_\+token}} (\mbox{\hyperlink{tokenizer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}token)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}\label{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc} 
+\index{tokenizer.c@{tokenizer.c}!create\_token@{create\_token}}
+\index{create\_token@{create\_token}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{create\_token()}{create\_token()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{tokenizer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*} create\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}}]{type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00021}{21}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structs__token}{t\_token}}));}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!tok)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00024\ \ \ \ \ tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ =\ type;}
+\DoxyCodeLine{00025\ \ \ \ \ tok-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}}\ =\ value;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ tok;}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{s\+\_\+token\+::type}}, and \mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{s\+\_\+token\+::value}}.
+
+
+
+Referenced by \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_af0886495b353f179f845206ad2969d3e}\label{tokenizer_8c_af0886495b353f179f845206ad2969d3e} 
+\index{tokenizer.c@{tokenizer.c}!destroy\_token@{destroy\_token}}
+\index{destroy\_token@{destroy\_token}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_token()}{destroy\_token()}}
+{\footnotesize\ttfamily void destroy\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tokenizer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00119}{119}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!token)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (token-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}})}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ free(token-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ token-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}}\ =\ NULL;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ free(token);}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{s\+\_\+token\+::value}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}{destroy\+\_\+token\+\_\+data()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tokenizer_8c_af0886495b353f179f845206ad2969d3e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}\label{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a} 
+\index{tokenizer.c@{tokenizer.c}!ft\_strndup@{ft\_strndup}}
+\index{ft\_strndup@{ft\_strndup}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strndup()}{ft\_strndup()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} ft\+\_\+strndup (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00010}{10}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{char}\ *p\ =\ malloc(n\ +\ 1);\ \textcolor{keywordtype}{size\_t}\ i;\ \textcolor{keywordflow}{if}\ (!p)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ n\ \&\&\ s[i];\ i++)\ p[i]\ =\ s[i];\ p[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}\label{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65} 
+\index{tokenizer.c@{tokenizer.c}!is\_operator\_char@{is\_operator\_char}}
+\index{is\_operator\_char@{is\_operator\_char}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{is\_operator\_char()}{is\_operator\_char()}}
+{\footnotesize\ttfamily static int is\+\_\+operator\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00016}{16}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keywordflow}{return}\ c\ ==\ \textcolor{charliteral}{'|'}\ ||\ c\ ==\ \textcolor{charliteral}{'>'}\ ||\ c\ ==\ \textcolor{charliteral}{'<'};\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}\label{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31} 
+\index{tokenizer.c@{tokenizer.c}!is\_space@{is\_space}}
+\index{is\_space@{is\_space}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{is\_space()}{is\_space()}}
+{\footnotesize\ttfamily static int is\+\_\+space (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00015}{15}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keywordflow}{return}\ c\ ==\ \textcolor{charliteral}{'\ '}\ ||\ c\ ==\ \textcolor{charliteral}{'\(\backslash\)t'};\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}\label{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3} 
+\index{tokenizer.c@{tokenizer.c}!match\_two\_char\_op@{match\_two\_char\_op}}
+\index{match\_two\_char\_op@{match\_two\_char\_op}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{match\_two\_char\_op()}{match\_two\_char\_op()}}
+{\footnotesize\ttfamily static int match\+\_\+two\+\_\+char\+\_\+op (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{size\+\_\+t}]{pos,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00017}{17}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ s[pos]\ \&\&\ s[pos+1]\ \&\&\ s[pos]\ ==\ op[0]\ \&\&\ s[pos+1]\ ==\ op[1];}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}\label{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7} 
+\index{tokenizer.c@{tokenizer.c}!operator\_type@{operator\_type}}
+\index{operator\_type@{operator\_type}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{operator\_type()}{operator\_type()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} operator\+\_\+type (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{op,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00029}{29}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ ==\ 1)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'|'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\_PIPE}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'<'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\_REDIR\_IN}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'>'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\_REDIR\_OUT}};}
+\DoxyCodeLine{00034\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (len\ ==\ 2)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'<'}\ \&\&\ op[1]\ ==\ \textcolor{charliteral}{'<'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\_HEREDOC}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'>'}\ \&\&\ op[1]\ ==\ \textcolor{charliteral}{'>'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\_REDIR\_APPEND}};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}};\ \textcolor{comment}{//\ fallback}}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\+\_\+\+ARG}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\+\_\+\+HEREDOC}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\+\_\+\+PIPE}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\+\_\+\+REDIR\+\_\+\+APPEND}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\+\_\+\+REDIR\+\_\+\+IN}}, and \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\+\_\+\+REDIR\+\_\+\+OUT}}.
+
+
+
+Referenced by \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tokenizer_8c_a7f79110e05751dc9e588a9fab750d97d}\label{tokenizer_8c_a7f79110e05751dc9e588a9fab750d97d} 
+\index{tokenizer.c@{tokenizer.c}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!tokenizer.c@{tokenizer.c}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} tokenize (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tokenizer_8c_source_l00041}{41}} of file \mbox{\hyperlink{tokenizer_8c_source}{tokenizer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ 0,\ len\ =\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(line);}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *tokens\_list\ =\ \mbox{\hyperlink{list_8c_a2ab31c1a882bda317542865ca981aa91}{init\_list}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!tokens\_list)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ expect\_cmd\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ El\ siguiente\ token\ no\ operador\ será\ CMD}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ next\_is\_redir\_arg\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ El\ siguiente\ token\ después\ de\ >,\ >>,\ <,\ <<}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ len)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ len\ \&\&\ \mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\_space}}(line[i]))\ i++;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ len)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ operadores\ de\ dos\ caracteres\ */}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\_two\_char\_op}}(line,\ i,\ \textcolor{stringliteral}{"{}>>"{}})\ ||\ \mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\_two\_char\_op}}(line,\ i,\ \textcolor{stringliteral}{"{}<<"{}}))\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *op\ =\ \mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(line\ +\ i,\ 2);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(\mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\_type}}(op,\ 2),\ op);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(tokens\_list,\ tok);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 2;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\_REDIR\_APPEND}}\ ||\ tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\_HEREDOC}})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_is\_redir\_arg\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ operadores\ de\ un\ caracter\ */}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\_operator\_char}}(line[i]))\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *op\ =\ \mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(line\ +\ i,\ 1);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(\mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\_type}}(op,\ 1),\ op);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(tokens\_list,\ tok);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\_REDIR\_IN}}\ ||\ tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\_REDIR\_OUT}})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_is\_redir\_arg\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\_PIPE}})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ expect\_cmd\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ palabras\ */}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\ =\ i;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *buf\ =\ NULL;\ \textcolor{keywordtype}{size\_t}\ bcap\ =\ 0,\ blen\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ len\ \&\&\ !\mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\_space}}(line[i])\ \&\&\ !\mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\_operator\_char}}(line[i]))\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ line[i];}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\(\backslash\)''})\ \{\ i++;\ \textcolor{keywordflow}{while}(i<len\ \&\&\ line[i]!=\textcolor{charliteral}{'\(\backslash\)''})\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=line[i++];\ \}\ \textcolor{keywordflow}{if}(i<len\&\&line[i]==\textcolor{charliteral}{'\(\backslash\)''})\ i++;\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(c==\textcolor{charliteral}{'"{}'})\{\ i++;\ \textcolor{keywordflow}{while}(i<len\ \&\&\ line[i]!=\textcolor{charliteral}{'"{}'})\{\ \textcolor{keywordflow}{if}(line[i]==\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\&\&i+1<len)\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\ \}\ buf[blen++]=line[i+1];\ i+=2;\ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=line[i++];\ \}\ \}\ \textcolor{keywordflow}{if}(i<len\&\&line[i]==\textcolor{charliteral}{'"{}'})\ i++;\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(c==\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\&\&i+1<len)\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=line[i+1];\ i+=2;\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=c;\ i++;\ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *word;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(blen==0)\{\ \textcolor{keywordtype}{size\_t}\ wlen=i-\/start;\ word=\mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(line+start,wlen);\ \textcolor{keywordflow}{if}(!word)\ \textcolor{keywordflow}{goto}\ error;\ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ word=malloc(blen+1);\ \textcolor{keywordflow}{if}(!word)\ \textcolor{keywordflow}{goto}\ error;\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ k=0;k<blen;k++)\ word[k]=buf[k];\ word[blen]=\textcolor{charliteral}{'\(\backslash\)0'};\ free(buf);\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ type;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\_is\_redir\_arg)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}};\ \textcolor{comment}{//\ siempre\ argumento\ si\ viene\ después\ de\ redirección}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ next\_is\_redir\_arg\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (expect\_cmd)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1}{TOKEN\_CMD}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ expect\_cmd\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(type,\ word);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(tokens\_list,\ tok);}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens\_list;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ error:}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{if}(tokens\_list)\ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(tokens\_list,\ free);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\+\_\+token()}}, \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\+\_\+gen\+\_\+list()}}, \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}, \mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\+\_\+strndup()}}, \mbox{\hyperlink{list_8c_a2ab31c1a882bda317542865ca981aa91}{init\+\_\+list()}}, \mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\+\_\+operator\+\_\+char()}}, \mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\+\_\+space()}}, \mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\+\_\+two\+\_\+char\+\_\+op()}}, \mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\+\_\+type()}}, \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\+\_\+end()}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\+\_\+\+ARG}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1}{TOKEN\+\_\+\+CMD}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\+\_\+\+HEREDOC}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\+\_\+\+PIPE}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\+\_\+\+REDIR\+\_\+\+APPEND}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\+\_\+\+REDIR\+\_\+\+IN}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\+\_\+\+REDIR\+\_\+\+OUT}}, and \mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{s\+\_\+token\+::type}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{tokenizer_8c_a7f79110e05751dc9e588a9fab750d97d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{tokenizer_8c_a7f79110e05751dc9e588a9fab750d97d_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,13 @@
+<map id="env_serialize" name="env_serialize">
+<area shape="rect" id="Node000001" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="5,60,113,85"/>
+<area shape="rect" id="Node000002" href="$environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89" title=" " alt="" coords="163,31,301,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,61,148,55,149,60,114,66"/>
+<area shape="rect" id="Node000006" href="$list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3" title="Convert a generic list into an array of strings." alt="" coords="161,81,303,121"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="114,79,148,84,147,90,113,84"/>
+<area shape="rect" id="Node000003" href="$ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="351,31,429,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,41,337,41,337,46,301,46"/>
+<area shape="rect" id="Node000004" href="$ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="486,5,543,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="429,33,472,24,473,29,430,38"/>
+<area shape="rect" id="Node000005" href="$ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="477,55,552,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="430,48,464,55,463,60,429,54"/>
+</map>

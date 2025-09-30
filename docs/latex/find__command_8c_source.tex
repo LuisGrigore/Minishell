@@ -1,0 +1,73 @@
+\doxysection{find\+\_\+command.\+c}
+\hypertarget{find__command_8c_source}{}\label{find__command_8c_source}\index{src/find\_command.c@{src/find\_command.c}}
+\mbox{\hyperlink{find__command_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ find\_command.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/05/05\ 18:33:23\ by\ dmaestro\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/29\ 15:22:49\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}../include/bin\_commandss\_execution.h"{}}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}../libft/libft.h"{}}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}unistd.h"{}}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00017}\mbox{\hyperlink{find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f}{00017}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f}{get\_final\_path}}(\textcolor{keywordtype}{char}\ *path,\ \textcolor{keywordtype}{char}\ *cmd)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *aux;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *result;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00022}00022\ \ \ \ \ aux\ =\ \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\_strjoin}}(path,\ \textcolor{stringliteral}{"{}/"{}});}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00023}00023\ \ \ \ \ result\ =\ \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\_strjoin}}(aux,\ cmd);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00024}00024\ \ \ \ \ free(aux);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (result);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00028}\mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{00028}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{checker\_path}}(\textcolor{keywordtype}{char}\ *env,\ \textcolor{keywordtype}{char}\ *cmd)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!env\ \&\&\ access(cmd,\ X\_OK)\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Path\ doest\ find\(\backslash\)n"{}},\ 17);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (access(cmd,\ X\_OK)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (cmd);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00040}\mbox{\hyperlink{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1}{00040}}\ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{find__command_8c_a91b61219a17cd048e781bb835f1a66a1}{find\_command}}(\textcolor{keywordtype}{char}\ **env,\ \textcolor{keywordtype}{char}\ *cmd)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ y;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **path;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *final\_path;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00046}00046\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{while}\ (env[y]\ \&\&\ \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(env[y],\ \textcolor{stringliteral}{"{}PATH="{}},\ 5)\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{checker\_path}}(env[y],\ cmd))}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{checker\_path}}(env[y],\ cmd));}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00051}00051\ \ \ \ \ path\ =\ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}(env[y]\ +\ 5,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00052}00052\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{while}\ (path[y])}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ final\_path\ =\ \mbox{\hyperlink{find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f}{get\_final\_path}}(path[y],\ cmd);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (access(final\_path,\ X\_OK)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}{free\_double\_pointer}}(path);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (final\_path);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ free(final\_path);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}{free\_double\_pointer}}(path);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{find__command_8c_source_l00067}00067\ }
+
+\end{DoxyCode}

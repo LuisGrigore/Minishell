@@ -1,0 +1,91 @@
+\doxysection{include/bin\+\_\+commandss\+\_\+execution.h File Reference}
+\hypertarget{bin__commandss__execution_8h}{}\label{bin__commandss__execution_8h}\index{include/bin\_commandss\_execution.h@{include/bin\_commandss\_execution.h}}
+{\ttfamily \#include "{}util.\+h"{}}\newline
+Include dependency graph for bin\+\_\+commandss\+\_\+execution.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{bin__commandss__execution_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bin__commandss__execution_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1}{find\+\_\+command}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}cmd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1}\label{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1} 
+\index{bin\_commandss\_execution.h@{bin\_commandss\_execution.h}!find\_command@{find\_command}}
+\index{find\_command@{find\_command}!bin\_commandss\_execution.h@{bin\_commandss\_execution.h}}
+\doxysubsubsection{\texorpdfstring{find\_command()}{find\_command()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} find\+\_\+command (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{find__command_8c_source_l00040}{40}} of file \mbox{\hyperlink{find__command_8c_source}{find\+\_\+command.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ y;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **path;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *final\_path;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{while}\ (env[y]\ \&\&\ \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(env[y],\ \textcolor{stringliteral}{"{}PATH="{}},\ 5)\ !=\ 0)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{checker\_path}}(env[y],\ cmd))}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{checker\_path}}(env[y],\ cmd));}
+\DoxyCodeLine{00051\ \ \ \ \ path\ =\ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}(env[y]\ +\ 5,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00052\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{while}\ (path[y])}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ final\_path\ =\ \mbox{\hyperlink{find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f}{get\_final\_path}}(path[y],\ cmd);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (access(final\_path,\ X\_OK)\ ==\ 0)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}{free\_double\_pointer}}(path);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (final\_path);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ free(final\_path);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}{free\_double\_pointer}}(path);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{find__command_8c_a0d757d8d977e3050b5d9636cf547ff16}{checker\+\_\+path()}}, \mbox{\hyperlink{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}{free\+\_\+double\+\_\+pointer()}}, \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\+\_\+split()}}, \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\+\_\+strncmp()}}, and \mbox{\hyperlink{find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f}{get\+\_\+final\+\_\+path()}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_a9b93e7663cca775fbe6c13fea90699f1}{bin\+\_\+execute()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1_icgraph}
+\end{center}
+\end{figure}

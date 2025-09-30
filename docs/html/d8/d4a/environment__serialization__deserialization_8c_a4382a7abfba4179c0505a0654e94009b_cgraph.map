@@ -1,0 +1,5 @@
+<map id="env_serialize" name="env_serialize">
+<area shape="rect" id="Node000001" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="5,13,113,38"/>
+<area shape="rect" id="Node000002" href="$d7/d40/list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3" title="Convert a generic list into an array of strings." alt="" coords="161,5,303,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,23,147,23,147,28,114,28"/>
+</map>

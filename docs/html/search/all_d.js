@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['parse_5ftokens_5fto_5fcommands_0',['parse_tokens_to_commands',['../parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce',1,'parse_tokens_to_commands(t_gen_list *tokens):&#160;parser.c'],['../parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce',1,'parse_tokens_to_commands(t_gen_list *tokens):&#160;parser.c']]],
-  ['parser_2ec_1',['parser.c',['../parser_8c.html',1,'']]],
-  ['parser_2eh_2',['parser.h',['../parser_8h.html',1,'']]],
-  ['path_5futils_2ec_3',['path_utils.c',['../path__utils_8c.html',1,'']]],
-  ['pipe_2ec_4',['pipe.c',['../pipe_8c.html',1,'']]],
-  ['pop_5ffront_5',['pop_front',['../list_8c.html#a727ab27543f4152a5e7e3ac9454e0fb8',1,'pop_front(t_gen_list *list):&#160;list.c'],['../list_8h.html#a727ab27543f4152a5e7e3ac9454e0fb8',1,'pop_front(t_gen_list *list):&#160;list.c']]],
-  ['print_5fcommand_6',['print_command',['../minishell_8c.html#aaeba1075474bbabf46d3efc68664c129',1,'minishell.c']]],
-  ['print_5fcommands_7',['print_commands',['../minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d',1,'minishell.c']]],
-  ['print_5fredirect_8',['print_redirect',['../minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46',1,'minishell.c']]],
-  ['print_5ftokens_9',['print_tokens',['../minishell_8c.html#abe2d3d3cdb04a9614c52e119e4d7c64d',1,'minishell.c']]],
-  ['push_5fend_10',['push_end',['../list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a',1,'push_end(t_gen_list *list, void *value):&#160;list.c'],['../list_8h.html#ad70cc8287d69eb2327b71b28f7d52b6a',1,'push_end(t_gen_list *list, void *value):&#160;list.c']]],
-  ['push_5ffront_11',['push_front',['../list_8c.html#a78751fefb5026bcdb58b19c746c959bc',1,'push_front(t_gen_list *list, void *value):&#160;list.c'],['../list_8h.html#a78751fefb5026bcdb58b19c746c959bc',1,'push_front(t_gen_list *list, void *value):&#160;list.c']]],
-  ['pwd_5fexecute_12',['pwd_execute',['../command_8h.html#a0f6eaa743e63abad6ac6be049d6179c6',1,'pwd_execute(t_command *command, t_gen_list *envioroment):&#160;command_functs.c'],['../command__functs_8c.html#a0f6eaa743e63abad6ac6be049d6179c6',1,'pwd_execute(t_command *command, t_gen_list *envioroment):&#160;command_functs.c']]]
+  ['readme_2emd_0',['README.md',['../da/ddd/README_8md.html',1,'']]],
+  ['redirect_2ec_1',['redirect.c',['../d5/df8/redirect_8c.html',1,'']]],
+  ['redirect_5fasignation_2ec_2',['redirect_asignation.c',['../d4/dcd/redirect__asignation_8c.html',1,'']]],
+  ['redirect_5fasignation_2eh_3',['redirect_asignation.h',['../df/dc7/redirect__asignation_8h.html',1,'']]],
+  ['redirect_5fsimbol_4',['redirect_simbol',['../df/dc7/redirect__asignation_8h.html#aa68b13bc97c76c51ee78bcf8cb2f3125',1,'s_redirect']]],
+  ['redirects_5',['redirects',['../d0/d09/command_8h.html#a82f3acd25a4af3e90640d8e7d9fe4793',1,'s_command']]],
+  ['remove_5fif_6',['remove_if',['../d7/d40/list_8c.html#a579377c7de417601f75e639294d666a8',1,'remove_if(t_gen_list *list, bool(*predicate)(void *), void(*value_destroyer)(void *)):&#160;list.c'],['../da/d23/list_8h.html#ad0f582149f5f1afddc9fd77cd5fda23d',1,'remove_if(t_gen_list *list, t_predicate predicate, t_value_destroyer value_destroyer):&#160;list.h']]],
+  ['remove_5fif_5fctx_7',['remove_if_ctx',['../d7/d40/list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b',1,'remove_if_ctx(t_gen_list *list, bool(*predicate)(void *element, void *context), void *context, void(*value_destroyer)(void *)):&#160;list.c'],['../da/d23/list_8h.html#a0d5ae98b13ae636228df9e80b0e0c7bc',1,'remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate, void *context, t_value_destroyer value_destroyer):&#160;list.h']]],
+  ['right_5fredirect_8',['RIGHT_REDIRECT',['../df/dc7/redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131',1,'redirect_asignation.h']]]
 ];

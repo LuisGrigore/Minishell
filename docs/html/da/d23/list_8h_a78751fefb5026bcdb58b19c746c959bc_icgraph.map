@@ -1,0 +1,14 @@
+<map id="push_front" name="push_front">
+<area shape="rect" id="Node000001" title="Insert a value at the beginning of the list (O(1))." alt="" coords="635,31,725,56"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="513,31,587,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="621,46,587,46,587,41,621,41"/>
+<area shape="rect" id="Node000003" href="$d7/df6/command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="357,5,451,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="500,37,451,29,452,24,500,32"/>
+<area shape="rect" id="Node000006" href="$d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="343,55,465,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="500,54,466,60,465,55,499,49"/>
+<area shape="rect" id="Node000004" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="108,23,295,63"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="343,28,295,34,295,29,343,23"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="329,61,294,57,295,52,330,56"/>
+</map>

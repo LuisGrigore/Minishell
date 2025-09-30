@@ -1,0 +1,50 @@
+\doxysection{libft/ft\+\_\+memcpy.c File Reference}
+\hypertarget{ft__memcpy_8c}{}\label{ft__memcpy_8c}\index{libft/ft\_memcpy.c@{libft/ft\_memcpy.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+memcpy.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__memcpy_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__memcpy_8c_a41a6f05af30cf85ff63a08e383826322}{ft\+\_\+memcpy}} (void \texorpdfstring{$\ast$}{*}dest, const void \texorpdfstring{$\ast$}{*}src, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__memcpy_8c_a41a6f05af30cf85ff63a08e383826322}\label{ft__memcpy_8c_a41a6f05af30cf85ff63a08e383826322} 
+\index{ft\_memcpy.c@{ft\_memcpy.c}!ft\_memcpy@{ft\_memcpy}}
+\index{ft\_memcpy@{ft\_memcpy}!ft\_memcpy.c@{ft\_memcpy.c}}
+\doxysubsubsection{\texorpdfstring{ft\_memcpy()}{ft\_memcpy()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} ft\+\_\+memcpy (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__memcpy_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__memcpy_8c_source}{ft\+\_\+memcpy.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *desti;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *srci;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dest\ \&\&\ !src)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00023\ \ \ \ \ desti\ =\ dest;}
+\DoxyCodeLine{00024\ \ \ \ \ srci\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)src;}
+\DoxyCodeLine{00025\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ desti[i]\ =\ srci[i];}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)desti);}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}

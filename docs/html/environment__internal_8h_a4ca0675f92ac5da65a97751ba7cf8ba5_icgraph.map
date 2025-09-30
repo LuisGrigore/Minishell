@@ -1,0 +1,19 @@
+<map id="destroy_environment_var" name="destroy_environment_var">
+<area shape="rect" id="Node000001" title="Destroy a single environment variable." alt="" coords="887,33,1076,59"/>
+<area shape="rect" id="Node000002" href="$environment__operations_8c.html#ae4211ec5d85586513118f0d5e787347d" title="Destroy the entire environment list and free resources." alt="" coords="592,5,695,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="873,40,695,25,695,20,873,34"/>
+<area shape="rect" id="Node000004" href="$environment__operations_8c.html#aa155b7428061814751ff8a6fd7ba7961" title="Remove an environment variable by name." alt="" coords="749,59,839,84"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="874,63,839,68,838,63,873,58"/>
+<area shape="rect" id="Node000003" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,61,60,87"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="578,16,485,13,368,14,238,23,172,32,109,45,59,64,57,59,107,39,171,27,237,18,367,9,486,8,578,11"/>
+<area shape="rect" id="Node000005" href="$command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="585,61,701,87"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="735,75,702,76,702,70,735,70"/>
+<area shape="rect" id="Node000006" href="$pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="118,54,305,94"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="571,77,305,77,305,71,571,71"/>
+<area shape="rect" id="Node000007" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,115,537,140"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="584,93,497,117,496,112,583,88"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="104,77,60,77,60,71,104,71"/>
+<area shape="rect" id="Node000008" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,119,315,144"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="349,132,315,132,315,127,349,126"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="138,118,107,109,59,89,61,84,109,103,140,113"/>
+</map>

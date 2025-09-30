@@ -1,0 +1,50 @@
+\doxysection{libft/ft\+\_\+lstsize\+\_\+bonus.c File Reference}
+\hypertarget{ft__lstsize__bonus_8c}{}\label{ft__lstsize__bonus_8c}\index{libft/ft\_lstsize\_bonus.c@{libft/ft\_lstsize\_bonus.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+lstsize\+\_\+bonus.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__lstsize__bonus_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ft__lstsize__bonus_8c_a9da614988ac99446db9df99d2c773fc1}{ft\+\_\+lstsize}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} \texorpdfstring{$\ast$}{*}lst)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__lstsize__bonus_8c_a9da614988ac99446db9df99d2c773fc1}\label{ft__lstsize__bonus_8c_a9da614988ac99446db9df99d2c773fc1} 
+\index{ft\_lstsize\_bonus.c@{ft\_lstsize\_bonus.c}!ft\_lstsize@{ft\_lstsize}}
+\index{ft\_lstsize@{ft\_lstsize}!ft\_lstsize\_bonus.c@{ft\_lstsize\_bonus.c}}
+\doxysubsubsection{\texorpdfstring{ft\_lstsize()}{ft\_lstsize()}}
+{\footnotesize\ttfamily int ft\+\_\+lstsize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{lst }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__lstsize__bonus_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__lstsize__bonus_8c_source}{ft\+\_\+lstsize\+\_\+bonus.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ i\ =\ 1;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (!lst)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (lst-\/>\mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{next}}\ !=\ NULL)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ lst\ =\ lst-\/>\mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{next}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{s\+\_\+list\+::next}}.
+

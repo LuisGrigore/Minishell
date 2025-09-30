@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/pipe.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/pipe.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -119,7 +120,9 @@ Include dependency graph for pipe.c:</div>
 <area shape="poly" title=" " alt="" coords="393,102,456,142,453,147,390,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="pipe_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac2417fa48185516c05dd13ce83e55f1d" id="r_ac2417fa48185516c05dd13ce83e55f1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d">execute_commands_with_pipes</a> (<a class="el" href="list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *commands, <a class="el" href="list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *env)</td></tr>
@@ -161,6 +164,173 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="pipe_8c_source.html#l00021">21</a> of file <a class="el" href="pipe_8c_source.html">pipe.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">size_t</span> n = commands-&gt;<a class="code hl_variable" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">size</a>;</div>
+<div class="line"><span class="lineno">   24</span>    int (*pipes)[2] = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>[2]) * (n - 1));</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (n &gt; 1 &amp;&amp; !pipes)</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n - 1; i++)</div>
+<div class="line"><span class="lineno">   29</span>        pipe(pipes[i]);</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_struct" href="structs__iter.html">t_iter</a> it = <a class="code hl_function" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a>(commands);</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_struct" href="structs__command.html">t_command</a> *cmd;</div>
+<div class="line"><span class="lineno">   33</span>    pid_t *pids = malloc(<span class="keyword">sizeof</span>(pid_t) * n);</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">while</span> ((cmd = <a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;it)) != NULL)</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">command_funct</a> == <a class="code hl_function" href="command_8h.html#ac40e1776b69522eaf80d953ec441231d">cd_execute</a> ||</div>
+<div class="line"><span class="lineno">   39</span>            cmd-&gt;<a class="code hl_variable" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">command_funct</a> == <a class="code hl_function" href="command_8h.html#abba1603056020c33ad3f11e82b14fcfe">export_execute</a> ||</div>
+<div class="line"><span class="lineno">   40</span>            cmd-&gt;<a class="code hl_variable" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">command_funct</a> == <a class="code hl_function" href="command_8h.html#a24640ac75761d535d770cf4255c336da">unset_execute</a>)</div>
+<div class="line"><span class="lineno">   41</span>        {</div>
+<div class="line"><span class="lineno">   42</span>            cmd-&gt;<a class="code hl_variable" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">command_funct</a>(cmd, env);</div>
+<div class="line"><span class="lineno">   43</span>            i++;</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        pid_t pid = fork();</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> (pid == 0)</div>
+<div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">if</span> (i &gt; 0)</div>
+<div class="line"><span class="lineno">   51</span>            {</div>
+<div class="line"><span class="lineno">   52</span>                dup2(pipes[i - 1][0], STDIN_FILENO);</div>
+<div class="line"><span class="lineno">   53</span>            }</div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">if</span> (i &lt; n - 1)</div>
+<div class="line"><span class="lineno">   55</span>            {</div>
+<div class="line"><span class="lineno">   56</span>                dup2(pipes[i][1], STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   57</span>            }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; n - 1; j++)</div>
+<div class="line"><span class="lineno">   61</span>            {</div>
+<div class="line"><span class="lineno">   62</span>                close(pipes[j][0]);</div>
+<div class="line"><span class="lineno">   63</span>                close(pipes[j][1]);</div>
+<div class="line"><span class="lineno">   64</span>            }</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>            cmd-&gt;<a class="code hl_variable" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">command_funct</a>(cmd, env);</div>
+<div class="line"><span class="lineno">   67</span>            exit(0);</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            pids[i] = pid;</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>        i++;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; n - 1; j++)</div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>        close(pipes[j][0]);</div>
+<div class="line"><span class="lineno">   82</span>        close(pipes[j][1]);</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; i; j++)</div>
+<div class="line"><span class="lineno">   87</span>        waitpid(pids[j], NULL, 0);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    free(pids);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (pipes)</div>
+<div class="line"><span class="lineno">   91</span>        free(pipes);</div>
+<div class="line"><span class="lineno">   92</span>}</div>
+<div class="ttc" id="acommand_8h_html_a24640ac75761d535d770cf4255c336da"><div class="ttname"><a href="command_8h.html#a24640ac75761d535d770cf4255c336da">unset_execute</a></div><div class="ttdeci">void unset_execute(t_command *command, t_gen_list *envioroment)</div><div class="ttdef"><b>Definition</b> <a href="command__functs_8c_source.html#l00167">command_functs.c:167</a></div></div>
+<div class="ttc" id="acommand_8h_html_abba1603056020c33ad3f11e82b14fcfe"><div class="ttname"><a href="command_8h.html#abba1603056020c33ad3f11e82b14fcfe">export_execute</a></div><div class="ttdeci">void export_execute(t_command *command, t_gen_list *envioroment)</div><div class="ttdef"><b>Definition</b> <a href="command__functs_8c_source.html#l00143">command_functs.c:143</a></div></div>
+<div class="ttc" id="acommand_8h_html_ac40e1776b69522eaf80d953ec441231d"><div class="ttname"><a href="command_8h.html#ac40e1776b69522eaf80d953ec441231d">cd_execute</a></div><div class="ttdeci">void cd_execute(t_command *command, t_gen_list *envioroment)</div><div class="ttdef"><b>Definition</b> <a href="command__functs_8c_source.html#l00061">command_functs.c:61</a></div></div>
+<div class="ttc" id="alist_8c_html_a0f8c34a8af8a33c8ec69d034952a7a4e"><div class="ttname"><a href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a></div><div class="ttdeci">t_iter iter_start(t_gen_list *list)</div><div class="ttdoc">Initialize an iterator at the start of the list.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00209">list.c:209</a></div></div>
+<div class="ttc" id="alist_8c_html_a8b49fd31ce730eadfb8c1192f30fe20b"><div class="ttname"><a href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a></div><div class="ttdeci">void * iter_next(t_iter *it)</div><div class="ttdoc">Get the next value from the list using the iterator and advance it.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00217">list.c:217</a></div></div>
+<div class="ttc" id="astructs__command_html"><div class="ttname"><a href="structs__command.html">s_command</a></div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00026">command.h:27</a></div></div>
+<div class="ttc" id="astructs__command_html_a4035892ffaf86e4740da691c477ebfa4"><div class="ttname"><a href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">s_command::command_funct</a></div><div class="ttdeci">t_command_funct command_funct</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00030">command.h:30</a></div></div>
+<div class="ttc" id="astructs__gen__list_html_a161ce598b8ef7b173793b9b6699ef42f"><div class="ttname"><a href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00033">list.h:33</a></div></div>
+<div class="ttc" id="astructs__iter_html"><div class="ttname"><a href="structs__iter.html">s_iter</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00036">list.h:37</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="command_8h.html#ac40e1776b69522eaf80d953ec441231d">cd_execute()</a>, <a class="el" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">s_command::command_funct</a>, <a class="el" href="command_8h.html#abba1603056020c33ad3f11e82b14fcfe">export_execute()</a>, <a class="el" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next()</a>, <a class="el" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start()</a>, <a class="el" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a>, and <a class="el" href="command_8h.html#a24640ac75761d535d770cf4255c336da">unset_execute()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="pipe_8c_ac2417fa48185516c05dd13ce83e55f1d_cgraph.png" border="0" usemap="#apipe_8c_ac2417fa48185516c05dd13ce83e55f1d_cgraph" alt=""/></div>
+<map name="apipe_8c_ac2417fa48185516c05dd13ce83e55f1d_cgraph" id="apipe_8c_ac2417fa48185516c05dd13ce83e55f1d_cgraph">
+<area shape="rect" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="5,250,192,290"/>
+<area shape="rect" href="command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="254,156,349,181"/>
+<area shape="poly" title=" " alt="" coords="138,248,261,185,264,190,141,252"/>
+<area shape="rect" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="415,205,495,231"/>
+<area shape="poly" title=" " alt="" coords="192,253,240,246,402,223,402,228,240,251,193,258"/>
+<area shape="rect" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="415,255,496,280"/>
+<area shape="poly" title=" " alt="" coords="192,267,401,265,401,270,192,272"/>
+<area shape="rect" href="command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="240,308,363,333"/>
+<area shape="poly" title=" " alt="" coords="180,287,237,302,236,307,178,293"/>
+<area shape="rect" href="command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="243,380,359,405"/>
+<area shape="poly" title=" " alt="" coords="134,288,269,371,266,375,132,293"/>
+<area shape="rect" href="environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="418,156,493,181"/>
+<area shape="poly" title=" " alt="" coords="349,166,404,166,404,171,349,171"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="603,107,682,132"/>
+<area shape="poly" title=" " alt="" coords="349,154,410,141,505,128,589,120,590,126,506,133,411,146,350,159"/>
+<area shape="rect" href="environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="419,304,492,329"/>
+<area shape="poly" title=" " alt="" coords="314,180,354,232,381,262,412,291,417,294,414,299,409,295,378,266,349,235,309,183"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="416,55,495,80"/>
+<area shape="poly" title=" " alt="" coords="320,154,422,85,425,90,323,158"/>
+<area shape="poly" title=" " alt="" coords="342,179,403,198,401,204,341,184"/>
+<area shape="poly" title=" " alt="" coords="321,179,412,241,419,245,416,250,409,246,318,184"/>
+<area shape="rect" href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="583,156,702,181"/>
+<area shape="poly" title=" " alt="" coords="493,166,570,166,570,171,493,171"/>
+<area shape="poly" title=" " alt="" coords="492,156,547,141,589,130,591,135,549,146,494,161"/>
+<area shape="rect" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="581,205,705,231"/>
+<area shape="poly" title=" " alt="" coords="493,176,582,199,580,204,492,181"/>
+<area shape="rect" href="ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="791,83,870,108"/>
+<area shape="poly" title=" " alt="" coords="682,112,777,99,778,105,683,117"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="793,132,868,157"/>
+<area shape="poly" title=" " alt="" coords="683,122,780,135,779,140,682,127"/>
+<area shape="poly" title=" " alt="" coords="698,203,736,190,795,162,798,166,738,195,700,208"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="785,205,876,231"/>
+<area shape="poly" title=" " alt="" coords="705,215,771,215,771,221,705,221"/>
+<area shape="poly" title=" " alt="" coords="484,302,498,291,514,265,520,240,527,215,546,191,569,178,571,182,550,195,532,218,525,242,519,267,502,294,488,306"/>
+<area shape="poly" title=" " alt="" coords="485,302,498,291,510,272,516,253,519,216,523,179,531,160,546,141,566,128,589,121,590,126,569,133,550,145,535,163,528,180,524,216,522,254,515,274,502,294,489,306"/>
+<area shape="poly" title=" " alt="" coords="481,302,498,291,512,278,521,265,531,253,547,241,566,232,568,237,549,246,535,257,525,268,516,281,502,295,484,306"/>
+<area shape="rect" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="562,255,723,280"/>
+<area shape="poly" title=" " alt="" coords="492,305,580,281,581,286,493,310"/>
+<area shape="rect" href="list_8c.html#a78751fefb5026bcdb58b19c746c959bc" title="Insert a value at the beginning of the list (O(1))." alt="" coords="597,304,688,329"/>
+<area shape="poly" title=" " alt="" coords="492,314,583,314,583,319,492,319"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="793,305,869,331"/>
+<area shape="poly" title=" " alt="" coords="692,277,738,290,780,302,779,307,737,295,690,283"/>
+<area shape="poly" title=" " alt="" coords="495,63,605,67,672,76,738,92,797,123,794,127,736,96,671,81,605,73,495,69"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="614,5,671,31"/>
+<area shape="poly" title=" " alt="" coords="494,55,600,26,601,31,496,60"/>
+<area shape="poly" title=" " alt="" coords="363,316,405,315,405,321,363,322"/>
+<area shape="rect" href="ft__split2_80_8c.html#af54f55774b34b2395f5ca1da01d9f015" title=" " alt="" coords="418,380,493,405"/>
+<area shape="poly" title=" " alt="" coords="331,331,416,372,414,377,328,336"/>
+<area shape="poly" title=" " alt="" coords="492,384,602,366,737,339,779,329,780,334,738,345,603,371,493,390"/>
+<area shape="rect" href="ft__split2_80_8c.html#adc745ae9ae5cefd55d21a576645475b0" title=" " alt="" coords="611,405,675,431"/>
+<area shape="poly" title=" " alt="" coords="493,395,597,409,597,415,492,400"/>
+<area shape="rect" href="ft__split2_80_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="593,455,693,480"/>
+<area shape="poly" title=" " alt="" coords="478,403,510,422,549,441,581,451,579,456,547,446,508,427,475,408"/>
+<area shape="rect" href="ft__split2_80_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="785,405,876,431"/>
+<area shape="poly" title=" " alt="" coords="675,415,771,415,771,421,675,421"/>
+<area shape="rect" href="ft__split2_80_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="924,405,1021,431"/>
+<area shape="poly" title=" " alt="" coords="876,415,910,415,910,421,876,421"/>
+<area shape="rect" href="environment__operations_8c.html#aa155b7428061814751ff8a6fd7ba7961" title="Remove an environment variable by name." alt="" coords="411,479,500,504"/>
+<area shape="poly" title=" " alt="" coords="324,403,424,469,421,473,321,408"/>
+<area shape="poly" title=" " alt="" coords="464,477,481,450,498,417,506,391,510,367,512,324,518,283,529,263,546,241,566,228,569,232,550,245,533,266,523,285,517,324,515,368,511,392,502,419,485,453,468,480"/>
+<area shape="rect" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="548,504,737,529"/>
+<area shape="poly" title=" " alt="" coords="501,495,536,499,535,505,500,500"/>
+<area shape="rect" href="list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b" title=" " alt="" coords="585,553,700,579"/>
+<area shape="poly" title=" " alt="" coords="478,502,510,521,549,540,573,548,571,553,547,544,508,526,475,506"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="pipe_8c_ac2417fa48185516c05dd13ce83e55f1d_icgraph.png" border="0" usemap="#apipe_8c_ac2417fa48185516c05dd13ce83e55f1d_icgraph" alt=""/></div>
+<map name="apipe_8c_ac2417fa48185516c05dd13ce83e55f1d_icgraph" id="apipe_8c_ac2417fa48185516c05dd13ce83e55f1d_icgraph">
+<area shape="rect" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="108,5,295,45"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>
+</div>
 
 </div>
 </div>

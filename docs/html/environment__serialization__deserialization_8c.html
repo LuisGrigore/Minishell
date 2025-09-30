@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/environment/environment_serialization_deserialization.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/environment/environment_serialization_deserialization.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -110,7 +111,9 @@ Include dependency graph for environment_serialization_deserialization.c:</div>
 <area shape="poly" title=" " alt="" coords="440,189,588,234,586,239,438,195"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="environment__serialization__deserialization_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:abe05c26f7960699d5e039ecc78182f89" id="r_abe05c26f7960699d5e039ecc78182f89"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89">env_var_to_string</a> (void *element)</td></tr>
@@ -152,6 +155,72 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="environment_8h.html#acf492e955776c85b7354a3f5ee5f3215" title="Represents a single environment variable.">t_env_var</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="environment__serialization__deserialization_8c_source.html#l00039">39</a> of file <a class="el" href="environment__serialization__deserialization_8c_source.html">environment_serialization_deserialization.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">int</span>         i;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">size_t</span>      j;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a>  *env_var_list;</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">char</span>        **var_str_name_value_split;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    i = 0;</div>
+<div class="line"><span class="lineno">   47</span>    env_var_list = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">while</span> (str_array[i])</div>
+<div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>        var_str_name_value_split = <a class="code hl_function" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(str_array[i], <span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_function" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a>(env_var_list, <a class="code hl_function" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a>(var_str_name_value_split[0],</div>
+<div class="line"><span class="lineno">   52</span>                var_str_name_value_split[1]));</div>
+<div class="line"><span class="lineno">   53</span>        free(var_str_name_value_split);</div>
+<div class="line"><span class="lineno">   54</span>        i++;</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> (env_var_list);</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+<div class="ttc" id="aenvioroment__internal_8c_html_a07737b43515e692334bfcdfc797f5d5c"><div class="ttname"><a href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a></div><div class="ttdeci">t_env_var * init_environment_var(char *name, char *value)</div><div class="ttdoc">Create a new environment variable.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00032">envioroment_internal.c:32</a></div></div>
+<div class="ttc" id="aft__split_8c_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00105">ft_split.c:105</a></div></div>
+<div class="ttc" id="alist_8c_html_a2ab31c1a882bda317542865ca981aa91"><div class="ttname"><a href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a></div><div class="ttdeci">t_gen_list * init_list(void)</div><div class="ttdoc">Initialize an empty list.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00017">list.c:17</a></div></div>
+<div class="ttc" id="alist_8c_html_ad70cc8287d69eb2327b71b28f7d52b6a"><div class="ttname"><a href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a></div><div class="ttdeci">void push_end(t_gen_list *list, void *value)</div><div class="ttdoc">Insert a value at the end of the list (O(1)).</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00030">list.c:30</a></div></div>
+<div class="ttc" id="astructs__gen__list_html"><div class="ttname"><a href="structs__gen__list.html">s_gen_list</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00029">list.h:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split()</a>, <a class="el" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var()</a>, <a class="el" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list()</a>, and <a class="el" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_cgraph.png" border="0" usemap="#aenvironment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_cgraph" alt=""/></div>
+<map name="aenvironment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_cgraph" id="aenvironment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_cgraph">
+<area shape="rect" title="Convert a string array into an environment variable list." alt="" coords="5,80,129,105"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="225,55,291,80"/>
+<area shape="poly" title=" " alt="" coords="129,82,211,71,211,76,130,87"/>
+<area shape="rect" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="177,5,339,31"/>
+<area shape="poly" title=" " alt="" coords="92,78,176,40,197,32,198,37,178,44,94,82"/>
+<area shape="rect" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="223,104,293,129"/>
+<area shape="poly" title=" " alt="" coords="130,98,209,108,208,113,129,103"/>
+<area shape="rect" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="216,153,300,179"/>
+<area shape="poly" title=" " alt="" coords="95,103,178,140,204,148,202,153,176,144,93,108"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="399,5,475,31"/>
+<area shape="poly" title=" " alt="" coords="291,56,384,29,386,35,292,61"/>
+<area shape="rect" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="405,55,469,80"/>
+<area shape="poly" title=" " alt="" coords="292,65,391,65,391,70,292,70"/>
+<area shape="rect" href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="387,104,487,129"/>
+<area shape="poly" title=" " alt="" coords="292,74,378,98,376,103,291,79"/>
+<area shape="rect" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="535,55,625,80"/>
+<area shape="poly" title=" " alt="" coords="469,65,521,65,521,70,469,70"/>
+<area shape="rect" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="673,55,771,80"/>
+<area shape="poly" title=" " alt="" coords="625,65,659,65,659,70,625,70"/>
+<area shape="poly" title=" " alt="" coords="339,15,385,15,385,21,339,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_icgraph.png" border="0" usemap="#aenvironment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_icgraph" alt=""/></div>
+<map name="aenvironment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_icgraph" id="aenvironment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_icgraph">
+<area shape="rect" title="Convert a string array into an environment variable list." alt="" coords="108,5,232,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a4382a7abfba4179c0505a0654e94009b" name="a4382a7abfba4179c0505a0654e94009b"></a>
@@ -183,6 +252,56 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="environment_8h.html#acf492e955776c85b7354a3f5ee5f3215" title="Represents a single environment variable.">t_env_var</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="environment__serialization__deserialization_8c_source.html#l00032">32</a> of file <a class="el" href="environment__serialization__deserialization_8c_source.html">environment_serialization_deserialization.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!envioroment)</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3">serialize_to_string_array</a>(envioroment, <a class="code hl_function" href="environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89">env_var_to_string</a>));</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="aenvironment__serialization__deserialization_8c_html_abe05c26f7960699d5e039ecc78182f89"><div class="ttname"><a href="environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89">env_var_to_string</a></div><div class="ttdeci">static char * env_var_to_string(void *element)</div><div class="ttdef"><b>Definition</b> <a href="environment__serialization__deserialization_8c_source.html#l00015">environment_serialization_deserialization.c:15</a></div></div>
+<div class="ttc" id="alist_8c_html_aa4522f235ef61b5bceac4de3cc34fde3"><div class="ttname"><a href="list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3">serialize_to_string_array</a></div><div class="ttdeci">char ** serialize_to_string_array(t_gen_list *list, t_element_to_string element_to_string)</div><div class="ttdoc">Convert a generic list into an array of strings.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00352">list.c:352</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89">env_var_to_string()</a>, and <a class="el" href="list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3">serialize_to_string_array()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="command_8h.html#a9b93e7663cca775fbe6c13fea90699f1">bin_execute()</a>, and <a class="el" href="command_8h.html#a509bc3c56be844c9b30a2ff165913928">env_execute()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_cgraph.png" border="0" usemap="#aenvironment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_cgraph" alt=""/></div>
+<map name="aenvironment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_cgraph" id="aenvironment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_cgraph">
+<area shape="rect" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="5,60,113,85"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89" title=" " alt="" coords="163,31,301,56"/>
+<area shape="poly" title=" " alt="" coords="113,61,148,55,149,60,114,66"/>
+<area shape="rect" href="list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3" title="Convert a generic list into an array of strings." alt="" coords="161,81,303,121"/>
+<area shape="poly" title=" " alt="" coords="114,79,148,84,147,90,113,84"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="351,31,429,56"/>
+<area shape="poly" title=" " alt="" coords="301,41,337,41,337,46,301,46"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="486,5,543,31"/>
+<area shape="poly" title=" " alt="" coords="429,33,472,24,473,29,430,38"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="477,55,552,80"/>
+<area shape="poly" title=" " alt="" coords="430,48,464,55,463,60,429,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_icgraph.png" border="0" usemap="#aenvironment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_icgraph" alt=""/></div>
+<map name="aenvironment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_icgraph" id="aenvironment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_icgraph">
+<area shape="rect" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="737,31,845,56"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="587,5,687,31"/>
+<area shape="poly" title=" " alt="" coords="723,35,687,29,688,24,724,30"/>
+<area shape="rect" href="command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="585,55,689,80"/>
+<area shape="poly" title=" " alt="" coords="724,56,690,62,689,57,723,51"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,31,537,56"/>
+<area shape="poly" title=" " alt="" coords="574,29,538,34,537,29,573,24"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
+<area shape="poly" title=" " alt="" coords="349,46,315,46,315,41,349,41"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" title=" " alt="" coords="571,62,537,57,538,52,572,56"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="abe05c26f7960699d5e039ecc78182f89" name="abe05c26f7960699d5e039ecc78182f89"></a>
@@ -208,6 +327,66 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="environment__serialization__deserialization_8c_source.html#l00015">15</a> of file <a class="el" href="environment__serialization__deserialization_8c_source.html">environment_serialization_deserialization.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_struct" href="structs__env__var.html">t_env_var</a>   *env_var;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">char</span>        *name_eq;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">char</span>        *result;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    env_var = (<a class="code hl_struct" href="structs__env__var.html">t_env_var</a> *)element;</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!env_var)</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   24</span>    name_eq = <a class="code hl_function" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(env_var-&gt;<a class="code hl_variable" href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">var_name</a>, <span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!name_eq)</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   27</span>    result = <a class="code hl_function" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(name_eq, env_var-&gt;<a class="code hl_variable" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">var_value</a>);</div>
+<div class="line"><span class="lineno">   28</span>    free(name_eq);</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> (result);</div>
+<div class="line"><span class="lineno">   30</span>}</div>
+<div class="ttc" id="aft__strjoin_8c_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00037">ft_strjoin.c:37</a></div></div>
+<div class="ttc" id="astructs__env__var_html"><div class="ttname"><a href="structs__env__var.html">s_env_var</a></div><div class="ttdoc">Represents a single environment variable (internal use).</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00032">environment_internal.h:33</a></div></div>
+<div class="ttc" id="astructs__env__var_html_ad8af13ad7fe31ef6d7504f3ce4560f72"><div class="ttname"><a href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">s_env_var::var_name</a></div><div class="ttdeci">char * var_name</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00034">environment_internal.h:34</a></div></div>
+<div class="ttc" id="astructs__env__var_html_af7904f8f58e150edf67f237e52d25409"><div class="ttname"><a href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">s_env_var::var_value</a></div><div class="ttdeci">char * var_value</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00035">environment_internal.h:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin()</a>, <a class="el" href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">s_env_var::var_name</a>, and <a class="el" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">s_env_var::var_value</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="environment_8h.html#a562e5d4f7de17fdbeea11feecda2ebc3">env_serialize()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_cgraph.png" border="0" usemap="#aenvironment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_cgraph" alt=""/></div>
+<map name="aenvironment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_cgraph" id="aenvironment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,144,56"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="192,31,271,56"/>
+<area shape="poly" title=" " alt="" coords="144,41,178,41,178,46,144,46"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="327,5,385,31"/>
+<area shape="poly" title=" " alt="" coords="271,33,313,24,315,29,272,38"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="319,55,393,80"/>
+<area shape="poly" title=" " alt="" coords="272,48,306,55,305,60,271,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_icgraph.png" border="0" usemap="#aenvironment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_icgraph" alt=""/></div>
+<map name="aenvironment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_icgraph" id="aenvironment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89_icgraph">
+<area shape="rect" title=" " alt="" coords="893,31,1032,56"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="737,31,845,56"/>
+<area shape="poly" title=" " alt="" coords="880,46,845,46,845,41,880,41"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="587,5,687,31"/>
+<area shape="poly" title=" " alt="" coords="723,35,687,29,688,24,724,30"/>
+<area shape="rect" href="command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="585,55,689,80"/>
+<area shape="poly" title=" " alt="" coords="724,56,690,62,689,57,723,51"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,31,537,56"/>
+<area shape="poly" title=" " alt="" coords="574,29,538,34,537,29,573,24"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
+<area shape="poly" title=" " alt="" coords="349,46,315,46,315,41,349,41"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" title=" " alt="" coords="571,62,537,57,538,52,572,56"/>
+</map>
+</div>
 
 </div>
 </div>

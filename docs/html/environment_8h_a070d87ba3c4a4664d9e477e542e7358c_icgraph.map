@@ -1,0 +1,18 @@
+<map id="env_set" name="env_set">
+<area shape="rect" id="Node000001" title="Add or update an environment variable." alt="" coords="768,42,841,67"/>
+<area shape="rect" id="Node000002" href="$command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="611,17,706,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,49,706,40,707,35,755,43"/>
+<area shape="rect" id="Node000007" href="$command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="597,66,720,91"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="755,65,721,71,720,66,754,60"/>
+<area shape="rect" id="Node000003" href="$pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="363,5,549,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="597,31,549,30,550,25,598,25"/>
+<area shape="rect" id="Node000005" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="369,70,543,95"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="598,48,506,73,504,67,597,43"/>
+<area shape="rect" id="Node000004" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,42,60,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="349,35,61,55,60,50,349,30"/>
+<area shape="rect" id="Node000006" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,67,315,93"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="355,84,315,84,315,78,355,79"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="107,68,60,61,61,56,108,63"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="595,65,532,48,533,43,597,60"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="584,83,544,84,543,78,584,77"/>
+</map>

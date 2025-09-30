@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/minishell.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/minishell.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -145,7 +146,9 @@ Include dependency graph for minishell.c:</div>
 <area shape="poly" title=" " alt="" coords="1279,110,1331,156,1328,160,1276,114"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="minishell_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a74cc3d851d4f0f3ab5c2202774200577" id="r_a74cc3d851d4f0f3ab5c2202774200577"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577">history_checker</a> (char *cmd)</td></tr>
@@ -193,6 +196,64 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00050">50</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordtype">int</span> b;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    b = 0;</div>
+<div class="line"><span class="lineno">   56</span>    i = 0;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577">history_checker</a>(cmd) == NULL)</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">while</span> (cmd[i])</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (cmd[i] == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">   62</span>            b = 1;</div>
+<div class="line"><span class="lineno">   63</span>        i++;</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">while</span> (cmd[i] &amp;&amp; b == 1)</div>
+<div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">if</span> (cmd[i] == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">   67</span>                b = 0;</div>
+<div class="line"><span class="lineno">   68</span>            i++;</div>
+<div class="line"><span class="lineno">   69</span>        }</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (b != 0)</div>
+<div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        add_history(cmd);</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> (cmd);</div>
+<div class="line"><span class="lineno">   77</span>}</div>
+<div class="ttc" id="aminishell_8c_html_a74cc3d851d4f0f3ab5c2202774200577"><div class="ttname"><a href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577">history_checker</a></div><div class="ttdeci">static char * history_checker(char *cmd)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00029">minishell.c:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577">history_checker()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_cgraph.png" border="0" usemap="#aminishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_cgraph" alt=""/></div>
+<map name="aminishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_cgraph" id="aminishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,100,56"/>
+<area shape="rect" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577" title=" " alt="" coords="148,31,272,56"/>
+<area shape="poly" title=" " alt="" coords="100,41,134,41,134,46,100,46"/>
+<area shape="rect" href="path__utils_8c.html#a5785980ed2eeb3f96606b8ff04163808" title=" " alt="" coords="320,5,400,31"/>
+<area shape="poly" title=" " alt="" coords="272,30,306,24,307,30,273,36"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="323,55,397,80"/>
+<area shape="poly" title=" " alt="" coords="273,51,310,57,309,62,272,56"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_icgraph.png" border="0" usemap="#aminishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_icgraph" alt=""/></div>
+<map name="aminishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_icgraph" id="aminishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,203,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="95,21,60,21,60,15,95,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a85e9c4fc45f80b15b12af974fac9f4e4" name="a85e9c4fc45f80b15b12af974fac9f4e4"></a>
@@ -210,6 +271,37 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00218">218</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>{</div>
+<div class="line"><span class="lineno">  220</span>    <a class="code hl_function" href="tokenizer_8h.html#af0886495b353f179f845206ad2969d3e">destroy_token</a>((<a class="code hl_struct" href="structs__token.html">t_token</a> *) token_ptr);</div>
+<div class="line"><span class="lineno">  221</span>}</div>
+<div class="ttc" id="astructs__token_html"><div class="ttname"><a href="structs__token.html">s_token</a></div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00029">tokenizer.h:30</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_af0886495b353f179f845206ad2969d3e"><div class="ttname"><a href="tokenizer_8h.html#af0886495b353f179f845206ad2969d3e">destroy_token</a></div><div class="ttdeci">void destroy_token(t_token *token)</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8c_source.html#l00119">tokenizer.c:119</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="tokenizer_8h.html#af0886495b353f179f845206ad2969d3e">destroy_token()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_cgraph.png" border="0" usemap="#aminishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_cgraph" alt=""/></div>
+<map name="aminishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_cgraph" id="aminishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,156,31"/>
+<area shape="rect" href="tokenizer_8c.html#af0886495b353f179f845206ad2969d3e" title=" " alt="" coords="204,5,319,31"/>
+<area shape="poly" title=" " alt="" coords="156,15,190,15,190,21,156,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_icgraph.png" border="0" usemap="#aminishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_icgraph" alt=""/></div>
+<map name="aminishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_icgraph" id="aminishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,259,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -236,6 +328,57 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00029">29</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    i = 0;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (cmd[0] == <span class="charliteral">&#39;|&#39;</span> || cmd[<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(cmd)] == <span class="charliteral">&#39;|&#39;</span>)</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        add_history(cmd);</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span> (cmd[i])</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace</a>(cmd[i]) == 0)</div>
+<div class="line"><span class="lineno">   42</span>            break ;</div>
+<div class="line"><span class="lineno">   43</span>        i++;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (cmd[i] == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> (cmd);</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="aft__strlen_8c_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="autil_8h_html_a5785980ed2eeb3f96606b8ff04163808"><div class="ttname"><a href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace</a></div><div class="ttdeci">int ft_ispace(char c)</div><div class="ttdef"><b>Definition</b> <a href="path__utils_8c_source.html#l00017">path_utils.c:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace()</a>, and <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d">check_cmd()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a74cc3d851d4f0f3ab5c2202774200577_cgraph.png" border="0" usemap="#aminishell_8c_a74cc3d851d4f0f3ab5c2202774200577_cgraph" alt=""/></div>
+<map name="aminishell_8c_a74cc3d851d4f0f3ab5c2202774200577_cgraph" id="aminishell_8c_a74cc3d851d4f0f3ab5c2202774200577_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,129,56"/>
+<area shape="rect" href="path__utils_8c.html#a5785980ed2eeb3f96606b8ff04163808" title=" " alt="" coords="177,5,257,31"/>
+<area shape="poly" title=" " alt="" coords="129,30,164,24,165,30,130,36"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="180,55,255,80"/>
+<area shape="poly" title=" " alt="" coords="130,51,167,57,166,62,129,56"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a74cc3d851d4f0f3ab5c2202774200577_icgraph.png" border="0" usemap="#aminishell_8c_a74cc3d851d4f0f3ab5c2202774200577_icgraph" alt=""/></div>
+<map name="aminishell_8c_a74cc3d851d4f0f3ab5c2202774200577_icgraph" id="aminishell_8c_a74cc3d851d4f0f3ab5c2202774200577_icgraph">
+<area shape="rect" title=" " alt="" coords="251,5,375,31"/>
+<area shape="rect" href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d" title=" " alt="" coords="108,5,203,31"/>
+<area shape="poly" title=" " alt="" coords="237,21,203,21,203,15,237,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="95,21,60,21,60,15,95,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -265,6 +408,220 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00223">223</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>{</div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a>  *tokens;</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a>  *current_commands;</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a>  *envioroment_vars;</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordtype">bool</span>        finish;</div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordtype">char</span>        *line;</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordtype">char</span>        *name;</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (args &gt; 1)</div>
+<div class="line"><span class="lineno">  233</span>        exit(0);</div>
+<div class="line"><span class="lineno">  234</span>    <a class="code hl_function" href="minishell_8c.html#a3719a1754f6e317bbb96770b973d453c">signals_init</a>();</div>
+<div class="line"><span class="lineno">  235</span>    envioroment_vars = <a class="code hl_function" href="environment_8h.html#a5da2d3c514cffffe7e48122742dd4d44">env_deserialize</a>(environment_var_str_array</div>
+<div class="line"><span class="lineno">  236</span>            + 2);</div>
+<div class="line"><span class="lineno">  237</span>    name = <a class="code hl_function" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username</a>(envioroment_vars);</div>
+<div class="line"><span class="lineno">  238</span>    finish = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">while</span> (!finish)</div>
+<div class="line"><span class="lineno">  240</span>    {</div>
+<div class="line"><span class="lineno">  241</span>        line = readline(name);</div>
+<div class="line"><span class="lineno">  242</span>        <span class="keywordflow">if</span> ((<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(line) != 0 &amp;&amp; <a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(line, <span class="stringliteral">&quot;exit&quot;</span>,</div>
+<div class="line"><span class="lineno">  243</span>                    <a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(line)) == 0) || line == NULL)</div>
+<div class="line"><span class="lineno">  244</span>            finish = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(line) != 0)</div>
+<div class="line"><span class="lineno">  246</span>        {</div>
+<div class="line"><span class="lineno">  247</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d">check_cmd</a>(line) == NULL)</div>
+<div class="line"><span class="lineno">  248</span>                continue ;</div>
+<div class="line"><span class="lineno">  249</span>            add_history(line);</div>
+<div class="line"><span class="lineno">  250</span>            tokens = <a class="code hl_function" href="tokenizer_8h.html#a7f79110e05751dc9e588a9fab750d97d">tokenize</a>(line);</div>
+<div class="line"><span class="lineno">  251</span>            <span class="comment">//print_tokens(tokens);</span></div>
+<div class="line"><span class="lineno">  252</span>            <span class="keywordflow">if</span> (!tokens)</div>
+<div class="line"><span class="lineno">  253</span>            {</div>
+<div class="line"><span class="lineno">  254</span>                perror(<span class="stringliteral">&quot;Tokenization error &quot;</span>);</div>
+<div class="line"><span class="lineno">  255</span>                continue ;</div>
+<div class="line"><span class="lineno">  256</span>            }</div>
+<div class="line"><span class="lineno">  257</span>            current_commands = <a class="code hl_function" href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands</a>(tokens);</div>
+<div class="line"><span class="lineno">  258</span>            <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(tokens, <a class="code hl_function" href="minishell_8c.html#a85e9c4fc45f80b15b12af974fac9f4e4">destroy_token_data</a>);</div>
+<div class="line"><span class="lineno">  259</span>            <span class="keywordflow">if</span> (!current_commands)</div>
+<div class="line"><span class="lineno">  260</span>            {</div>
+<div class="line"><span class="lineno">  261</span>                perror(<span class="stringliteral">&quot;Parsing error &quot;</span>);</div>
+<div class="line"><span class="lineno">  262</span>                continue ;</div>
+<div class="line"><span class="lineno">  263</span>            }</div>
+<div class="line"><span class="lineno">  264</span>            <span class="comment">//print_commands(current_commands);</span></div>
+<div class="line"><span class="lineno">  265</span>            <a class="code hl_function" href="command_8h.html#ac2417fa48185516c05dd13ce83e55f1d">execute_commands_with_pipes</a>(current_commands, envioroment_vars);</div>
+<div class="line"><span class="lineno">  266</span>        }</div>
+<div class="line"><span class="lineno">  267</span>        free(line);</div>
+<div class="line"><span class="lineno">  268</span>        line = NULL;</div>
+<div class="line"><span class="lineno">  269</span>        <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(current_commands, <a class="code hl_function" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command</a>);</div>
+<div class="line"><span class="lineno">  270</span>        current_commands = NULL;</div>
+<div class="line"><span class="lineno">  271</span>    }</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_function" href="environment_8h.html#ae4211ec5d85586513118f0d5e787347d">env_destroy</a>(envioroment_vars);</div>
+<div class="line"><span class="lineno">  273</span>    free(name);</div>
+<div class="line"><span class="lineno">  274</span>}</div>
+<div class="ttc" id="acommand_8h_html_a950465f331fec212ad0507c3e41a0137"><div class="ttname"><a href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command</a></div><div class="ttdeci">void destroy_command(void *command_to_delete)</div><div class="ttdef"><b>Definition</b> <a href="command_8c_source.html#l00021">command.c:21</a></div></div>
+<div class="ttc" id="acommand_8h_html_ac2417fa48185516c05dd13ce83e55f1d"><div class="ttname"><a href="command_8h.html#ac2417fa48185516c05dd13ce83e55f1d">execute_commands_with_pipes</a></div><div class="ttdeci">void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)</div><div class="ttdoc">Executes the commands in the given list in order as child processes linking their input and output wi...</div><div class="ttdef"><b>Definition</b> <a href="pipe_8c_source.html#l00021">pipe.c:21</a></div></div>
+<div class="ttc" id="aenvironment_8h_html_a5da2d3c514cffffe7e48122742dd4d44"><div class="ttname"><a href="environment_8h.html#a5da2d3c514cffffe7e48122742dd4d44">env_deserialize</a></div><div class="ttdeci">t_gen_list * env_deserialize(char **str_array)</div><div class="ttdoc">Convert a string array into an environment variable list.</div><div class="ttdef"><b>Definition</b> <a href="environment__serialization__deserialization_8c_source.html#l00039">environment_serialization_deserialization.c:39</a></div></div>
+<div class="ttc" id="aenvironment_8h_html_ae4211ec5d85586513118f0d5e787347d"><div class="ttname"><a href="environment_8h.html#ae4211ec5d85586513118f0d5e787347d">env_destroy</a></div><div class="ttdeci">void env_destroy(t_gen_list *env)</div><div class="ttdoc">Destroy the entire environment list and free resources.</div><div class="ttdef"><b>Definition</b> <a href="environment__operations_8c_source.html#l00044">environment_operations.c:44</a></div></div>
+<div class="ttc" id="aft__strncmp_8c_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00015">ft_strncmp.c:15</a></div></div>
+<div class="ttc" id="alist_8c_html_aaaeda7db5c6b1819a079f05d83c3ce38"><div class="ttname"><a href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a></div><div class="ttdeci">void destroy_gen_list(t_gen_list *list, void(value_destroyer)(void *))</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00088">list.c:88</a></div></div>
+<div class="ttc" id="aminishell_8c_html_a3719a1754f6e317bbb96770b973d453c"><div class="ttname"><a href="minishell_8c.html#a3719a1754f6e317bbb96770b973d453c">signals_init</a></div><div class="ttdeci">void signals_init(void)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00099">minishell.c:99</a></div></div>
+<div class="ttc" id="aminishell_8c_html_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d"><div class="ttname"><a href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d">check_cmd</a></div><div class="ttdeci">char * check_cmd(char *cmd)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00050">minishell.c:50</a></div></div>
+<div class="ttc" id="aminishell_8c_html_a8139962a2ceae2621213f8e6719565cf"><div class="ttname"><a href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username</a></div><div class="ttdeci">char * username(t_gen_list *env)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00079">minishell.c:79</a></div></div>
+<div class="ttc" id="aminishell_8c_html_a85e9c4fc45f80b15b12af974fac9f4e4"><div class="ttname"><a href="minishell_8c.html#a85e9c4fc45f80b15b12af974fac9f4e4">destroy_token_data</a></div><div class="ttdeci">void destroy_token_data(void *token_ptr)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00218">minishell.c:218</a></div></div>
+<div class="ttc" id="aparser_8h_html_ae411b47cf3a6fe75994d31c5574c60ce"><div class="ttname"><a href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands</a></div><div class="ttdeci">t_gen_list * parse_tokens_to_commands(t_gen_list *tokens)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00034">parser.c:34</a></div></div>
+<div class="ttc" id="astructs__gen__list_html"><div class="ttname"><a href="structs__gen__list.html">s_gen_list</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00029">list.h:30</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a7f79110e05751dc9e588a9fab750d97d"><div class="ttname"><a href="tokenizer_8h.html#a7f79110e05751dc9e588a9fab750d97d">tokenize</a></div><div class="ttdeci">t_gen_list * tokenize(const char *line)</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8c_source.html#l00041">tokenizer.c:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d">check_cmd()</a>, <a class="el" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command()</a>, <a class="el" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list()</a>, <a class="el" href="minishell_8c.html#a85e9c4fc45f80b15b12af974fac9f4e4">destroy_token_data()</a>, <a class="el" href="environment_8h.html#a5da2d3c514cffffe7e48122742dd4d44">env_deserialize()</a>, <a class="el" href="environment_8h.html#ae4211ec5d85586513118f0d5e787347d">env_destroy()</a>, <a class="el" href="command_8h.html#ac2417fa48185516c05dd13ce83e55f1d">execute_commands_with_pipes()</a>, <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>, <a class="el" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp()</a>, <a class="el" href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands()</a>, <a class="el" href="minishell_8c.html#a3719a1754f6e317bbb96770b973d453c">signals_init()</a>, <a class="el" href="tokenizer_8h.html#a7f79110e05751dc9e588a9fab750d97d">tokenize()</a>, and <a class="el" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35_cgraph.png" border="0" usemap="#aminishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35_cgraph" alt=""/></div>
+<map name="aminishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35_cgraph" id="aminishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35_cgraph">
+<area shape="rect" title=" " alt="" coords="5,1084,60,1109"/>
+<area shape="rect" href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d" title=" " alt="" coords="164,129,259,155"/>
+<area shape="poly" title=" " alt="" coords="32,1084,35,907,47,617,56,466,69,332,85,230,95,194,106,172,126,156,150,146,152,151,129,160,110,176,100,196,90,231,74,333,62,467,52,617,41,907,37,1084"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="1151,383,1226,408"/>
+<area shape="poly" title=" " alt="" coords="31,1084,32,1014,39,898,55,753,69,675,87,596,110,519,138,445,172,376,213,315,261,263,317,224,348,210,381,199,417,192,455,190,821,190,904,187,971,185,1002,188,1034,196,1067,211,1104,235,1135,264,1158,300,1174,337,1184,369,1179,370,1169,339,1153,303,1131,268,1101,239,1065,216,1032,201,1001,193,971,190,904,192,821,195,455,195,418,198,383,204,350,215,320,229,265,268,217,318,177,379,143,447,115,521,92,598,74,676,61,754,44,899,37,1014,37,1084"/>
+<area shape="rect" href="command_8c.html#a950465f331fec212ad0507c3e41a0137" title=" " alt="" coords="385,1135,527,1160"/>
+<area shape="poly" title=" " alt="" coords="61,1097,371,1135,370,1140,60,1102"/>
+<area shape="rect" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="597,1188,727,1213"/>
+<area shape="poly" title=" " alt="" coords="55,1107,80,1121,109,1133,172,1151,237,1165,367,1184,487,1195,584,1198,584,1203,487,1200,366,1190,236,1170,170,1156,107,1138,78,1126,53,1112"/>
+<area shape="rect" href="minishell_8c.html#a85e9c4fc45f80b15b12af974fac9f4e4" title=" " alt="" coords="136,1649,287,1675"/>
+<area shape="poly" title=" " alt="" coords="37,1109,44,1199,58,1336,80,1476,94,1533,110,1574,124,1594,141,1611,177,1640,174,1644,137,1615,120,1597,106,1577,89,1535,75,1477,53,1337,39,1199,32,1110"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="149,1285,273,1311"/>
+<area shape="poly" title=" " alt="" coords="42,1108,69,1157,110,1215,145,1248,180,1275,177,1280,141,1252,106,1218,64,1160,38,1111"/>
+<area shape="rect" href="environment__operations_8c.html#ae4211ec5d85586513118f0d5e787347d" title="Destroy the entire environment list and free resources." alt="" coords="405,1085,507,1111"/>
+<area shape="poly" title=" " alt="" coords="60,1094,391,1095,391,1100,60,1099"/>
+<area shape="rect" href="pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="363,571,549,611"/>
+<area shape="poly" title=" " alt="" coords="34,1083,56,996,77,938,106,882,163,798,216,737,277,686,361,628,384,615,386,619,364,632,280,690,219,741,167,801,110,885,82,940,61,997,39,1084"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="775,985,865,1011"/>
+<area shape="poly" title=" " alt="" coords="60,1087,108,1077,242,1058,427,1036,761,1001,761,1006,427,1041,243,1063,108,1082,61,1092"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,896,315,921"/>
+<area shape="poly" title=" " alt="" coords="37,1082,64,1033,83,1004,106,976,139,948,173,926,175,930,142,952,110,980,88,1007,68,1036,42,1085"/>
+<area shape="rect" href="minishell_8c.html#a3719a1754f6e317bbb96770b973d453c" title=" " alt="" coords="163,1821,259,1847"/>
+<area shape="poly" title=" " alt="" coords="37,1110,60,1385,82,1559,95,1632,110,1685,127,1721,149,1755,191,1809,187,1812,144,1758,123,1724,106,1687,90,1633,77,1560,55,1385,32,1110"/>
+<area shape="rect" href="tokenizer_8c.html#a7f79110e05751dc9e588a9fab750d97d" title=" " alt="" coords="173,1539,250,1564"/>
+<area shape="poly" title=" " alt="" coords="40,1109,68,1198,110,1321,159,1436,200,1525,195,1527,154,1438,106,1323,63,1200,35,1110"/>
+<area shape="rect" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf" title=" " alt="" coords="619,29,705,55"/>
+<area shape="poly" title=" " alt="" coords="31,1084,33,897,42,587,51,426,64,283,82,174,93,137,106,115,132,91,161,70,224,39,292,20,363,11,433,9,498,12,605,27,605,32,498,17,433,14,363,16,293,25,226,44,163,75,135,95,110,118,98,140,87,176,70,284,57,426,48,587,39,897,37,1084"/>
+<area shape="rect" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577" title=" " alt="" coords="394,129,518,155"/>
+<area shape="poly" title=" " alt="" coords="259,139,380,139,380,145,259,145"/>
+<area shape="rect" href="path__utils_8c.html#a5785980ed2eeb3f96606b8ff04163808" title=" " alt="" coords="622,79,702,104"/>
+<area shape="poly" title=" " alt="" coords="508,127,608,102,609,107,509,132"/>
+<area shape="poly" title=" " alt="" coords="518,134,656,126,829,124,915,127,993,136,1058,150,1084,160,1104,172,1126,192,1144,216,1169,270,1183,324,1189,369,1183,369,1178,325,1164,272,1140,219,1122,195,1101,176,1081,165,1056,155,992,141,915,133,829,129,657,131,518,140"/>
+<area shape="poly" title=" " alt="" coords="507,1158,600,1182,598,1187,505,1163"/>
+<area shape="rect" href="redirect__asignation_8c.html#abd88dda569ce623bd360a0f45a6f5e61" title=" " alt="" coords="598,1237,726,1263"/>
+<area shape="poly" title=" " alt="" coords="480,1158,599,1222,615,1229,612,1234,596,1227,477,1163"/>
+<area shape="rect" href="tokenizer_8c.html#af0886495b353f179f845206ad2969d3e" title=" " alt="" coords="399,1835,513,1860"/>
+<area shape="poly" title=" " alt="" coords="223,1673,277,1743,317,1785,364,1820,387,1831,385,1835,361,1824,314,1789,273,1747,219,1677"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="423,1387,489,1412"/>
+<area shape="poly" title=" " alt="" coords="244,1308,412,1379,410,1384,242,1313"/>
+<area shape="rect" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="927,988,1089,1013"/>
+<area shape="poly" title=" " alt="" coords="225,1309,247,1335,279,1367,319,1398,364,1421,418,1439,467,1451,512,1456,554,1455,595,1446,637,1429,679,1404,725,1371,766,1329,792,1286,807,1242,817,1197,827,1153,843,1108,869,1065,912,1023,919,1018,922,1022,915,1027,873,1068,848,1110,832,1154,822,1199,812,1243,796,1288,770,1332,728,1375,682,1409,639,1434,597,1451,555,1460,512,1461,466,1456,416,1444,362,1426,316,1402,275,1371,243,1338,221,1313"/>
+<area shape="rect" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="421,1285,491,1311"/>
+<area shape="poly" title=" " alt="" coords="274,1295,407,1295,407,1301,274,1301"/>
+<area shape="rect" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="414,1236,498,1261"/>
+<area shape="poly" title=" " alt="" coords="273,1283,400,1257,401,1262,274,1288"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="1151,1037,1227,1063"/>
+<area shape="poly" title=" " alt="" coords="489,1398,597,1396,662,1387,726,1370,797,1340,866,1303,932,1262,993,1218,1096,1133,1164,1070,1167,1074,1099,1137,996,1222,935,1266,869,1308,799,1345,728,1375,663,1392,597,1401,490,1404"/>
+<area shape="rect" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="630,1336,694,1361"/>
+<area shape="poly" title=" " alt="" coords="489,1389,616,1357,617,1362,490,1394"/>
+<area shape="rect" href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="612,1287,712,1312"/>
+<area shape="poly" title=" " alt="" coords="489,1389,518,1379,548,1365,562,1354,571,1344,581,1333,596,1321,606,1315,609,1320,599,1326,585,1336,575,1347,566,1358,551,1370,520,1384,490,1394"/>
+<area shape="poly" title=" " alt="" coords="1061,1011,1103,1022,1138,1032,1137,1037,1102,1027,1060,1016"/>
+<area shape="poly" title=" " alt="" coords="508,1104,551,1120,566,1131,576,1143,585,1154,599,1167,620,1179,617,1184,596,1171,581,1158,572,1146,563,1135,548,1124,506,1109"/>
+<area shape="rect" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="913,1037,1103,1063"/>
+<area shape="poly" title=" " alt="" coords="507,1091,900,1057,900,1062,508,1096"/>
+<area shape="rect" href="command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="615,532,709,557"/>
+<area shape="poly" title=" " alt="" coords="544,569,601,556,602,561,545,574"/>
+<area shape="rect" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="780,584,860,609"/>
+<area shape="poly" title=" " alt="" coords="549,590,766,593,766,599,549,595"/>
+<area shape="rect" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="779,483,861,508"/>
+<area shape="poly" title=" " alt="" coords="520,569,548,556,562,546,571,536,581,526,596,517,639,503,684,495,765,490,766,496,685,500,641,508,598,522,584,530,575,539,565,550,551,560,523,574"/>
+<area shape="rect" href="command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="601,735,723,760"/>
+<area shape="poly" title=" " alt="" coords="479,610,531,659,599,713,620,726,618,731,596,718,528,663,475,614"/>
+<area shape="rect" href="command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="604,836,720,861"/>
+<area shape="poly" title=" " alt="" coords="475,610,599,770,643,823,639,827,595,773,471,613"/>
+<area shape="rect" href="environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="783,433,857,459"/>
+<area shape="poly" title=" " alt="" coords="680,530,773,468,781,463,784,468,776,472,683,534"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="969,433,1047,459"/>
+<area shape="poly" title=" " alt="" coords="709,541,783,534,865,517,924,492,975,464,977,468,926,497,866,522,784,539,710,546"/>
+<area shape="rect" href="environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="783,633,857,659"/>
+<area shape="poly" title=" " alt="" coords="683,555,776,618,785,624,782,629,773,623,680,560"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="781,231,859,256"/>
+<area shape="poly" title=" " alt="" coords="668,530,803,267,808,270,672,533"/>
+<area shape="poly" title=" " alt="" coords="702,555,768,577,767,582,700,560"/>
+<area shape="poly" title=" " alt="" coords="703,529,765,510,767,515,704,535"/>
+<area shape="poly" title=" " alt="" coords="858,443,954,443,954,449,858,449"/>
+<area shape="poly" title=" " alt="" coords="1047,433,1137,407,1139,412,1048,438"/>
+<area shape="poly" title=" " alt="" coords="828,658,860,749,885,811,916,871,953,929,989,976,985,979,949,932,911,874,881,813,855,751,823,660"/>
+<area shape="poly" title=" " alt="" coords="846,631,864,619,902,581,938,540,989,468,994,472,942,543,906,585,867,623,849,635"/>
+<area shape="poly" title=" " alt="" coords="859,236,911,233,974,235,1041,247,1074,258,1104,273,1130,293,1151,319,1179,369,1175,371,1147,322,1126,297,1101,278,1072,263,1040,252,973,240,911,238,860,241"/>
+<area shape="poly" title=" " alt="" coords="682,732,786,664,789,668,684,737"/>
+<area shape="rect" href="ft__split2_80_8c.html#af54f55774b34b2395f5ca1da01d9f015" title=" " alt="" coords="971,836,1045,861"/>
+<area shape="poly" title=" " alt="" coords="707,758,958,831,956,837,706,763"/>
+<area shape="poly" title=" " alt="" coords="1023,860,1169,1025,1165,1029,1019,864"/>
+<area shape="rect" href="environment__operations_8c.html#aa155b7428061814751ff8a6fd7ba7961" title="Remove an environment variable by name." alt="" coords="775,836,865,861"/>
+<area shape="poly" title=" " alt="" coords="720,846,761,846,761,851,720,851"/>
+<area shape="poly" title=" " alt="" coords="827,861,836,894,854,938,880,984,896,1004,915,1023,924,1029,921,1033,912,1027,892,1008,875,987,849,940,831,895,822,862"/>
+<area shape="poly" title=" " alt="" coords="209,896,211,810,216,745,227,672,245,594,272,517,310,444,334,411,361,380,396,348,429,325,462,309,496,299,569,291,661,291,821,291,868,294,916,300,1007,322,1088,349,1149,375,1147,379,1086,354,1006,327,915,305,868,299,821,297,661,297,570,297,497,304,464,314,432,329,399,352,365,384,338,414,315,447,277,519,250,596,232,673,222,745,216,810,215,896"/>
+<area shape="poly" title=" " alt="" coords="220,920,239,960,269,1014,312,1071,337,1097,364,1120,376,1127,373,1131,361,1124,333,1101,307,1075,265,1017,234,962,216,923"/>
+<area shape="poly" title=" " alt="" coords="252,919,312,942,389,975,472,1019,551,1071,596,1117,644,1176,640,1179,592,1121,548,1075,470,1023,387,980,310,947,250,924"/>
+<area shape="poly" title=" " alt="" coords="217,921,226,984,251,1078,270,1130,295,1182,326,1229,364,1271,385,1283,408,1291,406,1296,383,1288,361,1275,322,1233,290,1184,265,1132,246,1080,221,985,211,922"/>
+<area shape="poly" title=" " alt="" coords="221,921,272,1028,315,1100,365,1170,395,1200,426,1226,423,1230,391,1204,361,1173,310,1103,268,1031,216,923"/>
+<area shape="poly" title=" " alt="" coords="296,893,313,886,328,877,338,867,361,845,472,773,563,725,656,679,773,618,782,614,784,618,776,623,658,684,566,729,475,778,364,849,341,871,331,881,316,891,298,898"/>
+<area shape="poly" title=" " alt="" coords="210,896,216,825,224,774,236,718,255,659,281,602,316,550,361,507,409,478,462,460,518,450,574,448,629,451,681,458,766,476,765,482,680,463,629,456,574,453,518,456,464,465,412,483,364,511,320,553,286,605,260,661,242,719,229,775,221,826,216,896"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="621,380,703,405"/>
+<area shape="poly" title=" " alt="" coords="209,896,210,813,215,752,226,684,244,612,272,542,310,477,334,448,361,423,389,404,420,390,452,381,486,376,551,374,607,380,607,385,551,380,486,381,454,386,422,395,392,409,364,427,338,452,314,480,276,544,249,614,231,685,221,753,216,814,215,896"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="369,860,543,885"/>
+<area shape="poly" title=" " alt="" coords="298,893,356,885,357,890,298,899"/>
+<area shape="rect" href="command_8c.html#a980b6e4466bc0bed37cb6352f143ab96" title=" " alt="" coords="951,1087,1065,1112"/>
+<area shape="poly" title=" " alt="" coords="262,919,598,1003,938,1082,937,1087,597,1009,261,924"/>
+<area shape="rect" href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c" title=" " alt="" coords="406,521,506,547"/>
+<area shape="poly" title=" " alt="" coords="212,895,222,835,247,744,267,693,292,644,323,597,361,557,392,540,394,545,364,561,327,601,296,646,272,696,252,745,227,836,217,896"/>
+<area shape="poly" title=" " alt="" coords="704,390,1138,392,1137,398,704,396"/>
+<area shape="poly" title=" " alt="" coords="527,857,548,850,572,836,596,821,673,792,743,775,868,761,925,752,982,734,1040,702,1101,651,1122,625,1140,595,1165,532,1178,470,1183,422,1189,422,1183,471,1170,533,1145,598,1127,628,1105,655,1043,706,985,739,927,757,868,766,744,781,675,797,599,826,575,841,550,855,529,862"/>
+<area shape="poly" title=" " alt="" coords="463,858,643,567,648,570,468,861"/>
+<area shape="poly" title=" " alt="" coords="473,858,527,820,596,777,620,764,623,769,599,782,530,825,477,862"/>
+<area shape="poly" title=" " alt="" coords="543,860,590,854,591,860,544,865"/>
+<area shape="poly" title=" " alt="" coords="483,883,551,925,574,949,584,960,598,969,639,983,682,992,761,998,761,1003,681,997,638,988,596,974,580,964,570,953,548,929,481,888"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="612,935,712,960"/>
+<area shape="poly" title=" " alt="" coords="493,883,614,927,612,932,491,888"/>
+<area shape="rect" href="command__functs_8c.html#a0fad0803ff59cff11ab2eb8de7eac854" title=" " alt="" coords="607,885,717,911"/>
+<area shape="poly" title=" " alt="" coords="544,881,593,887,592,892,543,886"/>
+<area shape="poly" title=" " alt="" coords="706,908,788,926,840,933,894,935,950,932,1005,921,1056,902,1101,871,1123,838,1142,789,1156,727,1167,658,1179,522,1184,422,1189,422,1185,522,1172,659,1161,728,1147,790,1128,841,1105,875,1058,906,1006,927,951,937,894,940,839,938,788,931,705,913"/>
+<area shape="poly" title=" " alt="" coords="704,908,728,920,766,946,798,974,794,978,763,950,725,924,702,913"/>
+<area shape="poly" title=" " alt="" coords="1056,1084,1102,1071,1137,1062,1138,1067,1103,1077,1058,1089"/>
+<area shape="poly" title=" " alt="" coords="507,543,550,557,598,579,639,604,708,651,742,669,777,679,817,679,864,667,916,644,965,615,1010,581,1052,544,1122,473,1168,417,1172,420,1126,476,1056,548,1014,585,968,619,918,649,866,673,818,685,776,684,740,674,706,656,636,608,596,584,548,562,505,548"/>
+<area shape="poly" title=" " alt="" coords="474,519,629,411,632,416,477,523"/>
+<area shape="rect" href="minishell_8c.html#a258e3b580e688a0cf46e4258525aeaf1" title=" " alt="" coords="399,1884,513,1909"/>
+<area shape="poly" title=" " alt="" coords="261,1844,393,1878,392,1883,259,1849"/>
+<area shape="poly" title=" " alt="" coords="250,1542,427,1515,543,1503,661,1498,821,1498,858,1496,890,1490,917,1480,941,1467,962,1450,980,1431,1009,1384,1032,1327,1053,1263,1074,1195,1100,1123,1118,1059,1134,974,1159,766,1175,561,1183,421,1189,422,1181,561,1165,766,1140,974,1124,1061,1105,1124,1080,1196,1058,1265,1037,1329,1014,1386,984,1434,966,1454,944,1471,919,1485,891,1495,858,1501,821,1503,661,1503,543,1508,427,1520,251,1547"/>
+<area shape="poly" title=" " alt="" coords="218,1537,238,1504,270,1459,312,1412,361,1372,388,1358,413,1351,458,1349,502,1344,524,1336,548,1320,558,1309,565,1297,571,1273,578,1248,595,1223,600,1219,604,1223,599,1226,582,1250,576,1275,570,1299,563,1312,551,1324,526,1340,503,1349,459,1354,414,1357,390,1363,364,1376,315,1416,274,1462,243,1507,222,1540"/>
+<area shape="poly" title=" " alt="" coords="216,1537,234,1497,265,1441,308,1381,333,1353,361,1328,383,1315,407,1306,409,1311,385,1319,364,1332,337,1356,312,1384,270,1444,239,1499,220,1539"/>
+<area shape="poly" title=" " alt="" coords="215,1537,278,1400,321,1322,342,1291,361,1271,380,1260,400,1252,402,1258,382,1264,364,1275,346,1294,325,1324,283,1402,220,1540"/>
+<area shape="rect" href="tokenizer_8c.html#a4e78b2e01bd34ef89d2bb7fcf81de0cc" title=" " alt="" coords="403,1588,509,1613"/>
+<area shape="poly" title=" " alt="" coords="251,1556,389,1585,388,1590,250,1562"/>
+<area shape="rect" href="tokenizer_8c.html#a5c7919f82f134ff4fadc6ed22e255c2a" title=" " alt="" coords="413,1637,499,1663"/>
+<area shape="poly" title=" " alt="" coords="237,1562,294,1591,364,1622,400,1634,399,1639,362,1627,291,1596,234,1567"/>
+<area shape="rect" href="tokenizer_8c.html#ac891813952e22ca06b6204a49f39fa65" title=" " alt="" coords="391,1687,521,1712"/>
+<area shape="poly" title=" " alt="" coords="230,1562,364,1672,383,1680,381,1685,361,1676,227,1566"/>
+<area shape="rect" href="tokenizer_8c.html#ae2d4df043f33de8b99bc1eb83ca15d31" title=" " alt="" coords="417,1736,495,1761"/>
+<area shape="poly" title=" " alt="" coords="233,1562,274,1593,317,1635,332,1660,339,1682,347,1702,364,1721,383,1732,404,1739,402,1745,381,1737,361,1725,342,1704,334,1683,327,1662,313,1638,270,1597,230,1566"/>
+<area shape="rect" href="tokenizer_8c.html#aa1dd8a75220cb79547c4154eb2becbd3" title=" " alt="" coords="380,1785,532,1811"/>
+<area shape="poly" title=" " alt="" coords="236,1562,276,1592,298,1612,317,1635,328,1655,334,1673,337,1708,343,1740,351,1755,365,1771,372,1776,368,1781,361,1775,346,1758,338,1741,332,1708,328,1675,323,1657,312,1638,294,1616,273,1596,232,1566"/>
+<area shape="rect" href="tokenizer_8c.html#a3940c870d794a791d2ddabf19c0cfee7" title=" " alt="" coords="399,1539,513,1564"/>
+<area shape="poly" title=" " alt="" coords="250,1549,385,1549,385,1554,250,1554"/>
+<area shape="poly" title=" " alt="" coords="707,49,729,64,756,109,767,153,766,195,760,236,753,278,750,320,756,365,777,413,785,423,781,426,772,415,751,366,744,320,747,277,754,235,761,194,761,153,751,112,725,68,704,53"/>
+<area shape="poly" title=" " alt="" coords="707,49,729,64,746,90,755,115,758,140,757,164,757,213,763,238,777,266,820,318,871,363,924,399,969,425,966,429,921,403,868,367,816,322,772,269,758,240,752,213,752,164,753,140,750,116,742,93,725,68,704,54"/>
+<area shape="poly" title=" " alt="" coords="707,51,728,64,760,100,785,142,803,183,814,217,809,219,798,185,780,145,756,104,725,68,705,55"/>
+<area shape="poly" title=" " alt="" coords="635,31,630,21,633,11,644,5,662,3,684,6,693,15,689,19,681,11,662,8,646,10,637,15,635,20,640,28"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aaeba1075474bbabf46d3efc68664c129" name="aaeba1075474bbabf46d3efc68664c129"></a>
@@ -293,6 +650,76 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00171">171</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>                                              {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span> (!cmd) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    printf(<span class="stringliteral">&quot;Command #%d:\n&quot;</span>, index);</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="comment">//Imprimir args</span></div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">args</a> &amp;&amp; cmd-&gt;<a class="code hl_variable" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">args</a>-&gt;<a class="code hl_variable" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">size</a> &gt; 0) {</div>
+<div class="line"><span class="lineno">  178</span>        printf(<span class="stringliteral">&quot;  Args:\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>        </div>
+<div class="line"><span class="lineno">  180</span>        <a class="code hl_struct" href="structs__iter.html">t_iter</a> arg_it = <a class="code hl_function" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a>(cmd-&gt;<a class="code hl_variable" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">args</a>);</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordtype">char</span> *arg;</div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">while</span> ((arg = (<span class="keywordtype">char</span> *)<a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;arg_it)) != NULL) {</div>
+<div class="line"><span class="lineno">  183</span>            printf(<span class="stringliteral">&quot;    %s\n&quot;</span>, arg);</div>
+<div class="line"><span class="lineno">  184</span>        }</div>
+<div class="line"><span class="lineno">  185</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  186</span>        printf(<span class="stringliteral">&quot;  Args: (none)\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>    <span class="comment">//Imprimir redirects</span></div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">redirects</a> &amp;&amp; cmd-&gt;<a class="code hl_variable" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">redirects</a>-&gt;<a class="code hl_variable" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">size</a> &gt; 0) {</div>
+<div class="line"><span class="lineno">  191</span>        printf(<span class="stringliteral">&quot;  Redirects:\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  192</span>        <a class="code hl_struct" href="structs__iter.html">t_iter</a> red_it = <a class="code hl_function" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a>(cmd-&gt;<a class="code hl_variable" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">redirects</a>);</div>
+<div class="line"><span class="lineno">  193</span>        <a class="code hl_struct" href="structs__redirect.html">t_redirect</a> *redir;</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">while</span> ((redir = (<a class="code hl_struct" href="structs__redirect.html">t_redirect</a> *)<a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;red_it)) != NULL) {</div>
+<div class="line"><span class="lineno">  195</span>            <a class="code hl_function" href="minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46">print_redirect</a>(redir);</div>
+<div class="line"><span class="lineno">  196</span>        }</div>
+<div class="line"><span class="lineno">  197</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  198</span>        printf(<span class="stringliteral">&quot;  Redirects: (none)\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  202</span>}</div>
+<div class="ttc" id="alist_8c_html_a0f8c34a8af8a33c8ec69d034952a7a4e"><div class="ttname"><a href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a></div><div class="ttdeci">t_iter iter_start(t_gen_list *list)</div><div class="ttdoc">Initialize an iterator at the start of the list.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00209">list.c:209</a></div></div>
+<div class="ttc" id="alist_8c_html_a8b49fd31ce730eadfb8c1192f30fe20b"><div class="ttname"><a href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a></div><div class="ttdeci">void * iter_next(t_iter *it)</div><div class="ttdoc">Get the next value from the list using the iterator and advance it.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00217">list.c:217</a></div></div>
+<div class="ttc" id="aminishell_8c_html_ad4c1fdde2a210ebffd89ac651af6fb46"><div class="ttname"><a href="minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46">print_redirect</a></div><div class="ttdeci">void print_redirect(t_redirect *redir)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00156">minishell.c:156</a></div></div>
+<div class="ttc" id="astructs__command_html_a82f3acd25a4af3e90640d8e7d9fe4793"><div class="ttname"><a href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">s_command::redirects</a></div><div class="ttdeci">t_gen_list * redirects</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00029">command.h:29</a></div></div>
+<div class="ttc" id="astructs__command_html_ad650fccbaed7fdf5e65aafc9e4fedeae"><div class="ttname"><a href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">s_command::args</a></div><div class="ttdeci">t_gen_list * args</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00028">command.h:28</a></div></div>
+<div class="ttc" id="astructs__gen__list_html_a161ce598b8ef7b173793b9b6699ef42f"><div class="ttname"><a href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00033">list.h:33</a></div></div>
+<div class="ttc" id="astructs__iter_html"><div class="ttname"><a href="structs__iter.html">s_iter</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00036">list.h:37</a></div></div>
+<div class="ttc" id="astructs__redirect_html"><div class="ttname"><a href="structs__redirect.html">s_redirect</a></div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00015">redirect_asignation.h:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">s_command::args</a>, <a class="el" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next()</a>, <a class="el" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start()</a>, <a class="el" href="minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46">print_redirect()</a>, <a class="el" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">s_command::redirects</a>, and <a class="el" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d">print_commands()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph.png" border="0" usemap="#aminishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph" alt=""/></div>
+<map name="aminishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph" id="aminishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,129,80"/>
+<area shape="rect" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="192,5,272,31"/>
+<area shape="poly" title=" " alt="" coords="110,52,178,31,179,36,111,57"/>
+<area shape="rect" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="191,55,273,80"/>
+<area shape="poly" title=" " alt="" coords="129,65,178,65,178,70,129,70"/>
+<area shape="rect" href="minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46" title=" " alt="" coords="177,104,287,129"/>
+<area shape="poly" title=" " alt="" coords="111,77,176,97,175,102,110,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_aaeba1075474bbabf46d3efc68664c129_icgraph.png" border="0" usemap="#aminishell_8c_aaeba1075474bbabf46d3efc68664c129_icgraph" alt=""/></div>
+<map name="aminishell_8c_aaeba1075474bbabf46d3efc68664c129_icgraph" id="aminishell_8c_aaeba1075474bbabf46d3efc68664c129_icgraph">
+<area shape="rect" title=" " alt="" coords="184,5,308,31"/>
+<area shape="rect" href="minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" title=" " alt="" coords="170,21,136,21,136,15,170,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a4f53155213d3a8705691b8cc5d483a5d" name="a4f53155213d3a8705691b8cc5d483a5d"></a>
@@ -310,6 +737,43 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00204">204</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>                                          {</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> (!commands || commands-&gt;<a class="code hl_variable" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">size</a> == 0) {</div>
+<div class="line"><span class="lineno">  206</span>        printf(<span class="stringliteral">&quot;No commands to print.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  208</span>    }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>    <a class="code hl_struct" href="structs__iter.html">t_iter</a> it = <a class="code hl_function" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a>(commands);</div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_struct" href="structs__command.html">t_command</a> *cmd;</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordtype">int</span> index = 1;</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">while</span> ((cmd = (<a class="code hl_struct" href="structs__command.html">t_command</a> *)<a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;it)) != NULL) {</div>
+<div class="line"><span class="lineno">  214</span>        <a class="code hl_function" href="minishell_8c.html#aaeba1075474bbabf46d3efc68664c129">print_command</a>(cmd, index++);</div>
+<div class="line"><span class="lineno">  215</span>    }</div>
+<div class="line"><span class="lineno">  216</span>}</div>
+<div class="ttc" id="aminishell_8c_html_aaeba1075474bbabf46d3efc68664c129"><div class="ttname"><a href="minishell_8c.html#aaeba1075474bbabf46d3efc68664c129">print_command</a></div><div class="ttdeci">void print_command(t_command *cmd, int index)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00171">minishell.c:171</a></div></div>
+<div class="ttc" id="astructs__command_html"><div class="ttname"><a href="structs__command.html">s_command</a></div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00026">command.h:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next()</a>, <a class="el" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start()</a>, <a class="el" href="minishell_8c.html#aaeba1075474bbabf46d3efc68664c129">print_command()</a>, and <a class="el" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph.png" border="0" usemap="#aminishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph" alt=""/></div>
+<map name="aminishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph" id="aminishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,136,80"/>
+<area shape="rect" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="371,5,451,31"/>
+<area shape="poly" title=" " alt="" coords="122,52,184,39,275,27,357,19,357,24,276,32,184,45,123,57"/>
+<area shape="rect" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="370,104,451,129"/>
+<area shape="poly" title=" " alt="" coords="123,77,184,90,275,102,356,110,356,115,275,108,184,95,122,83"/>
+<area shape="rect" href="minishell_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="184,55,308,80"/>
+<area shape="poly" title=" " alt="" coords="136,65,170,65,170,70,136,70"/>
+<area shape="poly" title=" " alt="" coords="288,52,357,31,358,36,290,57"/>
+<area shape="poly" title=" " alt="" coords="290,77,358,98,356,103,288,83"/>
+<area shape="rect" href="minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46" title=" " alt="" coords="356,55,465,80"/>
+<area shape="poly" title=" " alt="" coords="308,65,342,65,342,70,308,70"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -329,6 +793,46 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00156">156</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>                                       {</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (!redir) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *type_str;</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">switch</span> (redir-&gt;<a class="code hl_variable" href="structs__redirect.html#aa68b13bc97c76c51ee78bcf8cb2f3125">redirect_simbol</a>) {</div>
+<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a>: type_str = <span class="stringliteral">&quot;&lt;&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a>: type_str = <span class="stringliteral">&quot;&gt;&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a>: type_str = <span class="stringliteral">&quot;&lt;&lt;&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a>: type_str = <span class="stringliteral">&quot;&gt;&gt;&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>: type_str = <span class="stringliteral">&quot;NONE&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90">ERROR</a>: type_str = <span class="stringliteral">&quot;ERROR&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">default</span>: type_str = <span class="stringliteral">&quot;UNKNOWN&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>    printf(<span class="stringliteral">&quot;    Redirect: %s %s\n&quot;</span>, type_str, redir-&gt;<a class="code hl_variable" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">file</a>);</div>
+<div class="line"><span class="lineno">  169</span>}</div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a></div><div class="ttdeci">@ LEFT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00007">redirect_asignation.h:7</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90">ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00012">redirect_asignation.h:12</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a></div><div class="ttdeci">@ DOUBLE_LEFT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00009">redirect_asignation.h:9</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a></div><div class="ttdeci">@ DOUBLE_RIGHT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00010">redirect_asignation.h:10</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00011">redirect_asignation.h:11</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a></div><div class="ttdeci">@ RIGHT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00008">redirect_asignation.h:8</a></div></div>
+<div class="ttc" id="astructs__redirect_html_aa68b13bc97c76c51ee78bcf8cb2f3125"><div class="ttname"><a href="structs__redirect.html#aa68b13bc97c76c51ee78bcf8cb2f3125">s_redirect::redirect_simbol</a></div><div class="ttdeci">t_redirect_type redirect_simbol</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00018">redirect_asignation.h:18</a></div></div>
+<div class="ttc" id="astructs__redirect_html_abe3e192c9cf5ab03c0088614dcc804b8"><div class="ttname"><a href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">s_redirect::file</a></div><div class="ttdeci">char * file</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00017">redirect_asignation.h:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90">ERROR</a>, <a class="el" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">s_redirect::file</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>, <a class="el" href="structs__redirect.html#aa68b13bc97c76c51ee78bcf8cb2f3125">s_redirect::redirect_simbol</a>, and <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#aaeba1075474bbabf46d3efc68664c129">print_command()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph.png" border="0" usemap="#aminishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph" alt=""/></div>
+<map name="aminishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph" id="aminishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph">
+<area shape="rect" title=" " alt="" coords="356,5,465,31"/>
+<area shape="rect" href="minishell_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="184,5,308,31"/>
+<area shape="poly" title=" " alt="" coords="342,21,308,21,308,15,342,15"/>
+<area shape="rect" href="minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" title=" " alt="" coords="170,21,136,21,136,15,170,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="abe2d3d3cdb04a9614c52e119e4d7c64d" name="abe2d3d3cdb04a9614c52e119e4d7c64d"></a>
@@ -346,6 +850,71 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00114">114</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_struct" href="structs__iter.html">t_iter</a>      it;</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *tok;</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  *type_str;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (!tokens)</div>
+<div class="line"><span class="lineno">  121</span>        return ;</div>
+<div class="line"><span class="lineno">  122</span>    it = <a class="code hl_function" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a>(tokens);</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">while</span> ((tok = (<a class="code hl_struct" href="structs__token.html">t_token</a> *)<a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;it)) != NULL)</div>
+<div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">switch</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a>)</div>
+<div class="line"><span class="lineno">  126</span>        {</div>
+<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1">TOKEN_CMD</a>:</div>
+<div class="line"><span class="lineno">  128</span>            type_str = <span class="stringliteral">&quot;CMD&quot;</span>;</div>
+<div class="line"><span class="lineno">  129</span>            break ;</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a>:</div>
+<div class="line"><span class="lineno">  131</span>            type_str = <span class="stringliteral">&quot;ARG&quot;</span>;</div>
+<div class="line"><span class="lineno">  132</span>            break ;</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910">TOKEN_PIPE</a>:</div>
+<div class="line"><span class="lineno">  134</span>            type_str = <span class="stringliteral">&quot;PIPE&quot;</span>;</div>
+<div class="line"><span class="lineno">  135</span>            break ;</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a>:</div>
+<div class="line"><span class="lineno">  137</span>            type_str = <span class="stringliteral">&quot;REDIR_IN&quot;</span>;</div>
+<div class="line"><span class="lineno">  138</span>            break ;</div>
+<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a>:</div>
+<div class="line"><span class="lineno">  140</span>            type_str = <span class="stringliteral">&quot;REDIR_OUT&quot;</span>;</div>
+<div class="line"><span class="lineno">  141</span>            break ;</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a>:</div>
+<div class="line"><span class="lineno">  143</span>            type_str = <span class="stringliteral">&quot;REDIR_APPEND&quot;</span>;</div>
+<div class="line"><span class="lineno">  144</span>            break ;</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a>:</div>
+<div class="line"><span class="lineno">  146</span>            type_str = <span class="stringliteral">&quot;HEREDOC&quot;</span>;</div>
+<div class="line"><span class="lineno">  147</span>            break ;</div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  149</span>            type_str = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><span class="lineno">  150</span>            break ;</div>
+<div class="line"><span class="lineno">  151</span>        }</div>
+<div class="line"><span class="lineno">  152</span>        printf(<span class="stringliteral">&quot;[%s] : [%s]\n&quot;</span>, type_str, tok-&gt;<a class="code hl_variable" href="structs__token.html#a21b454c179e1e31383371d09385b9c59">value</a>);</div>
+<div class="line"><span class="lineno">  153</span>    }</div>
+<div class="line"><span class="lineno">  154</span>}</div>
+<div class="ttc" id="astructs__token_html_a21b454c179e1e31383371d09385b9c59"><div class="ttname"><a href="structs__token.html#a21b454c179e1e31383371d09385b9c59">s_token::value</a></div><div class="ttdeci">char * value</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00032">tokenizer.h:32</a></div></div>
+<div class="ttc" id="astructs__token_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00031">tokenizer.h:31</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1">TOKEN_CMD</a></div><div class="ttdeci">@ TOKEN_CMD</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00020">tokenizer.h:20</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a></div><div class="ttdeci">@ TOKEN_REDIR_OUT</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00024">tokenizer.h:24</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a></div><div class="ttdeci">@ TOKEN_ARG</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00021">tokenizer.h:21</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a></div><div class="ttdeci">@ TOKEN_HEREDOC</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00027">tokenizer.h:26</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910">TOKEN_PIPE</a></div><div class="ttdeci">@ TOKEN_PIPE</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00022">tokenizer.h:22</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a></div><div class="ttdeci">@ TOKEN_REDIR_IN</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00023">tokenizer.h:23</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a></div><div class="ttdeci">@ TOKEN_REDIR_APPEND</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00025">tokenizer.h:25</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next()</a>, <a class="el" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start()</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1">TOKEN_CMD</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910">TOKEN_PIPE</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a>, <a class="el" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a>, and <a class="el" href="structs__token.html#a21b454c179e1e31383371d09385b9c59">s_token::value</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph.png" border="0" usemap="#aminishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph" alt=""/></div>
+<map name="aminishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph" id="aminishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,108,56"/>
+<area shape="rect" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="157,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="108,31,143,25,144,30,109,37"/>
+<area shape="rect" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="156,55,237,80"/>
+<area shape="poly" title=" " alt="" coords="109,50,143,55,142,61,108,55"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -365,6 +934,33 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00089">89</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>    (void)sig;</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_variable" href="minishell_8c.html#a2f41dfdd9bbd527b0a23a20f16aa14c7">g_signal</a> = SIGINT;</div>
+<div class="line"><span class="lineno">   93</span>    write(1, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
+<div class="line"><span class="lineno">   94</span>    rl_on_new_line();</div>
+<div class="line"><span class="lineno">   95</span>    rl_replace_line(<span class="stringliteral">&quot;&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   96</span>    rl_redisplay();</div>
+<div class="line"><span class="lineno">   97</span>}</div>
+<div class="ttc" id="aminishell_8c_html_a2f41dfdd9bbd527b0a23a20f16aa14c7"><div class="ttname"><a href="minishell_8c.html#a2f41dfdd9bbd527b0a23a20f16aa14c7">g_signal</a></div><div class="ttdeci">volatile sig_atomic_t g_signal</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00027">minishell.c:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="minishell_8c.html#a2f41dfdd9bbd527b0a23a20f16aa14c7">g_signal</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a3719a1754f6e317bbb96770b973d453c">signals_init()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a258e3b580e688a0cf46e4258525aeaf1_icgraph.png" border="0" usemap="#aminishell_8c_a258e3b580e688a0cf46e4258525aeaf1_icgraph" alt=""/></div>
+<map name="aminishell_8c_a258e3b580e688a0cf46e4258525aeaf1_icgraph" id="aminishell_8c_a258e3b580e688a0cf46e4258525aeaf1_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,367,31"/>
+<area shape="rect" href="minishell_8c.html#a3719a1754f6e317bbb96770b973d453c" title=" " alt="" coords="108,5,204,31"/>
+<area shape="poly" title=" " alt="" coords="238,21,204,21,204,15,238,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a3719a1754f6e317bbb96770b973d453c" name="a3719a1754f6e317bbb96770b973d453c"></a>
@@ -382,6 +978,46 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00099">99</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keyword">struct </span>sigaction    sa_int;</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keyword">struct </span>sigaction    sa_quit;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    sa_int.sa_handler = <a class="code hl_function" href="minishell_8c.html#a258e3b580e688a0cf46e4258525aeaf1">sigint_handler</a>;</div>
+<div class="line"><span class="lineno">  105</span>    sigemptyset(&amp;sa_int.sa_mask);</div>
+<div class="line"><span class="lineno">  106</span>    sa_int.sa_flags = SA_RESTART;</div>
+<div class="line"><span class="lineno">  107</span>    sigaction(SIGINT, &amp;sa_int, NULL);</div>
+<div class="line"><span class="lineno">  108</span>    sa_quit.sa_handler = SIG_IGN;</div>
+<div class="line"><span class="lineno">  109</span>    sigemptyset(&amp;sa_quit.sa_mask);</div>
+<div class="line"><span class="lineno">  110</span>    sa_quit.sa_flags = SA_RESTART;</div>
+<div class="line"><span class="lineno">  111</span>    sigaction(SIGQUIT, &amp;sa_quit, NULL);</div>
+<div class="line"><span class="lineno">  112</span>}</div>
+<div class="ttc" id="aminishell_8c_html_a258e3b580e688a0cf46e4258525aeaf1"><div class="ttname"><a href="minishell_8c.html#a258e3b580e688a0cf46e4258525aeaf1">sigint_handler</a></div><div class="ttdeci">void sigint_handler(int sig)</div><div class="ttdef"><b>Definition</b> <a href="minishell_8c_source.html#l00089">minishell.c:89</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="minishell_8c.html#a258e3b580e688a0cf46e4258525aeaf1">sigint_handler()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a3719a1754f6e317bbb96770b973d453c_cgraph.png" border="0" usemap="#aminishell_8c_a3719a1754f6e317bbb96770b973d453c_cgraph" alt=""/></div>
+<map name="aminishell_8c_a3719a1754f6e317bbb96770b973d453c_cgraph" id="aminishell_8c_a3719a1754f6e317bbb96770b973d453c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,101,31"/>
+<area shape="rect" href="minishell_8c.html#a258e3b580e688a0cf46e4258525aeaf1" title=" " alt="" coords="149,5,264,31"/>
+<area shape="poly" title=" " alt="" coords="102,15,136,15,136,21,102,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a3719a1754f6e317bbb96770b973d453c_icgraph.png" border="0" usemap="#aminishell_8c_a3719a1754f6e317bbb96770b973d453c_icgraph" alt=""/></div>
+<map name="aminishell_8c_a3719a1754f6e317bbb96770b973d453c_icgraph" id="aminishell_8c_a3719a1754f6e317bbb96770b973d453c_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,204,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -401,6 +1037,64 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00079">79</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordtype">char</span>    *<a class="code hl_function" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username</a>;</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_function" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username</a> = <a class="code hl_function" href="environment_8h.html#ae6e591b367378e4765abb31a480eb9c3">env_get</a>(env, <span class="stringliteral">&quot;LOGNAME&quot;</span>);</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username</a>)</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(<span class="stringliteral">&quot;minishell%&quot;</span>));</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(<a class="code hl_function" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username</a>, <span class="stringliteral">&quot;%&gt;$&quot;</span>));</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+<div class="ttc" id="aenvironment_8h_html_ae6e591b367378e4765abb31a480eb9c3"><div class="ttname"><a href="environment_8h.html#ae6e591b367378e4765abb31a480eb9c3">env_get</a></div><div class="ttdeci">char * env_get(t_gen_list *env, char *name)</div><div class="ttdoc">Get the value of an environment variable by name.</div><div class="ttdef"><b>Definition</b> <a href="environment__query_8c_source.html#l00020">environment_query.c:20</a></div></div>
+<div class="ttc" id="aft__strdup_8c_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00029">ft_strdup.c:29</a></div></div>
+<div class="ttc" id="aft__strjoin_8c_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00037">ft_strjoin.c:37</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="environment_8h.html#ae6e591b367378e4765abb31a480eb9c3">env_get()</a>, <a class="el" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup()</a>, <a class="el" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin()</a>, and <a class="el" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>, and <a class="el" href="minishell_8c.html#a8139962a2ceae2621213f8e6719565cf">username()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a8139962a2ceae2621213f8e6719565cf_cgraph.png" border="0" usemap="#aminishell_8c_a8139962a2ceae2621213f8e6719565cf_cgraph" alt=""/></div>
+<map name="aminishell_8c_a8139962a2ceae2621213f8e6719565cf_cgraph" id="aminishell_8c_a8139962a2ceae2621213f8e6719565cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,105,92,131"/>
+<area shape="poly" title=" " alt="" coords="26,106,22,97,24,87,33,81,49,79,67,82,75,90,71,94,64,87,49,84,35,86,28,90,27,96,31,104"/>
+<area shape="rect" href="environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="142,55,217,80"/>
+<area shape="poly" title=" " alt="" coords="81,103,132,83,134,88,83,108"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="289,104,368,129"/>
+<area shape="poly" title=" " alt="" coords="92,115,276,114,276,120,92,120"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="140,156,219,181"/>
+<area shape="poly" title=" " alt="" coords="83,128,134,148,132,153,81,133"/>
+<area shape="rect" href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="269,55,388,80"/>
+<area shape="poly" title=" " alt="" coords="217,65,256,65,256,70,217,70"/>
+<area shape="poly" title=" " alt="" coords="218,77,277,97,275,102,216,82"/>
+<area shape="rect" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="267,5,391,31"/>
+<area shape="poly" title=" " alt="" coords="216,53,275,33,277,38,218,58"/>
+<area shape="rect" href="ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="445,129,523,155"/>
+<area shape="poly" title=" " alt="" coords="369,120,431,131,430,136,368,126"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="447,80,521,105"/>
+<area shape="poly" title=" " alt="" coords="368,108,433,98,434,103,369,113"/>
+<area shape="poly" title=" " alt="" coords="365,28,392,40,451,71,448,75,390,44,363,33"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="439,5,529,31"/>
+<area shape="poly" title=" " alt="" coords="391,15,425,15,425,21,391,21"/>
+<area shape="poly" title=" " alt="" coords="210,179,248,192,294,202,343,203,367,198,389,189,407,174,414,156,421,136,437,115,441,111,444,115,441,118,426,138,419,158,411,177,392,194,369,203,344,208,293,207,246,197,208,184"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="300,153,357,179"/>
+<area shape="poly" title=" " alt="" coords="219,165,286,164,286,169,219,171"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="minishell_8c_a8139962a2ceae2621213f8e6719565cf_icgraph.png" border="0" usemap="#aminishell_8c_a8139962a2ceae2621213f8e6719565cf_icgraph" alt=""/></div>
+<map name="aminishell_8c_a8139962a2ceae2621213f8e6719565cf_icgraph" id="aminishell_8c_a8139962a2ceae2621213f8e6719565cf_icgraph">
+<area shape="rect" title=" " alt="" coords="108,29,195,55"/>
+<area shape="poly" title=" " alt="" coords="171,18,165,11,151,8,140,10,133,14,132,20,136,28,131,30,127,21,129,12,137,5,151,3,168,6,175,14"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,29,60,55"/>
+<area shape="poly" title=" " alt="" coords="94,45,60,45,60,39,94,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -415,6 +1109,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="minishell_8c_source.html#l00027">27</a> of file <a class="el" href="minishell_8c_source.html">minishell.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a258e3b580e688a0cf46e4258525aeaf1">sigint_handler()</a>.</p>
 
 </div>
 </div>

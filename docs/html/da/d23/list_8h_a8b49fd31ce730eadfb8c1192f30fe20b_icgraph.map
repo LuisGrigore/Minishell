@@ -1,0 +1,20 @@
+<map id="iter_next" name="iter_next">
+<area shape="rect" id="Node000001" title="Get the next value from the list using the iterator and advance it." alt="" coords="535,132,615,157"/>
+<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="377,5,472,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="553,123,523,87,485,52,454,33,456,28,488,48,527,84,557,119"/>
+<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="118,42,305,82"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="525,130,486,118,393,96,304,79,305,74,394,91,487,113,527,125"/>
+<area shape="rect" id="Node000005" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,107,315,132"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="521,144,315,129,315,124,521,138"/>
+<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="363,157,487,183"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="522,156,487,162,486,157,521,151"/>
+<area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="146,183,277,208"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="548,168,520,185,487,198,433,208,377,212,277,207,277,202,377,207,432,203,486,193,517,180,545,163"/>
+<area shape="rect" id="Node000008" href="$d7/d66/minishell_8c.html#abe2d3d3cdb04a9614c52e119e4d7c64d" title=" " alt="" coords="373,259,476,284"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="557,170,527,206,488,241,456,261,454,256,485,237,523,202,553,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,33,306,45,305,40,363,28"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,79,60,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,82,61,90,60,84,104,77"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="116,107,60,98,61,93,117,102"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="349,182,277,190,276,185,349,176"/>
+</map>

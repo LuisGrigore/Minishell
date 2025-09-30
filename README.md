@@ -1,3 +1,9 @@
+# MiniShell Documentation
+
+Welcome to the MiniShell project documentation!
+
+This project implements a small shell in C.
+
 ## 📚 Documentation
 
 Full documentation generated with Doxygen:

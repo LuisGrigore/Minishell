@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_strlcpy.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_strlcpy.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,9 @@ Include dependency graph for ft_strlcpy.c:</div>
 <area shape="poly" title=" " alt="" coords="255,101,373,145,371,150,253,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__strlcpy_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa053827b3a2ea3d0118783d6fb59d178" id="r_aa053827b3a2ea3d0118783d6fb59d178"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy</a> (char *dst, const char *src, size_t size)</td></tr>
@@ -137,6 +140,58 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__strlcpy_8c_source.html#l00015">15</a> of file <a class="el" href="ft__strlcpy_8c_source.html">ft_strlcpy.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">char</span>    *p1;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">char</span>    *p2;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">size_t</span>  i;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    i = 0;</div>
+<div class="line"><span class="lineno">   22</span>    p1 = (<span class="keywordtype">char</span> *)src;</div>
+<div class="line"><span class="lineno">   23</span>    p2 = (<span class="keywordtype">char</span> *)dst;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (size == 0)</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(src));</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">while</span> (p1[i] &amp;&amp; i &lt; size - 1)</div>
+<div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        p2[i] = p1[i];</div>
+<div class="line"><span class="lineno">   29</span>        i++;</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span>    p2[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(src));</div>
+<div class="line"><span class="lineno">   33</span>}</div>
+<div class="ttc" id="aft__strlen_8c_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8h.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect()</a>, and <a class="el" href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_cgraph.png" border="0" usemap="#aft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_cgraph" alt=""/></div>
+<map name="aft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_cgraph" id="aft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,88,31"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="136,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="88,15,122,15,122,21,88,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_icgraph.png" border="0" usemap="#aft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_icgraph" alt=""/></div>
+<map name="aft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_icgraph" id="aft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178_icgraph">
+<area shape="rect" title=" " alt="" coords="511,45,593,70"/>
+<area shape="rect" href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c" title=" " alt="" coords="363,19,463,45"/>
+<area shape="poly" title=" " alt="" coords="496,50,462,44,463,38,497,45"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,70,315,95"/>
+<area shape="poly" title=" " alt="" coords="497,64,315,78,315,72,497,59"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="139,5,284,45"/>
+<area shape="poly" title=" " alt="" coords="348,33,284,30,284,25,349,27"/>
+<area shape="poly" title=" " alt="" coords="351,51,315,60,265,72,264,67,314,55,349,46"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
+<area shape="poly" title=" " alt="" coords="94,85,60,85,60,80,94,80"/>
+</map>
+</div>
 
 </div>
 </div>

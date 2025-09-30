@@ -1,0 +1,31 @@
+<map id="parse_tokens_to_commands" name="parse_tokens_to_commands">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,232,212,257"/>
+<area shape="rect" id="Node000002" href="$d5/d2e/command_8c.html#a950465f331fec212ad0507c3e41a0137" title=" " alt="" coords="260,55,403,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,230,175,169,215,131,259,97,282,84,285,88,261,102,218,135,179,172,122,234"/>
+<area shape="rect" id="Node000003" href="$d7/d40/list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="451,5,580,31"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="113,231,130,192,161,138,204,84,230,60,259,40,302,21,348,11,394,7,437,7,437,12,394,12,349,16,304,26,261,44,233,64,208,87,165,141,135,194,117,233"/>
+<area shape="rect" id="Node000005" href="$d5/dd7/ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="474,219,557,244"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="212,239,460,230,460,236,213,244"/>
+<area shape="rect" id="Node000006" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="628,219,703,244"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="121,230,178,183,217,159,259,141,348,115,422,104,457,105,495,111,535,123,581,141,603,154,622,170,651,206,647,209,619,174,600,158,579,146,533,128,493,116,457,110,422,109,350,121,261,146,219,164,181,188,125,234"/>
+<area shape="rect" id="Node000007" href="$d5/d2e/command_8c.html#a980b6e4466bc0bed37cb6352f143ab96" title=" " alt="" coords="274,156,389,181"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="146,229,279,183,281,188,148,234"/>
+<area shape="rect" id="Node000009" href="$d7/d40/list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="296,257,367,283"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="213,254,283,262,282,267,212,259"/>
+<area shape="rect" id="Node000010" href="$d4/dcd/redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c" title=" " alt="" coords="281,307,381,332"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="149,255,281,300,279,305,147,260"/>
+<area shape="rect" id="Node000011" href="$d7/d40/list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="291,356,371,381"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="128,255,185,297,261,342,279,350,277,355,259,347,182,301,125,260"/>
+<area shape="rect" id="Node000012" href="$d7/d40/list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="291,405,372,431"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="121,256,176,320,216,358,261,392,279,401,277,405,259,396,213,362,173,324,117,259"/>
+<area shape="rect" id="Node000013" href="$d7/d40/list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="289,455,373,480"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="119,256,138,292,170,342,211,395,262,441,278,450,275,455,258,445,207,399,165,345,133,295,114,259"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,52,453,32,454,37,380,57"/>
+<area shape="rect" id="Node000004" href="$d4/dcd/redirect__asignation_8c.html#abd88dda569ce623bd360a0f45a6f5e61" title=" " alt="" coords="451,55,579,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="403,65,438,65,438,70,403,70"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="557,229,614,229,614,234,557,234"/>
+<area shape="rect" id="Node000008" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="477,156,553,181"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="389,166,463,166,463,171,389,171"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="373,304,402,293,481,249,484,254,404,298,375,309"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="381,304,579,253,614,243,615,248,581,258,382,310"/>
+</map>

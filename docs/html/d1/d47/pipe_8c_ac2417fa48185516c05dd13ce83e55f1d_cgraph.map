@@ -1,0 +1,54 @@
+<map id="execute_commands_with_pipes" name="execute_commands_with_pipes">
+<area shape="rect" id="Node000001" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="5,201,192,241"/>
+<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="254,107,349,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,198,261,136,264,141,141,203"/>
+<area shape="rect" id="Node000014" href="$d7/d40/list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="415,156,495,181"/>
+<area shape="poly" id="edge25_Node000001_Node000014" title=" " alt="" coords="192,204,240,197,402,173,402,179,240,202,193,209"/>
+<area shape="rect" id="Node000015" href="$d7/d40/list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="415,205,496,231"/>
+<area shape="poly" id="edge26_Node000001_Node000015" title=" " alt="" coords="192,217,401,216,401,221,192,223"/>
+<area shape="rect" id="Node000016" href="$d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="240,259,363,284"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="180,238,237,253,236,258,178,243"/>
+<area shape="rect" id="Node000018" href="$d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="243,331,359,356"/>
+<area shape="poly" id="edge27_Node000001_Node000018" title=" " alt="" coords="134,239,269,321,266,326,132,243"/>
+<area shape="rect" id="Node000003" href="$d1/d62/environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="418,107,493,132"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,117,404,117,404,122,349,122"/>
+<area shape="rect" id="Node000005" href="$de/dcf/ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="603,57,682,83"/>
+<area shape="poly" id="edge16_Node000002_Node000005" title=" " alt="" coords="349,104,410,91,505,79,589,71,590,76,506,84,411,97,350,110"/>
+<area shape="rect" id="Node000009" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="419,255,492,280"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="314,131,354,182,381,213,412,241,417,245,414,249,409,245,378,217,349,186,309,134"/>
+<area shape="rect" id="Node000013" href="$d1/d5a/ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="416,5,495,31"/>
+<area shape="poly" id="edge17_Node000002_Node000013" title=" " alt="" coords="320,104,422,36,425,40,323,109"/>
+<area shape="poly" id="edge19_Node000002_Node000014" title=" " alt="" coords="342,130,403,149,401,154,341,135"/>
+<area shape="poly" id="edge20_Node000002_Node000015" title=" " alt="" coords="321,130,412,192,419,196,416,201,409,196,318,134"/>
+<area shape="rect" id="Node000004" href="$d7/d40/list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="583,107,702,132"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="493,117,570,117,570,122,493,122"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="492,106,547,91,589,80,591,86,549,97,494,112"/>
+<area shape="rect" id="Node000007" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="581,156,705,181"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="493,126,582,150,580,155,492,132"/>
+<area shape="rect" id="Node000006" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="793,57,868,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="682,67,779,67,779,73,682,73"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="704,153,736,141,774,117,805,90,809,94,777,121,739,146,706,158"/>
+<area shape="rect" id="Node000008" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="785,156,876,181"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="705,166,771,166,771,171,705,171"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="484,252,498,242,514,216,520,191,527,166,546,141,569,128,571,133,550,145,532,168,525,192,519,218,502,245,488,256"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="485,253,498,242,510,222,516,203,519,166,523,129,531,111,546,92,566,79,589,71,590,76,569,84,550,96,535,113,528,131,524,167,522,205,515,225,502,245,489,257"/>
+<area shape="poly" id="edge15_Node000009_Node000007" title=" " alt="" coords="481,252,498,241,512,228,521,216,531,204,547,192,566,182,568,187,549,196,535,208,525,219,516,232,502,245,484,257"/>
+<area shape="rect" id="Node000010" href="$dd/da9/envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="562,255,723,280"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="492,265,548,265,548,270,492,270"/>
+<area shape="rect" id="Node000012" href="$d7/d40/list_8c.html#a78751fefb5026bcdb58b19c746c959bc" title="Insert a value at the beginning of the list (O(1))." alt="" coords="597,205,688,231"/>
+<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="492,255,583,231,585,236,493,260"/>
+<area shape="rect" id="Node000011" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="793,280,869,305"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="724,276,779,283,778,288,723,281"/>
+<area shape="poly" id="edge18_Node000013_Node000006" title=" " alt="" coords="495,17,605,25,738,42,780,52,779,57,737,47,604,30,495,22"/>
+<area shape="poly" id="edge22_Node000016_Node000009" title=" " alt="" coords="363,267,405,266,405,271,363,272"/>
+<area shape="rect" id="Node000017" href="$d5/dce/ft__split2_80_8c.html#af54f55774b34b2395f5ca1da01d9f015" title=" " alt="" coords="418,304,493,329"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="346,282,406,299,404,305,344,287"/>
+<area shape="poly" id="edge24_Node000017_Node000011" title=" " alt="" coords="493,312,779,293,779,299,493,317"/>
+<area shape="rect" id="Node000019" href="$dc/d4a/environment__operations_8c.html#aa155b7428061814751ff8a6fd7ba7961" title="Remove an environment variable by name." alt="" coords="411,355,500,380"/>
+<area shape="poly" id="edge28_Node000018_Node000019" title=" " alt="" coords="360,350,398,356,397,361,359,355"/>
+<area shape="poly" id="edge31_Node000019_Node000007" title=" " alt="" coords="484,352,498,340,510,321,516,302,519,265,523,229,531,210,546,192,566,179,569,183,550,196,536,213,528,230,524,266,521,303,515,323,502,344,487,356"/>
+<area shape="rect" id="Node000020" href="$dd/da9/envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="548,356,737,381"/>
+<area shape="poly" id="edge29_Node000019_Node000020" title=" " alt="" coords="500,365,534,365,534,371,500,370"/>
+<area shape="rect" id="Node000021" href="$d7/d40/list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b" title=" " alt="" coords="585,405,700,431"/>
+<area shape="poly" id="edge30_Node000019_Node000021" title=" " alt="" coords="500,378,549,391,578,399,577,404,547,397,499,383"/>
+</map>

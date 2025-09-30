@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_memmove.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_memmove.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -89,7 +90,9 @@ Include dependency graph for ft_memmove.c:</div>
 <area shape="poly" title=" " alt="" coords="83,31,83,65,77,65,77,31"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__memmove_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a69673d42c601e17a8e682b592167c775" id="r_a69673d42c601e17a8e682b592167c775"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__memmove_8c.html#a69673d42c601e17a8e682b592167c775">ft_memmove</a> (void *dest, const void *src, size_t n)</td></tr>
@@ -128,6 +131,35 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__memmove_8c_source.html#l00015">15</a> of file <a class="el" href="ft__memmove_8c_source.html">ft_memmove.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *car;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *whacala;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">int</span>             w;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    whacala = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)dest;</div>
+<div class="line"><span class="lineno">   22</span>    car = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)src;</div>
+<div class="line"><span class="lineno">   23</span>    w = 0;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (!src &amp;&amp; !dest)</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (dest &lt; src)</div>
+<div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">while</span> ((<span class="keywordtype">size_t</span>)w &lt; n)</div>
+<div class="line"><span class="lineno">   29</span>        {</div>
+<div class="line"><span class="lineno">   30</span>            whacala[w] = car[w];</div>
+<div class="line"><span class="lineno">   31</span>            w++;</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (whacala);</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    w = n;</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">while</span> (w != 0)</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        whacala[w - 1] = car[w - 1];</div>
+<div class="line"><span class="lineno">   39</span>        w--;</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> (whacala);</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

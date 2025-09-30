@@ -1,0 +1,62 @@
+\doxysection{libft/ft\+\_\+dbpt\+\_\+free.c File Reference}
+\hypertarget{ft__dbpt__free_8c}{}\label{ft__dbpt__free_8c}\index{libft/ft\_dbpt\_free.c@{libft/ft\_dbpt\_free.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+dbpt\+\_\+free.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__dbpt__free_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}{free\+\_\+double\+\_\+pointer}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}dbpt)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4}\label{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4} 
+\index{ft\_dbpt\_free.c@{ft\_dbpt\_free.c}!free\_double\_pointer@{free\_double\_pointer}}
+\index{free\_double\_pointer@{free\_double\_pointer}!ft\_dbpt\_free.c@{ft\_dbpt\_free.c}}
+\doxysubsubsection{\texorpdfstring{free\_double\_pointer()}{free\_double\_pointer()}}
+{\footnotesize\ttfamily void free\+\_\+double\+\_\+pointer (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{dbpt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__dbpt__free_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__dbpt__free_8c_source}{ft\+\_\+dbpt\+\_\+free.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dbpt)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00021\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (dbpt[y])}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{00024\ \ \ \ \ y-\/-\/;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ >=\ 0)}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dbpt[y])}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ free(dbpt[y]);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ y-\/-\/;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ free(dbpt);}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{command_8h_a9b93e7663cca775fbe6c13fea90699f1}{bin\+\_\+execute()}}, \mbox{\hyperlink{command_8h_a509bc3c56be844c9b30a2ff165913928}{env\+\_\+execute()}}, and \mbox{\hyperlink{bin__commandss__execution_8h_a91b61219a17cd048e781bb835f1a66a1}{find\+\_\+command()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__dbpt__free_8c_a340e84d6dbea2a3c241e7cfb2a4e7ff4_icgraph}
+\end{center}
+\end{figure}

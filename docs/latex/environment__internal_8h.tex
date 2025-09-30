@@ -1,0 +1,227 @@
+\doxysection{src/environment/environment\+\_\+internal.h File Reference}
+\hypertarget{environment__internal_8h}{}\label{environment__internal_8h}\index{src/environment/environment\_internal.h@{src/environment/environment\_internal.h}}
+{\ttfamily \#include "{}../../include/environment.\+h"{}}\newline
+{\ttfamily \#include "{}../../libft/libft.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for environment\+\_\+internal.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment__internal_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment__internal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__env__var}{s\+\_\+env\+\_\+var}}
+\begin{DoxyCompactList}\small\item\em Represents a single environment variable (internal use). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c}{init\+\_\+environment\+\_\+var}} (char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Create a new environment variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{environment__internal_8h_a4ca0675f92ac5da65a97751ba7cf8ba5}{destroy\+\_\+environment\+\_\+var}} (void \texorpdfstring{$\ast$}{*}env\+\_\+var)
+\begin{DoxyCompactList}\small\item\em Destroy a single environment variable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{environment__internal_8h_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\+\_\+name\+\_\+filter}} (void \texorpdfstring{$\ast$}{*}var\+\_\+ptr, void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Filter function for comparing variable names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{environment__internal_8h_a4ca0675f92ac5da65a97751ba7cf8ba5}\label{environment__internal_8h_a4ca0675f92ac5da65a97751ba7cf8ba5} 
+\index{environment\_internal.h@{environment\_internal.h}!destroy\_environment\_var@{destroy\_environment\_var}}
+\index{destroy\_environment\_var@{destroy\_environment\_var}!environment\_internal.h@{environment\_internal.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_environment\_var()}{destroy\_environment\_var()}}
+{\footnotesize\ttfamily void destroy\+\_\+environment\+\_\+var (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{env\+\_\+var }\end{DoxyParamCaption})}
+
+
+
+Destroy a single environment variable. 
+
+Frees the name, value, and the structure itself. Designed to be compatible with generic list destruction functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env\+\_\+var} & Pointer to the environment variable to destroy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c}{init\+\_\+environment\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{envioroment__internal_8c_source_l00044}{44}} of file \mbox{\hyperlink{envioroment__internal_8c_source}{envioroment\+\_\+internal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *aux;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ aux\ =\ (\mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ *)envioroment\_var;}
+\DoxyCodeLine{00049\ \ \ \ \ free(aux-\/>\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{var\_name}});}
+\DoxyCodeLine{00050\ \ \ \ \ free(aux-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}});}
+\DoxyCodeLine{00051\ \ \ \ \ free(aux);}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{s\+\_\+env\+\_\+var\+::var\+\_\+name}}, and \mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{s\+\_\+env\+\_\+var\+::var\+\_\+value}}.
+
+
+
+Referenced by \mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{env\+\_\+destroy()}}, and \mbox{\hyperlink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment__internal_8h_a4ca0675f92ac5da65a97751ba7cf8ba5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c}\label{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c} 
+\index{environment\_internal.h@{environment\_internal.h}!init\_environment\_var@{init\_environment\_var}}
+\index{init\_environment\_var@{init\_environment\_var}!environment\_internal.h@{environment\_internal.h}}
+\doxysubsubsection{\texorpdfstring{init\_environment\_var()}{init\_environment\_var()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var}} \texorpdfstring{$\ast$}{*} init\+\_\+environment\+\_\+var (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Create a new environment variable. 
+
+Allocates and initializes a new t\+\_\+env\+\_\+var with the given name and value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the variable (must not be NULL). \\
+\hline
+{\em value} & Value of the variable (can be NULL for empty). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly allocated t\+\_\+env\+\_\+var, or NULL on allocation failure.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment__internal_8h_a4ca0675f92ac5da65a97751ba7cf8ba5}{destroy\+\_\+environment\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{envioroment__internal_8c_source_l00032}{32}} of file \mbox{\hyperlink{envioroment__internal_8c_source}{envioroment\+\_\+internal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *new\_env;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ new\_env\ =\ \mbox{\hyperlink{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}{ft\_calloc}}(1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structs__env__var}{t\_env\_var}}));}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_env\ ==\ NULL)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00039\ \ \ \ \ new\_env-\/>\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{var\_name}}\ =\ name;}
+\DoxyCodeLine{00040\ \ \ \ \ new\_env-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}}\ =\ value;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ (new\_env);}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}{ft\+\_\+calloc()}}, \mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{s\+\_\+env\+\_\+var\+::var\+\_\+name}}, and \mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{s\+\_\+env\+\_\+var\+::var\+\_\+value}}.
+
+
+
+Referenced by \mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize()}}, and \mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment__internal_8h_a8076868c04fd9fc3091d42bc8bd5a7bb}\label{environment__internal_8h_a8076868c04fd9fc3091d42bc8bd5a7bb} 
+\index{environment\_internal.h@{environment\_internal.h}!var\_name\_filter@{var\_name\_filter}}
+\index{var\_name\_filter@{var\_name\_filter}!environment\_internal.h@{environment\_internal.h}}
+\doxysubsubsection{\texorpdfstring{var\_name\_filter()}{var\_name\_filter()}}
+{\footnotesize\ttfamily bool var\+\_\+name\+\_\+filter (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{var\+\_\+ptr,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+
+
+
+Filter function for comparing variable names. 
+
+Can be used as a callback in list search or remove operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\+\_\+ptr} & Pointer to t\+\_\+env\+\_\+var. \\
+\hline
+{\em context} & Pointer to a string with the variable name to match. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if names match, false otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{envioroment__internal_8c_source_l00017}{17}} of file \mbox{\hyperlink{envioroment__internal_8c_source}{envioroment\+\_\+internal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *name;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *var;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ name\_size;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ name\ =\ (\textcolor{keywordtype}{char}\ *)context;}
+\DoxyCodeLine{00024\ \ \ \ \ var\ =\ (\mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ *)var\_ptr;}
+\DoxyCodeLine{00025\ \ \ \ \ name\_size\ =\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(name);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(var-\/>\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{var\_name}})\ ==\ name\_size\ \&\&\ \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(var-\/>\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{var\_name}},\ name,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ name\_size)\ ==\ 0)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}, \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\+\_\+strncmp()}}, and \mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{s\+\_\+env\+\_\+var\+::var\+\_\+name}}.
+
+
+
+Referenced by \mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get()}}, \mbox{\hyperlink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\+\_\+has()}}, \mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set()}}, and \mbox{\hyperlink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{environment__internal_8h_a8076868c04fd9fc3091d42bc8bd5a7bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment__internal_8h_a8076868c04fd9fc3091d42bc8bd5a7bb_icgraph}
+\end{center}
+\end{figure}

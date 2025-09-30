@@ -1,0 +1,22 @@
+<map id="env_set" name="env_set">
+<area shape="rect" id="Node000001" title="Add or update an environment variable." alt="" coords="5,104,79,129"/>
+<area shape="rect" id="Node000002" href="$list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="148,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,102,83,71,125,40,138,33,141,38,128,44,87,75,56,106"/>
+<area shape="rect" id="Node000003" href="$ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="168,104,247,129"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="79,114,154,114,154,119,79,119"/>
+<area shape="rect" id="Node000006" href="$envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="127,55,288,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="78,103,126,89,150,82,151,87,127,94,80,108"/>
+<area shape="rect" id="Node000008" href="$list_8c.html#a78751fefb5026bcdb58b19c746c959bc" title="Insert a value at the beginning of the list (O(1))." alt="" coords="162,153,253,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="80,125,152,147,150,152,78,130"/>
+<area shape="rect" id="Node000009" href="$envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="145,203,269,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="57,128,87,158,128,188,144,195,141,200,125,192,84,162,53,132"/>
+<area shape="rect" id="Node000004" href="$ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="342,104,421,129"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,114,328,114,328,119,247,119"/>
+<area shape="rect" id="Node000005" href="$ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="344,153,419,179"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="247,125,332,149,330,154,246,130"/>
+<area shape="rect" id="Node000007" href="$ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="343,55,419,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="288,65,330,65,330,70,288,70"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="252,200,330,178,331,183,254,205"/>
+<area shape="rect" id="Node000010" href="$ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="336,203,427,228"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="270,213,322,213,322,218,270,218"/>
+</map>

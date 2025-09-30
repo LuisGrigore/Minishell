@@ -1,0 +1,11 @@
+<map id="ft_split" name="ft_split">
+<area shape="rect" id="Node000001" title=" " alt="" coords="325,31,392,56"/>
+<area shape="rect" id="Node000002" href="$d8/d4a/environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="153,5,277,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="311,38,277,32,278,26,312,33"/>
+<area shape="rect" id="Node000004" href="$da/de2/find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="156,55,275,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="312,54,275,60,274,55,311,48"/>
+<area shape="rect" id="Node000003" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="28,5,83,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,21,83,21,83,15,139,15"/>
+<area shape="rect" id="Node000005" href="$d7/df6/command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="5,55,105,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="142,70,106,70,106,65,142,65"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="print_command" name="print_command">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,129,80"/>
+<area shape="rect" id="Node000002" href="$d7/d40/list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="192,5,272,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,52,178,31,179,36,111,57"/>
+<area shape="rect" id="Node000003" href="$d7/d40/list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="191,55,273,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,65,178,65,178,70,129,70"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#ad4c1fdde2a210ebffd89ac651af6fb46" title=" " alt="" coords="177,104,287,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="111,77,176,97,175,102,110,83"/>
+</map>

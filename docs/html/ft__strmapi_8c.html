@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_strmapi.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_strmapi.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,9 @@ Include dependency graph for ft_strmapi.c:</div>
 <area shape="poly" title=" " alt="" coords="255,101,373,145,371,150,253,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__strmapi_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a668b60557bfc9d60c2d3ccda8afadf49" id="r_a668b60557bfc9d60c2d3ccda8afadf49"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strmapi_8c.html#a668b60557bfc9d60c2d3ccda8afadf49">ft_strmapi</a> (char const *s, char(*f)(unsigned int, char))</td></tr>
@@ -131,6 +134,39 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__strmapi_8c_source.html#l00014">14</a> of file <a class="el" href="ft__strmapi_8c_source.html">ft_strmapi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    i;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">char</span>            *p3;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!s || !f)</div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   21</span>    p3 = (<span class="keywordtype">char</span> *)malloc(<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(s) + 1);</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!p3)</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   24</span>    i = 0;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span>        p3[i] = f(i, s[i]);</div>
+<div class="line"><span class="lineno">   28</span>        i++;</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="line"><span class="lineno">   30</span>    p3[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> (p3);</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+<div class="ttc" id="aft__strlen_8c_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__strmapi_8c_a668b60557bfc9d60c2d3ccda8afadf49_cgraph.png" border="0" usemap="#aft__strmapi_8c_a668b60557bfc9d60c2d3ccda8afadf49_cgraph" alt=""/></div>
+<map name="aft__strmapi_8c_a668b60557bfc9d60c2d3ccda8afadf49_cgraph" id="aft__strmapi_8c_a668b60557bfc9d60c2d3ccda8afadf49_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,93,31"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="141,5,216,31"/>
+<area shape="poly" title=" " alt="" coords="94,15,128,15,128,21,94,21"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,0 +1,13 @@
+<map id="ft_ispace" name="ft_ispace">
+<area shape="rect" id="Node000001" title=" " alt="" coords="481,42,561,67"/>
+<area shape="rect" id="Node000002" href="$redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976" title=" " alt="" coords="301,15,433,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,48,433,42,434,37,468,43"/>
+<area shape="rect" id="Node000004" href="$minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577" title=" " alt="" coords="305,66,429,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,66,430,72,429,66,467,60"/>
+<area shape="rect" id="Node000003" href="$redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="108,5,253,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,30,254,29,254,24,288,24"/>
+<area shape="rect" id="Node000005" href="$minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d" title=" " alt="" coords="133,70,228,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="291,83,228,84,228,79,291,78"/>
+<area shape="rect" id="Node000006" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="120,85,60,85,60,80,120,80"/>
+</map>

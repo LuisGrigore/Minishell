@@ -1,0 +1,22 @@
+<map id="env_deserialize" name="env_deserialize">
+<area shape="rect" id="Node000001" title="Convert a string array into an environment variable list." alt="" coords="5,80,129,105"/>
+<area shape="rect" id="Node000002" href="$ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="225,55,291,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,82,211,71,211,76,130,87"/>
+<area shape="rect" id="Node000008" href="$envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="177,5,339,31"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="92,78,176,40,197,32,198,37,178,44,94,82"/>
+<area shape="rect" id="Node000009" href="$list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="223,104,293,129"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="130,98,209,108,208,113,129,103"/>
+<area shape="rect" id="Node000010" href="$list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="216,153,300,179"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="95,103,178,140,204,148,202,153,176,144,93,108"/>
+<area shape="rect" id="Node000003" href="$ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="399,5,475,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="291,56,384,29,386,35,292,61"/>
+<area shape="rect" id="Node000004" href="$ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="405,55,469,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="292,65,391,65,391,70,292,70"/>
+<area shape="rect" id="Node000007" href="$ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="387,104,487,129"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="292,74,378,98,376,103,291,79"/>
+<area shape="rect" id="Node000005" href="$ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="535,55,625,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="469,65,521,65,521,70,469,70"/>
+<area shape="rect" id="Node000006" href="$ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="673,55,771,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="625,65,659,65,659,70,625,70"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="339,15,385,15,385,21,339,21"/>
+</map>

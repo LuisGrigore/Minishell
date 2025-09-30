@@ -1,0 +1,11 @@
+<map id="special_char" name="special_char">
+<area shape="rect" id="Node000001" title=" " alt="" coords="379,56,481,81"/>
+<area shape="rect" id="Node000002" href="$redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712" title=" " alt="" coords="203,5,327,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,54,306,33,308,28,375,49"/>
+<area shape="rect" id="Node000003" href="$redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="5,49,151,89"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="365,71,151,71,151,66,365,66"/>
+<area shape="rect" id="Node000004" href="$redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976" title=" " alt="" coords="199,107,331,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="375,88,308,109,306,104,374,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="204,37,152,52,150,46,203,32"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="203,106,150,91,152,86,204,100"/>
+</map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_selector.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_selector.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,9 @@ Include dependency graph for ft_selector.c:</div>
 <area shape="poly" title=" " alt="" coords="255,101,373,145,371,150,253,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__selector_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6bca906941b73aee430168c03090a88d" id="r_a6bca906941b73aee430168c03090a88d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__selector_8c.html#a6bca906941b73aee430168c03090a88d">ft_selector</a> (va_list pf, char const *str)</td></tr>
@@ -131,6 +134,111 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__selector_8c_source.html#l00015">15</a> of file <a class="el" href="ft__selector_8c_source.html">ft_selector.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;c&#39;</span>)</div>
+<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6">ft_putchar</a>(va_arg(pf, <span class="keywordtype">int</span>)));</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;s&#39;</span>)</div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__putstr_8c.html#ae07c9c3acc8313cfbea5cf3092ffe6a4">ft_putstr</a>(va_arg(pf, <span class="keywordtype">char</span> *)));</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;X&#39;</span>)</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__puthexnumax_8c.html#acae1680e62faaf99daa58e76b884dc15">ft_puthexnumax</a>(va_arg(pf, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)));</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;x&#39;</span>)</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__puthexnum_8c.html#aa78c3345ea2f89debd283913c1aa8eeb">ft_puthexnum</a>(va_arg(pf, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)));</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;d&#39;</span> || *str == <span class="charliteral">&#39;i&#39;</span>)</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__putnb_8c.html#a6577258e350092bd9ab17904d78d08ab">ft_putnb</a>(va_arg(pf, <span class="keywordtype">int</span>)));</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;p&#39;</span>)</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__putpointer_8c.html#a099c80981db91ceb30f2ba3f414dfe43">ft_putpointer</a>(va_arg(pf, <span class="keywordtype">void</span> *)));</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;u&#39;</span>)</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__putunmath_8c.html#a31cb9d6c2ab8d5253779ad4b4074b253">ft_putunmath</a>(va_arg(pf, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)));</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;%&#39;</span>)</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6">ft_putchar</a>(<span class="charliteral">&#39;%&#39;</span>));</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> (<span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aft__putchar_8c_html_a83e0bab0b7de17c5164b5866ecdf27f6"><div class="ttname"><a href="ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6">ft_putchar</a></div><div class="ttdeci">int ft_putchar(int pf)</div><div class="ttdef"><b>Definition</b> <a href="ft__putchar_8c_source.html#l00015">ft_putchar.c:15</a></div></div>
+<div class="ttc" id="aft__puthexnum_8c_html_aa78c3345ea2f89debd283913c1aa8eeb"><div class="ttname"><a href="ft__puthexnum_8c.html#aa78c3345ea2f89debd283913c1aa8eeb">ft_puthexnum</a></div><div class="ttdeci">int ft_puthexnum(unsigned int pf)</div><div class="ttdef"><b>Definition</b> <a href="ft__puthexnum_8c_source.html#l00051">ft_puthexnum.c:51</a></div></div>
+<div class="ttc" id="aft__puthexnumax_8c_html_acae1680e62faaf99daa58e76b884dc15"><div class="ttname"><a href="ft__puthexnumax_8c.html#acae1680e62faaf99daa58e76b884dc15">ft_puthexnumax</a></div><div class="ttdeci">int ft_puthexnumax(unsigned int pf)</div><div class="ttdef"><b>Definition</b> <a href="ft__puthexnumax_8c_source.html#l00051">ft_puthexnumax.c:51</a></div></div>
+<div class="ttc" id="aft__putnb_8c_html_a6577258e350092bd9ab17904d78d08ab"><div class="ttname"><a href="ft__putnb_8c.html#a6577258e350092bd9ab17904d78d08ab">ft_putnb</a></div><div class="ttdeci">int ft_putnb(int i)</div><div class="ttdef"><b>Definition</b> <a href="ft__putnb_8c_source.html#l00047">ft_putnb.c:47</a></div></div>
+<div class="ttc" id="aft__putpointer_8c_html_a099c80981db91ceb30f2ba3f414dfe43"><div class="ttname"><a href="ft__putpointer_8c.html#a099c80981db91ceb30f2ba3f414dfe43">ft_putpointer</a></div><div class="ttdeci">int ft_putpointer(void *pf)</div><div class="ttdef"><b>Definition</b> <a href="ft__putpointer_8c_source.html#l00051">ft_putpointer.c:51</a></div></div>
+<div class="ttc" id="aft__putstr_8c_html_ae07c9c3acc8313cfbea5cf3092ffe6a4"><div class="ttname"><a href="ft__putstr_8c.html#ae07c9c3acc8313cfbea5cf3092ffe6a4">ft_putstr</a></div><div class="ttdeci">int ft_putstr(char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__putstr_8c_source.html#l00015">ft_putstr.c:15</a></div></div>
+<div class="ttc" id="aft__putunmath_8c_html_a31cb9d6c2ab8d5253779ad4b4074b253"><div class="ttname"><a href="ft__putunmath_8c.html#a31cb9d6c2ab8d5253779ad4b4074b253">ft_putunmath</a></div><div class="ttdeci">int ft_putunmath(unsigned int i)</div><div class="ttdef"><b>Definition</b> <a href="ft__putunmath_8c_source.html#l00035">ft_putunmath.c:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6">ft_putchar()</a>, <a class="el" href="ft__puthexnum_8c.html#aa78c3345ea2f89debd283913c1aa8eeb">ft_puthexnum()</a>, <a class="el" href="ft__puthexnumax_8c.html#acae1680e62faaf99daa58e76b884dc15">ft_puthexnumax()</a>, <a class="el" href="ft__putnb_8c.html#a6577258e350092bd9ab17904d78d08ab">ft_putnb()</a>, <a class="el" href="ft__putpointer_8c.html#a099c80981db91ceb30f2ba3f414dfe43">ft_putpointer()</a>, <a class="el" href="ft__putstr_8c.html#ae07c9c3acc8313cfbea5cf3092ffe6a4">ft_putstr()</a>, and <a class="el" href="ft__putunmath_8c.html#a31cb9d6c2ab8d5253779ad4b4074b253">ft_putunmath()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ft__printf_8c.html#a620bb91bbfd6d1ead025f80ae3bec222">ft_printf()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__selector_8c_a6bca906941b73aee430168c03090a88d_cgraph.png" border="0" usemap="#aft__selector_8c_a6bca906941b73aee430168c03090a88d_cgraph" alt=""/></div>
+<map name="aft__selector_8c_a6bca906941b73aee430168c03090a88d_cgraph" id="aft__selector_8c_a6bca906941b73aee430168c03090a88d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,298,96,323"/>
+<area shape="rect" href="ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6" title=" " alt="" coords="612,223,699,248"/>
+<area shape="poly" title=" " alt="" coords="50,297,55,251,70,187,81,152,97,118,117,86,142,58,184,28,224,17,320,10,393,3,453,8,481,16,508,30,566,74,595,106,618,143,648,209,643,211,613,145,590,109,562,78,505,34,479,21,452,13,393,9,320,16,225,22,187,33,146,62,121,89,102,120,86,154,75,188,61,252,55,297"/>
+<area shape="rect" href="ft__puthexnum_8c.html#aa78c3345ea2f89debd283913c1aa8eeb" title=" " alt="" coords="152,72,264,98"/>
+<area shape="poly" title=" " alt="" coords="59,296,188,108,192,111,63,299"/>
+<area shape="rect" href="ft__putstr_8c.html#ae07c9c3acc8313cfbea5cf3092ffe6a4" title=" " alt="" coords="479,298,555,323"/>
+<area shape="poly" title=" " alt="" coords="96,308,464,308,464,313,96,313"/>
+<area shape="rect" href="ft__puthexnumax_8c.html#acae1680e62faaf99daa58e76b884dc15" title=" " alt="" coords="144,222,272,247"/>
+<area shape="poly" title=" " alt="" coords="77,295,167,251,170,255,79,300"/>
+<area shape="rect" href="ft__putnb_8c.html#a6577258e350092bd9ab17904d78d08ab" title=" " alt="" coords="171,523,245,548"/>
+<area shape="poly" title=" " alt="" coords="63,321,192,509,188,513,59,324"/>
+<area shape="rect" href="ft__putpointer_8c.html#a099c80981db91ceb30f2ba3f414dfe43" title=" " alt="" coords="155,374,261,399"/>
+<area shape="poly" title=" " alt="" coords="79,321,170,365,167,370,77,325"/>
+<area shape="rect" href="ft__putunmath_8c.html#a31cb9d6c2ab8d5253779ad4b4074b253" title=" " alt="" coords="153,598,263,623"/>
+<area shape="poly" title=" " alt="" coords="57,323,66,365,83,426,109,495,146,559,176,588,172,592,142,563,104,497,78,428,61,367,52,324"/>
+<area shape="poly" title=" " alt="" coords="228,70,265,51,314,33,368,24,396,25,422,32,458,48,492,69,554,118,604,169,639,210,635,214,600,172,550,122,489,73,456,53,420,37,395,30,368,29,315,38,267,56,231,75"/>
+<area shape="rect" href="ft__puthexnum_8c.html#a22714b9b4b8fe264a27def969c1d97e1" title=" " alt="" coords="340,47,401,72"/>
+<area shape="poly" title=" " alt="" coords="264,74,326,64,327,69,265,79"/>
+<area shape="rect" href="ft__puthexnum_8c.html#a3c14e97a0c3d055c5d7de5d720eee871" title=" " alt="" coords="342,96,399,122"/>
+<area shape="poly" title=" " alt="" coords="265,91,329,100,328,105,264,96"/>
+<area shape="poly" title=" " alt="" coords="384,121,500,284,496,287,379,124"/>
+<area shape="poly" title=" " alt="" coords="540,295,617,253,620,257,543,300"/>
+<area shape="poly" title=" " alt="" coords="493,299,488,289,491,280,501,273,517,271,536,274,544,283,540,287,533,279,517,276,502,278,495,283,493,289,498,296"/>
+<area shape="poly" title=" " alt="" coords="230,219,270,199,319,182,359,177,399,175,478,182,551,198,609,216,607,221,550,203,478,188,399,180,359,182,321,187,272,204,232,224"/>
+<area shape="rect" href="ft__puthexnumax_8c.html#a22714b9b4b8fe264a27def969c1d97e1" title=" " alt="" coords="340,247,401,272"/>
+<area shape="poly" title=" " alt="" coords="273,242,327,250,326,255,272,247"/>
+<area shape="rect" href="ft__puthexnumax_8c.html#a188337858f2231144653b22c5ca839e9" title=" " alt="" coords="329,198,412,223"/>
+<area shape="poly" title=" " alt="" coords="272,222,315,216,316,221,273,227"/>
+<area shape="poly" title=" " alt="" coords="403,221,423,232,460,259,493,286,489,290,457,263,420,236,400,225"/>
+<area shape="rect" href="ft__putnb_8c.html#a07c039686c2659172aa09670d56d17a8" title=" " alt="" coords="333,499,408,524"/>
+<area shape="poly" title=" " alt="" coords="245,527,320,516,320,522,246,533"/>
+<area shape="rect" href="ft__putnb_8c.html#aac0d38324689331d10d0d88d7ea022ed" title=" " alt="" coords="320,548,421,574"/>
+<area shape="poly" title=" " alt="" coords="243,546,307,557,306,562,242,551"/>
+<area shape="poly" title=" " alt="" coords="401,546,420,533,492,463,554,386,604,313,638,259,642,262,609,316,559,389,496,467,423,538,403,550"/>
+<area shape="poly" title=" " alt="" coords="404,546,419,534,441,501,449,470,454,437,467,397,499,334,504,336,472,399,460,438,454,471,446,503,423,537,407,550"/>
+<area shape="poly" title=" " alt="" coords="335,551,259,538,259,532,336,545"/>
+<area shape="poly" title=" " alt="" coords="261,392,338,396,380,392,420,382,461,360,493,331,497,335,464,364,422,387,381,398,338,402,261,398"/>
+<area shape="rect" href="ft__putpointer_8c.html#a2dbbc8e73b3eed1c9afc77c20e2dc209" title=" " alt="" coords="340,450,401,475"/>
+<area shape="poly" title=" " alt="" coords="237,397,331,441,329,446,235,401"/>
+<area shape="rect" href="ft__putpointer_8c.html#a38ebe4d83cb2f2b343d5077b3715d58e" title=" " alt="" coords="329,348,412,374"/>
+<area shape="poly" title=" " alt="" coords="260,375,315,367,316,372,261,381"/>
+<area shape="poly" title=" " alt="" coords="407,346,466,325,467,330,409,351"/>
+<area shape="rect" href="ft__putunmath_8c.html#ae6bbd08a6bf54b337086882ce6c82f92" title=" " alt="" coords="333,598,408,623"/>
+<area shape="poly" title=" " alt="" coords="263,608,319,608,319,613,263,613"/>
+<area shape="rect" href="ft__putunmath_8c.html#a020ccb14c78c94369e810e68a818403c" title=" " alt="" coords="469,591,564,616"/>
+<area shape="poly" title=" " alt="" coords="255,620,320,633,371,638,421,633,472,619,474,624,422,638,371,643,320,638,254,626"/>
+<area shape="poly" title=" " alt="" coords="520,590,642,260,647,262,525,592"/>
+<area shape="poly" title=" " alt="" coords="493,592,488,582,491,573,501,567,517,564,536,568,544,576,540,580,533,572,517,570,502,572,495,576,493,582,498,590"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__selector_8c_a6bca906941b73aee430168c03090a88d_icgraph.png" border="0" usemap="#aft__selector_8c_a6bca906941b73aee430168c03090a88d_icgraph" alt=""/></div>
+<map name="aft__selector_8c_a6bca906941b73aee430168c03090a88d_icgraph" id="aft__selector_8c_a6bca906941b73aee430168c03090a88d_icgraph">
+<area shape="rect" title=" " alt="" coords="865,5,956,31"/>
+<area shape="rect" href="ft__printf_8c.html#a620bb91bbfd6d1ead025f80ae3bec222" title=" " alt="" coords="744,5,817,31"/>
+<area shape="poly" title=" " alt="" coords="852,21,818,21,818,15,852,15"/>
+<area shape="rect" href="command__functs_8c.html#a0fad0803ff59cff11ab2eb8de7eac854" title=" " alt="" coords="585,5,696,31"/>
+<area shape="poly" title=" " alt="" coords="730,21,696,21,696,15,730,15"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,5,537,31"/>
+<area shape="poly" title=" " alt="" coords="571,21,537,21,537,15,571,15"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,5,315,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,315,21,315,15,349,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>

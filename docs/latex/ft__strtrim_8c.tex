@@ -1,0 +1,59 @@
+\doxysection{libft/ft\+\_\+strtrim.c File Reference}
+\hypertarget{ft__strtrim_8c}{}\label{ft__strtrim_8c}\index{libft/ft\_strtrim.c@{libft/ft\_strtrim.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strtrim.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strtrim_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strtrim_8c_a60352c5b39fab08469b3e28131a79e25}{ft\+\_\+strtrim}} (char const \texorpdfstring{$\ast$}{*}s1, char const \texorpdfstring{$\ast$}{*}set)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strtrim_8c_a60352c5b39fab08469b3e28131a79e25}\label{ft__strtrim_8c_a60352c5b39fab08469b3e28131a79e25} 
+\index{ft\_strtrim.c@{ft\_strtrim.c}!ft\_strtrim@{ft\_strtrim}}
+\index{ft\_strtrim@{ft\_strtrim}!ft\_strtrim.c@{ft\_strtrim.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strtrim()}{ft\_strtrim()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} ft\+\_\+strtrim (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{s1,  }\item[{char const \texorpdfstring{$\ast$}{*}}]{set }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strtrim_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strtrim_8c_source}{ft\+\_\+strtrim.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ j;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ s\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ j\ =\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(s1);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s1\ \&\&\ !set)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)malloc(1));}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d}{ft\_strchr}}(set,\ s1[s])\ \&\&\ s1[s]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d}{ft\_strchr}}(set,\ s1[j])\ \&\&\ j\ >\ 0)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ j-\/-\/;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__substr_8c_a78c402cbf3d55b1374693c3b7d34f71d}{ft\_substr}}(s1,\ s,\ (j\ -\/\ s\ +\ 1)));}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__strchr_8c_aa6d0c2d180f32ee585485e1a1ce3d55d}{ft\+\_\+strchr()}}, \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}, and \mbox{\hyperlink{ft__substr_8c_a78c402cbf3d55b1374693c3b7d34f71d}{ft\+\_\+substr()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{ft__strtrim_8c_a60352c5b39fab08469b3e28131a79e25_cgraph}
+\end{center}
+\end{figure}

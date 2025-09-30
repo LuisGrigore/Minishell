@@ -1,0 +1,320 @@
+\doxysection{src/ft\+\_\+split2.0.c File Reference}
+\hypertarget{ft__split2_80_8c}{}\label{ft__split2_80_8c}\index{src/ft\_split2.0.c@{src/ft\_split2.0.c}}
+{\ttfamily \#include "{}../include/util.\+h"{}}\newline
+{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
+{\ttfamily \#include "{}stdio.\+h"{}}\newline
+{\ttfamily \#include "{}stdlib.\+h"{}}\newline
+{\ttfamily \#include "{}unistd.\+h"{}}\newline
+Include dependency graph for ft\+\_\+split2.0.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{ft__split2_80_8c_a2a36d49f968650a86545c04b11c8cd72}{ft\+\_\+extractor}} (char const \texorpdfstring{$\ast$}{*}n, size\+\_\+t k, size\+\_\+t s, char t)
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c}{ft\+\_\+survivor}} (char const \texorpdfstring{$\ast$}{*}n, size\+\_\+t k, size\+\_\+t s, char t)
+\item 
+static size\+\_\+t \mbox{\hyperlink{ft__split2_80_8c_ac0bb6c50d70ad12ea046d500aefc8ffa}{ft\+\_\+worldette}} (const char \texorpdfstring{$\ast$}{*}s, char c)
+\item 
+static char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0}{ft\+\_\+rapt}} (char const \texorpdfstring{$\ast$}{*}s, char c, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}p3, size\+\_\+t size)
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015}{ft\+\_\+split2}} (char const \texorpdfstring{$\ast$}{*}s, char c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__split2_80_8c_a2a36d49f968650a86545c04b11c8cd72}\label{ft__split2_80_8c_a2a36d49f968650a86545c04b11c8cd72} 
+\index{ft\_split2.0.c@{ft\_split2.0.c}!ft\_extractor@{ft\_extractor}}
+\index{ft\_extractor@{ft\_extractor}!ft\_split2.0.c@{ft\_split2.0.c}}
+\doxysubsubsection{\texorpdfstring{ft\_extractor()}{ft\_extractor()}}
+{\footnotesize\ttfamily static size\+\_\+t ft\+\_\+extractor (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{n,  }\item[{size\+\_\+t}]{k,  }\item[{size\+\_\+t}]{s,  }\item[{char}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__split2_80_8c_source_l00019}{19}} of file \mbox{\hyperlink{ft__split2_80_8c_source}{ft\+\_\+split2.\+0.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ j;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ o;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ o\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ j\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (s\ <\ k)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n[s]\ ==\ \textcolor{charliteral}{'"{}'}\ ||\ n[s]\ ==\ 39)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ o\ =\ 1;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n[s]\ ==\ t\ \&\&\ o\ ==\ 0)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n[s]\ ==\ \textcolor{charliteral}{'"{}'}\ ||\ n[s]\ ==\ 39)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ o\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ (j\ -\/\ 1);}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c}{ft\+\_\+survivor()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c_a2a36d49f968650a86545c04b11c8cd72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0}\label{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0} 
+\index{ft\_split2.0.c@{ft\_split2.0.c}!ft\_rapt@{ft\_rapt}}
+\index{ft\_rapt@{ft\_rapt}!ft\_split2.0.c@{ft\_split2.0.c}}
+\doxysubsubsection{\texorpdfstring{ft\_rapt()}{ft\_rapt()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} ft\+\_\+rapt (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{s,  }\item[{char}]{c,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{p3,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__split2_80_8c_source_l00098}{98}} of file \mbox{\hyperlink{ft__split2_80_8c_source}{ft\+\_\+split2.\+0.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ r;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ n;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ b;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ b\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ r\ =\ -\/1;}
+\DoxyCodeLine{00106\ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[size])}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[size]\ ==\ 39\ ||\ s[size]\ ==\ \textcolor{charliteral}{'"{}'})}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ 1;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ size++;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (s[size]\ \&\&\ b\ ==\ 1)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((s[size]\ ==\ 39\ ||\ s[size]\ ==\ \textcolor{charliteral}{'"{}'}))}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ 0;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ size++;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[size]\ ==\ c\ ||\ s[size]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[size\ -\/\ 1]\ !=\ c)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p3[++r]\ =\ \mbox{\hyperlink{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c}{ft\_survivor}}(s,\ size,\ n,\ c);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!p3[r])}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (r\ !=\ 0)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(p3[r-\/-\/\ -\/\ 1]);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(p3);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\ =\ size;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ (p3);}
+\DoxyCodeLine{00135\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c}{ft\+\_\+survivor()}}.
+
+
+
+Referenced by \mbox{\hyperlink{util_8h_af54f55774b34b2395f5ca1da01d9f015}{ft\+\_\+split2()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015}\label{ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015} 
+\index{ft\_split2.0.c@{ft\_split2.0.c}!ft\_split2@{ft\_split2}}
+\index{ft\_split2@{ft\_split2}!ft\_split2.0.c@{ft\_split2.0.c}}
+\doxysubsubsection{\texorpdfstring{ft\_split2()}{ft\_split2()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} ft\+\_\+split2 (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{s,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__split2_80_8c_source_l00137}{137}} of file \mbox{\hyperlink{ft__split2_80_8c_source}{ft\+\_\+split2.\+0.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **p3;}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ size;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ p3\ =\ NULL;}
+\DoxyCodeLine{00143\ \ \ \ \ size\ =\ 0;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00146\ \ \ \ \ p3\ =\ (\textcolor{keywordtype}{char}\ **)\mbox{\hyperlink{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}{ft\_calloc}}((\mbox{\hyperlink{ft__split2_80_8c_ac0bb6c50d70ad12ea046d500aefc8ffa}{ft\_worldette}}(s,\ c)\ +\ 1),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p3)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0}{ft\_rapt}}(s,\ c,\ p3,\ size));}
+\DoxyCodeLine{00150\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}{ft\+\_\+calloc()}}, \mbox{\hyperlink{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0}{ft\+\_\+rapt()}}, and \mbox{\hyperlink{ft__split2_80_8c_ac0bb6c50d70ad12ea046d500aefc8ffa}{ft\+\_\+worldette()}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_abba1603056020c33ad3f11e82b14fcfe}{export\+\_\+execute()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c}\label{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c} 
+\index{ft\_split2.0.c@{ft\_split2.0.c}!ft\_survivor@{ft\_survivor}}
+\index{ft\_survivor@{ft\_survivor}!ft\_split2.0.c@{ft\_split2.0.c}}
+\doxysubsubsection{\texorpdfstring{ft\_survivor()}{ft\_survivor()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} ft\+\_\+survivor (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{n,  }\item[{size\+\_\+t}]{k,  }\item[{size\+\_\+t}]{s,  }\item[{char}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__split2_80_8c_source_l00039}{39}} of file \mbox{\hyperlink{ft__split2_80_8c_source}{ft\+\_\+split2.\+0.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *p2;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ p;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ o;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ o\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ p2\ =\ NULL;}
+\DoxyCodeLine{00049\ \ \ \ \ p\ =\ \mbox{\hyperlink{ft__split2_80_8c_a2a36d49f968650a86545c04b11c8cd72}{ft\_extractor}}(n,\ k,\ s,\ t);}
+\DoxyCodeLine{00050\ \ \ \ \ p2\ =\ malloc(k\ -\/\ s\ -\/\ p);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p2)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{while}\ (s\ <\ k)}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (n[s]\ ==\ t\ \&\&\ o\ ==\ 0)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n[s]\ ==\ \textcolor{charliteral}{'"{}'}\ ||\ n[s]\ ==\ 39)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ o\ =\ 1;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ p2[i]\ =\ n[s];}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n[s]\ ==\ \textcolor{charliteral}{'"{}'}\ ||\ n[s]\ ==\ 39)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ o\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ p2[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ (p2);}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__split2_80_8c_a2a36d49f968650a86545c04b11c8cd72}{ft\+\_\+extractor()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__split2_80_8c_adc745ae9ae5cefd55d21a576645475b0}{ft\+\_\+rapt()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c_aabeeb509584dc83b1855c9487957ba4c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__split2_80_8c_ac0bb6c50d70ad12ea046d500aefc8ffa}\label{ft__split2_80_8c_ac0bb6c50d70ad12ea046d500aefc8ffa} 
+\index{ft\_split2.0.c@{ft\_split2.0.c}!ft\_worldette@{ft\_worldette}}
+\index{ft\_worldette@{ft\_worldette}!ft\_split2.0.c@{ft\_split2.0.c}}
+\doxysubsubsection{\texorpdfstring{ft\_worldette()}{ft\_worldette()}}
+{\footnotesize\ttfamily static size\+\_\+t ft\+\_\+worldette (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__split2_80_8c_source_l00069}{69}} of file \mbox{\hyperlink{ft__split2_80_8c_source}{ft\+\_\+split2.\+0.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ count;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ o;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ o\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ count\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i])}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i]\ ==\ c)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[i])}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[i]\ ==\ \textcolor{charliteral}{'"{}'}\ ||\ s[i]\ ==\ 39)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ o\ =\ 1;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i]\ \&\&\ (s[i]\ !=\ c\ ||\ o\ ==\ 1))}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[i]\ ==\ \textcolor{charliteral}{'"{}'}\ ||\ s[i]\ ==\ 39)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ o\ =\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ (count);}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{util_8h_af54f55774b34b2395f5ca1da01d9f015}{ft\+\_\+split2()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split2_80_8c_ac0bb6c50d70ad12ea046d500aefc8ffa_icgraph}
+\end{center}
+\end{figure}

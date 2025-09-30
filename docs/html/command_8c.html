@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/command.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/command.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -117,7 +118,9 @@ Include dependency graph for command.c:</div>
 <area shape="poly" title=" " alt="" coords="605,109,696,158,693,162,603,114"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="command_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a980b6e4466bc0bed37cb6352f143ab96" id="r_a980b6e4466bc0bed37cb6352f143ab96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="command_8h.html#a343be1e180affa75a4a3b4bb5b2225e3">t_command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8c.html#a980b6e4466bc0bed37cb6352f143ab96">init_command</a> (<a class="el" href="list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *args, <a class="el" href="command_8h.html#ae18307f65fae1da5035e40073801a9a0">t_command_funct</a> funct, <a class="el" href="list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *redirects)</td></tr>
@@ -141,6 +144,53 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="command_8c_source.html#l00021">21</a> of file <a class="el" href="command_8c_source.html">command.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_struct" href="structs__command.html">t_command</a>   *command;</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    command = (<a class="code hl_struct" href="structs__command.html">t_command</a> *)command_to_delete;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (command-&gt;<a class="code hl_variable" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">args</a>)</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(command-&gt;<a class="code hl_variable" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">args</a>, free);</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (command-&gt;<a class="code hl_variable" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">redirects</a>)</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(command-&gt;<a class="code hl_variable" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">redirects</a>, <a class="code hl_function" href="redirect__asignation_8h.html#abd88dda569ce623bd360a0f45a6f5e61">destroy_redirect</a>);</div>
+<div class="line"><span class="lineno">   30</span>    ;</div>
+<div class="line"><span class="lineno">   31</span>    free(command);</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+<div class="ttc" id="alist_8c_html_aaaeda7db5c6b1819a079f05d83c3ce38"><div class="ttname"><a href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a></div><div class="ttdeci">void destroy_gen_list(t_gen_list *list, void(value_destroyer)(void *))</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00088">list.c:88</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_abd88dda569ce623bd360a0f45a6f5e61"><div class="ttname"><a href="redirect__asignation_8h.html#abd88dda569ce623bd360a0f45a6f5e61">destroy_redirect</a></div><div class="ttdeci">void destroy_redirect(void *redirect)</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8c_source.html#l00097">redirect_asignation.c:97</a></div></div>
+<div class="ttc" id="astructs__command_html"><div class="ttname"><a href="structs__command.html">s_command</a></div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00026">command.h:27</a></div></div>
+<div class="ttc" id="astructs__command_html_a82f3acd25a4af3e90640d8e7d9fe4793"><div class="ttname"><a href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">s_command::redirects</a></div><div class="ttdeci">t_gen_list * redirects</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00029">command.h:29</a></div></div>
+<div class="ttc" id="astructs__command_html_ad650fccbaed7fdf5e65aafc9e4fedeae"><div class="ttname"><a href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">s_command::args</a></div><div class="ttdeci">t_gen_list * args</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00028">command.h:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">s_command::args</a>, <a class="el" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list()</a>, <a class="el" href="redirect__asignation_8h.html#abd88dda569ce623bd360a0f45a6f5e61">destroy_redirect()</a>, and <a class="el" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">s_command::redirects</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>, and <a class="el" href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="command_8c_a950465f331fec212ad0507c3e41a0137_cgraph.png" border="0" usemap="#acommand_8c_a950465f331fec212ad0507c3e41a0137_cgraph" alt=""/></div>
+<map name="acommand_8c_a950465f331fec212ad0507c3e41a0137_cgraph" id="acommand_8c_a950465f331fec212ad0507c3e41a0137_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,148,56"/>
+<area shape="rect" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="196,5,325,31"/>
+<area shape="poly" title=" " alt="" coords="148,31,182,26,183,31,148,36"/>
+<area shape="rect" href="redirect__asignation_8c.html#abd88dda569ce623bd360a0f45a6f5e61" title=" " alt="" coords="197,55,325,80"/>
+<area shape="poly" title=" " alt="" coords="148,50,183,55,183,60,148,55"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="command_8c_a950465f331fec212ad0507c3e41a0137_icgraph.png" border="0" usemap="#acommand_8c_a950465f331fec212ad0507c3e41a0137_icgraph" alt=""/></div>
+<map name="acommand_8c_a950465f331fec212ad0507c3e41a0137_icgraph" id="acommand_8c_a950465f331fec212ad0507c3e41a0137_icgraph">
+<area shape="rect" title=" " alt="" coords="363,5,505,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,60,21,60,15,349,15"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
+<area shape="poly" title=" " alt="" coords="349,30,315,34,314,29,349,25"/>
+<area shape="poly" title=" " alt="" coords="107,31,60,24,61,19,108,26"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -175,6 +225,45 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="command_8c_source.html#l00009">9</a> of file <a class="el" href="command_8c_source.html">command.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>{</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_struct" href="structs__command.html">t_command</a>   *new_command;</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>    new_command = <a class="code hl_function" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679">ft_calloc</a>(1, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__command.html">t_command</a>));</div>
+<div class="line"><span class="lineno">   15</span>    new_command-&gt;<a class="code hl_variable" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">args</a> = args;</div>
+<div class="line"><span class="lineno">   16</span>    new_command-&gt;<a class="code hl_variable" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">command_funct</a> = funct;</div>
+<div class="line"><span class="lineno">   17</span>    new_command-&gt;<a class="code hl_variable" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">redirects</a> = redirects;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> (new_command);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+<div class="ttc" id="aft__calloc_8c_html_a55cb9602200ccf92a7f43e58c6ee2679"><div class="ttname"><a href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679">ft_calloc</a></div><div class="ttdeci">void * ft_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="ft__calloc_8c_source.html#l00015">ft_calloc.c:15</a></div></div>
+<div class="ttc" id="astructs__command_html_a4035892ffaf86e4740da691c477ebfa4"><div class="ttname"><a href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">s_command::command_funct</a></div><div class="ttdeci">t_command_funct command_funct</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00030">command.h:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="structs__command.html#ad650fccbaed7fdf5e65aafc9e4fedeae">s_command::args</a>, <a class="el" href="structs__command.html#a4035892ffaf86e4740da691c477ebfa4">s_command::command_funct</a>, <a class="el" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679">ft_calloc()</a>, and <a class="el" href="structs__command.html#a82f3acd25a4af3e90640d8e7d9fe4793">s_command::redirects</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="command_8c_a980b6e4466bc0bed37cb6352f143ab96_cgraph.png" border="0" usemap="#acommand_8c_a980b6e4466bc0bed37cb6352f143ab96_cgraph" alt=""/></div>
+<map name="acommand_8c_a980b6e4466bc0bed37cb6352f143ab96_cgraph" id="acommand_8c_a980b6e4466bc0bed37cb6352f143ab96_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,120,31"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="168,5,244,31"/>
+<area shape="poly" title=" " alt="" coords="120,15,154,15,154,21,120,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="command_8c_a980b6e4466bc0bed37cb6352f143ab96_icgraph.png" border="0" usemap="#acommand_8c_a980b6e4466bc0bed37cb6352f143ab96_icgraph" alt=""/></div>
+<map name="acommand_8c_a980b6e4466bc0bed37cb6352f143ab96_icgraph" id="acommand_8c_a980b6e4466bc0bed37cb6352f143ab96_icgraph">
+<area shape="rect" title=" " alt="" coords="363,5,477,31"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,5,315,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,315,21,315,15,349,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>

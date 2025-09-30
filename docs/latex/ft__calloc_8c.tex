@@ -1,0 +1,65 @@
+\doxysection{libft/ft\+\_\+calloc.c File Reference}
+\hypertarget{ft__calloc_8c}{}\label{ft__calloc_8c}\index{libft/ft\_calloc.c@{libft/ft\_calloc.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+calloc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__calloc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}{ft\+\_\+calloc}} (size\+\_\+t nmemb, size\+\_\+t size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}\label{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679} 
+\index{ft\_calloc.c@{ft\_calloc.c}!ft\_calloc@{ft\_calloc}}
+\index{ft\_calloc@{ft\_calloc}!ft\_calloc.c@{ft\_calloc.c}}
+\doxysubsubsection{\texorpdfstring{ft\_calloc()}{ft\_calloc()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} ft\+\_\+calloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__calloc_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__calloc_8c_source}{ft\+\_\+calloc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *p1;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ s\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ s\ =\ nmemb\ *\ size;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ >=\ 16711568\ ||\ s\ <=\ 0)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00026\ \ \ \ \ p1\ =\ malloc(s\ +\ 1);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p1)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <=\ s)}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ p1[i]\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ (p1);}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\+\_\+split()}}, \mbox{\hyperlink{util_8h_af54f55774b34b2395f5ca1da01d9f015}{ft\+\_\+split2()}}, \mbox{\hyperlink{ft__substr_8c_a78c402cbf3d55b1374693c3b7d34f71d}{ft\+\_\+substr()}}, \mbox{\hyperlink{command_8h_a980b6e4466bc0bed37cb6352f143ab96}{init\+\_\+command()}}, and \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\+\_\+environment\+\_\+var()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679_icgraph}
+\end{center}
+\end{figure}

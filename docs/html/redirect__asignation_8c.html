@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/redirect_asignation.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/redirect_asignation.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -110,7 +111,9 @@ Include dependency graph for redirect_asignation.c:</div>
 <area shape="poly" title=" " alt="" coords="385,109,506,159,504,164,383,114"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="redirect__asignation_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad2b06a5b70a9873572025e3bd1cc9453" id="r_ad2b06a5b70a9873572025e3bd1cc9453"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="redirect__asignation_8h.html#a2ec8359692a4a397f0bd1e8b2d098f47">t_redirect_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="redirect__asignation_8c.html#ad2b06a5b70a9873572025e3bd1cc9453">get_redirection_type_from_str</a> (char *str)</td></tr>
@@ -143,6 +146,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="redirect__asignation_8c_source.html#l00097">97</a> of file <a class="el" href="redirect__asignation_8c_source.html">redirect_asignation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_struct" href="structs__redirect.html">t_redirect</a>  *aux;</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    aux = (<a class="code hl_struct" href="structs__redirect.html">t_redirect</a> *)redirect;</div>
+<div class="line"><span class="lineno">  102</span>    free(aux-&gt;<a class="code hl_variable" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">file</a>);</div>
+<div class="line"><span class="lineno">  103</span>    free(aux);</div>
+<div class="line"><span class="lineno">  104</span>}</div>
+<div class="ttc" id="astructs__redirect_html"><div class="ttname"><a href="structs__redirect.html">s_redirect</a></div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00015">redirect_asignation.h:16</a></div></div>
+<div class="ttc" id="astructs__redirect_html_abe3e192c9cf5ab03c0088614dcc804b8"><div class="ttname"><a href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">s_redirect::file</a></div><div class="ttdeci">char * file</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00017">redirect_asignation.h:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">s_redirect::file</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_abd88dda569ce623bd360a0f45a6f5e61_icgraph.png" border="0" usemap="#aredirect__asignation_8c_abd88dda569ce623bd360a0f45a6f5e61_icgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_abd88dda569ce623bd360a0f45a6f5e61_icgraph" id="aredirect__asignation_8c_abd88dda569ce623bd360a0f45a6f5e61_icgraph">
+<area shape="rect" title=" " alt="" coords="553,5,681,31"/>
+<area shape="rect" href="command_8c.html#a950465f331fec212ad0507c3e41a0137" title=" " alt="" coords="363,5,505,31"/>
+<area shape="poly" title=" " alt="" coords="540,21,506,21,506,15,540,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,60,21,60,15,349,15"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
+<area shape="poly" title=" " alt="" coords="349,30,315,34,314,29,349,25"/>
+<area shape="poly" title=" " alt="" coords="107,31,60,24,61,19,108,26"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a3ecd7f87085d1303c8f89bd9165e2712" name="a3ecd7f87085d1303c8f89bd9165e2712"></a>
@@ -168,6 +201,57 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="redirect__asignation_8c_source.html#l00036">36</a> of file <a class="el" href="redirect__asignation_8c_source.html">redirect_asignation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordtype">int</span> l;</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> r;</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">int</span> dl;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">int</span> dr;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    l = <a class="code hl_function" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a>(str, <span class="stringliteral">&quot;&lt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    r = <a class="code hl_function" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a>(str, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   45</span>    dl = <a class="code hl_function" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a>(str, <span class="stringliteral">&quot;&lt;&lt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>    dr = <a class="code hl_function" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a>(str, <span class="stringliteral">&quot;&gt;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (l &lt; r &amp;&amp; l &lt; dl &amp;&amp; l &lt; dr)</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&lt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (r &lt; l &amp;&amp; r &lt; dl &amp;&amp; r &lt; dr)</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (dl &lt; r &amp;&amp; dl &lt; l &amp;&amp; dl &lt; dr)</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&lt;&lt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (dr &lt; l &amp;&amp; dr &lt; dl &amp;&amp; dr &lt; r)</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&gt;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   56</span>}</div>
+<div class="ttc" id="autil_8h_html_a0a3aaf9949360fa6bba7d3a64e5a0061"><div class="ttname"><a href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a></div><div class="ttdeci">int special_char(char *str, char *c)</div><div class="ttdef"><b>Definition</b> <a href="path__utils_8c_source.html#l00023">path_utils.c:23</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8h.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c">get_redirects_from_str_arr()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_cgraph.png" border="0" usemap="#aredirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_cgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_cgraph" id="aredirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,129,56"/>
+<area shape="rect" href="path__utils_8c.html#a0a3aaf9949360fa6bba7d3a64e5a0061" title=" " alt="" coords="177,31,280,56"/>
+<area shape="poly" title=" " alt="" coords="130,41,164,41,164,46,130,46"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="336,5,411,31"/>
+<area shape="poly" title=" " alt="" coords="280,32,322,24,323,29,281,37"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="328,55,419,80"/>
+<area shape="poly" title=" " alt="" coords="281,49,315,55,314,60,280,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_icgraph.png" border="0" usemap="#aredirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_icgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_icgraph" id="aredirect__asignation_8c_a3ecd7f87085d1303c8f89bd9165e2712_icgraph">
+<area shape="rect" title=" " alt="" coords="199,13,323,38"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="5,5,151,45"/>
+<area shape="poly" title=" " alt="" coords="185,28,151,28,151,23,185,23"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -205,6 +289,58 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="redirect__asignation_8c_source.html#l00058">58</a> of file <a class="el" href="redirect__asignation_8c_source.html">redirect_asignation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordtype">int</span> end;</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordtype">int</span> start;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    start = <a class="code hl_function" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a>(str, redirection);</div>
+<div class="line"><span class="lineno">   64</span>    start++;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">while</span> (str[start] &amp;&amp; <a class="code hl_function" href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace</a>(str[start]) == 1)</div>
+<div class="line"><span class="lineno">   66</span>        start++;</div>
+<div class="line"><span class="lineno">   67</span>    end = start;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">while</span> (str[end] &amp;&amp; <a class="code hl_function" href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace</a>(str[end] == 0))</div>
+<div class="line"><span class="lineno">   69</span>        end++;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__substr_8c.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a>(str, start, (<span class="keywordtype">size_t</span>)end));</div>
+<div class="line"><span class="lineno">   71</span>}</div>
+<div class="ttc" id="aft__substr_8c_html_a78c402cbf3d55b1374693c3b7d34f71d"><div class="ttname"><a href="ft__substr_8c.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a></div><div class="ttdeci">char * ft_substr(char const *s, unsigned int start, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="ft__substr_8c_source.html#l00015">ft_substr.c:15</a></div></div>
+<div class="ttc" id="autil_8h_html_a5785980ed2eeb3f96606b8ff04163808"><div class="ttname"><a href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace</a></div><div class="ttdeci">int ft_ispace(char c)</div><div class="ttdef"><b>Definition</b> <a href="path__utils_8c_source.html#l00017">path_utils.c:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="util_8h.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace()</a>, <a class="el" href="ft__substr_8c.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr()</a>, and <a class="el" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8h.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c">get_redirects_from_str_arr()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a8359e16f33f34cc029736708fa927976_cgraph.png" border="0" usemap="#aredirect__asignation_8c_a8359e16f33f34cc029736708fa927976_cgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a8359e16f33f34cc029736708fa927976_cgraph" id="aredirect__asignation_8c_a8359e16f33f34cc029736708fa927976_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,137,80"/>
+<area shape="rect" href="path__utils_8c.html#a5785980ed2eeb3f96606b8ff04163808" title=" " alt="" coords="197,5,277,31"/>
+<area shape="poly" title=" " alt="" coords="114,52,182,31,184,36,115,57"/>
+<area shape="rect" href="ft__substr_8c.html#a78c402cbf3d55b1374693c3b7d34f71d" title=" " alt="" coords="197,55,276,80"/>
+<area shape="poly" title=" " alt="" coords="137,65,184,65,184,70,137,70"/>
+<area shape="rect" href="path__utils_8c.html#a0a3aaf9949360fa6bba7d3a64e5a0061" title=" " alt="" coords="185,104,288,129"/>
+<area shape="poly" title=" " alt="" coords="115,77,181,97,179,102,114,83"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="343,29,419,55"/>
+<area shape="poly" title=" " alt="" coords="276,58,330,48,331,54,277,63"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="344,79,419,104"/>
+<area shape="poly" title=" " alt="" coords="276,71,331,80,330,86,276,76"/>
+<area shape="poly" title=" " alt="" coords="288,105,330,98,331,103,289,110"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="336,128,427,153"/>
+<area shape="poly" title=" " alt="" coords="289,122,323,128,322,134,288,128"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a8359e16f33f34cc029736708fa927976_icgraph.png" border="0" usemap="#aredirect__asignation_8c_a8359e16f33f34cc029736708fa927976_icgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a8359e16f33f34cc029736708fa927976_icgraph" id="aredirect__asignation_8c_a8359e16f33f34cc029736708fa927976_icgraph">
+<area shape="rect" title=" " alt="" coords="199,13,331,38"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="5,5,151,45"/>
+<area shape="poly" title=" " alt="" coords="185,28,151,28,151,23,185,23"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ad2b06a5b70a9873572025e3bd1cc9453" name="ad2b06a5b70a9873572025e3bd1cc9453"></a>
@@ -231,6 +367,49 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="redirect__asignation_8c_source.html#l00072">72</a> of file <a class="el" href="redirect__asignation_8c_source.html">redirect_asignation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(str, <span class="stringliteral">&quot;&lt;&quot;</span>, 1) == 0)</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> (<a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a>);</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(str, <span class="stringliteral">&quot;&gt;&quot;</span>, 1) == 0)</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> (<a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a>);</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(str, <span class="stringliteral">&quot;&gt;&gt;&quot;</span>, 2) == 0)</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span> (<a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a>);</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(str, <span class="stringliteral">&quot;&lt;&lt;&quot;</span>, 2) == 0)</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">return</span> (<a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a>);</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> (<a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90">ERROR</a>);</div>
+<div class="line"><span class="lineno">   83</span>}</div>
+<div class="ttc" id="aft__strncmp_8c_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00015">ft_strncmp.c:15</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a></div><div class="ttdeci">@ LEFT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00007">redirect_asignation.h:7</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90">ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00012">redirect_asignation.h:12</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a></div><div class="ttdeci">@ DOUBLE_LEFT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00009">redirect_asignation.h:9</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a></div><div class="ttdeci">@ DOUBLE_RIGHT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00010">redirect_asignation.h:10</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a></div><div class="ttdeci">@ RIGHT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00008">redirect_asignation.h:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90">ERROR</a>, <a class="el" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp()</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a>, and <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8h.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c">get_redirects_from_str_arr()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_cgraph.png" border="0" usemap="#aredirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_cgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_cgraph" id="aredirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,161,45"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="209,13,300,38"/>
+<area shape="poly" title=" " alt="" coords="162,23,196,23,196,28,162,28"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_icgraph.png" border="0" usemap="#aredirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_icgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_icgraph" id="aredirect__asignation_8c_ad2b06a5b70a9873572025e3bd1cc9453_icgraph">
+<area shape="rect" title=" " alt="" coords="199,5,355,45"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="5,5,151,45"/>
+<area shape="poly" title=" " alt="" coords="185,28,151,28,151,23,185,23"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a1dcc7a29a8a1d5240c49fbf25ce60d9c" name="a1dcc7a29a8a1d5240c49fbf25ce60d9c"></a>
@@ -248,6 +427,86 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="redirect__asignation_8c_source.html#l00009">9</a> of file <a class="el" href="redirect__asignation_8c_source.html">redirect_asignation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>{</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a>  *redirects;</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_struct" href="structs__redirect.html">t_redirect</a>  *current_node_value;</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordtype">char</span>        *current_redirecction;</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordtype">int</span>         i;</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>    redirects = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   17</span>    current_redirecction = <a class="code hl_function" href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712">first_redirection</a>(str);</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">while</span> (current_redirecction != NULL)</div>
+<div class="line"><span class="lineno">   19</span>    {</div>
+<div class="line"><span class="lineno">   20</span>        current_node_value = <a class="code hl_function" href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect</a>(<a class="code hl_function" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976">get_file_from_str</a>(str,</div>
+<div class="line"><span class="lineno">   21</span>                    current_redirecction),</div>
+<div class="line"><span class="lineno">   22</span>                <a class="code hl_function" href="redirect__asignation_8c.html#ad2b06a5b70a9873572025e3bd1cc9453">get_redirection_type_from_str</a>(current_redirecction));</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_function" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a>(redirects, current_node_value);</div>
+<div class="line"><span class="lineno">   24</span>        i = <a class="code hl_function" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char</a>(str, current_redirecction)</div>
+<div class="line"><span class="lineno">   25</span>            + (int)<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(current_redirecction);</div>
+<div class="line"><span class="lineno">   26</span>        str = str + i;</div>
+<div class="line"><span class="lineno">   27</span>        current_redirecction = <a class="code hl_function" href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712">first_redirection</a>(str);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (redirects-&gt;<a class="code hl_variable" href="structs__gen__list.html#a9d3e4dedcc05679fcd869efb7c26d500">head</a> == NULL)</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>        free(redirects);</div>
+<div class="line"><span class="lineno">   32</span>        redirects = NULL;</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> (redirects);</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aft__strlen_8c_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="alist_8c_html_a2ab31c1a882bda317542865ca981aa91"><div class="ttname"><a href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a></div><div class="ttdeci">t_gen_list * init_list(void)</div><div class="ttdoc">Initialize an empty list.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00017">list.c:17</a></div></div>
+<div class="ttc" id="alist_8c_html_ad70cc8287d69eb2327b71b28f7d52b6a"><div class="ttname"><a href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a></div><div class="ttdeci">void push_end(t_gen_list *list, void *value)</div><div class="ttdoc">Insert a value at the end of the list (O(1)).</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00030">list.c:30</a></div></div>
+<div class="ttc" id="aredirect__asignation_8c_html_a18e2207c2ccc7fe3089b5f522400281c"><div class="ttname"><a href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect</a></div><div class="ttdeci">t_redirect * init_redirect(char *file, t_redirect_type redirect_type)</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8c_source.html#l00084">redirect_asignation.c:84</a></div></div>
+<div class="ttc" id="aredirect__asignation_8c_html_a3ecd7f87085d1303c8f89bd9165e2712"><div class="ttname"><a href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712">first_redirection</a></div><div class="ttdeci">static char * first_redirection(char *str)</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8c_source.html#l00036">redirect_asignation.c:36</a></div></div>
+<div class="ttc" id="aredirect__asignation_8c_html_a8359e16f33f34cc029736708fa927976"><div class="ttname"><a href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976">get_file_from_str</a></div><div class="ttdeci">static char * get_file_from_str(char *str, char *redirection)</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8c_source.html#l00058">redirect_asignation.c:58</a></div></div>
+<div class="ttc" id="aredirect__asignation_8c_html_ad2b06a5b70a9873572025e3bd1cc9453"><div class="ttname"><a href="redirect__asignation_8c.html#ad2b06a5b70a9873572025e3bd1cc9453">get_redirection_type_from_str</a></div><div class="ttdeci">static t_redirect_type get_redirection_type_from_str(char *str)</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8c_source.html#l00072">redirect_asignation.c:72</a></div></div>
+<div class="ttc" id="astructs__gen__list_html"><div class="ttname"><a href="structs__gen__list.html">s_gen_list</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00029">list.h:30</a></div></div>
+<div class="ttc" id="astructs__gen__list_html_a9d3e4dedcc05679fcd869efb7c26d500"><div class="ttname"><a href="structs__gen__list.html#a9d3e4dedcc05679fcd869efb7c26d500">s_gen_list::head</a></div><div class="ttdeci">t_node * head</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00031">list.h:31</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712">first_redirection()</a>, <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>, <a class="el" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976">get_file_from_str()</a>, <a class="el" href="redirect__asignation_8c.html#ad2b06a5b70a9873572025e3bd1cc9453">get_redirection_type_from_str()</a>, <a class="el" href="structs__gen__list.html#a9d3e4dedcc05679fcd869efb7c26d500">s_gen_list::head</a>, <a class="el" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list()</a>, <a class="el" href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect()</a>, <a class="el" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end()</a>, and <a class="el" href="util_8h.html#a0a3aaf9949360fa6bba7d3a64e5a0061">special_char()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a1dcc7a29a8a1d5240c49fbf25ce60d9c_cgraph.png" border="0" usemap="#aredirect__asignation_8c_a1dcc7a29a8a1d5240c49fbf25ce60d9c_cgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a1dcc7a29a8a1d5240c49fbf25ce60d9c_cgraph" id="aredirect__asignation_8c_a1dcc7a29a8a1d5240c49fbf25ce60d9c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,225,151,265"/>
+<area shape="rect" href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712" title=" " alt="" coords="203,257,327,283"/>
+<area shape="poly" title=" " alt="" coords="151,252,189,257,189,262,151,257"/>
+<area shape="rect" href="path__utils_8c.html#a0a3aaf9949360fa6bba7d3a64e5a0061" title=" " alt="" coords="405,256,508,281"/>
+<area shape="poly" title=" " alt="" coords="151,238,237,237,331,242,393,251,392,257,330,247,237,243,151,244"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="591,156,665,181"/>
+<area shape="poly" title=" " alt="" coords="93,222,137,179,166,157,198,141,248,127,301,119,354,117,406,119,502,133,578,151,576,156,501,138,406,125,354,122,301,124,249,132,200,146,168,162,140,183,97,226"/>
+<area shape="rect" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976" title=" " alt="" coords="199,55,331,80"/>
+<area shape="poly" title=" " alt="" coords="90,223,133,163,163,128,197,97,217,84,220,89,200,101,167,132,137,166,94,226"/>
+<area shape="rect" href="redirect__asignation_8c.html#ad2b06a5b70a9873572025e3bd1cc9453" title=" " alt="" coords="379,306,535,346"/>
+<area shape="poly" title=" " alt="" coords="121,262,159,278,199,291,284,308,365,318,365,323,283,314,198,297,157,283,119,267"/>
+<area shape="rect" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="229,359,300,384"/>
+<area shape="poly" title=" " alt="" coords="103,263,147,299,200,337,223,350,221,355,197,342,144,303,100,267"/>
+<area shape="rect" href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c" title=" " alt="" coords="215,156,315,181"/>
+<area shape="poly" title=" " alt="" coords="127,222,219,184,221,189,129,227"/>
+<area shape="rect" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="223,408,307,433"/>
+<area shape="poly" title=" " alt="" coords="92,263,135,327,165,363,200,395,212,401,209,406,197,399,161,367,130,331,88,266"/>
+<area shape="poly" title=" " alt="" coords="327,267,392,266,392,272,327,272"/>
+<area shape="poly" title=" " alt="" coords="505,253,533,241,571,216,602,189,606,193,574,220,536,246,507,258"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="583,284,673,309"/>
+<area shape="poly" title=" " alt="" coords="509,274,569,284,568,290,508,280"/>
+<area shape="poly" title=" " alt="" coords="281,79,306,107,333,142,347,171,353,196,362,218,380,241,394,251,391,255,377,245,357,221,348,197,342,173,328,145,302,110,277,82"/>
+<area shape="rect" href="path__utils_8c.html#a5785980ed2eeb3f96606b8ff04163808" title=" " alt="" coords="417,5,497,31"/>
+<area shape="poly" title=" " alt="" coords="314,52,403,29,404,34,315,57"/>
+<area shape="rect" href="ft__substr_8c.html#a78c402cbf3d55b1374693c3b7d34f71d" title=" " alt="" coords="417,55,496,80"/>
+<area shape="poly" title=" " alt="" coords="331,65,404,65,404,70,331,70"/>
+<area shape="poly" title=" " alt="" coords="495,78,536,97,572,121,603,145,600,149,569,125,533,102,492,82"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="590,55,666,80"/>
+<area shape="poly" title=" " alt="" coords="496,65,576,65,576,70,496,70"/>
+<area shape="poly" title=" " alt="" coords="534,310,569,304,570,309,535,315"/>
+<area shape="poly" title=" " alt="" coords="315,166,577,166,577,171,315,171"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="415,207,498,232"/>
+<area shape="poly" title=" " alt="" coords="314,179,403,203,401,208,313,184"/>
+<area shape="poly" title=" " alt="" coords="498,205,577,181,578,186,499,210"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -276,6 +535,54 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="redirect__asignation_8c_source.html#l00084">84</a> of file <a class="el" href="redirect__asignation_8c_source.html">redirect_asignation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                     {</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_struct" href="structs__redirect.html">t_redirect</a> *r = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__redirect.html">t_redirect</a>));</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (!r) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   87</span>    r-&gt;<a class="code hl_variable" href="structs__redirect.html#aa68b13bc97c76c51ee78bcf8cb2f3125">redirect_simbol</a> = redirect_type;</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (file) {</div>
+<div class="line"><span class="lineno">   89</span>        r-&gt;<a class="code hl_variable" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">file</a> = malloc(<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(file) + 1);</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span> (!r-&gt;<a class="code hl_variable" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">file</a>) { free(r); <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_function" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy</a>(r-&gt;<a class="code hl_variable" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">file</a>, file, <a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(file) + 1);</div>
+<div class="line"><span class="lineno">   92</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   93</span>        r-&gt;<a class="code hl_variable" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">file</a> = NULL;</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> r;</div>
+<div class="line"><span class="lineno">   96</span>}</div>
+<div class="ttc" id="aft__strlcpy_8c_html_aa053827b3a2ea3d0118783d6fb59d178"><div class="ttname"><a href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy</a></div><div class="ttdeci">size_t ft_strlcpy(char *dst, const char *src, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlcpy_8c_source.html#l00015">ft_strlcpy.c:15</a></div></div>
+<div class="ttc" id="astructs__redirect_html_aa68b13bc97c76c51ee78bcf8cb2f3125"><div class="ttname"><a href="structs__redirect.html#aa68b13bc97c76c51ee78bcf8cb2f3125">s_redirect::redirect_simbol</a></div><div class="ttdeci">t_redirect_type redirect_simbol</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00018">redirect_asignation.h:18</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="structs__redirect.html#abe3e192c9cf5ab03c0088614dcc804b8">s_redirect::file</a>, <a class="el" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy()</a>, <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>, and <a class="el" href="structs__redirect.html#aa68b13bc97c76c51ee78bcf8cb2f3125">s_redirect::redirect_simbol</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8h.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c">get_redirects_from_str_arr()</a>, and <a class="el" href="parser_8h.html#ae411b47cf3a6fe75994d31c5574c60ce">parse_tokens_to_commands()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_cgraph.png" border="0" usemap="#aredirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_cgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_cgraph" id="aredirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,105,56"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="153,5,236,31"/>
+<area shape="poly" title=" " alt="" coords="105,32,139,25,140,31,106,37"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="284,31,359,56"/>
+<area shape="poly" title=" " alt="" coords="106,41,270,41,270,46,106,46"/>
+<area shape="poly" title=" " alt="" coords="237,24,271,31,270,36,236,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="redirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_icgraph.png" border="0" usemap="#aredirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_icgraph" alt=""/></div>
+<map name="aredirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_icgraph" id="aredirect__asignation_8c_a18e2207c2ccc7fe3089b5f522400281c_icgraph">
+<area shape="rect" title=" " alt="" coords="363,42,463,67"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="139,5,284,45"/>
+<area shape="poly" title=" " alt="" coords="348,48,284,39,284,33,349,43"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,70,315,95"/>
+<area shape="poly" title=" " alt="" coords="349,66,303,73,302,67,348,61"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
+<area shape="poly" title=" " alt="" coords="94,85,60,85,60,80,94,80"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: Globals</title>
+<title>MiniShell: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">MiniShell
    </div>
+   <div id="projectbrief">A small shell project implemented in C</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_func_d.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,18 +93,21 @@ $(function() {
 <div class="textblock">Here is a list of all functions with links to the files they belong to:</div>
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>deserialize_from_string_array()&#160;:&#160;<a class="el" href="list_8c.html#af47e7209b8cddc03fbf126c886199709">list.c</a>, <a class="el" href="list_8h.html#af47e7209b8cddc03fbf126c886199709">list.h</a></li>
-<li>destroy_command()&#160;:&#160;<a class="el" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">command.h</a>, <a class="el" href="command_8c.html#a950465f331fec212ad0507c3e41a0137">command.c</a></li>
-<li>destroy_environment_var()&#160;:&#160;<a class="el" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">envioroment_internal.c</a>, <a class="el" href="environment__internal_8h.html#a4ca0675f92ac5da65a97751ba7cf8ba5">environment_internal.h</a></li>
-<li>destroy_gen_list()&#160;:&#160;<a class="el" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">list.c</a>, <a class="el" href="list_8h.html#a0c64773be1bb7fb7762b58fc3b45232c">list.h</a></li>
-<li>destroy_redirect()&#160;:&#160;<a class="el" href="redirect__asignation_8h.html#abd88dda569ce623bd360a0f45a6f5e61">redirect_asignation.h</a>, <a class="el" href="redirect__asignation_8c.html#abd88dda569ce623bd360a0f45a6f5e61">redirect_asignation.c</a></li>
-<li>destroy_token()&#160;:&#160;<a class="el" href="tokenizer_8h.html#af0886495b353f179f845206ad2969d3e">tokenizer.h</a>, <a class="el" href="tokenizer_8c.html#af0886495b353f179f845206ad2969d3e">tokenizer.c</a></li>
-<li>destroy_token_data()&#160;:&#160;<a class="el" href="minishell_8c.html#a85e9c4fc45f80b15b12af974fac9f4e4">minishell.c</a></li>
+<li>deserialize_from_string_array()&#160;:&#160;<a class="el" href="d7/d40/list_8c.html#af47e7209b8cddc03fbf126c886199709">list.c</a>, <a class="el" href="da/d23/list_8h.html#af47e7209b8cddc03fbf126c886199709">list.h</a></li>
+<li>destroy_command()&#160;:&#160;<a class="el" href="d0/d09/command_8h.html#a950465f331fec212ad0507c3e41a0137">command.h</a>, <a class="el" href="d5/d2e/command_8c.html#a950465f331fec212ad0507c3e41a0137">command.c</a></li>
+<li>destroy_environment_var()&#160;:&#160;<a class="el" href="dd/da9/envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">envioroment_internal.c</a>, <a class="el" href="d0/d0e/environment__internal_8h.html#a4ca0675f92ac5da65a97751ba7cf8ba5">environment_internal.h</a></li>
+<li>destroy_gen_list()&#160;:&#160;<a class="el" href="d7/d40/list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">list.c</a>, <a class="el" href="da/d23/list_8h.html#a0c64773be1bb7fb7762b58fc3b45232c">list.h</a></li>
+<li>destroy_redirect()&#160;:&#160;<a class="el" href="df/dc7/redirect__asignation_8h.html#abd88dda569ce623bd360a0f45a6f5e61">redirect_asignation.h</a>, <a class="el" href="d4/dcd/redirect__asignation_8c.html#abd88dda569ce623bd360a0f45a6f5e61">redirect_asignation.c</a></li>
+<li>destroy_token()&#160;:&#160;<a class="el" href="db/d84/tokenizer_8h.html#af0886495b353f179f845206ad2969d3e">tokenizer.h</a>, <a class="el" href="d7/d58/tokenizer_8c.html#af0886495b353f179f845206ad2969d3e">tokenizer.c</a></li>
+<li>destroy_token_data()&#160;:&#160;<a class="el" href="d7/d66/minishell_8c.html#a85e9c4fc45f80b15b12af974fac9f4e4">minishell.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

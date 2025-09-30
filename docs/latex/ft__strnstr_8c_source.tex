@@ -1,0 +1,47 @@
+\doxysection{ft\+\_\+strnstr.\+c}
+\hypertarget{ft__strnstr_8c_source}{}\label{ft__strnstr_8c_source}\index{libft/ft\_strnstr.c@{libft/ft\_strnstr.c}}
+\mbox{\hyperlink{ft__strnstr_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ ft\_strnstr.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ dmaestro\ <marvin@42.fr>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2024/09/19\ 13:26:06\ by\ dmaestro\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2024/09/19\ 13:26:08\ by\ dmaestro\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libft_8h}{libft.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00017}\mbox{\hyperlink{ft__strnstr_8c_a14b236fa10c117b080df2de058d2078d}{00017}}\ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{ft__strnstr_8c_a14b236fa10c117b080df2de058d2078d}{ft\_strnstr}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *big,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *little,\ \textcolor{keywordtype}{size\_t}\ len)}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *found;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ n;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (*little\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)big);}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00025}00025\ \ \ \ \ found\ =\ (\textcolor{keywordtype}{char}\ *)little;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00026}00026\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{while}\ ((i\ <\ len)\ \&\&\ big[i])}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (big[i\ +\ n]\ ==\ found[n]\ \&\&\ i\ +\ n\ <\ len)}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (found[n]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)\&big[i]);}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (found[n]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)\&big[i]);}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__strnstr_8c_source_l00041}00041\ \}}
+
+\end{DoxyCode}

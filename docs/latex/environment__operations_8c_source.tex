@@ -1,0 +1,53 @@
+\doxysection{environment\+\_\+operations.\+c}
+\hypertarget{environment__operations_8c_source}{}\label{environment__operations_8c_source}\index{src/environment/environment\_operations.c@{src/environment/environment\_operations.c}}
+\mbox{\hyperlink{environment__operations_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ environment\_operations.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/09/30\ 01:52:55\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/30\ 01:52:56\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{environment__internal_8h}{environment\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00015}\mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{00015}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{environment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c}{env\_set}}(\mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{char}\ *value)}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *new\_var;}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *found\_var;}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *previous\_val;}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00021}00021\ \ \ \ \ found\_var\ =\ (\mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ *)\mbox{\hyperlink{list_8c_a8a8208f7d40bea91f4b1faee63f61006}{find\_in\_list\_ctx}}(env,\ \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}},\ name);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (found\_var)}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ previous\_val\ =\ found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}};}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}}\ =\ \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(value);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}})}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ free(previous\_val);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00031}00031\ \ \ \ \ new\_var\ =\ \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\_environment\_var}}(\mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(name),\ \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(value));}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (!new\_var)}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{list_8c_a78751fefb5026bcdb58b19c746c959bc}{push\_front}}(env,\ (\textcolor{keywordtype}{void}\ *)new\_var);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00038}\mbox{\hyperlink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{00038}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{environment__operations_8c_aa155b7428061814751ff8a6fd7ba7961}{env\_unset}}(\mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *envioroment,\ \textcolor{keywordtype}{char}\ *name)}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{list_8c_ab561a8b9f78fba3f7a684c1bdcea4e9b}{remove\_if\_ctx}}(envioroment,\ \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}},\ (\textcolor{keywordtype}{void}\ *)name,}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{envioroment__internal_8c_a566453675d237f5c5986b669cea3e6fc}{destroy\_environment\_var}});}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00044}\mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{00044}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{environment__operations_8c_ae4211ec5d85586513118f0d5e787347d}{env\_destroy}}(\mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *env)}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(env,\ \mbox{\hyperlink{envioroment__internal_8c_a566453675d237f5c5986b669cea3e6fc}{destroy\_environment\_var}});}
+\DoxyCodeLine{\Hypertarget{environment__operations_8c_source_l00047}00047\ \}}
+
+\end{DoxyCode}

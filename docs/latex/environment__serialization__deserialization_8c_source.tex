@@ -1,0 +1,63 @@
+\doxysection{environment\+\_\+serialization\+\_\+deserialization.\+c}
+\hypertarget{environment__serialization__deserialization_8c_source}{}\label{environment__serialization__deserialization_8c_source}\index{src/environment/environment\_serialization\_deserialization.c@{src/environment/environment\_serialization\_deserialization.c}}
+\mbox{\hyperlink{environment__serialization__deserialization_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ environment\_serialization\_deserialization.c\ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/09/30\ 01:53:46\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/30\ 01:54:33\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{environment__internal_8h}{environment\_internal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00015}\mbox{\hyperlink{environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89}{00015}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89}{env\_var\_to\_string}}(\textcolor{keywordtype}{void}\ *element)}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *env\_var;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *name\_eq;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *result;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00021}00021\ \ \ \ \ env\_var\ =\ (\mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ *)element;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!env\_var)}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00024}00024\ \ \ \ \ name\_eq\ =\ \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\_strjoin}}(env\_var-\/>\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{var\_name}},\ \textcolor{stringliteral}{"{}="{}});}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (!name\_eq)}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00027}00027\ \ \ \ \ result\ =\ \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\_strjoin}}(name\_eq,\ env\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}});}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00028}00028\ \ \ \ \ free(name\_eq);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ (result);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00032}\mbox{\hyperlink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{00032}}\ \textcolor{keywordtype}{char}\ \ \ \ **\mbox{\hyperlink{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b}{env\_serialize}}(\mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *envioroment)}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (!envioroment)}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{list_8c_aa4522f235ef61b5bceac4de3cc34fde3}{serialize\_to\_string\_array}}(envioroment,\ \mbox{\hyperlink{environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89}{env\_var\_to\_string}}));}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00039}\mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{00039}}\ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ \ \ \ *\mbox{\hyperlink{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44}{env\_deserialize}}(\textcolor{keywordtype}{char}\ **str\_array)}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ j;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ \ \ \ *env\_var\_list;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ **var\_str\_name\_value\_split;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00046}00046\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00047}00047\ \ \ \ \ env\_var\_list\ =\ \mbox{\hyperlink{list_8c_a2ab31c1a882bda317542865ca981aa91}{init\_list}}();}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (str\_array[i])}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ var\_str\_name\_value\_split\ =\ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}(str\_array[i],\ \textcolor{charliteral}{'='});}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(env\_var\_list,\ \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\_environment\_var}}(var\_str\_name\_value\_split[0],}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\_str\_name\_value\_split[1]));}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ free(var\_str\_name\_value\_split);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ (env\_var\_list);}
+\DoxyCodeLine{\Hypertarget{environment__serialization__deserialization_8c_source_l00057}00057\ \}}
+
+\end{DoxyCode}
