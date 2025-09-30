@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 13:28:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:03:02 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {
-    size_t n = commands->size;
+    size_t n = gen_list_get_size(commands);
     int (*pipes)[2] = malloc(sizeof(int[2]) * (n - 1));
     if (n > 1 && !pipes)
         return;
@@ -28,12 +28,12 @@ void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     for (size_t i = 0; i < n - 1; i++)
         pipe(pipes[i]);
 
-    t_gen_list_iter it = gen_list_iter_start(commands);
+    t_gen_list_iter *it = gen_list_iter_start(commands);
     t_command *cmd;
     pid_t *pids = malloc(sizeof(pid_t) * n);
     size_t i = 0;
 
-    while ((cmd = gen_list_iter_next(&it)) != NULL)
+    while ((cmd = gen_list_iter_next(it)) != NULL)
     {
         if (cmd->command_funct == cd_execute ||
             cmd->command_funct == export_execute ||

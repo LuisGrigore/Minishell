@@ -2,7 +2,7 @@
 
 bool gen_list_is_empty(t_gen_list *list)
 {
-	return (list->head == NULL);
+	return (list->size == 0);
 }
 
 bool	gen_list_has(t_gen_list *list, bool (*predicate)(void *))

@@ -1,0 +1,73 @@
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/gen\+\_\+link\+\_\+list\+\_\+serialization.c File Reference}
+\hypertarget{gen__link__list__serialization_8c}{}\label{gen__link__list__serialization_8c}\index{gen\_list/gen\_link\_list/gen\_link\_list\_serialization.c@{gen\_list/gen\_link\_list/gen\_link\_list\_serialization.c}}
+{\ttfamily \#include "{}gen\+\_\+link\+\_\+list\+\_\+internal.\+h"{}}\newline
+Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+serialization.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d8/d89/gen__link__list__serialization_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__serialization_8c_ac8c3259db15c53ed58adcf78608c03bf}{gen\+\_\+list\+\_\+serialize\+\_\+to\+\_\+string}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}} element\+\_\+to\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Convert a generic list into a single string representation. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__serialization_8c_ae56850e893a5c09aecef6c3340bef04f}{gen\+\_\+list\+\_\+serialize\+\_\+to\+\_\+string\+\_\+array}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}} element\+\_\+to\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Convert a generic list into an array of strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__serialization_8c_af075dd4fcf545a88c4eb75b4ef273005}{gen\+\_\+list\+\_\+deserialize\+\_\+from\+\_\+string\+\_\+array}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{gen__list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element}} string\+\_\+to\+\_\+element)
+\begin{DoxyCompactList}\small\item\em Convert a null-\/terminated array of strings into a generic linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gen__link__list__serialization_8c_af075dd4fcf545a88c4eb75b4ef273005}\label{gen__link__list__serialization_8c_af075dd4fcf545a88c4eb75b4ef273005} 
+\index{gen\_link\_list\_serialization.c@{gen\_link\_list\_serialization.c}!gen\_list\_deserialize\_from\_string\_array@{gen\_list\_deserialize\_from\_string\_array}}
+\index{gen\_list\_deserialize\_from\_string\_array@{gen\_list\_deserialize\_from\_string\_array}!gen\_link\_list\_serialization.c@{gen\_link\_list\_serialization.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_deserialize\_from\_string\_array()}{gen\_list\_deserialize\_from\_string\_array()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+deserialize\+\_\+from\+\_\+string\+\_\+array (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{array,  }\item[{\mbox{\hyperlink{gen__list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element}}}]{string\+\_\+to\+\_\+element }\end{DoxyParamCaption})}
+
+
+
+Convert a null-\/terminated array of strings into a generic linked list. 
+
+Convert a null-\/terminated array of strings into a generic linked list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Null-\/terminated array of strings. \\
+\hline
+{\em string\+\_\+to\+\_\+element} & Function to convert each string into a list element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a newly allocated list, or NULL on error. 
+\end{DoxyReturn}
+\Hypertarget{gen__link__list__serialization_8c_ac8c3259db15c53ed58adcf78608c03bf}\label{gen__link__list__serialization_8c_ac8c3259db15c53ed58adcf78608c03bf} 
+\index{gen\_link\_list\_serialization.c@{gen\_link\_list\_serialization.c}!gen\_list\_serialize\_to\_string@{gen\_list\_serialize\_to\_string}}
+\index{gen\_list\_serialize\_to\_string@{gen\_list\_serialize\_to\_string}!gen\_link\_list\_serialization.c@{gen\_link\_list\_serialization.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_serialize\_to\_string()}{gen\_list\_serialize\_to\_string()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+serialize\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}}}]{element\+\_\+to\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Convert a generic list into a single string representation. 
+
+Convert a list into a single string in format\+: \mbox{[}elem1, elem2, ...\mbox{]} \Hypertarget{gen__link__list__serialization_8c_ae56850e893a5c09aecef6c3340bef04f}\label{gen__link__list__serialization_8c_ae56850e893a5c09aecef6c3340bef04f} 
+\index{gen\_link\_list\_serialization.c@{gen\_link\_list\_serialization.c}!gen\_list\_serialize\_to\_string\_array@{gen\_list\_serialize\_to\_string\_array}}
+\index{gen\_list\_serialize\_to\_string\_array@{gen\_list\_serialize\_to\_string\_array}!gen\_link\_list\_serialization.c@{gen\_link\_list\_serialization.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_serialize\_to\_string\_array()}{gen\_list\_serialize\_to\_string\_array()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+serialize\+\_\+to\+\_\+string\+\_\+array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}}}]{element\+\_\+to\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Convert a generic list into an array of strings. 
+
+Convert a list into an array of strings. Each element is a string returned by element\+\_\+to\+\_\+string. The array is null-\/terminated. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d81/gen__link__list__serialization_8c_ae56850e893a5c09aecef6c3340bef04f_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,68 @@
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/queries/gen\+\_\+link\+\_\+list\+\_\+find.c File Reference}
+\hypertarget{gen__link__list__find_8c}{}\label{gen__link__list__find_8c}\index{gen\_list/gen\_link\_list/queries/gen\_link\_list\_find.c@{gen\_list/gen\_link\_list/queries/gen\_link\_list\_find.c}}
+{\ttfamily \#include "{}../gen\+\_\+link\+\_\+list\+\_\+internal.\+h"{}}\newline
+Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+find.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d1/d85/gen__link__list__find_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1}{gen\+\_\+list\+\_\+find}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}))
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae}{gen\+\_\+list\+\_\+find\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context), void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Find the first element that satisfies a predicate with context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1}\label{gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1} 
+\index{gen\_link\_list\_find.c@{gen\_link\_list\_find.c}!gen\_list\_find@{gen\_list\_find}}
+\index{gen\_list\_find@{gen\_list\_find}!gen\_link\_list\_find.c@{gen\_link\_list\_find.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_find()}{gen\_list\_find()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{bool(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{predicate }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{d5/d2f/gen__link__list__find_8c_acd581e68debbb8af978c985dee7f81c1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae}\label{gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae} 
+\index{gen\_link\_list\_find.c@{gen\_link\_list\_find.c}!gen\_list\_find\_ctx@{gen\_list\_find\_ctx}}
+\index{gen\_list\_find\_ctx@{gen\_list\_find\_ctx}!gen\_link\_list\_find.c@{gen\_link\_list\_find.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_find\_ctx()}{gen\_list\_find\_ctx()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+find\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+
+
+
+Find the first element that satisfies a predicate with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function that takes (element, context). \\
+\hline
+{\em context} & Context pointer passed to the predicate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the first matching node, or NULL if none found. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/gen__link__list__find_8c_acefd4746f60287ce0beba43094b250ae_icgraph}
+\end{center}
+\end{figure}

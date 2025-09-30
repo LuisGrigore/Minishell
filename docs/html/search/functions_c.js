@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unset_5fexecute_0',['unset_execute',['../d0/d09/command_8h.html#a24640ac75761d535d770cf4255c336da',1,'unset_execute(t_command *command, t_gen_list *envioroment):&#160;command_functs.c'],['../d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da',1,'unset_execute(t_command *command, t_gen_list *envioroment):&#160;command_functs.c']]],
-  ['username_1',['username',['../d7/d66/minishell_8c.html#a8139962a2ceae2621213f8e6719565cf',1,'minishell.c']]]
+  ['var_5fname_5ffilter_0',['var_name_filter',['../dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb',1,'var_name_filter(void *var_ptr, void *context):&#160;envioroment_internal.c'],['../d0/d0e/environment__internal_8h.html#a8076868c04fd9fc3091d42bc8bd5a7bb',1,'var_name_filter(void *var_ptr, void *context):&#160;envioroment_internal.c']]]
 ];

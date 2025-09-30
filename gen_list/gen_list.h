@@ -6,13 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:30:11 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 14:41:57 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:02:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GEN_LIST_H
 # define GEN_LIST_H
 # include <stdbool.h>
+# include <stdlib.h>
 
 /* ============================================================
 **  Data Structures
@@ -35,7 +36,7 @@ typedef struct s_gen_list		t_gen_list;
  *
  * @see t_gen_list
  */
-typedef struct s_gen_list_iter	t_gen_list_iter;
+typedef struct s_gen_list_iter t_gen_list_iter;
 
 /* ============================================================
 **  Function Pointer Typedefs
@@ -221,6 +222,15 @@ void *gen_list_find(t_gen_list *list, t_predicate predicate);
 void *gen_list_find_ctx(t_gen_list *list, t_predicate_ctx predicate, void *context);
 
 /**
+ * @brief Gets the current size of the list.
+ *
+ * @param list List to search.
+ * @return list size.
+ * @see t_gen_list
+ */
+size_t gen_list_get_size(t_gen_list *list);
+
+/**
  * @brief Check if the list contains an element that satisfies a predicate.
  *
  * @param list List to search.
@@ -260,7 +270,7 @@ bool gen_list_is_empty(t_gen_list *list);
  * @return Iterator pointing to the first node.
  * @see t_gen_list_iter
  */
-t_gen_list_iter gen_list_iter_start(t_gen_list *list);
+t_gen_list_iter *gen_list_iter_start(t_gen_list *list);
 
 /**
  * @brief Get the next value from the list using the iterator and advance it.
@@ -270,6 +280,14 @@ t_gen_list_iter gen_list_iter_start(t_gen_list *list);
  * @see t_gen_list_iter
  */
 void *gen_list_iter_next(t_gen_list_iter *it);
+
+/**
+ * @brief Destroys allocated iterator
+ *
+ * @param it Iterator of the list.
+ * @see t_gen_list_iter
+ */
+void gen_list_iter_destroy(t_gen_list_iter *it);
 
 /* ============================================================ **
 ** Serialization

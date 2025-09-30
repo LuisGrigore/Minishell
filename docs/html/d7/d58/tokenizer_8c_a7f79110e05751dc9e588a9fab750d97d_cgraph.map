@@ -1,11 +1,11 @@
 <map id="tokenize" name="tokenize">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,80,83,105"/>
-<area shape="rect" id="Node000002" href="$d7/d40/list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="131,5,260,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,77,129,40,143,33,146,38,132,44,66,82"/>
-<area shape="rect" id="Node000003" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="158,55,233,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,84,144,73,145,78,83,89"/>
-<area shape="rect" id="Node000004" href="$d7/d40/list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="160,104,231,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="83,96,146,106,146,112,82,101"/>
-<area shape="rect" id="Node000005" href="$d7/d40/list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="153,153,237,179"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="68,103,132,138,148,145,146,150,129,143,65,108"/>
+<area shape="rect" id="Node000002" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="168,5,243,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,77,130,40,154,30,156,35,132,44,66,82"/>
+<area shape="rect" id="Node000003" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="145,55,266,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,84,131,76,132,82,83,89"/>
+<area shape="rect" id="Node000004" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a21e47eb4d67d688a9c2d0fa1974c61ce" title=" " alt="" coords="141,104,270,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="83,96,128,102,127,108,83,101"/>
+<area shape="rect" id="Node000005" href="$d5/d02/gen__link__list__insertion_8c.html#a9df831ac7dc242f94206af62e0387df1" title="Insert a value at the end of the list (O(1))." alt="" coords="131,153,280,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="67,103,132,138,151,146,149,151,130,143,64,108"/>
 </map>

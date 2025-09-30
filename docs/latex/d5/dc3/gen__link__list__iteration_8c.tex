@@ -1,0 +1,120 @@
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/iteration/gen\+\_\+link\+\_\+list\+\_\+iteration.c File Reference}
+\hypertarget{gen__link__list__iteration_8c}{}\label{gen__link__list__iteration_8c}\index{gen\_list/gen\_link\_list/iteration/gen\_link\_list\_iteration.c@{gen\_list/gen\_link\_list/iteration/gen\_link\_list\_iteration.c}}
+{\ttfamily \#include "{}../gen\+\_\+link\+\_\+list\+\_\+internal.\+h"{}}\newline
+Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+iteration.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d0/d22/gen__link__list__iteration_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__iteration_8c_a4608f925c54b6539f8cee3d67edba91c}{gen\+\_\+list\+\_\+iter\+\_\+next}} (\mbox{\hyperlink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter}} \texorpdfstring{$\ast$}{*}it)
+\begin{DoxyCompactList}\small\item\em Get the next value from the list using the iterator and advance it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen__link__list__iteration_8c_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\+\_\+list\+\_\+for\+\_\+each}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}} func)
+\begin{DoxyCompactList}\small\item\em Apply a function to all elements of the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen__link__list__iteration_8c_a0264017867021c6816bc65f1a79632b6}{gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx}} func, void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Apply a function to all elements of the list, with context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gen__link__list__iteration_8c_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}\label{gen__link__list__iteration_8c_ae40d5a3c9a9f7dcdfcf22ffdf4d63747} 
+\index{gen\_link\_list\_iteration.c@{gen\_link\_list\_iteration.c}!gen\_list\_for\_each@{gen\_list\_for\_each}}
+\index{gen\_list\_for\_each@{gen\_list\_for\_each}!gen\_link\_list\_iteration.c@{gen\_link\_list\_iteration.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_for\_each()}{gen\_list\_for\_each()}}
+{\footnotesize\ttfamily void gen\+\_\+list\+\_\+for\+\_\+each (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}}}]{func }\end{DoxyParamCaption})}
+
+
+
+Apply a function to all elements of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to traverse. \\
+\hline
+{\em func} & Function to apply to each value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{d5/dc3/gen__link__list__iteration_8c_ae40d5a3c9a9f7dcdfcf22ffdf4d63747_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dc3/gen__link__list__iteration_8c_ae40d5a3c9a9f7dcdfcf22ffdf4d63747_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gen__link__list__iteration_8c_a0264017867021c6816bc65f1a79632b6}\label{gen__link__list__iteration_8c_a0264017867021c6816bc65f1a79632b6} 
+\index{gen\_link\_list\_iteration.c@{gen\_link\_list\_iteration.c}!gen\_list\_for\_each\_ctx@{gen\_list\_for\_each\_ctx}}
+\index{gen\_list\_for\_each\_ctx@{gen\_list\_for\_each\_ctx}!gen\_link\_list\_iteration.c@{gen\_link\_list\_iteration.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_for\_each\_ctx()}{gen\_list\_for\_each\_ctx()}}
+{\footnotesize\ttfamily void gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx}}}]{func,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+
+
+
+Apply a function to all elements of the list, with context. 
+
+Similar a \doxylink{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\+\_\+list\+\_\+for\+\_\+each()}, pero permite pasar un puntero adicional (contexto) a la función aplicada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to traverse. \\
+\hline
+{\em func} & Function to apply to each value, with signature (element, context). \\
+\hline
+{\em context} & Extra pointer passed to the function on each call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\+\_\+list\+\_\+for\+\_\+each} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dc3/gen__link__list__iteration_8c_a0264017867021c6816bc65f1a79632b6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gen__link__list__iteration_8c_a4608f925c54b6539f8cee3d67edba91c}\label{gen__link__list__iteration_8c_a4608f925c54b6539f8cee3d67edba91c} 
+\index{gen\_link\_list\_iteration.c@{gen\_link\_list\_iteration.c}!gen\_list\_iter\_next@{gen\_list\_iter\_next}}
+\index{gen\_list\_iter\_next@{gen\_list\_iter\_next}!gen\_link\_list\_iteration.c@{gen\_link\_list\_iteration.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_iter\_next()}{gen\_list\_iter\_next()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+iter\+\_\+next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter}} \texorpdfstring{$\ast$}{*}}]{it }\end{DoxyParamCaption})}
+
+
+
+Get the next value from the list using the iterator and advance it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & Iterator of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the current node, or NULL if the end is reached. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dc3/gen__link__list__iteration_8c_a4608f925c54b6539f8cee3d67edba91c_icgraph}
+\end{center}
+\end{figure}
