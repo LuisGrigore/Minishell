@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gen_link_list_find.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/30 23:46:01 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/09/30 23:48:16 by lgrigore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../gen_link_list_internal.h"
 
-void	*gen_list_find(t_gen_list *list, bool (*predicate)(void *))
+void	*gen_list_find(t_gen_list *list, t_predicate predicate)
 {
 	t_node	*current;
 
@@ -16,17 +28,17 @@ void	*gen_list_find(t_gen_list *list, bool (*predicate)(void *))
 	return (NULL);
 }
 
-void	*gen_list_find_ctx(t_gen_list *list,
-			bool (*predicate)(void *element, void *context),
-			void *context)
+void	*gen_list_find_ctx(t_gen_list *list, t_predicate_ctx predicate,
+		void *context)
 {
-	t_node *curr = list->head;
+	t_node	*curr;
 
+	curr = list->head;
 	while (curr)
 	{
 		if (predicate(curr->value, context))
-			return curr->value;
+			return (curr->value);
 		curr = curr->next;
 	}
-	return NULL;
+	return (NULL);
 }
