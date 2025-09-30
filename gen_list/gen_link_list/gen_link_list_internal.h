@@ -13,8 +13,8 @@
 #ifndef GEN_LINK_LIST_INTERNAL_H
 # define GEN_LINK_LIST_INTERNAL_H
 
-#include "../libft/libft.h"
 # include "../gen_list.h"
+# include "../libft/libft.h"
 
 /**
  * @brief Node of a generic singly linked list.
@@ -39,7 +39,7 @@ typedef struct s_node
  * @see t_node
  * @see t_gen_list_iter
  */
-struct s_gen_list
+struct				s_gen_list
 {
 	t_node			*head;
 	t_node			*tail;
@@ -55,9 +55,9 @@ struct s_gen_list
  * @see t_node
  * @see t_gen_list
  */
-struct s_gen_list_iter
+struct				s_gen_list_iter
 {
-    t_node *current;
+	t_node			*current;
 };
 
 #endif
