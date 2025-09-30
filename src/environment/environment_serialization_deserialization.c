@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 01:54:33 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 04:54:33 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**env_serialize(t_gen_list *envioroment)
 {
 	if (!envioroment)
 		return (NULL);
-	return (serialize_to_string_array(envioroment, env_var_to_string));
+	return (gen_list_serialize_to_string_array(envioroment, env_var_to_string));
 }
 
 t_gen_list	*env_deserialize(char **str_array)
@@ -44,11 +44,11 @@ t_gen_list	*env_deserialize(char **str_array)
 	char		**var_str_name_value_split;
 
 	i = 0;
-	env_var_list = init_list();
+	env_var_list = gen_list_create();
 	while (str_array[i])
 	{
 		var_str_name_value_split = ft_split(str_array[i], '=');
-		push_end(env_var_list, init_environment_var(var_str_name_value_split[0],
+		gen_list_push_back(env_var_list, init_environment_var(var_str_name_value_split[0],
 				var_str_name_value_split[1]));
 		free(var_str_name_value_split);
 		i++;

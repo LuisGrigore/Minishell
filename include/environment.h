@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 02:41:37 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 13:52:11 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENVIRONMENT_H
 # define ENVIRONMENT_H
 
-# include "../list/list.h"
+# include "../gen_list/gen_list.h"
 # include <stdbool.h>
 
 /* ============================================================

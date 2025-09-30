@@ -1,6 +1,6 @@
 #include "../include/command.h"
 # include "../include/redirect_asignation.h"
-#include "../list/list.h"
+#include "../gen_list/gen_list.h"
 #include "../libft/libft.h"
 #include "stdlib.h"
 #include <stdio.h>
@@ -24,9 +24,9 @@ void	destroy_command(void *command_to_delete)
 
 	command = (t_command *)command_to_delete;
 	if (command->args)
-		destroy_gen_list(command->args, free);
+		gen_list_destroy(command->args, free);
 	if (command->redirects)
-		destroy_gen_list(command->redirects, destroy_redirect);
+		gen_list_destroy(command->redirects, destroy_redirect);
 	;
 	free(command);
 }

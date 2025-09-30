@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 02:31:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 14:35:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../include/command.h"
 #include "../include/environment.h"
-#include "../list/list.h"
+#include "../gen_list/gen_list.h"
 #include "../include/parser.h"
 #include "../include/redirect_asignation.h"
 #include "../include/tokenizer.h"
@@ -113,14 +113,14 @@ void	signals_init(void)
 
 void	print_tokens(t_gen_list *tokens)
 {
-	t_iter		it;
+	t_gen_list_iter		it;
 	t_token		*tok;
 	const char	*type_str;
 
 	if (!tokens)
 		return ;
-	it = iter_start(tokens);
-	while ((tok = (t_token *)iter_next(&it)) != NULL)
+	it = gen_list_iter_start(tokens);
+	while ((tok = (t_token *)gen_list_iter_next(&it)) != NULL)
 	{
 		switch (tok->type)
 		{
@@ -177,9 +177,9 @@ void print_command(t_command *cmd, int index) {
     if (cmd->args && cmd->args->size > 0) {
         printf("  Args:\n");
         
-		t_iter arg_it = iter_start(cmd->args);
+		t_gen_list_iter arg_it = gen_list_iter_start(cmd->args);
         char *arg;
-        while ((arg = (char *)iter_next(&arg_it)) != NULL) {
+        while ((arg = (char *)gen_list_iter_next(&arg_it)) != NULL) {
             printf("    %s\n", arg);
         }
     } else {
@@ -189,9 +189,9 @@ void print_command(t_command *cmd, int index) {
     //Imprimir redirects
     if (cmd->redirects && cmd->redirects->size > 0) {
         printf("  Redirects:\n");
-        t_iter red_it = iter_start(cmd->redirects);
+        t_gen_list_iter red_it = gen_list_iter_start(cmd->redirects);
         t_redirect *redir;
-        while ((redir = (t_redirect *)iter_next(&red_it)) != NULL) {
+        while ((redir = (t_redirect *)gen_list_iter_next(&red_it)) != NULL) {
             print_redirect(redir);
         }
     } else {
@@ -207,10 +207,10 @@ void print_commands(t_gen_list *commands) {
         return;
     }
 
-    t_iter it = iter_start(commands);
+    t_gen_list_iter it = gen_list_iter_start(commands);
     t_command *cmd;
     int index = 1;
-    while ((cmd = (t_command *)iter_next(&it)) != NULL) {
+    while ((cmd = (t_command *)gen_list_iter_next(&it)) != NULL) {
         print_command(cmd, index++);
     }
 }
@@ -255,7 +255,7 @@ int	main(int args, char **environment_var_str_array)
 				continue ;
 			}
 			current_commands = parse_tokens_to_commands(tokens);
-			destroy_gen_list(tokens, destroy_token_data);
+			gen_list_destroy(tokens, destroy_token_data);
 			if (!current_commands)
 			{
 				perror("Parsing error ");
@@ -266,7 +266,7 @@ int	main(int args, char **environment_var_str_array)
 		}
 		free(line);
 		line = NULL;
-		destroy_gen_list(current_commands, destroy_command);
+		gen_list_destroy(current_commands, destroy_command);
 		current_commands = NULL;
 	}
 	env_destroy(envioroment_vars);

@@ -36,17 +36,17 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
     if (!tokens)
         return NULL;
 
-    t_gen_list *commands = init_list();
+    t_gen_list *commands = gen_list_create();
     if (!commands)
         return NULL;
 
-    t_gen_list *current_args = init_list();
-    t_gen_list *current_redirects = init_list();
+    t_gen_list *current_args = gen_list_create();
+    t_gen_list *current_redirects = gen_list_create();
 
-    t_iter it = iter_start(tokens);
+    t_gen_list_iter it = gen_list_iter_start(tokens);
     t_token *tok;
 
-    while ((tok = (t_token *)iter_next(&it)) != NULL)
+    while ((tok = (t_token *)gen_list_iter_next(&it)) != NULL)
     {
         if (tok->type == TOKEN_ARG || tok->type == TOKEN_CMD)
         {
@@ -56,7 +56,7 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             if (!arg_copy)
                 goto error;
             ft_strlcpy(arg_copy, tok->value, len + 1);
-            push_end(current_args, arg_copy);
+            gen_list_push_back(current_args, arg_copy);
         }
         else if (tok->type == TOKEN_PIPE)
         {
@@ -66,11 +66,11 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             t_command *cmd = init_command(current_args, funct, current_redirects);
             if (!cmd)
                 goto error;
-            push_end(commands, cmd);
+            gen_list_push_back(commands, cmd);
 
             // Inicializar listas para siguiente comando
-            current_args = init_list();
-            current_redirects = init_list();
+            current_args = gen_list_create();
+            current_redirects = gen_list_create();
         }
         else if (tok->type == TOKEN_REDIR_IN ||
                  tok->type == TOKEN_REDIR_OUT ||
@@ -78,7 +78,7 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
                  tok->type == TOKEN_HEREDOC)
         {
             // El siguiente token debe ser el archivo
-            t_token *file_tok = (t_token *)iter_next(&it);
+            t_token *file_tok = (t_token *)gen_list_iter_next(&it);
             if (!file_tok || file_tok->type != TOKEN_ARG)
                 goto error;
 
@@ -95,7 +95,7 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             t_redirect *redir = init_redirect(file_tok->value, r_type);
             if (!redir)
                 goto error;
-            push_end(current_redirects, redir);
+            gen_list_push_back(current_redirects, redir);
         }
     }
 
@@ -106,19 +106,19 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
         t_command *cmd = init_command(current_args, funct, current_redirects);
         if (!cmd)
             goto error;
-        push_end(commands, cmd);
+        gen_list_push_back(commands, cmd);
     }
     else
     {
-        destroy_gen_list(current_args, free);
-        destroy_gen_list(current_redirects, (void (*)(void *))destroy_command);
+        gen_list_destroy(current_args, free);
+        gen_list_destroy(current_redirects, (void (*)(void *))destroy_command);
     }
 
     return commands;
 
 error:
-    destroy_gen_list(current_args, free);
-    destroy_gen_list(current_redirects, (void (*)(void *))destroy_command);
-    destroy_gen_list(commands, (void (*)(void *))destroy_command);
+    gen_list_destroy(current_args, free);
+    gen_list_destroy(current_redirects, (void (*)(void *))destroy_command);
+    gen_list_destroy(commands, (void (*)(void *))destroy_command);
     return NULL;
 }

@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/29 15:10:57 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 13:53:24 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOKENIZER_H
 # define TOKENIZER_H
 
-# include "list.h"
+# include "../gen_list/gen_list.h"
 
 typedef enum e_token_type
 {
