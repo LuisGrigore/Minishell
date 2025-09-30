@@ -6,191 +6,154 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:45:05 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 00:22:33 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gen_link_list_internal.h"
 
-//TODO :: revisar esto
-
-/* Helper: get string length */
-static size_t str_len(const char *s)
+static void	free_str_array(char **arr, size_t n)
 {
-    size_t len = 0;
-    while (s[len] != '\0')
-        len++;
-    return len;
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+		free(arr[i++]);
+	free(arr);
 }
 
-/* Helper: copy src to dest at given position */
-static void str_copy_at(char *dest, const char *src, size_t *pos)
+static size_t	calc_total_len(t_gen_list *list, t_element_to_string f)
 {
-    size_t i = 0;
-    while (src[i] != '\0')
-    {
-        dest[*pos] = src[i];
-        (*pos)++;
-        i++;
-    }
-    dest[*pos] = '\0';
+	t_gen_list_iter	*it;
+	void			*elem;
+	char			*s;
+	size_t			len;
+
+	it = gen_list_iter_start(list);
+	if (!it)
+		return (0);
+	len = 2;
+	elem = gen_list_iter_next(it);
+	while (elem)
+	{
+		s = f(elem);
+		if (!s)
+			return (gen_list_iter_destroy(it), 0);
+		len += str_len(s);
+		free(s);
+		elem = gen_list_iter_next(it);
+		if (elem)
+			len += 2;
+	}
+	gen_list_iter_destroy(it);
+	return (len);
 }
 
-/* ============================================================
-**  Serialization Implementations
-** ============================================================
-*/
-
-/**
- * Convert a list into a single string in format: [elem1, elem2, ...]
- */
-char *gen_list_serialize_to_string(t_gen_list *list, t_element_to_string element_to_string)
+static bool	fill_string(t_gen_list *list, t_element_to_string f, char *res,
+		size_t *pos)
 {
-    if (!list || !element_to_string)
-        return NULL;
+	t_gen_list_iter	*it;
+	void			*elem;
+	char			*s;
 
-    // First, calculate total length needed
-    size_t total_len = 2; // '[' + ']'
-    t_node *current = list->head;
-    size_t count = 0;
-
-    while (current)
-    {
-        char *elem_str = element_to_string(current->value);
-        if (!elem_str)
-            return NULL;
-
-        total_len += str_len(elem_str);
-        if (current->next)
-            total_len += 2; // for ", "
-
-        free(elem_str);
-        current = current->next;
-        count++;
-    }
-
-    char *result = malloc(total_len + 1); // +1 for '\0'
-    if (!result)
-        return NULL;
-
-    size_t pos = 0;
-    result[pos++] = '[';
-    result[pos] = '\0';
-
-    current = list->head;
-    size_t i = 0;
-    while (current)
-    {
-        char *elem_str = element_to_string(current->value);
-        if (!elem_str)
-        {
-            free(result);
-            return NULL;
-        }
-
-        str_copy_at(result, elem_str, &pos);
-        free(elem_str);
-
-        if (current->next)
-        {
-            result[pos++] = ',';
-            result[pos++] = ' ';
-            result[pos] = '\0';
-        }
-
-        current = current->next;
-        i++;
-    }
-
-    result[pos++] = ']';
-    result[pos] = '\0';
-
-    return result;
+	it = gen_list_iter_start(list);
+	if (!it)
+		return (false);
+	elem = gen_list_iter_next(it);
+	while (elem)
+	{
+		s = f(elem);
+		if (!s)
+			return (gen_list_iter_destroy(it), false);
+		str_copy_at(res, s, pos);
+		free(s);
+		elem = gen_list_iter_next(it);
+		if (elem)
+		{
+			res[(*pos)++] = ',';
+			res[(*pos)++] = ' ';
+			res[*pos] = '\0';
+		}
+	}
+	gen_list_iter_destroy(it);
+	return (true);
 }
 
-/**
- * Convert a list into an array of strings. Each element is a string returned by element_to_string.
- * The array is null-terminated.
- */
-char **gen_list_serialize_to_string_array(t_gen_list *list, t_element_to_string element_to_string)
+char	*gen_list_serialize_to_string(t_gen_list *list, t_element_to_string f)
 {
-    if (!list || !element_to_string)
-        return NULL;
+	char	*res;
+	size_t	len;
+	size_t	pos;
 
-    char **array = malloc((list->size + 1) * sizeof(char *));
-    if (!array)
-        return NULL;
-
-    t_node *current = list->head;
-    size_t i = 0;
-
-    while (current)
-    {
-        array[i] = element_to_string(current->value);
-        if (!array[i])
-        {
-            for (size_t j = 0; j < i; j++)
-                free(array[j]);
-            free(array);
-            return NULL;
-        }
-        i++;
-        current = current->next;
-    }
-
-    array[i] = NULL; // Null-terminate
-    return array;
+	if (!list || !f)
+		return (NULL);
+	len = calc_total_len(list, f);
+	if (!len)
+		return (NULL);
+	res = malloc(len + 1);
+	if (!res)
+		return (NULL);
+	pos = 0;
+	res[pos++] = '[';
+	res[pos] = '\0';
+	if (!fill_string(list, f, res, &pos))
+		return (free(res), NULL);
+	res[pos++] = ']';
+	res[pos] = '\0';
+	return (res);
 }
 
-/**
- * Convert a null-terminated array of strings into a generic linked list.
- *
- * @param array Null-terminated array of strings.
- * @param string_to_element Function to convert each string into a list element.
- * @return Pointer to a newly allocated list, or NULL on error.
- */
-t_gen_list *gen_list_deserialize_from_string_array(char **array, t_string_to_element string_to_element)
+char	**gen_list_serialize_to_string_array(t_gen_list *list,
+		t_element_to_string f)
 {
-    if (!array || !string_to_element)
-        return NULL;
+	t_gen_list_iter	*it;
+	void			*elem;
+	char			**arr;
+	size_t			i;
 
-    t_gen_list *list = (t_gen_list *)malloc(sizeof(t_gen_list));
-    if (!list) return NULL;
+	if (!list || !f)
+		return (NULL);
+	arr = malloc((list->size + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	it = gen_list_iter_start(list);
+	if (!it)
+		return (free(arr), NULL);
+	i = 0;
+	elem = gen_list_iter_next(it);
+	while (elem)
+	{
+		arr[i] = f(elem);
+		if (!arr[i])
+			return (gen_list_iter_destroy(it), free_str_array(arr, i), NULL);
+		i++;
+		elem = gen_list_iter_next(it);
+	}
+	gen_list_iter_destroy(it);
+	arr[i] = NULL;
+	return (arr);
+}
 
-    list->head = NULL;
-    list->size = 0;
-    t_node *last = NULL;
+t_gen_list	*gen_list_deserialize_from_string_array(char **array,
+		t_string_to_element conv)
+{
+	t_gen_list	*list;
+	void		*val;
+	size_t		i;
 
-    for (size_t i = 0; array[i] != NULL; i++) {
-        void *value = string_to_element(array[i]);
-        if (!value) goto error_cleanup;
-
-        t_node *node = (t_node *)malloc(sizeof(t_node));
-        if (!node) {
-            free(value);
-            goto error_cleanup;
-        }
-        node->value = value;
-        node->next = NULL;
-
-        if (!list->head)
-            list->head = node;
-        else
-            last->next = node;
-        last = node;
-        list->size++;
-    }
-
-    return list;
-
-error_cleanup:
-    t_node *tmp = list->head;
-    while (tmp) {
-        t_node *next = tmp->next;
-        free(tmp->value);
-        free(tmp);
-        tmp = next;
-    }
-    free(list);
-    return NULL;
+	if (!array || !conv)
+		return (NULL);
+	list = gen_list_create();
+	if (!list)
+		return (NULL);
+	i = 0;
+	while (array[i])
+	{
+		val = conv(array[i]);
+		if (!val)
+			return (gen_list_destroy(list, free), NULL);
+		gen_list_push_back(list, val);
+		i++;
+	}
+	return (list);
 }

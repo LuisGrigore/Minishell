@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gen_link_list_predicates.c                         :+:      :+:    :+:   */
+/*   utils_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 23:45:30 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 00:29:45 by lgrigore         ###   ########.fr       */
+/*   Created: 2025/10/01 00:00:11 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/10/01 00:02:21 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../gen_link_list_internal.h"
 
-bool	gen_list_is_empty(t_gen_list *list)
+size_t	str_len(const char *s)
 {
-	return (list->size == 0);
+	size_t	len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
 
-bool	gen_list_has(t_gen_list *list, t_predicate predicate)
+void	str_copy_at(char *dest, const char *src, size_t *pos)
 {
-	return (gen_list_find(list, predicate) != NULL);
-}
+	size_t	i;
 
-bool	gen_list_has_ctx(t_gen_list *list, t_predicate_ctx predicate,
-		void *context)
-{
-	return (gen_list_find_ctx(list, predicate, context) != NULL);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[*pos] = src[i];
+		(*pos)++;
+		i++;
+	}
+	dest[*pos] = '\0';
 }
