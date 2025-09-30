@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 01:52:56 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 04:54:01 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	env_set(t_gen_list *env, char *name, char *value)
 	t_env_var	*found_var;
 	char		*previous_val;
 
-	found_var = (t_env_var *)find_in_list_ctx(env, var_name_filter, name);
+	found_var = (t_env_var *)gen_list_find_ctx(env, var_name_filter, name);
 	if (found_var)
 	{
 		previous_val = found_var->var_value;
@@ -31,17 +31,17 @@ int	env_set(t_gen_list *env, char *name, char *value)
 	new_var = init_environment_var(ft_strdup(name), ft_strdup(value));
 	if (!new_var)
 		return (0);
-	push_front(env, (void *)new_var);
+	gen_list_push_front(env, (void *)new_var);
 	return (1);
 }
 
 void	env_unset(t_gen_list *envioroment, char *name)
 {
-	remove_if_ctx(envioroment, var_name_filter, (void *)name,
+	gen_list_remove_if_ctx(envioroment, var_name_filter, (void *)name,
 		destroy_environment_var);
 }
 
 void	env_destroy(t_gen_list *env)
 {
-	destroy_gen_list(env, destroy_environment_var);
+	gen_list_destroy(env, destroy_environment_var);
 }

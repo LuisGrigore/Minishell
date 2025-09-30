@@ -6,13 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/29 15:21:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 13:52:11 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COMMAND_H
 # define COMMAND_H
-# include "../list/list.h"
+# include "../gen_list/gen_list.h"
 
 /**
  * @file command.h

@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 01:24:21 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 13:28:41 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../include/command.h"
 #include "../include/environment.h"
-#include "../list/list.h"
+#include "../gen_list/gen_list.h"
 #include "../libft/libft.h"
 #include <signal.h>
 
@@ -38,7 +38,7 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     }
 
     env = env_serialize(envioroment);
-    cmd2 = serialize_to_string_array(cmd->args,serialize_arg);
+    cmd2 = gen_list_serialize_to_string_array(cmd->args,serialize_arg);
 
     path = find_command(env, cmd2[0]);
     if (!path)
@@ -60,7 +60,7 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
 }
 void cd_execute(t_command *command, t_gen_list *environment)
 {
-    t_iter it;
+    t_gen_list_iter it;
     char *old_directory;
     char *target;
     char *joined_path;
@@ -71,9 +71,9 @@ void cd_execute(t_command *command, t_gen_list *environment)
         return;
     }
     old_directory = env_get(environment, "PWD");
-    it = iter_start(command->args);
-    iter_next(&it);
-    target = iter_next(&it);
+    it = gen_list_iter_start(command->args);
+    gen_list_iter_next(&it);
+    target = gen_list_iter_next(&it);
     if (access(target, F_OK) == 0)
     {
         if (chdir(target) == -1)

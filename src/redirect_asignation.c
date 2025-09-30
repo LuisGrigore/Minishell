@@ -13,20 +13,20 @@ t_gen_list	*get_redirects_from_str_arr(char *str)
 	char		*current_redirecction;
 	int			i;
 
-	redirects = init_list();
+	redirects = gen_list_create();
 	current_redirecction = first_redirection(str);
 	while (current_redirecction != NULL)
 	{
 		current_node_value = init_redirect(get_file_from_str(str,
 					current_redirecction),
 				get_redirection_type_from_str(current_redirecction));
-		push_end(redirects, current_node_value);
+		gen_list_push_back(redirects, current_node_value);
 		i = special_char(str, current_redirecction)
 			+ (int)ft_strlen(current_redirecction);
 		str = str + i;
 		current_redirecction = first_redirection(str);
 	}
-	if (redirects->head == NULL)
+	if (gen_list_is_empty(redirects))
 	{
 		free(redirects);
 		redirects = NULL;

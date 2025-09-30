@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdbool.h>
-#include "../list/list.h"
+#include "../gen_list/gen_list.h"
 #include "../include/tokenizer.h" 
 #include "../libft/libft.h"
 #include "../include/util.h"
@@ -40,7 +40,7 @@ static t_token_type operator_type(const char *op, size_t len) {
 
 t_gen_list *tokenize(const char *line) {
     size_t i = 0, len = ft_strlen(line);
-    t_gen_list *tokens_list = init_list();
+    t_gen_list *tokens_list = gen_list_create();
     if (!tokens_list) return NULL;
 
     bool expect_cmd = true; // El siguiente token no operador será CMD
@@ -54,7 +54,7 @@ t_gen_list *tokenize(const char *line) {
         if (match_two_char_op(line, i, ">>") || match_two_char_op(line, i, "<<")) {
             char *op = ft_strndup(line + i, 2);
             t_token *tok = create_token(operator_type(op, 2), op);
-            push_end(tokens_list, tok);
+            gen_list_push_back(tokens_list, tok);
             i += 2;
 
             if (tok->type == TOKEN_REDIR_APPEND || tok->type == TOKEN_HEREDOC)
@@ -67,7 +67,7 @@ t_gen_list *tokenize(const char *line) {
         if (is_operator_char(line[i])) {
             char *op = ft_strndup(line + i, 1);
             t_token *tok = create_token(operator_type(op, 1), op);
-            push_end(tokens_list, tok);
+            gen_list_push_back(tokens_list, tok);
             i++;
 
             if (tok->type == TOKEN_REDIR_IN || tok->type == TOKEN_REDIR_OUT)
@@ -106,13 +106,13 @@ t_gen_list *tokenize(const char *line) {
         }
 
         t_token *tok = create_token(type, word);
-        push_end(tokens_list, tok);
+        gen_list_push_back(tokens_list, tok);
     }
 
     return tokens_list;
 
 error:
-    if(tokens_list) destroy_gen_list(tokens_list, free);
+    if(tokens_list) gen_list_destroy(tokens_list, free);
     return NULL;
 }
 
