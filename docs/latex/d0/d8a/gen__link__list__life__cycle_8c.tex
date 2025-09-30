@@ -1,12 +1,12 @@
-\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/gen\+\_\+link\+\_\+list\+\_\+life\+\_\+cycle.c File Reference}
-\hypertarget{gen__link__list__life__cycle_8c}{}\label{gen__link__list__life__cycle_8c}\index{gen\_list/gen\_link\_list/gen\_link\_list\_life\_cycle.c@{gen\_list/gen\_link\_list/gen\_link\_list\_life\_cycle.c}}
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/life\+\_\+cycle/gen\+\_\+link\+\_\+list\+\_\+life\+\_\+cycle.c File Reference}
+\hypertarget{gen__link__list__life__cycle_8c}{}\label{gen__link__list__life__cycle_8c}\index{gen\_list/gen\_link\_list/life\_cycle/gen\_link\_list\_life\_cycle.c@{gen\_list/gen\_link\_list/life\_cycle/gen\_link\_list\_life\_cycle.c}}
 {\ttfamily \#include "{}gen\+\_\+link\+\_\+list\+\_\+internal.\+h"{}}\newline
 Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+life\+\_\+cycle.\+c\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{d4/d8c/gen__link__list__life__cycle_8c__incl}
+\includegraphics[width=215pt]{d4/d8c/gen__link__list__life__cycle_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
@@ -14,8 +14,8 @@ Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+life\+\_\+cycle.\+c\+:
 \item 
 \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__link__list__life__cycle_8c_a03b4701bb3af070176c8057c8c068f11}{gen\+\_\+list\+\_\+create}} (void)
 \begin{DoxyCompactList}\small\item\em Initialize an empty list. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__link__list__life__cycle_8c_a21e47eb4d67d688a9c2d0fa1974c61ce}{gen\+\_\+list\+\_\+destroy}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void(value\+\_\+destroyer)(void \texorpdfstring{$\ast$}{*}))
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{gen__link__list__life__cycle_8c_a4acf718ea226522128b6f12296f7c821}{gen\+\_\+list\+\_\+destroy}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
+\begin{DoxyCompactList}\small\item\em Destroy the entire list and its nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -40,17 +40,31 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{d0/d8a/gen__link__list__life__cycle_8c_a03b4701bb3af070176c8057c8c068f11_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__link__list__life__cycle_8c_a21e47eb4d67d688a9c2d0fa1974c61ce}\label{gen__link__list__life__cycle_8c_a21e47eb4d67d688a9c2d0fa1974c61ce} 
+\Hypertarget{gen__link__list__life__cycle_8c_a4acf718ea226522128b6f12296f7c821}\label{gen__link__list__life__cycle_8c_a4acf718ea226522128b6f12296f7c821} 
 \index{gen\_link\_list\_life\_cycle.c@{gen\_link\_list\_life\_cycle.c}!gen\_list\_destroy@{gen\_list\_destroy}}
 \index{gen\_list\_destroy@{gen\_list\_destroy}!gen\_link\_list\_life\_cycle.c@{gen\_link\_list\_life\_cycle.c}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_destroy()}{gen\_list\_destroy()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void(value\+\_\+destroyer)(void \texorpdfstring{$\ast$}{*})}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gen\+\_\+list\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
 
+
+
+Destroy the entire list and its nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to destroy. \\
+\hline
+{\em element\+\_\+destroyer} & Function to free each stored value, can be NULL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer} 
+\end{DoxySeeAlso}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d8a/gen__link__list__life__cycle_8c_a21e47eb4d67d688a9c2d0fa1974c61ce_icgraph}
+\includegraphics[width=350pt]{d0/d8a/gen__link__list__life__cycle_8c_a4acf718ea226522128b6f12296f7c821_icgraph}
 \end{center}
 \end{figure}

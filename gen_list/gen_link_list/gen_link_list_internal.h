@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 05:05:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 00:07:47 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 00:32:01 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GEN_LINK_LIST_INTERNAL_H
 
 # include "../gen_list.h"
-//# include "../libft/libft.h"
 
 /**
  * @brief Node of a generic singly linked list.

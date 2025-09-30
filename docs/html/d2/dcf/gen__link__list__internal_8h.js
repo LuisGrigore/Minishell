@@ -12,5 +12,7 @@ var gen__link__list__internal_8h =
     [ "s_gen_list_iter", "d2/dcf/gen__link__list__internal_8h.html#d8/df2/structs__gen__list__iter", [
       [ "current", "d2/dcf/gen__link__list__internal_8h.html#a7c06cced8557905139e08404df3d5ef2", null ]
     ] ],
-    [ "t_node", "d2/dcf/gen__link__list__internal_8h.html#a3f46128da7b9ed932ecb00df9677e301", null ]
+    [ "t_node", "d2/dcf/gen__link__list__internal_8h.html#a3f46128da7b9ed932ecb00df9677e301", null ],
+    [ "str_copy_at", "d2/dcf/gen__link__list__internal_8h.html#abaa0976f42a35cc0544613739241883f", null ],
+    [ "str_len", "d2/dcf/gen__link__list__internal_8h.html#a08b8150070493b3bf2dbc420b965b7bb", null ]
 ];

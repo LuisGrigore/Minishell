@@ -6,36 +6,74 @@ Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+deletion.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{d9/d72/gen__link__list__deletion_8c__incl}
+\includegraphics[width=219pt]{d9/d72/gen__link__list__deletion_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{gen__link__list__deletion_8c_a10d5e955cb1c41edde3d38e40c18e490}{gen\+\_\+list\+\_\+remove\+\_\+if}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}value\+\_\+destroyer)(void \texorpdfstring{$\ast$}{*}))
-\item 
-void \mbox{\hyperlink{gen__link__list__deletion_8c_a8a51a5a3e8b0794b67e3d12243e92415}{gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context), void \texorpdfstring{$\ast$}{*}context, void(\texorpdfstring{$\ast$}{*}value\+\_\+destroyer)(void \texorpdfstring{$\ast$}{*}))
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{gen__link__list__deletion_8c_a04d57cee48d7b2923f943142ca7346ef}{gen\+\_\+list\+\_\+remove\+\_\+if}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
+\begin{DoxyCompactList}\small\item\em Remove nodes that satisfy a predicate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen__link__list__deletion_8c_af9c742479ba0e82feda98fd6fca35f95}{gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
+\begin{DoxyCompactList}\small\item\em Remove nodes that satisfy a predicate with context. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{gen__link__list__deletion_8c_a10d5e955cb1c41edde3d38e40c18e490}\label{gen__link__list__deletion_8c_a10d5e955cb1c41edde3d38e40c18e490} 
+\Hypertarget{gen__link__list__deletion_8c_a04d57cee48d7b2923f943142ca7346ef}\label{gen__link__list__deletion_8c_a04d57cee48d7b2923f943142ca7346ef} 
 \index{gen\_link\_list\_deletion.c@{gen\_link\_list\_deletion.c}!gen\_list\_remove\_if@{gen\_list\_remove\_if}}
 \index{gen\_list\_remove\_if@{gen\_list\_remove\_if}!gen\_link\_list\_deletion.c@{gen\_link\_list\_deletion.c}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_remove\_if()}{gen\_list\_remove\_if()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+remove\+\_\+if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{bool(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{predicate,  }\item[{void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{value\+\_\+destroyer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gen\+\_\+list\+\_\+remove\+\_\+if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
 
-\Hypertarget{gen__link__list__deletion_8c_a8a51a5a3e8b0794b67e3d12243e92415}\label{gen__link__list__deletion_8c_a8a51a5a3e8b0794b67e3d12243e92415} 
+
+
+Remove nodes that satisfy a predicate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to modify. \\
+\hline
+{\em predicate} & Predicate function to decide which nodes to remove. \\
+\hline
+{\em element\+\_\+destroyer} & Function to free the value of each removed node, can be NULL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate} 
+
+\doxylink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer} 
+\end{DoxySeeAlso}
+\Hypertarget{gen__link__list__deletion_8c_af9c742479ba0e82feda98fd6fca35f95}\label{gen__link__list__deletion_8c_af9c742479ba0e82feda98fd6fca35f95} 
 \index{gen\_link\_list\_deletion.c@{gen\_link\_list\_deletion.c}!gen\_list\_remove\_if\_ctx@{gen\_list\_remove\_if\_ctx}}
 \index{gen\_list\_remove\_if\_ctx@{gen\_list\_remove\_if\_ctx}!gen\_link\_list\_deletion.c@{gen\_link\_list\_deletion.c}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_remove\_if\_ctx()}{gen\_list\_remove\_if\_ctx()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{bool(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context)}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context,  }\item[{void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{value\+\_\+destroyer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
 
+
+
+Remove nodes that satisfy a predicate with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to modify. \\
+\hline
+{\em predicate} & Predicate function that takes (element, context). \\
+\hline
+{\em context} & Extra pointer passed to the predicate on each call. \\
+\hline
+{\em element\+\_\+destroyer} & Function to free the value of each removed node, can be NULL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx} 
+
+\doxylink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer} 
+\end{DoxySeeAlso}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d6/dff/gen__link__list__deletion_8c_a8a51a5a3e8b0794b67e3d12243e92415_icgraph}
+\includegraphics[width=350pt]{d6/dff/gen__link__list__deletion_8c_af9c742479ba0e82feda98fd6fca35f95_icgraph}
 \end{center}
 \end{figure}

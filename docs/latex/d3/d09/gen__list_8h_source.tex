@@ -10,7 +10,7 @@
 \DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/09/29\ 17:30:11\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/30\ 15:02:05\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/10/01\ 00:39:11\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
 \DoxyCodeLine{00012\ }
@@ -26,7 +26,7 @@
 \DoxyCodeLine{00022\ }
 \DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{s\_gen\_list}}\ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}};}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{s\_gen\_list\_iter}}\ \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}};}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{s\_gen\_list\_iter}}\ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}};}
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00041\ \textcolor{comment}{/*\ ============================================================}}
 \DoxyCodeLine{00042\ \textcolor{comment}{**\ \ Function\ Pointer\ Typedefs}}
@@ -44,69 +44,86 @@
 \DoxyCodeLine{00078\ }
 \DoxyCodeLine{00084\ \textcolor{keyword}{typedef}\ void\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*\mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\_apply\_func}})(\textcolor{keywordtype}{void}\ *element);}
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00096\ \textcolor{keyword}{typedef}\ void\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*\mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\_apply\_func\_ctx}})(\textcolor{keywordtype}{void}\ *element,}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *context);}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00105\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *(*t\_string\_to\_element)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \textcolor{comment}{/*\ ============================================================\ **}}
-\DoxyCodeLine{00109\ \textcolor{comment}{**\ Life\ Cycle}}
-\DoxyCodeLine{00110\ \textcolor{comment}{**\ ============================================================\ */}}
-\DoxyCodeLine{00116\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *\mbox{\hyperlink{gen__list_8h_a03b4701bb3af070176c8057c8c068f11}{gen\_list\_create}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_a4acf718ea226522128b6f12296f7c821}{gen\_list\_destroy}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\_element\_destroyer}}\ element\_destroyer);}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \textcolor{comment}{/*\ ============================================================\ **}}
-\DoxyCodeLine{00128\ \textcolor{comment}{**\ Operations}}
-\DoxyCodeLine{00129\ \textcolor{comment}{**\ ============================================================\ */}}
-\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_a9df831ac7dc242f94206af62e0387df1}{gen\_list\_push\_back}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \textcolor{keywordtype}{void}\ *value);}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_a10328f908d6be67ff4b38b53f7a727a1}{gen\_list\_push\_front}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \textcolor{keywordtype}{void}\ *value);}
+\DoxyCodeLine{00094\ \textcolor{keyword}{typedef}\ void\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*\mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\_apply\_func\_ctx}})(\textcolor{keywordtype}{void}\ *element,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *(*t\_string\_to\_element)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{/*\ ============================================================\ **}}
+\DoxyCodeLine{00106\ \textcolor{comment}{**\ Life\ Cycle}}
+\DoxyCodeLine{00107\ \textcolor{comment}{**\ ============================================================\ */}}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_a03b4701bb3af070176c8057c8c068f11}{gen\_list\_create}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a4acf718ea226522128b6f12296f7c821}{gen\_list\_destroy}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\_element\_destroyer}}\ element\_destroyer);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{/*\ ============================================================\ **}}
+\DoxyCodeLine{00126\ \textcolor{comment}{**\ Operations}}
+\DoxyCodeLine{00127\ \textcolor{comment}{**\ ============================================================\ */}}
+\DoxyCodeLine{00134\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a9df831ac7dc242f94206af62e0387df1}{gen\_list\_push\_back}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *value);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00143\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a10328f908d6be67ff4b38b53f7a727a1}{gen\_list\_push\_front}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *value);}
 \DoxyCodeLine{00145\ }
-\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gen__list_8h_a452a14292622fab76140e1e9ca0a57e7}{gen\_list\_pop\_front}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_a452a14292622fab76140e1e9ca0a57e7}{gen\_list\_pop\_front}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
 \DoxyCodeLine{00153\ }
-\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_a04d57cee48d7b2923f943142ca7346ef}{gen\_list\_remove\_if}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate,\ \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\_element\_destroyer}}\ element\_destroyer);}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00175\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_af9c742479ba0e82feda98fd6fca35f95}{gen\_list\_remove\_if\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context,\ \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\_element\_destroyer}}\ element\_destroyer);}
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ \textcolor{comment}{/*\ ============================================================\ **}}
-\DoxyCodeLine{00178\ \textcolor{comment}{**\ Queries}}
-\DoxyCodeLine{00179\ \textcolor{comment}{**\ ============================================================\ */}}
-\DoxyCodeLine{00187\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\_list\_for\_each}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\_apply\_func}}\ func);}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_a0264017867021c6816bc65f1a79632b6}{gen\_list\_for\_each\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\_apply\_func\_ctx}}\ func,\ \textcolor{keywordtype}{void}\ *context);}
-\DoxyCodeLine{00202\ }
-\DoxyCodeLine{00211\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gen__list_8h_a2102327ee709da7dafad283f5b02ce00}{gen\_list\_find}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate);}
-\DoxyCodeLine{00212\ }
-\DoxyCodeLine{00222\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gen__list_8h_abe06ed3bda440c2bdaf89881a83fddf8}{gen\_list\_find\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context);}
-\DoxyCodeLine{00223\ }
-\DoxyCodeLine{00231\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{gen__list_8h_a88eccd5115040464ae1ab2ea4f6fb565}{gen\_list\_get\_size}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
-\DoxyCodeLine{00232\ }
-\DoxyCodeLine{00241\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gen__list_8h_aff7b5a65d01554d98152316c483dd48d}{gen\_list\_has}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate);}
-\DoxyCodeLine{00242\ }
-\DoxyCodeLine{00252\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gen__list_8h_ad2f1293414d02a15559f1d375673af51}{gen\_list\_has\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context);}
-\DoxyCodeLine{00253\ }
-\DoxyCodeLine{00261\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gen__list_8h_a2f7e656dcfadd2f1e532fb6fbf295f77}{gen\_list\_is\_empty}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
-\DoxyCodeLine{00262\ }
-\DoxyCodeLine{00263\ \textcolor{comment}{/*\ ============================================================\ **}}
-\DoxyCodeLine{00264\ \textcolor{comment}{**\ Iteration}}
-\DoxyCodeLine{00265\ \textcolor{comment}{**\ ============================================================\ */}}
-\DoxyCodeLine{00273\ \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}}\ *\mbox{\hyperlink{gen__list_8h_a491520fc16d4760ca4596d256a4e3835}{gen\_list\_iter\_start}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
-\DoxyCodeLine{00274\ }
-\DoxyCodeLine{00282\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gen__list_8h_a4608f925c54b6539f8cee3d67edba91c}{gen\_list\_iter\_next}}(\mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}}\ *it);}
-\DoxyCodeLine{00283\ }
-\DoxyCodeLine{00290\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gen__list_8h_af49c314a5f17ea28e0367327486eb66b}{gen\_list\_iter\_destroy}}(\mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}}\ *it);}
-\DoxyCodeLine{00291\ }
-\DoxyCodeLine{00292\ \textcolor{comment}{/*\ ============================================================\ **}}
-\DoxyCodeLine{00293\ \textcolor{comment}{**\ Serialization}}
-\DoxyCodeLine{00294\ \textcolor{comment}{**\ ============================================================\ */}}
-\DoxyCodeLine{00303\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{gen__list_8h_ac8c3259db15c53ed58adcf78608c03bf}{gen\_list\_serialize\_to\_string}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\_element\_to\_string}}\ element\_to\_string);}
-\DoxyCodeLine{00304\ }
-\DoxyCodeLine{00313\ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{gen__list_8h_ae56850e893a5c09aecef6c3340bef04f}{gen\_list\_serialize\_to\_string\_array}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\_element\_to\_string}}\ element\_to\_string);}
-\DoxyCodeLine{00314\ }
-\DoxyCodeLine{00323\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *\mbox{\hyperlink{gen__list_8h_af075dd4fcf545a88c4eb75b4ef273005}{gen\_list\_deserialize\_from\_string\_array}}(\textcolor{keywordtype}{char}\ **array,\ \mbox{\hyperlink{gen__list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\_string\_to\_element}}\ string\_to\_element);}
-\DoxyCodeLine{00324\ }
-\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a04d57cee48d7b2923f943142ca7346ef}{gen\_list\_remove\_if}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\_element\_destroyer}}\ element\_destroyer);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00179\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_af9c742479ba0e82feda98fd6fca35f95}{gen\_list\_remove\_if\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\_element\_destroyer}}\ element\_destroyer);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{comment}{/*\ ============================================================\ **}}
+\DoxyCodeLine{00184\ \textcolor{comment}{**\ Queries}}
+\DoxyCodeLine{00185\ \textcolor{comment}{**\ ============================================================\ */}}
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\_list\_for\_each}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\_apply\_func}}\ func);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a0264017867021c6816bc65f1a79632b6}{gen\_list\_for\_each\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\_apply\_func\_ctx}}\ func,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00217\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_a2102327ee709da7dafad283f5b02ce00}{gen\_list\_find}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00229\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_abe06ed3bda440c2bdaf89881a83fddf8}{gen\_list\_find\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a88eccd5115040464ae1ab2ea4f6fb565}{gen\_list\_get\_size}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_aff7b5a65d01554d98152316c483dd48d}{gen\_list\_has}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00262\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_ad2f1293414d02a15559f1d375673af51}{gen\_list\_has\_ctx}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00272\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a2f7e656dcfadd2f1e532fb6fbf295f77}{gen\_list\_is\_empty}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \textcolor{comment}{/*\ ============================================================\ **}}
+\DoxyCodeLine{00275\ \textcolor{comment}{**\ Iteration}}
+\DoxyCodeLine{00276\ \textcolor{comment}{**\ ============================================================\ */}}
+\DoxyCodeLine{00284\ \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_a491520fc16d4760ca4596d256a4e3835}{gen\_list\_iter\_start}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00293\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_a4608f925c54b6539f8cee3d67edba91c}{gen\_list\_iter\_next}}(\mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}}\ *it);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_af49c314a5f17ea28e0367327486eb66b}{gen\_list\_iter\_destroy}}(\mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{t\_gen\_list\_iter}}\ *it);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{comment}{/*\ ============================================================\ **}}
+\DoxyCodeLine{00304\ \textcolor{comment}{**\ Serialization}}
+\DoxyCodeLine{00305\ \textcolor{comment}{**\ ============================================================\ */}}
+\DoxyCodeLine{00314\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_ac8c3259db15c53ed58adcf78608c03bf}{gen\_list\_serialize\_to\_string}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\_element\_to\_string}}\ element\_to\_string);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00326\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **\mbox{\hyperlink{gen__list_8h_ae56850e893a5c09aecef6c3340bef04f}{gen\_list\_serialize\_to\_string\_array}}(}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\_element\_to\_string}}\ element\_to\_string);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00338\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{gen__list_8h_af075dd4fcf545a88c4eb75b4ef273005}{gen\_list\_deserialize\_from\_string\_array}}(}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **array,}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\_string\_to\_element}}\ string\_to\_element);}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

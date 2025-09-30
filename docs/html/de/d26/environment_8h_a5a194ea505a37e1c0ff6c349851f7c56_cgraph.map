@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Remove an environment variable by name." alt="" coords="5,55,95,80"/>
 <area shape="rect" id="Node000002" href="$dd/da9/envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="143,5,332,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,52,142,39,172,32,173,37,143,45,96,58"/>
-<area shape="rect" id="Node000003" href="$d6/dff/gen__link__list__deletion_8c.html#a8a51a5a3e8b0794b67e3d12243e92415" title=" " alt="" coords="151,55,324,80"/>
+<area shape="rect" id="Node000003" href="$d6/dff/gen__link__list__deletion_8c.html#af9c742479ba0e82feda98fd6fca35f95" title="Remove nodes that satisfy a predicate with context." alt="" coords="151,55,324,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,65,137,65,137,70,95,70"/>
 <area shape="rect" id="Node000004" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="175,104,299,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="96,76,175,98,174,103,94,82"/>

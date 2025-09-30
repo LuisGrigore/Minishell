@@ -1,0 +1,9 @@
+<map id="gen_list_deserialize_from_string_array" name="gen_list_deserialize_from_string_array">
+<area shape="rect" id="Node000001" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="5,47,156,87"/>
+<area shape="rect" id="Node000002" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="218,5,339,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,46,213,31,214,37,157,51"/>
+<area shape="rect" id="Node000003" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a4acf718ea226522128b6f12296f7c821" title="Destroy the entire list and its nodes." alt="" coords="214,55,343,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,65,200,65,200,70,156,70"/>
+<area shape="rect" id="Node000004" href="$d5/d02/gen__link__list__insertion_8c.html#a9df831ac7dc242f94206af62e0387df1" title="Insert a value at the end of the list." alt="" coords="204,104,353,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,84,214,98,213,103,156,89"/>
+</map>
