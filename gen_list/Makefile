@@ -13,7 +13,8 @@ SRCS	= \
 	gen_link_list/queries/gen_link_list_find.c \
 	gen_link_list/queries/gen_link_list_peek.c \
 	gen_link_list/queries/gen_link_list_get_size.c \
-	gen_link_list/queries/gen_link_list_predicates.c
+	gen_link_list/queries/gen_link_list_predicates.c \
+	gen_link_list/utils/utils_str.c
 
 OBJS	= $(SRCS:.c=.o)
 

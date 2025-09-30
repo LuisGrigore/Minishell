@@ -6,18 +6,40 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:23:56 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:24:00 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 23:57:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../gen_link_list_internal.h"
 
-void	gen_list_remove_if(t_gen_list *list, bool (*predicate)(void *),
-		void (*value_destroyer)(void *))
+static void	remove_current_node(t_gen_list *list, t_node **current,
+		t_node **prev, t_element_destroyer element_destroyer)
+{
+	t_node	*next;
+
+	if (!list || !current || !*current)
+		return ;
+	next = (*current)->next;
+	if (*prev)
+		(*prev)->next = next;
+	else
+		list->head = next;
+	if (*current == list->tail)
+		list->tail = *prev;
+	if (element_destroyer)
+		element_destroyer((*current)->value);
+	free(*current);
+	list->size--;
+	*current = next;
+}
+
+void	gen_list_remove_if(t_gen_list *list, t_predicate predicate,
+		t_element_destroyer element_destroyer)
 {
 	t_node	*current;
 	t_node	*prev;
 	t_node	*next;
+	bool	remove;
 
 	if (!list || !predicate)
 		return ;
@@ -26,35 +48,24 @@ void	gen_list_remove_if(t_gen_list *list, bool (*predicate)(void *),
 	while (current)
 	{
 		next = current->next;
-		if (predicate(current->value))
-		{
-			if (prev)
-				prev->next = next;
-			else
-				list->head = next;
-			if (current == list->tail)
-				list->tail = prev;
-			if (value_destroyer)
-				value_destroyer(current->value);
-			free(current);
-			list->size--;
-		}
+		remove = predicate(current->value);
+		if (remove)
+			remove_current_node(list, &current, &prev, element_destroyer);
 		else
 		{
 			prev = current;
+			current = next;
 		}
-		current = next;
 	}
 }
 
-void	gen_list_remove_if_ctx(t_gen_list *list,
-			bool (*predicate)(void *element, void *context),
-			void *context,
-			void (*value_destroyer)(void *))
+void	gen_list_remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate,
+		void *context, t_element_destroyer element_destroyer)
 {
 	t_node	*current;
 	t_node	*prev;
 	t_node	*next;
+	bool	remove;
 
 	if (!list || !predicate)
 		return ;
@@ -63,23 +74,13 @@ void	gen_list_remove_if_ctx(t_gen_list *list,
 	while (current)
 	{
 		next = current->next;
-		if (predicate(current->value, context))
-		{
-			if (prev)
-				prev->next = next;
-			else
-				list->head = next;
-			if (current == list->tail)
-				list->tail = prev;
-			if (value_destroyer)
-				value_destroyer(current->value);
-			free(current);
-			list->size--;
-		}
+		remove = predicate(current->value, context);
+		if (remove)
+			remove_current_node(list, &current, &prev, element_destroyer);
 		else
 		{
 			prev = current;
+			current = next;
 		}
-		current = next;
 	}
 }
