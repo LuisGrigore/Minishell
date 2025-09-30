@@ -1,0 +1,16 @@
+<map id="env_var_to_string" name="env_var_to_string">
+<area shape="rect" id="Node000001" title=" " alt="" coords="893,31,1032,56"/>
+<area shape="rect" id="Node000002" href="$environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="737,31,845,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="880,46,845,46,845,41,880,41"/>
+<area shape="rect" id="Node000003" href="$command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="587,5,687,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="723,35,687,29,688,24,724,30"/>
+<area shape="rect" id="Node000007" href="$command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="585,55,689,80"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="724,56,690,62,689,57,723,51"/>
+<area shape="rect" id="Node000004" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,31,537,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="574,29,538,34,537,29,573,24"/>
+<area shape="rect" id="Node000005" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="349,46,315,46,315,41,349,41"/>
+<area shape="rect" id="Node000006" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="571,62,537,57,538,52,572,56"/>
+</map>

@@ -1,0 +1,38 @@
+\doxysection{command.\+c}
+\hypertarget{command_8c_source}{}\label{command_8c_source}\index{src/command.c@{src/command.c}}
+\mbox{\hyperlink{command_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../include/command.h"{}}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00002}00002\ \textcolor{preprocessor}{\#\ include\ "{}../include/redirect\_asignation.h"{}}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../list/list.h"{}}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../libft/libft.h"{}}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}stdlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00009}\mbox{\hyperlink{command_8h_a980b6e4466bc0bed37cb6352f143ab96}{00009}}\ \mbox{\hyperlink{structs__command}{t\_command}}\ \ *\mbox{\hyperlink{command_8c_a980b6e4466bc0bed37cb6352f143ab96}{init\_command}}(\mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *args,\ \mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\_command\_funct}}\ funct,}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *redirects)}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{structs__command}{t\_command}}\ \ *new\_command;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00014}00014\ \ \ \ \ new\_command\ =\ \mbox{\hyperlink{ft__calloc_8c_a55cb9602200ccf92a7f43e58c6ee2679}{ft\_calloc}}(1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structs__command}{t\_command}}));}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00015}00015\ \ \ \ \ new\_command-\/>\mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}}\ =\ args;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00016}00016\ \ \ \ \ new\_command-\/>\mbox{\hyperlink{structs__command_a4035892ffaf86e4740da691c477ebfa4}{command\_funct}}\ =\ funct;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00017}00017\ \ \ \ \ new\_command-\/>\mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}}\ =\ redirects;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ (new\_command);}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00021}\mbox{\hyperlink{command_8h_a950465f331fec212ad0507c3e41a0137}{00021}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{command_8c_a950465f331fec212ad0507c3e41a0137}{destroy\_command}}(\textcolor{keywordtype}{void}\ *command\_to\_delete)}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{structs__command}{t\_command}}\ \ *command;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00025}00025\ \ \ \ \ command\ =\ (\mbox{\hyperlink{structs__command}{t\_command}}\ *)command\_to\_delete;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (command-\/>\mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}})}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(command-\/>\mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}},\ free);}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (command-\/>\mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}})}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(command-\/>\mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}},\ \mbox{\hyperlink{redirect__asignation_8h_abd88dda569ce623bd360a0f45a6f5e61}{destroy\_redirect}});}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00030}00030\ \ \ \ \ ;}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00031}00031\ \ \ \ \ free(command);}
+\DoxyCodeLine{\Hypertarget{command_8c_source_l00032}00032\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,27 @@
+<map id="ft_strdup" name="ft_strdup">
+<area shape="rect" id="Node000001" title=" " alt="" coords="636,107,715,132"/>
+<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="357,55,451,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="622,107,587,98,451,75,452,70,589,93,623,101"/>
+<area shape="rect" id="Node000005" href="$d1/d62/environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="513,107,588,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="622,122,588,122,588,117,622,117"/>
+<area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#a8139962a2ceae2621213f8e6719565cf" title=" " alt="" coords="361,177,447,203"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="624,137,589,147,448,183,447,177,587,142,622,132"/>
+<area shape="rect" id="Node000008" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="514,5,587,31"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="646,100,566,33,569,29,650,96"/>
+<area shape="rect" id="Node000010" href="$d1/d7c/ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="519,208,582,233"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="650,143,569,210,566,206,646,139"/>
+<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="108,47,295,87"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,70,295,70,295,65,343,65"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,116,60,141"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="134,95,61,122,59,117,132,90"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="501,105,440,83,442,78,502,100"/>
+<area shape="rect" id="Node000006" href="$d7/df6/command__functs_8c.html#a0f6eaa743e63abad6ac6be049d6179c6" title=" " alt="" coords="351,104,457,129"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="499,121,457,120,457,115,499,116"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="512,140,432,180,430,175,510,136"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="347,183,60,136,61,130,347,178"/>
+<area shape="poly" id="edge9_Node000007_Node000007" title=" " alt="" coords="429,166,422,159,404,156,389,158,381,163,379,168,384,176,379,179,374,169,377,159,387,153,404,151,424,154,433,163"/>
+<area shape="poly" id="edge11_Node000008_Node000002" title=" " alt="" coords="502,37,443,57,442,52,500,32"/>
+<area shape="rect" id="Node000009" href="$d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="343,5,465,31"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="500,21,466,21,466,15,500,15"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="338,37,285,50,283,45,337,31"/>
+</map>

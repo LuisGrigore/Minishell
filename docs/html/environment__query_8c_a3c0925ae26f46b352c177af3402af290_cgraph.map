@@ -1,0 +1,16 @@
+<map id="env_get" name="env_get">
+<area shape="rect" id="Node000001" title="Get the value of an environment variable by name." alt="" coords="5,55,80,80"/>
+<area shape="rect" id="Node000002" href="$list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="131,5,249,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,52,138,33,139,38,81,58"/>
+<area shape="rect" id="Node000003" href="$ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="151,55,229,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,65,137,65,137,70,80,70"/>
+<area shape="rect" id="Node000006" href="$envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="128,104,252,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="81,77,139,97,138,102,79,82"/>
+<area shape="rect" id="Node000004" href="$ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="306,29,385,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="229,58,292,48,293,53,230,64"/>
+<area shape="rect" id="Node000005" href="$ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="308,79,383,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="230,71,295,81,294,86,229,76"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="252,104,294,97,295,102,253,109"/>
+<area shape="rect" id="Node000007" href="$ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="300,128,391,153"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="253,124,287,129,286,134,252,129"/>
+</map>

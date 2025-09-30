@@ -1,0 +1,157 @@
+\doxysection{libft/ft\+\_\+putnb.c File Reference}
+\hypertarget{ft__putnb_8c}{}\label{ft__putnb_8c}\index{libft/ft\_putnb.c@{libft/ft\_putnb.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+putnb.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putnb_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{ft__putnb_8c_a07c039686c2659172aa09670d56d17a8}{ft\+\_\+count}} (int i)
+\item 
+static void \mbox{\hyperlink{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed}{ft\+\_\+trueputnb}} (int i)
+\item 
+int \mbox{\hyperlink{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab}{ft\+\_\+putnb}} (int i)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__putnb_8c_a07c039686c2659172aa09670d56d17a8}\label{ft__putnb_8c_a07c039686c2659172aa09670d56d17a8} 
+\index{ft\_putnb.c@{ft\_putnb.c}!ft\_count@{ft\_count}}
+\index{ft\_count@{ft\_count}!ft\_putnb.c@{ft\_putnb.c}}
+\doxysubsubsection{\texorpdfstring{ft\_count()}{ft\_count()}}
+{\footnotesize\ttfamily static int ft\+\_\+count (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putnb_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__putnb_8c_source}{ft\+\_\+putnb.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 0)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ -\/9\ ||\ i\ >\ 9)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ i\ =\ i\ /\ 10;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ (n\ +\ 1);}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab}{ft\+\_\+putnb()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putnb_8c_a07c039686c2659172aa09670d56d17a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab}\label{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab} 
+\index{ft\_putnb.c@{ft\_putnb.c}!ft\_putnb@{ft\_putnb}}
+\index{ft\_putnb@{ft\_putnb}!ft\_putnb.c@{ft\_putnb.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putnb()}{ft\_putnb()}}
+{\footnotesize\ttfamily int ft\+\_\+putnb (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putnb_8c_source_l00047}{47}} of file \mbox{\hyperlink{ft__putnb_8c_source}{ft\+\_\+putnb.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed}{ft\_trueputnb}}(i);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__putnb_8c_a07c039686c2659172aa09670d56d17a8}{ft\_count}}(i));}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putnb_8c_a07c039686c2659172aa09670d56d17a8}{ft\+\_\+count()}}, and \mbox{\hyperlink{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed}{ft\+\_\+trueputnb()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__selector_8c_a6bca906941b73aee430168c03090a88d}{ft\+\_\+selector()}}, and \mbox{\hyperlink{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed}{ft\+\_\+trueputnb()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed}\label{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed} 
+\index{ft\_putnb.c@{ft\_putnb.c}!ft\_trueputnb@{ft\_trueputnb}}
+\index{ft\_trueputnb@{ft\_trueputnb}!ft\_putnb.c@{ft\_putnb.c}}
+\doxysubsubsection{\texorpdfstring{ft\_trueputnb()}{ft\_trueputnb()}}
+{\footnotesize\ttfamily static void ft\+\_\+trueputnb (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putnb_8c_source_l00030}{30}} of file \mbox{\hyperlink{ft__putnb_8c_source}{ft\+\_\+putnb.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ -\/2147483648)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\_putstr}}(\textcolor{stringliteral}{"{}-\/2147483648"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 0)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ -\/i;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\_putchar}}(\textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 9)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab}{ft\_putnb}}(i\ /\ 10);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\_putchar}}(i\ \%\ 10\ +\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putchar_8c_a83e0bab0b7de17c5164b5866ecdf27f6}{ft\+\_\+putchar()}}, \mbox{\hyperlink{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab}{ft\+\_\+putnb()}}, and \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\+\_\+putstr()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__putnb_8c_a6577258e350092bd9ab17904d78d08ab}{ft\+\_\+putnb()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putnb_8c_aac0d38324689331d10d0d88d7ea022ed_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,56 @@
+\doxysection{libft/ft\+\_\+atol.c File Reference}
+\hypertarget{ft__atol_8c}{}\label{ft__atol_8c}\index{libft/ft\_atol.c@{libft/ft\_atol.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+atol.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__atol_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long long \mbox{\hyperlink{ft__atol_8c_a22bda6fcd9c64fbb26be082711bd7aea}{ft\+\_\+atol}} (const char \texorpdfstring{$\ast$}{*}nptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__atol_8c_a22bda6fcd9c64fbb26be082711bd7aea}\label{ft__atol_8c_a22bda6fcd9c64fbb26be082711bd7aea} 
+\index{ft\_atol.c@{ft\_atol.c}!ft\_atol@{ft\_atol}}
+\index{ft\_atol@{ft\_atol}!ft\_atol.c@{ft\_atol.c}}
+\doxysubsubsection{\texorpdfstring{ft\_atol()}{ft\_atol()}}
+{\footnotesize\ttfamily long long ft\+\_\+atol (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__atol_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__atol_8c_source}{ft\+\_\+atol.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \ nb;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ t;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ nb\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ t\ =\ 1;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{while}\ ((nptr[i]\ >=\ 9\ \&\&\ nptr[i]\ <=\ 13)\ ||\ nptr[i]\ ==\ 32)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (nptr[i]\ ==\ \textcolor{charliteral}{'+'}\ ||\ nptr[i]\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nptr[i]\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ t\ =\ -\/t;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{while}\ ((nptr[i]\ <=\ \textcolor{charliteral}{'9'}\ \&\&\ nptr[i]\ >=\ \textcolor{charliteral}{'0'}))}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ nb\ =\ ((nb\ *\ 10)\ +\ nptr[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ (t\ *\ nb);}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

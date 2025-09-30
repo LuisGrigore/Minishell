@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_itoa.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_itoa.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,9 @@ Include dependency graph for ft_itoa.c:</div>
 <area shape="poly" title=" " alt="" coords="255,101,373,145,371,150,253,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__itoa_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a68179435a0495c1e497eafd58de2a6c5" id="r_a68179435a0495c1e497eafd58de2a6c5"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__itoa_8c.html#a68179435a0495c1e497eafd58de2a6c5">ft_putnbr</a> (int n, int pos, char *p3, char nb)</td></tr>
@@ -136,6 +139,31 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__itoa_8c_source.html#l00033">33</a> of file <a class="el" href="ft__itoa_8c_source.html">ft_itoa.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span> ps;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    ps = 1;</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">while</span> (9 &lt; n || -9 &gt; n)</div>
+<div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        n = n / 10;</div>
+<div class="line"><span class="lineno">   41</span>        ps++;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> (ps);</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38">ft_itoa()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__itoa_8c_a9702575ca62773bb287ca39307f495d1_icgraph.png" border="0" usemap="#aft__itoa_8c_a9702575ca62773bb287ca39307f495d1_icgraph" alt=""/></div>
+<map name="aft__itoa_8c_a9702575ca62773bb287ca39307f495d1_icgraph" id="aft__itoa_8c_a9702575ca62773bb287ca39307f495d1_icgraph">
+<area shape="rect" title=" " alt="" coords="116,5,175,31"/>
+<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="5,5,68,31"/>
+<area shape="poly" title=" " alt="" coords="102,21,68,21,68,15,102,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aca70a69018e2b431d71b2df104e0fea5" name="aca70a69018e2b431d71b2df104e0fea5"></a>
@@ -162,6 +190,26 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__itoa_8c_source.html#l00046">46</a> of file <a class="el" href="ft__itoa_8c_source.html">ft_itoa.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (n &lt; 0)</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   52</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38">ft_itoa()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5_icgraph.png" border="0" usemap="#aft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5_icgraph" alt=""/></div>
+<map name="aft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5_icgraph" id="aft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5_icgraph">
+<area shape="rect" title=" " alt="" coords="116,5,223,31"/>
+<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="5,5,68,31"/>
+<area shape="poly" title=" " alt="" coords="102,21,68,21,68,15,102,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a8a6ea3765dfd826eabfc00d36e28ea38" name="a8a6ea3765dfd826eabfc00d36e28ea38"></a>
@@ -179,6 +227,58 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__itoa_8c_source.html#l00054">54</a> of file <a class="el" href="ft__itoa_8c_source.html">ft_itoa.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">char</span>    *p3;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span>     ps;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">char</span>    nb;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    nb = <span class="charliteral">&#39;+&#39;</span>;</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (n == 2147483647)</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(<span class="stringliteral">&quot;2147483647&quot;</span>));</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (n == -2147483648)</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(<span class="stringliteral">&quot;-2147483648&quot;</span>));</div>
+<div class="line"><span class="lineno">   65</span>    ps = <a class="code hl_function" href="ft__itoa_8c.html#a9702575ca62773bb287ca39307f495d1">ft_div</a>(n);</div>
+<div class="line"><span class="lineno">   66</span>    p3 = (<span class="keywordtype">char</span> *)malloc(<a class="code hl_function" href="ft__itoa_8c.html#aca70a69018e2b431d71b2df104e0fea5">ft_isnegative</a>(n) + ps + 1);</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!p3)</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (n &lt; 0)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>        n = -n;</div>
+<div class="line"><span class="lineno">   72</span>        nb = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="ft__itoa_8c.html#a68179435a0495c1e497eafd58de2a6c5">ft_putnbr</a>(n, ps, p3, nb);</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (nb == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><span class="lineno">   76</span>        p3[0] = nb;</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> (p3);</div>
+<div class="line"><span class="lineno">   78</span>}</div>
+<div class="ttc" id="aft__itoa_8c_html_a68179435a0495c1e497eafd58de2a6c5"><div class="ttname"><a href="ft__itoa_8c.html#a68179435a0495c1e497eafd58de2a6c5">ft_putnbr</a></div><div class="ttdeci">static char * ft_putnbr(int n, int pos, char *p3, char nb)</div><div class="ttdef"><b>Definition</b> <a href="ft__itoa_8c_source.html#l00015">ft_itoa.c:15</a></div></div>
+<div class="ttc" id="aft__itoa_8c_html_a9702575ca62773bb287ca39307f495d1"><div class="ttname"><a href="ft__itoa_8c.html#a9702575ca62773bb287ca39307f495d1">ft_div</a></div><div class="ttdeci">static int ft_div(int n)</div><div class="ttdef"><b>Definition</b> <a href="ft__itoa_8c_source.html#l00033">ft_itoa.c:33</a></div></div>
+<div class="ttc" id="aft__itoa_8c_html_aca70a69018e2b431d71b2df104e0fea5"><div class="ttname"><a href="ft__itoa_8c.html#aca70a69018e2b431d71b2df104e0fea5">ft_isnegative</a></div><div class="ttdeci">static int ft_isnegative(int n)</div><div class="ttdef"><b>Definition</b> <a href="ft__itoa_8c_source.html#l00046">ft_itoa.c:46</a></div></div>
+<div class="ttc" id="aft__strdup_8c_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00029">ft_strdup.c:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__itoa_8c.html#a9702575ca62773bb287ca39307f495d1">ft_div()</a>, <a class="el" href="ft__itoa_8c.html#aca70a69018e2b431d71b2df104e0fea5">ft_isnegative()</a>, <a class="el" href="ft__itoa_8c.html#a68179435a0495c1e497eafd58de2a6c5">ft_putnbr()</a>, and <a class="el" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38_cgraph.png" border="0" usemap="#aft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38_cgraph" alt=""/></div>
+<map name="aft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38_cgraph" id="aft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,68,105"/>
+<area shape="rect" href="ft__itoa_8c.html#a9702575ca62773bb287ca39307f495d1" title=" " alt="" coords="140,5,199,31"/>
+<area shape="poly" title=" " alt="" coords="55,78,115,40,126,34,129,38,117,44,58,82"/>
+<area shape="rect" href="ft__itoa_8c.html#aca70a69018e2b431d71b2df104e0fea5" title=" " alt="" coords="116,55,223,80"/>
+<area shape="poly" title=" " alt="" coords="68,84,102,78,103,83,69,89"/>
+<area shape="rect" href="ft__itoa_8c.html#a68179435a0495c1e497eafd58de2a6c5" title=" " alt="" coords="129,104,209,129"/>
+<area shape="poly" title=" " alt="" coords="69,96,116,104,115,110,68,101"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="130,153,209,179"/>
+<area shape="poly" title=" " alt="" coords="59,103,117,138,129,145,127,149,115,143,56,108"/>
+<area shape="rect" href="ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="271,128,349,153"/>
+<area shape="poly" title=" " alt="" coords="208,156,256,148,257,153,209,162"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="273,177,347,203"/>
+<area shape="poly" title=" " alt="" coords="209,170,260,179,259,184,208,175"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -227,6 +327,36 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__itoa_8c_source.html#l00015">15</a> of file <a class="el" href="ft__itoa_8c_source.html">ft_itoa.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    i = pos;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (nb == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><span class="lineno">   21</span>        i++;</div>
+<div class="line"><span class="lineno">   22</span>    p3[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">while</span> (pos &gt; 0)</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        i--;</div>
+<div class="line"><span class="lineno">   26</span>        p3[i] = n % 10 + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">   27</span>        n = n / 10;</div>
+<div class="line"><span class="lineno">   28</span>        pos--;</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> (p3);</div>
+<div class="line"><span class="lineno">   31</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38">ft_itoa()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5_icgraph.png" border="0" usemap="#aft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5_icgraph" alt=""/></div>
+<map name="aft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5_icgraph" id="aft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5_icgraph">
+<area shape="rect" title=" " alt="" coords="116,5,196,31"/>
+<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="5,5,68,31"/>
+<area shape="poly" title=" " alt="" coords="102,21,68,21,68,15,102,15"/>
+</map>
+</div>
 
 </div>
 </div>

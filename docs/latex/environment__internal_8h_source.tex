@@ -1,0 +1,48 @@
+\doxysection{environment\+\_\+internal.\+h}
+\hypertarget{environment__internal_8h_source}{}\label{environment__internal_8h_source}\index{src/environment/environment\_internal.h@{src/environment/environment\_internal.h}}
+\mbox{\hyperlink{environment__internal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00004}00004\ \textcolor{comment}{/*\ \ \ environment\_internal.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/09/30\ 01:52:04\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/30\ 01:52:48\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ ENVIRONMENT\_INTERNAL\_H}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00014}00014\ \textcolor{preprocessor}{\#\ define\ ENVIRONMENT\_INTERNAL\_H}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00016}00016\ \textcolor{preprocessor}{\#\ include\ "{}../../include/environment.h"{}}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00017}00017\ \textcolor{preprocessor}{\#\ include\ "{}../../libft/libft.h"{}}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00018}00018\ \textcolor{preprocessor}{\#\ include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00020}00020\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00021}00021\ \textcolor{comment}{**\ \ Internal\ Environment\ Variable\ Structure}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00022}00022\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00023}00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00032}\mbox{\hyperlink{structs__env__var}{00032}}\ \textcolor{keyword}{struct\ \ \ \ \ \ }\mbox{\hyperlink{structs__env__var}{s\_env\_var}}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00034}\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{00034}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{structs__env__var_ad8af13ad7fe31ef6d7504f3ce4560f72}{var\_name}};}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00035}\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{00035}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}};}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00038}00038\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00039}00039\ \textcolor{comment}{**\ \ Internal\ Helper\ Functions}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00040}00040\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00041}00041\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00055}00055\ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *\mbox{\hyperlink{environment__internal_8h_a07737b43515e692334bfcdfc797f5d5c}{init\_environment\_var}}(\textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{char}\ *value);}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00067}00067\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{environment__internal_8h_a4ca0675f92ac5da65a97751ba7cf8ba5}{destroy\_environment\_var}}(\textcolor{keywordtype}{void}\ *env\_var);}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00080}00080\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \mbox{\hyperlink{environment__internal_8h_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}}(\textcolor{keywordtype}{void}\ *var\_ptr,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{environment__internal_8h_source_l00082}00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,178 @@
+\doxysection{libft/ft\+\_\+putpointer.c File Reference}
+\hypertarget{ft__putpointer_8c}{}\label{ft__putpointer_8c}\index{libft/ft\_putpointer.c@{libft/ft\_putpointer.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+putpointer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putpointer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209}{ft\+\_\+pos}} (unsigned long pf)
+\item 
+static void \mbox{\hyperlink{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e}{ft\+\_\+puthex}} (unsigned long pf, char \texorpdfstring{$\ast$}{*}p3, int i)
+\item 
+int \mbox{\hyperlink{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43}{ft\+\_\+putpointer}} (void \texorpdfstring{$\ast$}{*}pf)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209}\label{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209} 
+\index{ft\_putpointer.c@{ft\_putpointer.c}!ft\_pos@{ft\_pos}}
+\index{ft\_pos@{ft\_pos}!ft\_putpointer.c@{ft\_putpointer.c}}
+\doxysubsubsection{\texorpdfstring{ft\_pos()}{ft\_pos()}}
+{\footnotesize\ttfamily static int ft\+\_\+pos (\begin{DoxyParamCaption}\item[{unsigned long}]{pf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putpointer_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__putpointer_8c_source}{ft\+\_\+putpointer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (pf\ >\ 0)}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ pf\ =\ pf\ /\ 16;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43}{ft\+\_\+putpointer()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e}\label{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e} 
+\index{ft\_putpointer.c@{ft\_putpointer.c}!ft\_puthex@{ft\_puthex}}
+\index{ft\_puthex@{ft\_puthex}!ft\_putpointer.c@{ft\_putpointer.c}}
+\doxysubsubsection{\texorpdfstring{ft\_puthex()}{ft\_puthex()}}
+{\footnotesize\ttfamily static void ft\+\_\+puthex (\begin{DoxyParamCaption}\item[{unsigned long}]{pf,  }\item[{char \texorpdfstring{$\ast$}{*}}]{p3,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putpointer_8c_source_l00028}{28}} of file \mbox{\hyperlink{ft__putpointer_8c_source}{ft\+\_\+putpointer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ p3[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00031\ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{while}\ (pf\ >=\ 16)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pf\ \%\ 16\ <=\ 9)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'a'}\ -\/\ 10;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ pf\ =\ pf\ /\ 16;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (pf\ \%\ 16\ <=\ 9)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (pf\ \%\ 16\ >=\ 10)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ p3[i]\ =\ pf\ \%\ 16\ +\ \textcolor{charliteral}{'a'}\ -\/\ 10;}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\_putstr}}(p3);}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\+\_\+putstr()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43}{ft\+\_\+putpointer()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43}\label{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43} 
+\index{ft\_putpointer.c@{ft\_putpointer.c}!ft\_putpointer@{ft\_putpointer}}
+\index{ft\_putpointer@{ft\_putpointer}!ft\_putpointer.c@{ft\_putpointer.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putpointer()}{ft\_putpointer()}}
+{\footnotesize\ttfamily int ft\+\_\+putpointer (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putpointer_8c_source_l00051}{51}} of file \mbox{\hyperlink{ft__putpointer_8c_source}{ft\+\_\+putpointer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \ \ p2;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ *p3;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!pf)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\_putstr}}(\textcolor{stringliteral}{"{}(nil)"{}}));}
+\DoxyCodeLine{00059\ \ \ \ \ p2\ =\ (\textcolor{keywordtype}{unsigned}\ long)pf;}
+\DoxyCodeLine{00060\ \ \ \ \ i\ =\ \mbox{\hyperlink{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209}{ft\_pos}}(p2);}
+\DoxyCodeLine{00061\ \ \ \ \ p3\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\mbox{\hyperlink{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209}{ft\_pos}}(p2)\ +\ 3);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p3)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ free(p3);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ p3[0]\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00068\ \ \ \ \ p3[1]\ =\ \textcolor{charliteral}{'x'};}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e}{ft\_puthex}}(p2,\ p3,\ i\ +\ 2);}
+\DoxyCodeLine{00070\ \ \ \ \ free(p3);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ (i\ +\ 2);}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putpointer_8c_a2dbbc8e73b3eed1c9afc77c20e2dc209}{ft\+\_\+pos()}}, \mbox{\hyperlink{ft__putpointer_8c_a38ebe4d83cb2f2b343d5077b3715d58e}{ft\+\_\+puthex()}}, and \mbox{\hyperlink{ft__putstr_8c_ae07c9c3acc8313cfbea5cf3092ffe6a4}{ft\+\_\+putstr()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__selector_8c_a6bca906941b73aee430168c03090a88d}{ft\+\_\+selector()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putpointer_8c_a099c80981db91ceb30f2ba3f414dfe43_icgraph}
+\end{center}
+\end{figure}

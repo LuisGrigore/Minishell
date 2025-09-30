@@ -1,0 +1,45 @@
+\doxysection{libft/ft\+\_\+bzero.c File Reference}
+\hypertarget{ft__bzero_8c}{}\label{ft__bzero_8c}\index{libft/ft\_bzero.c@{libft/ft\_bzero.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+bzero.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__bzero_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__bzero_8c_a5937ab0d08e31d0e3e4a16ec71e293a1}{ft\+\_\+bzero}} (void \texorpdfstring{$\ast$}{*}s, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__bzero_8c_a5937ab0d08e31d0e3e4a16ec71e293a1}\label{ft__bzero_8c_a5937ab0d08e31d0e3e4a16ec71e293a1} 
+\index{ft\_bzero.c@{ft\_bzero.c}!ft\_bzero@{ft\_bzero}}
+\index{ft\_bzero@{ft\_bzero}!ft\_bzero.c@{ft\_bzero.c}}
+\doxysubsubsection{\texorpdfstring{ft\_bzero()}{ft\_bzero()}}
+{\footnotesize\ttfamily void ft\+\_\+bzero (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{s,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__bzero_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__bzero_8c_source}{ft\+\_\+bzero.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *dest;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ dest\ =\ s;}
+\DoxyCodeLine{00021\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ dest[i]\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

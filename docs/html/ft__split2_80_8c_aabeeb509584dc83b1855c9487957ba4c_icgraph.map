@@ -1,0 +1,18 @@
+<map id="ft_survivor" name="ft_survivor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="991,42,1081,67"/>
+<area shape="rect" id="Node000002" href="$ft__split2_80_8c.html#adc745ae9ae5cefd55d21a576645475b0" title=" " alt="" coords="879,42,943,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="977,57,943,57,943,52,977,52"/>
+<area shape="rect" id="Node000003" href="$ft__split2_80_8c.html#af54f55774b34b2395f5ca1da01d9f015" title=" " alt="" coords="756,42,831,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="865,57,831,57,831,52,865,52"/>
+<area shape="rect" id="Node000004" href="$command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="585,42,708,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="742,57,708,57,708,52,742,52"/>
+<area shape="rect" id="Node000005" href="$pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="118,5,305,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="571,52,305,34,305,29,572,47"/>
+<area shape="rect" id="Node000007" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,67,537,93"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="572,67,538,71,537,66,571,62"/>
+<area shape="rect" id="Node000006" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,42,60,67"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="105,46,61,53,60,48,104,40"/>
+<area shape="rect" id="Node000008" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,70,315,95"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="349,84,315,84,315,79,349,78"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="116,70,60,61,61,56,117,65"/>
+</map>

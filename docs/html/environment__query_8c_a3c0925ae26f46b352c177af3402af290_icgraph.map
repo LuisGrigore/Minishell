@@ -1,0 +1,21 @@
+<map id="env_get" name="env_get">
+<area shape="rect" id="Node000001" title="Get the value of an environment variable by name." alt="" coords="752,78,827,103"/>
+<area shape="rect" id="Node000002" href="$command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="603,29,698,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="739,76,686,57,688,52,741,71"/>
+<area shape="rect" id="Node000007" href="$command__functs_8c.html#a0f6eaa743e63abad6ac6be049d6179c6" title=" " alt="" coords="597,78,704,103"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="738,93,704,93,704,88,738,88"/>
+<area shape="rect" id="Node000008" href="$minishell_8c.html#a8139962a2ceae2621213f8e6719565cf" title=" " alt="" coords="168,137,255,162"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="740,110,705,119,577,137,450,147,255,152,255,147,450,141,576,131,703,113,738,105"/>
+<area shape="rect" id="Node000003" href="$pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="363,5,549,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="589,39,549,36,550,30,590,34"/>
+<area shape="rect" id="Node000005" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="369,70,543,95"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="590,57,517,73,516,67,589,52"/>
+<area shape="rect" id="Node000004" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,63,60,89"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="349,29,233,36,109,53,61,68,59,63,107,48,232,30,349,23"/>
+<area shape="rect" id="Node000006" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,63,315,89"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="355,83,315,81,315,76,355,77"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="94,79,60,79,60,73,94,73"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="583,91,543,89,543,84,583,85"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="166,134,59,89,61,84,168,129"/>
+<area shape="poly" id="edge11_Node000008_Node000008" title=" " alt="" coords="243,126,234,118,211,115,192,117,183,122,181,128,186,135,182,138,175,128,179,119,191,112,211,110,236,114,246,122"/>
+</map>

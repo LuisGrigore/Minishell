@@ -1,0 +1,53 @@
+\doxysection{libft/ft\+\_\+putendl\+\_\+fd.c File Reference}
+\hypertarget{ft__putendl__fd_8c}{}\label{ft__putendl__fd_8c}\index{libft/ft\_putendl\_fd.c@{libft/ft\_putendl\_fd.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+putendl\+\_\+fd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putendl__fd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__putendl__fd_8c_aeb112152acfc553d58d61a5df38afcde}{ft\+\_\+putendl\+\_\+fd}} (char \texorpdfstring{$\ast$}{*}s, int fd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__putendl__fd_8c_aeb112152acfc553d58d61a5df38afcde}\label{ft__putendl__fd_8c_aeb112152acfc553d58d61a5df38afcde} 
+\index{ft\_putendl\_fd.c@{ft\_putendl\_fd.c}!ft\_putendl\_fd@{ft\_putendl\_fd}}
+\index{ft\_putendl\_fd@{ft\_putendl\_fd}!ft\_putendl\_fd.c@{ft\_putendl\_fd.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putendl\_fd()}{ft\_putendl\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putendl\+\_\+fd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putendl__fd_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__putendl__fd_8c_source}{ft\+\_\+putendl\+\_\+fd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{while}\ (*s\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putchar__fd_8c_a8ee15a511946c1397bd2bdea4aed6aee}{ft\_putchar\_fd}}(*s,\ fd);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ write(fd,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putchar__fd_8c_a8ee15a511946c1397bd2bdea4aed6aee}{ft\+\_\+putchar\+\_\+fd()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{ft__putendl__fd_8c_aeb112152acfc553d58d61a5df38afcde_cgraph}
+\end{center}
+\end{figure}

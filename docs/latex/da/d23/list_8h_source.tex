@@ -1,0 +1,127 @@
+\doxysection{list.\+h}
+\hypertarget{list_8h_source}{}\label{list_8h_source}\index{list/list.h@{list/list.h}}
+\mbox{\hyperlink{list_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ \ \ list.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/09/29\ 17:30:11\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/29\ 23:56:21\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ LIST\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ define\ LIST\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#\ include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ include\ <stdlib.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ Data\ Structures}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{list_8h_d9/d54/structs__node}{s\_node}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_af0201fc8bf11256ef9450c8017f22314}{value}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{list_8h_d9/d54/structs__node}{s\_node}}\ *\mbox{\hyperlink{list_8h_ac2237e21194d385a2f3d6bd5fdca8045}{next}};}
+\DoxyCodeLine{00027\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{s\_gen\_list}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{list_8h_d9/d54/structs__node}{t\_node}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a9d3e4dedcc05679fcd869efb7c26d500}{head}};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{list_8h_d9/d54/structs__node}{t\_node}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a0ba83f9d5ef3faa95b9ef2da58c5ae0a}{tail}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a161ce598b8ef7b173793b9b6699ef42f}{size}};}
+\DoxyCodeLine{00034\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\_gen\_list}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{list_8h_dc/d64/structs__iter}{s\_iter}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{list_8h_d9/d54/structs__node}{t\_node}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a7b908147fd2cd904c0ac931eec2ec8b8}{current}};}
+\DoxyCodeLine{00039\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\_iter}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00042\ \textcolor{comment}{**\ \ Function\ Pointer\ Typedefs}}
+\DoxyCodeLine{00043\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00044\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{char}\ *(*t\_element\_to\_string)(\textcolor{keywordtype}{void}\ *element);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\_value\_destroyer}})(\textcolor{keywordtype}{void}\ *element);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ bool\ (*\mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}})(\textcolor{keywordtype}{void}\ *element);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ bool\ (*\mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}})(\textcolor{keywordtype}{void}\ *element,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{list_8h_a884bc438360ab582b2c03305e14c196d}{t\_apply\_func}})(\textcolor{keywordtype}{void}\ *element);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ *(*t\_string\_to\_element)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00094\ \textcolor{comment}{**\ \ Initialization\ and\ Destruction}}
+\DoxyCodeLine{00095\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00096\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a2ab31c1a882bda317542865ca981aa91}{init\_list}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a0c64773be1bb7fb7762b58fc3b45232c}{destroy\_gen\_list}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\_value\_destroyer}}\ value\_destroyer);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00114\ \textcolor{comment}{**\ \ Insertion\ and\ Removal}}
+\DoxyCodeLine{00115\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00116\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \textcolor{keywordtype}{void}\ *value);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a78751fefb5026bcdb58b19c746c959bc}{push\_front}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \textcolor{keywordtype}{void}\ *value);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a727ab27543f4152a5e7e3ac9454e0fb8}{pop\_front}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_ad0f582149f5f1afddc9fd77cd5fda23d}{remove\_if}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate,\ \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\_value\_destroyer}}\ value\_destroyer);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a0d5ae98b13ae636228df9e80b0e0c7bc}{remove\_if\_ctx}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context,\ \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\_value\_destroyer}}\ value\_destroyer);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00162\ \textcolor{comment}{**\ \ Traversal\ and\ Search}}
+\DoxyCodeLine{00163\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00164\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a0d174e81f82313dcd45df92c4b615a37}{traverse}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_a884bc438360ab582b2c03305e14c196d}{t\_apply\_func}}\ func);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00181\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a8c3f7372fe82ae7ba247e4d1c15b9565}{find\_in\_list}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00191\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_abb086ea2a6228785be66cd22587c359a}{find\_in\_list\_ctx}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a3e790ad74440ff15dadd1a9aae28b1ab}{contains\_in\_list}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\_predicate}}\ predicate);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_accccb0bd8dea6e7d3b94608d18989d99}{contains\_in\_list\_ctx}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\_predicate\_ctx}}\ predicate,\ \textcolor{keywordtype}{void}\ *context);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00213\ \textcolor{comment}{**\ \ Iteration}}
+\DoxyCodeLine{00214\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00215\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00223\ \mbox{\hyperlink{list_8h_dc/d64/structs__iter}{t\_iter}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8h_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\_start}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\_next}}(\mbox{\hyperlink{list_8h_dc/d64/structs__iter}{t\_iter}}\ *it);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00234\ \textcolor{comment}{**\ \ Serialization}}
+\DoxyCodeLine{00235\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00236\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00245\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{list_8h_aeaa86bb6994ea250112f8b4a1a2c1f77}{serialize\_to\_string}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\_element\_to\_string}}\ element\_to\_string);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00254\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **\mbox{\hyperlink{list_8h_aa4522f235ef61b5bceac4de3cc34fde3}{serialize\_to\_string\_array}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *list,\ \mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\_element\_to\_string}}\ element\_to\_string);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00257\ \textcolor{comment}{**\ \ Deserialization}}
+\DoxyCodeLine{00258\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00259\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00267\ \mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *\mbox{\hyperlink{list_8h_af47e7209b8cddc03fbf126c886199709}{deserialize\_from\_string\_array}}(\textcolor{keywordtype}{char}\ **array,\ \mbox{\hyperlink{list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\_string\_to\_element}}\ string\_to\_element);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: include/parser.h File Reference</title>
+<title>Kyle&#39;s Doxygen Test: include/parser.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -129,6 +130,283 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00034">34</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!tokens)</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a> *commands = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!commands)</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a> *current_args = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_struct" href="structs__gen__list.html">t_gen_list</a> *current_redirects = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_struct" href="structs__iter.html">t_iter</a> it = <a class="code hl_function" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a>(tokens);</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *tok;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">while</span> ((tok = (<a class="code hl_struct" href="structs__token.html">t_token</a> *)<a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;it)) != NULL)</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a> || tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1">TOKEN_CMD</a>)</div>
+<div class="line"><span class="lineno">   52</span>        {</div>
+<div class="line"><span class="lineno">   53</span>            <span class="comment">// Copiar string y añadir a args usando ft_strlcpy</span></div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordtype">size_t</span> len = <a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(tok-&gt;<a class="code hl_variable" href="structs__token.html#a21b454c179e1e31383371d09385b9c59">value</a>);</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordtype">char</span> *arg_copy = malloc(len + 1);</div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">if</span> (!arg_copy)</div>
+<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">goto</span> error;</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_function" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy</a>(arg_copy, tok-&gt;<a class="code hl_variable" href="structs__token.html#a21b454c179e1e31383371d09385b9c59">value</a>, len + 1);</div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_function" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a>(current_args, arg_copy);</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910">TOKEN_PIPE</a>)</div>
+<div class="line"><span class="lineno">   62</span>        {</div>
+<div class="line"><span class="lineno">   63</span>            <span class="comment">// Asignar función antes de crear el comando</span></div>
+<div class="line"><span class="lineno">   64</span>            <a class="code hl_typedef" href="command_8h.html#ae18307f65fae1da5035e40073801a9a0">t_command_funct</a> funct = <a class="code hl_function" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784">get_command_function</a>(current_args);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>            <a class="code hl_struct" href="structs__command.html">t_command</a> *cmd = <a class="code hl_function" href="command_8h.html#a980b6e4466bc0bed37cb6352f143ab96">init_command</a>(current_args, funct, current_redirects);</div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">if</span> (!cmd)</div>
+<div class="line"><span class="lineno">   68</span>                <span class="keywordflow">goto</span> error;</div>
+<div class="line"><span class="lineno">   69</span>            <a class="code hl_function" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a>(commands, cmd);</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>            <span class="comment">// Inicializar listas para siguiente comando</span></div>
+<div class="line"><span class="lineno">   72</span>            current_args = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   73</span>            current_redirects = <a class="code hl_function" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a>();</div>
+<div class="line"><span class="lineno">   74</span>        }</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a> ||</div>
+<div class="line"><span class="lineno">   76</span>                 tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a> ||</div>
+<div class="line"><span class="lineno">   77</span>                 tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a> ||</div>
+<div class="line"><span class="lineno">   78</span>                 tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a>)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            <span class="comment">// El siguiente token debe ser el archivo</span></div>
+<div class="line"><span class="lineno">   81</span>            <a class="code hl_struct" href="structs__token.html">t_token</a> *file_tok = (<a class="code hl_struct" href="structs__token.html">t_token</a> *)<a class="code hl_function" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a>(&amp;it);</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (!file_tok || file_tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> != <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a>)</div>
+<div class="line"><span class="lineno">   83</span>                <span class="keywordflow">goto</span> error;</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>            <a class="code hl_typedef" href="redirect__asignation_8h.html#a2ec8359692a4a397f0bd1e8b2d098f47">t_redirect_type</a> r_type = <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>;</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a>)</div>
+<div class="line"><span class="lineno">   87</span>                r_type = <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a>;</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a>)</div>
+<div class="line"><span class="lineno">   89</span>                r_type = <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a>;</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a>)</div>
+<div class="line"><span class="lineno">   91</span>                r_type = <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a>;</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tok-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a>)</div>
+<div class="line"><span class="lineno">   93</span>                r_type = <a class="code hl_enumvalue" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a>;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_struct" href="structs__redirect.html">t_redirect</a> *redir = <a class="code hl_function" href="redirect__asignation_8h.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect</a>(file_tok-&gt;<a class="code hl_variable" href="structs__token.html#a21b454c179e1e31383371d09385b9c59">value</a>, r_type);</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> (!redir)</div>
+<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">goto</span> error;</div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_function" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a>(current_redirects, redir);</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="comment">// Guardar el último comando si hay args o redirs</span></div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (current_args-&gt;<a class="code hl_variable" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">size</a> &gt; 0 || current_redirects-&gt;<a class="code hl_variable" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">size</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  104</span>    {</div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_typedef" href="command_8h.html#ae18307f65fae1da5035e40073801a9a0">t_command_funct</a> funct = <a class="code hl_function" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784">get_command_function</a>(current_args);</div>
+<div class="line"><span class="lineno">  106</span>        <a class="code hl_struct" href="structs__command.html">t_command</a> *cmd = <a class="code hl_function" href="command_8h.html#a980b6e4466bc0bed37cb6352f143ab96">init_command</a>(current_args, funct, current_redirects);</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (!cmd)</div>
+<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">goto</span> error;</div>
+<div class="line"><span class="lineno">  109</span>        <a class="code hl_function" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a>(commands, cmd);</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  112</span>    {</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(current_args, free);</div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(current_redirects, (<span class="keywordtype">void</span> (*)(<span class="keywordtype">void</span> *))<a class="code hl_function" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command</a>);</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> commands;</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>error:</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(current_args, free);</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(current_redirects, (<span class="keywordtype">void</span> (*)(<span class="keywordtype">void</span> *))<a class="code hl_function" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command</a>);</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(commands, (<span class="keywordtype">void</span> (*)(<span class="keywordtype">void</span> *))<a class="code hl_function" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command</a>);</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  124</span>}</div>
+<div class="ttc" id="acommand_8h_html_a950465f331fec212ad0507c3e41a0137"><div class="ttname"><a href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command</a></div><div class="ttdeci">void destroy_command(void *command_to_delete)</div><div class="ttdef"><b>Definition</b> <a href="command_8c_source.html#l00021">command.c:21</a></div></div>
+<div class="ttc" id="acommand_8h_html_a980b6e4466bc0bed37cb6352f143ab96"><div class="ttname"><a href="command_8h.html#a980b6e4466bc0bed37cb6352f143ab96">init_command</a></div><div class="ttdeci">t_command * init_command(t_gen_list *args, t_command_funct funct, t_gen_list *redirects)</div><div class="ttdef"><b>Definition</b> <a href="command_8c_source.html#l00009">command.c:9</a></div></div>
+<div class="ttc" id="acommand_8h_html_ae18307f65fae1da5035e40073801a9a0"><div class="ttname"><a href="command_8h.html#ae18307f65fae1da5035e40073801a9a0">t_command_funct</a></div><div class="ttdeci">void(* t_command_funct)(t_command *, t_gen_list *)</div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00024">command.h:24</a></div></div>
+<div class="ttc" id="aft__strlcpy_8c_html_aa053827b3a2ea3d0118783d6fb59d178"><div class="ttname"><a href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy</a></div><div class="ttdeci">size_t ft_strlcpy(char *dst, const char *src, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlcpy_8c_source.html#l00015">ft_strlcpy.c:15</a></div></div>
+<div class="ttc" id="aft__strlen_8c_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="alist_8c_html_a0f8c34a8af8a33c8ec69d034952a7a4e"><div class="ttname"><a href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start</a></div><div class="ttdeci">t_iter iter_start(t_gen_list *list)</div><div class="ttdoc">Initialize an iterator at the start of the list.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00209">list.c:209</a></div></div>
+<div class="ttc" id="alist_8c_html_a2ab31c1a882bda317542865ca981aa91"><div class="ttname"><a href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list</a></div><div class="ttdeci">t_gen_list * init_list(void)</div><div class="ttdoc">Initialize an empty list.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00017">list.c:17</a></div></div>
+<div class="ttc" id="alist_8c_html_a8b49fd31ce730eadfb8c1192f30fe20b"><div class="ttname"><a href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next</a></div><div class="ttdeci">void * iter_next(t_iter *it)</div><div class="ttdoc">Get the next value from the list using the iterator and advance it.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00217">list.c:217</a></div></div>
+<div class="ttc" id="alist_8c_html_aaaeda7db5c6b1819a079f05d83c3ce38"><div class="ttname"><a href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a></div><div class="ttdeci">void destroy_gen_list(t_gen_list *list, void(value_destroyer)(void *))</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00088">list.c:88</a></div></div>
+<div class="ttc" id="alist_8c_html_ad70cc8287d69eb2327b71b28f7d52b6a"><div class="ttname"><a href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end</a></div><div class="ttdeci">void push_end(t_gen_list *list, void *value)</div><div class="ttdoc">Insert a value at the end of the list (O(1)).</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00030">list.c:30</a></div></div>
+<div class="ttc" id="aparser_8c_html_aa35fa6305cbaf308a7431d95127a0784"><div class="ttname"><a href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784">get_command_function</a></div><div class="ttdeci">static t_command_funct get_command_function(t_gen_list *args)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00008">parser.c:8</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a18e2207c2ccc7fe3089b5f522400281c"><div class="ttname"><a href="redirect__asignation_8h.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect</a></div><div class="ttdeci">t_redirect * init_redirect(char *file, t_redirect_type redirect_type)</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8c_source.html#l00084">redirect_asignation.c:84</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a2ec8359692a4a397f0bd1e8b2d098f47"><div class="ttname"><a href="redirect__asignation_8h.html#a2ec8359692a4a397f0bd1e8b2d098f47">t_redirect_type</a></div><div class="ttdeci">enum e_redirect_type t_redirect_type</div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a></div><div class="ttdeci">@ LEFT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00007">redirect_asignation.h:7</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a></div><div class="ttdeci">@ DOUBLE_LEFT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00009">redirect_asignation.h:9</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a></div><div class="ttdeci">@ DOUBLE_RIGHT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00010">redirect_asignation.h:10</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00011">redirect_asignation.h:11</a></div></div>
+<div class="ttc" id="aredirect__asignation_8h_html_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131"><div class="ttname"><a href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a></div><div class="ttdeci">@ RIGHT_REDIRECT</div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00008">redirect_asignation.h:8</a></div></div>
+<div class="ttc" id="astructs__command_html"><div class="ttname"><a href="structs__command.html">s_command</a></div><div class="ttdef"><b>Definition</b> <a href="command_8h_source.html#l00026">command.h:27</a></div></div>
+<div class="ttc" id="astructs__gen__list_html"><div class="ttname"><a href="structs__gen__list.html">s_gen_list</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00029">list.h:30</a></div></div>
+<div class="ttc" id="astructs__gen__list_html_a161ce598b8ef7b173793b9b6699ef42f"><div class="ttname"><a href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00033">list.h:33</a></div></div>
+<div class="ttc" id="astructs__iter_html"><div class="ttname"><a href="structs__iter.html">s_iter</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00036">list.h:37</a></div></div>
+<div class="ttc" id="astructs__redirect_html"><div class="ttname"><a href="structs__redirect.html">s_redirect</a></div><div class="ttdef"><b>Definition</b> <a href="redirect__asignation_8h_source.html#l00015">redirect_asignation.h:16</a></div></div>
+<div class="ttc" id="astructs__token_html"><div class="ttname"><a href="structs__token.html">s_token</a></div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00029">tokenizer.h:30</a></div></div>
+<div class="ttc" id="astructs__token_html_a21b454c179e1e31383371d09385b9c59"><div class="ttname"><a href="structs__token.html#a21b454c179e1e31383371d09385b9c59">s_token::value</a></div><div class="ttdeci">char * value</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00032">tokenizer.h:32</a></div></div>
+<div class="ttc" id="astructs__token_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00031">tokenizer.h:31</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1">TOKEN_CMD</a></div><div class="ttdeci">@ TOKEN_CMD</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00020">tokenizer.h:20</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a></div><div class="ttdeci">@ TOKEN_REDIR_OUT</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00024">tokenizer.h:24</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a></div><div class="ttdeci">@ TOKEN_ARG</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00021">tokenizer.h:21</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a></div><div class="ttdeci">@ TOKEN_HEREDOC</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00027">tokenizer.h:26</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910">TOKEN_PIPE</a></div><div class="ttdeci">@ TOKEN_PIPE</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00022">tokenizer.h:22</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a></div><div class="ttdeci">@ TOKEN_REDIR_IN</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00023">tokenizer.h:23</a></div></div>
+<div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4"><div class="ttname"><a href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a></div><div class="ttdeci">@ TOKEN_REDIR_APPEND</div><div class="ttdef"><b>Definition</b> <a href="tokenizer_8h_source.html#l00025">tokenizer.h:25</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="command_8h.html#a950465f331fec212ad0507c3e41a0137">destroy_command()</a>, <a class="el" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list()</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c">DOUBLE_LEFT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97">DOUBLE_RIGHT_REDIRECT</a>, <a class="el" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178">ft_strlcpy()</a>, <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>, <a class="el" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784">get_command_function()</a>, <a class="el" href="command_8h.html#a980b6e4466bc0bed37cb6352f143ab96">init_command()</a>, <a class="el" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91">init_list()</a>, <a class="el" href="redirect__asignation_8h.html#a18e2207c2ccc7fe3089b5f522400281c">init_redirect()</a>, <a class="el" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b">iter_next()</a>, <a class="el" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e">iter_start()</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f">LEFT_REDIRECT</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>, <a class="el" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a">push_end()</a>, <a class="el" href="redirect__asignation_8h.html#a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131">RIGHT_REDIRECT</a>, <a class="el" href="structs__gen__list.html#a161ce598b8ef7b173793b9b6699ef42f">s_gen_list::size</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b">TOKEN_ARG</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1">TOKEN_CMD</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4">TOKEN_HEREDOC</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910">TOKEN_PIPE</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4">TOKEN_REDIR_APPEND</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337">TOKEN_REDIR_IN</a>, <a class="el" href="tokenizer_8h.html#a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5">TOKEN_REDIR_OUT</a>, <a class="el" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a>, and <a class="el" href="structs__token.html#a21b454c179e1e31383371d09385b9c59">s_token::value</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="parser_8h_ae411b47cf3a6fe75994d31c5574c60ce_cgraph.png" border="0" usemap="#aparser_8h_ae411b47cf3a6fe75994d31c5574c60ce_cgraph" alt=""/></div>
+<map name="aparser_8h_ae411b47cf3a6fe75994d31c5574c60ce_cgraph" id="aparser_8h_ae411b47cf3a6fe75994d31c5574c60ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,1129,212,1155"/>
+<area shape="rect" href="command_8c.html#a950465f331fec212ad0507c3e41a0137" title=" " alt="" coords="276,65,419,91"/>
+<area shape="poly" title=" " alt="" coords="110,1129,338,104,343,105,115,1130"/>
+<area shape="rect" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="483,15,612,40"/>
+<area shape="poly" title=" " alt="" coords="108,1129,123,923,155,577,176,397,200,237,228,116,242,75,258,51,282,32,309,19,338,10,367,5,427,4,481,10,480,15,427,9,368,10,339,15,311,24,285,37,262,55,247,78,233,118,206,238,181,398,160,577,128,923,113,1130"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="506,1281,589,1307"/>
+<area shape="poly" title=" " alt="" coords="136,1152,192,1180,261,1209,385,1249,493,1279,492,1284,383,1254,259,1214,190,1185,133,1157"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="1211,1004,1285,1029"/>
+<area shape="poly" title=" " alt="" coords="156,1152,256,1178,395,1207,554,1231,637,1238,718,1241,922,1241,966,1230,1041,1204,1114,1177,1153,1159,1180,1131,1203,1100,1234,1041,1239,1043,1208,1103,1184,1135,1156,1163,1116,1182,1043,1209,968,1235,923,1246,718,1246,637,1243,554,1236,394,1212,255,1183,154,1157"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="260,684,435,709"/>
+<area shape="poly" title=" " alt="" coords="114,1128,330,720,335,723,119,1130"/>
+<area shape="rect" href="list_8c.html#a8b49fd31ce730eadfb8c1192f30fe20b" title="Get the next value from the list using the iterator and advance it." alt="" coords="679,937,759,963"/>
+<area shape="poly" title=" " alt="" coords="146,1127,259,1089,666,963,667,968,261,1094,148,1132"/>
+<area shape="rect" href="list_8c.html#a0f8c34a8af8a33c8ec69d034952a7a4e" title="Initialize an iterator at the start of the list." alt="" coords="679,1073,760,1099"/>
+<area shape="poly" title=" " alt="" coords="176,1127,260,1114,485,1094,664,1085,665,1091,485,1100,260,1119,177,1132"/>
+<area shape="rect" href="command_8c.html#a980b6e4466bc0bed37cb6352f143ab96" title=" " alt="" coords="290,1129,405,1155"/>
+<area shape="poly" title=" " alt="" coords="212,1139,276,1139,276,1145,212,1145"/>
+<area shape="rect" href="list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="312,1281,383,1307"/>
+<area shape="poly" title=" " alt="" coords="125,1153,182,1204,220,1233,261,1260,300,1277,298,1282,259,1264,217,1238,178,1208,121,1157"/>
+<area shape="rect" href="redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c" title=" " alt="" coords="297,1331,397,1356"/>
+<area shape="poly" title=" " alt="" coords="120,1153,140,1186,172,1230,213,1276,261,1316,285,1327,283,1332,259,1320,209,1280,168,1234,136,1189,115,1156"/>
+<area shape="rect" href="list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="305,1380,389,1405"/>
+<area shape="poly" title=" " alt="" coords="117,1154,135,1196,165,1253,208,1314,233,1342,261,1367,293,1382,291,1386,259,1371,229,1346,203,1318,161,1256,130,1198,112,1156"/>
+<area shape="poly" title=" " alt="" coords="398,63,483,41,484,46,399,68"/>
+<area shape="rect" href="redirect__asignation_8c.html#abd88dda569ce623bd360a0f45a6f5e61" title=" " alt="" coords="483,64,611,89"/>
+<area shape="poly" title=" " alt="" coords="419,75,470,75,470,80,419,80"/>
+<area shape="poly" title=" " alt="" coords="589,1295,716,1302,883,1305,968,1302,1045,1294,1109,1280,1134,1271,1153,1260,1177,1238,1196,1212,1211,1182,1223,1152,1237,1091,1243,1043,1248,1043,1243,1092,1228,1153,1216,1185,1201,1214,1181,1242,1156,1264,1136,1276,1110,1285,1046,1299,968,1307,883,1311,716,1308,589,1300"/>
+<area shape="poly" title=" " alt="" coords="354,709,383,817,412,896,450,979,499,1059,528,1095,560,1126,595,1153,633,1173,674,1186,718,1190,923,1190,969,1186,1015,1173,1059,1155,1101,1132,1172,1082,1222,1038,1226,1042,1175,1086,1103,1136,1062,1159,1017,1178,970,1191,923,1195,718,1195,673,1191,631,1178,592,1157,557,1130,524,1098,495,1062,446,981,407,898,378,819,349,710"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="497,407,597,432"/>
+<area shape="poly" title=" " alt="" coords="356,682,526,442,531,445,360,685"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="1064,377,1155,403"/>
+<area shape="poly" title=" " alt="" coords="347,683,357,621,379,525,396,471,419,417,447,364,481,316,521,275,559,249,603,232,659,214,761,179,805,164,847,154,888,151,929,156,972,172,1018,201,1035,219,1044,238,1048,258,1048,278,1049,321,1054,343,1066,365,1061,368,1049,345,1044,322,1043,278,1043,258,1039,240,1031,222,1014,205,969,177,928,161,888,156,848,159,807,169,763,184,661,219,605,237,562,254,524,279,485,320,451,367,424,419,401,473,384,526,362,622,353,684"/>
+<area shape="rect" href="command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="500,708,595,733"/>
+<area shape="poly" title=" " alt="" coords="436,705,486,711,486,716,435,710"/>
+<area shape="rect" href="command__functs_8c.html#a0fad0803ff59cff11ab2eb8de7eac854" title=" " alt="" coords="866,115,977,140"/>
+<area shape="poly" title=" " alt="" coords="347,684,359,580,385,420,403,336,425,260,451,198,465,175,481,157,524,128,573,109,624,97,676,92,727,92,777,96,860,109,859,114,776,101,727,97,676,97,625,102,574,114,527,133,484,161,469,178,455,201,430,262,408,338,390,421,364,581,353,684"/>
+<area shape="rect" href="command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="495,331,599,356"/>
+<area shape="poly" title=" " alt="" coords="350,683,364,632,391,558,430,473,454,431,481,392,512,362,516,366,485,396,458,434,435,476,396,560,369,634,355,684"/>
+<area shape="rect" href="command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="486,757,609,783"/>
+<area shape="poly" title=" " alt="" coords="384,707,500,750,498,755,382,712"/>
+<area shape="rect" href="command__functs_8c.html#a0f6eaa743e63abad6ac6be049d6179c6" title=" " alt="" coords="494,659,601,684"/>
+<area shape="poly" title=" " alt="" coords="435,683,480,677,480,683,436,688"/>
+<area shape="rect" href="command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="489,857,605,883"/>
+<area shape="poly" title=" " alt="" coords="365,708,523,847,520,851,362,712"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="665,229,773,255"/>
+<area shape="poly" title=" " alt="" coords="567,404,589,387,610,366,625,341,632,319,641,296,658,272,673,260,677,264,662,276,645,299,637,321,630,343,614,369,592,391,570,409"/>
+<area shape="rect" href="list_8c.html#aa4522f235ef61b5bceac4de3cc34fde3" title="Convert a generic list into an array of strings." alt="" coords="851,266,992,306"/>
+<area shape="poly" title=" " alt="" coords="571,404,659,364,750,332,836,306,838,311,752,337,661,369,574,409"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="660,432,779,457"/>
+<area shape="poly" title=" " alt="" coords="598,424,646,431,646,437,597,429"/>
+<area shape="rect" href="ft__dbpt__free_8c.html#a340e84d6dbea2a3c241e7cfb2a4e7ff4" title=" " alt="" coords="845,331,997,356"/>
+<area shape="poly" title=" " alt="" coords="597,407,844,356,845,361,598,412"/>
+<area shape="rect" href="command__functs_8c.html#a8e097313a91f3debcf94b440191dbe1d" title=" " alt="" coords="667,583,772,608"/>
+<area shape="poly" title=" " alt="" coords="563,431,698,571,694,574,559,434"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#abe05c26f7960699d5e039ecc78182f89" title=" " alt="" coords="852,216,991,241"/>
+<area shape="poly" title=" " alt="" coords="773,236,838,232,839,237,774,241"/>
+<area shape="poly" title=" " alt="" coords="774,251,838,265,837,270,773,256"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="1070,507,1149,532"/>
+<area shape="poly" title=" " alt="" coords="992,236,1018,252,1034,271,1045,290,1053,327,1056,366,1067,413,1099,493,1094,495,1061,415,1051,367,1048,328,1040,292,1030,274,1014,256,989,241"/>
+<area shape="poly" title=" " alt="" coords="1119,531,1157,625,1188,730,1213,834,1245,990,1239,991,1208,836,1182,732,1152,627,1114,533"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="1219,507,1277,532"/>
+<area shape="poly" title=" " alt="" coords="1149,517,1205,517,1205,522,1149,522"/>
+<area shape="rect" href="find__command_8c.html#a0d757d8d977e3050b5d9636cf547ff16" title=" " alt="" coords="867,380,975,405"/>
+<area shape="poly" title=" " alt="" coords="769,429,858,406,859,411,770,435"/>
+<area shape="poly" title=" " alt="" coords="746,430,777,411,800,387,810,376,825,365,839,358,842,363,828,370,813,380,804,391,780,415,748,434"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="888,583,955,608"/>
+<area shape="poly" title=" " alt="" coords="739,455,894,572,891,577,736,460"/>
+<area shape="poly" title=" " alt="" coords="779,440,889,432,1015,414,1056,404,1058,409,1017,419,890,437,779,445"/>
+<area shape="rect" href="find__command_8c.html#a1fefebecbdde4df9bcc987ec77ac0a6f" title=" " alt="" coords="864,481,979,507"/>
+<area shape="poly" title=" " alt="" coords="773,455,856,475,855,481,771,460"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="1071,868,1147,893"/>
+<area shape="poly" title=" " alt="" coords="955,594,988,600,1018,618,1037,653,1061,719,1103,854,1098,856,1055,721,1032,655,1014,621,986,605,954,599"/>
+<area shape="poly" title=" " alt="" coords="979,499,1057,510,1056,515,978,504"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="882,632,961,657"/>
+<area shape="poly" title=" " alt="" coords="773,606,869,629,868,635,771,611"/>
+<area shape="poly" title=" " alt="" coords="961,634,1005,630,1057,631,1110,642,1134,653,1157,668,1175,692,1191,727,1217,818,1235,915,1246,990,1241,991,1230,916,1211,819,1186,729,1170,694,1153,672,1132,657,1108,647,1056,636,1005,635,961,640"/>
+<area shape="rect" href="ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="1070,683,1149,708"/>
+<area shape="poly" title=" " alt="" coords="962,652,1017,666,1057,678,1056,683,1015,671,960,657"/>
+<area shape="poly" title=" " alt="" coords="593,706,610,693,622,678,628,662,631,630,636,598,644,583,658,568,689,552,732,540,841,524,958,517,1056,516,1056,521,958,523,842,529,733,545,691,557,662,572,648,586,641,600,637,631,633,664,626,681,614,697,596,710"/>
+<area shape="poly" title=" " alt="" coords="581,705,611,693,634,680,659,669,714,656,770,648,868,642,868,647,771,653,715,661,661,674,637,685,613,698,583,710"/>
+<area shape="rect" href="environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="682,684,757,709"/>
+<area shape="poly" title=" " alt="" coords="595,712,668,701,669,706,595,717"/>
+<area shape="rect" href="environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="683,733,756,759"/>
+<area shape="poly" title=" " alt="" coords="595,725,670,736,669,741,595,730"/>
+<area shape="poly" title=" " alt="" coords="596,730,614,743,630,765,638,787,640,830,642,872,648,894,662,916,675,928,671,932,658,920,643,896,637,873,635,830,633,788,625,768,610,747,593,734"/>
+<area shape="poly" title=" " alt="" coords="596,729,614,743,638,781,648,816,650,851,646,885,641,920,640,956,646,994,662,1034,674,1049,688,1063,684,1067,670,1053,658,1037,640,995,635,956,636,920,641,885,644,851,643,817,633,783,610,747,593,734"/>
+<area shape="poly" title=" " alt="" coords="756,685,826,666,868,655,869,660,827,671,758,690"/>
+<area shape="rect" href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="862,681,981,707"/>
+<area shape="poly" title=" " alt="" coords="757,694,848,692,848,698,757,699"/>
+<area shape="rect" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="859,780,983,805"/>
+<area shape="poly" title=" " alt="" coords="758,707,780,719,795,731,804,743,814,754,828,765,847,774,845,779,825,770,810,758,800,746,791,735,777,723,755,712"/>
+<area shape="poly" title=" " alt="" coords="984,794,1025,800,1070,811,1115,828,1156,853,1187,885,1212,922,1230,959,1241,990,1236,992,1225,961,1207,924,1183,888,1153,857,1113,833,1069,816,1024,805,983,799"/>
+<area shape="poly" title=" " alt="" coords="982,784,1000,777,1014,766,1038,733,1051,702,1056,672,1055,641,1051,574,1053,536,1061,493,1077,451,1093,414,1098,416,1082,453,1067,495,1058,536,1056,574,1061,641,1061,672,1056,704,1043,736,1018,769,1002,781,985,789"/>
+<area shape="poly" title=" " alt="" coords="755,731,777,719,791,705,800,692,809,679,825,666,867,650,869,655,828,671,813,683,804,695,795,709,780,723,758,736"/>
+<area shape="poly" title=" " alt="" coords="756,734,826,715,856,708,858,713,827,721,757,739"/>
+<area shape="poly" title=" " alt="" coords="757,752,853,774,852,780,756,757"/>
+<area shape="rect" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="841,829,1002,855"/>
+<area shape="poly" title=" " alt="" coords="738,757,777,786,828,814,850,823,848,828,826,819,774,790,735,761"/>
+<area shape="rect" href="list_8c.html#a78751fefb5026bcdb58b19c746c959bc" title="Insert a value at the beginning of the list (O(1))." alt="" coords="876,731,967,756"/>
+<area shape="poly" title=" " alt="" coords="756,743,862,742,862,747,756,748"/>
+<area shape="poly" title=" " alt="" coords="984,852,1058,868,1057,873,983,857"/>
+<area shape="poly" title=" " alt="" coords="978,137,1017,157,1071,203,1106,247,1131,298,1157,364,1174,420,1189,497,1216,681,1236,864,1247,990,1242,991,1230,864,1211,682,1184,498,1169,422,1152,366,1126,300,1101,250,1067,207,1015,162,976,142"/>
+<area shape="poly" title=" " alt="" coords="978,134,999,144,1018,157,1033,175,1042,192,1051,226,1055,261,1066,302,1097,364,1092,366,1062,304,1050,262,1045,227,1037,194,1028,178,1014,161,996,148,976,139"/>
+<area shape="rect" href="ft__printf_8c.html#a620bb91bbfd6d1ead025f80ae3bec222" title=" " alt="" coords="1073,115,1146,140"/>
+<area shape="poly" title=" " alt="" coords="977,125,1059,125,1059,130,977,130"/>
+<area shape="rect" href="ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6" title=" " alt="" coords="1341,115,1428,140"/>
+<area shape="poly" title=" " alt="" coords="1146,125,1327,125,1327,130,1146,130"/>
+<area shape="rect" href="ft__selector_8c.html#a6bca906941b73aee430168c03090a88d" title=" " alt="" coords="1203,140,1293,165"/>
+<area shape="poly" title=" " alt="" coords="1147,131,1190,139,1189,145,1146,137"/>
+<area shape="poly" title=" " alt="" coords="1293,142,1327,135,1328,141,1294,147"/>
+<area shape="poly" title=" " alt="" coords="567,328,659,272,681,259,683,264,661,276,570,333"/>
+<area shape="poly" title=" " alt="" coords="600,341,831,341,831,346,600,346"/>
+<area shape="poly" title=" " alt="" coords="608,759,669,750,669,756,609,764"/>
+<area shape="rect" href="ft__split2_80_8c.html#af54f55774b34b2395f5ca1da01d9f015" title=" " alt="" coords="682,881,757,907"/>
+<area shape="poly" title=" " alt="" coords="568,781,691,871,688,875,565,785"/>
+<area shape="poly" title=" " alt="" coords="757,890,1058,880,1058,885,757,895"/>
+<area shape="rect" href="ft__split2_80_8c.html#adc745ae9ae5cefd55d21a576645475b0" title=" " alt="" coords="889,931,953,956"/>
+<area shape="poly" title=" " alt="" coords="757,900,876,930,875,935,756,906"/>
+<area shape="rect" href="ft__split2_80_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="871,980,971,1005"/>
+<area shape="poly" title=" " alt="" coords="749,905,780,923,804,945,814,955,828,965,859,978,857,983,825,970,810,959,800,949,777,927,747,909"/>
+<area shape="poly" title=" " alt="" coords="601,677,669,687,668,692,600,682"/>
+<area shape="rect" href="environment__operations_8c.html#aa155b7428061814751ff8a6fd7ba7961" title="Remove an environment variable by name." alt="" coords="675,999,764,1024"/>
+<area shape="poly" title=" " alt="" coords="563,881,605,923,662,972,686,989,683,993,658,976,602,927,559,885"/>
+<area shape="poly" title=" " alt="" coords="748,996,763,986,777,972,789,952,795,932,797,892,800,854,809,834,825,815,845,801,848,806,828,819,814,837,806,855,802,893,800,932,794,954,781,976,767,990,751,1001"/>
+<area shape="rect" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="827,1029,1016,1055"/>
+<area shape="poly" title=" " alt="" coords="765,1016,824,1025,823,1030,764,1021"/>
+<area shape="rect" href="list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b" title=" " alt="" coords="864,1079,979,1104"/>
+<area shape="poly" title=" " alt="" coords="743,1022,782,1043,828,1064,854,1072,852,1077,826,1069,780,1048,741,1026"/>
+<area shape="poly" title=" " alt="" coords="405,1145,547,1155,728,1159,817,1157,899,1149,967,1135,994,1125,1014,1113,1038,1093,1056,1068,1071,1040,1083,1011,1098,954,1104,907,1109,908,1103,955,1088,1013,1076,1043,1061,1071,1041,1096,1018,1118,996,1130,968,1140,900,1154,818,1162,728,1165,547,1160,405,1150"/>
+<area shape="poly" title=" " alt="" coords="397,1329,492,1305,493,1310,398,1334"/>
+<area shape="poly" title=" " alt="" coords="398,1341,718,1342,923,1342,992,1345,1048,1346,1074,1342,1099,1333,1125,1319,1153,1297,1178,1270,1199,1238,1214,1203,1226,1167,1239,1097,1244,1043,1249,1044,1245,1098,1231,1168,1219,1204,1203,1240,1183,1273,1156,1301,1128,1324,1101,1338,1075,1347,1049,1351,992,1350,923,1347,718,1347,398,1346"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="parser_8h_ae411b47cf3a6fe75994d31c5574c60ce_icgraph.png" border="0" usemap="#aparser_8h_ae411b47cf3a6fe75994d31c5574c60ce_icgraph" alt=""/></div>
+<map name="aparser_8h_ae411b47cf3a6fe75994d31c5574c60ce_icgraph" id="aparser_8h_ae411b47cf3a6fe75994d31c5574c60ce_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,315,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>

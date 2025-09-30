@@ -1,0 +1,137 @@
+\doxysection{tokenizer.\+c}
+\hypertarget{tokenizer_8c_source}{}\label{tokenizer_8c_source}\index{src/tokenizer.c@{src/tokenizer.c}}
+\mbox{\hyperlink{tokenizer_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../list/list.h"{}}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../include/tokenizer.h"{}}\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../libft/libft.h"{}}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../include/util.h"{}}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00010}\mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{00010}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ n)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{char}\ *p\ =\ malloc(n\ +\ 1);\ \textcolor{keywordtype}{size\_t}\ i;\ \textcolor{keywordflow}{if}\ (!p)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ n\ \&\&\ s[i];\ i++)\ p[i]\ =\ s[i];\ p[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00015}\mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{00015}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\_space}}(\textcolor{keywordtype}{char}\ c)\ \{\ \textcolor{keywordflow}{return}\ c\ ==\ \textcolor{charliteral}{'\ '}\ ||\ c\ ==\ \textcolor{charliteral}{'\(\backslash\)t'};\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00016}\mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{00016}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\_operator\_char}}(\textcolor{keywordtype}{char}\ c)\ \{\ \textcolor{keywordflow}{return}\ c\ ==\ \textcolor{charliteral}{'|'}\ ||\ c\ ==\ \textcolor{charliteral}{'>'}\ ||\ c\ ==\ \textcolor{charliteral}{'<'};\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00017}\mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{00017}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\_two\_char\_op}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ s[pos]\ \&\&\ s[pos+1]\ \&\&\ s[pos]\ ==\ op[0]\ \&\&\ s[pos+1]\ ==\ op[1];}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00021}\mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{00021}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structs__token}{t\_token}}\ *\mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(\mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ type,\ \textcolor{keywordtype}{char}\ *value)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structs__token}{t\_token}}));}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!tok)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00024}00024\ \ \ \ \ tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ =\ type;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00025}00025\ \ \ \ \ tok-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{return}\ tok;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00029}\mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{00029}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ \mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\_type}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op,\ \textcolor{keywordtype}{size\_t}\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'|'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\_PIPE}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'<'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\_REDIR\_IN}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'>'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\_REDIR\_OUT}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00034}00034\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (len\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'<'}\ \&\&\ op[1]\ ==\ \textcolor{charliteral}{'<'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\_HEREDOC}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op[0]\ ==\ \textcolor{charliteral}{'>'}\ \&\&\ op[1]\ ==\ \textcolor{charliteral}{'>'})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\_REDIR\_APPEND}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}};\ \textcolor{comment}{//\ fallback}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00041}\mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{00041}}\ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *\mbox{\hyperlink{tokenizer_8c_a7f79110e05751dc9e588a9fab750d97d}{tokenize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ 0,\ len\ =\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(line);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ *tokens\_list\ =\ \mbox{\hyperlink{list_8c_a2ab31c1a882bda317542865ca981aa91}{init\_list}}();}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!tokens\_list)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ expect\_cmd\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ El\ siguiente\ token\ no\ operador\ será\ CMD}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ next\_is\_redir\_arg\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ El\ siguiente\ token\ después\ de\ >,\ >>,\ <,\ <<}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ len\ \&\&\ \mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\_space}}(line[i]))\ i++;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ len)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ operadores\ de\ dos\ caracteres\ */}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\_two\_char\_op}}(line,\ i,\ \textcolor{stringliteral}{"{}>>"{}})\ ||\ \mbox{\hyperlink{tokenizer_8c_aa1dd8a75220cb79547c4154eb2becbd3}{match\_two\_char\_op}}(line,\ i,\ \textcolor{stringliteral}{"{}<<"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *op\ =\ \mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(line\ +\ i,\ 2);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(\mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\_type}}(op,\ 2),\ op);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(tokens\_list,\ tok);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\_REDIR\_APPEND}}\ ||\ tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\_HEREDOC}})}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_is\_redir\_arg\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ operadores\ de\ un\ caracter\ */}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\_operator\_char}}(line[i]))\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *op\ =\ \mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(line\ +\ i,\ 1);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(\mbox{\hyperlink{tokenizer_8c_a3940c870d794a791d2ddabf19c0cfee7}{operator\_type}}(op,\ 1),\ op);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(tokens\_list,\ tok);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\_REDIR\_IN}}\ ||\ tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\_REDIR\_OUT}})}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_is\_redir\_arg\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}}\ ==\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\_PIPE}})}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ expect\_cmd\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ palabras\ */}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\ =\ i;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *buf\ =\ NULL;\ \textcolor{keywordtype}{size\_t}\ bcap\ =\ 0,\ blen\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ len\ \&\&\ !\mbox{\hyperlink{tokenizer_8c_ae2d4df043f33de8b99bc1eb83ca15d31}{is\_space}}(line[i])\ \&\&\ !\mbox{\hyperlink{tokenizer_8c_ac891813952e22ca06b6204a49f39fa65}{is\_operator\_char}}(line[i]))\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ line[i];}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\(\backslash\)''})\ \{\ i++;\ \textcolor{keywordflow}{while}(i<len\ \&\&\ line[i]!=\textcolor{charliteral}{'\(\backslash\)''})\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=line[i++];\ \}\ \textcolor{keywordflow}{if}(i<len\&\&line[i]==\textcolor{charliteral}{'\(\backslash\)''})\ i++;\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(c==\textcolor{charliteral}{'"{}'})\{\ i++;\ \textcolor{keywordflow}{while}(i<len\ \&\&\ line[i]!=\textcolor{charliteral}{'"{}'})\{\ \textcolor{keywordflow}{if}(line[i]==\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\&\&i+1<len)\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\ \}\ buf[blen++]=line[i+1];\ i+=2;\ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=line[i++];\ \}\ \}\ \textcolor{keywordflow}{if}(i<len\&\&line[i]==\textcolor{charliteral}{'"{}'})\ i++;\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(c==\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\&\&i+1<len)\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=line[i+1];\ i+=2;\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{\ \textcolor{keywordflow}{if}(blen+1>=bcap)\{\ \textcolor{keywordtype}{size\_t}\ nc=(bcap?bcap*2:64);\ \textcolor{keywordtype}{char}*tmp=realloc(buf,nc);\ buf=tmp;bcap=nc;\}\ buf[blen++]=c;\ i++;\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *word;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(blen==0)\{\ \textcolor{keywordtype}{size\_t}\ wlen=i-\/start;\ word=\mbox{\hyperlink{tokenizer_8c_a5c7919f82f134ff4fadc6ed22e255c2a}{ft\_strndup}}(line+start,wlen);\ \textcolor{keywordflow}{if}(!word)\ \textcolor{keywordflow}{goto}\ error;\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ word=malloc(blen+1);\ \textcolor{keywordflow}{if}(!word)\ \textcolor{keywordflow}{goto}\ error;\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ k=0;k<blen;k++)\ word[k]=buf[k];\ word[blen]=\textcolor{charliteral}{'\(\backslash\)0'};\ free(buf);\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ type;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\_is\_redir\_arg)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}};\ \textcolor{comment}{//\ siempre\ argumento\ si\ viene\ después\ de\ redirección}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ next\_is\_redir\_arg\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (expect\_cmd)\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1}{TOKEN\_CMD}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ expect\_cmd\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ *tok\ =\ \mbox{\hyperlink{tokenizer_8c_a4e78b2e01bd34ef89d2bb7fcf81de0cc}{create\_token}}(type,\ word);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(tokens\_list,\ tok);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens\_list;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00114}00114\ error:}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{if}(tokens\_list)\ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(tokens\_list,\ free);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00119}\mbox{\hyperlink{tokenizer_8h_af0886495b353f179f845206ad2969d3e}{00119}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tokenizer_8c_af0886495b353f179f845206ad2969d3e}{destroy\_token}}(\mbox{\hyperlink{structs__token}{t\_token}}\ *token)}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00120}00120\ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!token)}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (token-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}})}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00125}00125\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ free(token-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}});}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ token-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00130}00130\ \ \ \ \ free(token);}
+\DoxyCodeLine{\Hypertarget{tokenizer_8c_source_l00131}00131\ \}}
+
+\end{DoxyCode}

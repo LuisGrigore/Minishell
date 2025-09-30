@@ -1,0 +1,106 @@
+\doxysection{libft/ft\+\_\+strdup.c File Reference}
+\hypertarget{ft__strdup_8c}{}\label{ft__strdup_8c}\index{libft/ft\_strdup.c@{libft/ft\_strdup.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strdup.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strdup_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strdup_8c_a28b3b78aa7d4fc06594eaab27ecb5e91}{ft\+\_\+strcpy}} (char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}dest)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup}} (const char \texorpdfstring{$\ast$}{*}s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strdup_8c_a28b3b78aa7d4fc06594eaab27ecb5e91}\label{ft__strdup_8c_a28b3b78aa7d4fc06594eaab27ecb5e91} 
+\index{ft\_strdup.c@{ft\_strdup.c}!ft\_strcpy@{ft\_strcpy}}
+\index{ft\_strcpy@{ft\_strcpy}!ft\_strdup.c@{ft\_strdup.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strcpy()}{ft\_strcpy()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} ft\+\_\+strcpy (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strdup_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strdup_8c_source}{ft\+\_\+strdup.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[i])}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ dest[i]\ =\ str[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ dest[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ (dest);}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strdup_8c_a28b3b78aa7d4fc06594eaab27ecb5e91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}\label{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9} 
+\index{ft\_strdup.c@{ft\_strdup.c}!ft\_strdup@{ft\_strdup}}
+\index{ft\_strdup@{ft\_strdup}!ft\_strdup.c@{ft\_strdup.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strdup()}{ft\_strdup()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} ft\+\_\+strdup (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strdup_8c_source_l00029}{29}} of file \mbox{\hyperlink{ft__strdup_8c_source}{ft\+\_\+strdup.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *p1;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ p1\ =\ malloc(\mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(s)\ +\ 1);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p1)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{ft__strdup_8c_a28b3b78aa7d4fc06594eaab27ecb5e91}{ft\_strcpy}}((\textcolor{keywordtype}{char}\ *)s,\ p1);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ (p1);}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__strdup_8c_a28b3b78aa7d4fc06594eaab27ecb5e91}{ft\+\_\+strcpy()}}, and \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_ac40e1776b69522eaf80d953ec441231d}{cd\+\_\+execute()}}, \mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get()}}, \mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set()}}, \mbox{\hyperlink{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38}{ft\+\_\+itoa()}}, \mbox{\hyperlink{command__functs_8c_a8e097313a91f3debcf94b440191dbe1d}{serialize\+\_\+arg()}}, and \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9_icgraph}
+\end{center}
+\end{figure}

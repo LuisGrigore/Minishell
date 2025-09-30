@@ -1,0 +1,186 @@
+\doxysection{libft/ft\+\_\+itoa.c File Reference}
+\hypertarget{ft__itoa_8c}{}\label{ft__itoa_8c}\index{libft/ft\_itoa.c@{libft/ft\_itoa.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+itoa.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__itoa_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5}{ft\+\_\+putnbr}} (int n, int pos, char \texorpdfstring{$\ast$}{*}p3, char nb)
+\item 
+static int \mbox{\hyperlink{ft__itoa_8c_a9702575ca62773bb287ca39307f495d1}{ft\+\_\+div}} (int n)
+\item 
+static int \mbox{\hyperlink{ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5}{ft\+\_\+isnegative}} (int n)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38}{ft\+\_\+itoa}} (int n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__itoa_8c_a9702575ca62773bb287ca39307f495d1}\label{ft__itoa_8c_a9702575ca62773bb287ca39307f495d1} 
+\index{ft\_itoa.c@{ft\_itoa.c}!ft\_div@{ft\_div}}
+\index{ft\_div@{ft\_div}!ft\_itoa.c@{ft\_itoa.c}}
+\doxysubsubsection{\texorpdfstring{ft\_div()}{ft\_div()}}
+{\footnotesize\ttfamily static int ft\+\_\+div (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__itoa_8c_source_l00033}{33}} of file \mbox{\hyperlink{ft__itoa_8c_source}{ft\+\_\+itoa.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ ps;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ ps\ =\ 1;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (9\ <\ n\ ||\ -\/9\ >\ n)}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ n\ =\ n\ /\ 10;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ ps++;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ (ps);}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38}{ft\+\_\+itoa()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{ft__itoa_8c_a9702575ca62773bb287ca39307f495d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5}\label{ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5} 
+\index{ft\_itoa.c@{ft\_itoa.c}!ft\_isnegative@{ft\_isnegative}}
+\index{ft\_isnegative@{ft\_isnegative}!ft\_itoa.c@{ft\_itoa.c}}
+\doxysubsubsection{\texorpdfstring{ft\_isnegative()}{ft\_isnegative()}}
+{\footnotesize\ttfamily static int ft\+\_\+isnegative (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__itoa_8c_source_l00046}{46}} of file \mbox{\hyperlink{ft__itoa_8c_source}{ft\+\_\+itoa.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <\ 0)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38}{ft\+\_\+itoa()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38}\label{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38} 
+\index{ft\_itoa.c@{ft\_itoa.c}!ft\_itoa@{ft\_itoa}}
+\index{ft\_itoa@{ft\_itoa}!ft\_itoa.c@{ft\_itoa.c}}
+\doxysubsubsection{\texorpdfstring{ft\_itoa()}{ft\_itoa()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} ft\+\_\+itoa (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__itoa_8c_source_l00054}{54}} of file \mbox{\hyperlink{ft__itoa_8c_source}{ft\+\_\+itoa.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *p3;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ ps;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ nb;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ nb\ =\ \textcolor{charliteral}{'+'};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 2147483647)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(\textcolor{stringliteral}{"{}2147483647"{}}));}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ -\/2147483648)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(\textcolor{stringliteral}{"{}-\/2147483648"{}}));}
+\DoxyCodeLine{00065\ \ \ \ \ ps\ =\ \mbox{\hyperlink{ft__itoa_8c_a9702575ca62773bb287ca39307f495d1}{ft\_div}}(n);}
+\DoxyCodeLine{00066\ \ \ \ \ p3\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\mbox{\hyperlink{ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5}{ft\_isnegative}}(n)\ +\ ps\ +\ 1);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p3)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <\ 0)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ n\ =\ -\/n;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ nb\ =\ \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5}{ft\_putnbr}}(n,\ ps,\ p3,\ nb);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (nb\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ p3[0]\ =\ nb;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ (p3);}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__itoa_8c_a9702575ca62773bb287ca39307f495d1}{ft\+\_\+div()}}, \mbox{\hyperlink{ft__itoa_8c_aca70a69018e2b431d71b2df104e0fea5}{ft\+\_\+isnegative()}}, \mbox{\hyperlink{ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5}{ft\+\_\+putnbr()}}, and \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5}\label{ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5} 
+\index{ft\_itoa.c@{ft\_itoa.c}!ft\_putnbr@{ft\_putnbr}}
+\index{ft\_putnbr@{ft\_putnbr}!ft\_itoa.c@{ft\_itoa.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putnbr()}{ft\_putnbr()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} ft\+\_\+putnbr (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{pos,  }\item[{char \texorpdfstring{$\ast$}{*}}]{p3,  }\item[{char}]{nb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__itoa_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__itoa_8c_source}{ft\+\_\+itoa.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ i\ =\ pos;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (nb\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00022\ \ \ \ \ p3[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{while}\ (pos\ >\ 0)}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ p3[i]\ =\ n\ \%\ 10\ +\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ n\ =\ n\ /\ 10;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ pos-\/-\/;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ (p3);}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__itoa_8c_a8a6ea3765dfd826eabfc00d36e28ea38}{ft\+\_\+itoa()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{ft__itoa_8c_a68179435a0495c1e497eafd58de2a6c5_icgraph}
+\end{center}
+\end{figure}

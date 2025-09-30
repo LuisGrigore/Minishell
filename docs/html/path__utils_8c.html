@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/path_utils.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/path_utils.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -104,7 +105,9 @@ Include dependency graph for path_utils.c:</div>
 <area shape="poly" title=" " alt="" coords="278,102,377,144,375,149,276,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="path__utils_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5785980ed2eeb3f96606b8ff04163808" id="r_a5785980ed2eeb3f96606b8ff04163808"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="path__utils_8c.html#a5785980ed2eeb3f96606b8ff04163808">ft_ispace</a> (char c)</td></tr>
@@ -130,6 +133,33 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="path__utils_8c_source.html#l00017">17</a> of file <a class="el" href="path__utils_8c_source.html">path_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\n&#39;</span> || c == <span class="charliteral">&#39; &#39;</span> || c == <span class="charliteral">&#39;\t&#39;</span>)</div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   22</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976">get_file_from_str()</a>, and <a class="el" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577">history_checker()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="path__utils_8c_a5785980ed2eeb3f96606b8ff04163808_icgraph.png" border="0" usemap="#apath__utils_8c_a5785980ed2eeb3f96606b8ff04163808_icgraph" alt=""/></div>
+<map name="apath__utils_8c_a5785980ed2eeb3f96606b8ff04163808_icgraph" id="apath__utils_8c_a5785980ed2eeb3f96606b8ff04163808_icgraph">
+<area shape="rect" title=" " alt="" coords="481,42,561,67"/>
+<area shape="rect" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976" title=" " alt="" coords="301,15,433,41"/>
+<area shape="poly" title=" " alt="" coords="467,48,433,42,434,37,468,43"/>
+<area shape="rect" href="minishell_8c.html#a74cc3d851d4f0f3ab5c2202774200577" title=" " alt="" coords="305,66,429,91"/>
+<area shape="poly" title=" " alt="" coords="468,66,430,72,429,66,467,60"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="108,5,253,45"/>
+<area shape="poly" title=" " alt="" coords="288,30,254,29,254,24,288,24"/>
+<area shape="rect" href="minishell_8c.html#a5e0d04aa36ebd4a447b9ff4a5dcf8b6d" title=" " alt="" coords="133,70,228,95"/>
+<area shape="poly" title=" " alt="" coords="291,83,228,84,228,79,291,78"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
+<area shape="poly" title=" " alt="" coords="120,85,60,85,60,80,120,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -159,6 +189,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="path__utils_8c_source.html#l00049">49</a> of file <a class="el" href="path__utils_8c_source.html">path_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordtype">size_t</span>  len;</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    len = <a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(c);</div>
+<div class="line"><span class="lineno">   55</span>    i = 0;</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">while</span> (str[i])</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(str, c, len))</div>
+<div class="line"><span class="lineno">   59</span>            break ;</div>
+<div class="line"><span class="lineno">   60</span>        i++;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> (str + i + (<span class="keywordtype">int</span>)len);</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aft__strlen_8c_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="aft__strncmp_8c_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00015">ft_strncmp.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>, and <a class="el" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="path__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c_cgraph.png" border="0" usemap="#apath__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c_cgraph" alt=""/></div>
+<map name="apath__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c_cgraph" id="apath__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,155,56"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="211,5,285,31"/>
+<area shape="poly" title=" " alt="" coords="154,29,197,23,198,28,155,35"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="203,55,293,80"/>
+<area shape="poly" title=" " alt="" coords="155,51,189,56,188,62,154,57"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a0a3aaf9949360fa6bba7d3a64e5a0061" name="a0a3aaf9949360fa6bba7d3a64e5a0061"></a>
@@ -186,6 +248,64 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="path__utils_8c_source.html#l00023">23</a> of file <a class="el" href="path__utils_8c_source.html">path_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">int</span>     b1;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">int</span>     b2;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">size_t</span>  len;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!str || !c)</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> ((<span class="keywordtype">int</span>)<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(str) + 1);</div>
+<div class="line"><span class="lineno">   32</span>    len = <a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(c);</div>
+<div class="line"><span class="lineno">   33</span>    i = 0;</div>
+<div class="line"><span class="lineno">   34</span>    b1 = 0;</div>
+<div class="line"><span class="lineno">   35</span>    b2 = 0;</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">while</span> (str[i])</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (str[i] == *<span class="stringliteral">&quot;&#39;&quot;</span> &amp;&amp; b2 % 2 == 0)</div>
+<div class="line"><span class="lineno">   39</span>            b1++;</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;&quot;&#39;</span> &amp;&amp; b1 % 2 == 0)</div>
+<div class="line"><span class="lineno">   41</span>            b2++;</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(str + i, c, len) == 0 &amp;&amp; b1 % 2 == 0 &amp;&amp; b2 % 2 == 0)</div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> (i);</div>
+<div class="line"><span class="lineno">   44</span>        i++;</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> ((<span class="keywordtype">int</span>)<a class="code hl_function" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(str) + 1);</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9">ft_strlen()</a>, and <a class="el" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712">first_redirection()</a>, <a class="el" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976">get_file_from_str()</a>, and <a class="el" href="redirect__asignation_8h.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c">get_redirects_from_str_arr()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="path__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_cgraph.png" border="0" usemap="#apath__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_cgraph" alt=""/></div>
+<map name="apath__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_cgraph" id="apath__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,108,56"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="164,5,239,31"/>
+<area shape="poly" title=" " alt="" coords="108,32,150,24,151,29,109,37"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="156,55,247,80"/>
+<area shape="poly" title=" " alt="" coords="109,49,143,55,142,60,108,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="path__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_icgraph.png" border="0" usemap="#apath__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_icgraph" alt=""/></div>
+<map name="apath__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_icgraph" id="apath__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061_icgraph">
+<area shape="rect" title=" " alt="" coords="379,56,481,81"/>
+<area shape="rect" href="redirect__asignation_8c.html#a3ecd7f87085d1303c8f89bd9165e2712" title=" " alt="" coords="203,5,327,31"/>
+<area shape="poly" title=" " alt="" coords="374,54,306,33,308,28,375,49"/>
+<area shape="rect" href="redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="5,49,151,89"/>
+<area shape="poly" title=" " alt="" coords="365,71,151,71,151,66,365,66"/>
+<area shape="rect" href="redirect__asignation_8c.html#a8359e16f33f34cc029736708fa927976" title=" " alt="" coords="199,107,331,132"/>
+<area shape="poly" title=" " alt="" coords="375,88,308,109,306,104,374,83"/>
+<area shape="poly" title=" " alt="" coords="204,37,152,52,150,46,203,32"/>
+<area shape="poly" title=" " alt="" coords="203,106,150,91,152,86,204,100"/>
+</map>
+</div>
 
 </div>
 </div>

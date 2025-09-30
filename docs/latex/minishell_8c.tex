@@ -1,0 +1,667 @@
+\doxysection{src/minishell.c File Reference}
+\hypertarget{minishell_8c}{}\label{minishell_8c}\index{src/minishell.c@{src/minishell.c}}
+{\ttfamily \#include "{}../include/bin\+\_\+commandss\+\_\+execution.\+h"{}}\newline
+{\ttfamily \#include "{}../include/command.\+h"{}}\newline
+{\ttfamily \#include "{}../include/environment.\+h"{}}\newline
+{\ttfamily \#include "{}../list/list.\+h"{}}\newline
+{\ttfamily \#include "{}../include/parser.\+h"{}}\newline
+{\ttfamily \#include "{}../include/redirect\+\_\+asignation.\+h"{}}\newline
+{\ttfamily \#include "{}../include/tokenizer.\+h"{}}\newline
+{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
+{\ttfamily \#include "{}readline/history.\+h"{}}\newline
+{\ttfamily \#include "{}readline/readline.\+h"{}}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for minishell.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577}{history\+\_\+checker}} (char \texorpdfstring{$\ast$}{*}cmd)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}{check\+\_\+cmd}} (char \texorpdfstring{$\ast$}{*}cmd)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+\item 
+void \mbox{\hyperlink{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler}} (int sig)
+\item 
+void \mbox{\hyperlink{minishell_8c_a3719a1754f6e317bbb96770b973d453c}{signals\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}{print\+\_\+tokens}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
+\item 
+void \mbox{\hyperlink{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}{print\+\_\+redirect}} (\mbox{\hyperlink{redirect__asignation_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redir)
+\item 
+void \mbox{\hyperlink{minishell_8c_aaeba1075474bbabf46d3efc68664c129}{print\+\_\+command}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd, int index)
+\item 
+void \mbox{\hyperlink{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}{print\+\_\+commands}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
+\item 
+void \mbox{\hyperlink{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}{destroy\+\_\+token\+\_\+data}} (void \texorpdfstring{$\ast$}{*}token\+\_\+ptr)
+\item 
+int \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main}} (int args, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}environment\+\_\+var\+\_\+str\+\_\+array)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7}{g\+\_\+signal}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}\label{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d} 
+\index{minishell.c@{minishell.c}!check\_cmd@{check\_cmd}}
+\index{check\_cmd@{check\_cmd}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{check\_cmd()}{check\_cmd()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} check\+\_\+cmd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00050}{50}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ b;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ b\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577}{history\_checker}}(cmd)\ ==\ NULL)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{while}\ (cmd[i])}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd[i]\ ==\ \textcolor{charliteral}{'"{}'})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ 1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cmd[i]\ \&\&\ b\ ==\ 1)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd[i]\ ==\ \textcolor{charliteral}{'"{}'})}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ !=\ 0)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ add\_history(cmd);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ (cmd);}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577}{history\+\_\+checker()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}\label{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4} 
+\index{minishell.c@{minishell.c}!destroy\_token\_data@{destroy\_token\_data}}
+\index{destroy\_token\_data@{destroy\_token\_data}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_token\_data()}{destroy\_token\_data()}}
+{\footnotesize\ttfamily void destroy\+\_\+token\+\_\+data (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{token\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00218}{218}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00219\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_af0886495b353f179f845206ad2969d3e}{destroy\_token}}((\mbox{\hyperlink{structs__token}{t\_token}}\ *)\ token\_ptr);}
+\DoxyCodeLine{00221\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{tokenizer_8h_af0886495b353f179f845206ad2969d3e}{destroy\+\_\+token()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577}\label{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577} 
+\index{minishell.c@{minishell.c}!history\_checker@{history\_checker}}
+\index{history\_checker@{history\_checker}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{history\_checker()}{history\_checker()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} history\+\_\+checker (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00029}{29}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd[0]\ ==\ \textcolor{charliteral}{'|'}\ ||\ cmd[\mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(cmd)]\ ==\ \textcolor{charliteral}{'|'})}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ add\_history(cmd);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{while}\ (cmd[i])}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{util_8h_a5785980ed2eeb3f96606b8ff04163808}{ft\_ispace}}(cmd[i])\ ==\ 0)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ (cmd);}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{util_8h_a5785980ed2eeb3f96606b8ff04163808}{ft\+\_\+ispace()}}, and \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}{check\+\_\+cmd()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}\label{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35} 
+\index{minishell.c@{minishell.c}!main@{main}}
+\index{main@{main}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{args,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{environment\+\_\+var\+\_\+str\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00223}{223}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ \ \ \ *tokens;}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ \ \ \ *current\_commands;}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ \ \ \ *envioroment\_vars;}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ finish;}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *line;}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *name;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (args\ >\ 1)}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{minishell_8c_a3719a1754f6e317bbb96770b973d453c}{signals\_init}}();}
+\DoxyCodeLine{00235\ \ \ \ \ envioroment\_vars\ =\ \mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\_deserialize}}(environment\_var\_str\_array}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ +\ 2);}
+\DoxyCodeLine{00237\ \ \ \ \ name\ =\ \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}}(envioroment\_vars);}
+\DoxyCodeLine{00238\ \ \ \ \ finish\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{while}\ (!finish)}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ line\ =\ readline(name);}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(line)\ !=\ 0\ \&\&\ \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(line,\ \textcolor{stringliteral}{"{}exit"{}},}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(line))\ ==\ 0)\ ||\ line\ ==\ NULL)}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ finish\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(line)\ !=\ 0)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}{check\_cmd}}(line)\ ==\ NULL)}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue\ ;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ add\_history(line);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ tokens\ =\ \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize}}(line);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//print\_tokens(tokens);}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tokens)}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Tokenization\ error\ "{}});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue\ ;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ current\_commands\ =\ \mbox{\hyperlink{parser_8h_ae411b47cf3a6fe75994d31c5574c60ce}{parse\_tokens\_to\_commands}}(tokens);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(tokens,\ \mbox{\hyperlink{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}{destroy\_token\_data}});}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!current\_commands)}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Parsing\ error\ "{}});}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue\ ;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//print\_commands(current\_commands);}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command_8h_ac2417fa48185516c05dd13ce83e55f1d}{execute\_commands\_with\_pipes}}(current\_commands,\ envioroment\_vars);}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ free(line);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ line\ =\ NULL;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(current\_commands,\ \mbox{\hyperlink{command_8h_a950465f331fec212ad0507c3e41a0137}{destroy\_command}});}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ current\_commands\ =\ NULL;}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{env\_destroy}}(envioroment\_vars);}
+\DoxyCodeLine{00273\ \ \ \ \ free(name);}
+\DoxyCodeLine{00274\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}{check\+\_\+cmd()}}, \mbox{\hyperlink{command_8h_a950465f331fec212ad0507c3e41a0137}{destroy\+\_\+command()}}, \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\+\_\+gen\+\_\+list()}}, \mbox{\hyperlink{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}{destroy\+\_\+token\+\_\+data()}}, \mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize()}}, \mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{env\+\_\+destroy()}}, \mbox{\hyperlink{command_8h_ac2417fa48185516c05dd13ce83e55f1d}{execute\+\_\+commands\+\_\+with\+\_\+pipes()}}, \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}, \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\+\_\+strncmp()}}, \mbox{\hyperlink{parser_8h_ae411b47cf3a6fe75994d31c5574c60ce}{parse\+\_\+tokens\+\_\+to\+\_\+commands()}}, \mbox{\hyperlink{minishell_8c_a3719a1754f6e317bbb96770b973d453c}{signals\+\_\+init()}}, \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}, and \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_aaeba1075474bbabf46d3efc68664c129}\label{minishell_8c_aaeba1075474bbabf46d3efc68664c129} 
+\index{minishell.c@{minishell.c}!print\_command@{print\_command}}
+\index{print\_command@{print\_command}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_command()}{print\_command()}}
+{\footnotesize\ttfamily void print\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00171}{171}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Command\ \#\%d:\(\backslash\)n"{}},\ index);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//Imprimir\ args}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}}\ \&\&\ cmd-\/>\mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}}-\/>\mbox{\hyperlink{structs__gen__list_a161ce598b8ef7b173793b9b6699ef42f}{size}}\ >\ 0)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ Args:\(\backslash\)n"{}});}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__iter}{t\_iter}}\ arg\_it\ =\ \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\_start}}(cmd-\/>\mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *arg;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((arg\ =\ (\textcolor{keywordtype}{char}\ *)\mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\_next}}(\&arg\_it))\ !=\ NULL)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ \%s\(\backslash\)n"{}},\ arg);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ Args:\ (none)\(\backslash\)n"{}});}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{comment}{//Imprimir\ redirects}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}}\ \&\&\ cmd-\/>\mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}}-\/>\mbox{\hyperlink{structs__gen__list_a161ce598b8ef7b173793b9b6699ef42f}{size}}\ >\ 0)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ Redirects:\(\backslash\)n"{}});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__iter}{t\_iter}}\ red\_it\ =\ \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\_start}}(cmd-\/>\mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__redirect}{t\_redirect}}\ *redir;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((redir\ =\ (\mbox{\hyperlink{structs__redirect}{t\_redirect}}\ *)\mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\_next}}(\&red\_it))\ !=\ NULL)\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}{print\_redirect}}(redir);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ Redirects:\ (none)\(\backslash\)n"{}});}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00202\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structs__command_ad650fccbaed7fdf5e65aafc9e4fedeae}{s\+\_\+command\+::args}}, \mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\+\_\+next()}}, \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\+\_\+start()}}, \mbox{\hyperlink{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}{print\+\_\+redirect()}}, \mbox{\hyperlink{structs__command_a82f3acd25a4af3e90640d8e7d9fe4793}{s\+\_\+command\+::redirects}}, and \mbox{\hyperlink{structs__gen__list_a161ce598b8ef7b173793b9b6699ef42f}{s\+\_\+gen\+\_\+list\+::size}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}{print\+\_\+commands()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{minishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{minishell_8c_aaeba1075474bbabf46d3efc68664c129_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}\label{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d} 
+\index{minishell.c@{minishell.c}!print\_commands@{print\_commands}}
+\index{print\_commands@{print\_commands}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_commands()}{print\_commands()}}
+{\footnotesize\ttfamily void print\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00204}{204}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{if}\ (!commands\ ||\ commands-\/>\mbox{\hyperlink{structs__gen__list_a161ce598b8ef7b173793b9b6699ef42f}{size}}\ ==\ 0)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}No\ commands\ to\ print.\(\backslash\)n"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{structs__iter}{t\_iter}}\ it\ =\ \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\_start}}(commands);}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{structs__command}{t\_command}}\ *cmd;}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 1;}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{while}\ ((cmd\ =\ (\mbox{\hyperlink{structs__command}{t\_command}}\ *)\mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\_next}}(\&it))\ !=\ NULL)\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{minishell_8c_aaeba1075474bbabf46d3efc68664c129}{print\_command}}(cmd,\ index++);}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\+\_\+next()}}, \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\+\_\+start()}}, \mbox{\hyperlink{minishell_8c_aaeba1075474bbabf46d3efc68664c129}{print\+\_\+command()}}, and \mbox{\hyperlink{structs__gen__list_a161ce598b8ef7b173793b9b6699ef42f}{s\+\_\+gen\+\_\+list\+::size}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}\label{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46} 
+\index{minishell.c@{minishell.c}!print\_redirect@{print\_redirect}}
+\index{print\_redirect@{print\_redirect}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_redirect()}{print\_redirect()}}
+{\footnotesize\ttfamily void print\+\_\+redirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__asignation_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redir }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00156}{156}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{if}\ (!redir)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *type\_str;}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{switch}\ (redir-\/>\mbox{\hyperlink{structs__redirect_aa68b13bc97c76c51ee78bcf8cb2f3125}{redirect\_simbol}})\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f}{LEFT\_REDIRECT}}:\ type\_str\ =\ \textcolor{stringliteral}{"{}<"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131}{RIGHT\_REDIRECT}}:\ type\_str\ =\ \textcolor{stringliteral}{"{}>"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c}{DOUBLE\_LEFT\_REDIRECT}}:\ type\_str\ =\ \textcolor{stringliteral}{"{}<<"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97}{DOUBLE\_RIGHT\_REDIRECT}}:\ type\_str\ =\ \textcolor{stringliteral}{"{}>>"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}:\ type\_str\ =\ \textcolor{stringliteral}{"{}NONE"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90}{ERROR}}:\ type\_str\ =\ \textcolor{stringliteral}{"{}ERROR"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ type\_str\ =\ \textcolor{stringliteral}{"{}UNKNOWN"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ Redirect:\ \%s\ \%s\(\backslash\)n"{}},\ type\_str,\ redir-\/>\mbox{\hyperlink{structs__redirect_abe3e192c9cf5ab03c0088614dcc804b8}{file}});}
+\DoxyCodeLine{00169\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c}{DOUBLE\+\_\+\+LEFT\+\_\+\+REDIRECT}}, \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97}{DOUBLE\+\_\+\+RIGHT\+\_\+\+REDIRECT}}, \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90}{ERROR}}, \mbox{\hyperlink{structs__redirect_abe3e192c9cf5ab03c0088614dcc804b8}{s\+\_\+redirect\+::file}}, \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f}{LEFT\+\_\+\+REDIRECT}}, \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}, \mbox{\hyperlink{structs__redirect_aa68b13bc97c76c51ee78bcf8cb2f3125}{s\+\_\+redirect\+::redirect\+\_\+simbol}}, and \mbox{\hyperlink{redirect__asignation_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131}{RIGHT\+\_\+\+REDIRECT}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_aaeba1075474bbabf46d3efc68664c129}{print\+\_\+command()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}\label{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d} 
+\index{minishell.c@{minishell.c}!print\_tokens@{print\_tokens}}
+\index{print\_tokens@{print\_tokens}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_tokens()}{print\_tokens()}}
+{\footnotesize\ttfamily void print\+\_\+tokens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00114}{114}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{structs__iter}{t\_iter}}\ \ \ \ \ \ \ \ it;}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{structs__token}{t\_token}}\ \ \ \ \ \ *tok;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ *type\_str;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (!tokens)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00122\ \ \ \ \ it\ =\ \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\_start}}(tokens);}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{while}\ ((tok\ =\ (\mbox{\hyperlink{structs__token}{t\_token}}\ *)\mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\_next}}(\&it))\ !=\ NULL)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (tok-\/>\mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{type}})}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1}{TOKEN\_CMD}}:}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}CMD"{}};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\_ARG}}:}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}ARG"{}};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\_PIPE}}:}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}PIPE"{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\_REDIR\_IN}}:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}REDIR\_IN"{}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\_REDIR\_OUT}}:}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}REDIR\_OUT"{}};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\_REDIR\_APPEND}}:}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}REDIR\_APPEND"{}};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\_HEREDOC}}:}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}HEREDOC"{}};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}UNKNOWN"{}};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}[\%s]\ :\ [\%s]\(\backslash\)n"{}},\ type\_str,\ tok-\/>\mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{value}});}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{list_8c_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\+\_\+next()}}, \mbox{\hyperlink{list_8c_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\+\_\+start()}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b}{TOKEN\+\_\+\+ARG}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1}{TOKEN\+\_\+\+CMD}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea6b61b3b682d388b0bf6b0a09ee7429d4}{TOKEN\+\_\+\+HEREDOC}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea93000ce4e0f00f6f294a98192f705910}{TOKEN\+\_\+\+PIPE}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222deaab1cf67ed92b6f538a4942d522de3be4}{TOKEN\+\_\+\+REDIR\+\_\+\+APPEND}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea973e80d20e204c1d2f0814c6cc56b337}{TOKEN\+\_\+\+REDIR\+\_\+\+IN}}, \mbox{\hyperlink{tokenizer_8h_a76a354e93d720f05344590ec8aa222dea14a8e6cad0ee7cf8064ac9e6cf4164a5}{TOKEN\+\_\+\+REDIR\+\_\+\+OUT}}, \mbox{\hyperlink{structs__token_a350680c70abb7e7173240477e92dc0a3}{s\+\_\+token\+::type}}, and \mbox{\hyperlink{structs__token_a21b454c179e1e31383371d09385b9c59}{s\+\_\+token\+::value}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}\label{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1} 
+\index{minishell.c@{minishell.c}!sigint\_handler@{sigint\_handler}}
+\index{sigint\_handler@{sigint\_handler}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{sigint\_handler()}{sigint\_handler()}}
+{\footnotesize\ttfamily void sigint\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00089}{89}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ (void)sig;}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7}{g\_signal}}\ =\ SIGINT;}
+\DoxyCodeLine{00093\ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{00094\ \ \ \ \ rl\_on\_new\_line();}
+\DoxyCodeLine{00095\ \ \ \ \ rl\_replace\_line(\textcolor{stringliteral}{"{}"{}},\ 0);}
+\DoxyCodeLine{00096\ \ \ \ \ rl\_redisplay();}
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7}{g\+\_\+signal}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a3719a1754f6e317bbb96770b973d453c}{signals\+\_\+init()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a3719a1754f6e317bbb96770b973d453c}\label{minishell_8c_a3719a1754f6e317bbb96770b973d453c} 
+\index{minishell.c@{minishell.c}!signals\_init@{signals\_init}}
+\index{signals\_init@{signals\_init}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{signals\_init()}{signals\_init()}}
+{\footnotesize\ttfamily void signals\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00099}{99}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{struct\ }sigaction\ \ \ \ sa\_int;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{struct\ }sigaction\ \ \ \ sa\_quit;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ sa\_int.sa\_handler\ =\ \mbox{\hyperlink{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\_handler}};}
+\DoxyCodeLine{00105\ \ \ \ \ sigemptyset(\&sa\_int.sa\_mask);}
+\DoxyCodeLine{00106\ \ \ \ \ sa\_int.sa\_flags\ =\ SA\_RESTART;}
+\DoxyCodeLine{00107\ \ \ \ \ sigaction(SIGINT,\ \&sa\_int,\ NULL);}
+\DoxyCodeLine{00108\ \ \ \ \ sa\_quit.sa\_handler\ =\ SIG\_IGN;}
+\DoxyCodeLine{00109\ \ \ \ \ sigemptyset(\&sa\_quit.sa\_mask);}
+\DoxyCodeLine{00110\ \ \ \ \ sa\_quit.sa\_flags\ =\ SA\_RESTART;}
+\DoxyCodeLine{00111\ \ \ \ \ sigaction(SIGQUIT,\ \&sa\_quit,\ NULL);}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{minishell_8c_a3719a1754f6e317bbb96770b973d453c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{minishell_8c_a3719a1754f6e317bbb96770b973d453c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a8139962a2ceae2621213f8e6719565cf}\label{minishell_8c_a8139962a2ceae2621213f8e6719565cf} 
+\index{minishell.c@{minishell.c}!username@{username}}
+\index{username@{username}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} username (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00079}{79}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}}\ =\ \mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\_get}}(env,\ \textcolor{stringliteral}{"{}LOGNAME"{}});}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(\textcolor{stringliteral}{"{}minishell\%"{}}));}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\_strjoin}}(\mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}},\ \textcolor{stringliteral}{"{}\%>\$"{}}));}
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get()}}, \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup()}}, \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\+\_\+strjoin()}}, and \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}, and \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{minishell_8c_a8139962a2ceae2621213f8e6719565cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{minishell_8c_a8139962a2ceae2621213f8e6719565cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7}\label{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7} 
+\index{minishell.c@{minishell.c}!g\_signal@{g\_signal}}
+\index{g\_signal@{g\_signal}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{g\_signal}{g\_signal}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t g\+\_\+signal = 0}
+
+
+
+Definition at line \mbox{\hyperlink{minishell_8c_source_l00027}{27}} of file \mbox{\hyperlink{minishell_8c_source}{minishell.\+c}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler()}}.
+

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_split.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_split.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,9 @@ Include dependency graph for ft_split.c:</div>
 <area shape="poly" title=" " alt="" coords="255,101,373,145,371,150,253,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__split_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2a36d49f968650a86545c04b11c8cd72" id="r_a2a36d49f968650a86545c04b11c8cd72"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72">ft_extractor</a> (char const *n, size_t k, size_t s, char t)</td></tr>
@@ -160,6 +163,49 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00015">15</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">size_t</span>  j;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    j = 0;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">while</span> (s &lt; k)</div>
+<div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (n[s] == t)</div>
+<div class="line"><span class="lineno">   23</span>            j++;</div>
+<div class="line"><span class="lineno">   24</span>        s++;</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> (j - 1);</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c">ft_survivor()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_a2a36d49f968650a86545c04b11c8cd72_icgraph.png" border="0" usemap="#aft__split_8c_a2a36d49f968650a86545c04b11c8cd72_icgraph" alt=""/></div>
+<map name="aft__split_8c_a2a36d49f968650a86545c04b11c8cd72_icgraph" id="aft__split_8c_a2a36d49f968650a86545c04b11c8cd72_icgraph">
+<area shape="rect" title=" " alt="" coords="1289,31,1387,56"/>
+<area shape="rect" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="1151,31,1241,56"/>
+<area shape="poly" title=" " alt="" coords="1276,46,1241,46,1241,41,1276,41"/>
+<area shape="rect" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="1039,31,1103,56"/>
+<area shape="poly" title=" " alt="" coords="1137,46,1103,46,1103,41,1137,41"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="924,31,991,56"/>
+<area shape="poly" title=" " alt="" coords="1025,46,991,46,991,41,1025,41"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="585,5,709,31"/>
+<area shape="poly" title=" " alt="" coords="910,42,709,26,710,20,911,37"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="757,56,876,81"/>
+<area shape="poly" title=" " alt="" coords="911,54,877,61,876,55,910,49"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="572,24,61,45,60,40,571,18"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="597,56,697,81"/>
+<area shape="poly" title=" " alt="" coords="744,71,698,71,698,66,744,66"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,56,537,81"/>
+<area shape="poly" title=" " alt="" coords="583,71,538,71,538,66,583,66"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,56,315,81"/>
+<area shape="poly" title=" " alt="" coords="349,71,315,71,315,66,349,66"/>
+<area shape="poly" title=" " alt="" coords="107,57,60,50,61,44,108,51"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ade3ab5178ccaa23c4c6faf4450460c39" name="ade3ab5178ccaa23c4c6faf4450460c39"></a>
@@ -208,6 +254,75 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00076">76</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">size_t</span>  r;</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordtype">size_t</span>  n;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    r = -1;</div>
+<div class="line"><span class="lineno">   82</span>    n = 0;</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">while</span> (s[p])</div>
+<div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>        p++;</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (s[p] == c || s[p] == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   87</span>        {</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> (s[p - 1] != c)</div>
+<div class="line"><span class="lineno">   89</span>            {</div>
+<div class="line"><span class="lineno">   90</span>                p3[++r] = <a class="code hl_function" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c">ft_survivor</a>(s, p, n, c);</div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">if</span> (!p3[r])</div>
+<div class="line"><span class="lineno">   92</span>                {</div>
+<div class="line"><span class="lineno">   93</span>                    <span class="keywordflow">while</span> (r != 0)</div>
+<div class="line"><span class="lineno">   94</span>                        free(p3[r-- - 1]);</div>
+<div class="line"><span class="lineno">   95</span>                    free(p3);</div>
+<div class="line"><span class="lineno">   96</span>                    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   97</span>                }</div>
+<div class="line"><span class="lineno">   98</span>                n = p;</div>
+<div class="line"><span class="lineno">   99</span>            }</div>
+<div class="line"><span class="lineno">  100</span>        }</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> (p3);</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="aft__split_8c_html_aabeeb509584dc83b1855c9487957ba4c"><div class="ttname"><a href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c">ft_survivor</a></div><div class="ttdeci">static char * ft_survivor(char const *n, size_t k, size_t s, char t)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00029">ft_split.c:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c">ft_survivor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_cgraph.png" border="0" usemap="#aft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_cgraph" alt=""/></div>
+<map name="aft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_cgraph" id="aft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,69,31"/>
+<area shape="rect" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="117,5,208,31"/>
+<area shape="poly" title=" " alt="" coords="70,15,103,15,103,21,70,21"/>
+<area shape="rect" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="256,5,353,31"/>
+<area shape="poly" title=" " alt="" coords="208,15,242,15,242,21,208,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_icgraph.png" border="0" usemap="#aft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_icgraph" alt=""/></div>
+<map name="aft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_icgraph" id="aft__split_8c_ade3ab5178ccaa23c4c6faf4450460c39_icgraph">
+<area shape="rect" title=" " alt="" coords="1039,31,1103,56"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="924,31,991,56"/>
+<area shape="poly" title=" " alt="" coords="1025,46,991,46,991,41,1025,41"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="585,5,709,31"/>
+<area shape="poly" title=" " alt="" coords="910,42,709,26,710,20,911,37"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="757,56,876,81"/>
+<area shape="poly" title=" " alt="" coords="911,54,877,61,876,55,910,49"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="572,24,61,45,60,40,571,18"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="597,56,697,81"/>
+<area shape="poly" title=" " alt="" coords="744,71,698,71,698,66,744,66"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,56,537,81"/>
+<area shape="poly" title=" " alt="" coords="583,71,538,71,538,66,583,66"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,56,315,81"/>
+<area shape="poly" title=" " alt="" coords="349,71,315,71,315,66,349,66"/>
+<area shape="poly" title=" " alt="" coords="107,57,60,50,61,44,108,51"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aa65c9de65051c8c589286cf133c4a1f4" name="aa65c9de65051c8c589286cf133c4a1f4"></a>
@@ -235,6 +350,67 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00105">105</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordtype">char</span>    **p3;</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordtype">size_t</span>  p;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    p3 = NULL;</div>
+<div class="line"><span class="lineno">  111</span>    p = 0;</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (!s)</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">  114</span>    p3 = (<span class="keywordtype">char</span> **)<a class="code hl_function" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679">ft_calloc</a>((<a class="code hl_function" href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa">ft_worldette</a>(s, c) + 1), <span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *));</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (!p3)</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39">ft_rapt</a>(s, c, p3, p));</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+<div class="ttc" id="aft__calloc_8c_html_a55cb9602200ccf92a7f43e58c6ee2679"><div class="ttname"><a href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679">ft_calloc</a></div><div class="ttdeci">void * ft_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="ft__calloc_8c_source.html#l00015">ft_calloc.c:15</a></div></div>
+<div class="ttc" id="aft__split_8c_html_ac0bb6c50d70ad12ea046d500aefc8ffa"><div class="ttname"><a href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa">ft_worldette</a></div><div class="ttdeci">static size_t ft_worldette(const char *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00055">ft_split.c:55</a></div></div>
+<div class="ttc" id="aft__split_8c_html_ade3ab5178ccaa23c4c6faf4450460c39"><div class="ttname"><a href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39">ft_rapt</a></div><div class="ttdeci">static char ** ft_rapt(char const *s, char c, char **p3, size_t p)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00076">ft_split.c:76</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679">ft_calloc()</a>, <a class="el" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39">ft_rapt()</a>, and <a class="el" href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa">ft_worldette()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="environment_8h.html#a5da2d3c514cffffe7e48122742dd4d44">env_deserialize()</a>, and <a class="el" href="bin__commandss__execution_8h.html#a91b61219a17cd048e781bb835f1a66a1">find_command()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_cgraph.png" border="0" usemap="#aft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_cgraph" alt=""/></div>
+<map name="aft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_cgraph" id="aft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,72,80"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="132,5,208,31"/>
+<area shape="poly" title=" " alt="" coords="72,52,122,33,123,38,73,57"/>
+<area shape="rect" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="138,55,202,80"/>
+<area shape="poly" title=" " alt="" coords="72,65,124,65,124,70,72,70"/>
+<area shape="rect" href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="120,104,220,129"/>
+<area shape="poly" title=" " alt="" coords="73,77,123,96,122,101,72,82"/>
+<area shape="rect" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="268,55,359,80"/>
+<area shape="poly" title=" " alt="" coords="202,65,254,65,254,70,202,70"/>
+<area shape="rect" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="407,55,504,80"/>
+<area shape="poly" title=" " alt="" coords="359,65,393,65,393,70,359,70"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_icgraph.png" border="0" usemap="#aft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_icgraph" alt=""/></div>
+<map name="aft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_icgraph" id="aft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_icgraph">
+<area shape="rect" title=" " alt="" coords="924,31,991,56"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="585,5,709,31"/>
+<area shape="poly" title=" " alt="" coords="910,42,709,26,710,20,911,37"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="757,56,876,81"/>
+<area shape="poly" title=" " alt="" coords="911,54,877,61,876,55,910,49"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="572,24,61,45,60,40,571,18"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="597,56,697,81"/>
+<area shape="poly" title=" " alt="" coords="744,71,698,71,698,66,744,66"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,56,537,81"/>
+<area shape="poly" title=" " alt="" coords="583,71,538,71,538,66,583,66"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,56,315,81"/>
+<area shape="poly" title=" " alt="" coords="349,71,315,71,315,66,349,66"/>
+<area shape="poly" title=" " alt="" coords="107,57,60,50,61,44,108,51"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -284,6 +460,72 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00029">29</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">char</span>    *p2;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">char</span>    *p1;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">size_t</span>  i;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">size_t</span>  p;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    i = 0;</div>
+<div class="line"><span class="lineno">   37</span>    p2 = NULL;</div>
+<div class="line"><span class="lineno">   38</span>    p1 = (<span class="keywordtype">char</span> *)n;</div>
+<div class="line"><span class="lineno">   39</span>    p = <a class="code hl_function" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72">ft_extractor</a>(n, k, s, t);</div>
+<div class="line"><span class="lineno">   40</span>    p2 = malloc(k - s - p);</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (!p2)</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">while</span> (s &lt; k)</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">while</span> (p1[s] == t)</div>
+<div class="line"><span class="lineno">   46</span>            s++;</div>
+<div class="line"><span class="lineno">   47</span>        p2[i] = p1[s];</div>
+<div class="line"><span class="lineno">   48</span>        s++;</div>
+<div class="line"><span class="lineno">   49</span>        i++;</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span>    p2[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> (p2);</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aft__split_8c_html_a2a36d49f968650a86545c04b11c8cd72"><div class="ttname"><a href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72">ft_extractor</a></div><div class="ttdeci">static size_t ft_extractor(char const *n, size_t k, size_t s, char t)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00015">ft_split.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72">ft_extractor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39">ft_rapt()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_aabeeb509584dc83b1855c9487957ba4c_cgraph.png" border="0" usemap="#aft__split_8c_aabeeb509584dc83b1855c9487957ba4c_cgraph" alt=""/></div>
+<map name="aft__split_8c_aabeeb509584dc83b1855c9487957ba4c_cgraph" id="aft__split_8c_aabeeb509584dc83b1855c9487957ba4c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,96,31"/>
+<area shape="rect" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="144,5,241,31"/>
+<area shape="poly" title=" " alt="" coords="96,15,130,15,130,21,96,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_aabeeb509584dc83b1855c9487957ba4c_icgraph.png" border="0" usemap="#aft__split_8c_aabeeb509584dc83b1855c9487957ba4c_icgraph" alt=""/></div>
+<map name="aft__split_8c_aabeeb509584dc83b1855c9487957ba4c_icgraph" id="aft__split_8c_aabeeb509584dc83b1855c9487957ba4c_icgraph">
+<area shape="rect" title=" " alt="" coords="1151,31,1241,56"/>
+<area shape="rect" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="1039,31,1103,56"/>
+<area shape="poly" title=" " alt="" coords="1137,46,1103,46,1103,41,1137,41"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="924,31,991,56"/>
+<area shape="poly" title=" " alt="" coords="1025,46,991,46,991,41,1025,41"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="585,5,709,31"/>
+<area shape="poly" title=" " alt="" coords="910,42,709,26,710,20,911,37"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="757,56,876,81"/>
+<area shape="poly" title=" " alt="" coords="911,54,877,61,876,55,910,49"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="572,24,61,45,60,40,571,18"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="597,56,697,81"/>
+<area shape="poly" title=" " alt="" coords="744,71,698,71,698,66,744,66"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,56,537,81"/>
+<area shape="poly" title=" " alt="" coords="583,71,538,71,538,66,583,66"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,56,315,81"/>
+<area shape="poly" title=" " alt="" coords="349,71,315,71,315,66,349,66"/>
+<area shape="poly" title=" " alt="" coords="107,57,60,50,61,44,108,51"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ac0bb6c50d70ad12ea046d500aefc8ffa" name="ac0bb6c50d70ad12ea046d500aefc8ffa"></a>
@@ -319,6 +561,52 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00055">55</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">size_t</span>  count;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">size_t</span>  i;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    count = 0;</div>
+<div class="line"><span class="lineno">   61</span>    i = 0;</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">while</span> (s[i])</div>
+<div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">while</span> (s[i] == c)</div>
+<div class="line"><span class="lineno">   65</span>            i++;</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (s[i])</div>
+<div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            count++;</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">while</span> (s[i] &amp;&amp; s[i] != c)</div>
+<div class="line"><span class="lineno">   70</span>                i++;</div>
+<div class="line"><span class="lineno">   71</span>        }</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> (count);</div>
+<div class="line"><span class="lineno">   74</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ft__split_8c_ac0bb6c50d70ad12ea046d500aefc8ffa_icgraph.png" border="0" usemap="#aft__split_8c_ac0bb6c50d70ad12ea046d500aefc8ffa_icgraph" alt=""/></div>
+<map name="aft__split_8c_ac0bb6c50d70ad12ea046d500aefc8ffa_icgraph" id="aft__split_8c_ac0bb6c50d70ad12ea046d500aefc8ffa_icgraph">
+<area shape="rect" title=" " alt="" coords="1039,31,1139,56"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="924,31,991,56"/>
+<area shape="poly" title=" " alt="" coords="1025,46,991,46,991,41,1025,41"/>
+<area shape="rect" href="environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="585,5,709,31"/>
+<area shape="poly" title=" " alt="" coords="910,42,709,26,710,20,911,37"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="757,56,876,81"/>
+<area shape="poly" title=" " alt="" coords="911,54,877,61,876,55,910,49"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" title=" " alt="" coords="572,24,61,45,60,40,571,18"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="597,56,697,81"/>
+<area shape="poly" title=" " alt="" coords="744,71,698,71,698,66,744,66"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,56,537,81"/>
+<area shape="poly" title=" " alt="" coords="583,71,538,71,538,66,583,66"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,56,315,81"/>
+<area shape="poly" title=" " alt="" coords="349,71,315,71,315,66,349,66"/>
+<area shape="poly" title=" " alt="" coords="107,57,60,50,61,44,108,51"/>
+</map>
+</div>
 
 </div>
 </div>

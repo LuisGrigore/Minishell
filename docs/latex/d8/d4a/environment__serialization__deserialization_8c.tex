@@ -1,0 +1,103 @@
+\doxysection{src/environment/environment\+\_\+serialization\+\_\+deserialization.c File Reference}
+\hypertarget{environment__serialization__deserialization_8c}{}\label{environment__serialization__deserialization_8c}\index{src/environment/environment\_serialization\_deserialization.c@{src/environment/environment\_serialization\_deserialization.c}}
+{\ttfamily \#include "{}environment\+\_\+internal.\+h"{}}\newline
+Include dependency graph for environment\+\_\+serialization\+\_\+deserialization.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d20/environment__serialization__deserialization_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b}{env\+\_\+serialize}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
+\begin{DoxyCompactList}\small\item\em Serialize environment variables into a null-\/terminated string array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Convert a string array into an environment variable list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44}\label{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44} 
+\index{environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}!env\_deserialize@{env\_deserialize}}
+\index{env\_deserialize@{env\_deserialize}!environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}}
+\doxysubsubsection{\texorpdfstring{env\_deserialize()}{env\_deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} env\+\_\+deserialize (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{str\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+Convert a string array into an environment variable list. 
+
+Each string must follow the "{}\+NAME=\+VALUE"{} format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+\_\+array} & Null-\/terminated array of strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a newly allocated environment variable list, or NULL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{env\+\_\+serialize} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4a/environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{d8/d4a/environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b}\label{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b} 
+\index{environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}!env\_serialize@{env\_serialize}}
+\index{env\_serialize@{env\_serialize}!environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}}
+\doxysubsubsection{\texorpdfstring{env\_serialize()}{env\_serialize()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} env\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+
+
+Serialize environment variables into a null-\/terminated string array. 
+
+Each environment variable is represented as "{}\+NAME=\+VALUE"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dynamically allocated null-\/terminated array of strings, or NULL on allocation failure.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{d8/d4a/environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{d8/d4a/environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_icgraph}
+\end{center}
+\end{figure}

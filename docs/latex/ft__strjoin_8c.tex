@@ -1,0 +1,117 @@
+\doxysection{libft/ft\+\_\+strjoin.c File Reference}
+\hypertarget{ft__strjoin_8c}{}\label{ft__strjoin_8c}\index{libft/ft\_strjoin.c@{libft/ft\_strjoin.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strjoin.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strjoin_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strjoin_8c_a2d825fe6a3df22249f9229d0dc329553}{ft\+\_\+cpi}} (char \texorpdfstring{$\ast$}{*}p2, char const \texorpdfstring{$\ast$}{*}s1, char const \texorpdfstring{$\ast$}{*}s2)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\+\_\+strjoin}} (char const \texorpdfstring{$\ast$}{*}s1, char const \texorpdfstring{$\ast$}{*}s2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strjoin_8c_a2d825fe6a3df22249f9229d0dc329553}\label{ft__strjoin_8c_a2d825fe6a3df22249f9229d0dc329553} 
+\index{ft\_strjoin.c@{ft\_strjoin.c}!ft\_cpi@{ft\_cpi}}
+\index{ft\_cpi@{ft\_cpi}!ft\_strjoin.c@{ft\_strjoin.c}}
+\doxysubsubsection{\texorpdfstring{ft\_cpi()}{ft\_cpi()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} ft\+\_\+cpi (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{p2,  }\item[{char const \texorpdfstring{$\ast$}{*}}]{s1,  }\item[{char const \texorpdfstring{$\ast$}{*}}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strjoin_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strjoin_8c_source}{ft\+\_\+strjoin.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ t;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ t\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (s1\ \&\&\ s1[i])}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ p2[i]\ =\ s1[i];}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{while}\ (s2\ \&\&\ s2[t])}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ p2[i]\ =\ s2[t];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ t++;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ p2[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ (p2);}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\+\_\+strjoin()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strjoin_8c_a2d825fe6a3df22249f9229d0dc329553_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}\label{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b} 
+\index{ft\_strjoin.c@{ft\_strjoin.c}!ft\_strjoin@{ft\_strjoin}}
+\index{ft\_strjoin@{ft\_strjoin}!ft\_strjoin.c@{ft\_strjoin.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strjoin()}{ft\_strjoin()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} ft\+\_\+strjoin (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{s1,  }\item[{char const \texorpdfstring{$\ast$}{*}}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strjoin_8c_source_l00037}{37}} of file \mbox{\hyperlink{ft__strjoin_8c_source}{ft\+\_\+strjoin.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ j;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *p1;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ j\ =\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(s1);}
+\DoxyCodeLine{00044\ \ \ \ \ s\ =\ \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(s2);}
+\DoxyCodeLine{00045\ \ \ \ \ p1\ =\ malloc(j\ +\ s\ +\ 1);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p1)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strjoin_8c_a2d825fe6a3df22249f9229d0dc329553}{ft\_cpi}}(p1,\ s1,\ s2));}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__strjoin_8c_a2d825fe6a3df22249f9229d0dc329553}{ft\+\_\+cpi()}}, and \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen()}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_ac40e1776b69522eaf80d953ec441231d}{cd\+\_\+execute()}}, \mbox{\hyperlink{environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89}{env\+\_\+var\+\_\+to\+\_\+string()}}, \mbox{\hyperlink{find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f}{get\+\_\+final\+\_\+path()}}, and \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_icgraph}
+\end{center}
+\end{figure}

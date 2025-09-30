@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_memset.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_memset.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,9 @@ Include dependency graph for ft_memset.c:</div>
 <area shape="poly" title=" " alt="" coords="255,101,373,145,371,150,253,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="ft__memset_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a557de65a3f3e16f953f5dae59cdb6106" id="r_a557de65a3f3e16f953f5dae59cdb6106"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__memset_8c.html#a557de65a3f3e16f953f5dae59cdb6106">ft_memset</a> (void *s, int c, size_t n)</td></tr>
@@ -138,6 +141,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__memset_8c_source.html#l00014">14</a> of file <a class="el" href="ft__memset_8c_source.html">ft_memset.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *dest;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">size_t</span>          i;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    dest = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s;</div>
+<div class="line"><span class="lineno">   20</span>    i = 0;</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">while</span> (i &lt; n)</div>
+<div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        dest[i] = c;</div>
+<div class="line"><span class="lineno">   24</span>        i++;</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> (dest);</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

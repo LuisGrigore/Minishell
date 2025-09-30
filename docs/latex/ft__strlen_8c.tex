@@ -1,0 +1,57 @@
+\doxysection{libft/ft\+\_\+strlen.c File Reference}
+\hypertarget{ft__strlen_8c}{}\label{ft__strlen_8c}\index{libft/ft\_strlen.c@{libft/ft\_strlen.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+strlen.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strlen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen}} (const char \texorpdfstring{$\ast$}{*}str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}\label{ft__strlen_8c_a828402378653640f545a4be2e00e92f9} 
+\index{ft\_strlen.c@{ft\_strlen.c}!ft\_strlen@{ft\_strlen}}
+\index{ft\_strlen@{ft\_strlen}!ft\_strlen.c@{ft\_strlen.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strlen()}{ft\_strlen()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlen (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strlen_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__strlen_8c_source}{ft\+\_\+strlen.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00021\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{command_8h_a0fad0803ff59cff11ab2eb8de7eac854}{echo\+\_\+execute()}}, \mbox{\hyperlink{get__next__line_8c_a609b127f1ce98c0993c99eff0faf8daf}{ft\+\_\+ssubstr()}}, \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup()}}, \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\+\_\+strjoin()}}, \mbox{\hyperlink{ft__strlcat_8c_a5ec5cb64412b189edcc4c4bd56183f54}{ft\+\_\+strlcat()}}, \mbox{\hyperlink{ft__strlcpy_8c_aa053827b3a2ea3d0118783d6fb59d178}{ft\+\_\+strlcpy()}}, \mbox{\hyperlink{ft__strmapi_8c_a668b60557bfc9d60c2d3ccda8afadf49}{ft\+\_\+strmapi()}}, \mbox{\hyperlink{ft__strtrim_8c_a60352c5b39fab08469b3e28131a79e25}{ft\+\_\+strtrim()}}, \mbox{\hyperlink{ft__substr_8c_a78c402cbf3d55b1374693c3b7d34f71d}{ft\+\_\+substr()}}, \mbox{\hyperlink{parser_8c_aa35fa6305cbaf308a7431d95127a0784}{get\+\_\+command\+\_\+function()}}, \mbox{\hyperlink{util_8h_a57f8722a65ce8e86c5486e4a21b7506c}{get\+\_\+next\+\_\+argument()}}, \mbox{\hyperlink{redirect__asignation_8h_a1dcc7a29a8a1d5240c49fbf25ce60d9c}{get\+\_\+redirects\+\_\+from\+\_\+str\+\_\+arr()}}, \mbox{\hyperlink{minishell_8c_a74cc3d851d4f0f3ab5c2202774200577}{history\+\_\+checker()}}, \mbox{\hyperlink{redirect__asignation_8h_a18e2207c2ccc7fe3089b5f522400281c}{init\+\_\+redirect()}}, \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}, \mbox{\hyperlink{parser_8h_ae411b47cf3a6fe75994d31c5574c60ce}{parse\+\_\+tokens\+\_\+to\+\_\+commands()}}, \mbox{\hyperlink{util_8h_a0a3aaf9949360fa6bba7d3a64e5a0061}{special\+\_\+char()}}, \mbox{\hyperlink{tokenizer_8h_a7f79110e05751dc9e588a9fab750d97d}{tokenize()}}, and \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\+\_\+name\+\_\+filter()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strlen_8c_a828402378653640f545a4be2e00e92f9_icgraph}
+\end{center}
+\end{figure}

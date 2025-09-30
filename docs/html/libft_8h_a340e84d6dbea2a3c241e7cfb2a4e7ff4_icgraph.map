@@ -1,0 +1,17 @@
+<map id="free_double_pointer" name="free_double_pointer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="904,23,1056,48"/>
+<area shape="rect" id="Node000002" href="$command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="587,23,687,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="915,22,856,13,797,8,738,13,679,25,678,20,737,7,797,3,856,7,916,17"/>
+<area shape="rect" id="Node000006" href="$command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="585,72,689,97"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="905,53,856,62,690,82,689,77,856,57,905,48"/>
+<area shape="rect" id="Node000007" href="$find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="737,23,856,48"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="890,38,856,38,856,33,890,33"/>
+<area shape="rect" id="Node000003" href="$parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,48,537,73"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="574,47,538,51,537,46,573,41"/>
+<area shape="rect" id="Node000004" href="$parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,48,315,73"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="349,63,315,63,315,58,349,58"/>
+<area shape="rect" id="Node000005" href="$minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,48,60,73"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,63,60,63,60,58,94,58"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="571,79,537,74,538,69,572,74"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="724,38,688,38,688,33,724,33"/>
+</map>

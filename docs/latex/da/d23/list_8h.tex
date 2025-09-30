@@ -1,0 +1,688 @@
+\doxysection{list/list.h File Reference}
+\hypertarget{list_8h}{}\label{list_8h}\index{list/list.h@{list/list.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for list.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d0/deb/list_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d73/list_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{list_8h_d9/d54/structs__node}{s\+\_\+node}}
+\item 
+struct \mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{s\+\_\+gen\+\_\+list}}
+\item 
+struct \mbox{\hyperlink{list_8h_dc/d64/structs__iter}{s\+\_\+iter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{list_8h_d9/d54/structs__node}{s\+\_\+node}} \mbox{\hyperlink{list_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node}}
+\item 
+typedef struct \mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{s\+\_\+gen\+\_\+list}} \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}}
+\item 
+typedef struct \mbox{\hyperlink{list_8h_dc/d64/structs__iter}{s\+\_\+iter}} \mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\+\_\+iter}}
+\item 
+typedef char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}}) (void \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Function that converts a list element into a string. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}}) (void \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Function that frees or destroys a value stored in the list. \end{DoxyCompactList}\item 
+typedef bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}) (void \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Predicate function used to test list elements. \end{DoxyCompactList}\item 
+typedef bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}) (void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Predicate function with context. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}}) (void \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Function applied to each list element during traversal. \end{DoxyCompactList}\item 
+typedef void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element}}) (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Function that converts a string into a list element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a2ab31c1a882bda317542865ca981aa91}{init\+\_\+list}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize an empty list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a0c64773be1bb7fb7762b58fc3b45232c}{destroy\+\_\+gen\+\_\+list}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}} value\+\_\+destroyer)
+\begin{DoxyCompactList}\small\item\em Destroy the entire list and its nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_ad70cc8287d69eb2327b71b28f7d52b6a}{push\+\_\+end}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Insert a value at the end of the list (O(1)). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a78751fefb5026bcdb58b19c746c959bc}{push\+\_\+front}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Insert a value at the beginning of the list (O(1)). \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a727ab27543f4152a5e7e3ac9454e0fb8}{pop\+\_\+front}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list)
+\begin{DoxyCompactList}\small\item\em Remove the first node of the list and return its value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_ad0f582149f5f1afddc9fd77cd5fda23d}{remove\+\_\+if}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate, \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}} value\+\_\+destroyer)
+\begin{DoxyCompactList}\small\item\em Remove nodes from the list that satisfy a condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a0d5ae98b13ae636228df9e80b0e0c7bc}{remove\+\_\+if\+\_\+ctx}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context, \mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}} value\+\_\+destroyer)
+\begin{DoxyCompactList}\small\item\em Remove nodes from the list that satisfy a condition with context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a0d174e81f82313dcd45df92c4b615a37}{traverse}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}} func)
+\begin{DoxyCompactList}\small\item\em Traverse all elements of the list and apply a function to each value. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a8c3f7372fe82ae7ba247e4d1c15b9565}{find\+\_\+in\+\_\+list}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate)
+\begin{DoxyCompactList}\small\item\em Find the first element that satisfies a predicate. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_abb086ea2a6228785be66cd22587c359a}{find\+\_\+in\+\_\+list\+\_\+ctx}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Find the first element in the list that satisfies a predicate with context. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{list_8h_a3e790ad74440ff15dadd1a9aae28b1ab}{contains\+\_\+in\+\_\+list}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate)
+\begin{DoxyCompactList}\small\item\em Check if the list contains an element that satisfies a predicate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{list_8h_accccb0bd8dea6e7d3b94608d18989d99}{contains\+\_\+in\+\_\+list\+\_\+ctx}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Check if the list contains an element that satisfies a predicate with context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\+\_\+iter}} \mbox{\hyperlink{list_8h_a0f8c34a8af8a33c8ec69d034952a7a4e}{iter\+\_\+start}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list)
+\begin{DoxyCompactList}\small\item\em Initialize an iterator at the start of the list. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_a8b49fd31ce730eadfb8c1192f30fe20b}{iter\+\_\+next}} (\mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\+\_\+iter}} \texorpdfstring{$\ast$}{*}it)
+\begin{DoxyCompactList}\small\item\em Get the next value from the list using the iterator and advance it. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_aeaa86bb6994ea250112f8b4a1a2c1f77}{serialize\+\_\+to\+\_\+string}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}} element\+\_\+to\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Convert a generic list into a single string representation. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_aa4522f235ef61b5bceac4de3cc34fde3}{serialize\+\_\+to\+\_\+string\+\_\+array}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}} element\+\_\+to\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Convert a generic list into an array of strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8h_af47e7209b8cddc03fbf126c886199709}{deserialize\+\_\+from\+\_\+string\+\_\+array}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element}} string\+\_\+to\+\_\+element)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Class Documentation}
+\index{s\_node@{s\_node}}\label{structs__node}
+\Hypertarget{list_8h_structs__node}
+\doxysubsubsection{struct s\+\_\+node}
+
+
+Collaboration diagram for s\+\_\+node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{de/da0/structs__node__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{list_8h_ac2237e21194d385a2f3d6bd5fdca8045}\label{list_8h_ac2237e21194d385a2f3d6bd5fdca8045}} 
+struct \mbox{\hyperlink{list_8h_d9/d54/structs__node}{s\_node}} \texorpdfstring{$\ast$}{*}&
+next&
+\\
+\hline
+
+\mbox{\Hypertarget{list_8h_af0201fc8bf11256ef9450c8017f22314}\label{list_8h_af0201fc8bf11256ef9450c8017f22314}} 
+void \texorpdfstring{$\ast$}{*}&
+value&
+\\
+\hline
+
+\end{DoxyFields}
+\index{s\_gen\_list@{s\_gen\_list}}\label{structs__gen__list}
+\Hypertarget{list_8h_structs__gen__list}
+\doxysubsubsection{struct s\+\_\+gen\+\_\+list}
+
+
+Collaboration diagram for s\+\_\+gen\+\_\+list\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{d9/d21/structs__gen__list__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{list_8h_a9d3e4dedcc05679fcd869efb7c26d500}\label{list_8h_a9d3e4dedcc05679fcd869efb7c26d500}} 
+\mbox{\hyperlink{list_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}} \texorpdfstring{$\ast$}{*}&
+head&
+\\
+\hline
+
+\mbox{\Hypertarget{list_8h_a161ce598b8ef7b173793b9b6699ef42f}\label{list_8h_a161ce598b8ef7b173793b9b6699ef42f}} 
+size\_t&
+size&
+\\
+\hline
+
+\mbox{\Hypertarget{list_8h_a0ba83f9d5ef3faa95b9ef2da58c5ae0a}\label{list_8h_a0ba83f9d5ef3faa95b9ef2da58c5ae0a}} 
+\mbox{\hyperlink{list_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}} \texorpdfstring{$\ast$}{*}&
+tail&
+\\
+\hline
+
+\end{DoxyFields}
+\index{s\_iter@{s\_iter}}\label{structs__iter}
+\Hypertarget{list_8h_structs__iter}
+\doxysubsubsection{struct s\+\_\+iter}
+
+
+Collaboration diagram for s\+\_\+iter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{d0/db0/structs__iter__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{list_8h_a7b908147fd2cd904c0ac931eec2ec8b8}\label{list_8h_a7b908147fd2cd904c0ac931eec2ec8b8}} 
+\mbox{\hyperlink{list_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}} \texorpdfstring{$\ast$}{*}&
+current&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{list_8h_a884bc438360ab582b2c03305e14c196d}\label{list_8h_a884bc438360ab582b2c03305e14c196d} 
+\index{list.h@{list.h}!t\_apply\_func@{t\_apply\_func}}
+\index{t\_apply\_func@{t\_apply\_func}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_apply\_func}{t\_apply\_func}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} t\+\_\+apply\+\_\+func) (void \texorpdfstring{$\ast$}{*}element)}
+
+
+
+Function applied to each list element during traversal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Pointer to the element to process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}\label{list_8h_a76bf5461401c0a8ceefe0b19425ab41e} 
+\index{list.h@{list.h}!t\_element\_to\_string@{t\_element\_to\_string}}
+\index{t\_element\_to\_string@{t\_element\_to\_string}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_element\_to\_string}{t\_element\_to\_string}}
+{\footnotesize\ttfamily typedef char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} t\+\_\+element\+\_\+to\+\_\+string) (void \texorpdfstring{$\ast$}{*}element)}
+
+
+
+Function that converts a list element into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Pointer to the element to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dynamically allocated string representation of the element. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_a34f302945ae5df15b46569be320d7022}\label{list_8h_a34f302945ae5df15b46569be320d7022} 
+\index{list.h@{list.h}!t\_gen\_list@{t\_gen\_list}}
+\index{t\_gen\_list@{t\_gen\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_gen\_list}{t\_gen\_list}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{s\+\_\+gen\+\_\+list}} \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}}}
+
+\Hypertarget{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}\label{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d} 
+\index{list.h@{list.h}!t\_iter@{t\_iter}}
+\index{t\_iter@{t\_iter}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_iter}{t\_iter}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{list_8h_dc/d64/structs__iter}{s\+\_\+iter}} \mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\+\_\+iter}}}
+
+\Hypertarget{list_8h_a3f46128da7b9ed932ecb00df9677e301}\label{list_8h_a3f46128da7b9ed932ecb00df9677e301} 
+\index{list.h@{list.h}!t\_node@{t\_node}}
+\index{t\_node@{t\_node}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_node}{t\_node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{list_8h_d9/d54/structs__node}{s\+\_\+node}} \mbox{\hyperlink{list_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node}}}
+
+\Hypertarget{list_8h_a4531065fe6787efbf5eab36f3823e40c}\label{list_8h_a4531065fe6787efbf5eab36f3823e40c} 
+\index{list.h@{list.h}!t\_predicate@{t\_predicate}}
+\index{t\_predicate@{t\_predicate}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_predicate}{t\_predicate}}
+{\footnotesize\ttfamily typedef bool(\texorpdfstring{$\ast$}{*} t\+\_\+predicate) (void \texorpdfstring{$\ast$}{*}element)}
+
+
+
+Predicate function used to test list elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Pointer to the element to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the element satisfies the condition, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}\label{list_8h_ad2be4dbe7531c2a410f35968ae79dba6} 
+\index{list.h@{list.h}!t\_predicate\_ctx@{t\_predicate\_ctx}}
+\index{t\_predicate\_ctx@{t\_predicate\_ctx}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_predicate\_ctx}{t\_predicate\_ctx}}
+{\footnotesize\ttfamily typedef bool(\texorpdfstring{$\ast$}{*} t\+\_\+predicate\+\_\+ctx) (void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context)}
+
+
+
+Predicate function with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Pointer to the element to test. \\
+\hline
+{\em context} & Pointer to extra data required by the predicate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the element satisfies the condition, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_a45339f17ba107cf89ced205c9ba29a79}\label{list_8h_a45339f17ba107cf89ced205c9ba29a79} 
+\index{list.h@{list.h}!t\_string\_to\_element@{t\_string\_to\_element}}
+\index{t\_string\_to\_element@{t\_string\_to\_element}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_string\_to\_element}{t\_string\_to\_element}}
+{\footnotesize\ttfamily typedef void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} t\+\_\+string\+\_\+to\+\_\+element) (const char \texorpdfstring{$\ast$}{*}str)}
+
+
+
+Function that converts a string into a list element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Null-\/terminated string to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dynamically allocated element, or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_ab361a4af1f069101008dba0b0be090d3}\label{list_8h_ab361a4af1f069101008dba0b0be090d3} 
+\index{list.h@{list.h}!t\_value\_destroyer@{t\_value\_destroyer}}
+\index{t\_value\_destroyer@{t\_value\_destroyer}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_value\_destroyer}{t\_value\_destroyer}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} t\+\_\+value\+\_\+destroyer) (void \texorpdfstring{$\ast$}{*}element)}
+
+
+
+Function that frees or destroys a value stored in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Pointer to the element to destroy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{list_8h_a3e790ad74440ff15dadd1a9aae28b1ab}\label{list_8h_a3e790ad74440ff15dadd1a9aae28b1ab} 
+\index{list.h@{list.h}!contains\_in\_list@{contains\_in\_list}}
+\index{contains\_in\_list@{contains\_in\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{contains\_in\_list()}{contains\_in\_list()}}
+{\footnotesize\ttfamily bool contains\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate }\end{DoxyParamCaption})}
+
+
+
+Check if the list contains an element that satisfies a predicate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function to test elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a matching element is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_accccb0bd8dea6e7d3b94608d18989d99}\label{list_8h_accccb0bd8dea6e7d3b94608d18989d99} 
+\index{list.h@{list.h}!contains\_in\_list\_ctx@{contains\_in\_list\_ctx}}
+\index{contains\_in\_list\_ctx@{contains\_in\_list\_ctx}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{contains\_in\_list\_ctx()}{contains\_in\_list\_ctx()}}
+{\footnotesize\ttfamily bool contains\+\_\+in\+\_\+list\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+
+
+
+Check if the list contains an element that satisfies a predicate with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function that takes (element, context). \\
+\hline
+{\em context} & Context pointer passed to the predicate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a matching element is found, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{da/d23/list_8h_accccb0bd8dea6e7d3b94608d18989d99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{da/d23/list_8h_accccb0bd8dea6e7d3b94608d18989d99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_af47e7209b8cddc03fbf126c886199709}\label{list_8h_af47e7209b8cddc03fbf126c886199709} 
+\index{list.h@{list.h}!deserialize\_from\_string\_array@{deserialize\_from\_string\_array}}
+\index{deserialize\_from\_string\_array@{deserialize\_from\_string\_array}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{deserialize\_from\_string\_array()}{deserialize\_from\_string\_array()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} deserialize\+\_\+from\+\_\+string\+\_\+array (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{array,  }\item[{\mbox{\hyperlink{list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element}}}]{string\+\_\+to\+\_\+element }\end{DoxyParamCaption})}
+
+Convert a null-\/terminated array of strings into a generic linked list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Null-\/terminated array of strings. \\
+\hline
+{\em string\+\_\+to\+\_\+element} & Function to convert each string into a list element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a newly allocated list, or NULL on error. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_a0c64773be1bb7fb7762b58fc3b45232c}\label{list_8h_a0c64773be1bb7fb7762b58fc3b45232c} 
+\index{list.h@{list.h}!destroy\_gen\_list@{destroy\_gen\_list}}
+\index{destroy\_gen\_list@{destroy\_gen\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_gen\_list()}{destroy\_gen\_list()}}
+{\footnotesize\ttfamily void destroy\+\_\+gen\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}}}]{value\+\_\+destroyer }\end{DoxyParamCaption})}
+
+
+
+Destroy the entire list and its nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to destroy. \\
+\hline
+{\em value\+\_\+destroyer} & Function to free each stored value, can be NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{list_8h_a8c3f7372fe82ae7ba247e4d1c15b9565}\label{list_8h_a8c3f7372fe82ae7ba247e4d1c15b9565} 
+\index{list.h@{list.h}!find\_in\_list@{find\_in\_list}}
+\index{find\_in\_list@{find\_in\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{find\_in\_list()}{find\_in\_list()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} find\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate }\end{DoxyParamCaption})}
+
+
+
+Find the first element that satisfies a predicate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function to test each element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the first node that satisfies the condition, or NULL if none found. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_abb086ea2a6228785be66cd22587c359a}\label{list_8h_abb086ea2a6228785be66cd22587c359a} 
+\index{list.h@{list.h}!find\_in\_list\_ctx@{find\_in\_list\_ctx}}
+\index{find\_in\_list\_ctx@{find\_in\_list\_ctx}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{find\_in\_list\_ctx()}{find\_in\_list\_ctx()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} find\+\_\+in\+\_\+list\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+
+
+
+Find the first element in the list that satisfies a predicate with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function that takes (element, context). \\
+\hline
+{\em context} & Context pointer passed to the predicate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the first matching node, or NULL if none found. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_abb086ea2a6228785be66cd22587c359a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_a2ab31c1a882bda317542865ca981aa91}\label{list_8h_a2ab31c1a882bda317542865ca981aa91} 
+\index{list.h@{list.h}!init\_list@{init\_list}}
+\index{init\_list@{init\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{init\_list()}{init\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} init\+\_\+list (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize an empty list. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the created list, or NULL if allocation fails. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a2ab31c1a882bda317542865ca981aa91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_a8b49fd31ce730eadfb8c1192f30fe20b}\label{list_8h_a8b49fd31ce730eadfb8c1192f30fe20b} 
+\index{list.h@{list.h}!iter\_next@{iter\_next}}
+\index{iter\_next@{iter\_next}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{iter\_next()}{iter\_next()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} iter\+\_\+next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\+\_\+iter}} \texorpdfstring{$\ast$}{*}}]{it }\end{DoxyParamCaption})}
+
+
+
+Get the next value from the list using the iterator and advance it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & Iterator of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the current node and advances, or NULL if the end is reached. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a8b49fd31ce730eadfb8c1192f30fe20b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_a0f8c34a8af8a33c8ec69d034952a7a4e}\label{list_8h_a0f8c34a8af8a33c8ec69d034952a7a4e} 
+\index{list.h@{list.h}!iter\_start@{iter\_start}}
+\index{iter\_start@{iter\_start}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{iter\_start()}{iter\_start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_ace4efaa3255f77419607bf0d4f5ddb1d}{t\+\_\+iter}} iter\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list }\end{DoxyParamCaption})}
+
+
+
+Initialize an iterator at the start of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to iterate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator pointing to the first node. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a0f8c34a8af8a33c8ec69d034952a7a4e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_a727ab27543f4152a5e7e3ac9454e0fb8}\label{list_8h_a727ab27543f4152a5e7e3ac9454e0fb8} 
+\index{list.h@{list.h}!pop\_front@{pop\_front}}
+\index{pop\_front@{pop\_front}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{pop\_front()}{pop\_front()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} pop\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list }\end{DoxyParamCaption})}
+
+
+
+Remove the first node of the list and return its value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List from which to remove the first node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value stored in the first node, or NULL if the list is empty. 
+\end{DoxyReturn}
+\Hypertarget{list_8h_ad70cc8287d69eb2327b71b28f7d52b6a}\label{list_8h_ad70cc8287d69eb2327b71b28f7d52b6a} 
+\index{list.h@{list.h}!push\_end@{push\_end}}
+\index{push\_end@{push\_end}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{push\_end()}{push\_end()}}
+{\footnotesize\ttfamily void push\+\_\+end (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Insert a value at the end of the list (O(1)). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List where the value will be inserted. \\
+\hline
+{\em value} & Pointer to the value to insert. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_ad70cc8287d69eb2327b71b28f7d52b6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_a78751fefb5026bcdb58b19c746c959bc}\label{list_8h_a78751fefb5026bcdb58b19c746c959bc} 
+\index{list.h@{list.h}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily void push\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Insert a value at the beginning of the list (O(1)). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List where the value will be inserted. \\
+\hline
+{\em value} & Pointer to the value to insert. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a78751fefb5026bcdb58b19c746c959bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_ad0f582149f5f1afddc9fd77cd5fda23d}\label{list_8h_ad0f582149f5f1afddc9fd77cd5fda23d} 
+\index{list.h@{list.h}!remove\_if@{remove\_if}}
+\index{remove\_if@{remove\_if}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{remove\_if()}{remove\_if()}}
+{\footnotesize\ttfamily void remove\+\_\+if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate,  }\item[{\mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}}}]{value\+\_\+destroyer }\end{DoxyParamCaption})}
+
+
+
+Remove nodes from the list that satisfy a condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to modify. \\
+\hline
+{\em predicate} & Predicate function to decide which nodes to remove. \\
+\hline
+{\em value\+\_\+destroyer} & Function to free the value of each removed node. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{list_8h_a0d5ae98b13ae636228df9e80b0e0c7bc}\label{list_8h_a0d5ae98b13ae636228df9e80b0e0c7bc} 
+\index{list.h@{list.h}!remove\_if\_ctx@{remove\_if\_ctx}}
+\index{remove\_if\_ctx@{remove\_if\_ctx}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{remove\_if\_ctx()}{remove\_if\_ctx()}}
+{\footnotesize\ttfamily void remove\+\_\+if\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\mbox{\hyperlink{list_8h_ab361a4af1f069101008dba0b0be090d3}{t\+\_\+value\+\_\+destroyer}}}]{value\+\_\+destroyer }\end{DoxyParamCaption})}
+
+
+
+Remove nodes from the list that satisfy a condition with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to modify. \\
+\hline
+{\em predicate} & Predicate function that takes (element, context). \\
+\hline
+{\em context} & Extra pointer passed to the predicate on each call. \\
+\hline
+{\em value\+\_\+destroyer} & Function to free the value of each removed node, can be NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{list_8h_aeaa86bb6994ea250112f8b4a1a2c1f77}\label{list_8h_aeaa86bb6994ea250112f8b4a1a2c1f77} 
+\index{list.h@{list.h}!serialize\_to\_string@{serialize\_to\_string}}
+\index{serialize\_to\_string@{serialize\_to\_string}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{serialize\_to\_string()}{serialize\_to\_string()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} serialize\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}}}]{element\+\_\+to\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Convert a generic list into a single string representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the list to serialize. \\
+\hline
+{\em element\+\_\+to\+\_\+string} & Function that converts each element to a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dynamically allocated string representing the list.
+\end{DoxyReturn}
+Convert a list into a single string in format\+: \mbox{[}elem1, elem2, ...\mbox{]} \Hypertarget{list_8h_aa4522f235ef61b5bceac4de3cc34fde3}\label{list_8h_aa4522f235ef61b5bceac4de3cc34fde3} 
+\index{list.h@{list.h}!serialize\_to\_string\_array@{serialize\_to\_string\_array}}
+\index{serialize\_to\_string\_array@{serialize\_to\_string\_array}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{serialize\_to\_string\_array()}{serialize\_to\_string\_array()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} serialize\+\_\+to\+\_\+string\+\_\+array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string}}}]{element\+\_\+to\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Convert a generic list into an array of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the list to serialize. \\
+\hline
+{\em element\+\_\+to\+\_\+string} & Function that converts each element to a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dynamically allocated null-\/terminated array of strings, one per element.
+\end{DoxyReturn}
+Convert a list into an array of strings. Each element is a string returned by element\+\_\+to\+\_\+string. The array is null-\/terminated. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_aa4522f235ef61b5bceac4de3cc34fde3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{list_8h_a0d174e81f82313dcd45df92c4b615a37}\label{list_8h_a0d174e81f82313dcd45df92c4b615a37} 
+\index{list.h@{list.h}!traverse@{traverse}}
+\index{traverse@{traverse}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{traverse()}{traverse()}}
+{\footnotesize\ttfamily void traverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}}}]{func }\end{DoxyParamCaption})}
+
+
+
+Traverse all elements of the list and apply a function to each value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to traverse. \\
+\hline
+{\em func} & Function to apply to each value. \\
+\hline
+\end{DoxyParams}

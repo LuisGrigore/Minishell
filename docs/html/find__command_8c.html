@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/find_command.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/find_command.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -106,7 +107,9 @@ Include dependency graph for find_command.c:</div>
 <area shape="poly" title=" " alt="" coords="349,109,472,159,470,164,347,114"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="find__command_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1fefebecbdde4df9bcc987ec77ac0a6f" id="r_a1fefebecbdde4df9bcc987ec77ac0a6f"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="find__command_8c.html#a1fefebecbdde4df9bcc987ec77ac0a6f">get_final_path</a> (char *path, char *cmd)</td></tr>
@@ -151,6 +154,38 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="find__command_8c_source.html#l00028">28</a> of file <a class="el" href="find__command_8c_source.html">find_command.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!env &amp;&amp; access(cmd, X_OK) != 0)</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        write(2, <span class="stringliteral">&quot;Path doest find\n&quot;</span>, 17);</div>
+<div class="line"><span class="lineno">   33</span>        exit(1);</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (access(cmd, X_OK) == 0)</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> (cmd);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   38</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="bin__commandss__execution_8h.html#a91b61219a17cd048e781bb835f1a66a1">find_command()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="find__command_8c_a0d757d8d977e3050b5d9636cf547ff16_icgraph.png" border="0" usemap="#afind__command_8c_a0d757d8d977e3050b5d9636cf547ff16_icgraph" alt=""/></div>
+<map name="afind__command_8c_a0d757d8d977e3050b5d9636cf547ff16_icgraph" id="afind__command_8c_a0d757d8d977e3050b5d9636cf547ff16_icgraph">
+<area shape="rect" title=" " alt="" coords="900,5,1008,31"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="733,5,852,31"/>
+<area shape="poly" title=" " alt="" coords="886,21,852,21,852,15,886,15"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="585,5,685,31"/>
+<area shape="poly" title=" " alt="" coords="720,21,685,21,685,15,720,15"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,5,537,31"/>
+<area shape="poly" title=" " alt="" coords="572,21,537,21,537,15,572,15"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,5,315,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,315,21,315,15,349,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a91b61219a17cd048e781bb835f1a66a1" name="a91b61219a17cd048e781bb835f1a66a1"></a>
@@ -178,6 +213,93 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="find__command_8c_source.html#l00040">40</a> of file <a class="el" href="find__command_8c_source.html">find_command.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">int</span>     y;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordtype">char</span>    **path;</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">char</span>    *final_path;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    y = 0;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">while</span> (env[y] &amp;&amp; <a class="code hl_function" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(env[y], <span class="stringliteral">&quot;PATH=&quot;</span>, 5) != 0)</div>
+<div class="line"><span class="lineno">   48</span>        y++;</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="find__command_8c.html#a0d757d8d977e3050b5d9636cf547ff16">checker_path</a>(env[y], cmd))</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="find__command_8c.html#a0d757d8d977e3050b5d9636cf547ff16">checker_path</a>(env[y], cmd));</div>
+<div class="line"><span class="lineno">   51</span>    path = <a class="code hl_function" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(env[y] + 5, <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">   52</span>    y = 0;</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">while</span> (path[y])</div>
+<div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        final_path = <a class="code hl_function" href="find__command_8c.html#a1fefebecbdde4df9bcc987ec77ac0a6f">get_final_path</a>(path[y], cmd);</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (access(final_path, X_OK) == 0)</div>
+<div class="line"><span class="lineno">   57</span>        {</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_function" href="ft__dbpt__free_8c.html#a340e84d6dbea2a3c241e7cfb2a4e7ff4">free_double_pointer</a>(path);</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> (final_path);</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span>        free(final_path);</div>
+<div class="line"><span class="lineno">   62</span>        y++;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_function" href="ft__dbpt__free_8c.html#a340e84d6dbea2a3c241e7cfb2a4e7ff4">free_double_pointer</a>(path);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+<div class="ttc" id="afind__command_8c_html_a0d757d8d977e3050b5d9636cf547ff16"><div class="ttname"><a href="find__command_8c.html#a0d757d8d977e3050b5d9636cf547ff16">checker_path</a></div><div class="ttdeci">static char * checker_path(char *env, char *cmd)</div><div class="ttdef"><b>Definition</b> <a href="find__command_8c_source.html#l00028">find_command.c:28</a></div></div>
+<div class="ttc" id="afind__command_8c_html_a1fefebecbdde4df9bcc987ec77ac0a6f"><div class="ttname"><a href="find__command_8c.html#a1fefebecbdde4df9bcc987ec77ac0a6f">get_final_path</a></div><div class="ttdeci">static char * get_final_path(char *path, char *cmd)</div><div class="ttdef"><b>Definition</b> <a href="find__command_8c_source.html#l00017">find_command.c:17</a></div></div>
+<div class="ttc" id="aft__dbpt__free_8c_html_a340e84d6dbea2a3c241e7cfb2a4e7ff4"><div class="ttname"><a href="ft__dbpt__free_8c.html#a340e84d6dbea2a3c241e7cfb2a4e7ff4">free_double_pointer</a></div><div class="ttdeci">void free_double_pointer(char **dbpt)</div><div class="ttdef"><b>Definition</b> <a href="ft__dbpt__free_8c_source.html#l00015">ft_dbpt_free.c:15</a></div></div>
+<div class="ttc" id="aft__split_8c_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00105">ft_split.c:105</a></div></div>
+<div class="ttc" id="aft__strncmp_8c_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00015">ft_strncmp.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="find__command_8c.html#a0d757d8d977e3050b5d9636cf547ff16">checker_path()</a>, <a class="el" href="ft__dbpt__free_8c.html#a340e84d6dbea2a3c241e7cfb2a4e7ff4">free_double_pointer()</a>, <a class="el" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split()</a>, <a class="el" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp()</a>, and <a class="el" href="find__command_8c.html#a1fefebecbdde4df9bcc987ec77ac0a6f">get_final_path()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="command_8h.html#a9b93e7663cca775fbe6c13fea90699f1">bin_execute()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="find__command_8c_a91b61219a17cd048e781bb835f1a66a1_cgraph.png" border="0" usemap="#afind__command_8c_a91b61219a17cd048e781bb835f1a66a1_cgraph" alt=""/></div>
+<map name="afind__command_8c_a91b61219a17cd048e781bb835f1a66a1_cgraph" id="afind__command_8c_a91b61219a17cd048e781bb835f1a66a1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,104,124,129"/>
+<area shape="rect" href="find__command_8c.html#a0d757d8d977e3050b5d9636cf547ff16" title=" " alt="" coords="194,5,302,31"/>
+<area shape="poly" title=" " alt="" coords="79,102,119,71,171,40,186,33,188,38,173,44,122,76,82,106"/>
+<area shape="rect" href="ft__dbpt__free_8c.html#a340e84d6dbea2a3c241e7cfb2a4e7ff4" title=" " alt="" coords="172,55,324,80"/>
+<area shape="poly" title=" " alt="" coords="112,101,186,81,187,86,113,107"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="215,104,281,129"/>
+<area shape="poly" title=" " alt="" coords="124,114,201,114,201,119,124,119"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="203,153,293,179"/>
+<area shape="poly" title=" " alt="" coords="113,127,190,148,189,153,112,132"/>
+<area shape="rect" href="find__command_8c.html#a1fefebecbdde4df9bcc987ec77ac0a6f" title=" " alt="" coords="191,203,305,228"/>
+<area shape="poly" title=" " alt="" coords="82,127,122,158,173,189,188,195,186,200,171,194,119,162,79,131"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="384,55,460,80"/>
+<area shape="poly" title=" " alt="" coords="281,105,370,79,371,84,282,110"/>
+<area shape="rect" href="ft__split_8c.html#ade3ab5178ccaa23c4c6faf4450460c39" title=" " alt="" coords="390,104,454,129"/>
+<area shape="poly" title=" " alt="" coords="282,114,376,114,376,119,282,119"/>
+<area shape="rect" href="ft__split_8c.html#ac0bb6c50d70ad12ea046d500aefc8ffa" title=" " alt="" coords="372,153,472,179"/>
+<area shape="poly" title=" " alt="" coords="282,123,364,147,363,152,281,129"/>
+<area shape="rect" href="ft__split_8c.html#aabeeb509584dc83b1855c9487957ba4c" title=" " alt="" coords="520,104,611,129"/>
+<area shape="poly" title=" " alt="" coords="454,114,506,114,506,119,454,119"/>
+<area shape="rect" href="ft__split_8c.html#a2a36d49f968650a86545c04b11c8cd72" title=" " alt="" coords="659,104,756,129"/>
+<area shape="poly" title=" " alt="" coords="611,114,645,114,645,119,611,119"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="383,203,461,228"/>
+<area shape="poly" title=" " alt="" coords="305,213,369,213,369,218,305,218"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="537,177,594,203"/>
+<area shape="poly" title=" " alt="" coords="461,206,523,195,524,200,462,211"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="528,227,603,252"/>
+<area shape="poly" title=" " alt="" coords="462,219,515,228,514,233,461,224"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="find__command_8c_a91b61219a17cd048e781bb835f1a66a1_icgraph.png" border="0" usemap="#afind__command_8c_a91b61219a17cd048e781bb835f1a66a1_icgraph" alt=""/></div>
+<map name="afind__command_8c_a91b61219a17cd048e781bb835f1a66a1_icgraph" id="afind__command_8c_a91b61219a17cd048e781bb835f1a66a1_icgraph">
+<area shape="rect" title=" " alt="" coords="733,5,852,31"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="585,5,685,31"/>
+<area shape="poly" title=" " alt="" coords="720,21,685,21,685,15,720,15"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,5,537,31"/>
+<area shape="poly" title=" " alt="" coords="572,21,537,21,537,15,572,15"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,5,315,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,315,21,315,15,349,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -214,6 +336,54 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="find__command_8c_source.html#l00017">17</a> of file <a class="el" href="find__command_8c_source.html">find_command.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">char</span>    *aux;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">char</span>    *result;</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    aux = <a class="code hl_function" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(path, <span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    result = <a class="code hl_function" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(aux, cmd);</div>
+<div class="line"><span class="lineno">   24</span>    free(aux);</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> (result);</div>
+<div class="line"><span class="lineno">   26</span>}</div>
+<div class="ttc" id="aft__strjoin_8c_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00037">ft_strjoin.c:37</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bin__commandss__execution_8h.html#a91b61219a17cd048e781bb835f1a66a1">find_command()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_cgraph.png" border="0" usemap="#afind__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_cgraph" alt=""/></div>
+<map name="afind__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_cgraph" id="afind__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,120,56"/>
+<area shape="rect" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b" title=" " alt="" coords="168,31,247,56"/>
+<area shape="poly" title=" " alt="" coords="120,41,154,41,154,46,120,46"/>
+<area shape="rect" href="ft__strjoin_8c.html#a2d825fe6a3df22249f9229d0dc329553" title=" " alt="" coords="303,5,361,31"/>
+<area shape="poly" title=" " alt="" coords="247,33,289,24,291,29,248,38"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="295,55,369,80"/>
+<area shape="poly" title=" " alt="" coords="248,48,282,55,281,60,247,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="find__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_icgraph.png" border="0" usemap="#afind__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_icgraph" alt=""/></div>
+<map name="afind__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_icgraph" id="afind__command_8c_a1fefebecbdde4df9bcc987ec77ac0a6f_icgraph">
+<area shape="rect" title=" " alt="" coords="900,5,1015,31"/>
+<area shape="rect" href="find__command_8c.html#a91b61219a17cd048e781bb835f1a66a1" title=" " alt="" coords="733,5,852,31"/>
+<area shape="poly" title=" " alt="" coords="886,21,852,21,852,15,886,15"/>
+<area shape="rect" href="command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="585,5,685,31"/>
+<area shape="poly" title=" " alt="" coords="720,21,685,21,685,15,720,15"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,5,537,31"/>
+<area shape="poly" title=" " alt="" coords="572,21,537,21,537,15,572,15"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,5,315,31"/>
+<area shape="poly" title=" " alt="" coords="349,21,315,21,315,15,349,15"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>

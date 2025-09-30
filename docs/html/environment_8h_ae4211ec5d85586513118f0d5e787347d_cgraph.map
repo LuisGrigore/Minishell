@@ -1,0 +1,7 @@
+<map id="env_destroy" name="env_destroy">
+<area shape="rect" id="Node000001" title="Destroy the entire environment list and free resources." alt="" coords="5,31,108,56"/>
+<area shape="rect" id="Node000002" href="$envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="156,5,345,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,34,142,30,143,35,109,39"/>
+<area shape="rect" id="Node000003" href="$list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="186,55,315,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,47,173,55,172,60,108,52"/>
+</map>

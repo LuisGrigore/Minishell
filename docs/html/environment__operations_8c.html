@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/environment/environment_operations.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: src/environment/environment_operations.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -110,7 +111,9 @@ Include dependency graph for environment_operations.c:</div>
 <area shape="poly" title=" " alt="" coords="440,189,588,234,586,239,438,195"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="environment__operations_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a070d87ba3c4a4664d9e477e542e7358c" id="r_a070d87ba3c4a4664d9e477e542e7358c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c">env_set</a> (<a class="el" href="list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *env, char *name, char *value)</td></tr>
@@ -153,6 +156,39 @@ Functions</h2></td></tr>
 <a class="el" href="environment_8h.html#a5a194ea505a37e1c0ff6c349851f7c56" title="Remove an environment variable by name.">env_unset</a> </dd>
 <dd>
 <a class="el" href="environment_8h.html#acf492e955776c85b7354a3f5ee5f3215" title="Represents a single environment variable.">t_env_var</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="environment__operations_8c_source.html#l00044">44</a> of file <a class="el" href="environment__operations_8c_source.html">environment_operations.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_function" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a>(env, <a class="code hl_function" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">destroy_environment_var</a>);</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+<div class="ttc" id="aenvioroment__internal_8c_html_a566453675d237f5c5986b669cea3e6fc"><div class="ttname"><a href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">destroy_environment_var</a></div><div class="ttdeci">void destroy_environment_var(void *envioroment_var)</div><div class="ttdoc">Destroy a single environment variable.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00044">envioroment_internal.c:44</a></div></div>
+<div class="ttc" id="alist_8c_html_aaaeda7db5c6b1819a079f05d83c3ce38"><div class="ttname"><a href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list</a></div><div class="ttdeci">void destroy_gen_list(t_gen_list *list, void(value_destroyer)(void *))</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00088">list.c:88</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">destroy_environment_var()</a>, and <a class="el" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38">destroy_gen_list()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35">main()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__operations_8c_ae4211ec5d85586513118f0d5e787347d_cgraph.png" border="0" usemap="#aenvironment__operations_8c_ae4211ec5d85586513118f0d5e787347d_cgraph" alt=""/></div>
+<map name="aenvironment__operations_8c_ae4211ec5d85586513118f0d5e787347d_cgraph" id="aenvironment__operations_8c_ae4211ec5d85586513118f0d5e787347d_cgraph">
+<area shape="rect" title="Destroy the entire environment list and free resources." alt="" coords="5,31,108,56"/>
+<area shape="rect" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="156,5,345,31"/>
+<area shape="poly" title=" " alt="" coords="108,34,142,30,143,35,109,39"/>
+<area shape="rect" href="list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="186,55,315,80"/>
+<area shape="poly" title=" " alt="" coords="109,47,173,55,172,60,108,52"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__operations_8c_ae4211ec5d85586513118f0d5e787347d_icgraph.png" border="0" usemap="#aenvironment__operations_8c_ae4211ec5d85586513118f0d5e787347d_icgraph" alt=""/></div>
+<map name="aenvironment__operations_8c_ae4211ec5d85586513118f0d5e787347d_icgraph" id="aenvironment__operations_8c_ae4211ec5d85586513118f0d5e787347d_icgraph">
+<area shape="rect" title="Destroy the entire environment list and free resources." alt="" coords="108,5,211,31"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -207,6 +243,90 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="environment_8h.html#acf492e955776c85b7354a3f5ee5f3215" title="Represents a single environment variable.">t_env_var</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="environment__operations_8c_source.html#l00015">15</a> of file <a class="el" href="environment__operations_8c_source.html">environment_operations.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_struct" href="structs__env__var.html">t_env_var</a>   *new_var;</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_struct" href="structs__env__var.html">t_env_var</a>   *found_var;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">char</span>        *previous_val;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    found_var = (<a class="code hl_struct" href="structs__env__var.html">t_env_var</a> *)<a class="code hl_function" href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006">find_in_list_ctx</a>(env, <a class="code hl_function" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a>, name);</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (found_var)</div>
+<div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        previous_val = found_var-&gt;<a class="code hl_variable" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">var_value</a>;</div>
+<div class="line"><span class="lineno">   25</span>        found_var-&gt;<a class="code hl_variable" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">var_value</a> = <a class="code hl_function" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(value);</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (!found_var-&gt;<a class="code hl_variable" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">var_value</a>)</div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   28</span>        free(previous_val);</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span>    new_var = <a class="code hl_function" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a>(<a class="code hl_function" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(name), <a class="code hl_function" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(value));</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!new_var)</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="list_8c.html#a78751fefb5026bcdb58b19c746c959bc">push_front</a>(env, (<span class="keywordtype">void</span> *)new_var);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   36</span>}</div>
+<div class="ttc" id="aenvioroment__internal_8c_html_a07737b43515e692334bfcdfc797f5d5c"><div class="ttname"><a href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a></div><div class="ttdeci">t_env_var * init_environment_var(char *name, char *value)</div><div class="ttdoc">Create a new environment variable.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00032">envioroment_internal.c:32</a></div></div>
+<div class="ttc" id="aenvioroment__internal_8c_html_a8076868c04fd9fc3091d42bc8bd5a7bb"><div class="ttname"><a href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a></div><div class="ttdeci">bool var_name_filter(void *var_ptr, void *context)</div><div class="ttdoc">Filter function for comparing variable names.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00017">envioroment_internal.c:17</a></div></div>
+<div class="ttc" id="aft__strdup_8c_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00029">ft_strdup.c:29</a></div></div>
+<div class="ttc" id="alist_8c_html_a78751fefb5026bcdb58b19c746c959bc"><div class="ttname"><a href="list_8c.html#a78751fefb5026bcdb58b19c746c959bc">push_front</a></div><div class="ttdeci">void push_front(t_gen_list *list, void *value)</div><div class="ttdoc">Insert a value at the beginning of the list (O(1)).</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00054">list.c:54</a></div></div>
+<div class="ttc" id="alist_8c_html_a8a8208f7d40bea91f4b1faee63f61006"><div class="ttname"><a href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006">find_in_list_ctx</a></div><div class="ttdeci">void * find_in_list_ctx(t_gen_list *list, bool(*predicate)(void *element, void *context), void *context)</div><div class="ttdoc">Find the first element in the list that satisfies a predicate with context.</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00233">list.c:233</a></div></div>
+<div class="ttc" id="astructs__env__var_html"><div class="ttname"><a href="structs__env__var.html">s_env_var</a></div><div class="ttdoc">Represents a single environment variable (internal use).</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00032">environment_internal.h:33</a></div></div>
+<div class="ttc" id="astructs__env__var_html_af7904f8f58e150edf67f237e52d25409"><div class="ttname"><a href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">s_env_var::var_value</a></div><div class="ttdeci">char * var_value</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00035">environment_internal.h:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006">find_in_list_ctx()</a>, <a class="el" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup()</a>, <a class="el" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var()</a>, <a class="el" href="list_8c.html#a78751fefb5026bcdb58b19c746c959bc">push_front()</a>, <a class="el" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter()</a>, and <a class="el" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">s_env_var::var_value</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="command_8h.html#ac40e1776b69522eaf80d953ec441231d">cd_execute()</a>, and <a class="el" href="command_8h.html#abba1603056020c33ad3f11e82b14fcfe">export_execute()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_cgraph.png" border="0" usemap="#aenvironment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_cgraph" alt=""/></div>
+<map name="aenvironment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_cgraph" id="aenvironment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_cgraph">
+<area shape="rect" title="Add or update an environment variable." alt="" coords="5,104,79,129"/>
+<area shape="rect" href="list_8c.html#a8a8208f7d40bea91f4b1faee63f61006" title="Find the first element in the list that satisfies a predicate with context." alt="" coords="148,5,267,31"/>
+<area shape="poly" title=" " alt="" coords="53,102,83,71,125,40,138,33,141,38,128,44,87,75,56,106"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="168,104,247,129"/>
+<area shape="poly" title=" " alt="" coords="79,114,154,114,154,119,79,119"/>
+<area shape="rect" href="envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title="Create a new environment variable." alt="" coords="127,55,288,80"/>
+<area shape="poly" title=" " alt="" coords="78,103,126,89,150,82,151,87,127,94,80,108"/>
+<area shape="rect" href="list_8c.html#a78751fefb5026bcdb58b19c746c959bc" title="Insert a value at the beginning of the list (O(1))." alt="" coords="162,153,253,179"/>
+<area shape="poly" title=" " alt="" coords="80,125,152,147,150,152,78,130"/>
+<area shape="rect" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="145,203,269,228"/>
+<area shape="poly" title=" " alt="" coords="57,128,87,158,128,188,144,195,141,200,125,192,84,162,53,132"/>
+<area shape="rect" href="ft__strdup_8c.html#a28b3b78aa7d4fc06594eaab27ecb5e91" title=" " alt="" coords="342,104,421,129"/>
+<area shape="poly" title=" " alt="" coords="247,114,328,114,328,119,247,119"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="344,153,419,179"/>
+<area shape="poly" title=" " alt="" coords="247,125,332,149,330,154,246,130"/>
+<area shape="rect" href="ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="343,55,419,80"/>
+<area shape="poly" title=" " alt="" coords="288,65,330,65,330,70,288,70"/>
+<area shape="poly" title=" " alt="" coords="252,200,330,178,331,183,254,205"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="336,203,427,228"/>
+<area shape="poly" title=" " alt="" coords="270,213,322,213,322,218,270,218"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_icgraph.png" border="0" usemap="#aenvironment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_icgraph" alt=""/></div>
+<map name="aenvironment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_icgraph" id="aenvironment__operations_8c_a070d87ba3c4a4664d9e477e542e7358c_icgraph">
+<area shape="rect" title="Add or update an environment variable." alt="" coords="768,42,841,67"/>
+<area shape="rect" href="command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="611,17,706,42"/>
+<area shape="poly" title=" " alt="" coords="754,49,706,40,707,35,755,43"/>
+<area shape="rect" href="command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="597,66,720,91"/>
+<area shape="poly" title=" " alt="" coords="755,65,721,71,720,66,754,60"/>
+<area shape="rect" href="pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="363,5,549,45"/>
+<area shape="poly" title=" " alt="" coords="597,31,549,30,550,25,598,25"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="369,70,543,95"/>
+<area shape="poly" title=" " alt="" coords="598,48,506,73,504,67,597,43"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,42,60,67"/>
+<area shape="poly" title=" " alt="" coords="349,35,61,55,60,50,349,30"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,67,315,93"/>
+<area shape="poly" title=" " alt="" coords="355,84,315,84,315,78,355,79"/>
+<area shape="poly" title=" " alt="" coords="107,68,60,61,61,56,108,63"/>
+<area shape="poly" title=" " alt="" coords="595,65,532,48,533,43,597,60"/>
+<area shape="poly" title=" " alt="" coords="584,83,544,84,543,78,584,77"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aa155b7428061814751ff8a6fd7ba7961" name="aa155b7428061814751ff8a6fd7ba7961"></a>
@@ -251,6 +371,54 @@ Functions</h2></td></tr>
 <a class="el" href="environment_8h.html#acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9" title="Check if an environment variable exists by name.">env_has</a> </dd>
 <dd>
 <a class="el" href="environment_8h.html#acf492e955776c85b7354a3f5ee5f3215" title="Represents a single environment variable.">t_env_var</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="environment__operations_8c_source.html#l00038">38</a> of file <a class="el" href="environment__operations_8c_source.html">environment_operations.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b">remove_if_ctx</a>(envioroment, <a class="code hl_function" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a>, (<span class="keywordtype">void</span> *)name,</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_function" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">destroy_environment_var</a>);</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="alist_8c_html_ab561a8b9f78fba3f7a684c1bdcea4e9b"><div class="ttname"><a href="list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b">remove_if_ctx</a></div><div class="ttdeci">void remove_if_ctx(t_gen_list *list, bool(*predicate)(void *element, void *context), void *context, void(*value_destroyer)(void *))</div><div class="ttdef"><b>Definition</b> <a href="list_8c_source.html#l00156">list.c:156</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc">destroy_environment_var()</a>, <a class="el" href="list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b">remove_if_ctx()</a>, and <a class="el" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="command_8h.html#a24640ac75761d535d770cf4255c336da">unset_execute()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_cgraph.png" border="0" usemap="#aenvironment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_cgraph" alt=""/></div>
+<map name="aenvironment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_cgraph" id="aenvironment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_cgraph">
+<area shape="rect" title="Remove an environment variable by name." alt="" coords="5,55,95,80"/>
+<area shape="rect" href="envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title="Destroy a single environment variable." alt="" coords="143,5,332,31"/>
+<area shape="poly" title=" " alt="" coords="94,52,142,39,172,32,173,37,143,45,96,58"/>
+<area shape="rect" href="list_8c.html#ab561a8b9f78fba3f7a684c1bdcea4e9b" title=" " alt="" coords="180,55,295,80"/>
+<area shape="poly" title=" " alt="" coords="95,65,167,65,167,70,95,70"/>
+<area shape="rect" href="envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="175,104,299,129"/>
+<area shape="poly" title=" " alt="" coords="96,76,175,98,174,103,94,82"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="388,79,463,104"/>
+<area shape="poly" title=" " alt="" coords="299,106,374,96,374,101,300,111"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="380,128,471,153"/>
+<area shape="poly" title=" " alt="" coords="300,122,366,131,366,136,299,127"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="environment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_icgraph.png" border="0" usemap="#aenvironment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_icgraph" alt=""/></div>
+<map name="aenvironment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_icgraph" id="aenvironment__operations_8c_aa155b7428061814751ff8a6fd7ba7961_icgraph">
+<area shape="rect" title="Remove an environment variable by name." alt="" coords="749,42,839,67"/>
+<area shape="rect" href="command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="585,42,701,67"/>
+<area shape="poly" title=" " alt="" coords="735,57,702,57,702,52,735,52"/>
+<area shape="rect" href="pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="118,5,305,45"/>
+<area shape="poly" title=" " alt="" coords="571,53,305,34,305,29,572,47"/>
+<area shape="rect" href="parser_8c.html#aa35fa6305cbaf308a7431d95127a0784" title=" " alt="" coords="363,67,537,93"/>
+<area shape="poly" title=" " alt="" coords="572,67,538,71,537,66,572,61"/>
+<area shape="rect" href="minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,42,60,67"/>
+<area shape="poly" title=" " alt="" coords="105,46,61,53,60,48,104,40"/>
+<area shape="rect" href="parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,70,315,95"/>
+<area shape="poly" title=" " alt="" coords="349,84,315,84,315,79,349,78"/>
+<area shape="poly" title=" " alt="" coords="116,70,60,61,61,56,117,65"/>
+</map>
+</div>
 
 </div>
 </div>

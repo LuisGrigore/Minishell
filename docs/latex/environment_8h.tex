@@ -1,0 +1,531 @@
+\doxysection{include/environment.h File Reference}
+\hypertarget{environment_8h}{}\label{environment_8h}\index{include/environment.h@{include/environment.h}}
+{\ttfamily \#include "{}../list/list.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for environment.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{environment_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structs__env__var}{s\+\_\+env\+\_\+var}} \mbox{\hyperlink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var}}
+\begin{DoxyCompactList}\small\item\em Represents a single environment variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Add or update an environment variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Remove an environment variable by name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{env\+\_\+destroy}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+\begin{DoxyCompactList}\small\item\em Destroy the entire environment list and free resources. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{env\+\_\+serialize}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+\begin{DoxyCompactList}\small\item\em Serialize environment variables into a null-\/terminated string array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Convert a string array into an environment variable list. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Get the value of an environment variable by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\+\_\+has}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Check if an environment variable exists by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{environment_8h_acf492e955776c85b7354a3f5ee5f3215}\label{environment_8h_acf492e955776c85b7354a3f5ee5f3215} 
+\index{environment.h@{environment.h}!t\_env\_var@{t\_env\_var}}
+\index{t\_env\_var@{t\_env\_var}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{t\_env\_var}{t\_env\_var}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__env__var}{s\+\_\+env\+\_\+var}} \mbox{\hyperlink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var}}}
+
+
+
+Represents a single environment variable. 
+
+Each environment variable consists of a name and its associated value. 
+
+Definition at line \mbox{\hyperlink{environment_8h_source_l00029}{29}} of file \mbox{\hyperlink{environment_8h_source}{environment.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}\label{environment_8h_a5da2d3c514cffffe7e48122742dd4d44} 
+\index{environment.h@{environment.h}!env\_deserialize@{env\_deserialize}}
+\index{env\_deserialize@{env\_deserialize}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_deserialize()}{env\_deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} env\+\_\+deserialize (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{str\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+Convert a string array into an environment variable list. 
+
+Each string must follow the "{}\+NAME=\+VALUE"{} format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+\_\+array} & Null-\/terminated array of strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a newly allocated environment variable list, or NULL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{env\+\_\+serialize} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__serialization__deserialization_8c_source_l00039}{39}} of file \mbox{\hyperlink{environment__serialization__deserialization_8c_source}{environment\+\_\+serialization\+\_\+deserialization.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ j;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structs__gen__list}{t\_gen\_list}}\ \ \ \ *env\_var\_list;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ **var\_str\_name\_value\_split;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ env\_var\_list\ =\ \mbox{\hyperlink{list_8c_a2ab31c1a882bda317542865ca981aa91}{init\_list}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (str\_array[i])}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ var\_str\_name\_value\_split\ =\ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}(str\_array[i],\ \textcolor{charliteral}{'='});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\_end}}(env\_var\_list,\ \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\_environment\_var}}(var\_str\_name\_value\_split[0],}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\_str\_name\_value\_split[1]));}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ free(var\_str\_name\_value\_split);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ (env\_var\_list);}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\+\_\+split()}}, \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\+\_\+environment\+\_\+var()}}, \mbox{\hyperlink{list_8c_a2ab31c1a882bda317542865ca981aa91}{init\+\_\+list()}}, and \mbox{\hyperlink{list_8c_ad70cc8287d69eb2327b71b28f7d52b6a}{push\+\_\+end()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a5da2d3c514cffffe7e48122742dd4d44_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{environment_8h_a5da2d3c514cffffe7e48122742dd4d44_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment_8h_ae4211ec5d85586513118f0d5e787347d}\label{environment_8h_ae4211ec5d85586513118f0d5e787347d} 
+\index{environment.h@{environment.h}!env\_destroy@{env\_destroy}}
+\index{env\_destroy@{env\_destroy}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_destroy()}{env\_destroy()}}
+{\footnotesize\ttfamily void env\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+
+
+Destroy the entire environment list and free resources. 
+
+Frees all variables, their names and values, then frees the list itself.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set} 
+
+\doxylink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__operations_8c_source_l00044}{44}} of file \mbox{\hyperlink{environment__operations_8c_source}{environment\+\_\+operations.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\_gen\_list}}(env,\ \mbox{\hyperlink{envioroment__internal_8c_a566453675d237f5c5986b669cea3e6fc}{destroy\_environment\_var}});}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{envioroment__internal_8c_a566453675d237f5c5986b669cea3e6fc}{destroy\+\_\+environment\+\_\+var()}}, and \mbox{\hyperlink{list_8c_aaaeda7db5c6b1819a079f05d83c3ce38}{destroy\+\_\+gen\+\_\+list()}}.
+
+
+
+Referenced by \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{environment_8h_ae4211ec5d85586513118f0d5e787347d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{environment_8h_ae4211ec5d85586513118f0d5e787347d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment_8h_ae6e591b367378e4765abb31a480eb9c3}\label{environment_8h_ae6e591b367378e4765abb31a480eb9c3} 
+\index{environment.h@{environment.h}!env\_get@{env\_get}}
+\index{env\_get@{env\_get}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_get()}{env\_get()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} env\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Get the value of an environment variable by name. 
+
+The returned value is a newly allocated copy and must be freed by the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list. \\
+\hline
+{\em name} & Name of the variable to search. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dynamically allocated copy of the value, or NULL if not found.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set} 
+
+\doxylink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset} 
+
+\doxylink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\+\_\+has} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__query_8c_source_l00020}{20}} of file \mbox{\hyperlink{environment__query_8c_source}{environment\+\_\+query.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *found\_var;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ found\_var\ =\ \mbox{\hyperlink{list_8c_a8a8208f7d40bea91f4b1faee63f61006}{find\_in\_list\_ctx}}(environment\_vars,\ \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}},\ name);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (!found\_var)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}}));}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{list_8c_a8a8208f7d40bea91f4b1faee63f61006}{find\+\_\+in\+\_\+list\+\_\+ctx()}}, \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup()}}, \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\+\_\+name\+\_\+filter()}}, and \mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{s\+\_\+env\+\_\+var\+::var\+\_\+value}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_ac40e1776b69522eaf80d953ec441231d}{cd\+\_\+execute()}}, \mbox{\hyperlink{command_8h_a0f6eaa743e63abad6ac6be049d6179c6}{pwd\+\_\+execute()}}, and \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_ae6e591b367378e4765abb31a480eb9c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_ae6e591b367378e4765abb31a480eb9c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}\label{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9} 
+\index{environment.h@{environment.h}!env\_has@{env\_has}}
+\index{env\_has@{env\_has}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_has()}{env\_has()}}
+{\footnotesize\ttfamily bool env\+\_\+has (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Check if an environment variable exists by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list. \\
+\hline
+{\em name} & Name of the variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the variable exists, false otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set} 
+
+\doxylink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset} 
+
+\doxylink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__query_8c_source_l00015}{15}} of file \mbox{\hyperlink{environment__query_8c_source}{environment\+\_\+query.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{list_8c_ad1524f50d375add6decafbb031844b2b}{contains\_in\_list\_ctx}}(environment\_vars,\ \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}},\ name));}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{list_8c_ad1524f50d375add6decafbb031844b2b}{contains\+\_\+in\+\_\+list\+\_\+ctx()}}, and \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\+\_\+name\+\_\+filter()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}\label{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3} 
+\index{environment.h@{environment.h}!env\_serialize@{env\_serialize}}
+\index{env\_serialize@{env\_serialize}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_serialize()}{env\_serialize()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} env\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+
+
+Serialize environment variables into a null-\/terminated string array. 
+
+Each environment variable is represented as "{}\+NAME=\+VALUE"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dynamically allocated null-\/terminated array of strings, or NULL on allocation failure.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__serialization__deserialization_8c_source_l00032}{32}} of file \mbox{\hyperlink{environment__serialization__deserialization_8c_source}{environment\+\_\+serialization\+\_\+deserialization.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (!envioroment)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{list_8c_aa4522f235ef61b5bceac4de3cc34fde3}{serialize\_to\_string\_array}}(envioroment,\ \mbox{\hyperlink{environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89}{env\_var\_to\_string}}));}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{environment__serialization__deserialization_8c_abe05c26f7960699d5e039ecc78182f89}{env\+\_\+var\+\_\+to\+\_\+string()}}, and \mbox{\hyperlink{list_8c_aa4522f235ef61b5bceac4de3cc34fde3}{serialize\+\_\+to\+\_\+string\+\_\+array()}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_a9b93e7663cca775fbe6c13fea90699f1}{bin\+\_\+execute()}}, and \mbox{\hyperlink{command_8h_a509bc3c56be844c9b30a2ff165913928}{env\+\_\+execute()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}\label{environment_8h_a070d87ba3c4a4664d9e477e542e7358c} 
+\index{environment.h@{environment.h}!env\_set@{env\_set}}
+\index{env\_set@{env\_set}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_set()}{env\_set()}}
+{\footnotesize\ttfamily int env\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Add or update an environment variable. 
+
+If the variable does not exist, it is created and added to the list. If the variable already exists, its value is updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list. \\
+\hline
+{\em name} & Name of the variable (must not be NULL). \\
+\hline
+{\em value} & Value of the variable (can be NULL for empty). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, or an error code otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\+\_\+unset} 
+
+\doxylink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get} 
+
+\doxylink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\+\_\+has} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__operations_8c_source_l00015}{15}} of file \mbox{\hyperlink{environment__operations_8c_source}{environment\+\_\+operations.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *new\_var;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ \ *found\_var;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ *previous\_val;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ found\_var\ =\ (\mbox{\hyperlink{structs__env__var}{t\_env\_var}}\ *)\mbox{\hyperlink{list_8c_a8a8208f7d40bea91f4b1faee63f61006}{find\_in\_list\_ctx}}(env,\ \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}},\ name);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (found\_var)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ previous\_val\ =\ found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}}\ =\ \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(value);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found\_var-\/>\mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{var\_value}})}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ free(previous\_val);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ new\_var\ =\ \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\_environment\_var}}(\mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(name),\ \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\_strdup}}(value));}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (!new\_var)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{list_8c_a78751fefb5026bcdb58b19c746c959bc}{push\_front}}(env,\ (\textcolor{keywordtype}{void}\ *)new\_var);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{list_8c_a8a8208f7d40bea91f4b1faee63f61006}{find\+\_\+in\+\_\+list\+\_\+ctx()}}, \mbox{\hyperlink{ft__strdup_8c_aebe73f27c70c56ac5053f860ef5436c9}{ft\+\_\+strdup()}}, \mbox{\hyperlink{envioroment__internal_8c_a07737b43515e692334bfcdfc797f5d5c}{init\+\_\+environment\+\_\+var()}}, \mbox{\hyperlink{list_8c_a78751fefb5026bcdb58b19c746c959bc}{push\+\_\+front()}}, \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\+\_\+name\+\_\+filter()}}, and \mbox{\hyperlink{structs__env__var_af7904f8f58e150edf67f237e52d25409}{s\+\_\+env\+\_\+var\+::var\+\_\+value}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_ac40e1776b69522eaf80d953ec441231d}{cd\+\_\+execute()}}, and \mbox{\hyperlink{command_8h_abba1603056020c33ad3f11e82b14fcfe}{export\+\_\+execute()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a070d87ba3c4a4664d9e477e542e7358c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a070d87ba3c4a4664d9e477e542e7358c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}\label{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56} 
+\index{environment.h@{environment.h}!env\_unset@{env\_unset}}
+\index{env\_unset@{env\_unset}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_unset()}{env\_unset()}}
+{\footnotesize\ttfamily void env\+\_\+unset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Remove an environment variable by name. 
+
+If the variable is found, it is removed from the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Environment variable list. \\
+\hline
+{\em name} & Name of the variable to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\+\_\+set} 
+
+\doxylink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get} 
+
+\doxylink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\+\_\+has} 
+
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{environment__operations_8c_source_l00038}{38}} of file \mbox{\hyperlink{environment__operations_8c_source}{environment\+\_\+operations.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{list_8c_ab561a8b9f78fba3f7a684c1bdcea4e9b}{remove\_if\_ctx}}(envioroment,\ \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\_name\_filter}},\ (\textcolor{keywordtype}{void}\ *)name,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{envioroment__internal_8c_a566453675d237f5c5986b669cea3e6fc}{destroy\_environment\_var}});}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{envioroment__internal_8c_a566453675d237f5c5986b669cea3e6fc}{destroy\+\_\+environment\+\_\+var()}}, \mbox{\hyperlink{list_8c_ab561a8b9f78fba3f7a684c1bdcea4e9b}{remove\+\_\+if\+\_\+ctx()}}, and \mbox{\hyperlink{envioroment__internal_8c_a8076868c04fd9fc3091d42bc8bd5a7bb}{var\+\_\+name\+\_\+filter()}}.
+
+
+
+Referenced by \mbox{\hyperlink{command_8h_a24640ac75761d535d770cf4255c336da}{unset\+\_\+execute()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56_icgraph}
+\end{center}
+\end{figure}

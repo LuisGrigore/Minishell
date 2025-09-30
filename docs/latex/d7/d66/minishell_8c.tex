@@ -1,0 +1,235 @@
+\doxysection{src/minishell.c File Reference}
+\hypertarget{minishell_8c}{}\label{minishell_8c}\index{src/minishell.c@{src/minishell.c}}
+{\ttfamily \#include "{}../include/bin\+\_\+commandss\+\_\+execution.\+h"{}}\newline
+{\ttfamily \#include "{}../include/command.\+h"{}}\newline
+{\ttfamily \#include "{}../include/environment.\+h"{}}\newline
+{\ttfamily \#include "{}../list/list.\+h"{}}\newline
+{\ttfamily \#include "{}../include/parser.\+h"{}}\newline
+{\ttfamily \#include "{}../include/redirect\+\_\+asignation.\+h"{}}\newline
+{\ttfamily \#include "{}../include/tokenizer.\+h"{}}\newline
+{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
+{\ttfamily \#include "{}readline/history.\+h"{}}\newline
+{\ttfamily \#include "{}readline/readline.\+h"{}}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for minishell.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dd3/minishell_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}{check\+\_\+cmd}} (char \texorpdfstring{$\ast$}{*}cmd)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+\item 
+void \mbox{\hyperlink{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler}} (int sig)
+\item 
+void \mbox{\hyperlink{minishell_8c_a3719a1754f6e317bbb96770b973d453c}{signals\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}{print\+\_\+tokens}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
+\item 
+void \mbox{\hyperlink{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}{print\+\_\+redirect}} (\mbox{\hyperlink{redirect__asignation_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redir)
+\item 
+void \mbox{\hyperlink{minishell_8c_aaeba1075474bbabf46d3efc68664c129}{print\+\_\+command}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd, int index)
+\item 
+void \mbox{\hyperlink{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}{print\+\_\+commands}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
+\item 
+void \mbox{\hyperlink{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}{destroy\+\_\+token\+\_\+data}} (void \texorpdfstring{$\ast$}{*}token\+\_\+ptr)
+\item 
+int \mbox{\hyperlink{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}{main}} (int args, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}environment\+\_\+var\+\_\+str\+\_\+array)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7}{g\+\_\+signal}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}\label{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d} 
+\index{minishell.c@{minishell.c}!check\_cmd@{check\_cmd}}
+\index{check\_cmd@{check\_cmd}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{check\_cmd()}{check\_cmd()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} check\+\_\+cmd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d7/d66/minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}\label{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4} 
+\index{minishell.c@{minishell.c}!destroy\_token\_data@{destroy\_token\_data}}
+\index{destroy\_token\_data@{destroy\_token\_data}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_token\_data()}{destroy\_token\_data()}}
+{\footnotesize\ttfamily void destroy\+\_\+token\+\_\+data (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{token\+\_\+ptr }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{d7/d66/minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{d7/d66/minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35}\label{minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35} 
+\index{minishell.c@{minishell.c}!main@{main}}
+\index{main@{main}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{args,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{environment\+\_\+var\+\_\+str\+\_\+array }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d66/minishell_8c_a1f494297c6ab1aa9469d0f8f58c13c35_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_aaeba1075474bbabf46d3efc68664c129}\label{minishell_8c_aaeba1075474bbabf46d3efc68664c129} 
+\index{minishell.c@{minishell.c}!print\_command@{print\_command}}
+\index{print\_command@{print\_command}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_command()}{print\_command()}}
+{\footnotesize\ttfamily void print\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d7/d66/minishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{d7/d66/minishell_8c_aaeba1075474bbabf46d3efc68664c129_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}\label{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d} 
+\index{minishell.c@{minishell.c}!print\_commands@{print\_commands}}
+\index{print\_commands@{print\_commands}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_commands()}{print\_commands()}}
+{\footnotesize\ttfamily void print\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d66/minishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}\label{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46} 
+\index{minishell.c@{minishell.c}!print\_redirect@{print\_redirect}}
+\index{print\_redirect@{print\_redirect}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_redirect()}{print\_redirect()}}
+{\footnotesize\ttfamily void print\+\_\+redirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__asignation_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redir }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d66/minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}\label{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d} 
+\index{minishell.c@{minishell.c}!print\_tokens@{print\_tokens}}
+\index{print\_tokens@{print\_tokens}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{print\_tokens()}{print\_tokens()}}
+{\footnotesize\ttfamily void print\+\_\+tokens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{d7/d66/minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}\label{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1} 
+\index{minishell.c@{minishell.c}!sigint\_handler@{sigint\_handler}}
+\index{sigint\_handler@{sigint\_handler}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{sigint\_handler()}{sigint\_handler()}}
+{\footnotesize\ttfamily void sigint\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d66/minishell_8c_a258e3b580e688a0cf46e4258525aeaf1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a3719a1754f6e317bbb96770b973d453c}\label{minishell_8c_a3719a1754f6e317bbb96770b973d453c} 
+\index{minishell.c@{minishell.c}!signals\_init@{signals\_init}}
+\index{signals\_init@{signals\_init}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{signals\_init()}{signals\_init()}}
+{\footnotesize\ttfamily void signals\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d7/d66/minishell_8c_a3719a1754f6e317bbb96770b973d453c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{d7/d66/minishell_8c_a3719a1754f6e317bbb96770b973d453c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{minishell_8c_a8139962a2ceae2621213f8e6719565cf}\label{minishell_8c_a8139962a2ceae2621213f8e6719565cf} 
+\index{minishell.c@{minishell.c}!username@{username}}
+\index{username@{username}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} username (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d66/minishell_8c_a8139962a2ceae2621213f8e6719565cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{d7/d66/minishell_8c_a8139962a2ceae2621213f8e6719565cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7}\label{minishell_8c_a2f41dfdd9bbd527b0a23a20f16aa14c7} 
+\index{minishell.c@{minishell.c}!g\_signal@{g\_signal}}
+\index{g\_signal@{g\_signal}!minishell.c@{minishell.c}}
+\doxysubsubsection{\texorpdfstring{g\_signal}{g\_signal}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t g\+\_\+signal = 0}
+

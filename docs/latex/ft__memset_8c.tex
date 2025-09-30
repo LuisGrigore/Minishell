@@ -1,0 +1,46 @@
+\doxysection{libft/ft\+\_\+memset.c File Reference}
+\hypertarget{ft__memset_8c}{}\label{ft__memset_8c}\index{libft/ft\_memset.c@{libft/ft\_memset.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+memset.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__memset_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__memset_8c_a557de65a3f3e16f953f5dae59cdb6106}{ft\+\_\+memset}} (void \texorpdfstring{$\ast$}{*}s, int c, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__memset_8c_a557de65a3f3e16f953f5dae59cdb6106}\label{ft__memset_8c_a557de65a3f3e16f953f5dae59cdb6106} 
+\index{ft\_memset.c@{ft\_memset.c}!ft\_memset@{ft\_memset}}
+\index{ft\_memset@{ft\_memset}!ft\_memset.c@{ft\_memset.c}}
+\doxysubsubsection{\texorpdfstring{ft\_memset()}{ft\_memset()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} ft\+\_\+memset (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{c,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__memset_8c_source_l00014}{14}} of file \mbox{\hyperlink{ft__memset_8c_source}{ft\+\_\+memset.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *dest;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ dest\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)s;}
+\DoxyCodeLine{00020\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n)}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ dest[i]\ =\ c;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ (dest);}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

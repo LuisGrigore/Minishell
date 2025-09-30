@@ -1,0 +1,60 @@
+\doxysection{libft/ft\+\_\+memmove.c File Reference}
+\hypertarget{ft__memmove_8c}{}\label{ft__memmove_8c}\index{libft/ft\_memmove.c@{libft/ft\_memmove.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for ft\+\_\+memmove.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{ft__memmove_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__memmove_8c_a69673d42c601e17a8e682b592167c775}{ft\+\_\+memmove}} (void \texorpdfstring{$\ast$}{*}dest, const void \texorpdfstring{$\ast$}{*}src, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__memmove_8c_a69673d42c601e17a8e682b592167c775}\label{ft__memmove_8c_a69673d42c601e17a8e682b592167c775} 
+\index{ft\_memmove.c@{ft\_memmove.c}!ft\_memmove@{ft\_memmove}}
+\index{ft\_memmove@{ft\_memmove}!ft\_memmove.c@{ft\_memmove.c}}
+\doxysubsubsection{\texorpdfstring{ft\_memmove()}{ft\_memmove()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} ft\+\_\+memmove (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__memmove_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__memmove_8c_source}{ft\+\_\+memmove.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *car;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *whacala;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ w;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ whacala\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)dest;}
+\DoxyCodeLine{00022\ \ \ \ \ car\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)src;}
+\DoxyCodeLine{00023\ \ \ \ \ w\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!src\ \&\&\ !dest)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (dest\ <\ src)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((\textcolor{keywordtype}{size\_t})w\ <\ n)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ whacala[w]\ =\ car[w];}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ w++;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (whacala);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ w\ =\ n;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (w\ !=\ 0)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ whacala[w\ -\/\ 1]\ =\ car[w\ -\/\ 1];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ w-\/-\/;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ (whacala);}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}

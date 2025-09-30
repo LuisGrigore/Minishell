@@ -1,0 +1,8 @@
+<map id="ft_putpointer" name="ft_putpointer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,111,55"/>
+<area shape="rect" id="Node000002" href="$dc/d2f/ft__putstr_8c.html#ae07c9c3acc8313cfbea5cf3092ffe6a4" title=" " alt="" coords="159,29,235,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,39,145,39,145,45,111,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="175,30,170,21,172,11,182,5,197,3,214,6,222,14,218,18,212,11,197,8,184,10,177,14,175,20,179,28"/>
+<area shape="rect" id="Node000003" href="$de/d8a/ft__putchar_8c.html#a83e0bab0b7de17c5164b5866ecdf27f6" title=" " alt="" coords="283,29,369,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,39,269,39,269,45,235,45"/>
+</map>

@@ -1,0 +1,64 @@
+\doxysection{libft/ft\+\_\+putstr\+\_\+fd.c File Reference}
+\hypertarget{ft__putstr__fd_8c}{}\label{ft__putstr__fd_8c}\index{libft/ft\_putstr\_fd.c@{libft/ft\_putstr\_fd.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+putstr\+\_\+fd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__putstr__fd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__putstr__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}{ft\+\_\+putstr\+\_\+fd}} (char \texorpdfstring{$\ast$}{*}s, int fd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__putstr__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}\label{ft__putstr__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469} 
+\index{ft\_putstr\_fd.c@{ft\_putstr\_fd.c}!ft\_putstr\_fd@{ft\_putstr\_fd}}
+\index{ft\_putstr\_fd@{ft\_putstr\_fd}!ft\_putstr\_fd.c@{ft\_putstr\_fd.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putstr\_fd()}{ft\_putstr\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__putstr__fd_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__putstr__fd_8c_source}{ft\+\_\+putstr\+\_\+fd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{while}\ (*s\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ft__putchar__fd_8c_a8ee15a511946c1397bd2bdea4aed6aee}{ft\_putchar\_fd}}(*s,\ fd);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ft__putchar__fd_8c_a8ee15a511946c1397bd2bdea4aed6aee}{ft\+\_\+putchar\+\_\+fd()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ft__putnbr__fd_8c_a63cc0aec12256d125d3f85e472280972}{ft\+\_\+putnbr\+\_\+fd()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{ft__putstr__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{ft__putstr__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469_icgraph}
+\end{center}
+\end{figure}

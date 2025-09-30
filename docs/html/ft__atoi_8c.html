@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: libft/ft_atoi.c File Reference</title>
+<title>Kyle&#39;s Doxygen Test: libft/ft_atoi.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -78,6 +79,8 @@ $(function() {
   <div class="headertitle"><div class="title">ft_atoi.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="ft__atoi_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -101,6 +104,31 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ft__atoi_8c_source.html#l00013">13</a> of file <a class="el" href="ft__atoi_8c_source.html">ft_atoi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">int</span> nb;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> t;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    nb = 0;</div>
+<div class="line"><span class="lineno">   20</span>    i = 0;</div>
+<div class="line"><span class="lineno">   21</span>    t = 1;</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">while</span> ((nptr[i] &gt;= 9 &amp;&amp; nptr[i] &lt;= 13) || nptr[i] == 32)</div>
+<div class="line"><span class="lineno">   23</span>        i++;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (nptr[i] == <span class="charliteral">&#39;+&#39;</span> || nptr[i] == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (nptr[i] == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><span class="lineno">   27</span>            t = -t;</div>
+<div class="line"><span class="lineno">   28</span>        i++;</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">while</span> ((nptr[i] &lt;= <span class="charliteral">&#39;9&#39;</span> &amp;&amp; nptr[i] &gt;= <span class="charliteral">&#39;0&#39;</span>))</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        nb = ((nb * 10) + nptr[i] - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">   33</span>        i++;</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> (t * nb);</div>
+<div class="line"><span class="lineno">   36</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

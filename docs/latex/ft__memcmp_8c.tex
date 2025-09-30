@@ -1,0 +1,53 @@
+\doxysection{libft/ft\+\_\+memcmp.c File Reference}
+\hypertarget{ft__memcmp_8c}{}\label{ft__memcmp_8c}\index{libft/ft\_memcmp.c@{libft/ft\_memcmp.c}}
+{\ttfamily \#include "{}libft.\+h"{}}\newline
+Include dependency graph for ft\+\_\+memcmp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__memcmp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ft__memcmp_8c_a08f665a1828c402f2ffe2e2187f135fc}{ft\+\_\+memcmp}} (const void \texorpdfstring{$\ast$}{*}s1, const void \texorpdfstring{$\ast$}{*}s2, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ft__memcmp_8c_a08f665a1828c402f2ffe2e2187f135fc}\label{ft__memcmp_8c_a08f665a1828c402f2ffe2e2187f135fc} 
+\index{ft\_memcmp.c@{ft\_memcmp.c}!ft\_memcmp@{ft\_memcmp}}
+\index{ft\_memcmp@{ft\_memcmp}!ft\_memcmp.c@{ft\_memcmp.c}}
+\doxysubsubsection{\texorpdfstring{ft\_memcmp()}{ft\_memcmp()}}
+{\footnotesize\ttfamily int ft\+\_\+memcmp (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{s1,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{s2,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__memcmp_8c_source_l00015}{15}} of file \mbox{\hyperlink{ft__memcmp_8c_source}{ft\+\_\+memcmp.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *str1;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *str2;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ l1;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ str1\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)s1;}
+\DoxyCodeLine{00022\ \ \ \ \ str2\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)s2;}
+\DoxyCodeLine{00023\ \ \ \ \ l1\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (l1\ <\ n)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*str1\ !=\ *str2)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*str1\ -\/\ *str2);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ l1++;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ str1++;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ str2++;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

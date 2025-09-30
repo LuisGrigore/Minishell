@@ -1,0 +1,23 @@
+<map id="tokenize" name="tokenize">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,228,83,253"/>
+<area shape="rect" id="Node000002" href="$tokenizer_8c.html#a4e78b2e01bd34ef89d2bb7fcf81de0cc" title=" " alt="" coords="153,5,260,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,227,52,191,67,141,92,87,109,62,129,40,139,32,143,37,132,44,113,65,96,90,72,142,57,192,50,228"/>
+<area shape="rect" id="Node000003" href="$list_8c.html#aaaeda7db5c6b1819a079f05d83c3ce38" title=" " alt="" coords="142,55,271,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="47,227,74,162,98,123,129,89,136,84,139,89,132,93,102,126,78,164,52,229"/>
+<area shape="rect" id="Node000004" href="$ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="169,104,244,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="51,226,81,184,104,159,129,138,155,126,158,130,132,143,107,163,85,187,55,229"/>
+<area shape="rect" id="Node000005" href="$tokenizer_8c.html#a5c7919f82f134ff4fadc6ed22e255c2a" title=" " alt="" coords="163,153,250,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="63,225,130,188,149,180,151,185,132,192,66,230"/>
+<area shape="rect" id="Node000006" href="$list_8c.html#a2ab31c1a882bda317542865ca981aa91" title="Initialize an empty list." alt="" coords="171,203,242,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="82,232,157,220,158,225,83,237"/>
+<area shape="rect" id="Node000007" href="$tokenizer_8c.html#ac891813952e22ca06b6204a49f39fa65" title=" " alt="" coords="141,252,272,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="83,244,128,250,127,256,82,249"/>
+<area shape="rect" id="Node000008" href="$tokenizer_8c.html#ae2d4df043f33de8b99bc1eb83ca15d31" title=" " alt="" coords="167,301,246,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="67,251,132,286,155,296,153,300,130,291,64,256"/>
+<area shape="rect" id="Node000009" href="$tokenizer_8c.html#aa1dd8a75220cb79547c4154eb2becbd3" title=" " alt="" coords="131,351,283,376"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="56,252,86,293,108,316,132,336,145,343,142,347,129,340,104,320,82,297,51,256"/>
+<area shape="rect" id="Node000010" href="$tokenizer_8c.html#a3940c870d794a791d2ddabf19c0cfee7" title=" " alt="" coords="150,400,263,425"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="52,253,79,316,102,353,132,385,142,392,139,396,129,389,98,356,74,319,47,255"/>
+<area shape="rect" id="Node000011" href="$list_8c.html#ad70cc8287d69eb2327b71b28f7d52b6a" title="Insert a value at the end of the list (O(1))." alt="" coords="165,449,249,475"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="50,253,57,289,72,338,97,390,113,414,132,435,153,448,150,452,129,439,109,417,92,392,68,340,52,290,45,254"/>
+</map>

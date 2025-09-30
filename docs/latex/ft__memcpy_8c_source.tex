@@ -1,0 +1,38 @@
+\doxysection{ft\+\_\+memcpy.\+c}
+\hypertarget{ft__memcpy_8c_source}{}\label{ft__memcpy_8c_source}\index{libft/ft\_memcpy.c@{libft/ft\_memcpy.c}}
+\mbox{\hyperlink{ft__memcpy_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ ft\_memcpy.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ dmaestro\ <marvin@42.fr>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2024/09/18\ 17:05:00\ by\ dmaestro\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2024/09/18\ 17:05:06\ by\ dmaestro\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libft_8h}{libft.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00015}\mbox{\hyperlink{ft__memcpy_8c_a41a6f05af30cf85ff63a08e383826322}{00015}}\ \textcolor{keywordtype}{void}\ \ \ \ *\mbox{\hyperlink{ft__memcpy_8c_a41a6f05af30cf85ff63a08e383826322}{ft\_memcpy}}(\textcolor{keywordtype}{void}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *src,\ \textcolor{keywordtype}{size\_t}\ n)}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *desti;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ *srci;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dest\ \&\&\ !src)}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00023}00023\ \ \ \ \ desti\ =\ dest;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00024}00024\ \ \ \ \ srci\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)src;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00025}00025\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n)}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ desti[i]\ =\ srci[i];}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)desti);}
+\DoxyCodeLine{\Hypertarget{ft__memcpy_8c_source_l00032}00032\ \}}
+
+\end{DoxyCode}

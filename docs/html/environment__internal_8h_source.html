@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Minishell: src/environment/environment_internal.h Source File</title>
+<title>Kyle&#39;s Doxygen Test: src/environment/environment_internal.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Minishell
+   <div id="projectname">Kyle&#39;s Doxygen Test
    </div>
+   <div id="projectbrief">This is just a test of Doxygen</div>
   </td>
  </tr>
  </tbody>
@@ -81,44 +82,56 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">environment_internal.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="environment__internal_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ENVIRONMENT_INTERNAL</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor"># define ENVIRONMENT_INTERNAL</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor"># include &quot;../../include/environment.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor"># include &quot;../../libft/libft.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor"># include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/* ============================================================</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">**  Internal Environment Variable Structure</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">** ============================================================</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">*/</span></div>
+<a href="environment__internal_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ************************************************************************** */</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*                                                                            */</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/*                                                        :::      ::::::::   */</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*   environment_internal.h                             :+:      :+:    :+:   */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/*                                                    +:+ +:+         +:+     */</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: lgrigore &lt;lgrigore@student.42madrid.com    +#+  +:+       +#+        */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2025/09/30 01:52:04 by lgrigore          #+#    #+#             */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/09/30 01:52:48 by lgrigore         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structs__env__var.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structs__env__var.html">s_env_var</a></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">   22</a></span>    <span class="keywordtype">char</span>    *<a class="code hl_variable" href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">var_name</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">   23</a></span>    <span class="keywordtype">char</span>    *<a class="code hl_variable" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">var_value</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef ENVIRONMENT_INTERNAL_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor"># define ENVIRONMENT_INTERNAL_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor"># include &quot;../../include/environment.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor"># include &quot;../../libft/libft.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor"># include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">**  Internal Environment Variable Structure</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">** ============================================================</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structs__env__var.html">   32</a></span><span class="keyword">struct      </span><a class="code hl_struct" href="structs__env__var.html">s_env_var</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">   34</a></span>    <span class="keywordtype">char</span>    *<a class="code hl_variable" href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">var_name</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">   35</a></span>    <span class="keywordtype">char</span>    *<a class="code hl_variable" href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">var_value</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/* ============================================================</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">**  Internal Helper Functions</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">** ============================================================</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><a class="code hl_struct" href="structs__env__var.html">t_env_var</a>   *<a class="code hl_function" href="environment__internal_8h.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a>(<span class="keywordtype">char</span> *name, <span class="keywordtype">char</span> *value);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span>        <a class="code hl_function" href="environment__internal_8h.html#a4ca0675f92ac5da65a97751ba7cf8ba5">destroy_environment_var</a>(<span class="keywordtype">void</span> *env_var);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">bool</span>        <a class="code hl_function" href="environment__internal_8h.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a>(<span class="keywordtype">void</span> *var_ptr, <span class="keywordtype">void</span> *context);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">**  Internal Helper Functions</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">** ============================================================</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><a class="code hl_struct" href="structs__env__var.html">t_env_var</a>   *<a class="code hl_function" href="environment__internal_8h.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a>(<span class="keywordtype">char</span> *name, <span class="keywordtype">char</span> *value);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span>        <a class="code hl_function" href="environment__internal_8h.html#a4ca0675f92ac5da65a97751ba7cf8ba5">destroy_environment_var</a>(<span class="keywordtype">void</span> *env_var);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aenvironment__internal_8h_html_a07737b43515e692334bfcdfc797f5d5c"><div class="ttname"><a href="environment__internal_8h.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a></div><div class="ttdeci">t_env_var * init_environment_var(char *name, char *value)</div><div class="ttdoc">Create a new environment variable.</div><div class="ttdef"><b>Definition</b> envioroment_internal.c:27</div></div>
-<div class="ttc" id="aenvironment__internal_8h_html_a4ca0675f92ac5da65a97751ba7cf8ba5"><div class="ttname"><a href="environment__internal_8h.html#a4ca0675f92ac5da65a97751ba7cf8ba5">destroy_environment_var</a></div><div class="ttdeci">void destroy_environment_var(void *env_var)</div><div class="ttdoc">Destroy a single environment variable.</div><div class="ttdef"><b>Definition</b> envioroment_internal.c:40</div></div>
-<div class="ttc" id="aenvironment__internal_8h_html_a8076868c04fd9fc3091d42bc8bd5a7bb"><div class="ttname"><a href="environment__internal_8h.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a></div><div class="ttdeci">bool var_name_filter(void *var_ptr, void *context)</div><div class="ttdoc">Filter function for comparing variable names.</div><div class="ttdef"><b>Definition</b> envioroment_internal.c:17</div></div>
-<div class="ttc" id="astructs__env__var_html"><div class="ttname"><a href="structs__env__var.html">s_env_var</a></div><div class="ttdoc">Represents a single environment variable (internal use).</div><div class="ttdef"><b>Definition</b> environment_internal.h:21</div></div>
-<div class="ttc" id="astructs__env__var_html_ad8af13ad7fe31ef6d7504f3ce4560f72"><div class="ttname"><a href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">s_env_var::var_name</a></div><div class="ttdeci">char * var_name</div><div class="ttdef"><b>Definition</b> environment_internal.h:22</div></div>
-<div class="ttc" id="astructs__env__var_html_af7904f8f58e150edf67f237e52d25409"><div class="ttname"><a href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">s_env_var::var_value</a></div><div class="ttdeci">char * var_value</div><div class="ttdef"><b>Definition</b> environment_internal.h:23</div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">bool</span>        <a class="code hl_function" href="environment__internal_8h.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a>(<span class="keywordtype">void</span> *var_ptr, <span class="keywordtype">void</span> *context);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aenvironment__internal_8h_html_a07737b43515e692334bfcdfc797f5d5c"><div class="ttname"><a href="environment__internal_8h.html#a07737b43515e692334bfcdfc797f5d5c">init_environment_var</a></div><div class="ttdeci">t_env_var * init_environment_var(char *name, char *value)</div><div class="ttdoc">Create a new environment variable.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00032">envioroment_internal.c:32</a></div></div>
+<div class="ttc" id="aenvironment__internal_8h_html_a4ca0675f92ac5da65a97751ba7cf8ba5"><div class="ttname"><a href="environment__internal_8h.html#a4ca0675f92ac5da65a97751ba7cf8ba5">destroy_environment_var</a></div><div class="ttdeci">void destroy_environment_var(void *env_var)</div><div class="ttdoc">Destroy a single environment variable.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00044">envioroment_internal.c:44</a></div></div>
+<div class="ttc" id="aenvironment__internal_8h_html_a8076868c04fd9fc3091d42bc8bd5a7bb"><div class="ttname"><a href="environment__internal_8h.html#a8076868c04fd9fc3091d42bc8bd5a7bb">var_name_filter</a></div><div class="ttdeci">bool var_name_filter(void *var_ptr, void *context)</div><div class="ttdoc">Filter function for comparing variable names.</div><div class="ttdef"><b>Definition</b> <a href="envioroment__internal_8c_source.html#l00017">envioroment_internal.c:17</a></div></div>
+<div class="ttc" id="astructs__env__var_html"><div class="ttname"><a href="structs__env__var.html">s_env_var</a></div><div class="ttdoc">Represents a single environment variable (internal use).</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00032">environment_internal.h:33</a></div></div>
+<div class="ttc" id="astructs__env__var_html_ad8af13ad7fe31ef6d7504f3ce4560f72"><div class="ttname"><a href="structs__env__var.html#ad8af13ad7fe31ef6d7504f3ce4560f72">s_env_var::var_name</a></div><div class="ttdeci">char * var_name</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00034">environment_internal.h:34</a></div></div>
+<div class="ttc" id="astructs__env__var_html_af7904f8f58e150edf67f237e52d25409"><div class="ttname"><a href="structs__env__var.html#af7904f8f58e150edf67f237e52d25409">s_env_var::var_value</a></div><div class="ttdeci">char * var_value</div><div class="ttdef"><b>Definition</b> <a href="environment__internal_8h_source.html#l00035">environment_internal.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

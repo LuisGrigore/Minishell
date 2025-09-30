@@ -1,0 +1,58 @@
+\doxysection{src/pipe.c File Reference}
+\hypertarget{pipe_8c}{}\label{pipe_8c}\index{src/pipe.c@{src/pipe.c}}
+{\ttfamily \#include "{}fcntl.\+h"{}}\newline
+{\ttfamily \#include "{}sys/wait.\+h"{}}\newline
+{\ttfamily \#include "{}unistd.\+h"{}}\newline
+{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
+{\ttfamily \#include "{}readline/readline.\+h"{}}\newline
+{\ttfamily \#include "{}../list/list.\+h"{}}\newline
+{\ttfamily \#include "{}../include/command.\+h"{}}\newline
+Include dependency graph for pipe.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d01/pipe_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pipe_8c_ac2417fa48185516c05dd13ce83e55f1d}{execute\+\_\+commands\+\_\+with\+\_\+pipes}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands, \mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+\begin{DoxyCompactList}\small\item\em Executes the commands in the given list in order as child processes linking their input and output with the corresponding pipes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pipe_8c_ac2417fa48185516c05dd13ce83e55f1d}\label{pipe_8c_ac2417fa48185516c05dd13ce83e55f1d} 
+\index{pipe.c@{pipe.c}!execute\_commands\_with\_pipes@{execute\_commands\_with\_pipes}}
+\index{execute\_commands\_with\_pipes@{execute\_commands\_with\_pipes}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{execute\_commands\_with\_pipes()}{execute\_commands\_with\_pipes()}}
+{\footnotesize\ttfamily void execute\+\_\+commands\+\_\+with\+\_\+pipes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands,  }\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+
+
+Executes the commands in the given list in order as child processes linking their input and output with the corresponding pipes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commands} & Command list to execute \\
+\hline
+{\em env} & Environment variable list that the commands may need. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d47/pipe_8c_ac2417fa48185516c05dd13ce83e55f1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{d1/d47/pipe_8c_ac2417fa48185516c05dd13ce83e55f1d_icgraph}
+\end{center}
+\end{figure}
