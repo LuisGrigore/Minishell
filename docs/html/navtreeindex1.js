@@ -89,7 +89,6 @@ var NAVTREEINDEX1 =
 "de/dcf/ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9":[2,0,1,36,0],
 "de/dea/ft__putnbr__fd_8c.html":[2,0,1,28],
 "de/dea/ft__putnbr__fd_8c.html#a63cc0aec12256d125d3f85e472280972":[2,0,1,28,0],
-"de/df1/layout_8xml.html":[2,0,4],
 "df/d16/ft__lstlast__bonus_8c.html":[2,0,1,13],
 "df/d16/ft__lstlast__bonus_8c.html#aed5f9b5ecc45235a7b7cf9d4b24e43dc":[2,0,1,13,0],
 "df/d36/ft__lstadd__front__bonus_8c.html":[2,0,1,12],
