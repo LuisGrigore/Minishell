@@ -1,0 +1,107 @@
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/queries/gen\+\_\+link\+\_\+list\+\_\+predicates.c File Reference}
+\hypertarget{gen__link__list__predicates_8c}{}\label{gen__link__list__predicates_8c}\index{gen\_list/gen\_link\_list/queries/gen\_link\_list\_predicates.c@{gen\_list/gen\_link\_list/queries/gen\_link\_list\_predicates.c}}
+{\ttfamily \#include "{}../gen\+\_\+link\+\_\+list\+\_\+internal.\+h"{}}\newline
+Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+predicates.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d3/d0f/gen__link__list__predicates_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{gen__link__list__predicates_8c_a2f7e656dcfadd2f1e532fb6fbf295f77}{gen\+\_\+list\+\_\+is\+\_\+empty}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list)
+\begin{DoxyCompactList}\small\item\em Check if the list is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{gen__link__list__predicates_8c_a8ba376ab524125553d178661c4233ee8}{gen\+\_\+list\+\_\+has}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}))
+\item 
+bool \mbox{\hyperlink{gen__link__list__predicates_8c_ac5952c2f425748f9c6df9c6105d35505}{gen\+\_\+list\+\_\+has\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, bool(\texorpdfstring{$\ast$}{*}predicate)(void \texorpdfstring{$\ast$}{*}element, void \texorpdfstring{$\ast$}{*}context), void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Check if the list contains an element that satisfies a predicate with context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gen__link__list__predicates_8c_a8ba376ab524125553d178661c4233ee8}\label{gen__link__list__predicates_8c_a8ba376ab524125553d178661c4233ee8} 
+\index{gen\_link\_list\_predicates.c@{gen\_link\_list\_predicates.c}!gen\_list\_has@{gen\_list\_has}}
+\index{gen\_list\_has@{gen\_list\_has}!gen\_link\_list\_predicates.c@{gen\_link\_list\_predicates.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_has()}{gen\_list\_has()}}
+{\footnotesize\ttfamily bool gen\+\_\+list\+\_\+has (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{bool(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{predicate }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{d9/d6d/gen__link__list__predicates_8c_a8ba376ab524125553d178661c4233ee8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gen__link__list__predicates_8c_ac5952c2f425748f9c6df9c6105d35505}\label{gen__link__list__predicates_8c_ac5952c2f425748f9c6df9c6105d35505} 
+\index{gen\_link\_list\_predicates.c@{gen\_link\_list\_predicates.c}!gen\_list\_has\_ctx@{gen\_list\_has\_ctx}}
+\index{gen\_list\_has\_ctx@{gen\_list\_has\_ctx}!gen\_link\_list\_predicates.c@{gen\_link\_list\_predicates.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_has\_ctx()}{gen\_list\_has\_ctx()}}
+{\footnotesize\ttfamily bool gen\+\_\+list\+\_\+has\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+
+
+
+Check if the list contains an element that satisfies a predicate with context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+{\em predicate} & Predicate function that takes (element, context). \\
+\hline
+{\em context} & Context pointer passed to the predicate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a matching element is found, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d9/d6d/gen__link__list__predicates_8c_ac5952c2f425748f9c6df9c6105d35505_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{d9/d6d/gen__link__list__predicates_8c_ac5952c2f425748f9c6df9c6105d35505_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gen__link__list__predicates_8c_a2f7e656dcfadd2f1e532fb6fbf295f77}\label{gen__link__list__predicates_8c_a2f7e656dcfadd2f1e532fb6fbf295f77} 
+\index{gen\_link\_list\_predicates.c@{gen\_link\_list\_predicates.c}!gen\_list\_is\_empty@{gen\_list\_is\_empty}}
+\index{gen\_list\_is\_empty@{gen\_list\_is\_empty}!gen\_link\_list\_predicates.c@{gen\_link\_list\_predicates.c}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_is\_empty()}{gen\_list\_is\_empty()}}
+{\footnotesize\ttfamily bool gen\+\_\+list\+\_\+is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list }\end{DoxyParamCaption})}
+
+
+
+Check if the list is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to search. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if is empty, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d6d/gen__link__list__predicates_8c_a2f7e656dcfadd2f1e532fb6fbf295f77_icgraph}
+\end{center}
+\end{figure}

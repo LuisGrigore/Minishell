@@ -1,0 +1,6 @@
+<map id="s_gen_list_iter" name="s_gen_list_iter">
+<area shape="rect" id="Node000001" title="Iterator for traversing a generic linked list." alt="" coords="5,93,121,119"/>
+<area shape="rect" id="Node000002" href="$d2/dcf/gen__link__list__internal_8h.html#d9/d54/structs__node" title="Node of a generic singly linked list." alt="" coords="29,5,97,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,45,66,93,61,93,61,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="112,9,120,12,124,18,116,27,98,29,98,23,113,22,119,18,117,16,110,14"/>
+</map>

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 14:35:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:21:30 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,14 +113,14 @@ void	signals_init(void)
 
 void	print_tokens(t_gen_list *tokens)
 {
-	t_gen_list_iter		it;
+	t_gen_list_iter		*it;
 	t_token		*tok;
 	const char	*type_str;
 
 	if (!tokens)
 		return ;
 	it = gen_list_iter_start(tokens);
-	while ((tok = (t_token *)gen_list_iter_next(&it)) != NULL)
+	while ((tok = (t_token *)gen_list_iter_next(it)) != NULL)
 	{
 		switch (tok->type)
 		{
@@ -153,7 +153,8 @@ void	print_tokens(t_gen_list *tokens)
 	}
 }
 
-void print_redirect(t_redirect *redir) {
+void print_redirect(void *redir_ptr) {
+	t_redirect *redir = (t_redirect *) redir_ptr;
     if (!redir) return;
     const char *type_str;
     switch (redir->redirect_simbol) {
@@ -174,12 +175,12 @@ void print_command(t_command *cmd, int index) {
     printf("Command #%d:\n", index);
 
     //Imprimir args
-    if (cmd->args && cmd->args->size > 0) {
+    if (cmd->args && !gen_list_is_empty(cmd->args)) {
         printf("  Args:\n");
         
-		t_gen_list_iter arg_it = gen_list_iter_start(cmd->args);
+		t_gen_list_iter *arg_it = gen_list_iter_start(cmd->args);
         char *arg;
-        while ((arg = (char *)gen_list_iter_next(&arg_it)) != NULL) {
+        while ((arg = (char *)gen_list_iter_next(arg_it)) != NULL) {
             printf("    %s\n", arg);
         }
     } else {
@@ -187,13 +188,9 @@ void print_command(t_command *cmd, int index) {
     }
 
     //Imprimir redirects
-    if (cmd->redirects && cmd->redirects->size > 0) {
+    if (cmd->redirects && !gen_list_is_empty(cmd->redirects)) {
         printf("  Redirects:\n");
-        t_gen_list_iter red_it = gen_list_iter_start(cmd->redirects);
-        t_redirect *redir;
-        while ((redir = (t_redirect *)gen_list_iter_next(&red_it)) != NULL) {
-            print_redirect(redir);
-        }
+        gen_list_for_each(cmd->redirects,print_redirect);
     } else {
         printf("  Redirects: (none)\n");
     }
@@ -202,15 +199,15 @@ void print_command(t_command *cmd, int index) {
 }
 
 void print_commands(t_gen_list *commands) {
-    if (!commands || commands->size == 0) {
+    if (!commands || gen_list_is_empty(commands)) {
         printf("No commands to print.\n");
         return;
     }
 
-    t_gen_list_iter it = gen_list_iter_start(commands);
+    t_gen_list_iter *it = gen_list_iter_start(commands);
     t_command *cmd;
     int index = 1;
-    while ((cmd = (t_command *)gen_list_iter_next(&it)) != NULL) {
+    while ((cmd = (t_command *)gen_list_iter_next(it)) != NULL) {
         print_command(cmd, index++);
     }
 }

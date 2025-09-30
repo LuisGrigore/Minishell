@@ -3,7 +3,7 @@
 {\ttfamily \#include "{}../include/bin\+\_\+commandss\+\_\+execution.\+h"{}}\newline
 {\ttfamily \#include "{}../include/command.\+h"{}}\newline
 {\ttfamily \#include "{}../include/environment.\+h"{}}\newline
-{\ttfamily \#include "{}../list/list.\+h"{}}\newline
+{\ttfamily \#include "{}../gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
 {\ttfamily \#include "{}../include/parser.\+h"{}}\newline
 {\ttfamily \#include "{}../include/redirect\+\_\+asignation.\+h"{}}\newline
 {\ttfamily \#include "{}../include/tokenizer.\+h"{}}\newline
@@ -13,7 +13,8 @@
 {\ttfamily \#include $<$signal.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
-Include dependency graph for minishell.\+c\+:\nopagebreak
+Include dependency graph for minishell.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,19 +26,19 @@ Include dependency graph for minishell.\+c\+:\nopagebreak
 \item 
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a5e0d04aa36ebd4a447b9ff4a5dcf8b6d}{check\+\_\+cmd}} (char \texorpdfstring{$\ast$}{*}cmd)
 \item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minishell_8c_a8139962a2ceae2621213f8e6719565cf}{username}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
 \item 
 void \mbox{\hyperlink{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler}} (int sig)
 \item 
 void \mbox{\hyperlink{minishell_8c_a3719a1754f6e317bbb96770b973d453c}{signals\+\_\+init}} (void)
 \item 
-void \mbox{\hyperlink{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}{print\+\_\+tokens}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
+void \mbox{\hyperlink{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}{print\+\_\+tokens}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
 \item 
-void \mbox{\hyperlink{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}{print\+\_\+redirect}} (\mbox{\hyperlink{redirect__asignation_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redir)
+void \mbox{\hyperlink{minishell_8c_a4f6d537ff6673d94cec55d0deb3d4297}{print\+\_\+redirect}} (void \texorpdfstring{$\ast$}{*}redir\+\_\+ptr)
 \item 
 void \mbox{\hyperlink{minishell_8c_aaeba1075474bbabf46d3efc68664c129}{print\+\_\+command}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd, int index)
 \item 
-void \mbox{\hyperlink{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}{print\+\_\+commands}} (\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
+void \mbox{\hyperlink{minishell_8c_a4f53155213d3a8705691b8cc5d483a5d}{print\+\_\+commands}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
 \item 
 void \mbox{\hyperlink{minishell_8c_a85e9c4fc45f80b15b12af974fac9f4e4}{destroy\+\_\+token\+\_\+data}} (void \texorpdfstring{$\ast$}{*}token\+\_\+ptr)
 \item 
@@ -90,7 +91,8 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{args,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{environment\+\_\+var\+\_\+str\+\_\+array }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -103,11 +105,12 @@ Here is the call graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{print\_command()}{print\_command()}}
 {\footnotesize\ttfamily void print\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{int}]{index }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=291pt]{d7/d66/minishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph}
+\includegraphics[width=350pt]{d7/d66/minishell_8c_aaeba1075474bbabf46d3efc68664c129_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
@@ -121,39 +124,42 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{minishell.c@{minishell.c}!print\_commands@{print\_commands}}
 \index{print\_commands@{print\_commands}!minishell.c@{minishell.c}}
 \doxysubsubsection{\texorpdfstring{print\_commands()}{print\_commands()}}
-{\footnotesize\ttfamily void print\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d7/d66/minishell_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46}\label{minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46} 
+\Hypertarget{minishell_8c_a4f6d537ff6673d94cec55d0deb3d4297}\label{minishell_8c_a4f6d537ff6673d94cec55d0deb3d4297} 
 \index{minishell.c@{minishell.c}!print\_redirect@{print\_redirect}}
 \index{print\_redirect@{print\_redirect}!minishell.c@{minishell.c}}
 \doxysubsubsection{\texorpdfstring{print\_redirect()}{print\_redirect()}}
-{\footnotesize\ttfamily void print\+\_\+redirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__asignation_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redir }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+redirect (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{redir\+\_\+ptr }\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d7/d66/minishell_8c_ad4c1fdde2a210ebffd89ac651af6fb46_icgraph}
+\includegraphics[width=350pt]{d7/d66/minishell_8c_a4f6d537ff6673d94cec55d0deb3d4297_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d}\label{minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d} 
 \index{minishell.c@{minishell.c}!print\_tokens@{print\_tokens}}
 \index{print\_tokens@{print\_tokens}!minishell.c@{minishell.c}}
 \doxysubsubsection{\texorpdfstring{print\_tokens()}{print\_tokens()}}
-{\footnotesize\ttfamily void print\+\_\+tokens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+tokens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=254pt]{d7/d66/minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph}
+\includegraphics[width=297pt]{d7/d66/minishell_8c_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1}\label{minishell_8c_a258e3b580e688a0cf46e4258525aeaf1} 
@@ -193,9 +199,10 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{minishell.c@{minishell.c}!username@{username}}
 \index{username@{username}!minishell.c@{minishell.c}}
 \doxysubsubsection{\texorpdfstring{username()}{username()}}
-{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} username (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} username (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

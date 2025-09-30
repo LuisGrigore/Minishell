@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tokenize_0',['tokenize',['../db/d84/tokenizer_8h.html#a7f79110e05751dc9e588a9fab750d97d',1,'tokenize(const char *line):&#160;tokenizer.c'],['../d7/d58/tokenizer_8c.html#a7f79110e05751dc9e588a9fab750d97d',1,'tokenize(const char *line):&#160;tokenizer.c']]],
-  ['traverse_1',['traverse',['../d7/d40/list_8c.html#ad10923353d90d76cfd5567bbd7586b4b',1,'traverse(t_gen_list *list, void(*func)(void *)):&#160;list.c'],['../da/d23/list_8h.html#a0d174e81f82313dcd45df92c4b615a37',1,'traverse(t_gen_list *list, t_apply_func func):&#160;list.h']]]
+  ['unset_5fexecute_0',['unset_execute',['../d0/d09/command_8h.html#a24640ac75761d535d770cf4255c336da',1,'unset_execute(t_command *command, t_gen_list *envioroment):&#160;command_functs.c'],['../d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da',1,'unset_execute(t_command *command, t_gen_list *envioroment):&#160;command_functs.c']]],
+  ['username_1',['username',['../d7/d66/minishell_8c.html#a8139962a2ceae2621213f8e6719565cf',1,'minishell.c']]]
 ];

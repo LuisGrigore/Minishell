@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 13:28:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:21:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     char **env;
     char *path;
 
-    if (!cmd || !cmd->args || !cmd->args->head)
+    if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
     {
         perror("No command args ");
         exit(1);
@@ -60,20 +60,20 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
 }
 void cd_execute(t_command *command, t_gen_list *environment)
 {
-    t_gen_list_iter it;
+    t_gen_list_iter *it;
     char *old_directory;
     char *target;
     char *joined_path;
 
-    if (!command->args || command->args->size < 2)
+    if (!command->args || gen_list_get_size(command->args) < 2)
     {
         fprintf(stderr, "cd: missing argument\n");
         return;
     }
     old_directory = env_get(environment, "PWD");
     it = gen_list_iter_start(command->args);
-    gen_list_iter_next(&it);
-    target = gen_list_iter_next(&it);
+    gen_list_iter_next(it);
+    target = gen_list_iter_next(it);
     if (access(target, F_OK) == 0)
     {
         if (chdir(target) == -1)
@@ -133,7 +133,7 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 	}
 	serialized_env = env_serialize(envioroment);
 	i = 0;
-	while(i < envioroment->size)
+	while(i < gen_list_get_size(envioroment))
 	{
 		printf("%s", serialized_env[i]);
 		i++;
@@ -142,67 +142,76 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 }
 void export_execute(t_command *command, t_gen_list *envioroment)
 {
-    t_node *current_node;
+    t_gen_list_iter *it;
     char **new_variable;
+    char *arg;
 
     if (!command || !command->args || !envioroment)
         return;
-    current_node = command->args->head->next;
-    if (!current_node || !current_node->value)
+    it = gen_list_iter_start(command->args);
+    if (!it)
         return;
-
-    new_variable = ft_split2(current_node->value, '=');
+    arg = gen_list_iter_next(it);
+    arg = gen_list_iter_next(it);
+    gen_list_iter_destroy(it);
+    if (!arg)
+        return;
+    new_variable = ft_split2(arg, '=');
     if (!new_variable || !new_variable[0] || !new_variable[1])
         return;
-
     env_set(envioroment, new_variable[0], new_variable[1]);
-    size_t i = 0;
-    while (i < 2)
-    {
+    for (size_t i = 0; i < 2; i++)
         free(new_variable[i]);
-        i++;
-    }
     free(new_variable);
 }
-void	unset_execute(t_command *command, t_gen_list *envioroment)
+void unset_execute(t_command *command, t_gen_list *envioroment)
 {
-	t_node	*current_node;
+    t_gen_list_iter *it;
+    char *arg;
 
-	current_node = command->args->head->next;
-	env_unset(envioroment, (char *)current_node->value);
+    if (!command || !command->args || !envioroment)
+        return;
+    it = gen_list_iter_start(command->args);
+    if (!it)
+        return;
+    arg = gen_list_iter_next(it);
+    arg = gen_list_iter_next(it);
+    if (arg)
+        env_unset(envioroment, arg);
+
+    gen_list_iter_destroy(it);
 }
+
 void echo_execute(t_command *command, t_gen_list *envioroment)
 {
-    t_node *current_node;
+    t_gen_list_iter *it;
+    char *arg;
     int newline = 1;
-    size_t len;
 
-    if (!command || !command->args || !command->args->head)
+    (void)envioroment;
+    if (!command || !command->args)
         return;
-
-    current_node = command->args->head->next; // primer argumento real
-    if (!current_node)
+    it = gen_list_iter_start(command->args);
+    if (!it)
         return;
-
-    // Comprobar -n usando ft_strncmp
-    len = ft_strlen((char *)current_node->value);
-    if (len == 2 && ft_strncmp((char *)current_node->value, "-n", 2) == 0)
+    arg = gen_list_iter_next(it);
+    arg = gen_list_iter_next(it);
+    if (arg && ft_strncmp(arg, "-n", 2) == 0 && ft_strlen(arg) == 2)
     {
         newline = 0;
-        current_node = current_node->next;
+        arg = gen_list_iter_next(it);
     }
-
-    while (current_node)
+    while (arg)
     {
-        ft_printf("%s", (char *)current_node->value);
-        if (current_node->next)
+        ft_printf("%s", arg);
+        char *next_arg = gen_list_iter_next(it);
+        if (next_arg)
             ft_printf(" ");
-        current_node = current_node->next;
+        arg = next_arg;
     }
-
     if (newline)
         ft_printf("\n");
-
-    // No hacemos exit aquí; solo en hijos si se hace fork
-	exit(0);
+    gen_list_iter_destroy(it);
+    exit(0);
 }
+

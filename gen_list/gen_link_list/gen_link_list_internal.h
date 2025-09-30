@@ -6,15 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 05:05:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 14:41:51 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:02:12 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GEN_LINK_LIST_INTERNAL_H
 # define GEN_LINK_LIST_INTERNAL_H
 
-# include <stdlib.h>
-#include <stdlib.h>
 #include "../libft/libft.h"
 # include "../gen_list.h"
 
@@ -59,7 +57,7 @@ struct s_gen_list
  */
 struct s_gen_list_iter
 {
-	t_node			*current;
+    t_node *current;
 };
 
 #endif

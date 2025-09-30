@@ -10,14 +10,14 @@
 \DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/06/02\ 18:18:29\ by\ dmaestro\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/30\ 02:41:37\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/09/30\ 13:52:11\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ ENVIRONMENT\_H}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ define\ ENVIRONMENT\_H}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ include\ "{}../list/list.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ include\ "{}../gen\_list/gen\_list.h"{}}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ include\ <stdbool.h>}}
 \DoxyCodeLine{00018\ }
 \DoxyCodeLine{00019\ \textcolor{comment}{/*\ ============================================================}}
@@ -32,29 +32,29 @@
 \DoxyCodeLine{00033\ \textcolor{comment}{**\ ============================================================}}
 \DoxyCodeLine{00034\ \textcolor{comment}{*/}}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\_set}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{char}\ *value);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_a070d87ba3c4a4664d9e477e542e7358c}{env\_set}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{char}\ *value);}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\_unset}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_a5a194ea505a37e1c0ff6c349851f7c56}{env\_unset}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name);}
 \DoxyCodeLine{00068\ }
-\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{env\_destroy}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env);}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_ae4211ec5d85586513118f0d5e787347d}{env\_destroy}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env);}
 \DoxyCodeLine{00081\ }
 \DoxyCodeLine{00082\ \textcolor{comment}{/*\ ============================================================}}
 \DoxyCodeLine{00083\ \textcolor{comment}{**\ \ Serialization\ /\ Deserialization}}
 \DoxyCodeLine{00084\ \textcolor{comment}{**\ ============================================================}}
 \DoxyCodeLine{00085\ \textcolor{comment}{*/}}
 \DoxyCodeLine{00086\ }
-\DoxyCodeLine{00099\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **\mbox{\hyperlink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{env\_serialize}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env);}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **\mbox{\hyperlink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{env\_serialize}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env);}
 \DoxyCodeLine{00100\ }
-\DoxyCodeLine{00113\ \mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\_deserialize}}(\textcolor{keywordtype}{char}\ **str\_array);}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\_deserialize}}(\textcolor{keywordtype}{char}\ **str\_array);}
 \DoxyCodeLine{00114\ }
 \DoxyCodeLine{00115\ \textcolor{comment}{/*\ ============================================================}}
 \DoxyCodeLine{00116\ \textcolor{comment}{**\ \ Query\ Functions}}
 \DoxyCodeLine{00117\ \textcolor{comment}{**\ ============================================================}}
 \DoxyCodeLine{00118\ \textcolor{comment}{*/}}
 \DoxyCodeLine{00119\ }
-\DoxyCodeLine{00134\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\_get}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{00134\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\_get}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name);}
 \DoxyCodeLine{00135\ }
-\DoxyCodeLine{00148\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\_has}}(\mbox{\hyperlink{list_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\_has}}(\mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *env,\ \textcolor{keywordtype}{char}\ *name);}
 \DoxyCodeLine{00149\ }
 \DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif}}
 

@@ -106,14 +106,14 @@ $(document).ready(function(){initNavTree('db/d84/tokenizer_8h_source.html','../.
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: lgrigore &lt;lgrigore@student.42madrid.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/09/29 15:10:57 by lgrigore         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/09/30 13:53:24 by lgrigore         ###   ########.fr       */</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef TOKENIZER_H</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor"># define TOKENIZER_H</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor"># include &quot;<a class="code" href="../../da/d23/list_8h.html">list.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor"># include &quot;../gen_list/gen_list.h&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../db/d84/tokenizer_8h.html#a76a354e93d720f05344590ec8aa222de">   18</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../db/d84/tokenizer_8h.html#a76a354e93d720f05344590ec8aa222de">e_token_type</a></div>
@@ -136,12 +136,11 @@ $(document).ready(function(){initNavTree('db/d84/tokenizer_8h_source.html','../.
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../db/d84/tokenizer_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">   33</a></span>}                   <a class="code hl_typedef" href="../../db/d84/tokenizer_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a>;</div>
 </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><a class="code hl_struct" href="../../da/d23/list_8h.html#dd/d43/structs__gen__list">t_gen_list</a>          *<a class="code hl_function" href="../../db/d84/tokenizer_8h.html#a7f79110e05751dc9e588a9fab750d97d">tokenize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *line);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><a class="code hl_struct" href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">t_gen_list</a>          *<a class="code hl_function" href="../../db/d84/tokenizer_8h.html#a7f79110e05751dc9e588a9fab750d97d">tokenize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *line);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d84/tokenizer_8h.html#af0886495b353f179f845206ad2969d3e">destroy_token</a>(<a class="code hl_struct" href="../../db/d84/tokenizer_8h.html#df/d44/structs__token">t_token</a> *token);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="../../da/d23/list_8h.html">list.h</a></div></div>
-<div class="ttc" id="alist_8h_html_dd/d43/structs__gen__list"><div class="ttname"><a href="../../da/d23/list_8h.html#dd/d43/structs__gen__list">s_gen_list</a></div><div class="ttdef"><b>Definition</b> list.h:30</div></div>
+<div class="ttc" id="agen__link__list__internal_8h_html_dd/d43/structs__gen__list"><div class="ttname"><a href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">s_gen_list</a></div><div class="ttdoc">Generic singly linked list container.</div><div class="ttdef"><b>Definition</b> gen_link_list_internal.h:43</div></div>
 <div class="ttc" id="atokenizer_8h_html_a21b454c179e1e31383371d09385b9c59"><div class="ttname"><a href="../../db/d84/tokenizer_8h.html#a21b454c179e1e31383371d09385b9c59">s_token::value</a></div><div class="ttdeci">char * value</div><div class="ttdef"><b>Definition</b> tokenizer.h:32</div></div>
 <div class="ttc" id="atokenizer_8h_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="../../db/d84/tokenizer_8h.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> tokenizer.h:31</div></div>
 <div class="ttc" id="atokenizer_8h_html_a76a354e93d720f05344590ec8aa222de"><div class="ttname"><a href="../../db/d84/tokenizer_8h.html#a76a354e93d720f05344590ec8aa222de">e_token_type</a></div><div class="ttdeci">e_token_type</div><div class="ttdef"><b>Definition</b> tokenizer.h:19</div></div>

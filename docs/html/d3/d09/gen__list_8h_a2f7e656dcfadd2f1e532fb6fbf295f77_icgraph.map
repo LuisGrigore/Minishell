@@ -1,0 +1,16 @@
+<map id="gen_list_is_empty" name="gen_list_is_empty">
+<area shape="rect" id="Node000001" title="Check if the list is empty." alt="" coords="439,120,579,145"/>
+<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="237,5,337,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="483,113,441,78,390,46,337,28,339,23,392,41,445,74,486,109"/>
+<area shape="rect" id="Node000003" href="$d4/dcd/redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="215,55,360,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="445,119,360,97,361,92,446,114"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="184,120,391,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="424,135,391,135,391,130,424,130"/>
+<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="225,169,349,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="438,151,346,172,345,167,437,146"/>
+<area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="5,195,136,220"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="484,157,443,186,418,200,391,210,325,223,256,228,192,226,136,220,137,215,192,220,256,222,324,218,390,205,416,195,440,182,481,152"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="43,120,98,145"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="170,135,98,135,98,130,170,130"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="212,193,137,202,136,197,212,188"/>
+</map>

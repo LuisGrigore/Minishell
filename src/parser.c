@@ -3,18 +3,22 @@
 #include "../include/tokenizer.h"
 #include "../include/redirect_asignation.h"
 #include "../include/command.h"
-#include "../libft/libft.h" // para ft_strlen, ft_strlcpy
+#include "../libft/libft.h"
 
 static t_command_funct get_command_function(t_gen_list *args)
 {
-    if (!args || args->size == 0)
+    t_gen_list_iter *it;
+    char *cmd_name;
+
+    if (!args || gen_list_is_empty(args))
         return NULL;
-
-    char *cmd_name = (char *)args->head->value;
-
-    if (ft_strlen(cmd_name) == 0)
+    it = gen_list_iter_start(args);
+    if (!it)
         return NULL;
-
+    cmd_name = gen_list_iter_next(it);
+    gen_list_iter_destroy(it);
+    if (!cmd_name || ft_strlen(cmd_name) == 0)
+        return NULL;
     if (ft_strncmp(cmd_name, "echo", 5) == 0)
         return echo_execute;
     else if (ft_strncmp(cmd_name, "cd", 3) == 0)
@@ -28,7 +32,7 @@ static t_command_funct get_command_function(t_gen_list *args)
     else if (ft_strncmp(cmd_name, "env", 4) == 0)
         return env_execute;
     else
-        return bin_execute; // cualquier otro comando es ejecutable externo
+        return bin_execute;
 }
 
 t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
@@ -43,10 +47,10 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
     t_gen_list *current_args = gen_list_create();
     t_gen_list *current_redirects = gen_list_create();
 
-    t_gen_list_iter it = gen_list_iter_start(tokens);
+    t_gen_list_iter *it = gen_list_iter_start(tokens);
     t_token *tok;
 
-    while ((tok = (t_token *)gen_list_iter_next(&it)) != NULL)
+    while ((tok = (t_token *)gen_list_iter_next(it)) != NULL)
     {
         if (tok->type == TOKEN_ARG || tok->type == TOKEN_CMD)
         {
@@ -78,7 +82,7 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
                  tok->type == TOKEN_HEREDOC)
         {
             // El siguiente token debe ser el archivo
-            t_token *file_tok = (t_token *)gen_list_iter_next(&it);
+            t_token *file_tok = (t_token *)gen_list_iter_next(it);
             if (!file_tok || file_tok->type != TOKEN_ARG)
                 goto error;
 
@@ -100,7 +104,7 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
     }
 
     // Guardar el último comando si hay args o redirs
-    if (current_args->size > 0 || current_redirects->size > 0)
+    if (gen_list_is_empty(current_args) || gen_list_is_empty(current_redirects))
     {
         t_command_funct funct = get_command_function(current_args);
         t_command *cmd = init_command(current_args, funct, current_redirects);

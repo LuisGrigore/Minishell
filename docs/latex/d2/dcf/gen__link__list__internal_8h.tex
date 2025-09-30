@@ -1,0 +1,165 @@
+\doxysection{gen\+\_\+list/gen\+\_\+link\+\_\+list/gen\+\_\+link\+\_\+list\+\_\+internal.h File Reference}
+\hypertarget{gen__link__list__internal_8h}{}\label{gen__link__list__internal_8h}\index{gen\_list/gen\_link\_list/gen\_link\_list\_internal.h@{gen\_list/gen\_link\_list/gen\_link\_list\_internal.h}}
+{\ttfamily \#include "{}../libft/libft.\+h"{}}\newline
+{\ttfamily \#include "{}../gen\+\_\+list.\+h"{}}\newline
+Include dependency graph for gen\+\_\+link\+\_\+list\+\_\+internal.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{da/d30/gen__link__list__internal_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d30/gen__link__list__internal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{gen__link__list__internal_8h_d9/d54/structs__node}{s\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Node of a generic singly linked list.  \mbox{\hyperlink{gen__link__list__internal_8h_d9/d54/structs__node}{More...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{s\+\_\+gen\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Generic singly linked list container.  \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{More...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{s\+\_\+gen\+\_\+list\+\_\+iter}}
+\begin{DoxyCompactList}\small\item\em Iterator for traversing a generic linked list.  \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{More...}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{gen__link__list__internal_8h_d9/d54/structs__node}{s\+\_\+node}} \mbox{\hyperlink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Node of a generic singly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Class Documentation}
+\index{s\_node@{s\_node}}\label{structs__node}
+\Hypertarget{gen__link__list__internal_8h_structs__node}
+\doxysubsubsection{struct s\+\_\+node}
+Node of a generic singly linked list. 
+
+Each node stores a generic value and a pointer to the next node.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
+
+\doxylink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter} 
+\end{DoxySeeAlso}
+
+
+Collaboration diagram for s\+\_\+node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{de/da0/structs__node__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{gen__link__list__internal_8h_ac2237e21194d385a2f3d6bd5fdca8045}\label{gen__link__list__internal_8h_ac2237e21194d385a2f3d6bd5fdca8045}} 
+struct \mbox{\hyperlink{gen__link__list__internal_8h_d9/d54/structs__node}{s\_node}} \texorpdfstring{$\ast$}{*}&
+next&
+\\
+\hline
+
+\mbox{\Hypertarget{gen__link__list__internal_8h_af0201fc8bf11256ef9450c8017f22314}\label{gen__link__list__internal_8h_af0201fc8bf11256ef9450c8017f22314}} 
+void \texorpdfstring{$\ast$}{*}&
+value&
+\\
+\hline
+
+\end{DoxyFields}
+\index{s\_gen\_list@{s\_gen\_list}}\label{structs__gen__list}
+\Hypertarget{gen__link__list__internal_8h_structs__gen__list}
+\doxysubsubsection{struct s\+\_\+gen\+\_\+list}
+Generic singly linked list container. 
+
+Holds pointers to the first and last nodes, as well as the total number of stored elements.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node} 
+
+\doxylink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter} 
+\end{DoxySeeAlso}
+
+
+Collaboration diagram for s\+\_\+gen\+\_\+list\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{d9/d21/structs__gen__list__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{gen__link__list__internal_8h_a9d3e4dedcc05679fcd869efb7c26d500}\label{gen__link__list__internal_8h_a9d3e4dedcc05679fcd869efb7c26d500}} 
+\mbox{\hyperlink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}} \texorpdfstring{$\ast$}{*}&
+head&
+\\
+\hline
+
+\mbox{\Hypertarget{gen__link__list__internal_8h_a161ce598b8ef7b173793b9b6699ef42f}\label{gen__link__list__internal_8h_a161ce598b8ef7b173793b9b6699ef42f}} 
+size\_t&
+size&
+\\
+\hline
+
+\mbox{\Hypertarget{gen__link__list__internal_8h_a0ba83f9d5ef3faa95b9ef2da58c5ae0a}\label{gen__link__list__internal_8h_a0ba83f9d5ef3faa95b9ef2da58c5ae0a}} 
+\mbox{\hyperlink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}} \texorpdfstring{$\ast$}{*}&
+tail&
+\\
+\hline
+
+\end{DoxyFields}
+\index{s\_gen\_list\_iter@{s\_gen\_list\_iter}}\label{structs__gen__list__iter}
+\Hypertarget{gen__link__list__internal_8h_structs__gen__list__iter}
+\doxysubsubsection{struct s\+\_\+gen\+\_\+list\+\_\+iter}
+Iterator for traversing a generic linked list. 
+
+Stores the current node and is advanced with \doxylink{gen__link__list__iteration_8c_a4608f925c54b6539f8cee3d67edba91c}{gen\+\_\+list\+\_\+iter\+\_\+next}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node} 
+
+\doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
+\end{DoxySeeAlso}
+
+
+Collaboration diagram for s\+\_\+gen\+\_\+list\+\_\+iter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{d5/dea/structs__gen__list__iter__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{gen__link__list__internal_8h_a7c06cced8557905139e08404df3d5ef2}\label{gen__link__list__internal_8h_a7c06cced8557905139e08404df3d5ef2}} 
+\mbox{\hyperlink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\_node}} \texorpdfstring{$\ast$}{*}&
+current&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}\label{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301} 
+\index{gen\_link\_list\_internal.h@{gen\_link\_list\_internal.h}!t\_node@{t\_node}}
+\index{t\_node@{t\_node}!gen\_link\_list\_internal.h@{gen\_link\_list\_internal.h}}
+\doxysubsubsection{\texorpdfstring{t\_node}{t\_node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{gen__link__list__internal_8h_d9/d54/structs__node}{s\+\_\+node}} \mbox{\hyperlink{gen__link__list__internal_8h_a3f46128da7b9ed932ecb00df9677e301}{t\+\_\+node}}}
+
+
+
+Node of a generic singly linked list. 
+
+Each node stores a generic value and a pointer to the next node.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
+
+\doxylink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter} 
+\end{DoxySeeAlso}
