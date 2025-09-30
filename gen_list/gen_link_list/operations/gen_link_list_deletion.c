@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gen_link_list_deletion.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/30 23:23:56 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/09/30 23:24:00 by lgrigore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../gen_link_list_internal.h"
 
 void	gen_list_remove_if(t_gen_list *list, bool (*predicate)(void *),

@@ -6,12 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:55:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 13:57:04 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/09/30 23:27:47 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gen_link_list_internal.h"
-
 
 t_gen_list	*gen_list_create(void)
 {
@@ -26,7 +25,8 @@ t_gen_list	*gen_list_create(void)
 	return (list);
 }
 
-void	gen_list_destroy(t_gen_list *list, void(value_destroyer)(void *))
+void	gen_list_destroy(t_gen_list *list,
+		t_element_destroyer element_destroyer)
 {
 	t_node	*current;
 	t_node	*tmp;
@@ -37,7 +37,7 @@ void	gen_list_destroy(t_gen_list *list, void(value_destroyer)(void *))
 	while (current)
 	{
 		tmp = current->next;
-		if (value_destroyer)
+		if (element_destroyer)
 			value_destroyer(current->value);
 		free(current);
 		current = tmp;
