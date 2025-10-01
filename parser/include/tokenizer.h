@@ -6,24 +6,24 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 13:53:24 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:01:35 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOKENIZER_H
 # define TOKENIZER_H
 
-# include "../gen_list/gen_list.h"
+# include "../external/gen_list/gen_list.h"
 
 typedef enum e_token_type
 {
-	TOKEN_CMD,          // comando o palabra
-	TOKEN_ARG,          // argumento
-	TOKEN_PIPE,         // |
-	TOKEN_REDIR_IN,     // <
-	TOKEN_REDIR_OUT,    // >
-	TOKEN_REDIR_APPEND, // >>
-	TOKEN_HEREDOC       // <<
+	TOKEN_CMD,
+	TOKEN_ARG,
+	TOKEN_PIPE,
+	TOKEN_REDIR_IN,
+	TOKEN_REDIR_OUT,
+	TOKEN_REDIR_APPEND,
+	TOKEN_HEREDOC
 }					t_token_type;
 
 typedef struct s_token

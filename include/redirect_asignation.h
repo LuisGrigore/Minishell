@@ -1,6 +1,6 @@
 #ifndef REDIRECT_ASIGNATION_H
 # define REDIRECT_ASIGNATION_H
-# include "../gen_list/gen_list.h"
+# include "../external/gen_list/gen_list.h"
 
 typedef enum e_redirect_type
 {
