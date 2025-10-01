@@ -1,6 +1,6 @@
-CC      = gcc
-CFLAGS  = -fsanitize=address -g
-INCLUDES =  -I./environment -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./include -I./parser -I./parser/include -I./parser/lexer
+CC      = cc
+CFLAGS  = 
+INCLUDES =  -I./command -I./environment -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./include -I./parser -I./parser/include -I./parser/lexer
 
 OBJ_DIR = obj
 NAME    = minishell
