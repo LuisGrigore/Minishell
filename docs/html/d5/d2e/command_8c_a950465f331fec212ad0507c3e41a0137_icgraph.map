@@ -1,8 +1,10 @@
 <map id="destroy_command" name="destroy_command">
-<area shape="rect" id="Node000001" title=" " alt="" coords="363,5,505,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="500,5,643,31"/>
 <area shape="rect" id="Node000002" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="349,21,60,21,60,15,349,15"/>
-<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,31,315,56"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="349,30,315,34,314,29,349,25"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="107,31,60,24,61,19,108,26"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="486,21,60,21,60,15,486,15"/>
+<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="245,31,452,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="487,30,452,34,452,29,486,25"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="108,31,197,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,46,198,46,198,41,231,41"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="94,34,60,26,61,21,95,28"/>
 </map>

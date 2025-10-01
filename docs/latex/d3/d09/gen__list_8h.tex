@@ -1,8 +1,9 @@
-\doxysection{gen\+\_\+list/gen\+\_\+list.h File Reference}
-\hypertarget{gen__list_8h}{}\label{gen__list_8h}\index{gen\_list/gen\_list.h@{gen\_list/gen\_list.h}}
+\doxysection{external/gen\+\_\+list/gen\+\_\+list.h File Reference}
+\hypertarget{gen__list_8h}{}\label{gen__list_8h}\index{external/gen\_list/gen\_list.h@{external/gen\_list/gen\_list.h}}
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-Include dependency graph for gen\+\_\+list.\+h\+:\nopagebreak
+Include dependency graph for gen\+\_\+list.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -65,6 +66,8 @@ void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__list_8h_abe06ed3bda440c2bd
 \begin{DoxyCompactList}\small\item\em Find the first element that satisfies a predicate with context. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{gen__list_8h_a88eccd5115040464ae1ab2ea4f6fb565}{gen\+\_\+list\+\_\+get\+\_\+size}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list)
 \begin{DoxyCompactList}\small\item\em Gets the current size of the list. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__list_8h_af502cf585dc2431e5fbe27c79fed05cf}{gen\+\_\+list\+\_\+peek\+\_\+top}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list)
+\item 
 bool \mbox{\hyperlink{gen__list_8h_aff7b5a65d01554d98152316c483dd48d}{gen\+\_\+list\+\_\+has}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate)
 \begin{DoxyCompactList}\small\item\em Check if the list contains an element that satisfies a predicate. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{gen__list_8h_ad2f1293414d02a15559f1d375673af51}{gen\+\_\+list\+\_\+has\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context)
@@ -292,7 +295,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{d3/d09/gen__list_8h_af075dd4fcf545a88c4eb75b4ef273005_cgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_af075dd4fcf545a88c4eb75b4ef273005_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{gen__list_8h_a4acf718ea226522128b6f12296f7c821}\label{gen__list_8h_a4acf718ea226522128b6f12296f7c821} 
@@ -315,6 +318,14 @@ Destroy the entire list and its nodes.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer} 
 \end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d3/d09/gen__list_8h_a4acf718ea226522128b6f12296f7c821_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -346,8 +357,15 @@ Value of the first matching node, or NULL if none found.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate} 
 \end{DoxySeeAlso}
-Here is the caller graph for this function\+:
+Here is the call graph for this function\+:
 \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{d3/d09/gen__list_8h_a2102327ee709da7dafad283f5b02ce00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -379,6 +397,14 @@ Value of the first matching node, or NULL if none found.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx} 
 \end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{d3/d09/gen__list_8h_abe06ed3bda440c2bdaf89881a83fddf8_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -475,7 +501,8 @@ list size.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
 \end{DoxySeeAlso}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -510,7 +537,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=271pt]{d3/d09/gen__list_8h_aff7b5a65d01554d98152316c483dd48d_cgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_aff7b5a65d01554d98152316c483dd48d_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{gen__list_8h_ad2f1293414d02a15559f1d375673af51}\label{gen__list_8h_ad2f1293414d02a15559f1d375673af51} 
@@ -543,11 +570,10 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{d3/d09/gen__list_8h_ad2f1293414d02a15559f1d375673af51_cgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_ad2f1293414d02a15559f1d375673af51_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -575,7 +601,8 @@ true if is empty, false otherwise.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
 \end{DoxySeeAlso}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -666,6 +693,20 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{d3/d09/gen__list_8h_a491520fc16d4760ca4596d256a4e3835_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{gen__list_8h_af502cf585dc2431e5fbe27c79fed05cf}\label{gen__list_8h_af502cf585dc2431e5fbe27c79fed05cf} 
+\index{gen\_list.h@{gen\_list.h}!gen\_list\_peek\_top@{gen\_list\_peek\_top}}
+\index{gen\_list\_peek\_top@{gen\_list\_peek\_top}!gen\_list.h@{gen\_list.h}}
+\doxysubsubsection{\texorpdfstring{gen\_list\_peek\_top()}{gen\_list\_peek\_top()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+peek\+\_\+top (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_af502cf585dc2431e5fbe27c79fed05cf_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{gen__list_8h_a452a14292622fab76140e1e9ca0a57e7}\label{gen__list_8h_a452a14292622fab76140e1e9ca0a57e7} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_pop\_front@{gen\_list\_pop\_front}}
 \index{gen\_list\_pop\_front@{gen\_list\_pop\_front}!gen\_list.h@{gen\_list.h}}
@@ -684,6 +725,14 @@ Remove the first node of the list and return its value.
 \begin{DoxyReturn}{Returns}
 Value stored in the first node, or NULL if the list is empty. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_a452a14292622fab76140e1e9ca0a57e7_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{gen__list_8h_a9df831ac7dc242f94206af62e0387df1}\label{gen__list_8h_a9df831ac7dc242f94206af62e0387df1} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_push\_back@{gen\_list\_push\_back}}
 \index{gen\_list\_push\_back@{gen\_list\_push\_back}!gen\_list.h@{gen\_list.h}}
@@ -838,15 +887,15 @@ Dynamically allocated null-\/terminated array of strings, one per element.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a76bf5461401c0a8ceefe0b19425ab41e}{t\+\_\+element\+\_\+to\+\_\+string} 
 \end{DoxySeeAlso}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=336pt]{d3/d09/gen__list_8h_ae56850e893a5c09aecef6c3340bef04f_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

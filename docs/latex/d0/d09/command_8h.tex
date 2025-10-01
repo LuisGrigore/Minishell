@@ -5,15 +5,17 @@
 Module that contains the necesary functionality to create and execute commands.  
 
 
-{\ttfamily \#include "{}../gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
-Include dependency graph for command.\+h\+:\nopagebreak
+{\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
+Include dependency graph for command.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=214pt]{d4/d4d/command_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -54,7 +56,9 @@ void \mbox{\hyperlink{command_8h_a509bc3c56be844c9b30a2ff165913928}{env\+\_\+exe
 void \mbox{\hyperlink{command_8h_a0fad0803ff59cff11ab2eb8de7eac854}{echo\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
 \item 
 void \mbox{\hyperlink{command_8h_ac2417fa48185516c05dd13ce83e55f1d}{execute\+\_\+commands\+\_\+with\+\_\+pipes}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
-\begin{DoxyCompactList}\small\item\em Executes the commands in the given list in order as child processes linking their input and output with the corresponding pipes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Executes the commands in the given list in order as child processes linking their input and output with the corresponding pipes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}} \mbox{\hyperlink{command_8h_a08ef374af07a926aeb231c0e68b20b28}{get\+\_\+command\+\_\+function}} (char \texorpdfstring{$\ast$}{*}cmd\+\_\+name)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -119,12 +123,19 @@ redirects&
 \doxysubsubsection{\texorpdfstring{bin\_execute()}{bin\_execute()}}
 {\footnotesize\ttfamily void bin\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d0/d09/command_8h_a9b93e7663cca775fbe6c13fea90699f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a9b93e7663cca775fbe6c13fea90699f1_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{command_8h_ac40e1776b69522eaf80d953ec441231d}\label{command_8h_ac40e1776b69522eaf80d953ec441231d} 
@@ -141,7 +152,8 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{d0/d09/command_8h_ac40e1776b69522eaf80d953ec441231d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,10 +171,11 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=320pt]{d0/d09/command_8h_a950465f331fec212ad0507c3e41a0137_cgraph}
+\includegraphics[width=350pt]{d0/d09/command_8h_a950465f331fec212ad0507c3e41a0137_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -182,18 +195,33 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{d0/d09/command_8h_a0fad0803ff59cff11ab2eb8de7eac854_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a0fad0803ff59cff11ab2eb8de7eac854_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{command_8h_a509bc3c56be844c9b30a2ff165913928}\label{command_8h_a509bc3c56be844c9b30a2ff165913928} 
 \index{command.h@{command.h}!env\_execute@{env\_execute}}
 \index{env\_execute@{env\_execute}!command.h@{command.h}}
 \doxysubsubsection{\texorpdfstring{env\_execute()}{env\_execute()}}
 {\footnotesize\ttfamily void env\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d0/d09/command_8h_a509bc3c56be844c9b30a2ff165913928_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a509bc3c56be844c9b30a2ff165913928_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{command_8h_ac2417fa48185516c05dd13ce83e55f1d}\label{command_8h_ac2417fa48185516c05dd13ce83e55f1d} 
@@ -242,11 +270,34 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{d0/d09/command_8h_abba1603056020c33ad3f11e82b14fcfe_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d0/d09/command_8h_abba1603056020c33ad3f11e82b14fcfe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{command_8h_a08ef374af07a926aeb231c0e68b20b28}\label{command_8h_a08ef374af07a926aeb231c0e68b20b28} 
+\index{command.h@{command.h}!get\_command\_function@{get\_command\_function}}
+\index{get\_command\_function@{get\_command\_function}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{get\_command\_function()}{get\_command\_function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}} get\+\_\+command\+\_\+function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{cmd\+\_\+name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a08ef374af07a926aeb231c0e68b20b28_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a08ef374af07a926aeb231c0e68b20b28_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{command_8h_a980b6e4466bc0bed37cb6352f143ab96}\label{command_8h_a980b6e4466bc0bed37cb6352f143ab96} 
@@ -262,7 +313,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=259pt]{d0/d09/command_8h_a980b6e4466bc0bed37cb6352f143ab96_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -283,21 +335,29 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{d0/d09/command_8h_a0f6eaa743e63abad6ac6be049d6179c6_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a0f6eaa743e63abad6ac6be049d6179c6_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{command_8h_a24640ac75761d535d770cf4255c336da}\label{command_8h_a24640ac75761d535d770cf4255c336da} 
 \index{command.h@{command.h}!unset\_execute@{unset\_execute}}
 \index{unset\_execute@{unset\_execute}!command.h@{command.h}}
 \doxysubsubsection{\texorpdfstring{unset\_execute()}{unset\_execute()}}
 {\footnotesize\ttfamily void unset\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d0/d09/command_8h_a24640ac75761d535d770cf4255c336da_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

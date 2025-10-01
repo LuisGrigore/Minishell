@@ -16,6 +16,6 @@ var searchData=
   ['t_5fredirect_13',['t_redirect',['../df/dc7/redirect__asignation_8h.html#aa0a54f0f7fe7d432d2a6f820246de5c6',1,'redirect_asignation.h']]],
   ['t_5fredirect_5ftype_14',['t_redirect_type',['../df/dc7/redirect__asignation_8h.html#a2ec8359692a4a397f0bd1e8b2d098f47',1,'redirect_asignation.h']]],
   ['t_5fstring_5fto_5felement_15',['t_string_to_element',['../d3/d09/gen__list_8h.html#a45339f17ba107cf89ced205c9ba29a79',1,'gen_list.h']]],
-  ['t_5ftoken_16',['t_token',['../db/d84/tokenizer_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4',1,'tokenizer.h']]],
-  ['t_5ftoken_5ftype_17',['t_token_type',['../db/d84/tokenizer_8h.html#aaa12264c004e358b28290c09bb20969a',1,'tokenizer.h']]]
+  ['t_5ftoken_16',['t_token',['../d5/df3/lexer_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4',1,'lexer.h']]],
+  ['t_5ftoken_5ftype_17',['t_token_type',['../d5/df3/lexer_8h.html#aaa12264c004e358b28290c09bb20969a',1,'lexer.h']]]
 ];
