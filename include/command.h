@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:01:06 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 16:01:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void						echo_execute(t_command *command,
  * @param env Environment variable list that the commands may need.
  */
 void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env);
+
+t_command_funct get_command_function(char *cmd_name);
 
 
 #endif

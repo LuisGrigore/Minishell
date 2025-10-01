@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:59:12 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:56:54 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,14 +215,9 @@ void print_commands(t_gen_list *commands) {
     }
 }
 
-// void destroy_token_data(void *token_ptr)
-// {
-// 	destroy_token((t_token *) token_ptr);
-// }
 
 int	main(int args, char **environment_var_str_array)
 {
-	//t_gen_list	*tokens;
 	t_gen_list	*current_commands;
 	t_gen_list	*envioroment_vars;
 	bool		finish;
@@ -248,22 +243,12 @@ int	main(int args, char **environment_var_str_array)
 			if (check_cmd(line) == NULL)
 				continue ;
 			add_history(line);
-			// tokens = lexer_tokenize(line);
-			// //print_tokens(tokens);
-			// if (!tokens)
-			// {
-			// 	perror("Tokenization error ");
-			// 	continue ;
-			// }
-			//current_commands = parse_tokens_to_commands(tokens);
-			//gen_list_destroy(tokens, destroy_token_data);
 			current_commands = parse_line(line);
 			if (!current_commands)
 			{
 				perror("Parsing error ");
 				continue ;
 			}
-			//print_commands(current_commands);
 			execute_commands_with_pipes(current_commands, envioroment_vars);
 		}
 		free(line);

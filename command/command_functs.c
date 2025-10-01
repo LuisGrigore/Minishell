@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:02:32 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 16:01:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,27 @@
 #include "../external/libft/libft.h"
 #include <signal.h>
 
+
+t_command_funct get_command_function(char *cmd_name)
+{
+    if (!cmd_name || ft_strlen(cmd_name) == 0)
+        return NULL;
+
+    if (ft_strncmp(cmd_name, "echo", 5) == 0)
+        return echo_execute;
+    else if (ft_strncmp(cmd_name, "cd", 3) == 0)
+        return cd_execute;
+    else if (ft_strncmp(cmd_name, "pwd", 4) == 0)
+        return pwd_execute;
+    else if (ft_strncmp(cmd_name, "export", 7) == 0)
+        return export_execute;
+    else if (ft_strncmp(cmd_name, "unset", 6) == 0)
+        return unset_execute;
+    else if (ft_strncmp(cmd_name, "env", 4) == 0)
+        return env_execute;
+    else
+        return bin_execute;
+}
 
 static char *serialize_arg(void *arg_ptr)
 {

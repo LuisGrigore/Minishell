@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:30:11 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 00:39:11 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 16:03:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,6 +237,8 @@ void							*gen_list_find_ctx(t_gen_list *list,
  * @see t_gen_list
  */
 size_t							gen_list_get_size(t_gen_list *list);
+
+void *gen_list_peek_top(t_gen_list *list);
 
 /**
  * @brief Check if the list contains an element that satisfies a predicate.
