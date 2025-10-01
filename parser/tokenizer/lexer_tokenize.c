@@ -1,49 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tokenizer.c                                        :+:      :+:    :+:   */
+/*   lexer_tokenize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:09:07 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:09:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:50:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokenizer_internal.h"
 
-static char *ft_strndup(const char *s, size_t n) {
-    char *p = malloc(n + 1); size_t i; if (!p) return NULL;
-    for (i = 0; i < n && s[i]; i++) p[i] = s[i]; p[i] = '\0'; return p;
-}
-
-static int is_space(char c) { return c == ' ' || c == '\t'; }
-static int is_operator_char(char c) { return c == '|' || c == '>' || c == '<'; }
-static int match_two_char_op(const char *s, size_t pos, const char *op) {
-    return s[pos] && s[pos+1] && s[pos] == op[0] && s[pos+1] == op[1];
-}
-
-static t_token *create_token(t_token_type type, char *value) {
-    t_token *tok = malloc(sizeof(t_token));
-    if (!tok) return NULL;
-    tok->type = type;
-    tok->value = value;
-    return tok;
-}
-
-static t_token_type operator_type(const char *op, size_t len) {
-    if (len == 1) {
-        if (op[0] == '|') return TOKEN_PIPE;
-        if (op[0] == '<') return TOKEN_REDIR_IN;
-        if (op[0] == '>') return TOKEN_REDIR_OUT;
-    } else if (len == 2) {
-        if (op[0] == '<' && op[1] == '<') return TOKEN_HEREDOC;
-        if (op[0] == '>' && op[1] == '>') return TOKEN_REDIR_APPEND;
-    }
-    return TOKEN_ARG; // fallback
-}
-
-t_gen_list *tokenize(const char *line) {
+t_gen_list *lexer_tokenize(const char *line) {
     size_t i = 0, len = ft_strlen(line);
     t_gen_list *tokens_list = gen_list_create();
     if (!tokens_list) return NULL;
@@ -121,16 +90,4 @@ error:
     return NULL;
 }
 
-void destroy_token(t_token *token)
-{
-    if (!token)
-        return;
 
-    if (token->value)
-    {
-        free(token->value);
-        token->value = NULL;
-    }
-
-    free(token);
-}
