@@ -1,5 +1,5 @@
 
-#include "tokenizer_internal.h"
+#include "lexer_internal.h"
 
 char *ft_strndup(const char *s, size_t n) {
     char *p = malloc(n + 1); size_t i; if (!p) return NULL;

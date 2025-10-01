@@ -6,11 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:36:58 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:47:30 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:57:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tokenizer_internal.h"
+#include "lexer_internal.h"
 
 //private
 void destroy_token(t_token *token)

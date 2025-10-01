@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tokenizer_internal.h                               :+:      :+:    :+:   */
+/*   lexer_internal.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:45:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:54:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:56:41 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOKENIZER_INTERNAL_H
 #define TOKENIZER_INTERNAL_H
 
-#include "../include/tokenizer.h"
+#include "../include/lexer.h"
 # include "../external/gen_list/gen_list.h"
 #include "../external/libft/libft.h"
 #include <stdlib.h>

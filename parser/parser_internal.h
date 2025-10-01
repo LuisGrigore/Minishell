@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:05 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:08:34 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:57:18 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <stdlib.h>
 #include "../include/parser.h"
-#include "include/tokenizer.h"
+#include "include/lexer.h"
 #include "../include/redirect_asignation.h"
 #include "../include/command.h"
 #include "../external/libft/libft.h"

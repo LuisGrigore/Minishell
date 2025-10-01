@@ -1,11 +1,11 @@
-CC      = cc
+CC      = gcc
 CFLAGS  = -fsanitize=address -g
-INCLUDES =  -I./environment -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./include -I./parser -I./parser/include -I./parser/tokenizer
+INCLUDES =  -I./environment -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./include -I./parser -I./parser/include -I./parser/lexer
 
 OBJ_DIR = obj
 NAME    = minishell
 
-SRCS    = ./executer/find_command.c ./executer/pipe.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/tokenizer/lexer_util.c ./parser/tokenizer/lexer_life_cycle.c ./parser/tokenizer/lexer_tokenize.c ./parser/parser.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./command/command.c ./command/redirect_asignation.c ./command/redirect.c ./command/command_functs.c ./minishell.c 
+SRCS    = ./executer/find_command.c ./executer/pipe.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/lexer/lexer_util.c ./parser/lexer/lexer_life_cycle.c ./parser/lexer/lexer_tokenize.c ./parser/parser.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./command/command.c ./command/redirect_asignation.c ./command/redirect.c ./command/command_functs.c ./minishell.c 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 LINK_FLAGS = -lreadline -lncurses
 SUBSYSTEM_PATH = ./external/libft ./external/gen_list
