@@ -1,9 +1,16 @@
 <map id="ft_split2" name="ft_split2">
-<area shape="rect" id="Node000001" title=" " alt="" coords="513,13,588,38"/>
-<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="343,13,465,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="500,28,466,28,466,23,500,23"/>
-<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="108,5,295,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="329,28,295,28,295,23,329,23"/>
-<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,13,60,38"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="893,42,968,67"/>
+<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="723,42,845,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="880,57,846,57,846,52,880,52"/>
+<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="255,5,442,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="709,52,442,34,442,29,709,47"/>
+<area shape="rect" id="Node000005" href="$d7/df6/command__functs_8c.html#a08ef374af07a926aeb231c0e68b20b28" title=" " alt="" coords="500,67,675,93"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="709,67,675,71,675,66,709,62"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,42,60,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,38,60,55,60,50,241,33"/>
+<area shape="rect" id="Node000006" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="245,70,452,95"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="486,84,452,84,452,79,486,78"/>
+<area shape="rect" id="Node000007" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="108,67,197,93"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="231,84,198,83,198,78,231,78"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="94,70,60,63,61,58,95,65"/>
 </map>

@@ -1,0 +1,36 @@
+\doxysection{lexer\+\_\+internal.\+h}
+\hypertarget{lexer__internal_8h_source}{}\label{lexer__internal_8h_source}\index{parser/lexer/lexer\_internal.h@{parser/lexer/lexer\_internal.h}}
+\mbox{\hyperlink{lexer__internal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ \ \ lexer\_internal.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/10/01\ 13:45:17\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/10/01\ 14:56:41\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ TOKENIZER\_INTERNAL\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ TOKENIZER\_INTERNAL\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../include/lexer.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ include\ "{}../external/gen\_list/gen\_list.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../external/libft/libft.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \mbox{\hyperlink{lexer_8h_df/d44/structs__token}{t\_token}}\ *\mbox{\hyperlink{lexer__internal_8h_ad45a6a77df02fcbb4b2deb3ee46f6a8c}{create\_token}}(\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ type,\ \textcolor{keywordtype}{char}\ *value);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lexer__internal_8h_af0886495b353f179f845206ad2969d3e}{destroy\_token}}(\mbox{\hyperlink{lexer_8h_df/d44/structs__token}{t\_token}}\ *token);}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{lexer__internal_8h_a2d5f42a11a38830b809bced1fc209c20}{ft\_strndup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8701968ceb20a387aa8bfc7d411f6e07}{is\_space}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_aed920c4ccf5ae57509ab4f9ca6fdc2db}{is\_operator\_char}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8a7ddaa1bfaaee00238451371f498d23}{match\_two\_char\_op}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op);}
+\DoxyCodeLine{00028\ \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ \mbox{\hyperlink{lexer__internal_8h_aa1004a8899af22ed07900fb0ca3c562e}{operator\_type}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

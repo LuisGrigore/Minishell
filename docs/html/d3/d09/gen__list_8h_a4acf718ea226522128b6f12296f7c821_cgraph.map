@@ -1,0 +1,5 @@
+<map id="gen_list_destroy" name="gen_list_destroy">
+<area shape="rect" id="Node000001" title="Destroy the entire list and its nodes." alt="" coords="5,5,135,31"/>
+<area shape="rect" id="Node000002" href="$d2/d73/gen__link__list__retrieval_8c.html#a452a14292622fab76140e1e9ca0a57e7" title="Remove the first node of the list and return its value." alt="" coords="183,5,325,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,15,169,15,169,21,135,21"/>
+</map>

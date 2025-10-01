@@ -1,0 +1,65 @@
+\doxysection{parser/lexer/lexer\+\_\+life\+\_\+cycle.c File Reference}
+\hypertarget{lexer__life__cycle_8c}{}\label{lexer__life__cycle_8c}\index{parser/lexer/lexer\_life\_cycle.c@{parser/lexer/lexer\_life\_cycle.c}}
+{\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
+Include dependency graph for lexer\+\_\+life\+\_\+cycle.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d00/lexer__life__cycle_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lexer__life__cycle_8c_af0886495b353f179f845206ad2969d3e}{destroy\+\_\+token}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}token)
+\item 
+\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lexer__life__cycle_8c_ad45a6a77df02fcbb4b2deb3ee46f6a8c}{create\+\_\+token}} (\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} type, char \texorpdfstring{$\ast$}{*}value)
+\item 
+void \mbox{\hyperlink{lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba}{lexer\+\_\+destroy}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lexer__life__cycle_8c_ad45a6a77df02fcbb4b2deb3ee46f6a8c}\label{lexer__life__cycle_8c_ad45a6a77df02fcbb4b2deb3ee46f6a8c} 
+\index{lexer\_life\_cycle.c@{lexer\_life\_cycle.c}!create\_token@{create\_token}}
+\index{create\_token@{create\_token}!lexer\_life\_cycle.c@{lexer\_life\_cycle.c}}
+\doxysubsubsection{\texorpdfstring{create\_token()}{create\_token()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*} create\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}}]{type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d0d/lexer__life__cycle_8c_ad45a6a77df02fcbb4b2deb3ee46f6a8c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__life__cycle_8c_af0886495b353f179f845206ad2969d3e}\label{lexer__life__cycle_8c_af0886495b353f179f845206ad2969d3e} 
+\index{lexer\_life\_cycle.c@{lexer\_life\_cycle.c}!destroy\_token@{destroy\_token}}
+\index{destroy\_token@{destroy\_token}!lexer\_life\_cycle.c@{lexer\_life\_cycle.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_token()}{destroy\_token()}}
+{\footnotesize\ttfamily void destroy\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
+
+\Hypertarget{lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba}\label{lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba} 
+\index{lexer\_life\_cycle.c@{lexer\_life\_cycle.c}!lexer\_destroy@{lexer\_destroy}}
+\index{lexer\_destroy@{lexer\_destroy}!lexer\_life\_cycle.c@{lexer\_life\_cycle.c}}
+\doxysubsubsection{\texorpdfstring{lexer\_destroy()}{lexer\_destroy()}}
+{\footnotesize\ttfamily void lexer\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d0d/lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d6/d0d/lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba_icgraph}
+\end{center}
+\end{figure}

@@ -1,9 +1,11 @@
 <map id="init_redirect" name="init_redirect">
-<area shape="rect" id="Node000001" title=" " alt="" coords="363,42,463,67"/>
-<area shape="rect" id="Node000002" href="$d4/dcd/redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="139,5,284,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="348,48,284,39,284,33,349,43"/>
-<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="108,70,315,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="349,66,303,73,302,67,348,61"/>
-<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,85,60,85,60,80,94,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="500,42,600,67"/>
+<area shape="rect" id="Node000002" href="$d4/dcd/redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="276,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="485,48,421,39,422,33,486,43"/>
+<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="245,70,452,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="486,66,440,73,440,67,486,61"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="108,70,197,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,85,198,85,198,80,231,80"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,85,60,85,60,80,94,80"/>
 </map>

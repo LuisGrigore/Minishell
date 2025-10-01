@@ -1,13 +1,19 @@
 <map id="env_has" name="env_has">
-<area shape="rect" id="Node000001" title="Check if an environment variable exists by name." alt="" coords="5,31,81,56"/>
-<area shape="rect" id="Node000002" href="$d9/d6d/gen__link__list__predicates_8c.html#ad2f1293414d02a15559f1d375673af51" title="Check if the list contains an element that satisfies a predicate." alt="" coords="129,5,260,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,34,115,29,116,34,82,40"/>
-<area shape="rect" id="Node000004" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="133,55,257,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="82,47,119,53,118,58,81,52"/>
-<area shape="rect" id="Node000003" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="308,5,439,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,15,294,15,294,21,260,21"/>
-<area shape="rect" id="Node000005" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="336,55,411,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="257,65,322,65,322,70,257,70"/>
-<area shape="rect" id="Node000006" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="328,104,419,129"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="242,77,315,98,313,103,241,83"/>
+<area shape="rect" id="Node000001" title="Check if an environment variable exists by name." alt="" coords="5,80,81,105"/>
+<area shape="rect" id="Node000002" href="$d9/d6d/gen__link__list__predicates_8c.html#ad2f1293414d02a15559f1d375673af51" title="Check if the list contains an element that satisfies a predicate." alt="" coords="129,55,260,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,84,115,78,116,83,82,89"/>
+<area shape="rect" id="Node000007" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title="Filter function for comparing variable names." alt="" coords="133,104,257,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="82,96,119,102,118,107,81,101"/>
+<area shape="rect" id="Node000003" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="308,55,439,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,65,294,65,294,70,260,70"/>
+<area shape="rect" id="Node000004" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="487,5,645,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="423,52,502,32,503,37,424,57"/>
+<area shape="rect" id="Node000005" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="497,55,635,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="439,65,483,65,483,70,439,70"/>
+<area shape="rect" id="Node000006" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="497,104,635,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="424,77,503,98,502,103,423,83"/>
+<area shape="rect" id="Node000008" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="336,104,411,129"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="257,114,322,114,322,119,257,119"/>
+<area shape="rect" id="Node000009" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="328,153,419,179"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="242,127,315,147,313,152,241,132"/>
 </map>

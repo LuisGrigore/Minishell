@@ -1,12 +1,20 @@
 <map id="gen_list_get_size" name="gen_list_get_size">
-<area shape="rect" id="Node000001" title="Gets the current size of the list." alt="" coords="495,56,629,81"/>
-<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="347,5,442,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,55,437,33,438,28,507,49"/>
-<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="108,23,295,63"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="481,66,295,53,295,47,481,60"/>
-<area shape="rect" id="Node000005" href="$d7/df6/command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="343,107,447,132"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="507,88,438,109,437,104,506,83"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,29,295,34,294,28,333,23"/>
-<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="rect" id="Node000001" title="Gets the current size of the list." alt="" coords="887,42,1021,67"/>
+<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="739,42,834,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="873,57,834,57,834,52,873,52"/>
+<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="500,5,687,45"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="892,41,838,32,761,26,687,25,687,20,761,21,839,27,892,36"/>
+<area shape="rect" id="Node000008" href="$d7/df6/command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="735,91,839,117"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="898,74,832,94,830,89,896,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="725,48,686,42,687,37,726,43"/>
+<area shape="rect" id="Node000005" href="$d7/df6/command__functs_8c.html#a08ef374af07a926aeb231c0e68b20b28" title=" " alt="" coords="506,70,681,95"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="726,66,681,73,681,67,726,61"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,41,60,66"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="487,33,60,55,60,49,486,28"/>
+<area shape="rect" id="Node000006" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="245,67,452,93"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="492,84,452,84,452,78,492,79"/>
+<area shape="rect" id="Node000007" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="108,66,197,91"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="231,82,198,82,198,76,231,77"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="94,69,60,62,61,56,95,64"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="720,99,681,95,681,90,721,94"/>
 </map>

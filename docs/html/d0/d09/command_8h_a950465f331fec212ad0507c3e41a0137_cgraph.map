@@ -4,4 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,31,183,26,183,31,148,36"/>
 <area shape="rect" id="Node000003" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a4acf718ea226522128b6f12296f7c821" title="Destroy the entire list and its nodes." alt="" coords="196,55,325,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,50,183,55,182,60,148,55"/>
+<area shape="rect" id="Node000004" href="$d2/d73/gen__link__list__retrieval_8c.html#a452a14292622fab76140e1e9ca0a57e7" title="Remove the first node of the list and return its value." alt="" coords="373,55,516,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="325,65,359,65,359,70,325,70"/>
 </map>

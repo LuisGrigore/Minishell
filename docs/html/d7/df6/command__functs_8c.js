@@ -5,6 +5,7 @@ var command__functs_8c =
     [ "echo_execute", "d7/df6/command__functs_8c.html#a0fad0803ff59cff11ab2eb8de7eac854", null ],
     [ "env_execute", "d7/df6/command__functs_8c.html#a509bc3c56be844c9b30a2ff165913928", null ],
     [ "export_execute", "d7/df6/command__functs_8c.html#abba1603056020c33ad3f11e82b14fcfe", null ],
+    [ "get_command_function", "d7/df6/command__functs_8c.html#a08ef374af07a926aeb231c0e68b20b28", null ],
     [ "pwd_execute", "d7/df6/command__functs_8c.html#a0f6eaa743e63abad6ac6be049d6179c6", null ],
     [ "unset_execute", "d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da", null ]
 ];

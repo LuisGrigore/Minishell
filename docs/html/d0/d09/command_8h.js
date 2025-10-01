@@ -14,6 +14,7 @@ var command_8h =
     [ "env_execute", "d0/d09/command_8h.html#a509bc3c56be844c9b30a2ff165913928", null ],
     [ "execute_commands_with_pipes", "d0/d09/command_8h.html#ac2417fa48185516c05dd13ce83e55f1d", null ],
     [ "export_execute", "d0/d09/command_8h.html#abba1603056020c33ad3f11e82b14fcfe", null ],
+    [ "get_command_function", "d0/d09/command_8h.html#a08ef374af07a926aeb231c0e68b20b28", null ],
     [ "init_command", "d0/d09/command_8h.html#a980b6e4466bc0bed37cb6352f143ab96", null ],
     [ "pwd_execute", "d0/d09/command_8h.html#a0f6eaa743e63abad6ac6be049d6179c6", null ],
     [ "unset_execute", "d0/d09/command_8h.html#a24640ac75761d535d770cf4255c336da", null ]

@@ -1,0 +1,25 @@
+<map id="lexer_tokenize" name="lexer_tokenize">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,228,121,253"/>
+<area shape="rect" id="Node000002" href="$d6/d0d/lexer__life__cycle_8c.html#ad45a6a77df02fcbb4b2deb3ee46f6a8c" title=" " alt="" coords="192,5,299,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,227,76,190,96,140,126,87,146,62,168,40,178,33,181,37,171,44,150,65,131,90,101,142,81,192,70,229"/>
+<area shape="rect" id="Node000003" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="208,55,283,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="68,226,103,161,132,123,168,89,194,76,196,80,171,94,136,126,108,164,73,229"/>
+<area shape="rect" id="Node000004" href="$dd/d5a/lexer__util_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="202,104,289,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="73,226,112,183,138,159,168,138,188,129,190,134,171,143,142,163,115,187,77,229"/>
+<area shape="rect" id="Node000005" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="185,153,306,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="88,225,168,188,187,181,189,186,170,192,90,230"/>
+<area shape="rect" id="Node000006" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a4acf718ea226522128b6f12296f7c821" title="Destroy the entire list and its nodes." alt="" coords="181,203,310,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="121,230,167,224,167,229,122,235"/>
+<area shape="rect" id="Node000008" href="$d5/d02/gen__link__list__insertion_8c.html#a9df831ac7dc242f94206af62e0387df1" title="Insert a value at the end of the list." alt="" coords="171,252,320,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="122,246,157,250,157,256,121,251"/>
+<area shape="rect" id="Node000009" href="$dd/d5a/lexer__util_8c.html#aed920c4ccf5ae57509ab4f9ca6fdc2db" title=" " alt="" coords="180,301,311,327"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="92,251,170,286,192,294,190,299,168,291,89,256"/>
+<area shape="rect" id="Node000010" href="$dd/d5a/lexer__util_8c.html#a8701968ceb20a387aa8bfc7d411f6e07" title=" " alt="" coords="206,351,285,376"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="77,252,116,293,142,316,171,336,194,347,192,352,168,340,139,320,113,297,74,256"/>
+<area shape="rect" id="Node000011" href="$dd/d5a/lexer__util_8c.html#a8a7ddaa1bfaaee00238451371f498d23" title=" " alt="" coords="169,400,321,425"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="73,252,108,316,137,353,171,385,181,392,179,396,168,389,133,357,104,319,68,255"/>
+<area shape="rect" id="Node000012" href="$dd/d5a/lexer__util_8c.html#aa1004a8899af22ed07900fb0ca3c562e" title=" " alt="" coords="189,449,302,475"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="71,253,82,289,102,338,131,390,150,414,171,435,179,441,176,445,168,439,146,417,127,393,97,340,77,291,65,255"/>
+<area shape="rect" id="Node000007" href="$d2/d73/gen__link__list__retrieval_8c.html#a452a14292622fab76140e1e9ca0a57e7" title="Remove the first node of the list and return its value." alt="" coords="369,203,512,228"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="310,213,355,213,355,218,310,218"/>
+</map>
