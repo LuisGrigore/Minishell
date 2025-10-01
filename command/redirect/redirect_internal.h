@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_internal.h                                  :+:      :+:    :+:   */
+/*   redirect_internal.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 14:07:05 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 19:06:22 by lgrigore         ###   ########.fr       */
+/*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/10/01 19:03:25 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_INTERNAL_H
-#define PARSER_INTERNAL_H
-
-#include <stdlib.h>
-#include "../include/parser.h"
-#include "include/lexer.h"
-#include "../include/command.h"
-#include "../external/libft/libft.h"
+#ifndef REDIRECT_INTERNAL_H
+#define REDIRECT_INTERNAL_H
+#include "../include/redirect.h"
 
 #endif

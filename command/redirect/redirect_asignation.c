@@ -1,4 +1,4 @@
-#include "../include/redirect_asignation.h"
+#include "../include/redirect.h"
 #include "../include/util.h"
 #include "../external/libft/libft.h"
 

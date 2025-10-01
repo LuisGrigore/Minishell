@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 15:56:54 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 19:06:01 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "include/environment.h"
 # include "external/gen_list/gen_list.h"
 #include "include/parser.h"
-#include "include/redirect_asignation.h"
 #include "parser/include/lexer.h"
 #include "external/libft/libft.h"
 #include "readline/history.h"
