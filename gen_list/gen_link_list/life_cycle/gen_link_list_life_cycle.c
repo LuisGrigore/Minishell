@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:55:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:44:06 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:23:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,14 @@ t_gen_list	*gen_list_create(void)
 	return (list);
 }
 
-void	gen_list_destroy(t_gen_list *list,
-		t_element_destroyer element_destroyer)
+void gen_list_destroy(t_gen_list *list, t_element_destroyer element_destroyer)
 {
-	t_node	*current;
-	t_node	*tmp;
-
-	if (!list)
-		return ;
-	current = list->head;
-	while (current)
+	
+    if (!list)
+        return ;
+    while (list->size > 0)
 	{
-		tmp = current->next;
-		if (element_destroyer)
-			element_destroyer(current->value);
-		free(current);
-		current = tmp;
+        element_destroyer(gen_list_pop_front(list));
 	}
 	free(list);
 }

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:54:42 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 04:49:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 01:20:14 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*env_get(t_gen_list *environment_vars, char *name)
 {
 	t_env_var	*found_var;
 
-	found_var = gen_list_find_ctx(environment_vars, var_name_filter, name);
+	found_var = (t_env_var *) gen_list_find_ctx(environment_vars, var_name_filter, name);
 	if (!found_var)
 		return (NULL);
 	return (ft_strdup(found_var->var_value));

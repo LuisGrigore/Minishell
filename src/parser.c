@@ -118,9 +118,11 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
         gen_list_destroy(current_redirects, (void (*)(void *))destroy_command);
     }
 
+	gen_list_iter_destroy(it);
     return commands;
 
 error:
+	gen_list_iter_destroy(it);
     gen_list_destroy(current_args, free);
     gen_list_destroy(current_redirects, (void (*)(void *))destroy_command);
     gen_list_destroy(commands, (void (*)(void *))destroy_command);

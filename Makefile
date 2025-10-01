@@ -1,5 +1,5 @@
-CC      = cc
-CFLAGS  = 
+CC      = gcc
+CFLAGS  = -fsanitize=address -g
 INCLUDES =  -I./gen_list -I./gen_list/gen_link_list -I./include -I./libft -I./src/environment
 
 OBJ_DIR = obj

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:35:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 01:21:34 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:05:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	destroy_environment_var(void *envioroment_var)
 {
 	t_env_var	*aux;
 
+	if (!envioroment_var)
+		return;
 	aux = (t_env_var *)envioroment_var;
 	free(aux->var_name);
 	free(aux->var_value);
