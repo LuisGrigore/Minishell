@@ -36,14 +36,7 @@ OBJ_DIR="obj"
 # Lista de fuentes
 SRCS=""
 if [ -n "$SUBSYSTEM_PATH" ]; then
-    # Construir la expresión para excluir todos los paths
-    EXCLUDE_EXPR=""
-    for path in $SUBSYSTEM_PATH; do
-        EXCLUDE_EXPR="$EXCLUDE_EXPR ! -path '$path/*'"
-    done
-    
-    # Evaluar el find con todas las exclusiones
-    SRCS=$(eval find "$SRC_DIR" -type f -name "*.c" $EXCLUDE_EXPR | tr '\n' ' ')
+	SRCS=$(find "$SRC_DIR" \( -path ./external/libft -o -path ./external/gen_list \) -prune -o -name "*.c" -print | tr '\n' ' ')
 else
     SRCS=$(find "$SRC_DIR" -type f -name "*.c" | tr '\n' ' ')
 fi

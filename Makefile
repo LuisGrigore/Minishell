@@ -1,15 +1,15 @@
-CC      = gcc
-CFLAGS  = -fsanitize=address -g
-INCLUDES =  -I./gen_list -I./gen_list/gen_link_list -I./include -I./libft -I./src/environment
+CC      = cc
+CFLAGS  = 
+INCLUDES =  -I./environment -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./include -I./parser -I./parser/include -I./parser/tokenizer
 
 OBJ_DIR = obj
 NAME    = minishell
 
-SRCS    = ./src/command.c ./src/ft_split2.0.c ./src/redirect_asignation.c ./src/tokenizer.c ./src/find_command.c ./src/redirect.c ./src/pipe.c ./src/path_utils.c ./src/environment/environment_operations.c ./src/environment/environment_serialization_deserialization.c ./src/environment/envioroment_internal.c ./src/environment/environment_query.c ./src/minishell.c ./src/command_functs.c ./src/parser.c 
+SRCS    = ./executer/find_command.c ./executer/pipe.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/tokenizer/tokenizer.c ./parser/parser.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./command/command.c ./command/redirect_asignation.c ./command/redirect.c ./command/command_functs.c ./minishell.c 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 LINK_FLAGS = -lreadline -lncurses
-SUBSYSTEM_PATH = ./libft ./gen_list
-SUBSYSTEM_LIB  = ./libft/libft.a ./gen_list/gen_list.a
+SUBSYSTEM_PATH = ./external/libft ./external/gen_list
+SUBSYSTEM_LIB  = ./external/libft/libft.a ./external/gen_list/gen_list.a
 
 all: subsystems $(NAME)
 
