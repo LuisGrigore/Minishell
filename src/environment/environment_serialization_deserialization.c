@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 04:54:33 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:37:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,49 @@ char	**env_serialize(t_gen_list *envioroment)
 
 t_gen_list	*env_deserialize(char **str_array)
 {
-	int			i;
-	size_t		j;
 	t_gen_list	*env_var_list;
-	char		**var_str_name_value_split;
+	char		**split;
+	t_env_var	*env;
+	size_t		i;
 
-	i = 0;
+	size_t		j;
+
+	if (!str_array)
+		return (NULL);
 	env_var_list = gen_list_create();
+	if (!env_var_list)
+		return (NULL);
+	i = 0;
 	while (str_array[i])
 	{
-		var_str_name_value_split = ft_split(str_array[i], '=');
-		gen_list_push_back(env_var_list, init_environment_var(var_str_name_value_split[0],
-				var_str_name_value_split[1]));
-		free(var_str_name_value_split);
+		split = ft_split(str_array[i], '=');
+		if (!split)
+		{
+			i++;
+			continue ;
+		}
+		env = init_environment_var(split[0], split[1]);
+		if (env)
+		{
+			gen_list_push_back(env_var_list, env);
+		}
+		else
+		{
+			j = 0;
+			while (split[j])
+			{
+				free(split[j]);
+				j++;
+			}
+		}
+		j = 0;
+		while (split[j])
+		{
+			if (j > 1)
+				free(split[j]);
+			j++;
+		}
+		free(split);
 		i++;
 	}
 	return (env_var_list);

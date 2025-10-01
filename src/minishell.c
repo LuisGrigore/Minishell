@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/09/30 15:21:30 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:25:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,17 @@ char	*check_cmd(char *cmd)
 	return (cmd);
 }
 
-char	*username(t_gen_list *env)
+char	*get_line_tag(t_gen_list *env)
 {
 	char	*username;
+	char	*line_tag;
 
 	username = env_get(env, "LOGNAME");
 	if (!username)
 		return (ft_strdup("minishell%"));
-	return (ft_strjoin(username, "%>$"));
+	line_tag = ft_strjoin(username, "%>$");
+	free(username);
+	return (line_tag);
 }
 
 void	sigint_handler(int sig)
@@ -231,10 +234,11 @@ int	main(int args, char **environment_var_str_array)
 	signals_init();
 	envioroment_vars = env_deserialize(environment_var_str_array
 			+ 2);
-	name = username(envioroment_vars);
+	name = get_line_tag(envioroment_vars);
 	finish = false;
 	while (!finish)
 	{
+		current_commands = NULL;
 		line = readline(name);
 		if ((ft_strlen(line) != 0 && ft_strncmp(line, "exit",
 					ft_strlen(line)) == 0) || line == NULL)
