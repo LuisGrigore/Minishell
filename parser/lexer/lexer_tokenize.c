@@ -6,11 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:09:07 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:50:15 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:57:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tokenizer_internal.h"
+#include "lexer_internal.h"
 
 t_gen_list *lexer_tokenize(const char *line) {
     size_t i = 0, len = ft_strlen(line);
