@@ -1,5 +1,5 @@
 #include "../include/command.h"
-# include "../include/redirect.h"
+# include "include/redirect.h"
 # include "../external/gen_list/gen_list.h"
 #include "../external/libft/libft.h"
 #include "stdlib.h"

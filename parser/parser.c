@@ -6,11 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 16:05:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 19:42:47 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
+
+//TODO :: revisar
+#include "../command/include/redirect.h"
 
 t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
 {

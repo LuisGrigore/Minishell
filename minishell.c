@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 19:06:01 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 19:44:03 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include <signal.h>
 #include <stdbool.h>
 #include <unistd.h>
+
+#include "command/include/redirect.h"
 
 volatile sig_atomic_t	g_signal = 0;
 
