@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:34:06 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:44:20 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,26 +136,22 @@ error:
     return NULL;
 }
 
-void destroy_token_data(void *token_ptr)
-{
-	destroy_token((t_token *) token_ptr);
-}
 
 t_gen_list *parse_line(char *line)
 {
 	t_gen_list	*tokens;
 	t_gen_list *commands;
 	
-	tokens = tokenize(line);
+	tokens = lexer_tokenize(line);
 	if(!tokens)
 		return NULL;
 	
 	commands = parse_tokens_to_commands(tokens);
 	if(!commands)
 	{
-		gen_list_destroy(tokens, destroy_token_data);
+		lexer_destroy(tokens);
 		return (NULL);
 	}
-	gen_list_destroy(tokens, destroy_token_data);
+	lexer_destroy(tokens);
 	return (commands);
 }

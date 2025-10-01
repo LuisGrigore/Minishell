@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:33:52 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:41:32 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,7 +248,7 @@ int	main(int args, char **environment_var_str_array)
 			if (check_cmd(line) == NULL)
 				continue ;
 			add_history(line);
-			// tokens = tokenize(line);
+			// tokens = lexer_tokenize(line);
 			// //print_tokens(tokens);
 			// if (!tokens)
 			// {
