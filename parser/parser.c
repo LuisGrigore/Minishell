@@ -6,41 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:44:20 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 16:05:03 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
-
-static t_command_funct get_command_function(t_gen_list *args)
-{
-    t_gen_list_iter *it;
-    char *cmd_name;
-
-    if (!args || gen_list_is_empty(args))
-        return NULL;
-    it = gen_list_iter_start(args);
-    if (!it)
-        return NULL;
-    cmd_name = gen_list_iter_next(it);
-    gen_list_iter_destroy(it);
-    if (!cmd_name || ft_strlen(cmd_name) == 0)
-        return NULL;
-    if (ft_strncmp(cmd_name, "echo", 5) == 0)
-        return echo_execute;
-    else if (ft_strncmp(cmd_name, "cd", 3) == 0)
-        return cd_execute;
-    else if (ft_strncmp(cmd_name, "pwd", 4) == 0)
-        return pwd_execute;
-    else if (ft_strncmp(cmd_name, "export", 7) == 0)
-        return export_execute;
-    else if (ft_strncmp(cmd_name, "unset", 6) == 0)
-        return unset_execute;
-    else if (ft_strncmp(cmd_name, "env", 4) == 0)
-        return env_execute;
-    else
-        return bin_execute;
-}
 
 t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
 {
@@ -61,7 +31,6 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
     {
         if (tok->type == TOKEN_ARG || tok->type == TOKEN_CMD)
         {
-            // Copiar string y añadir a args usando ft_strlcpy
             size_t len = ft_strlen(tok->value);
             char *arg_copy = malloc(len + 1);
             if (!arg_copy)
@@ -71,15 +40,13 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
         }
         else if (tok->type == TOKEN_PIPE)
         {
-            // Asignar función antes de crear el comando
-            t_command_funct funct = get_command_function(current_args);
+            t_command_funct funct = get_command_function((char *) gen_list_peek_top(current_args));
 
             t_command *cmd = init_command(current_args, funct, current_redirects);
             if (!cmd)
                 goto error;
             gen_list_push_back(commands, cmd);
 
-            // Inicializar listas para siguiente comando
             current_args = gen_list_create();
             current_redirects = gen_list_create();
         }
@@ -88,7 +55,6 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
                  tok->type == TOKEN_REDIR_APPEND ||
                  tok->type == TOKEN_HEREDOC)
         {
-            // El siguiente token debe ser el archivo
             t_token *file_tok = (t_token *)gen_list_iter_next(it);
             if (!file_tok || file_tok->type != TOKEN_ARG)
                 goto error;
@@ -110,10 +76,9 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
         }
     }
 
-    // Guardar el último comando si hay args o redirs
     if (gen_list_is_empty(current_args) || gen_list_is_empty(current_redirects))
     {
-        t_command_funct funct = get_command_function(current_args);
+        t_command_funct funct = get_command_function((char *) gen_list_peek_top(current_args));
         t_command *cmd = init_command(current_args, funct, current_redirects);
         if (!cmd)
             goto error;
