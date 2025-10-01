@@ -22,6 +22,17 @@
 		"utility": "c",
 		"stdio.h": "c",
 		"readline.h": "c",
-		"history.h": "c"
+		"history.h": "c",
+		"random": "c",
+		"stdlib.h": "c",
+		"environment_internal.h": "c",
+		"environment.h": "c",
+		"signal.h": "c",
+		"list_internal.h": "c",
+		"gen_link_list_internal.h": "c",
+		"string_view": "c",
+		"initializer_list": "c",
+		"gen_list.h": "c",
+		"parser.h": "c"
 	}
 }
