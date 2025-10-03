@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 14:57:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 15:27:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
 
 //TODO :: revisar
-#include "../include/redirect.h"
+#include "../include/redirect_manager.h"
 
 t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
 {
@@ -72,7 +72,7 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             else if (tok->type == TOKEN_HEREDOC)
                 r_type = DOUBLE_LEFT_REDIRECT;
 
-            t_redirect *redir = init_redirect(file_tok->value, r_type);
+            t_redirect *redir = redirect_create(r_type, file_tok->value);
             if (!redir)
                 goto error;
             gen_list_push_back(current_redirects, redir);
