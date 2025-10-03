@@ -9,3 +9,5 @@ This project implements a small shell in C.
 Full documentation generated with Doxygen:
 
 [🌐 View online](https://luisgrigore.github.io/Minishell/html/index.html)
+
+![Component-Interface Diagram](diagrams/Minishell-Component-Interface.png)

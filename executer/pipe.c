@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:02:32 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:43:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "readline/readline.h"
 # include "../external/gen_list/gen_list.h"
 #include "../include/command.h"
+//TODO :: revisar esto
+#include "../command/command_internal.h"
 
 void	execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {

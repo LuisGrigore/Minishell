@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 16:01:04 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 20:36:14 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,7 @@ t_command	*init_command(t_gen_list *args, t_command_funct funct,
 void				destroy_command(void *command_to_delete);
 
 //COMAND FUNCTIONS
-void						pwd_execute(t_command *command,
-								t_gen_list *envioroment);
-void						bin_execute(t_command *cmd,
-								t_gen_list *envioroment);
-void						cd_execute(t_command *command,
-								t_gen_list *envioroment);
-void						pwd_execute(t_command *command,
-								t_gen_list *envioroment);
-void						export_execute(t_command *command,
-								t_gen_list *envioroment);
-void						unset_execute(t_command *command,
-								t_gen_list *envioroment);
-void						env_execute(t_command *command,
-								t_gen_list *envioroment);
-void						echo_execute(t_command *command,
-								t_gen_list *envioroment);
+
 
 
 //COMMAND EXECUTIONER
