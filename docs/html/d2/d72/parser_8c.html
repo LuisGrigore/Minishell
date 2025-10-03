@@ -162,6 +162,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Parses a raw command line string into a structured list of commands.</p>
+<p>This function is the high-level entry point for transforming user input into executable command objects. It performs the following steps:</p>
+<ol type="1">
+<li>Tokenizes the input string using.</li>
+<li>Converts the list of tokens into command objects.</li>
+<li>Cleans up the intermediate token list.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A null-terminated string containing the user input.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list (t_gen_list) of t_command* objects representing the parsed commands, or NULL if parsing fails at any stage.</dd></dl>
+<p>Example: Input: "ls -l | grep txt &gt; out.txt" Output: A list of two t_command structures:</p><ul>
+<li>Command 1: "ls" with argument "-l"</li>
+<li>Command 2: "grep" with argument "txt" and output redirection to "out.txt"</li>
+</ul>
+<p>The caller is responsible for destroying the returned command list using the appropriate cleanup function. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -376,7 +395,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="308,124,356,119,540,100,541,105,356,124,309,129"/>
 <area shape="rect" href="../../d5/dc3/gen__link__list__iteration_8c.html#ae40d5a3c9a9f7dcdfcf22ffdf4d63747" title="Apply a function to all elements of the list." alt="" coords="358,133,494,158"/>
 <area shape="poly" title=" " alt="" coords="309,135,344,137,344,143,308,140"/>
-<area shape="rect" href="../../db/d1d/redirect__manager__debug_8c.html#a4f6d537ff6673d94cec55d0deb3d4297" title=" " alt="" coords="371,234,481,259"/>
+<area shape="rect" href="../../db/d1d/redirect__manager__debug_8c.html#a4f6d537ff6673d94cec55d0deb3d4297" title="Prints a redirect for debugging purposes." alt="" coords="371,234,481,259"/>
 <area shape="poly" title=" " alt="" coords="264,144,305,177,357,212,383,226,380,231,355,217,302,181,261,148"/>
 <area shape="poly" title=" " alt="" coords="477,156,561,177,559,182,476,161"/>
 <area shape="poly" title=" " alt="" coords="476,130,559,108,561,113,477,135"/>

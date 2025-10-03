@@ -4,33 +4,48 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REDIRECT\_ASIGNATION\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#\ define\ REDIRECT\_ASIGNATION\_H}}
-\DoxyCodeLine{00003\ \textcolor{comment}{//TODO\ ::\ Quitar\ cuando\ sea\ posible.}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#\ include\ "{}../external/gen\_list/gen\_list.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#\ include\ "{}../external/gen\_list/gen\_list.h"{}}}
+\DoxyCodeLine{00004\ }
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\_redirect\_type}}}
-\DoxyCodeLine{00007\ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f}{LEFT\_REDIRECT}},}
-\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131}{RIGHT\_REDIRECT}},}
-\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c}{DOUBLE\_LEFT\_REDIRECT}},}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97}{DOUBLE\_RIGHT\_REDIRECT}},}
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}},}
-\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90}{ERROR}},}
-\DoxyCodeLine{00014\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\_redirect\_type}};}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{s\_redirect}}\ \mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{comment}{//TODO\ ::\ Quitar\ esto\ cuando\ se\ pueda.}}
-\DoxyCodeLine{00019\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{redirect__manager_8h_a1dcc7a29a8a1d5240c49fbf25ce60d9c}{get\_redirects\_from\_str\_arr}}(\textcolor{keywordtype}{char}\ *str);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00028\ \mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}}\ *\mbox{\hyperlink{redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e}{redirect\_create}}(\mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\_redirect\_type}}\ redirect\_type,\ \textcolor{keywordtype}{char}\ *file\_name);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{redirect__manager_8h_a2e2201e448b4d07a14082c4c826a0153}{redirect\_destroy}}(\mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}}\ *redirect);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d}{redirect\_execute}}(\mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}}\ *redirect);}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{comment}{//DEBUG}}
-\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297}{print\_redirect}}(\textcolor{keywordtype}{void}\ *redir\_ptr);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ Data\ Structures}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\_redirect\_type}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f}{LEFT\_REDIRECT}},}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131}{RIGHT\_REDIRECT}},}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c}{DOUBLE\_LEFT\_REDIRECT}},}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97}{DOUBLE\_RIGHT\_REDIRECT}},}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90}{ERROR}},}
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\_redirect\_type}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{s\_redirect}}\ \mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00040\ \textcolor{comment}{**\ \ Lifecycle}}
+\DoxyCodeLine{00041\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00054\ \mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}}\ *\mbox{\hyperlink{redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e}{redirect\_create}}(\mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\_redirect\_type}}\ redirect\_type,\ \textcolor{keywordtype}{char}\ *file\_name);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{redirect__manager_8h_a2e2201e448b4d07a14082c4c826a0153}{redirect\_destroy}}(\mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}}\ *redirect);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00066\ \textcolor{comment}{**\ \ Operations}}
+\DoxyCodeLine{00067\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00068\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d}{redirect\_execute}}(\mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{t\_redirect}}\ *redirect);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00084\ \textcolor{comment}{**\ \ Debug}}
+\DoxyCodeLine{00085\ \textcolor{comment}{**\ ============================================================}}
+\DoxyCodeLine{00086\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297}{print\_redirect}}(\textcolor{keywordtype}{void}\ *redir\_ptr);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

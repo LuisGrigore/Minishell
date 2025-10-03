@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('dc/d98/pipe__manager__internal_8h_sour
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: lgrigore &lt;lgrigore@student.42madrid.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2025/10/03 15:38:45 by lgrigore          #+#    #+#             */</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/10/03 15:42:11 by lgrigore         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/10/03 19:21:07 by lgrigore         ###   ########.fr       */</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -114,19 +114,21 @@ $(document).ready(function(){initNavTree('dc/d98/pipe__manager__internal_8h_sour
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define PIPE_MANAGER_INTERNAL_H</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;../include/pipe_manager.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../dc/d98/pipe__manager__internal_8h.html">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dc/d98/pipe__manager__internal_8h.html#de/d4c/structs__pipe__manager">s_pipe_manager</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../dc/d98/pipe__manager__internal_8h.html#a39790f2453fadce78bffb14c559720ad">   20</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="../../dc/d98/pipe__manager__internal_8h.html#a39790f2453fadce78bffb14c559720ad">n_cmds</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../dc/d98/pipe__manager__internal_8h.html#a292ce7561165981f23b711d51c489e94">   21</a></span>    int (*<a class="code hl_variable" href="../../dc/d98/pipe__manager__internal_8h.html#a292ce7561165981f23b711d51c489e94">pipes</a>)[2];</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor"># include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor"># include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../dc/d98/pipe__manager__internal_8h.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dc/d98/pipe__manager__internal_8h.html#de/d4c/structs__pipe__manager">s_pipe_manager</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../dc/d98/pipe__manager__internal_8h.html#a39790f2453fadce78bffb14c559720ad">   22</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="../../dc/d98/pipe__manager__internal_8h.html#a39790f2453fadce78bffb14c559720ad">n_cmds</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dc/d98/pipe__manager__internal_8h.html#a292ce7561165981f23b711d51c489e94">   23</a></span>    int (*<a class="code hl_variable" href="../../dc/d98/pipe__manager__internal_8h.html#a292ce7561165981f23b711d51c489e94">pipes</a>)[2];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="apipe__manager__internal_8h_html_a292ce7561165981f23b711d51c489e94"><div class="ttname"><a href="../../dc/d98/pipe__manager__internal_8h.html#a292ce7561165981f23b711d51c489e94">s_pipe_manager::pipes</a></div><div class="ttdeci">int(* pipes)[2]</div><div class="ttdef"><b>Definition</b> pipe_manager_internal.h:21</div></div>
-<div class="ttc" id="apipe__manager__internal_8h_html_a39790f2453fadce78bffb14c559720ad"><div class="ttname"><a href="../../dc/d98/pipe__manager__internal_8h.html#a39790f2453fadce78bffb14c559720ad">s_pipe_manager::n_cmds</a></div><div class="ttdeci">size_t n_cmds</div><div class="ttdef"><b>Definition</b> pipe_manager_internal.h:20</div></div>
-<div class="ttc" id="apipe__manager__internal_8h_html_de/d4c/structs__pipe__manager"><div class="ttname"><a href="../../dc/d98/pipe__manager__internal_8h.html#de/d4c/structs__pipe__manager">s_pipe_manager</a></div><div class="ttdef"><b>Definition</b> pipe_manager_internal.h:19</div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="apipe__manager__internal_8h_html_a292ce7561165981f23b711d51c489e94"><div class="ttname"><a href="../../dc/d98/pipe__manager__internal_8h.html#a292ce7561165981f23b711d51c489e94">s_pipe_manager::pipes</a></div><div class="ttdeci">int(* pipes)[2]</div><div class="ttdef"><b>Definition</b> pipe_manager_internal.h:23</div></div>
+<div class="ttc" id="apipe__manager__internal_8h_html_a39790f2453fadce78bffb14c559720ad"><div class="ttname"><a href="../../dc/d98/pipe__manager__internal_8h.html#a39790f2453fadce78bffb14c559720ad">s_pipe_manager::n_cmds</a></div><div class="ttdeci">size_t n_cmds</div><div class="ttdef"><b>Definition</b> pipe_manager_internal.h:22</div></div>
+<div class="ttc" id="apipe__manager__internal_8h_html_de/d4c/structs__pipe__manager"><div class="ttname"><a href="../../dc/d98/pipe__manager__internal_8h.html#de/d4c/structs__pipe__manager">s_pipe_manager</a></div><div class="ttdef"><b>Definition</b> pipe_manager_internal.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
