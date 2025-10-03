@@ -6,12 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 15:00:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 16:58:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/bin_commandss_execution.h"
 #include "include/command.h"
+#include "include/executer.h"
 #include "include/environment.h"
 # include "external/gen_list/gen_list.h"
 #include "include/parser.h"
@@ -112,20 +113,11 @@ void	signals_init(void)
 	sigaction(SIGQUIT, &sa_quit, NULL);
 }
 
-void print_commands(t_gen_list *commands) {
-    if (!commands || gen_list_is_empty(commands)) {
-        printf("No commands to print.\n");
-        return;
-    }
 
-    t_gen_list_iter *it = gen_list_iter_start(commands);
-    t_command *cmd;
-    int index = 1;
-    while ((cmd = (t_command *)gen_list_iter_next(it)) != NULL) {
-        print_command(cmd, index++);
-    }
+void command_destroy_data(void *command_ptr)
+{
+	command_destroy((t_command *) command_ptr);
 }
-
 
 int	main(int args, char **environment_var_str_array)
 {
@@ -164,7 +156,7 @@ int	main(int args, char **environment_var_str_array)
 		}
 		free(line);
 		line = NULL;
-		gen_list_destroy(current_commands, destroy_command);
+		gen_list_destroy(current_commands, command_destroy_data);
 		current_commands = NULL;
 	}
 	env_destroy(envioroment_vars);

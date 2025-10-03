@@ -22,6 +22,6 @@ void signals_init_heredoc(void)
 
 void signals_restore(void)
 {
-    perror("signals_restore: not implemented");
-    exit(EXIT_FAILURE);
+    signal(SIGINT, SIG_DFL);
+    signal(SIGQUIT, SIG_DFL);
 }
