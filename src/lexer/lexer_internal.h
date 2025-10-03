@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:45:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:56:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:23:39 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define TOKENIZER_INTERNAL_H
 
 #include "../include/lexer.h"
-# include "../external/gen_list/gen_list.h"
 #include "../external/libft/libft.h"
 #include <stdlib.h>
 
