@@ -9,10 +9,7 @@
 #include "../include/pipe_manager.h"
 
 #include "../external/libft/libft.h"
-#include "readline/readline.h"
-# include <fcntl.h>
-# include <sys/wait.h>
-# include <unistd.h>
 
+# include <sys/wait.h>
 
 #endif

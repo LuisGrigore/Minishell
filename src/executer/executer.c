@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 17:12:56 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:19:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,48 +18,35 @@
 static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {
     size_t n = gen_list_get_size(commands);
-    int (*pipes)[2] = NULL;
+    t_pipe_manager *pm = NULL;
     t_gen_list_iter *it;
     t_command *cmd;
     pid_t *pids;
     size_t i = 0;
 
-    if (n > 1)
-    {
-        pipes = malloc(sizeof(int[2]) * (n - 1));
-        if (!pipes)
-            return;
-        for (size_t j = 0; j < n - 1; j++)
-            if (pipe(pipes[j]) == -1)
-                return (free(pipes), (void)0);
-    }
+    if (n == 0)
+        return;
+
+    pm = pipe_manager_init(n);
+    if (!pm)
+        return;
 
     it = gen_list_iter_start(commands);
     if (!it)
-        return (free(pipes), (void)0);
+        return (pipe_manager_destroy(pm), (void)0);
 
     pids = malloc(sizeof(pid_t) * n);
     if (!pids)
-        return (gen_list_iter_destroy(it), free(pipes), (void)0);
+        return (gen_list_iter_destroy(it), pipe_manager_destroy(pm), (void)0);
 
     while ((cmd = gen_list_iter_next(it)) != NULL)
     {
         pid_t pid = fork();
         if (pid == 0) // hijo
         {
-            if (i > 0)
-                dup2(pipes[i - 1][0], STDIN_FILENO);
-            if (i < n - 1)
-                dup2(pipes[i][1], STDOUT_FILENO);
+            pipe_manager_setup_command(pm, i);
+            pipe_manager_close_all(pm);
 
-            // cerrar todos los pipes en el hijo
-            for (size_t j = 0; j < n - 1; j++)
-            {
-                close(pipes[j][0]);
-                close(pipes[j][1]);
-            }
-
-            // ejecutar comando con la nueva interfaz
             if (command_exec(cmd, env) == -1)
                 exit(1);
             exit(0);
@@ -71,18 +58,14 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
         i++;
     }
 
-    for (size_t j = 0; j < n - 1; j++)
-    {
-        close(pipes[j][0]);
-        close(pipes[j][1]);
-    }
+    pipe_manager_close_all(pm);
 
     for (size_t j = 0; j < i; j++)
         waitpid(pids[j], NULL, 0);
 
     gen_list_iter_destroy(it);
     free(pids);
-    free(pipes);
+    pipe_manager_destroy(pm);
 }
 
 static void command_destroy_data(void *command_ptr)

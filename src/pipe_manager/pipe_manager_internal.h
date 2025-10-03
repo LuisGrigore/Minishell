@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:38:45 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 15:42:11 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:21:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define PIPE_MANAGER_INTERNAL_H
 
 #include "../include/pipe_manager.h"
+# include <fcntl.h>
+# include <unistd.h>
 
 struct s_pipe_manager
 {
