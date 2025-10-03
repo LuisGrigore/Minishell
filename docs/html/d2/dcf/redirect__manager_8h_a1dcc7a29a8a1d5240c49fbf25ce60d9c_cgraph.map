@@ -1,0 +1,22 @@
+<map id="get_redirects_from_str_arr" name="get_redirects_from_str_arr">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,101,151,141"/>
+<area shape="rect" id="Node000002" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="535,155,609,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,99,137,56,166,35,198,19,239,6,273,3,307,7,349,19,410,44,466,78,514,113,549,144,546,148,510,117,463,82,407,49,347,24,306,13,273,8,240,12,200,24,168,39,140,60,97,103"/>
+<area shape="rect" id="Node000003" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="213,34,334,59"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,99,198,68,217,61,219,66,200,73,125,104"/>
+<area shape="rect" id="Node000004" href="$d9/d6d/gen__link__list__predicates_8c.html#a2f7e656dcfadd2f1e532fb6fbf295f77" title="Check if the list is empty." alt="" coords="203,83,343,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,109,189,104,190,109,151,114"/>
+<area shape="rect" id="Node000005" href="$d5/d02/gen__link__list__insertion_8c.html#a9df831ac7dc242f94206af62e0387df1" title="Insert a value at the end of the list." alt="" coords="199,133,348,158"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,128,185,132,184,137,151,133"/>
+<area shape="rect" id="Node000006" href="$d1/d76/redirect__manager_8c.html#a4c33ef90e489d46f3c14ff827e59995e" title="Creates a new redirect structure." alt="" coords="213,182,333,207"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="129,139,200,167,222,175,220,180,198,172,127,144"/>
+<area shape="rect" id="Node000008" href="$df/df0/path__utils_8c.html#a0a3aaf9949360fa6bba7d3a64e5a0061" title=" " alt="" coords="222,231,325,257"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="101,139,145,178,200,216,216,224,213,229,197,221,141,182,97,143"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="321,179,396,165,461,162,521,162,521,168,461,167,396,171,322,184"/>
+<area shape="rect" id="Node000007" href="$d5/dd7/ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="400,181,483,206"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="333,191,386,191,386,196,333,197"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="482,183,521,175,522,180,483,188"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="325,241,402,234,444,226,486,215,515,202,541,186,544,191,517,206,488,220,446,231,402,239,325,246"/>
+<area shape="rect" id="Node000009" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="396,282,487,307"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="317,254,386,275,385,280,316,259"/>
+</map>

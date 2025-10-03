@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:57:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 16:53:11 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:22:37 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include "../external/gen_list/gen_list.h"
 #include "../external/libft/libft.h"
 #include <stdlib.h>
+
+typedef void				(*t_command_funct)(t_command *, t_gen_list *);
 
 struct s_command
 {

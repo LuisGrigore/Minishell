@@ -1,0 +1,7 @@
+<map id="command_destroy" name="command_destroy">
+<area shape="rect" id="Node000001" title="Destroys a command structure and frees memory." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="Node000002" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a4acf718ea226522128b6f12296f7c821" title="Destroy the entire list and its nodes." alt="" coords="196,5,325,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+<area shape="rect" id="Node000003" href="$d2/d73/gen__link__list__retrieval_8c.html#a452a14292622fab76140e1e9ca0a57e7" title="Remove the first node of the list and return its value." alt="" coords="373,5,516,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,15,359,15,359,21,325,21"/>
+</map>

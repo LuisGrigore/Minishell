@@ -1,0 +1,7 @@
+<map id="print_tokens" name="print_tokens">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,108,56"/>
+<area shape="rect" id="Node000002" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="156,5,295,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,33,142,28,142,33,109,38"/>
+<area shape="rect" id="Node000003" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="156,55,295,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,48,142,53,142,58,108,53"/>
+</map>

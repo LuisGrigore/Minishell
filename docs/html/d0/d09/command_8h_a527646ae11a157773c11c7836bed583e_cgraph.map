@@ -1,0 +1,7 @@
+<map id="command_create" name="command_create">
+<area shape="rect" id="Node000001" title="Creates a new command structure." alt="" coords="5,31,140,56"/>
+<area shape="rect" id="Node000002" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="211,5,287,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,31,197,23,197,28,140,36"/>
+<area shape="rect" id="Node000003" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="188,55,309,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,50,175,55,174,60,140,55"/>
+</map>

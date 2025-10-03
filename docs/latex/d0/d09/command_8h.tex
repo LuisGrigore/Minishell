@@ -1,102 +1,43 @@
-\doxysection{include/command.h File Reference}
-\hypertarget{command_8h}{}\label{command_8h}\index{include/command.h@{include/command.h}}
-
-
-Module that contains the necesary functionality to create and execute commands.  
-
-
+\doxysection{src/include/command.h File Reference}
+\hypertarget{command_8h}{}\label{command_8h}\index{src/include/command.h@{src/include/command.h}}
 {\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
-Include dependency graph for command.\+h\+:\nopagebreak
+{\ttfamily \#include "{}../include/redirect\+\_\+manager.\+h"{}}\newline
+Include dependency graph for command.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{d4/d4d/command_8h__incl}
+\includegraphics[width=240pt]{d4/d4d/command_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{df/d1d/command_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{command_8h_d8/db2/structs__command}{s\+\_\+command}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{command_8h_d8/db2/structs__command}{s\+\_\+command}} \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}}
-\item 
-typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}}) (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*})
-\end{DoxyCompactItemize}
+typedef struct \mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{s\+\_\+command}} \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}}
+\begin{DoxyCompactList}\small\item\em Represents a command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{command_8h_a980b6e4466bc0bed37cb6352f143ab96}{init\+\_\+command}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}args, \mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}} funct, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}redirects)
-\item 
-void \mbox{\hyperlink{command_8h_a950465f331fec212ad0507c3e41a0137}{destroy\+\_\+command}} (void \texorpdfstring{$\ast$}{*}command\+\_\+to\+\_\+delete)
-\item 
-void \mbox{\hyperlink{command_8h_a0f6eaa743e63abad6ac6be049d6179c6}{pwd\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_a9b93e7663cca775fbe6c13fea90699f1}{bin\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_ac40e1776b69522eaf80d953ec441231d}{cd\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_abba1603056020c33ad3f11e82b14fcfe}{export\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_a24640ac75761d535d770cf4255c336da}{unset\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_a509bc3c56be844c9b30a2ff165913928}{env\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_a0fad0803ff59cff11ab2eb8de7eac854}{echo\+\_\+execute}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
-\item 
-void \mbox{\hyperlink{command_8h_ac2417fa48185516c05dd13ce83e55f1d}{execute\+\_\+commands\+\_\+with\+\_\+pipes}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
-\begin{DoxyCompactList}\small\item\em Executes the commands in the given list in order as child processes linking their input and output with the corresponding pipes. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}} \mbox{\hyperlink{command_8h_a08ef374af07a926aeb231c0e68b20b28}{get\+\_\+command\+\_\+function}} (char \texorpdfstring{$\ast$}{*}cmd\+\_\+name)
+\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{command_8h_a527646ae11a157773c11c7836bed583e}{command\+\_\+create}} (char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Creates a new command structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_8h_acf24c1b5ff2095e586b1b28ef93b16ef}{command\+\_\+destroy}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command)
+\begin{DoxyCompactList}\small\item\em Destroys a command structure and frees memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_8h_a5c7fab53ffa7870460b806b693fe7e36}{command\+\_\+push\+\_\+arg}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, char \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Adds an argument to the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_8h_a1661f772d30dd0f52b9277ed320877d8}{command\+\_\+push\+\_\+redirect}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\+\_\+redirect\+\_\+type}} redirect\+\_\+type, char \texorpdfstring{$\ast$}{*}file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Adds a redirection to the command. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{command_8h_adf6495f1ffb8a1e6ed217cb77472bf1c}{command\+\_\+exec}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}environment)
+\begin{DoxyCompactList}\small\item\em Executes the command with the given environment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_8h_aaeba1075474bbabf46d3efc68664c129}{print\+\_\+command}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd, int index)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-Module that contains the necesary functionality to create and execute commands. 
-
-
-
-\doxysubsection{Class Documentation}
-\index{s\_command@{s\_command}}\label{structs__command}
-\Hypertarget{command_8h_structs__command}
-\doxysubsubsection{struct s\+\_\+command}
-
-
-Collaboration diagram for s\+\_\+command\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=256pt]{dd/d32/structs__command__coll__graph}
-\end{center}
-\end{figure}
-\begin{DoxyFields}{Class Members}
-\mbox{\Hypertarget{command_8h_ad650fccbaed7fdf5e65aafc9e4fedeae}\label{command_8h_ad650fccbaed7fdf5e65aafc9e4fedeae}} 
-\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\_gen\_list}} \texorpdfstring{$\ast$}{*}&
-args&
-\\
-\hline
-
-\mbox{\Hypertarget{command_8h_a4035892ffaf86e4740da691c477ebfa4}\label{command_8h_a4035892ffaf86e4740da691c477ebfa4}} 
-\mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\_command\_funct}}&
-command\_funct&
-\\
-\hline
-
-\mbox{\Hypertarget{command_8h_a82f3acd25a4af3e90640d8e7d9fe4793}\label{command_8h_a82f3acd25a4af3e90640d8e7d9fe4793}} 
-\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\_gen\_list}} \texorpdfstring{$\ast$}{*}&
-redirects&
-\\
-\hline
-
-\end{DoxyFields}
 
 
 \doxysubsection{Typedef Documentation}
@@ -104,245 +45,190 @@ redirects&
 \index{command.h@{command.h}!t\_command@{t\_command}}
 \index{t\_command@{t\_command}!command.h@{command.h}}
 \doxysubsubsection{\texorpdfstring{t\_command}{t\_command}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{command_8h_d8/db2/structs__command}{s\+\_\+command}} \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{s\+\_\+command}} \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}}}
 
-\Hypertarget{command_8h_ae18307f65fae1da5035e40073801a9a0}\label{command_8h_ae18307f65fae1da5035e40073801a9a0} 
-\index{command.h@{command.h}!t\_command\_funct@{t\_command\_funct}}
-\index{t\_command\_funct@{t\_command\_funct}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{t\_command\_funct}{t\_command\_funct}}
-{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} t\+\_\+command\+\_\+funct) (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*})}
 
+
+Represents a command. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{command_8h_a527646ae11a157773c11c7836bed583e}{command\+\_\+create} 
+\end{DoxySeeAlso}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{command_8h_a9b93e7663cca775fbe6c13fea90699f1}\label{command_8h_a9b93e7663cca775fbe6c13fea90699f1} 
-\index{command.h@{command.h}!bin\_execute@{bin\_execute}}
-\index{bin\_execute@{bin\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{bin\_execute()}{bin\_execute()}}
-{\footnotesize\ttfamily void bin\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a9b93e7663cca775fbe6c13fea90699f1_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a9b93e7663cca775fbe6c13fea90699f1_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_ac40e1776b69522eaf80d953ec441231d}\label{command_8h_ac40e1776b69522eaf80d953ec441231d} 
-\index{command.h@{command.h}!cd\_execute@{cd\_execute}}
-\index{cd\_execute@{cd\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{cd\_execute()}{cd\_execute()}}
-{\footnotesize\ttfamily void cd\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_ac40e1776b69522eaf80d953ec441231d_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_ac40e1776b69522eaf80d953ec441231d_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a950465f331fec212ad0507c3e41a0137}\label{command_8h_a950465f331fec212ad0507c3e41a0137} 
-\index{command.h@{command.h}!destroy\_command@{destroy\_command}}
-\index{destroy\_command@{destroy\_command}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{destroy\_command()}{destroy\_command()}}
-{\footnotesize\ttfamily void destroy\+\_\+command (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{command\+\_\+to\+\_\+delete }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a950465f331fec212ad0507c3e41a0137_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a950465f331fec212ad0507c3e41a0137_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a0fad0803ff59cff11ab2eb8de7eac854}\label{command_8h_a0fad0803ff59cff11ab2eb8de7eac854} 
-\index{command.h@{command.h}!echo\_execute@{echo\_execute}}
-\index{echo\_execute@{echo\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{echo\_execute()}{echo\_execute()}}
-{\footnotesize\ttfamily void echo\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a0fad0803ff59cff11ab2eb8de7eac854_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a0fad0803ff59cff11ab2eb8de7eac854_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a509bc3c56be844c9b30a2ff165913928}\label{command_8h_a509bc3c56be844c9b30a2ff165913928} 
-\index{command.h@{command.h}!env\_execute@{env\_execute}}
-\index{env\_execute@{env\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{env\_execute()}{env\_execute()}}
-{\footnotesize\ttfamily void env\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a509bc3c56be844c9b30a2ff165913928_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a509bc3c56be844c9b30a2ff165913928_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_ac2417fa48185516c05dd13ce83e55f1d}\label{command_8h_ac2417fa48185516c05dd13ce83e55f1d} 
-\index{command.h@{command.h}!execute\_commands\_with\_pipes@{execute\_commands\_with\_pipes}}
-\index{execute\_commands\_with\_pipes@{execute\_commands\_with\_pipes}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{execute\_commands\_with\_pipes()}{execute\_commands\_with\_pipes()}}
-{\footnotesize\ttfamily void execute\+\_\+commands\+\_\+with\+\_\+pipes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+\Hypertarget{command_8h_a527646ae11a157773c11c7836bed583e}\label{command_8h_a527646ae11a157773c11c7836bed583e} 
+\index{command.h@{command.h}!command\_create@{command\_create}}
+\index{command\_create@{command\_create}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{command\_create()}{command\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} command\+\_\+create (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
 
 
 
-Executes the commands in the given list in order as child processes linking their input and output with the corresponding pipes. 
+Creates a new command structure. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em commands} & Command list to execute \\
-\hline
-{\em env} & Environment variable list that the commands may need. \\
+{\em name} & Name of the command. \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created command. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_ac2417fa48185516c05dd13ce83e55f1d_cgraph}
+\includegraphics[width=308pt]{d0/d09/command_8h_a527646ae11a157773c11c7836bed583e_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{d0/d09/command_8h_ac2417fa48185516c05dd13ce83e55f1d_icgraph}
+\includegraphics[width=350pt]{d0/d09/command_8h_a527646ae11a157773c11c7836bed583e_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{command_8h_abba1603056020c33ad3f11e82b14fcfe}\label{command_8h_abba1603056020c33ad3f11e82b14fcfe} 
-\index{command.h@{command.h}!export\_execute@{export\_execute}}
-\index{export\_execute@{export\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{export\_execute()}{export\_execute()}}
-{\footnotesize\ttfamily void export\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
+\Hypertarget{command_8h_acf24c1b5ff2095e586b1b28ef93b16ef}\label{command_8h_acf24c1b5ff2095e586b1b28ef93b16ef} 
+\index{command.h@{command.h}!command\_destroy@{command\_destroy}}
+\index{command\_destroy@{command\_destroy}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{command\_destroy()}{command\_destroy()}}
+{\footnotesize\ttfamily void command\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_abba1603056020c33ad3f11e82b14fcfe_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_abba1603056020c33ad3f11e82b14fcfe_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a08ef374af07a926aeb231c0e68b20b28}\label{command_8h_a08ef374af07a926aeb231c0e68b20b28} 
-\index{command.h@{command.h}!get\_command\_function@{get\_command\_function}}
-\index{get\_command\_function@{get\_command\_function}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{get\_command\_function()}{get\_command\_function()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}} get\+\_\+command\+\_\+function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{cmd\+\_\+name }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a08ef374af07a926aeb231c0e68b20b28_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a08ef374af07a926aeb231c0e68b20b28_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a980b6e4466bc0bed37cb6352f143ab96}\label{command_8h_a980b6e4466bc0bed37cb6352f143ab96} 
-\index{command.h@{command.h}!init\_command@{init\_command}}
-\index{init\_command@{init\_command}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{init\_command()}{init\_command()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} init\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{args,  }\item[{\mbox{\hyperlink{command_8h_ae18307f65fae1da5035e40073801a9a0}{t\+\_\+command\+\_\+funct}}}]{funct,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{redirects }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=259pt]{d0/d09/command_8h_a980b6e4466bc0bed37cb6352f143ab96_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a980b6e4466bc0bed37cb6352f143ab96_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a0f6eaa743e63abad6ac6be049d6179c6}\label{command_8h_a0f6eaa743e63abad6ac6be049d6179c6} 
-\index{command.h@{command.h}!pwd\_execute@{pwd\_execute}}
-\index{pwd\_execute@{pwd\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{pwd\_execute()}{pwd\_execute()}}
-{\footnotesize\ttfamily void pwd\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
+Destroys a command structure and frees memory. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a0f6eaa743e63abad6ac6be049d6179c6_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a0f6eaa743e63abad6ac6be049d6179c6_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{command_8h_a24640ac75761d535d770cf4255c336da}\label{command_8h_a24640ac75761d535d770cf4255c336da} 
-\index{command.h@{command.h}!unset\_execute@{unset\_execute}}
-\index{unset\_execute@{unset\_execute}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{unset\_execute()}{unset\_execute()}}
-{\footnotesize\ttfamily void unset\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{envioroment }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to the command to destroy. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a24640ac75761d535d770cf4255c336da_cgraph}
+\includegraphics[width=350pt]{d0/d09/command_8h_acf24c1b5ff2095e586b1b28ef93b16ef_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d09/command_8h_a24640ac75761d535d770cf4255c336da_icgraph}
+\includegraphics[width=350pt]{d0/d09/command_8h_acf24c1b5ff2095e586b1b28ef93b16ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{command_8h_adf6495f1ffb8a1e6ed217cb77472bf1c}\label{command_8h_adf6495f1ffb8a1e6ed217cb77472bf1c} 
+\index{command.h@{command.h}!command\_exec@{command\_exec}}
+\index{command\_exec@{command\_exec}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{command\_exec()}{command\_exec()}}
+{\footnotesize\ttfamily int command\+\_\+exec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{environment }\end{DoxyParamCaption})}
+
+
+
+Executes the command with the given environment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to the command. \\
+\hline
+{\em environment} & Pointer to the environment variable list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\Hypertarget{command_8h_a5c7fab53ffa7870460b806b693fe7e36}\label{command_8h_a5c7fab53ffa7870460b806b693fe7e36} 
+\index{command.h@{command.h}!command\_push\_arg@{command\_push\_arg}}
+\index{command\_push\_arg@{command\_push\_arg}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{command\_push\_arg()}{command\_push\_arg()}}
+{\footnotesize\ttfamily void command\+\_\+push\+\_\+arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{char \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Adds an argument to the command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to the command. \\
+\hline
+{\em arg} & Argument string to add. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a5c7fab53ffa7870460b806b693fe7e36_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a5c7fab53ffa7870460b806b693fe7e36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{command_8h_a1661f772d30dd0f52b9277ed320877d8}\label{command_8h_a1661f772d30dd0f52b9277ed320877d8} 
+\index{command.h@{command.h}!command\_push\_redirect@{command\_push\_redirect}}
+\index{command\_push\_redirect@{command\_push\_redirect}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{command\_push\_redirect()}{command\_push\_redirect()}}
+{\footnotesize\ttfamily void command\+\_\+push\+\_\+redirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\+\_\+redirect\+\_\+type}}}]{redirect\+\_\+type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Adds a redirection to the command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to the command. \\
+\hline
+{\em redirect\+\_\+type} & Type of redirection (input, output, append). \\
+\hline
+{\em file\+\_\+name} & Target file for the redirection. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a1661f772d30dd0f52b9277ed320877d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_a1661f772d30dd0f52b9277ed320877d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{command_8h_aaeba1075474bbabf46d3efc68664c129}\label{command_8h_aaeba1075474bbabf46d3efc68664c129} 
+\index{command.h@{command.h}!print\_command@{print\_command}}
+\index{print\_command@{print\_command}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{print\_command()}{print\_command()}}
+{\footnotesize\ttfamily void print\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d09/command_8h_aaeba1075474bbabf46d3efc68664c129_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{d0/d09/command_8h_aaeba1075474bbabf46d3efc68664c129_icgraph}
 \end{center}
 \end{figure}

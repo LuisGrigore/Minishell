@@ -1,16 +1,5 @@
 <map id="env_unset" name="env_unset">
-<area shape="rect" id="Node000001" title="Remove an environment variable by name." alt="" coords="887,42,976,67"/>
-<area shape="rect" id="Node000002" href="$d7/df6/command__functs_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="723,42,839,67"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="873,57,839,57,839,52,873,52"/>
-<area shape="rect" id="Node000003" href="$d1/d47/pipe_8c.html#ac2417fa48185516c05dd13ce83e55f1d" title="Executes the commands in the given list in order as child processes linking their input and output wi..." alt="" coords="255,5,442,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="709,53,442,34,442,29,709,47"/>
-<area shape="rect" id="Node000005" href="$d7/df6/command__functs_8c.html#a08ef374af07a926aeb231c0e68b20b28" title=" " alt="" coords="500,67,675,93"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="710,67,675,71,674,66,709,61"/>
-<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,42,60,67"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,38,60,55,60,50,241,33"/>
-<area shape="rect" id="Node000006" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="245,70,452,95"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="486,84,452,84,452,79,486,78"/>
-<area shape="rect" id="Node000007" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="108,67,197,93"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="231,84,198,83,198,78,231,78"/>
-<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="94,70,60,63,61,58,95,65"/>
+<area shape="rect" id="Node000001" title="Remove an environment variable by name." alt="" coords="169,5,259,31"/>
+<area shape="rect" id="Node000002" href="$d5/db5/command__functs__builtin__a_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="5,5,121,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,21,122,21,122,15,155,15"/>
 </map>

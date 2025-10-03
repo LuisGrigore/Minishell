@@ -1,5 +1,5 @@
-<map id="include/parser.h" name="include/parser.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="35,5,160,31"/>
+<map id="src/include/parser.h" name="src/include/parser.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="23,5,171,31"/>
 <area shape="rect" id="Node000002" href="$d3/d09/gen__list_8h.html" title=" " alt="" coords="26,79,169,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,31,100,65,95,65,95,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,167,88,192"/>

@@ -1,0 +1,57 @@
+\doxysection{src/executer/executer.c File Reference}
+\hypertarget{executer_8c}{}\label{executer_8c}\index{src/executer/executer.c@{src/executer/executer.c}}
+{\ttfamily \#include "{}executer\+\_\+internal.\+h"{}}\newline
+Include dependency graph for executer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dd3/executer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{executer_8c_a18e60d48cf2841e0b47fd72bb4ab4c1d}{execute\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{executer_8c_a18e60d48cf2841e0b47fd72bb4ab4c1d}\label{executer_8c_a18e60d48cf2841e0b47fd72bb4ab4c1d} 
+\index{executer.c@{executer.c}!execute\_line@{execute\_line}}
+\index{execute\_line@{execute\_line}!executer.c@{executer.c}}
+\doxysubsubsection{\texorpdfstring{execute\_line()}{execute\_line()}}
+{\footnotesize\ttfamily int execute\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+Executes a single command line, similar to how Bash interprets and runs commands.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A null-\/terminated string containing the command line to be parsed and executed. The command may include\+:
+\begin{DoxyItemize}
+\item simple commands and arguments
+\item operators for redirection and piping\+: \texorpdfstring{$\vert$}{|} (pipe) \texorpdfstring{$<$}{<} (input redirection) \texorpdfstring{$>$}{>} (output redirection, truncate) \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} (heredoc) \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} (output redirection, append)
+\end{DoxyItemize}\\
+\hline
+{\em env} & A pointer to the environment list (t\+\_\+gen\+\_\+list) containing only internal state variables (e.\+g., last return code, execution flags).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer representing the exit status of the executed command. By convention, 0 indicates success, while non-\/zero values indicate errors, similar to Bash’s return codes.
+\end{DoxyReturn}
+This function parses and executes the provided command line using the given state environment. Its behavior mimics that of the Bash shell when handling execution, redirections, and pipes, but it relies only on the provided state variables rather than a full environment. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d11/executer_8c_a18e60d48cf2841e0b47fd72bb4ab4c1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{d7/d11/executer_8c_a18e60d48cf2841e0b47fd72bb4ab4c1d_icgraph}
+\end{center}
+\end{figure}

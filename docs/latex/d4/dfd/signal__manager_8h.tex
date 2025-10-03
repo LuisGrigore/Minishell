@@ -1,0 +1,68 @@
+\doxysection{src/include/signal\+\_\+manager.h File Reference}
+\hypertarget{signal__manager_8h}{}\label{signal__manager_8h}\index{src/include/signal\_manager.h@{src/include/signal\_manager.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/signal__manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{signal__manager_8h_a2277771239d89fed35229818c76516a1}{signals\+\_\+init\+\_\+interactive}} (void)
+\begin{DoxyCompactList}\small\item\em Configures signals for the shell\textquotesingle{}s interactive mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{signal__manager_8h_ad50e0c9fc8a6f32ea04fa37f4f7e1982}{signals\+\_\+init\+\_\+heredoc}} (void)
+\begin{DoxyCompactList}\small\item\em Configures signals for heredoc mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{signal__manager_8h_a4512fd4ab7f5fb62f2e4d95e93140505}{signals\+\_\+restore}} (void)
+\begin{DoxyCompactList}\small\item\em Restores the original signal configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{signal__manager_8h_ad50e0c9fc8a6f32ea04fa37f4f7e1982}\label{signal__manager_8h_ad50e0c9fc8a6f32ea04fa37f4f7e1982} 
+\index{signal\_manager.h@{signal\_manager.h}!signals\_init\_heredoc@{signals\_init\_heredoc}}
+\index{signals\_init\_heredoc@{signals\_init\_heredoc}!signal\_manager.h@{signal\_manager.h}}
+\doxysubsubsection{\texorpdfstring{signals\_init\_heredoc()}{signals\_init\_heredoc()}}
+{\footnotesize\ttfamily void signals\+\_\+init\+\_\+heredoc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configures signals for heredoc mode. 
+
+This function is used when reading a heredoc. It typically handles SIGINT to cancel the heredoc input without affecting the main shell. \Hypertarget{signal__manager_8h_a2277771239d89fed35229818c76516a1}\label{signal__manager_8h_a2277771239d89fed35229818c76516a1} 
+\index{signal\_manager.h@{signal\_manager.h}!signals\_init\_interactive@{signals\_init\_interactive}}
+\index{signals\_init\_interactive@{signals\_init\_interactive}!signal\_manager.h@{signal\_manager.h}}
+\doxysubsubsection{\texorpdfstring{signals\_init\_interactive()}{signals\_init\_interactive()}}
+{\footnotesize\ttfamily void signals\+\_\+init\+\_\+interactive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configures signals for the shell\textquotesingle{}s interactive mode. 
+
+This function is used when the shell is waiting for user input. Typically, it ignores SIGQUIT and handles SIGINT to interrupt the current line without exiting the shell. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{d4/dfd/signal__manager_8h_a2277771239d89fed35229818c76516a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{signal__manager_8h_a4512fd4ab7f5fb62f2e4d95e93140505}\label{signal__manager_8h_a4512fd4ab7f5fb62f2e4d95e93140505} 
+\index{signal\_manager.h@{signal\_manager.h}!signals\_restore@{signals\_restore}}
+\index{signals\_restore@{signals\_restore}!signal\_manager.h@{signal\_manager.h}}
+\doxysubsubsection{\texorpdfstring{signals\_restore()}{signals\_restore()}}
+{\footnotesize\ttfamily void signals\+\_\+restore (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Restores the original signal configuration. 
+
+This function is used to return the shell to its default signal behavior after having changed the configuration for execution, heredoc, or interactive mode. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{d4/dfd/signal__manager_8h_a4512fd4ab7f5fb62f2e4d95e93140505_icgraph}
+\end{center}
+\end{figure}

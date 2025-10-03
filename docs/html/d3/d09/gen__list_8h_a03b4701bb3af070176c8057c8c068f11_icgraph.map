@@ -1,19 +1,24 @@
 <map id="gen_list_create" name="gen_list_create">
-<area shape="rect" id="Node000001" title="Initialize an empty list." alt="" coords="535,108,656,133"/>
-<area shape="rect" id="Node000002" href="$d8/d4a/environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="108,52,232,77"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="574,99,537,59,512,41,486,27,430,11,385,9,339,16,281,27,237,39,199,54,197,49,235,34,279,22,338,11,385,4,431,6,488,22,515,36,540,55,578,95"/>
-<area shape="rect" id="Node000004" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="308,37,459,77"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="539,107,450,79,451,74,540,101"/>
-<area shape="rect" id="Node000005" href="$d4/dcd/redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="311,101,456,141"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="521,123,456,123,456,118,521,118"/>
-<area shape="rect" id="Node000006" href="$d8/d82/lexer__tokenize_8c.html#a4bfce5ffa605cc5bb32062712d702198" title=" " alt="" coords="325,165,441,191"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="540,140,487,155,438,168,437,163,486,150,539,135"/>
-<area shape="rect" id="Node000008" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="280,215,487,240"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="573,145,535,177,488,206,457,217,455,212,485,201,532,172,569,141"/>
-<area shape="rect" id="Node000003" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,141,60,167"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,87,55,143,52,139,137,83"/>
-<area shape="rect" id="Node000007" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="125,165,215,191"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="312,181,215,181,215,175,312,175"/>
-<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="111,171,60,161,61,156,112,165"/>
-<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="314,214,214,191,215,186,315,209"/>
+<area shape="rect" id="Node000001" title="Initialize an empty list." alt="" coords="851,123,972,148"/>
+<area shape="rect" id="Node000002" href="$d5/d2b/command__lifecycle_8c.html#a527646ae11a157773c11c7836bed583e" title="Creates a new command structure." alt="" coords="660,93,795,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="837,126,795,119,796,114,838,121"/>
+<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="397,80,604,105"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="878,118,843,99,802,85,742,75,681,73,623,77,572,83,571,77,623,71,681,68,743,70,803,79,845,94,881,113"/>
+<area shape="rect" id="Node000007" href="$d8/d4a/environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="439,249,563,275"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="899,162,862,215,835,241,804,262,773,273,741,281,675,288,612,285,558,277,559,272,612,280,674,282,740,276,771,268,801,257,832,237,858,212,895,159"/>
+<area shape="rect" id="Node000008" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="652,143,803,183"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="837,149,803,155,802,149,837,144"/>
+<area shape="rect" id="Node000009" href="$d5/d3f/redirect__manager__utils_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="655,207,800,247"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="878,158,804,198,778,210,776,205,801,193,875,153"/>
+<area shape="rect" id="Node000010" href="$d8/d82/lexer__tokenize_8c.html#a4bfce5ffa605cc5bb32062712d702198" title=" " alt="" coords="443,5,559,31"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="885,115,848,85,802,59,739,40,674,28,612,22,559,20,559,14,612,16,674,22,740,34,804,54,851,80,888,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="646,104,604,101,604,96,646,99"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="260,80,349,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="383,95,350,95,350,90,383,90"/>
+<area shape="rect" id="Node000005" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="108,103,212,128"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,104,213,110,212,105,246,99"/>
+<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,160,60,185"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="120,136,61,163,59,158,117,131"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="425,250,60,180,61,175,426,245"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="454,38,340,82,338,78,452,33"/>
 </map>
