@@ -6,16 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 16:01:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 20:38:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/bin_commandss_execution.h"
-#include "../include/command.h"
-#include "../include/environment.h"
-# include "../external/gen_list/gen_list.h"
-#include "../external/libft/libft.h"
-#include <signal.h>
+#include "../command_internal.h"
 
 
 t_command_funct get_command_function(char *cmd_name)

@@ -1,9 +1,5 @@
-#include "../include/command.h"
-# include "include/redirect.h"
-# include "../external/gen_list/gen_list.h"
-#include "../external/libft/libft.h"
-#include "stdlib.h"
-#include <stdio.h>
+#include "../command_internal.h"
+
 
 
 t_command	*init_command(t_gen_list *args, t_command_funct funct,
