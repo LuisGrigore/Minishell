@@ -24,6 +24,7 @@ void redirect_destroy(t_redirect *redirect)
 
 int redirect_execute(t_redirect *redirect)
 {
+	(void *) redirect;
     perror("redirect_execute: not implemented");
     exit(EXIT_FAILURE);
     return -1; // never reached, but silences compiler warning

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 16:58:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:14:35 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,15 +113,8 @@ void	signals_init(void)
 	sigaction(SIGQUIT, &sa_quit, NULL);
 }
 
-
-void command_destroy_data(void *command_ptr)
-{
-	command_destroy((t_command *) command_ptr);
-}
-
 int	main(int args, char **environment_var_str_array)
 {
-	t_gen_list	*current_commands;
 	t_gen_list	*envioroment_vars;
 	bool		finish;
 	char		*line;
@@ -136,7 +129,6 @@ int	main(int args, char **environment_var_str_array)
 	finish = false;
 	while (!finish)
 	{
-		current_commands = NULL;
 		line = readline(name);
 		if ((ft_strlen(line) != 0 && ft_strncmp(line, "exit",
 					ft_strlen(line)) == 0) || line == NULL)
@@ -146,18 +138,10 @@ int	main(int args, char **environment_var_str_array)
 			if (check_cmd(line) == NULL)
 				continue ;
 			add_history(line);
-			current_commands = parse_line(line);
-			if (!current_commands)
-			{
-				perror("Parsing error ");
-				continue ;
-			}
-			execute_commands_with_pipes(current_commands, envioroment_vars);
+			execute_line(line, envioroment_vars);
 		}
 		free(line);
 		line = NULL;
-		gen_list_destroy(current_commands, command_destroy_data);
-		current_commands = NULL;
 	}
 	env_destroy(envioroment_vars);
 	free(name);
