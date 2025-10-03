@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 16:26:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:11:08 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,33 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
 
     while ((tok = (t_token *)gen_list_iter_next(it)) != NULL)
     {
-        if (tok->type == TOKEN_CMD)
+        if (lexer_is_token_type(tok, TOKEN_CMD))
         {
-            current_cmd = command_create(tok->value);
+            current_cmd = command_create(ft_strdup(lexer_get_token_content(tok)));
             if (!current_cmd)
                 goto error;
-            size_t len = ft_strlen(tok->value);
+            size_t len = ft_strlen(lexer_get_token_content(tok));
             char *arg_copy = malloc(len + 1);
             if (!arg_copy)
                 goto error;
-            ft_strlcpy(arg_copy, tok->value, len + 1);
+            ft_strlcpy(arg_copy, lexer_get_token_content(tok), len + 1);
 
             command_push_arg(current_cmd, arg_copy);
         }
-        else if (tok->type == TOKEN_ARG)
+        else if (lexer_is_token_type(tok,TOKEN_ARG))
         {
             if (!current_cmd)
                 goto error;
 
-            size_t len = ft_strlen(tok->value);
+            size_t len = ft_strlen(lexer_get_token_content(tok));
             char *arg_copy = malloc(len + 1);
             if (!arg_copy)
                 goto error;
-            ft_strlcpy(arg_copy, tok->value, len + 1);
+            ft_strlcpy(arg_copy, lexer_get_token_content(tok), len + 1);
 
             command_push_arg(current_cmd, arg_copy);
         }
-        else if (tok->type == TOKEN_PIPE)
+        else if (lexer_is_token_type(tok,TOKEN_PIPE))
         {
             if (!current_cmd)
                 goto error;
@@ -63,26 +63,26 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             gen_list_push_back(commands, current_cmd);
             current_cmd = NULL;
         }
-        else if (tok->type == TOKEN_REDIR_IN ||
-                 tok->type == TOKEN_REDIR_OUT ||
-                 tok->type == TOKEN_REDIR_APPEND ||
-                 tok->type == TOKEN_HEREDOC)
+		else if (lexer_is_token_type(tok, TOKEN_REDIR_IN)     ||
+		         lexer_is_token_type(tok, TOKEN_REDIR_OUT)    ||
+		         lexer_is_token_type(tok, TOKEN_REDIR_APPEND) ||
+		         lexer_is_token_type(tok, TOKEN_HEREDOC))
         {
             t_token *file_tok = (t_token *)gen_list_iter_next(it);
-            if (!file_tok || file_tok->type != TOKEN_ARG || !current_cmd)
+            if (!file_tok || !lexer_is_token_type(file_tok, TOKEN_ARG) || !current_cmd)
                 goto error;
 
             t_redirect_type r_type = NONE;
-            if (tok->type == TOKEN_REDIR_IN)
+            if (lexer_is_token_type(tok, TOKEN_REDIR_IN) )
                 r_type = LEFT_REDIRECT;
-            else if (tok->type == TOKEN_REDIR_OUT)
+            else if (lexer_is_token_type(tok, TOKEN_REDIR_OUT))
                 r_type = RIGHT_REDIRECT;
-            else if (tok->type == TOKEN_REDIR_APPEND)
+            else if (lexer_is_token_type(tok, TOKEN_REDIR_APPEND))
                 r_type = DOUBLE_RIGHT_REDIRECT;
-            else if (tok->type == TOKEN_HEREDOC)
+            else if (lexer_is_token_type(tok, TOKEN_HEREDOC))
                 r_type = DOUBLE_LEFT_REDIRECT;
 
-            command_push_redirect(current_cmd, r_type, file_tok->value);
+            command_push_redirect(current_cmd, r_type, lexer_get_token_content(file_tok));
         }
     }
 

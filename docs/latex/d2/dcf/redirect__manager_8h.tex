@@ -1,0 +1,204 @@
+\doxysection{src/include/redirect\+\_\+manager.h File Reference}
+\hypertarget{redirect__manager_8h}{}\label{redirect__manager_8h}\index{src/include/redirect\_manager.h@{src/include/redirect\_manager.h}}
+{\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
+Include dependency graph for redirect\+\_\+manager.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d9/d92/redirect__manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db4/redirect__manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\+\_\+redirect\+\_\+type}} \mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\+\_\+redirect\+\_\+type}}
+\item 
+typedef struct \mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{s\+\_\+redirect}} \mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\+\_\+redirect\+\_\+type}} \{ \newline
+\mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f}{LEFT\+\_\+\+REDIRECT}}
+, \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131}{RIGHT\+\_\+\+REDIRECT}}
+, \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c}{DOUBLE\+\_\+\+LEFT\+\_\+\+REDIRECT}}
+, \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97}{DOUBLE\+\_\+\+RIGHT\+\_\+\+REDIRECT}}
+, \newline
+\mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}
+, \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90}{ERROR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{redirect__manager_8h_a1dcc7a29a8a1d5240c49fbf25ce60d9c}{get\+\_\+redirects\+\_\+from\+\_\+str\+\_\+arr}} (char \texorpdfstring{$\ast$}{*}str)
+\item 
+\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e}{redirect\+\_\+create}} (\mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\+\_\+redirect\+\_\+type}} redirect\+\_\+type, char \texorpdfstring{$\ast$}{*}file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Creates a new redirect structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{redirect__manager_8h_a2e2201e448b4d07a14082c4c826a0153}{redirect\+\_\+destroy}} (\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redirect)
+\begin{DoxyCompactList}\small\item\em Destroys a redirect structure and frees memory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d}{redirect\+\_\+execute}} (\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redirect)
+\begin{DoxyCompactList}\small\item\em Executes a redirect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297}{print\+\_\+redirect}} (void \texorpdfstring{$\ast$}{*}redir\+\_\+ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}\label{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6} 
+\index{redirect\_manager.h@{redirect\_manager.h}!t\_redirect@{t\_redirect}}
+\index{t\_redirect@{t\_redirect}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{t\_redirect}{t\_redirect}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{redirect__manager__internal_8h_de/df7/structs__redirect}{s\+\_\+redirect}} \mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}}}
+
+\Hypertarget{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}\label{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47} 
+\index{redirect\_manager.h@{redirect\_manager.h}!t\_redirect\_type@{t\_redirect\_type}}
+\index{t\_redirect\_type@{t\_redirect\_type}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{t\_redirect\_type}{t\_redirect\_type}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\+\_\+redirect\+\_\+type}} \mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\+\_\+redirect\+\_\+type}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c} 
+\index{redirect\_manager.h@{redirect\_manager.h}!e\_redirect\_type@{e\_redirect\_type}}
+\index{e\_redirect\_type@{e\_redirect\_type}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{e\_redirect\_type}{e\_redirect\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\+\_\+redirect\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_REDIRECT@{LEFT\_REDIRECT}!redirect\_manager.h@{redirect\_manager.h}}\index{redirect\_manager.h@{redirect\_manager.h}!LEFT\_REDIRECT@{LEFT\_REDIRECT}}}\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca1c3021849b72fe39ebb7773716f0344f} 
+LEFT\+\_\+\+REDIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_REDIRECT@{RIGHT\_REDIRECT}!redirect\_manager.h@{redirect\_manager.h}}\index{redirect\_manager.h@{redirect\_manager.h}!RIGHT\_REDIRECT@{RIGHT\_REDIRECT}}}\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac3d5150084d459dcbf0921c731a64131} 
+RIGHT\+\_\+\+REDIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE\_LEFT\_REDIRECT@{DOUBLE\_LEFT\_REDIRECT}!redirect\_manager.h@{redirect\_manager.h}}\index{redirect\_manager.h@{redirect\_manager.h}!DOUBLE\_LEFT\_REDIRECT@{DOUBLE\_LEFT\_REDIRECT}}}\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c} 
+DOUBLE\+\_\+\+LEFT\+\_\+\+REDIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE\_RIGHT\_REDIRECT@{DOUBLE\_RIGHT\_REDIRECT}!redirect\_manager.h@{redirect\_manager.h}}\index{redirect\_manager.h@{redirect\_manager.h}!DOUBLE\_RIGHT\_REDIRECT@{DOUBLE\_RIGHT\_REDIRECT}}}\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97} 
+DOUBLE\+\_\+\+RIGHT\+\_\+\+REDIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!redirect\_manager.h@{redirect\_manager.h}}\index{redirect\_manager.h@{redirect\_manager.h}!NONE@{NONE}}}\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09cac157bdf0b85a40d2619cbc8bc1ae5fe2} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!redirect\_manager.h@{redirect\_manager.h}}\index{redirect\_manager.h@{redirect\_manager.h}!ERROR@{ERROR}}}\Hypertarget{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90}\label{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09ca2fd6f336d08340583bd620a7f5694c90} 
+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{redirect__manager_8h_a1dcc7a29a8a1d5240c49fbf25ce60d9c}\label{redirect__manager_8h_a1dcc7a29a8a1d5240c49fbf25ce60d9c} 
+\index{redirect\_manager.h@{redirect\_manager.h}!get\_redirects\_from\_str\_arr@{get\_redirects\_from\_str\_arr}}
+\index{get\_redirects\_from\_str\_arr@{get\_redirects\_from\_str\_arr}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{get\_redirects\_from\_str\_arr()}{get\_redirects\_from\_str\_arr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} get\+\_\+redirects\+\_\+from\+\_\+str\+\_\+arr (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dcf/redirect__manager_8h_a1dcc7a29a8a1d5240c49fbf25ce60d9c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297}\label{redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297} 
+\index{redirect\_manager.h@{redirect\_manager.h}!print\_redirect@{print\_redirect}}
+\index{print\_redirect@{print\_redirect}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{print\_redirect()}{print\_redirect()}}
+{\footnotesize\ttfamily void print\+\_\+redirect (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{redir\+\_\+ptr }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dcf/redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e}\label{redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e} 
+\index{redirect\_manager.h@{redirect\_manager.h}!redirect\_create@{redirect\_create}}
+\index{redirect\_create@{redirect\_create}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{redirect\_create()}{redirect\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*} redirect\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__manager_8h_a2ec8359692a4a397f0bd1e8b2d098f47}{t\+\_\+redirect\+\_\+type}}}]{redirect\+\_\+type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Creates a new redirect structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em redirect\+\_\+type} & The type of the redirect (input, output, append). \\
+\hline
+{\em file\+\_\+name} & The target file for the redirection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created redirect structure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dcf/redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dcf/redirect__manager_8h_a4c33ef90e489d46f3c14ff827e59995e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{redirect__manager_8h_a2e2201e448b4d07a14082c4c826a0153}\label{redirect__manager_8h_a2e2201e448b4d07a14082c4c826a0153} 
+\index{redirect\_manager.h@{redirect\_manager.h}!redirect\_destroy@{redirect\_destroy}}
+\index{redirect\_destroy@{redirect\_destroy}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{redirect\_destroy()}{redirect\_destroy()}}
+{\footnotesize\ttfamily void redirect\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redirect }\end{DoxyParamCaption})}
+
+
+
+Destroys a redirect structure and frees memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em redirect} & Pointer to the redirect structure to destroy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d}\label{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d} 
+\index{redirect\_manager.h@{redirect\_manager.h}!redirect\_execute@{redirect\_execute}}
+\index{redirect\_execute@{redirect\_execute}!redirect\_manager.h@{redirect\_manager.h}}
+\doxysubsubsection{\texorpdfstring{redirect\_execute()}{redirect\_execute()}}
+{\footnotesize\ttfamily int redirect\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redirect }\end{DoxyParamCaption})}
+
+
+
+Executes a redirect. 
+
+This function applies the redirection to the current process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em redirect} & Pointer to the redirect structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 18:10:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:53:38 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,22 @@ char	*get_line_tag(t_gen_list *env)
 	return (line_tag);
 }
 
+char *get_input(t_gen_list *env)
+{
+	char *line_tag;
+	char *input;
+	
+	line_tag = get_line_tag(env);
+	input = readline(line_tag);
+	free(line_tag);
+	return (input);
+}
+
 int	main(int args, char **environment_var_str_array)
 {
 	t_gen_list	*envioroment_vars;
 	bool		finish;
-	char		*line;
+	char		*input;
 
 	if (args > 1)
 		exit(0);
@@ -48,17 +59,17 @@ int	main(int args, char **environment_var_str_array)
 	finish = false;
 	while (!finish)
 	{
-		line = readline(get_line_tag(envioroment_vars));
-		if ((ft_strlen(line) != 0 && ft_strncmp(line, "exit",
-					ft_strlen(line)) == 0) || line == NULL)
+		input = get_input(envioroment_vars);
+		if ((ft_strlen(input) != 0 && ft_strncmp(input, "exit",
+					ft_strlen(input)) == 0) || input == NULL)
 			finish = true;
-		else if (ft_strlen(line) != 0)
+		else if (ft_strlen(input) != 0)
 		{
-			history_add(line);
-			execute_line(line, envioroment_vars);
+			history_add(input);
+			execute_line(input, envioroment_vars);
 		}
-		free(line);
-		line = NULL;
+		free(input);
+		input = NULL;
 	}
 	env_destroy(envioroment_vars);
 }

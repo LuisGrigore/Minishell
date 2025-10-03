@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 16:56:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:25:31 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,22 @@
 # include "../external/gen_list/gen_list.h"
 # include "../include/redirect_manager.h"
 
-/**
- * @file command.h
- * @brief Module that contains the necesary functionality to create and execute commands.
- */
+/* ============================================================
+**  Data Structures
+** ============================================================
+*/
 
+/**
+ * @brief Represents a command
+ * 
+ * @see command_create
+ */
 typedef struct s_command	t_command;
 
-typedef void				(*t_command_funct)(t_command *, t_gen_list *);
-
+/* ============================================================
+**  Command Lifecycle
+** ============================================================
+*/
 
 /**
  * @brief Creates a new command structure.
@@ -39,6 +46,11 @@ t_command *command_create(char *name);
  * @param command Pointer to the command to destroy.
  */
 void command_destroy(t_command *command);
+
+/* ============================================================
+**  Command Operations
+** ============================================================
+*/
 
 /**
  * @brief Adds an argument to the command.
@@ -66,7 +78,10 @@ void command_push_redirect(t_command *command, t_redirect_type redirect_type, ch
  */
 int command_exec(t_command *command, t_gen_list *environment);
 
-//DEBUG
+/* ============================================================
+**  Debug
+** ============================================================
+*/
 
 void print_command(t_command *cmd, int index);
 

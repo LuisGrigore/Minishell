@@ -1,31 +1,29 @@
-\doxysection{parser/include/lexer.h File Reference}
-\hypertarget{lexer_8h}{}\label{lexer_8h}\index{parser/include/lexer.h@{parser/include/lexer.h}}
+\doxysection{src/include/lexer.h File Reference}
+\hypertarget{lexer_8h}{}\label{lexer_8h}\index{src/include/lexer.h@{src/include/lexer.h}}
 {\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
-Include dependency graph for lexer.\+h\+:\nopagebreak
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for lexer.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=201pt]{d6/dbe/lexer_8h__incl}
+\includegraphics[width=244pt]{d6/dbe/lexer_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{dc/d58/lexer_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{lexer_8h_df/d44/structs__token}{s\+\_\+token}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef enum \mbox{\hyperlink{lexer_8h_a76a354e93d720f05344590ec8aa222de}{e\+\_\+token\+\_\+type}} \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}
 \item 
-typedef struct \mbox{\hyperlink{lexer_8h_df/d44/structs__token}{s\+\_\+token}} \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}}
+typedef struct \mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{s\+\_\+token}} \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -47,27 +45,15 @@ enum \mbox{\hyperlink{lexer_8h_a76a354e93d720f05344590ec8aa222de}{e\+\_\+token\+
 \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lexer_8h_a4bfce5ffa605cc5bb32062712d702198}{lexer\+\_\+tokenize}} (const char \texorpdfstring{$\ast$}{*}line)
 \item 
 void \mbox{\hyperlink{lexer_8h_ab257545d833c1636ae3c4c80651677ba}{lexer\+\_\+destroy}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
+\item 
+\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} \mbox{\hyperlink{lexer_8h_a2ebd5d8b3daca0bdb11b5cfe08268824}{lexer\+\_\+get\+\_\+token\+\_\+type}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}token)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lexer_8h_aae8a2dff7df2534dd84d5037ca923efd}{lexer\+\_\+get\+\_\+token\+\_\+content}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}token)
+\item 
+bool \mbox{\hyperlink{lexer_8h_a517e2a4ae754383a5954a92a9e593102}{lexer\+\_\+is\+\_\+token\+\_\+type}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}token, \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} type)
+\item 
+void \mbox{\hyperlink{lexer_8h_abe2d3d3cdb04a9614c52e119e4d7c64d}{print\+\_\+tokens}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Class Documentation}
-\index{s\_token@{s\_token}}\label{structs__token}
-\Hypertarget{lexer_8h_structs__token}
-\doxysubsubsection{struct s\+\_\+token}
-\begin{DoxyFields}{Class Members}
-\mbox{\Hypertarget{lexer_8h_a350680c70abb7e7173240477e92dc0a3}\label{lexer_8h_a350680c70abb7e7173240477e92dc0a3}} 
-\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}&
-type&
-\\
-\hline
-
-\mbox{\Hypertarget{lexer_8h_a21b454c179e1e31383371d09385b9c59}\label{lexer_8h_a21b454c179e1e31383371d09385b9c59}} 
-char \texorpdfstring{$\ast$}{*}&
-value&
-\\
-\hline
-
-\end{DoxyFields}
 
 
 \doxysubsection{Typedef Documentation}
@@ -75,7 +61,7 @@ value&
 \index{lexer.h@{lexer.h}!t\_token@{t\_token}}
 \index{t\_token@{t\_token}!lexer.h@{lexer.h}}
 \doxysubsubsection{\texorpdfstring{t\_token}{t\_token}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{lexer_8h_df/d44/structs__token}{s\+\_\+token}} \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{s\+\_\+token}} \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}}}
 
 \Hypertarget{lexer_8h_aaa12264c004e358b28290c09bb20969a}\label{lexer_8h_aaa12264c004e358b28290c09bb20969a} 
 \index{lexer.h@{lexer.h}!t\_token\_type@{t\_token\_type}}
@@ -138,11 +124,62 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{d5/df3/lexer_8h_ab257545d833c1636ae3c4c80651677ba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=343pt]{d5/df3/lexer_8h_ab257545d833c1636ae3c4c80651677ba_icgraph}
+\includegraphics[width=350pt]{d5/df3/lexer_8h_ab257545d833c1636ae3c4c80651677ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer_8h_aae8a2dff7df2534dd84d5037ca923efd}\label{lexer_8h_aae8a2dff7df2534dd84d5037ca923efd} 
+\index{lexer.h@{lexer.h}!lexer\_get\_token\_content@{lexer\_get\_token\_content}}
+\index{lexer\_get\_token\_content@{lexer\_get\_token\_content}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{lexer\_get\_token\_content()}{lexer\_get\_token\_content()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} lexer\+\_\+get\+\_\+token\+\_\+content (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df3/lexer_8h_aae8a2dff7df2534dd84d5037ca923efd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer_8h_a2ebd5d8b3daca0bdb11b5cfe08268824}\label{lexer_8h_a2ebd5d8b3daca0bdb11b5cfe08268824} 
+\index{lexer.h@{lexer.h}!lexer\_get\_token\_type@{lexer\_get\_token\_type}}
+\index{lexer\_get\_token\_type@{lexer\_get\_token\_type}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{lexer\_get\_token\_type()}{lexer\_get\_token\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} lexer\+\_\+get\+\_\+token\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df3/lexer_8h_a2ebd5d8b3daca0bdb11b5cfe08268824_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer_8h_a517e2a4ae754383a5954a92a9e593102}\label{lexer_8h_a517e2a4ae754383a5954a92a9e593102} 
+\index{lexer.h@{lexer.h}!lexer\_is\_token\_type@{lexer\_is\_token\_type}}
+\index{lexer\_is\_token\_type@{lexer\_is\_token\_type}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{lexer\_is\_token\_type()}{lexer\_is\_token\_type()}}
+{\footnotesize\ttfamily bool lexer\+\_\+is\+\_\+token\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token,  }\item[{\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df3/lexer_8h_a517e2a4ae754383a5954a92a9e593102_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df3/lexer_8h_a517e2a4ae754383a5954a92a9e593102_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{lexer_8h_a4bfce5ffa605cc5bb32062712d702198}\label{lexer_8h_a4bfce5ffa605cc5bb32062712d702198} 
@@ -158,10 +195,25 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{d5/df3/lexer_8h_a4bfce5ffa605cc5bb32062712d702198_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=347pt]{d5/df3/lexer_8h_a4bfce5ffa605cc5bb32062712d702198_icgraph}
+\includegraphics[width=350pt]{d5/df3/lexer_8h_a4bfce5ffa605cc5bb32062712d702198_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer_8h_abe2d3d3cdb04a9614c52e119e4d7c64d}\label{lexer_8h_abe2d3d3cdb04a9614c52e119e4d7c64d} 
+\index{lexer.h@{lexer.h}!print\_tokens@{print\_tokens}}
+\index{print\_tokens@{print\_tokens}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{print\_tokens()}{print\_tokens()}}
+{\footnotesize\ttfamily void print\+\_\+tokens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{d5/df3/lexer_8h_abe2d3d3cdb04a9614c52e119e4d7c64d_cgraph}
 \end{center}
 \end{figure}

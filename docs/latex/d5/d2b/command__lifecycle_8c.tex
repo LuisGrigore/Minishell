@@ -1,0 +1,86 @@
+\doxysection{src/command/command\+\_\+lifecycle.c File Reference}
+\hypertarget{command__lifecycle_8c}{}\label{command__lifecycle_8c}\index{src/command/command\_lifecycle.c@{src/command/command\_lifecycle.c}}
+{\ttfamily \#include "{}command\+\_\+internal.\+h"{}}\newline
+Include dependency graph for command\+\_\+lifecycle.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/command__lifecycle_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{command__lifecycle_8c_a527646ae11a157773c11c7836bed583e}{command\+\_\+create}} (char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Creates a new command structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command__lifecycle_8c_acf24c1b5ff2095e586b1b28ef93b16ef}{command\+\_\+destroy}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command)
+\begin{DoxyCompactList}\small\item\em Destroys a command structure and frees memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{command__lifecycle_8c_a527646ae11a157773c11c7836bed583e}\label{command__lifecycle_8c_a527646ae11a157773c11c7836bed583e} 
+\index{command\_lifecycle.c@{command\_lifecycle.c}!command\_create@{command\_create}}
+\index{command\_create@{command\_create}!command\_lifecycle.c@{command\_lifecycle.c}}
+\doxysubsubsection{\texorpdfstring{command\_create()}{command\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} command\+\_\+create (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Creates a new command structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created command. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d5/d2b/command__lifecycle_8c_a527646ae11a157773c11c7836bed583e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2b/command__lifecycle_8c_a527646ae11a157773c11c7836bed583e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{command__lifecycle_8c_acf24c1b5ff2095e586b1b28ef93b16ef}\label{command__lifecycle_8c_acf24c1b5ff2095e586b1b28ef93b16ef} 
+\index{command\_lifecycle.c@{command\_lifecycle.c}!command\_destroy@{command\_destroy}}
+\index{command\_destroy@{command\_destroy}!command\_lifecycle.c@{command\_lifecycle.c}}
+\doxysubsubsection{\texorpdfstring{command\_destroy()}{command\_destroy()}}
+{\footnotesize\ttfamily void command\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})}
+
+
+
+Destroys a command structure and frees memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to the command to destroy. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2b/command__lifecycle_8c_acf24c1b5ff2095e586b1b28ef93b16ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2b/command__lifecycle_8c_acf24c1b5ff2095e586b1b28ef93b16ef_icgraph}
+\end{center}
+\end{figure}

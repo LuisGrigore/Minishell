@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:45:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 17:23:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:59:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 #include "../external/libft/libft.h"
 #include <stdlib.h>
 
+
+struct s_token
+{
+	t_token_type	type;
+	char			*value;
+};
 
 t_token *create_token(t_token_type type, char *value);
 void destroy_token(t_token *token);

@@ -1,7 +1,8 @@
-\doxysection{parser/parser.c File Reference}
-\hypertarget{parser_8c}{}\label{parser_8c}\index{parser/parser.c@{parser/parser.c}}
+\doxysection{src/parser/parser.c File Reference}
+\hypertarget{parser_8c}{}\label{parser_8c}\index{src/parser/parser.c@{src/parser/parser.c}}
 {\ttfamily \#include "{}parser\+\_\+internal.\+h"{}}\newline
-Include dependency graph for parser.\+c\+:\nopagebreak
+Include dependency graph for parser.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,6 +13,8 @@ Include dependency graph for parser.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser_8c_ae411b47cf3a6fe75994d31c5574c60ce}{parse\+\_\+tokens\+\_\+to\+\_\+commands}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
+\item 
+void \mbox{\hyperlink{parser_8c_a4f53155213d3a8705691b8cc5d483a5d}{print\+\_\+commands}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
 \item 
 \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser_8c_a371904874bcb2b8fc0d621fd3932bb82}{parse\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line)
 \end{DoxyCompactItemize}
@@ -24,18 +27,20 @@ Include dependency graph for parser.\+c\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{parse\_line()}{parse\_line()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} parse\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{d2/d72/parser_8c_a371904874bcb2b8fc0d621fd3932bb82_cgraph}
+\includegraphics[width=350pt]{d2/d72/parser_8c_a371904874bcb2b8fc0d621fd3932bb82_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=224pt]{d2/d72/parser_8c_a371904874bcb2b8fc0d621fd3932bb82_icgraph}
+\includegraphics[width=338pt]{d2/d72/parser_8c_a371904874bcb2b8fc0d621fd3932bb82_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{parser_8c_ae411b47cf3a6fe75994d31c5574c60ce}\label{parser_8c_ae411b47cf3a6fe75994d31c5574c60ce} 
@@ -44,17 +49,33 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{parse\_tokens\_to\_commands()}{parse\_tokens\_to\_commands()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} parse\+\_\+tokens\+\_\+to\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d2/d72/parser_8c_ae411b47cf3a6fe75994d31c5574c60ce_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d2/d72/parser_8c_ae411b47cf3a6fe75994d31c5574c60ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{parser_8c_a4f53155213d3a8705691b8cc5d483a5d}\label{parser_8c_a4f53155213d3a8705691b8cc5d483a5d} 
+\index{parser.c@{parser.c}!print\_commands@{print\_commands}}
+\index{print\_commands@{print\_commands}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{print\_commands()}{print\_commands()}}
+{\footnotesize\ttfamily void print\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d72/parser_8c_a4f53155213d3a8705691b8cc5d483a5d_cgraph}
 \end{center}
 \end{figure}
