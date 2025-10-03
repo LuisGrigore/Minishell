@@ -1,8 +1,7 @@
 \doxysection{src/executer/executer.c File Reference}
 \hypertarget{executer_8c}{}\label{executer_8c}\index{src/executer/executer.c@{src/executer/executer.c}}
 {\ttfamily \#include "{}executer\+\_\+internal.\+h"{}}\newline
-Include dependency graph for executer.\+c\+:
-\nopagebreak
+Include dependency graph for executer.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,16 +38,14 @@ Executes a single command line, similar to how Bash interprets and runs commands
 \begin{DoxyReturn}{Returns}
 An integer representing the exit status of the executed command. By convention, 0 indicates success, while non-\/zero values indicate errors, similar to Bash’s return codes.
 \end{DoxyReturn}
-This function parses and executes the provided command line using the given state environment. Its behavior mimics that of the Bash shell when handling execution, redirections, and pipes, but it relies only on the provided state variables rather than a full environment. Here is the call graph for this function\+:
-\nopagebreak
+This function parses and executes the provided command line using the given state environment. Its behavior mimics that of the Bash shell when handling execution, redirections, and pipes, but it relies only on the provided state variables rather than a full environment. Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d7/d11/executer_8c_a18e60d48cf2841e0b47fd72bb4ab4c1d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

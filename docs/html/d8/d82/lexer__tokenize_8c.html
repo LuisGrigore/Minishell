@@ -149,6 +149,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Splits a raw command line into a list of tokens.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A null-terminated string containing the input command line.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a t_gen_list containing t_token* elements, or NULL if tokenization fails.</dd></dl>
+<p>Each token corresponds to a command, argument, or operator, as defined in t_token_type. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

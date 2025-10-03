@@ -1,8 +1,7 @@
 \doxysection{src/lexer/lexer\+\_\+life\+\_\+cycle.c File Reference}
 \hypertarget{lexer__life__cycle_8c}{}\label{lexer__life__cycle_8c}\index{src/lexer/lexer\_life\_cycle.c@{src/lexer/lexer\_life\_cycle.c}}
 {\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
-Include dependency graph for lexer\+\_\+life\+\_\+cycle.\+c\+:
-\nopagebreak
+Include dependency graph for lexer\+\_\+life\+\_\+cycle.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,8 +26,7 @@ void \mbox{\hyperlink{lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba}{l
 \doxysubsubsection{\texorpdfstring{create\_token()}{create\_token()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*} create\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}}]{type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -47,6 +45,13 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{lexer\_destroy()}{lexer\_destroy()}}
 {\footnotesize\ttfamily void lexer\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
 
+Frees all memory associated with a token list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & The token list returned by \doxylink{lexer_8h_a4bfce5ffa605cc5bb32062712d702198}{lexer\+\_\+tokenize()}. \\
+\hline
+\end{DoxyParams}
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -54,8 +59,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{d6/d0d/lexer__life__cycle_8c_ab257545d833c1636ae3c4c80651677ba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

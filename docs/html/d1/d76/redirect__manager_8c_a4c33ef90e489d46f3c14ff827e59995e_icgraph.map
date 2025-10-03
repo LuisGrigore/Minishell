@@ -1,9 +1,7 @@
 <map id="redirect_create" name="redirect_create">
-<area shape="rect" id="Node000001" title="Creates a new redirect structure." alt="" coords="883,35,1003,60"/>
+<area shape="rect" id="Node000001" title="Creates a new redirect structure." alt="" coords="883,5,1003,31"/>
 <area shape="rect" id="Node000002" href="$de/d8a/command__operations_8c.html#a1661f772d30dd0f52b9277ed320877d8" title="Adds a redirection to the command." alt="" coords="652,5,835,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="868,39,829,33,830,28,869,34"/>
-<area shape="rect" id="Node000007" href="$d5/d3f/redirect__manager__utils_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="671,55,816,95"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="869,60,817,68,816,63,868,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="869,21,835,21,835,15,869,15"/>
 <area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="397,5,604,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="638,21,604,21,604,15,638,15"/>
 <area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="260,5,349,31"/>

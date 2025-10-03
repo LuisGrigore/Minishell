@@ -10,8 +10,15 @@ void command_push_redirect(t_command *command, t_redirect_type redirect_type, ch
     gen_list_push_back(command->redirects, redirect_create(redirect_type, file_name));
 }
 
+static void redirect_execute_data(void *redirect_ptr)
+{
+	redirect_execute((t_redirect *) redirect_ptr);
+}
+
 //TODO :: Hacer que laas funciones de commando devuelvan un int para manejo de errores.
+//TODO :: Hacer que si hay redirects, redirija la entrada y salida del proceso al archivo adecuado
 int command_exec(t_command *command, t_gen_list *environment)
 {
+	gen_list_for_each(command->redirects, redirect_execute_data);
     command->command_funct(command, environment);
 }

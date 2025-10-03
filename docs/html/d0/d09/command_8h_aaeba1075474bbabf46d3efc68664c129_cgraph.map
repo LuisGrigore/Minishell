@@ -8,7 +8,7 @@
 <area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="130,115,361,114,361,120,130,120"/>
 <area shape="rect" id="Node000006" href="$d9/d6d/gen__link__list__predicates_8c.html#a2f7e656dcfadd2f1e532fb6fbf295f77" title="Check if the list is empty." alt="" coords="177,156,317,181"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="114,128,189,150,187,155,113,133"/>
-<area shape="rect" id="Node000007" href="$db/d1d/redirect__manager__debug_8c.html#a4f6d537ff6673d94cec55d0deb3d4297" title=" " alt="" coords="193,205,302,231"/>
+<area shape="rect" id="Node000007" href="$db/d1d/redirect__manager__debug_8c.html#a4f6d537ff6673d94cec55d0deb3d4297" title="Prints a redirect for debugging purposes." alt="" coords="193,205,302,231"/>
 <area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="86,129,126,159,179,192,192,198,190,203,176,196,123,164,82,133"/>
 <area shape="rect" id="Node000003" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="365,55,524,80"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="316,65,352,65,352,70,316,70"/>

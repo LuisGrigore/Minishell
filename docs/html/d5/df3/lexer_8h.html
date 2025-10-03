@@ -190,6 +190,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Opaque token structure representing a single lexical element in the parsed command line. </p>
 
 </div>
 </div>
@@ -204,6 +205,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Enumeration of all possible token types recognized by the lexer.</p>
+<p>TOKEN_CMD : A command name (e.g., "ls", "echo"). TOKEN_ARG : A command argument. TOKEN_PIPE : The pipe operator '|'. TOKEN_REDIR_IN : Input redirection '&lt;'. TOKEN_REDIR_OUT : Output redirection '&gt;'. TOKEN_REDIR_APPEND: Output append redirection '&gt;&gt;'. TOKEN_HEREDOC : Heredoc redirection '&lt;&lt;'. </p>
 
 </div>
 </div>
@@ -219,6 +222,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Enumeration of all possible token types recognized by the lexer.</p>
+<p>TOKEN_CMD : A command name (e.g., "ls", "echo"). TOKEN_ARG : A command argument. TOKEN_PIPE : The pipe operator '|'. TOKEN_REDIR_IN : Input redirection '&lt;'. TOKEN_REDIR_OUT : Output redirection '&gt;'. TOKEN_REDIR_APPEND: Output append redirection '&gt;&gt;'. TOKEN_HEREDOC : Heredoc redirection '&lt;&lt;'. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1" name="a76a354e93d720f05344590ec8aa222dea0c491ef1e69c174ed16ebe13b29f20b1"></a>TOKEN_CMD&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b" name="a76a354e93d720f05344590ec8aa222dea2f0d82aa399661419c91cc557230258b"></a>TOKEN_ARG&#160;</td><td class="fielddoc"></td></tr>
@@ -247,6 +252,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Frees all memory associated with a token list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tokens</td><td>The token list returned by <a class="el" href="../../d5/df3/lexer_8h.html#a4bfce5ffa605cc5bb32062712d702198">lexer_tokenize()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -291,6 +303,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Retrieves the string content of a given token.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>A pointer to the token.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the token's content string. The string is owned by the token and must not be freed directly. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -325,6 +345,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Retrieves the type of a given token.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>A pointer to the token.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The token's type (see t_token_type). </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -371,6 +399,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks if a token matches a given type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>A pointer to the token. </td></tr>
+    <tr><td class="paramname">type</td><td>The token type to check against.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the token's type matches the given type, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -415,6 +452,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Splits a raw command line into a list of tokens.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A null-terminated string containing the input command line.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a t_gen_list containing t_token* elements, or NULL if tokenization fails.</dd></dl>
+<p>Each token corresponds to a command, argument, or operator, as defined in t_token_type. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

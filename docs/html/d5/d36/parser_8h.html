@@ -150,6 +150,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Parses a raw command line string into a structured list of commands.</p>
+<p>This function is the high-level entry point for transforming user input into executable command objects. It performs the following steps:</p>
+<ol type="1">
+<li>Tokenizes the input string using.</li>
+<li>Converts the list of tokens into command objects.</li>
+<li>Cleans up the intermediate token list.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A null-terminated string containing the user input.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list (t_gen_list) of t_command* objects representing the parsed commands, or NULL if parsing fails at any stage.</dd></dl>
+<p>Example: Input: "ls -l | grep txt &gt; out.txt" Output: A list of two t_command structures:</p><ul>
+<li>Command 1: "ls" with argument "-l"</li>
+<li>Command 2: "grep" with argument "txt" and output redirection to "out.txt"</li>
+</ul>
+<p>The caller is responsible for destroying the returned command list using the appropriate cleanup function. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

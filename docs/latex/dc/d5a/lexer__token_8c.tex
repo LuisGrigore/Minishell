@@ -1,8 +1,7 @@
 \doxysection{src/lexer/lexer\+\_\+token.c File Reference}
 \hypertarget{lexer__token_8c}{}\label{lexer__token_8c}\index{src/lexer/lexer\_token.c@{src/lexer/lexer\_token.c}}
 {\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
-Include dependency graph for lexer\+\_\+token.\+c\+:
-\nopagebreak
+Include dependency graph for lexer\+\_\+token.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,8 +26,17 @@ bool \mbox{\hyperlink{lexer__token_8c_a517e2a4ae754383a5954a92a9e593102}{lexer\+
 \doxysubsubsection{\texorpdfstring{lexer\_get\_token\_content()}{lexer\_get\_token\_content()}}
 {\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} lexer\+\_\+get\+\_\+token\+\_\+content (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Retrieves the string content of a given token.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & A pointer to the token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the token\textquotesingle{}s content string. The string is owned by the token and must not be freed directly. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,8 +49,17 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{lexer\_get\_token\_type()}{lexer\_get\_token\_type()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} lexer\+\_\+get\+\_\+token\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Retrieves the type of a given token.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & A pointer to the token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The token\textquotesingle{}s type (see t\+\_\+token\+\_\+type). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -55,16 +72,26 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{lexer\_is\_token\_type()}{lexer\_is\_token\_type()}}
 {\footnotesize\ttfamily bool lexer\+\_\+is\+\_\+token\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{token,  }\item[{\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}}]{type }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Checks if a token matches a given type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & A pointer to the token. \\
+\hline
+{\em type} & The token type to check against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the token\textquotesingle{}s type matches the given type, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{dc/d5a/lexer__token_8c_a517e2a4ae754383a5954a92a9e593102_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

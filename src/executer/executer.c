@@ -6,14 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 19:19:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:27:39 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
 
 
-//TODO :: Hacer que si hay redirects, redirija la entrada y salida del proceso al archivo adecuado
 //TODO :: hacer que devuelva int con error y tal
 static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {
