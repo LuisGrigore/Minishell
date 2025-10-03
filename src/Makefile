@@ -1,0 +1,45 @@
+CC      = cc
+CFLAGS  = 
+INCLUDES =  -I./command -I./environment -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./include -I./lexer -I./parser -I./redirect
+
+OBJ_DIR = obj
+NAME    = minishell
+
+SRCS    = ./executer/pipe.c ./utils/ft_split2.0.c ./utils/path_utils.c ./redirect/redirect_asignation.c ./redirect/redirect_debug.c ./parser/parser.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./lexer/lexer_debug.c ./lexer/lexer_util.c ./lexer/lexer_life_cycle.c ./lexer/lexer_tokenize.c ./command/command.c ./command/find_command.c ./command/command_debug.c ./command/command_functs.c ./minishell.c 
+OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
+LINK_FLAGS = -lreadline -lncurses
+SUBSYSTEM_PATH = ./external/libft ./external/gen_list
+SUBSYSTEM_LIB  = ./external/libft/libft.a ./external/gen_list/gen_list.a
+
+all: subsystems $(NAME)
+
+subsystems:
+	@for dir in $(SUBSYSTEM_PATH); do \
+		$(MAKE) -C $$dir all; \
+	done
+
+$(NAME): $(OBJS) $(SUBSYSTEM_LIB)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LINK_FLAGS)
+
+$(OBJ_DIR)/%.o: %.c
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $@
+
+clean:
+	@for dir in $(SUBSYSTEM_PATH); do \
+		$(MAKE) -C $$dir clean; \
+	done
+	rm -rf $(OBJ_DIR)
+
+fclean: clean
+	@for dir in $(SUBSYSTEM_PATH); do \
+		$(MAKE) -C $$dir fclean; \
+	done
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re subsystems
