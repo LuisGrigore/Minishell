@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 15:09:13 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:52:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,6 @@
  * current line without exiting the shell.
  */
 void signals_init_interactive(void);
-
-/**
- * @brief Configures signals for command execution.
- * 
- * This function is used before executing an external command. It allows
- * the child process to receive signals like SIGINT and SIGQUIT normally,
- * while the parent shell can handle them appropriately.
- */
-void signals_init_execution(void);
 
 /**
  * @brief Configures signals for heredoc mode.

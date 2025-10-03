@@ -6,74 +6,20 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 17:20:09 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:10:41 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/executer.h"
 #include "include/environment.h"
+#include "include/signal_manager.h"
+#include "include/history_manager.h"
 # include "external/gen_list/gen_list.h"
 #include "external/libft/libft.h"
 
-#include "include/util.h"
-
-#include "readline/history.h"
 #include "readline/readline.h"
-#include <signal.h>
 #include <stdbool.h>
-#include <unistd.h>
 
-volatile sig_atomic_t	g_signal = 0;
-
-static char	*history_checker(char *cmd)
-{
-	int	i;
-
-	i = 0;
-	if (cmd[0] == '|' || cmd[ft_strlen(cmd)] == '|')
-	{
-		add_history(cmd);
-		return (NULL);
-	}
-	while (cmd[i])
-	{
-		if (ft_ispace(cmd[i]) == 0)
-			break ;
-		i++;
-	}
-	if (cmd[i] == '\0')
-		return (NULL);
-	return (cmd);
-}
-
-char	*check_cmd(char *cmd)
-{
-	int	i;
-	int	b;
-
-	b = 0;
-	i = 0;
-	if (history_checker(cmd) == NULL)
-		return (NULL);
-	while (cmd[i])
-	{
-		if (cmd[i] == '"')
-			b = 1;
-		i++;
-		while (cmd[i] && b == 1)
-		{
-			if (cmd[i] == '"')
-				b = 0;
-			i++;
-		}
-	}
-	if (b != 0)
-	{
-		add_history(cmd);
-		return (NULL);
-	}
-	return (cmd);
-}
 
 char	*get_line_tag(t_gen_list *env)
 {
@@ -88,61 +34,31 @@ char	*get_line_tag(t_gen_list *env)
 	return (line_tag);
 }
 
-void	sigint_handler(int sig)
-{
-	(void)sig;
-	g_signal = SIGINT;
-	write(1, "\n", 1);
-	rl_on_new_line();
-	rl_replace_line("", 0);
-	rl_redisplay();
-}
-
-void	signals_init(void)
-{
-	struct sigaction	sa_int;
-	struct sigaction	sa_quit;
-
-	sa_int.sa_handler = sigint_handler;
-	sigemptyset(&sa_int.sa_mask);
-	sa_int.sa_flags = SA_RESTART;
-	sigaction(SIGINT, &sa_int, NULL);
-	sa_quit.sa_handler = SIG_IGN;
-	sigemptyset(&sa_quit.sa_mask);
-	sa_quit.sa_flags = SA_RESTART;
-	sigaction(SIGQUIT, &sa_quit, NULL);
-}
-
 int	main(int args, char **environment_var_str_array)
 {
 	t_gen_list	*envioroment_vars;
 	bool		finish;
 	char		*line;
-	char		*name;
 
 	if (args > 1)
 		exit(0);
-	signals_init();
+	signals_init_interactive();
 	envioroment_vars = env_deserialize(environment_var_str_array
 			+ 2);
-	name = get_line_tag(envioroment_vars);
 	finish = false;
 	while (!finish)
 	{
-		line = readline(name);
+		line = readline(get_line_tag(envioroment_vars));
 		if ((ft_strlen(line) != 0 && ft_strncmp(line, "exit",
 					ft_strlen(line)) == 0) || line == NULL)
 			finish = true;
 		else if (ft_strlen(line) != 0)
 		{
-			if (check_cmd(line) == NULL)
-				continue ;
-			add_history(line);
+			history_add(line);
 			execute_line(line, envioroment_vars);
 		}
 		free(line);
 		line = NULL;
 	}
 	env_destroy(envioroment_vars);
-	free(name);
 }
