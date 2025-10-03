@@ -14,6 +14,11 @@ t_command	*init_command(t_gen_list *args, t_command_funct funct,
 	return (new_command);
 }
 
+static void redirect_destroy_data(void *redirect_ptr)
+{
+	redirect_destroy((t_redirect *) redirect_ptr);
+}
+
 void	destroy_command(void *command_to_delete)
 {
 	t_command	*command;
@@ -22,7 +27,7 @@ void	destroy_command(void *command_to_delete)
 	if (command->args)
 		gen_list_destroy(command->args, free);
 	if (command->redirects)
-		gen_list_destroy(command->redirects, destroy_redirect);
+		gen_list_destroy(command->redirects, redirect_destroy_data);
 	;
 	free(command);
 }

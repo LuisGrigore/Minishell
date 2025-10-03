@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:57:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 14:57:14 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 15:16:55 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "../include/util.h"
 # include "../external/gen_list/gen_list.h"
 #include "../external/libft/libft.h"
-# include "../include/redirect.h"
+# include "../include/redirect_manager.h"
 #include <signal.h>
 #include <stdlib.h>
 

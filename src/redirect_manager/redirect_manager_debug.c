@@ -1,4 +1,4 @@
-#include "redirect_internal.h"
+#include "redirect_manager_internal.h"
 #include <stdio.h>
 
 void print_redirect(void *redir_ptr)
