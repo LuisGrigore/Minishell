@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipe.c                                             :+:      :+:    :+:   */
+/*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 16:57:40 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:12:56 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "fcntl.h"
-# include "sys/wait.h"
-# include "unistd.h"
-#include "../external/libft/libft.h"
-#include "readline/readline.h"
-# include "../external/gen_list/gen_list.h"
-#include "../include/command.h"
-#include "../include/executer.h"
+#include "executer_internal.h"
 
 
-void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
+//TODO :: Hacer que si hay redirects, redirija la entrada y salida del proceso al archivo adecuado
+//TODO :: hacer que devuelva int con error y tal
+static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {
     size_t n = gen_list_get_size(commands);
     int (*pipes)[2] = NULL;
@@ -88,4 +83,22 @@ void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     gen_list_iter_destroy(it);
     free(pids);
     free(pipes);
+}
+
+static void command_destroy_data(void *command_ptr)
+{
+	command_destroy((t_command *) command_ptr);
+}
+
+int execute_line(char *line, t_gen_list *env)
+{
+	t_gen_list *commands;
+
+	commands = parse_line(line);
+	if(!commands)
+	//TODO :: crear codigos de error adecuados
+		return(-1);
+	execute_commands_with_pipes(commands, env);
+	gen_list_destroy(commands, command_destroy_data);
+	return (0);
 }
