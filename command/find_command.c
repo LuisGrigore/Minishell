@@ -6,13 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:33:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:02:32 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/01 20:49:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bin_commandss_execution.h"
 #include "../external/libft/libft.h"
 #include "unistd.h"
+#include "command_internal.h"
 
 static char	*get_final_path(char *path, char *cmd)
 {

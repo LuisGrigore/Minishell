@@ -5,7 +5,7 @@ INCLUDES =  -I./command -I./command/include -I./command/redirect -I./environment
 OBJ_DIR = obj
 NAME    = minishell
 
-SRCS    = ./executer/find_command.c ./executer/pipe.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/lexer/lexer_util.c ./parser/lexer/lexer_life_cycle.c ./parser/lexer/lexer_tokenize.c ./parser/parser.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./command/command.c ./command/redirect/redirect_asignation.c ./command/redirect.c ./command/command_functs.c ./minishell.c 
+SRCS    = ./executer/pipe.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/lexer/lexer_util.c ./parser/lexer/lexer_life_cycle.c ./parser/lexer/lexer_tokenize.c ./parser/parser.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./command/command.c ./command/redirect/redirect_asignation.c ./command/find_command.c ./command/command_functs.c ./minishell.c 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 LINK_FLAGS = -lreadline -lncurses
 SUBSYSTEM_PATH = ./external/libft ./external/gen_list
