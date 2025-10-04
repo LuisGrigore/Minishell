@@ -6,11 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 19:27:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 13:00:21 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
+
+#include <stdio.h>
 
 
 //TODO :: hacer que devuelva int con error y tal
@@ -80,6 +82,11 @@ int execute_line(char *line, t_gen_list *env)
 	if(!commands)
 	//TODO :: crear codigos de error adecuados
 		return(-1);
+	if (gen_list_get_size(commands) == 1 && command_is_built_in((t_command *) gen_list_peek_top(commands)))
+	{
+		command_exec((t_command *) gen_list_peek_top(commands), env);
+		return(0);
+	}
 	execute_commands_with_pipes(commands, env);
 	gen_list_destroy(commands, command_destroy_data);
 	return (0);
