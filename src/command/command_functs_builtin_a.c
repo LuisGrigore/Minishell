@@ -3,30 +3,27 @@
 
 void export_execute(t_command *command, t_gen_list *envioroment)
 {
-    // // t_gen_list_iter *it;
-    // char **new_variable;
-    // // char *arg;
+    t_gen_list_iter *it;
+    char *arg;
+	char **new_variable;
 
-    // // if (!command || !command->args || gen_list_is_empty(command->args)|| !envioroment)
-    // //     return;
-    // // it = gen_list_iter_start(command->args);
-    // // if (!it)
-    // //     return;
-    // // arg = gen_list_iter_next(it);
-    // // arg = gen_list_iter_next(it);
-    // // gen_list_iter_destroy(it);
-    // // if (!arg)
-    // //     return;
-    // //new_variable = ft_split2((char *)gen_list_peek_top(command->args), '=');
-    // // if (!new_variable || !new_variable[0] || !new_variable[1])
-    // //     return;
-    // // env_set(envioroment, new_variable[0], new_variable[1]);
-    // // for (size_t i = 0; i < 2; i++)
-    // //     free(new_variable[i]);
-    // // free(new_variable);
-	// printf("%s", (char *)gen_list_peek_top(command->args));
-	env_set(envioroment, "A", "echo");
-	printf("%s",(char*)env_get(envioroment,"A"));
+    if (!command || !command->args || gen_list_is_empty(command->args)|| !envioroment)
+        return;
+    it = gen_list_iter_start(command->args);
+    if (!it)
+        return;
+    arg = gen_list_iter_next(it);
+    arg = gen_list_iter_next(it);
+    gen_list_iter_destroy(it);
+    if (!arg)
+        return;
+    new_variable = ft_split2((char *)gen_list_peek_top(command->args), '=');
+    if (!new_variable || !new_variable[0] || !new_variable[1])
+        return;
+    env_set(envioroment, new_variable[0], new_variable[1]);
+    for (size_t i = 0; i < 2; i++)
+        free(new_variable[i]);
+    free(new_variable);
 }
 void unset_execute(t_command *command, t_gen_list *envioroment)
 {

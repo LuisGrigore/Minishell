@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 19:11:08 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 15:27:17 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,43 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
         return NULL;
 
     t_command *current_cmd = NULL;
-
     t_gen_list_iter *it = gen_list_iter_start(tokens);
     t_token *tok;
 
     while ((tok = (t_token *)gen_list_iter_next(it)) != NULL)
     {
+        // Caso: encontramos un comando
         if (lexer_is_token_type(tok, TOKEN_CMD))
         {
-            current_cmd = command_create(ft_strdup(lexer_get_token_content(tok)));
+            // Si aún no había comando, creamos uno
             if (!current_cmd)
-                goto error;
-            size_t len = ft_strlen(lexer_get_token_content(tok));
-            char *arg_copy = malloc(len + 1);
+            {
+                current_cmd = command_create(ft_strdup(lexer_get_token_content(tok)));
+                if (!current_cmd)
+                    goto error;
+            }
+            // Añadimos como primer argumento el propio comando
+            char *arg_copy = ft_strdup(lexer_get_token_content(tok));
             if (!arg_copy)
                 goto error;
-            ft_strlcpy(arg_copy, lexer_get_token_content(tok), len + 1);
-
             command_push_arg(current_cmd, arg_copy);
         }
-        else if (lexer_is_token_type(tok,TOKEN_ARG))
+        // Caso: argumento normal
+        else if (lexer_is_token_type(tok, TOKEN_ARG))
         {
             if (!current_cmd)
-                goto error;
-
-            size_t len = ft_strlen(lexer_get_token_content(tok));
-            char *arg_copy = malloc(len + 1);
+            {
+                // bash trata un arg al inicio como comando implícito?
+                current_cmd = command_create(NULL);
+                if (!current_cmd)
+                    goto error;
+            }
+            char *arg_copy = ft_strdup(lexer_get_token_content(tok));
             if (!arg_copy)
                 goto error;
-            ft_strlcpy(arg_copy, lexer_get_token_content(tok), len + 1);
-
             command_push_arg(current_cmd, arg_copy);
         }
+        // Caso: pipe -> cerramos comando actual y lo guardamos
         else if (lexer_is_token_type(tok,TOKEN_PIPE))
         {
             if (!current_cmd)
@@ -63,17 +68,22 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             gen_list_push_back(commands, current_cmd);
             current_cmd = NULL;
         }
-		else if (lexer_is_token_type(tok, TOKEN_REDIR_IN)     ||
-		         lexer_is_token_type(tok, TOKEN_REDIR_OUT)    ||
-		         lexer_is_token_type(tok, TOKEN_REDIR_APPEND) ||
-		         lexer_is_token_type(tok, TOKEN_HEREDOC))
+        // Caso: redirect
+        else if (lexer_is_token_type(tok, TOKEN_REDIR_IN)     ||
+                 lexer_is_token_type(tok, TOKEN_REDIR_OUT)    ||
+                 lexer_is_token_type(tok, TOKEN_REDIR_APPEND) ||
+                 lexer_is_token_type(tok, TOKEN_HEREDOC))
         {
-            t_token *file_tok = (t_token *)gen_list_iter_next(it);
-            if (!file_tok || !lexer_is_token_type(file_tok, TOKEN_ARG) || !current_cmd)
-                goto error;
+            // Si todavía no existe comando, creamos uno "vacío"
+            if (!current_cmd)
+            {
+                current_cmd = command_create(NULL);
+                if (!current_cmd)
+                    goto error;
+            }
 
             t_redirect_type r_type = NONE;
-            if (lexer_is_token_type(tok, TOKEN_REDIR_IN) )
+            if (lexer_is_token_type(tok, TOKEN_REDIR_IN))
                 r_type = LEFT_REDIRECT;
             else if (lexer_is_token_type(tok, TOKEN_REDIR_OUT))
                 r_type = RIGHT_REDIRECT;
@@ -82,13 +92,29 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
             else if (lexer_is_token_type(tok, TOKEN_HEREDOC))
                 r_type = DOUBLE_LEFT_REDIRECT;
 
-            command_push_redirect(current_cmd, r_type, lexer_get_token_content(file_tok));
+            // mirar el siguiente token como target (puede ser NULL)
+			t_token *file_tok = (t_token *)gen_list_iter_next(it);
+            char *redir_target = NULL;
+            if (file_tok && lexer_is_token_type(file_tok, TOKEN_ARG))
+                redir_target = lexer_get_token_content(file_tok);
+			if (!command_get_name(current_cmd))
+			{
+				char *name_aux = lexer_get_token_content((t_token *)gen_list_iter_next(it));
+				t_command *new_cmd = command_create(name_aux);
+				t_command *old_cmd = current_cmd;
+				current_cmd = new_cmd;
+				command_destroy(old_cmd);
+				old_cmd = NULL;
+				command_push_arg(current_cmd, name_aux);
+				command_push_redirect(current_cmd, r_type, redir_target);
+			}
+			else
+            	command_push_redirect(current_cmd, r_type, redir_target);
         }
     }
 
     if (current_cmd)
         gen_list_push_back(commands, current_cmd);
-
     gen_list_iter_destroy(it);
     return commands;
 
@@ -123,7 +149,7 @@ t_gen_list *parse_line(char *line)
 	tokens = lexer_tokenize(line);
 	if(!tokens)
 		return NULL;
-	
+	//print_tokens(tokens);
 	commands = parse_tokens_to_commands(tokens);
 	if(!commands)
 	{
@@ -131,5 +157,6 @@ t_gen_list *parse_line(char *line)
 		return (NULL);
 	}
 	lexer_destroy(tokens);
+	//print_commands(commands);
 	return (commands);
 }

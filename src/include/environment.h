@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 21:01:15 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 14:47:41 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,31 @@ char						*env_get(t_gen_list *env, char *name);
  */
 bool						env_has(t_gen_list *env, char *name);
 
+/**
+ * Expands environment variables in a given string.
+ *
+ * This function scans the input `line` for environment variable references
+ * prefixed with `$` and replaces them with their corresponding values from
+ * the provided environment list `env`. The resulting string preserves other
+ * characters as-is and handles multiple variable expansions in the same line.
+ *
+ * Example:
+ *   If `line` is "Hello $USER" and the environment has USER="Alice",
+ *   the function will return "Hello Alice".
+ *
+ * @param env Pointer to a t_env_var list representing the environment.
+ * @see t_env_var
+ *
+ * @param line Pointer to a null-terminated string that may contain
+ *             environment variable references to expand.
+ *
+ * @return A newly allocated string with all recognized environment variables
+ *         expanded. Returns NULL if `line` is NULL. The caller is responsible
+ *         for freeing the returned string.
+ *
+ * @note This function handles only simple variable expansions (e.g., $VAR)
+ *       and does not process complex shell syntax like ${VAR}.
+ */
 char *env_expand_vars(t_gen_list *env, char *line);
 
 #endif

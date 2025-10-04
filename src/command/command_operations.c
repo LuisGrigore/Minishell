@@ -1,4 +1,6 @@
 #include "command_internal.h"
+#include "unistd.h"
+
 
 void command_push_arg(t_command *command, char *arg)
 {
@@ -12,13 +14,26 @@ void command_push_redirect(t_command *command, t_redirect_type redirect_type, ch
 
 static void redirect_execute_data(void *redirect_ptr)
 {
-	redirect_execute((t_redirect *) redirect_ptr);
+
+	t_redirect *redirect = (t_redirect *) redirect_ptr;
+	redirect_execute(redirect);
 }
 
 //TODO :: Hacer que laas funciones de commando devuelvan un int para manejo de errores.
-//TODO :: Hacer que si hay redirects, redirija la entrada y salida del proceso al archivo adecuado
 int command_exec(t_command *command, t_gen_list *environment)
 {
-	gen_list_for_each(command->redirects, redirect_execute_data);
+    int stdin_backup = dup(STDIN_FILENO);
+    int stdout_backup = dup(STDOUT_FILENO);
+
+    gen_list_for_each(command->redirects, redirect_execute_data);
     command->command_funct(command, environment);
+
+    // Restauramos stdin y stdout ANTES de borrar
+    dup2(stdin_backup, STDIN_FILENO);
+    dup2(stdout_backup, STDOUT_FILENO);
+
+    close(stdin_backup);
+    close(stdout_backup);
+
+    return 0;
 }

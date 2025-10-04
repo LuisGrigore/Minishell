@@ -9,7 +9,8 @@ Include dependency graph for environment.\+h\+:\nopagebreak
 \includegraphics[width=246pt]{da/d65/environment_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,7 +38,9 @@ char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{envir
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment_8h_ae6e591b367378e4765abb31a480eb9c3}{env\+\_\+get}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}name)
 \begin{DoxyCompactList}\small\item\em Get the value of an environment variable by name. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{environment_8h_acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9}{env\+\_\+has}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}name)
-\begin{DoxyCompactList}\small\item\em Check if an environment variable exists by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if an environment variable exists by name. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment_8h_a11ca2b9b5f44c8a4b33e6470b6404705}{env\+\_\+expand\+\_\+vars}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}line)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -131,6 +134,53 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=234pt]{de/d26/environment_8h_ae4211ec5d85586513118f0d5e787347d_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{environment_8h_a11ca2b9b5f44c8a4b33e6470b6404705}\label{environment_8h_a11ca2b9b5f44c8a4b33e6470b6404705} 
+\index{environment.h@{environment.h}!env\_expand\_vars@{env\_expand\_vars}}
+\index{env\_expand\_vars@{env\_expand\_vars}!environment.h@{environment.h}}
+\doxysubsubsection{\texorpdfstring{env\_expand\_vars()}{env\_expand\_vars()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} env\+\_\+expand\+\_\+vars (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
+
+Expands environment variables in a given string.
+
+This function scans the input {\ttfamily line} for environment variable references prefixed with {\ttfamily \$} and replaces them with their corresponding values from the provided environment list {\ttfamily env}. The resulting string preserves other characters as-\/is and handles multiple variable expansions in the same line.
+
+Example\+: If {\ttfamily line} is "{}\+Hello \$\+USER"{} and the environment has USER="{}\+Alice"{}, the function will return "{}\+Hello Alice"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & Pointer to a t\+\_\+env\+\_\+var list representing the environment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Pointer to a null-\/terminated string that may contain environment variable references to expand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly allocated string with all recognized environment variables expanded. Returns NULL if {\ttfamily line} is NULL. The caller is responsible for freeing the returned string.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function handles only simple variable expansions (e.\+g., \$\+VAR) and does not process complex shell syntax like \$\{VAR\}. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d26/environment_8h_a11ca2b9b5f44c8a4b33e6470b6404705_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{de/d26/environment_8h_a11ca2b9b5f44c8a4b33e6470b6404705_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{environment_8h_ae6e591b367378e4765abb31a480eb9c3}\label{environment_8h_ae6e591b367378e4765abb31a480eb9c3} 
 \index{environment.h@{environment.h}!env\_get@{env\_get}}
 \index{env\_get@{env\_get}!environment.h@{environment.h}}
@@ -169,7 +219,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{de/d26/environment_8h_ae6e591b367378e4765abb31a480eb9c3_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

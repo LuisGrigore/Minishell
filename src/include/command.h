@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/04 12:41:06 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 14:43:30 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,29 @@ void command_destroy(t_command *command);
 ** ============================================================
 */
 
+/**
+ * Checks whether a given command is a built-in shell command.
+ *
+ * A built-in command is executed directly by the shell.
+ *
+ * @param command Pointer to a t_command structure representing
+ *        the command to be checked.
+ *@see t_command
+ * @return true if the command is built-in, false otherwise.
+ */
 bool command_is_built_in(t_command *command);
+
+/**
+ * Retrieves the name of the given command.
+ *
+ * @param command Pointer to a t_command structure representing
+ *        the command whose name should be retrieved.
+ *
+ * @return A pointer to a null-terminated string containing the
+ *         command name. The caller should not modify or free this
+ *         string unless explicitly documented in the implementation.
+ */
+char *command_get_name(t_command *command);
 
 /* ============================================================
 **  Command Operations

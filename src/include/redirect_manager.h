@@ -68,17 +68,18 @@ void redirect_destroy(t_redirect *redirect);
 */
 
 /**
- * @brief Executes a redirect in the current process context.
- * 
- * Applies the redirection according to its type:
- *   - Input redirection opens the file for reading and replaces STDIN.
- *   - Output redirection opens the file for writing (truncate/append) and replaces STDOUT.
- *   - Heredoc creates a temporary input from the given delimiter.
- * 
- * @param redirect Pointer to the redirect structure.
- * @return 0 on success, -1 on error (e.g., file not found, permission denied).
+ * @brief Executes a redirection operation.
+ *
+ *
+ * @param redirect Pointer to a t_redirect.
+ * @see t_redirect
+ *
+ * @return 
+ *         0 if the redirection was executed successfully.
+ *        -1 if an error occurred during redirection.
  */
 int redirect_execute(t_redirect *redirect);
+
 
 /* ============================================================
 **  Debug
