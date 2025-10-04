@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/04 13:00:21 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 17:08:00 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     gen_list_iter_destroy(it);
     free(pids);
     pipe_manager_destroy(pm);
+	//Borra el archivo temporal despues de haber esperado a los procesos hijos
+    unlink("minishell_temp") == -1;
 }
 
 static void command_destroy_data(void *command_ptr)

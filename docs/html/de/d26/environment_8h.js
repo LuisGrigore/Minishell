@@ -3,6 +3,7 @@ var environment_8h =
     [ "t_env_var", "de/d26/environment_8h.html#acf492e955776c85b7354a3f5ee5f3215", null ],
     [ "env_deserialize", "de/d26/environment_8h.html#a5da2d3c514cffffe7e48122742dd4d44", null ],
     [ "env_destroy", "de/d26/environment_8h.html#ae4211ec5d85586513118f0d5e787347d", null ],
+    [ "env_expand_vars", "de/d26/environment_8h.html#a11ca2b9b5f44c8a4b33e6470b6404705", null ],
     [ "env_get", "de/d26/environment_8h.html#ae6e591b367378e4765abb31a480eb9c3", null ],
     [ "env_has", "de/d26/environment_8h.html#acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9", null ],
     [ "env_serialize", "de/d26/environment_8h.html#a562e5d4f7de17fdbeea11feecda2ebc3", null ],

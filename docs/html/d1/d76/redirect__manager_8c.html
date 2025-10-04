@@ -96,35 +96,40 @@ $(document).ready(function(){initNavTree('d1/d76/redirect__manager_8c.html','../
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d8/d39/redirect__manager__internal_8h_source.html">redirect_manager_internal.h</a>&quot;</code><br />
+<code>#include &quot;readline/readline.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for redirect_manager.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d02/redirect__manager_8c__incl.png" border="0" usemap="#asrc_2redirect__manager_2redirect__manager_8c" alt=""/></div>
 <map name="asrc_2redirect__manager_2redirect__manager_8c" id="asrc_2redirect__manager_2redirect__manager_8c">
-<area shape="rect" title=" " alt="" coords="339,5,499,45"/>
-<area shape="rect" href="../../d8/d39/redirect__manager__internal_8h.html" title=" " alt="" coords="245,93,452,119"/>
-<area shape="poly" title=" " alt="" coords="404,47,370,85,366,81,400,44"/>
+<area shape="rect" title=" " alt="" coords="506,5,666,45"/>
+<area shape="rect" href="../../d8/d39/redirect__manager__internal_8h.html" title=" " alt="" coords="293,93,500,119"/>
+<area shape="poly" title=" " alt="" coords="542,48,438,90,436,85,540,43"/>
+<area shape="rect" title=" " alt="" coords="436,343,507,368"/>
+<area shape="poly" title=" " alt="" coords="595,45,607,92,617,157,618,193,614,229,605,264,590,296,576,313,559,326,521,344,519,340,556,322,572,309,585,293,600,262,609,228,612,193,612,158,602,93,590,46"/>
 <area shape="rect" title=" " alt="" coords="509,262,575,287"/>
-<area shape="poly" title=" " alt="" coords="435,44,466,92,506,177,535,248,530,250,502,179,461,95,431,47"/>
-<area shape="rect" href="../../d2/dcf/redirect__manager_8h.html" title=" " alt="" coords="60,167,195,207"/>
-<area shape="poly" title=" " alt="" coords="317,121,194,165,192,160,316,116"/>
-<area shape="rect" href="../../d6/d7e/libft_8h.html" title=" " alt="" coords="269,174,428,199"/>
-<area shape="poly" title=" " alt="" coords="351,119,351,160,346,160,346,119"/>
+<area shape="poly" title=" " alt="" coords="585,46,549,249,544,248,580,45"/>
+<area shape="rect" title=" " alt="" coords="650,93,794,119"/>
+<area shape="poly" title=" " alt="" coords="620,43,691,84,689,89,617,48"/>
+<area shape="rect" href="../../d2/dcf/redirect__manager_8h.html" title=" " alt="" coords="84,167,219,207"/>
+<area shape="poly" title=" " alt="" coords="362,121,224,165,223,160,360,116"/>
+<area shape="rect" href="../../d6/d7e/libft_8h.html" title=" " alt="" coords="317,174,476,199"/>
+<area shape="poly" title=" " alt="" coords="399,119,399,160,394,160,394,119"/>
 <area shape="rect" href="../../d3/d09/gen__list_8h.html" title=" " alt="" coords="5,255,148,295"/>
-<area shape="poly" title=" " alt="" coords="118,208,97,244,93,241,114,206"/>
+<area shape="poly" title=" " alt="" coords="137,209,104,246,100,242,133,205"/>
 <area shape="rect" title=" " alt="" coords="35,343,118,368"/>
 <area shape="poly" title=" " alt="" coords="79,295,79,329,74,329,74,295"/>
-<area shape="rect" title=" " alt="" coords="147,343,217,368"/>
-<area shape="poly" title=" " alt="" coords="104,293,157,332,154,336,101,297"/>
-<area shape="poly" title=" " alt="" coords="305,202,256,223,233,238,213,256,202,273,194,292,186,329,181,328,189,291,198,271,209,253,230,233,254,218,303,197"/>
-<area shape="rect" title=" " alt="" coords="224,262,287,287"/>
-<area shape="poly" title=" " alt="" coords="338,201,280,254,276,250,334,198"/>
-<area shape="rect" title=" " alt="" coords="311,262,386,287"/>
-<area shape="poly" title=" " alt="" coords="351,200,351,248,346,248,346,200"/>
-<area shape="poly" title=" " alt="" coords="376,197,504,254,502,259,374,202"/>
-<area shape="rect" title=" " alt="" coords="410,262,485,287"/>
-<area shape="poly" title=" " alt="" coords="364,197,425,250,421,254,360,202"/>
+<area shape="poly" title=" " alt="" coords="149,289,161,292,423,343,422,348,160,297,148,295"/>
+<area shape="poly" title=" " alt="" coords="409,198,429,222,448,254,462,293,470,329,465,330,457,294,444,256,425,225,405,201"/>
+<area shape="rect" title=" " alt="" coords="272,262,335,287"/>
+<area shape="poly" title=" " alt="" coords="386,201,328,254,324,250,382,198"/>
+<area shape="rect" title=" " alt="" coords="359,262,434,287"/>
+<area shape="poly" title=" " alt="" coords="399,200,399,248,394,248,394,200"/>
+<area shape="poly" title=" " alt="" coords="418,197,512,253,509,257,415,202"/>
+<area shape="rect" title=" " alt="" coords="173,262,247,287"/>
+<area shape="poly" title=" " alt="" coords="373,202,249,259,246,254,370,197"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -137,7 +142,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a2e2201e448b4d07a14082c4c826a0153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a redirect structure and frees its memory.  <br /></td></tr>
 <tr class="separator:a2e2201e448b4d07a14082c4c826a0153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d0e3f695af97d47632d7bd2b2b2b4d" id="r_a71d0e3f695af97d47632d7bd2b2b2b4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d76/redirect__manager_8c.html#a71d0e3f695af97d47632d7bd2b2b2b4d">redirect_execute</a> (<a class="el" href="../../d2/dcf/redirect__manager_8h.html#aa0a54f0f7fe7d432d2a6f820246de5c6">t_redirect</a> *redirect)</td></tr>
-<tr class="memdesc:a71d0e3f695af97d47632d7bd2b2b2b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a redirect in the current process context.  <br /></td></tr>
+<tr class="memdesc:a71d0e3f695af97d47632d7bd2b2b2b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a redirection operation.  <br /></td></tr>
 <tr class="separator:a71d0e3f695af97d47632d7bd2b2b2b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -254,19 +259,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a redirect in the current process context. </p>
-<p>Applies the redirection according to its type:</p><ul>
-<li>Input redirection opens the file for reading and replaces STDIN.</li>
-<li>Output redirection opens the file for writing (truncate/append) and replaces STDOUT.</li>
-<li>Heredoc creates a temporary input from the given delimiter.</li>
-</ul>
+<p>Executes a redirection operation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">redirect</td><td>Pointer to the redirect structure. </td></tr>
+    <tr><td class="paramname">redirect</td><td>Pointer to a t_redirect. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error (e.g., file not found, permission denied). </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/dcf/redirect__manager_8h.html#aa0a54f0f7fe7d432d2a6f820246de5c6">t_redirect</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the redirection was executed successfully. -1 if an error occurred during redirection. </dd></dl>
 
 </div>
 </div>

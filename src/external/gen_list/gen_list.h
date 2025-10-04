@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:30:11 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 16:03:05 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 14:55:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,14 +195,14 @@ void							gen_list_for_each(t_gen_list *list,
 									t_apply_func func);
 
 /**
-* @brief Apply a function to all elements of the list, with context.
-*
-* @param list List to traverse.
-* @param func Function to apply to each value with context.
-* @param context Extra pointer passed to the function on each call.
-* @see t_apply_func_ctx
-* @see gen_list_for_each
-*/
+ * @brief Apply a function to all elements of the list, with context.
+ *
+ * @param list List to traverse.
+ * @param func Function to apply to each value with context.
+ * @param context Extra pointer passed to the function on each call.
+ * @see t_apply_func_ctx
+ * @see gen_list_for_each
+ */
 void							gen_list_for_each_ctx(t_gen_list *list,
 									t_apply_func_ctx func, void *context);
 
@@ -238,7 +238,8 @@ void							*gen_list_find_ctx(t_gen_list *list,
  */
 size_t							gen_list_get_size(t_gen_list *list);
 
-void *gen_list_peek_top(t_gen_list *list);
+void							*gen_list_peek_top(t_gen_list *list);
+void							*gen_list_peek_index(t_gen_list *list, int idx);
 
 /**
  * @brief Check if the list contains an element that satisfies a predicate.
@@ -325,8 +326,7 @@ char							*gen_list_serialize_to_string(t_gen_list *list,
 one per element.
 * @see t_element_to_string
 */
-char							**gen_list_serialize_to_string_array(
-									t_gen_list *list,
+char							**gen_list_serialize_to_string_array(t_gen_list *list,
 									t_element_to_string element_to_string);
 
 /**
@@ -337,8 +337,7 @@ char							**gen_list_serialize_to_string_array(
  * @return Pointer to a newly allocated list, or NULL on error.
  * @see t_string_to_element
  */
-t_gen_list						*gen_list_deserialize_from_string_array(
-									char **array,
+t_gen_list						*gen_list_deserialize_from_string_array(char **array,
 									t_string_to_element string_to_element);
 
 #endif
