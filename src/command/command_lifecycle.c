@@ -21,6 +21,20 @@ static t_command_funct get_command_function(char *cmd_name)
         return bin_execute;
 }
 
+static bool is_command_builtin(char *cmd_name)
+{
+    if (!cmd_name || ft_strlen(cmd_name) == 0)
+        return false;
+    if (ft_strncmp(cmd_name, "echo", 5) == 0
+        || ft_strncmp(cmd_name, "cd", 3) == 0
+        || ft_strncmp(cmd_name, "pwd", 4) == 0
+        || ft_strncmp(cmd_name, "export", 7) == 0
+        || ft_strncmp(cmd_name, "unset", 6) == 0
+        || ft_strncmp(cmd_name, "env", 4) == 0)
+        return true;
+    return false;
+}
+
 t_command *command_create(char *name)
 {
 	t_command	*new_command;
@@ -28,7 +42,8 @@ t_command *command_create(char *name)
 	new_command = ft_calloc(1, sizeof(t_command));
 	new_command->args = gen_list_create();
 	new_command->redirects = gen_list_create();
-		new_command->command_funct = get_command_function(name);
+	new_command->command_funct = get_command_function(name);
+	new_command->is_builtin = is_command_builtin(name);
 	return (new_command);
 }
 

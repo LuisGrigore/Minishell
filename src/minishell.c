@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 18:53:38 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 21:43:08 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,13 @@ int	main(int args, char **environment_var_str_array)
 	t_gen_list	*envioroment_vars;
 	bool		finish;
 	char		*input;
+	char		*expanded_input;
 
+	if (args == 1)
+		envioroment_vars = env_deserialize(environment_var_str_array + 2);
 	if (args > 1)
-		exit(0);
+		envioroment_vars = env_deserialize(environment_var_str_array + 1);
 	signals_init_interactive();
-	envioroment_vars = env_deserialize(environment_var_str_array
-			+ 2);
 	finish = false;
 	while (!finish)
 	{
@@ -66,10 +67,13 @@ int	main(int args, char **environment_var_str_array)
 		else if (ft_strlen(input) != 0)
 		{
 			history_add(input);
-			execute_line(input, envioroment_vars);
+			expanded_input = env_expand_vars(envioroment_vars,input);
+			free(input);
+			input = NULL;
+			execute_line(expanded_input, envioroment_vars);
+			free(expanded_input);
+			expanded_input = NULL;
 		}
-		free(input);
-		input = NULL;
 	}
 	env_destroy(envioroment_vars);
 }

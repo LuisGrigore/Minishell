@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:01:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/03 21:01:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,7 @@ char						*env_get(t_gen_list *env, char *name);
  * @see t_env_var
  */
 bool						env_has(t_gen_list *env, char *name);
+
+char *env_expand_vars(t_gen_list *env, char *line);
 
 #endif

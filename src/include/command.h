@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 18:25:31 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/04 12:41:06 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ t_command *command_create(char *name);
  * @param command Pointer to the command to destroy.
  */
 void command_destroy(t_command *command);
+
+/* ============================================================
+**  Command Queries
+** ============================================================
+*/
+
+bool command_is_built_in(t_command *command);
 
 /* ============================================================
 **  Command Operations
