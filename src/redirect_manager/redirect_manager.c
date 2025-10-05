@@ -92,27 +92,9 @@ static void heredoc_exec(char *delimiter)
 int redirect_execute(t_redirect *redirect)
 {
 	if(redirect->redirect_simbol == DOUBLE_LEFT_REDIRECT)
-	{
-		heredoc_exec(redirect->file);
-	}
+	    heredoc_exec(redirect->file);
 	//Modificar a partir de aqui(a menos de que encuentres algun error o lo que sea).
-	else if(redirect->redirect_simbol == LEFT_REDIRECT)
-	{
-	    perror("redirect_execute: not implemented");
-	    exit(EXIT_FAILURE);
-	    return -1; // never reached, but silences compiler warning
-	}
-	else if(redirect->redirect_simbol == RIGHT_REDIRECT)
-	{
-	    perror("redirect_execute: not implemented");
-	    exit(EXIT_FAILURE);
-	    return -1; // never reached, but silences compiler warning
-	}
-	else if(redirect->redirect_simbol == DOUBLE_RIGHT_REDIRECT)
-	{
-	    perror("redirect_execute: not implemented");
-	    exit(EXIT_FAILURE);
-	    return -1; // never reached, but silences compiler warning
-	}
+	else 
+	    file_dup(redirect);
 	return (0);
 }
