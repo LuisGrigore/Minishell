@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/05 18:12:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:07:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ struct s_redirect
 	char			*file;
 	t_redirect_type	redirect_simbol;
 };
+
+void file_dup(t_redirect *redirect);
 
 #endif
