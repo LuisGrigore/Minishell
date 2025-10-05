@@ -92,21 +92,9 @@ static void heredoc_exec(char *delimiter)
 int redirect_execute(t_redirect *redirect)
 {
 	if(redirect->redirect_simbol == DOUBLE_LEFT_REDIRECT)
-	{
-		heredoc_exec(redirect->file);
-	}
+	    heredoc_exec(redirect->file);
 	//Modificar a partir de aqui(a menos de que encuentres algun error o lo que sea).
-	else if(redirect->redirect_simbol == LEFT_REDIRECT)
-	{
-	   redirection_exec(redirect);
-	}
-	else if(redirect->redirect_simbol == RIGHT_REDIRECT)
-	{
-	   redirection_exec(redirect);
-	}
-	else if(redirect->redirect_simbol == DOUBLE_RIGHT_REDIRECT)
-	{
-	  redirection_exec(redirect);
-	}
+	else 
+	    file_dup(redirect);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:13:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/05 20:12:33 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/05 20:25:20 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	check_outfile(char *fd, t_redirect_type type)
 	return (result);
 }
 
-void redirection_exec(t_redirect *redirect)
+void file_dup(t_redirect *redirect)
 {
     int fd;
 
