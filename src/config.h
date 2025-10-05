@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redirect_manager_internal.h                        :+:      :+:    :+:   */
+/*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/05 18:12:39 by lgrigore         ###   ########.fr       */
+/*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/10/05 18:12:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REDIRECT_INTERNAL_H
-#define REDIRECT_INTERNAL_H
-#include "../include/redirect_manager.h"
-# include "../external/libft/libft.h"
-#include "../config.h"
+#ifndef CONFIG_H
+# define CONFIG_H
 
-struct s_redirect
-{
-	char			*file;
-	t_redirect_type	redirect_simbol;
-};
+#define PATH_HEREDOC_TEMP_FILE "./minishell_heredoc.temp"
 
 #endif

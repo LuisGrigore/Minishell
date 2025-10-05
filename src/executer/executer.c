@@ -6,14 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/04 17:08:00 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/05 18:13:39 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
-
-#include <stdio.h>
-
 
 //TODO :: hacer que devuelva int con error y tal
 static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
@@ -68,7 +65,7 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     free(pids);
     pipe_manager_destroy(pm);
 	//Borra el archivo temporal despues de haber esperado a los procesos hijos
-    unlink("minishell_temp") == -1;
+    unlink(PATH_HEREDOC_TEMP_FILE);
 }
 
 static void command_destroy_data(void *command_ptr)

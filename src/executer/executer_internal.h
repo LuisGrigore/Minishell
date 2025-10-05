@@ -7,9 +7,11 @@
 #include "../include/parser.h"
 #include "../include/redirect_manager.h"
 #include "../include/pipe_manager.h"
+#include "../config.h"
 
 #include "../external/libft/libft.h"
 
 # include <sys/wait.h>
+#include <unistd.h>
 
 #endif
