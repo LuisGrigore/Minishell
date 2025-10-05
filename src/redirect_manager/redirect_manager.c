@@ -98,21 +98,15 @@ int redirect_execute(t_redirect *redirect)
 	//Modificar a partir de aqui(a menos de que encuentres algun error o lo que sea).
 	else if(redirect->redirect_simbol == LEFT_REDIRECT)
 	{
-	    perror("redirect_execute: not implemented");
-	    exit(EXIT_FAILURE);
-	    return -1; // never reached, but silences compiler warning
+	   redirection_exec(redirect);
 	}
 	else if(redirect->redirect_simbol == RIGHT_REDIRECT)
 	{
-	    perror("redirect_execute: not implemented");
-	    exit(EXIT_FAILURE);
-	    return -1; // never reached, but silences compiler warning
+	   redirection_exec(redirect);
 	}
 	else if(redirect->redirect_simbol == DOUBLE_RIGHT_REDIRECT)
 	{
-	    perror("redirect_execute: not implemented");
-	    exit(EXIT_FAILURE);
-	    return -1; // never reached, but silences compiler warning
+	  redirection_exec(redirect);
 	}
 	return (0);
 }
