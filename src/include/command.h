@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/05 23:08:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:37:45 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,6 @@
 # include "redirect_manager.h"
 # include "ms_status_codes.h"
 
-#define COMMAND_STATUS_BEGIN 100
-
-/* ============================================================
-**  Status Codes
-** ============================================================
-*/
-
-typedef enum e_command_status_code
-{
-	COMMAND_ERROR = COMMAND_STATUS_BEGIN,
-	COMMAND_MALFORMED,
-} t_command_status_code;
 
 /* ============================================================
 **  Data Structures

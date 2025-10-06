@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/06 14:38:31 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 17:41:52 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	main(int args, char **environment_var_str_array)
 			expanded_input = env_expand_vars(environment_vars,input);
 			free(input);
 			input = NULL;
-			execute_line(expanded_input, environment_vars);
+			handle_errors(execute_line(expanded_input, environment_vars));
 			free(expanded_input);
 			expanded_input = NULL;
 		}

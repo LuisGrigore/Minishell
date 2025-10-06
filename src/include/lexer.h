@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 19:37:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:41:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define TOKENIZER_H
 
 # include "../external/gen_list/gen_list.h"
+#include "ms_status_codes.h"
 #include <stdbool.h>
+
 
 /**
  * Enumeration of all possible token types recognized by the lexer.
@@ -60,7 +62,7 @@ typedef struct s_token t_token;
  * Each token corresponds to a command, argument, or operator,
  * as defined in t_token_type.
  */
-t_gen_list *lexer_tokenize(const char *line);
+int lexer_tokenize(const char *line, t_gen_list *tokens_list);
 
 /**
  * Frees all memory associated with a token list.
