@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/04 14:47:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/05 23:10:11 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 
 # include "../external/gen_list/gen_list.h"
 # include <stdbool.h>
+#include "ms_status_codes.h"
+
+#define ENVIRONMENT_STATUS_BEGIN 200
+
+/* ============================================================
+**  Status Codes
+** ============================================================
+*/
+
+typedef enum e_environment_status_code
+{
+	COMMAND_OK = ENVIRONMENT_STATUS_BEGIN,
+} t_environment_status_code;
 
 /* ============================================================
 **  Data Structures
