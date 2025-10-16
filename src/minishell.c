@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/06 17:41:52 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	handle_errors(int status_code)
 	{
 		return;
 	}
-	if (status_code == MS_MALLOC_ERR)
+	if (status_code == MS_ALLOCATION_ERR)
 	{
 		perror("Malloc error");
 		exit(EXIT_FAILURE);
@@ -80,7 +80,7 @@ int	main(int args, char **environment_var_str_array)
 	else
 		environment_vars = env_deserialize(environment_var_str_array + 1);
 	if (!environment_vars)
-		handle_errors(MS_MALLOC_ERR);
+		handle_errors(MS_ALLOCATION_ERR);
 	handle_errors(signals_init_interactive());
 	finish = false;
 	while (!finish)

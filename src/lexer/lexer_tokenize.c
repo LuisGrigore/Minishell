@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:09:07 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 19:46:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:46:40 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer_internal.h"
 int lexer_tokenize(const char *line, t_gen_list *tokens_list) {
     size_t i = 0, len = ft_strlen(line);
-    if (!tokens_list) return LEXER_ERR_NULL;
+    if (!tokens_list) return LEXER_NULL_ERR;
 
     bool expect_cmd = true;       // El siguiente token no operador será CMD
     bool next_is_redir_arg = false; // El siguiente token después de >, >>, <, <<
@@ -75,7 +75,7 @@ int lexer_tokenize(const char *line, t_gen_list *tokens_list) {
                 // 🚨 Si la comilla simple no se cierra
                 if (i >= len || line[i] != '\'') {
                     free(buf);
-                    return LEXER_ERR_SYNTAX;
+                    return LEXER_SYNTAX_ERR;
                 }
 
                 i++; // saltar comilla final
@@ -107,7 +107,7 @@ int lexer_tokenize(const char *line, t_gen_list *tokens_list) {
                 // 🚨 Si la comilla doble no se cierra
                 if (i >= len || line[i] != '"') {
                     free(buf);
-                    return LEXER_ERR_SYNTAX;
+                    return LEXER_SYNTAX_ERR;
                 }
 
                 i++; // saltar comilla final
@@ -170,7 +170,7 @@ int lexer_tokenize(const char *line, t_gen_list *tokens_list) {
 error:
     if (tokens_list)
         gen_list_destroy(tokens_list, free);
-    return LEXER_ERROR;
+    return LEXER_ERR;
 }
 
 

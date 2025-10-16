@@ -8,11 +8,11 @@ static int handle_list_errors(t_gen_list_status_code list_status_code)
 		case GEN_LIST_OK:
 			return (MS_OK);
 		case GEN_LIST_MALLOC_ERR:
-			return (MS_MALLOC_ERR);
+			return (MS_ALLOCATION_ERR);
 		case GEN_LIST_IS_NULL_ERR:
-			return (COMMAND_MALFORMED);
+			return (COMMAND_MALFORMED_ERR);
 		default:
-			return (COMMAND_ERROR);
+			return (COMMAND_ERR);
 	}
 }
 
@@ -43,7 +43,7 @@ int	command_exec(t_command *command, t_gen_list *environment)
 	stdin_backup = dup(STDIN_FILENO);
 	stdout_backup = dup(STDOUT_FILENO);
 	if (stdin_backup == -1 || stdout_backup == -1)
-		return (MS_MALLOC_ERR);
+		return (MS_ALLOCATION_ERR);
 	status_code = handle_list_errors(gen_list_for_each(command->redirects, redirect_execute_data));
 	if (status_code != MS_OK)
 	{

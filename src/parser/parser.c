@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 19:33:09 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ error:
         command_destroy(current_cmd);
     gen_list_iter_destroy(it);
     gen_list_destroy(commands, (void (*)(void *))command_destroy);
-    return PARSER_ERROR;
+    return PARSER_ERR;
 }
 
 
@@ -144,19 +144,19 @@ int parse_line(char *line, t_gen_list *commands)
 
 	tokens = gen_list_create();
 	if(!tokens)
-		return MS_MALLOC_ERR;
+		return MS_ALLOCATION_ERR;
 	status_code = lexer_tokenize(line, tokens);
 	if (status_code != MS_OK)
 	{
 		lexer_destroy(tokens);
-		return (PARSER_ERROR);
+		return (PARSER_ERR);
 	}
 	//print_tokens(tokens);
 	status_code = parse_tokens_to_commands(tokens, commands);
 	if (status_code != MS_OK)
 	{
 		lexer_destroy(tokens);
-		return (PARSER_ERROR);
+		return (PARSER_ERR);
 	}
 	lexer_destroy(tokens);
 	//print_commands(commands);

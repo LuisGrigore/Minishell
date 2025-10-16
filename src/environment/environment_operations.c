@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/05 23:11:52 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	env_set(t_gen_list *env, char *name, char *value)
 		previous_val = found_var->var_value;
 		found_var->var_value = ft_strdup(value);
 		if (!found_var->var_value)
-			return (MS_MALLOC_ERR);
+			return (MS_ALLOCATION_ERR);
 		free(previous_val);
 		return (MS_OK);
 	}
 	new_var = init_environment_var(ft_strdup(name), ft_strdup(value));
 	if (!new_var)
-		return (MS_MALLOC_ERR);
+		return (MS_ALLOCATION_ERR);
 	gen_list_push_front(env, (void *)new_var);
 	return (MS_OK);
 }

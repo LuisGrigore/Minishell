@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 23:43:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@ typedef enum e_ms_status_code
 {
 	//System
 	MS_OK = SYSTEM_STATUS_BEGIN,
-	MS_ERR_FORK,
-	MS_ERR_PIPE,
+	MS_FORK_ERR,
+	MS_PIPE_ERR,
 	MS_DUP2_ERR,
-	MS_MALLOC_ERR,
+	MS_ALLOCATION_ERR,
 	MS_CLOSE_ERR,
 	MS_SIGNAL_ERR,
-	MS_ERR_FILE,
+	MS_FILE_ERR,
 	//Command
-	COMMAND_ERROR = COMMAND_STATUS_BEGIN,
-	COMMAND_MALFORMED,
+	COMMAND_ERR = COMMAND_STATUS_BEGIN,
+	COMMAND_MALFORMED_ERR,
 	//Environment
-	ENVIRONMENT_ERROR = ENVIRONMENT_STATUS_BEGIN,
+	ENVIRONMENT_ERR = ENVIRONMENT_STATUS_BEGIN,
 	//Executer
-	EXECUTER_ERROR = EXECUTER_STATUS_BEGIN,
+	EXECUTER_ERR = EXECUTER_STATUS_BEGIN,
 	//Lexer
-	LEXER_ERROR = LEXER_STATUS_BEGIN,
-	LEXER_ERR_NULL,
-	LEXER_ERR_SYNTAX,
+	LEXER_ERR = LEXER_STATUS_BEGIN,
+	LEXER_NULL_ERR,
+	LEXER_SYNTAX_ERR,
 	//Parser
-	PARSER_ERROR = PARSER_STATUS_BEGIN,
+	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
 } t_ms_status_code;
 
