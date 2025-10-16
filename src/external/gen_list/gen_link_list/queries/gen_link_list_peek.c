@@ -6,17 +6,17 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:56 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/04 14:59:31 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 13:43:01 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../gen_link_list_internal.h"
 
-//TODO :: implementar las funciones de peek
+//TODO :: implementar todas las funciones de peek
 
 void *gen_list_peek_top(t_gen_list *list)
 {
-	if (gen_list_is_empty(list))
+	if (!list || gen_list_is_empty(list))
 		return NULL;
 	return(list->head->value);
 }

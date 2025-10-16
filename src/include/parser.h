@@ -2,6 +2,8 @@
 # define PARSER_H
 
 # include "../external/gen_list/gen_list.h"
+#include "ms_status_codes.h"
+
 
 /**
  * Parses a raw command line string into a structured list of commands.
@@ -27,6 +29,6 @@
  * The caller is responsible for destroying the returned command list
  * using the appropriate cleanup function.
  */
-t_gen_list *parse_line(char *line);
+int parse_line(char *line, t_gen_list *commands);
 
 #endif

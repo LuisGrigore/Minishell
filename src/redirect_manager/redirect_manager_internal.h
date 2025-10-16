@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manager_internal.h                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/05 20:25:36 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:07:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define REDIRECT_INTERNAL_H
 #include "../include/redirect_manager.h"
 # include "../external/libft/libft.h"
-
+#include "../config.h"
 
 struct s_redirect
 {

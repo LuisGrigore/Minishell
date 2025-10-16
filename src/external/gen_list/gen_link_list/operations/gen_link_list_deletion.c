@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:23:56 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:57:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/05 22:15:22 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	remove_current_node(t_gen_list *list, t_node **current,
 	*current = next;
 }
 
-void	gen_list_remove_if(t_gen_list *list, t_predicate predicate,
+t_gen_list_status_code	gen_list_remove_if(t_gen_list *list, t_predicate predicate,
 		t_element_destroyer element_destroyer)
 {
 	t_node	*current;
@@ -42,7 +42,7 @@ void	gen_list_remove_if(t_gen_list *list, t_predicate predicate,
 	bool	remove;
 
 	if (!list || !predicate)
-		return ;
+		return (GEN_LIST_IS_NULL_ERR);
 	current = list->head;
 	prev = NULL;
 	while (current)
@@ -57,9 +57,10 @@ void	gen_list_remove_if(t_gen_list *list, t_predicate predicate,
 			current = next;
 		}
 	}
+	return (GEN_LIST_OK);
 }
 
-void	gen_list_remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate,
+t_gen_list_status_code	gen_list_remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate,
 		void *context, t_element_destroyer element_destroyer)
 {
 	t_node	*current;
@@ -68,7 +69,7 @@ void	gen_list_remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate,
 	bool	remove;
 
 	if (!list || !predicate)
-		return ;
+		return (GEN_LIST_IS_NULL_ERR);
 	current = list->head;
 	prev = NULL;
 	while (current)
@@ -83,4 +84,5 @@ void	gen_list_remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate,
 			current = next;
 		}
 	}
+	return (GEN_LIST_OK);
 }

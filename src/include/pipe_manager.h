@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:38:45 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 15:42:00 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:02:59 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #define PIPE_MANAGER_H
 
 #include <stdlib.h>
+#include "ms_status_codes.h"
+
+#define PIPE_MANAGER_STATUS_BEGIN 700
+
+typedef enum e_pipe_manager_status_code
+{
+	PIPE_MANAGER_IS_NULL = PIPE_MANAGER_STATUS_BEGIN,
+	PIPE_MANAGER_MALFORMED
+} t_pipe_manager_status_code;
 
 /**
  * @brief Struct representing a pipe manager for multiple commands.
@@ -44,13 +53,13 @@ void pipe_manager_destroy(t_pipe_manager *pm);
  * @param pm Pointer to the pipe manager.
  * @param index Index of the command in the pipeline.
  */
-void pipe_manager_setup_command(t_pipe_manager *pm, size_t index);
+int pipe_manager_setup_command(t_pipe_manager *pm, size_t index);
 
 /**
  * @brief Closes all pipes managed by the pipe manager.
  * 
  * @param pm Pointer to the pipe manager.
  */
-void pipe_manager_close_all(t_pipe_manager *pm);
+int pipe_manager_close_all(t_pipe_manager *pm);
 
 #endif
