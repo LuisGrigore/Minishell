@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:42:28 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/03 19:21:45 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:01:41 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,46 @@ void pipe_manager_destroy(t_pipe_manager *pm)
     free(pm);
 }
 
-void pipe_manager_setup_command(t_pipe_manager *pm, size_t index)
+int pipe_manager_setup_command(t_pipe_manager *pm, size_t index)
 {
-    if (!pm || pm->n_cmds <= 1)
-        return;
+	int dup_ret;
 
+    if (!pm)
+        return (PIPE_MANAGER_IS_NULL);
+	if (pm->n_cmds <= 1)
+		return (MS_OK);
     if (index > 0)
-        dup2(pm->pipes[index - 1][0], STDIN_FILENO);
-    if (index < pm->n_cmds - 1)
-        dup2(pm->pipes[index][1], STDOUT_FILENO);
+        dup_ret = dup2(pm->pipes[index - 1][0], STDIN_FILENO);
+    if (dup_ret != -1 && index < pm->n_cmds - 1)
+        dup_ret = dup2(pm->pipes[index][1], STDOUT_FILENO);
+	if(dup_ret == -1)
+		return (MS_DUP2_ERR);
+	return (MS_OK);
 }
 
-void pipe_manager_close_all(t_pipe_manager *pm)
+int	pipe_manager_close_all(t_pipe_manager *pm)
 {
-    if (!pm || !pm->pipes)
-        return;
+	size_t	i;
+	int		close_ret;
+	int		error_flag;
 
-    for (size_t j = 0; j < pm->n_cmds - 1; j++)
-    {
-        close(pm->pipes[j][0]);
-        close(pm->pipes[j][1]);
-    }
+	if (!pm)
+		return (PIPE_MANAGER_IS_NULL);
+	if (!pm->pipes)
+		return (PIPE_MANAGER_MALFORMED);
+	error_flag = 0;
+	i = 0;
+	while (i < pm->n_cmds - 1)
+	{
+		close_ret = close(pm->pipes[i][0]);
+		if (close_ret == -1)
+			error_flag = 1;
+		close_ret = close(pm->pipes[i][1]);
+		if (close_ret == -1)
+			error_flag = 1;
+		i++;
+	}
+	if (error_flag)
+		return (MS_CLOSE_ERR);
+	return (MS_OK);
 }

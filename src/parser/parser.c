@@ -6,21 +6,17 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/04 15:27:17 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
 
 
-t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
+int parse_tokens_to_commands(t_gen_list *tokens, t_gen_list *commands)
 {
     if (!tokens)
-        return NULL;
-
-    t_gen_list *commands = gen_list_create();
-    if (!commands)
-        return NULL;
+        return PARSER_NULL_ERR;
 
     t_command *current_cmd = NULL;
     t_gen_list_iter *it = gen_list_iter_start(tokens);
@@ -116,14 +112,14 @@ t_gen_list *parse_tokens_to_commands(t_gen_list *tokens)
     if (current_cmd)
         gen_list_push_back(commands, current_cmd);
     gen_list_iter_destroy(it);
-    return commands;
+    return MS_OK;
 
 error:
     if (current_cmd)
         command_destroy(current_cmd);
     gen_list_iter_destroy(it);
     gen_list_destroy(commands, (void (*)(void *))command_destroy);
-    return NULL;
+    return PARSER_ERR;
 }
 
 
@@ -141,22 +137,28 @@ void print_commands(t_gen_list *commands) {
     }
 }
 
-t_gen_list *parse_line(char *line)
+int parse_line(char *line, t_gen_list *commands)
 {
+	int status_code;
 	t_gen_list	*tokens;
-	t_gen_list *commands;
-	
-	tokens = lexer_tokenize(line);
+
+	tokens = gen_list_create();
 	if(!tokens)
-		return NULL;
-	//print_tokens(tokens);
-	commands = parse_tokens_to_commands(tokens);
-	if(!commands)
+		return MS_ALLOCATION_ERR;
+	status_code = lexer_tokenize(line, tokens);
+	if (status_code != MS_OK)
 	{
 		lexer_destroy(tokens);
-		return (NULL);
+		return (PARSER_ERR);
+	}
+	//print_tokens(tokens);
+	status_code = parse_tokens_to_commands(tokens, commands);
+	if (status_code != MS_OK)
+	{
+		lexer_destroy(tokens);
+		return (PARSER_ERR);
 	}
 	lexer_destroy(tokens);
 	//print_commands(commands);
-	return (commands);
+	return (MS_OK);
 }

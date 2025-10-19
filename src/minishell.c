@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 21:43:08 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,36 +44,61 @@ char *get_input(t_gen_list *env)
 	free(line_tag);
 	return (input);
 }
+//TOD :: revisar esto
+static void	handle_errors(int status_code)
+{
+	if (status_code == MS_OK)
+	{
+		return;
+	}
+	if (status_code == MS_ALLOCATION_ERR)
+	{
+		perror("Malloc error");
+		exit(EXIT_FAILURE);
+	}
+	else if (status_code == MS_SIGNAL_ERR)
+	{
+		perror("Signal error");
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		perror("Unknown error");
+		exit(EXIT_FAILURE);
+	}
+}
 
 int	main(int args, char **environment_var_str_array)
 {
-	t_gen_list	*envioroment_vars;
+	t_gen_list	*environment_vars;
 	bool		finish;
 	char		*input;
 	char		*expanded_input;
 
 	if (args == 1)
-		envioroment_vars = env_deserialize(environment_var_str_array + 2);
-	if (args > 1)
-		envioroment_vars = env_deserialize(environment_var_str_array + 1);
-	signals_init_interactive();
+		environment_vars = env_deserialize(environment_var_str_array + 2);
+	else
+		environment_vars = env_deserialize(environment_var_str_array + 1);
+	if (!environment_vars)
+		handle_errors(MS_ALLOCATION_ERR);
+	handle_errors(signals_init_interactive());
 	finish = false;
 	while (!finish)
 	{
-		input = get_input(envioroment_vars);
+		input = get_input(environment_vars);
 		if ((ft_strlen(input) != 0 && ft_strncmp(input, "exit",
 					ft_strlen(input)) == 0) || input == NULL)
 			finish = true;
 		else if (ft_strlen(input) != 0)
 		{
 			history_add(input);
-			expanded_input = env_expand_vars(envioroment_vars,input);
+			expanded_input = env_expand_vars(environment_vars,input);
 			free(input);
 			input = NULL;
-			execute_line(expanded_input, envioroment_vars);
+			handle_errors(execute_line(expanded_input, environment_vars));
 			free(expanded_input);
 			expanded_input = NULL;
 		}
 	}
-	env_destroy(envioroment_vars);
+	env_destroy(environment_vars);
 }

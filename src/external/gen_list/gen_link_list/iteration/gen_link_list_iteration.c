@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:56:57 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/09/30 23:43:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/05 22:17:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ void	*gen_list_iter_next(t_gen_list_iter *it)
 	return (val);
 }
 
-void	gen_list_for_each(t_gen_list *list, t_apply_func func)
+t_gen_list_status_code	gen_list_for_each(t_gen_list *list, t_apply_func func)
 {
 	t_gen_list_iter	*it;
 	void			*val;
 
 	if (!list || !func)
-		return ;
+		return (GEN_LIST_IS_NULL_ERR);
 	it = gen_list_iter_start(list);
 	if (!it)
-		return ;
+		return (GEN_LIST_MALLOC_ERR);
 	val = gen_list_iter_next(it);
 	while (val)
 	{
@@ -41,19 +41,20 @@ void	gen_list_for_each(t_gen_list *list, t_apply_func func)
 		val = gen_list_iter_next(it);
 	}
 	gen_list_iter_destroy(it);
+	return (GEN_LIST_OK);
 }
 
-void	gen_list_for_each_ctx(t_gen_list *list, t_apply_func_ctx func,
+t_gen_list_status_code	gen_list_for_each_ctx(t_gen_list *list, t_apply_func_ctx func,
 		void *context)
 {
 	t_gen_list_iter	*it;
 	void			*val;
 
 	if (!list || !func)
-		return ;
+		return (GEN_LIST_IS_NULL_ERR);
 	it = gen_list_iter_start(list);
 	if (!it)
-		return ;
+		return (GEN_LIST_MALLOC_ERR);
 	val = gen_list_iter_next(it);
 	while (val)
 	{
@@ -61,4 +62,5 @@ void	gen_list_for_each_ctx(t_gen_list *list, t_apply_func_ctx func,
 		val = gen_list_iter_next(it);
 	}
 	gen_list_iter_destroy(it);
+	return (GEN_LIST_OK);
 }

@@ -33,7 +33,7 @@ static void heredoc_exec(char *delimiter)
 
     // Calculamos tamaño necesario para el path: TEMPDIR + "/minishel_temp" + '\0'
 	//getenv("TEMPDIR")
-    temp_dir = "minishell_temp";
+    temp_dir = PATH_HEREDOC_TEMP_FILE;
     if (!temp_dir)
         return;
 

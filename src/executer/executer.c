@@ -6,14 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/04 17:08:00 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
-
-#include <stdio.h>
-
 
 //TODO :: hacer que devuelva int con error y tal
 static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
@@ -68,7 +65,7 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     free(pids);
     pipe_manager_destroy(pm);
 	//Borra el archivo temporal despues de haber esperado a los procesos hijos
-    unlink("minishell_temp") == -1;
+    unlink(PATH_HEREDOC_TEMP_FILE);
 }
 
 static void command_destroy_data(void *command_ptr)
@@ -76,20 +73,28 @@ static void command_destroy_data(void *command_ptr)
 	command_destroy((t_command *) command_ptr);
 }
 
+static int handle_parser_errors(int status_code)
+{
+	return(MS_OK);
+}
+
 int execute_line(char *line, t_gen_list *env)
 {
+	int status_code;
 	t_gen_list *commands;
 
-	commands = parse_line(line);
-	if(!commands)
-	//TODO :: crear codigos de error adecuados
-		return(-1);
+	commands = gen_list_create();
+	if (!commands)
+		return (MS_ALLOCATION_ERR);
+	status_code = parse_line(line, commands);
+	if(status_code != MS_OK)
+		return (EXECUTER_ERR);
 	if (gen_list_get_size(commands) == 1 && command_is_built_in((t_command *) gen_list_peek_top(commands)))
 	{
 		command_exec((t_command *) gen_list_peek_top(commands), env);
-		return(0);
+		return(MS_OK);
 	}
 	execute_commands_with_pipes(commands, env);
 	gen_list_destroy(commands, command_destroy_data);
-	return (0);
+	return (MS_OK);
 }

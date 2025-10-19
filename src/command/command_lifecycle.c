@@ -40,6 +40,8 @@ t_command *command_create(char *name)
 	t_command	*new_command;
 
 	new_command = ft_calloc(1, sizeof(t_command));
+	if (!new_command)
+		return (NULL);
 	new_command->args = gen_list_create();
 	new_command->redirects = gen_list_create();
 	new_command->command_funct = get_command_function(name);
@@ -57,6 +59,5 @@ void command_destroy(t_command *command)
 		gen_list_destroy(command->args, free);
 	if (command->redirects)
 		gen_list_destroy(command->redirects, redirect_destroy_data);
-	;
 	free(command);
 }

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/04 14:47:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/06 23:38:23 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "../external/gen_list/gen_list.h"
 # include <stdbool.h>
+#include "ms_status_codes.h"
+
 
 /* ============================================================
 **  Data Structures

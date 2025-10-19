@@ -2,6 +2,8 @@
 #define EXECUTER_H
 
 #include "../external/gen_list/gen_list.h"
+#include "ms_status_codes.h"
+
 
 /**
  * Executes a single command line, similar to how Bash interprets and runs commands.
