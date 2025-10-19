@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:57:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/04 12:43:36 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/19 20:31:45 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef void				(*t_command_funct)(t_command *, t_gen_list *);
+typedef int				(*t_command_funct)(t_command *, t_gen_list *);
 
 struct s_command
 {
@@ -33,21 +33,21 @@ struct s_command
 };
 
 
-void						pwd_execute(t_command *command,
+int					pwd_execute(t_command *command,
 								t_gen_list *envioroment);
-void						bin_execute(t_command *cmd,
+int					bin_execute(t_command *cmd,
 								t_gen_list *envioroment);
-void						cd_execute(t_command *command,
+int					cd_execute(t_command *command,
 								t_gen_list *envioroment);
-void						pwd_execute(t_command *command,
+int					pwd_execute(t_command *command,
 								t_gen_list *envioroment);
-void						export_execute(t_command *command,
+int					export_execute(t_command *command,
 								t_gen_list *envioroment);
-void						unset_execute(t_command *command,
+int					unset_execute(t_command *command,
 								t_gen_list *envioroment);
-void						env_execute(t_command *command,
+int					env_execute(t_command *command,
 								t_gen_list *envioroment);
-void						echo_execute(t_command *command,
+int					echo_execute(t_command *command,
 								t_gen_list *envioroment);
 
 #endif

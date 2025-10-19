@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 16:50:09 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/19 20:40:52 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,37 +70,36 @@ static char *serialize_arg(void *arg_ptr)
 }
 
 
-void bin_execute(t_command *cmd, t_gen_list *envioroment)
+int bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
     char **cmd2;
     char **env;
     char *path;
 
-    if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
-    {
-        perror("No command args ");
-        exit(1);
-    }
+	if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
+	{
+		perror("No command args ");
+		return (COMMAND_MALFORMED_ERR);
+	}
 
     env = env_serialize(envioroment);
     cmd2 = gen_list_serialize_to_string_array(cmd->args,serialize_arg);
 
     path = find_command(env, cmd2[0]);
-    if (!path)
-    {
-        perror("Path not found ");
-        free_double_pointer(cmd2);
-        exit(127);
-    }
+	if (!path)
+	{
+		perror("Path not found ");
+		free_double_pointer(cmd2);
+		return (MS_FILE_ERR);
+	}
 
     signals_restore();
 
-    execve(path, cmd2, env);
-
-    perror("Failed to execute command ");
-    free(path);
-    free_double_pointer(cmd2);
-    exit(1);
+	execve(path, cmd2, env);
+	perror("Failed to execute command ");
+	free(path);
+	free_double_pointer(cmd2);
+	return (COMMAND_ERR);
 }
 
 
