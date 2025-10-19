@@ -5,13 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD:include/command.h
-/*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 20:36:14 by lgrigore         ###   ########.fr       */
-=======
 /*   Created: 2025/10/01 15:57:13 by lgrigore          #+#    #+#             */
 /*   Updated: 2025/10/04 12:43:36 by lgrigore         ###   ########.fr       */
->>>>>>> lgrigore:src/command/command_internal.h
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +33,6 @@ struct s_command
 };
 
 
-<<<<<<< HEAD:include/command.h
-//COMAND FUNCTIONS
-
-=======
 void						pwd_execute(t_command *command,
 								t_gen_list *envioroment);
 void						bin_execute(t_command *cmd,
@@ -58,6 +49,5 @@ void						env_execute(t_command *command,
 								t_gen_list *envioroment);
 void						echo_execute(t_command *command,
 								t_gen_list *envioroment);
->>>>>>> lgrigore:src/command/command_internal.h
 
 #endif
