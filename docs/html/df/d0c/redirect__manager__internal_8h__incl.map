@@ -1,9 +1,11 @@
 <map id="src/redirect_manager/redirect_manager_internal.h" name="src/redirect_manager/redirect_manager_internal.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="107,5,318,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="197,5,407,45"/>
 <area shape="rect" id="Node000002" href="$d2/dcf/redirect__manager_8h.html" title=" " alt="" coords="60,93,195,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,47,158,85,154,82,192,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="265,48,179,90,177,85,262,43"/>
 <area shape="rect" id="Node000006" href="$d6/d7e/libft_8h.html" title=" " alt="" coords="223,101,381,126"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="234,44,282,89,278,93,231,48"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="305,46,305,87,299,87,299,46"/>
+<area shape="rect" id="Node000011" href="$db/d16/config_8h.html" title=" " alt="" coords="406,101,491,126"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="336,43,419,91,416,96,333,48"/>
 <area shape="rect" id="Node000003" href="$d3/d09/gen__list_8h.html" title=" " alt="" coords="5,181,148,221"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,135,97,171,93,168,114,132"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="35,269,118,295"/>

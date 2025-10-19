@@ -1,0 +1,9 @@
+<map id="gen_list_for_each_ctx" name="gen_list_for_each_ctx">
+<area shape="rect" id="Node000001" title="Apply a function to all elements of the list, with context." alt="" coords="5,55,168,80"/>
+<area shape="rect" id="Node000002" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="216,5,375,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,52,227,31,228,36,142,57"/>
+<area shape="rect" id="Node000003" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="226,55,365,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,65,212,65,212,70,168,70"/>
+<area shape="rect" id="Node000004" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="226,104,365,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,77,228,98,227,103,140,83"/>
+</map>

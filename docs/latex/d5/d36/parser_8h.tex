@@ -1,14 +1,17 @@
 \doxysection{src/include/parser.h File Reference}
 \hypertarget{parser_8h}{}\label{parser_8h}\index{src/include/parser.h@{src/include/parser.h}}
 {\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
-Include dependency graph for parser.\+h\+:\nopagebreak
+{\ttfamily \#include "{}ms\+\_\+status\+\_\+codes.\+h"{}}\newline
+Include dependency graph for parser.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{d7/de2/parser_8h__incl}
+\includegraphics[width=344pt]{d7/de2/parser_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,54 +21,50 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser_8h_a371904874bcb2b8fc0d621fd3932bb82}{parse\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line)
+int \mbox{\hyperlink{parser_8h_acb7fb50758c9c06855f6773f2bf296c3}{parse\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{parser_8h_a371904874bcb2b8fc0d621fd3932bb82}\label{parser_8h_a371904874bcb2b8fc0d621fd3932bb82} 
+\Hypertarget{parser_8h_acb7fb50758c9c06855f6773f2bf296c3}\label{parser_8h_acb7fb50758c9c06855f6773f2bf296c3} 
 \index{parser.h@{parser.h}!parse\_line@{parse\_line}}
 \index{parse\_line@{parse\_line}!parser.h@{parser.h}}
 \doxysubsubsection{\texorpdfstring{parse\_line()}{parse\_line()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} parse\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int parse\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
 
-Parses a raw command line string into a structured list of commands.
+Tokenize and parse a single command-\/line string into a list of commands.
 
-This function is the high-\/level entry point for transforming user input into executable command objects. It performs the following steps\+:
+This function performs tokenization of the input {\ttfamily line} and converts the resulting tokens into {\ttfamily t\+\_\+command} objects which are appended to the provided {\ttfamily commands} list. The {\ttfamily commands} list must be created by the caller (for example via {\ttfamily gen\+\_\+list\+\_\+create}) and will be populated on success.
 
-
-\begin{DoxyEnumerate}
-\item Tokenizes the input string using.
-\item Converts the list of tokens into command objects.
-\item Cleans up the intermediate token list.
-\end{DoxyEnumerate}
+The function returns a status code defined in {\ttfamily \doxylink{ms__status__codes_8h}{ms\+\_\+status\+\_\+codes.\+h}}\+:
+\begin{DoxyItemize}
+\item MS\+\_\+\+OK on success (commands appended to {\ttfamily commands}).
+\item PARSER\+\_\+\+ERR or other error codes on failure.
+\end{DoxyItemize}
 
 
 \begin{DoxyParams}{Parameters}
-{\em line} & A null-\/terminated string containing the user input.\\
+{\em line} & Null-\/terminated input string to parse. \\
+\hline
+{\em commands} & Output list where parsed t\+\_\+command\texorpdfstring{$\ast$}{*} objects will be appended. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A list (t\+\_\+gen\+\_\+list) of t\+\_\+command\texorpdfstring{$\ast$}{*} objects representing the parsed commands, or NULL if parsing fails at any stage.
+MS\+\_\+\+OK on success, or an error status otherwise. 
 \end{DoxyReturn}
-Example\+: Input\+: "{}ls -\/l \texorpdfstring{$\vert$}{|} grep txt $>$ out.\+txt"{} Output\+: A list of two t\+\_\+command structures\+:
-\begin{DoxyItemize}
-\item Command 1\+: "{}ls"{} with argument "{}-\/l"{}
-\item Command 2\+: "{}grep"{} with argument "{}txt"{} and output redirection to "{}out.\+txt"{}
-\end{DoxyItemize}
-
-The caller is responsible for destroying the returned command list using the appropriate cleanup function. Here is the call graph for this function\+:
+Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d5/d36/parser_8h_a371904874bcb2b8fc0d621fd3932bb82_cgraph}
+\includegraphics[width=350pt]{d5/d36/parser_8h_acb7fb50758c9c06855f6773f2bf296c3_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=338pt]{d5/d36/parser_8h_a371904874bcb2b8fc0d621fd3932bb82_icgraph}
+\includegraphics[width=338pt]{d5/d36/parser_8h_acb7fb50758c9c06855f6773f2bf296c3_icgraph}
 \end{center}
 \end{figure}

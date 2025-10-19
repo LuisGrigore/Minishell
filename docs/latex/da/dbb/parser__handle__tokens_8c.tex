@@ -1,0 +1,149 @@
+\doxysection{src/parser/parser\+\_\+handle\+\_\+tokens.c File Reference}
+\hypertarget{parser__handle__tokens_8c}{}\label{parser__handle__tokens_8c}\index{src/parser/parser\_handle\_tokens.c@{src/parser/parser\_handle\_tokens.c}}
+{\ttfamily \#include "{}parser\+\_\+internal.\+h"{}}\newline
+Include dependency graph for parser\+\_\+handle\+\_\+tokens.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d54/parser__handle__tokens_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser__handle__tokens_8c_af26831b878a72e9d2d2ce25408571e87}{handle\+\_\+command\+\_\+token}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}tok, \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}current\+\_\+cmd)
+\begin{DoxyCompactList}\small\item\em Create or update a command object from a TOKEN\+\_\+\+CMD token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser__handle__tokens_8c_a0ba548c1c29592caf86cb481cf9b4c6d}{handle\+\_\+arg\+\_\+token}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}tok, \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}current\+\_\+cmd)
+\begin{DoxyCompactList}\small\item\em Create or update a command object from a TOKEN\+\_\+\+ARG token. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser__handle__tokens_8c_a60c61e16e089378338f3cf848786e2a6}{handle\+\_\+pipe\+\_\+token}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}current\+\_\+cmd, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
+\begin{DoxyCompactList}\small\item\em Finalize the current command on a pipe token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser__handle__tokens_8c_a89637773a91a74e1608a942b074aa848}{handle\+\_\+redirect}} (\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}tok, \mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}file\+\_\+tok, \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}current\+\_\+cmd, \mbox{\hyperlink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter}} \texorpdfstring{$\ast$}{*}it)
+\begin{DoxyCompactList}\small\item\em Handle a redirection token and attach the redirection to the current command object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{parser__handle__tokens_8c_a0ba548c1c29592caf86cb481cf9b4c6d}\label{parser__handle__tokens_8c_a0ba548c1c29592caf86cb481cf9b4c6d} 
+\index{parser\_handle\_tokens.c@{parser\_handle\_tokens.c}!handle\_arg\_token@{handle\_arg\_token}}
+\index{handle\_arg\_token@{handle\_arg\_token}!parser\_handle\_tokens.c@{parser\_handle\_tokens.c}}
+\doxysubsubsection{\texorpdfstring{handle\_arg\_token()}{handle\_arg\_token()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} handle\+\_\+arg\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{tok,  }\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{current\+\_\+cmd }\end{DoxyParamCaption})}
+
+
+
+Create or update a command object from a TOKEN\+\_\+\+ARG token. 
+
+Ensures a command object exists (creates an empty one if necessary) and appends the token content as an argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tok} & Token representing the argument (TOKEN\+\_\+\+ARG). \\
+\hline
+{\em current\+\_\+cmd} & Existing command being built or NULL to create a new one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the updated or newly created t\+\_\+command, or NULL on allocation failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dbb/parser__handle__tokens_8c_a0ba548c1c29592caf86cb481cf9b4c6d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{parser__handle__tokens_8c_af26831b878a72e9d2d2ce25408571e87}\label{parser__handle__tokens_8c_af26831b878a72e9d2d2ce25408571e87} 
+\index{parser\_handle\_tokens.c@{parser\_handle\_tokens.c}!handle\_command\_token@{handle\_command\_token}}
+\index{handle\_command\_token@{handle\_command\_token}!parser\_handle\_tokens.c@{parser\_handle\_tokens.c}}
+\doxysubsubsection{\texorpdfstring{handle\_command\_token()}{handle\_command\_token()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} handle\+\_\+command\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{tok,  }\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{current\+\_\+cmd }\end{DoxyParamCaption})}
+
+
+
+Create or update a command object from a TOKEN\+\_\+\+CMD token. 
+
+If {\ttfamily current\+\_\+cmd} is NULL a new t\+\_\+command is allocated and initialized with the token content as the command name. Otherwise the function will add the token content as an argument to the existing command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tok} & Token representing the command (TOKEN\+\_\+\+CMD). \\
+\hline
+{\em current\+\_\+cmd} & Existing command being built or NULL to create a new one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the updated or newly created t\+\_\+command, or NULL on allocation failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dbb/parser__handle__tokens_8c_af26831b878a72e9d2d2ce25408571e87_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{parser__handle__tokens_8c_a60c61e16e089378338f3cf848786e2a6}\label{parser__handle__tokens_8c_a60c61e16e089378338f3cf848786e2a6} 
+\index{parser\_handle\_tokens.c@{parser\_handle\_tokens.c}!handle\_pipe\_token@{handle\_pipe\_token}}
+\index{handle\_pipe\_token@{handle\_pipe\_token}!parser\_handle\_tokens.c@{parser\_handle\_tokens.c}}
+\doxysubsubsection{\texorpdfstring{handle\_pipe\_token()}{handle\_pipe\_token()}}
+{\footnotesize\ttfamily int handle\+\_\+pipe\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{current\+\_\+cmd,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
+
+
+
+Finalize the current command on a pipe token. 
+
+Pushes the provided {\ttfamily current\+\_\+cmd} into the {\ttfamily commands} list. This is called when a pipe token is encountered to close the current command and prepare for the next one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+cmd} & Command being finalized (may not be NULL). \\
+\hline
+{\em commands} & List where the finalized command will be appended. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, 0 if {\ttfamily current\+\_\+cmd} was NULL (invalid pipe usage). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{da/dbb/parser__handle__tokens_8c_a60c61e16e089378338f3cf848786e2a6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{parser__handle__tokens_8c_a89637773a91a74e1608a942b074aa848}\label{parser__handle__tokens_8c_a89637773a91a74e1608a942b074aa848} 
+\index{parser\_handle\_tokens.c@{parser\_handle\_tokens.c}!handle\_redirect@{handle\_redirect}}
+\index{handle\_redirect@{handle\_redirect}!parser\_handle\_tokens.c@{parser\_handle\_tokens.c}}
+\doxysubsubsection{\texorpdfstring{handle\_redirect()}{handle\_redirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*} handle\+\_\+redirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{tok,  }\item[{\mbox{\hyperlink{lexer_8h_aead06bc7a81ebdd60cbdcf6b3b8e51d4}{t\+\_\+token}} \texorpdfstring{$\ast$}{*}}]{file\+\_\+tok,  }\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{current\+\_\+cmd,  }\item[{\mbox{\hyperlink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter}} \texorpdfstring{$\ast$}{*}}]{it }\end{DoxyParamCaption})}
+
+
+
+Handle a redirection token and attach the redirection to the current command object. 
+
+Reads the next token (if present) as the redirection target. If the current command has no name yet, consumes an additional token to use as the command name. Supported redirect tokens\+: \texorpdfstring{$<$}{<}, \texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}, \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} (heredoc).
+
+
+\begin{DoxyParams}{Parameters}
+{\em tok} & Token representing the redirection operator.\\
+\hline
+{\em file\+\_\+tok} & Optional token representing the redirection target (may be NULL). \\
+\hline
+{\em current\+\_\+cmd} & Command object to attach the redirection to; if NULL a new command will be created. \\
+\hline
+{\em it} & Iterator used to consume extra tokens when needed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the updated or newly created t\+\_\+command, or NULL on error. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dbb/parser__handle__tokens_8c_a89637773a91a74e1608a942b074aa848_cgraph}
+\end{center}
+\end{figure}

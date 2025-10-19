@@ -1,11 +1,11 @@
 <map id="src/include/command.h" name="src/include/command.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1409,5,1583,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1423,5,1596,31"/>
 <area shape="rect" id="Node000002" href="$d3/d58/command__internal_8h.html" title=" " alt="" coords="715,79,893,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1396,33,894,90,894,85,1395,28"/>
-<area shape="rect" id="Node000010" href="$d7/daa/executer__internal_8h.html" title=" " alt="" coords="1415,79,1577,119"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1499,44,1499,79,1493,79,1493,44"/>
-<area shape="rect" id="Node000012" href="$d5/d63/parser__internal_8h.html" title=" " alt="" coords="1601,86,1801,111"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1539,33,1672,83,1670,88,1538,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1409,33,894,90,894,85,1409,28"/>
+<area shape="rect" id="Node000010" href="$d7/daa/executer__internal_8h.html" title=" " alt="" coords="1429,79,1590,119"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1512,44,1512,79,1507,79,1507,44"/>
+<area shape="rect" id="Node000012" href="$d5/d63/parser__internal_8h.html" title=" " alt="" coords="1696,86,1896,111"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1565,32,1755,83,1754,89,1563,37"/>
 <area shape="rect" id="Node000003" href="$d3/d22/command__debug_8c.html" title=" " alt="" coords="5,167,184,207"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="701,112,470,135,196,169,185,171,184,166,196,164,469,130,701,106"/>
 <area shape="rect" id="Node000004" href="$dc/dc0/command__functs__bin_8c.html" title=" " alt="" coords="208,167,387,207"/>
@@ -21,7 +21,11 @@
 <area shape="rect" id="Node000009" href="$d3/dbb/command__queries_8c.html" title=" " alt="" coords="1221,167,1400,207"/>
 <area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="907,114,1210,164,1222,166,1221,171,1209,169,906,119"/>
 <area shape="rect" id="Node000011" href="$d7/d11/executer_8c.html" title=" " alt="" coords="1424,174,1595,199"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1504,132,1510,173,1505,174,1498,133"/>
-<area shape="rect" id="Node000013" href="$d2/d72/parser_8c.html" title=" " alt="" coords="1631,174,1772,199"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1704,125,1704,173,1699,173,1699,125"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1512,133,1512,174,1507,174,1507,133"/>
+<area shape="rect" id="Node000013" href="$d2/d72/parser_8c.html" title=" " alt="" coords="1619,174,1760,199"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1773,122,1705,176,1702,172,1769,118"/>
+<area shape="rect" id="Node000014" href="$dd/d71/parser__debug_8c.html" title=" " alt="" coords="1784,174,1973,199"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="1819,120,1869,172,1865,175,1815,123"/>
+<area shape="rect" id="Node000015" href="$da/dbb/parser__handle__tokens_8c.html" title=" " alt="" coords="1998,167,2181,207"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="1850,113,2025,164,2024,169,1848,118"/>
 </map>

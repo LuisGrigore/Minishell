@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['double_5fleft_5fredirect_0',['DOUBLE_LEFT_REDIRECT',['../d2/dcf/redirect__manager_8h.html#a9dc0708214e56f772055d28dd779e09ca55cb7d995a3a033a6a26e540a54d569c',1,'redirect_manager.h']]],
-  ['double_5fright_5fredirect_1',['DOUBLE_RIGHT_REDIRECT',['../d2/dcf/redirect__manager_8h.html#a9dc0708214e56f772055d28dd779e09ca6eb2439ef386fa87edc335e4a646ee97',1,'redirect_manager.h']]]
+  ['command_5ferr_0',['COMMAND_ERR',['../d2/d40/ms__status__codes_8h.html#ac3acda10e661334eb5a8b5a710aae024a9b2108bb40542b57a987c120ea6294b9',1,'ms_status_codes.h']]],
+  ['command_5fmalformed_5ferr_1',['COMMAND_MALFORMED_ERR',['../d2/d40/ms__status__codes_8h.html#ac3acda10e661334eb5a8b5a710aae024a298c454f821060b122af5f54f9028e4d',1,'ms_status_codes.h']]]
 ];

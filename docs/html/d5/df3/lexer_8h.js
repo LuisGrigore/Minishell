@@ -15,6 +15,6 @@ var lexer_8h =
     [ "lexer_get_token_content", "d5/df3/lexer_8h.html#aae8a2dff7df2534dd84d5037ca923efd", null ],
     [ "lexer_get_token_type", "d5/df3/lexer_8h.html#a2ebd5d8b3daca0bdb11b5cfe08268824", null ],
     [ "lexer_is_token_type", "d5/df3/lexer_8h.html#a517e2a4ae754383a5954a92a9e593102", null ],
-    [ "lexer_tokenize", "d5/df3/lexer_8h.html#a4bfce5ffa605cc5bb32062712d702198", null ],
+    [ "lexer_tokenize", "d5/df3/lexer_8h.html#ae0425f73dab89cafb7d7f3051b66b979", null ],
     [ "print_tokens", "d5/df3/lexer_8h.html#abe2d3d3cdb04a9614c52e119e4d7c64d", null ]
 ];

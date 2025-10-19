@@ -1,7 +1,8 @@
 \doxysection{src/lexer/lexer\+\_\+tokenize.c File Reference}
 \hypertarget{lexer__tokenize_8c}{}\label{lexer__tokenize_8c}\index{src/lexer/lexer\_tokenize.c@{src/lexer/lexer\_tokenize.c}}
 {\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
-Include dependency graph for lexer\+\_\+tokenize.\+c\+:\nopagebreak
+Include dependency graph for lexer\+\_\+tokenize.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,16 +12,16 @@ Include dependency graph for lexer\+\_\+tokenize.\+c\+:\nopagebreak
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198}{lexer\+\_\+tokenize}} (const char \texorpdfstring{$\ast$}{*}line)
+int \mbox{\hyperlink{lexer__tokenize_8c_ae0425f73dab89cafb7d7f3051b66b979}{lexer\+\_\+tokenize}} (const char \texorpdfstring{$\ast$}{*}line, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens\+\_\+list)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198}\label{lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198} 
+\Hypertarget{lexer__tokenize_8c_ae0425f73dab89cafb7d7f3051b66b979}\label{lexer__tokenize_8c_ae0425f73dab89cafb7d7f3051b66b979} 
 \index{lexer\_tokenize.c@{lexer\_tokenize.c}!lexer\_tokenize@{lexer\_tokenize}}
 \index{lexer\_tokenize@{lexer\_tokenize}!lexer\_tokenize.c@{lexer\_tokenize.c}}
 \doxysubsubsection{\texorpdfstring{lexer\_tokenize()}{lexer\_tokenize()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} lexer\+\_\+tokenize (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int lexer\+\_\+tokenize (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens\+\_\+list }\end{DoxyParamCaption})}
 
 Splits a raw command line into a list of tokens.
 
@@ -32,17 +33,19 @@ Splits a raw command line into a list of tokens.
 \begin{DoxyReturn}{Returns}
 A pointer to a t\+\_\+gen\+\_\+list containing t\+\_\+token\texorpdfstring{$\ast$}{*} elements, or NULL if tokenization fails.
 \end{DoxyReturn}
-Each token corresponds to a command, argument, or operator, as defined in t\+\_\+token\+\_\+type. Here is the call graph for this function\+:\nopagebreak
+Each token corresponds to a command, argument, or operator, as defined in t\+\_\+token\+\_\+type. Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d8/d82/lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198_cgraph}
+\includegraphics[width=350pt]{d8/d82/lexer__tokenize_8c_ae0425f73dab89cafb7d7f3051b66b979_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d8/d82/lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198_icgraph}
+\includegraphics[width=350pt]{d8/d82/lexer__tokenize_8c_ae0425f73dab89cafb7d7f3051b66b979_icgraph}
 \end{center}
 \end{figure}

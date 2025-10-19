@@ -106,24 +106,26 @@ $(document).ready(function(){initNavTree('d4/dfd/signal__manager_8h_source.html'
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: lgrigore &lt;lgrigore@student.42madrid.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/10/03 17:52:05 by lgrigore         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/10/06 14:10:02 by lgrigore         ###   ########.fr       */</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef SIGNAL_MANAGER_H</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define SIGNAL_MANAGER_H</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dfd/signal__manager_8h.html#a2277771239d89fed35229818c76516a1">signals_init_interactive</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dfd/signal__manager_8h.html#ad50e0c9fc8a6f32ea04fa37f4f7e1982">signals_init_heredoc</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dfd/signal__manager_8h.html#a4512fd4ab7f5fb62f2e4d95e93140505">signals_restore</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="asignal__manager_8h_html_a2277771239d89fed35229818c76516a1"><div class="ttname"><a href="../../d4/dfd/signal__manager_8h.html#a2277771239d89fed35229818c76516a1">signals_init_interactive</a></div><div class="ttdeci">void signals_init_interactive(void)</div><div class="ttdoc">Configures signals for the shell's interactive mode.</div><div class="ttdef"><b>Definition</b> signal_manager.c:17</div></div>
-<div class="ttc" id="asignal__manager_8h_html_a4512fd4ab7f5fb62f2e4d95e93140505"><div class="ttname"><a href="../../d4/dfd/signal__manager_8h.html#a4512fd4ab7f5fb62f2e4d95e93140505">signals_restore</a></div><div class="ttdeci">void signals_restore(void)</div><div class="ttdoc">Restores the original signal configuration.</div><div class="ttdef"><b>Definition</b> signal_manager.c:64</div></div>
-<div class="ttc" id="asignal__manager_8h_html_ad50e0c9fc8a6f32ea04fa37f4f7e1982"><div class="ttname"><a href="../../d4/dfd/signal__manager_8h.html#ad50e0c9fc8a6f32ea04fa37f4f7e1982">signals_init_heredoc</a></div><div class="ttdeci">void signals_init_heredoc(void)</div><div class="ttdoc">Configures signals for heredoc mode.</div><div class="ttdef"><b>Definition</b> signal_manager.c:40</div></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/dfd/signal__manager_8h.html#a2a108e74d973e7c0823ce0a3eacc4635">signals_init_interactive</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/dfd/signal__manager_8h.html#a4ee72b4356f8f0e63d6c2d32afd19705">signals_init_heredoc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/dfd/signal__manager_8h.html#a1e813db4dcd5f64bada3b68ae2f2adb8">signals_restore</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ams__status__codes_8h_html"><div class="ttname"><a href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a></div></div>
+<div class="ttc" id="asignal__manager_8h_html_a1e813db4dcd5f64bada3b68ae2f2adb8"><div class="ttname"><a href="../../d4/dfd/signal__manager_8h.html#a1e813db4dcd5f64bada3b68ae2f2adb8">signals_restore</a></div><div class="ttdeci">int signals_restore(void)</div><div class="ttdoc">Restores the original signal configuration.</div><div class="ttdef"><b>Definition</b> signal_manager.c:59</div></div>
+<div class="ttc" id="asignal__manager_8h_html_a2a108e74d973e7c0823ce0a3eacc4635"><div class="ttname"><a href="../../d4/dfd/signal__manager_8h.html#a2a108e74d973e7c0823ce0a3eacc4635">signals_init_interactive</a></div><div class="ttdeci">int signals_init_interactive(void)</div><div class="ttdoc">Configures signals for the shell's interactive mode.</div><div class="ttdef"><b>Definition</b> signal_manager.c:29</div></div>
+<div class="ttc" id="asignal__manager_8h_html_a4ee72b4356f8f0e63d6c2d32afd19705"><div class="ttname"><a href="../../d4/dfd/signal__manager_8h.html#a4ee72b4356f8f0e63d6c2d32afd19705">signals_init_heredoc</a></div><div class="ttdeci">int signals_init_heredoc(void)</div><div class="ttdoc">Configures signals for heredoc mode.</div><div class="ttdef"><b>Definition</b> signal_manager.c:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

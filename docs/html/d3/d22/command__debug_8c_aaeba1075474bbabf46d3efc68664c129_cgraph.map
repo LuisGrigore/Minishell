@@ -1,6 +1,6 @@
 <map id="print_command" name="print_command">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,105,129,131"/>
-<area shape="rect" id="Node000002" href="$d5/dc3/gen__link__list__iteration_8c.html#ae40d5a3c9a9f7dcdfcf22ffdf4d63747" title="Apply a function to all elements of the list." alt="" coords="179,55,315,80"/>
+<area shape="rect" id="Node000002" href="$d5/dc3/gen__link__list__iteration_8c.html#af3f8c8cb8a34ba114f6e0ede0454008a" title="Apply a function to all elements of the list." alt="" coords="179,55,315,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,103,187,81,189,86,114,108"/>
 <area shape="rect" id="Node000004" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="375,5,514,31"/>
 <area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="80,103,121,71,148,54,176,41,223,27,271,19,361,13,362,18,272,24,224,33,178,46,150,59,124,75,84,107"/>

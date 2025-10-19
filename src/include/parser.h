@@ -6,28 +6,20 @@
 
 
 /**
- * Parses a raw command line string into a structured list of commands.
+ * Tokenize and parse a single command-line string into a list of commands.
  *
- * This function is the high-level entry point for transforming user input
- * into executable command objects. It performs the following steps:
+ * This function performs tokenization of the input `line` and converts the
+ * resulting tokens into `t_command` objects which are appended to the
+ * provided `commands` list. The `commands` list must be created by the caller
+ * (for example via `gen_list_create`) and will be populated on success.
  *
- *   1. Tokenizes the input string using.
- *   2. Converts the list of tokens into command objects.
- *   3. Cleans up the intermediate token list.
+ * The function returns a status code defined in `ms_status_codes.h`:
+ *  - MS_OK on success (commands appended to `commands`).
+ *  - PARSER_ERR or other error codes on failure.
  *
- * @param line A null-terminated string containing the user input.
- *
- * @return A list (t_gen_list) of t_command* objects representing the parsed
- *         commands, or NULL if parsing fails at any stage.
- *
- * Example:
- *   Input:  "ls -l | grep txt > out.txt"
- *   Output: A list of two t_command structures:
- *              - Command 1: "ls" with argument "-l"
- *              - Command 2: "grep" with argument "txt" and output redirection to "out.txt"
- *
- * The caller is responsible for destroying the returned command list
- * using the appropriate cleanup function.
+ * @param line Null-terminated input string to parse.
+ * @param commands Output list where parsed t_command* objects will be appended.
+ * @return MS_OK on success, or an error status otherwise.
  */
 int parse_line(char *line, t_gen_list *commands);
 

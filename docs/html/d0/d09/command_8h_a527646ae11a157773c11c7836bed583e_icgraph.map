@@ -1,11 +1,9 @@
 <map id="command_create" name="command_create">
-<area shape="rect" id="Node000001" title="Creates a new command structure." alt="" coords="652,5,787,31"/>
-<area shape="rect" id="Node000002" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="397,5,604,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="638,21,604,21,604,15,638,15"/>
-<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="260,5,349,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,21,350,21,350,15,383,15"/>
-<area shape="rect" id="Node000004" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="108,5,212,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,21,212,21,212,15,247,15"/>
-<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+<area shape="rect" id="Node000001" title="Creates a new command structure." alt="" coords="235,55,369,80"/>
+<area shape="rect" id="Node000002" href="$da/dbb/parser__handle__tokens_8c.html#a0ba548c1c29592caf86cb481cf9b4c6d" title="Create or update a command object from a TOKEN_ARG token." alt="" coords="27,5,165,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,54,149,33,151,28,236,49"/>
+<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#af26831b878a72e9d2d2ce25408571e87" title="Create or update a command object from a TOKEN_CMD token." alt="" coords="5,55,187,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,70,187,70,187,65,221,65"/>
+<area shape="rect" id="Node000004" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="35,104,157,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,86,151,107,149,101,235,81"/>
 </map>

@@ -8,7 +8,7 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="106,141,139,141,139,146,106,146"/>
 <area shape="rect" id="Node000008" href="$d9/d6d/gen__link__list__predicates_8c.html#a2f7e656dcfadd2f1e532fb6fbf295f77" title="Check if the list is empty." alt="" coords="159,180,299,205"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="102,153,171,174,170,179,100,159"/>
-<area shape="rect" id="Node000009" href="$da/d5a/signal__manager_8c.html#a4512fd4ab7f5fb62f2e4d95e93140505" title="Restores the original signal configuration." alt="" coords="169,229,290,255"/>
+<area shape="rect" id="Node000009" href="$da/d5a/signal__manager_8c.html#a1e813db4dcd5f64bada3b68ae2f2adb8" title="Restores the original signal configuration." alt="" coords="169,229,290,255"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="72,154,108,184,155,214,171,222,169,227,152,219,105,188,69,158"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,46,340,54,339,59,283,52"/>
 <area shape="rect" id="Node000004" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="536,5,695,31"/>

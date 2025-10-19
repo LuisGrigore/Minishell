@@ -20,6 +20,8 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+typedef enum \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8}{e\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}}
+\item 
 typedef struct \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{s\+\_\+gen\+\_\+list}} \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}}
 \begin{DoxyCompactList}\small\item\em Generic list. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{gen__link__list__internal_8h_d8/df2/structs__gen__list__iter}{s\+\_\+gen\+\_\+list\+\_\+iter}} \mbox{\hyperlink{gen__list_8h_a7cc1e2fb9e34bc9e310435411e6d1f42}{t\+\_\+gen\+\_\+list\+\_\+iter}}
@@ -38,6 +40,14 @@ typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__list_8h_a29007a278
 \begin{DoxyCompactList}\small\item\em Function applied to each list element during traversal, with context. \end{DoxyCompactList}\item 
 typedef void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element}}) (const char \texorpdfstring{$\ast$}{*}str)
 \begin{DoxyCompactList}\small\item\em Function that converts a string into a list element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8}{e\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \{ \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a0a7a4df14c8fcd54024b507e885f55e7}{GEN\+\_\+\+LIST\+\_\+\+OK}}
+, \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a00ddc75d4640d1db1baa2c958456aafa}{GEN\+\_\+\+LIST\+\_\+\+MALLOC\+\_\+\+ERR}}
+, \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a41c5d338db4e610189032facf0ee7ae7}{GEN\+\_\+\+LIST\+\_\+\+IS\+\_\+\+NULL\+\_\+\+ERR}}
+ \}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,19 +55,19 @@ typedef void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperl
 \begin{DoxyCompactList}\small\item\em Initialize an empty list. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gen__list_8h_a4acf718ea226522128b6f12296f7c821}{gen\+\_\+list\+\_\+destroy}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
 \begin{DoxyCompactList}\small\item\em Destroy the entire list and its nodes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__list_8h_a9df831ac7dc242f94206af62e0387df1}{gen\+\_\+list\+\_\+push\+\_\+back}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void \texorpdfstring{$\ast$}{*}value)
+\mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_ab220d27656ee60bd47c175d49e9b7630}{gen\+\_\+list\+\_\+push\+\_\+back}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void \texorpdfstring{$\ast$}{*}value)
 \begin{DoxyCompactList}\small\item\em Insert a value at the end of the list. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__list_8h_a10328f908d6be67ff4b38b53f7a727a1}{gen\+\_\+list\+\_\+push\+\_\+front}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void \texorpdfstring{$\ast$}{*}value)
+\mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_afaff7b55fa096faad82dc3709598c699}{gen\+\_\+list\+\_\+push\+\_\+front}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, void \texorpdfstring{$\ast$}{*}value)
 \begin{DoxyCompactList}\small\item\em Insert a value at the beginning of the list. \end{DoxyCompactList}\item 
 void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__list_8h_a452a14292622fab76140e1e9ca0a57e7}{gen\+\_\+list\+\_\+pop\+\_\+front}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list)
 \begin{DoxyCompactList}\small\item\em Remove the first node of the list and return its value. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__list_8h_a04d57cee48d7b2923f943142ca7346ef}{gen\+\_\+list\+\_\+remove\+\_\+if}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
+\mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_a9f8ae6f8de0a5f8be747fb6592f745b1}{gen\+\_\+list\+\_\+remove\+\_\+if}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
 \begin{DoxyCompactList}\small\item\em Remove nodes that satisfy a predicate. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__list_8h_af9c742479ba0e82feda98fd6fca35f95}{gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
+\mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_a80cccb451c13d7575997087129a26132}{gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}} predicate, void \texorpdfstring{$\ast$}{*}context, \mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}} element\+\_\+destroyer)
 \begin{DoxyCompactList}\small\item\em Remove nodes that satisfy a predicate with context. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\+\_\+list\+\_\+for\+\_\+each}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}} func)
+\mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_af3f8c8cb8a34ba114f6e0ede0454008a}{gen\+\_\+list\+\_\+for\+\_\+each}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}} func)
 \begin{DoxyCompactList}\small\item\em Apply a function to all elements of the list. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{gen__list_8h_a0264017867021c6816bc65f1a79632b6}{gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx}} func, void \texorpdfstring{$\ast$}{*}context)
+\mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_a8be2cca1d82589c16b7874a64796cb41}{gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx}} func, void \texorpdfstring{$\ast$}{*}context)
 \begin{DoxyCompactList}\small\item\em Apply a function to all elements of the list, with context. \end{DoxyCompactList}\item 
 void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gen__list_8h_a2102327ee709da7dafad283f5b02ce00}{gen\+\_\+list\+\_\+find}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}} predicate)
 \begin{DoxyCompactList}\small\item\em Find the first element that satisfies a predicate. \end{DoxyCompactList}\item 
@@ -188,6 +198,12 @@ Maintains the current node during iteration.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
 \end{DoxySeeAlso}
+\Hypertarget{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}\label{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b} 
+\index{gen\_list.h@{gen\_list.h}!t\_gen\_list\_status\_code@{t\_gen\_list\_status\_code}}
+\index{t\_gen\_list\_status\_code@{t\_gen\_list\_status\_code}!gen\_list.h@{gen\_list.h}}
+\doxysubsubsection{\texorpdfstring{t\_gen\_list\_status\_code}{t\_gen\_list\_status\_code}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8}{e\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}}}
+
 \Hypertarget{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}\label{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c} 
 \index{gen\_list.h@{gen\_list.h}!t\_predicate@{t\_predicate}}
 \index{t\_predicate@{t\_predicate}!gen\_list.h@{gen\_list.h}}
@@ -246,6 +262,29 @@ Dynamically allocated element, or NULL on failure.
 \end{DoxyReturn}
 
 
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8}\label{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8} 
+\index{gen\_list.h@{gen\_list.h}!e\_gen\_list\_status\_code@{e\_gen\_list\_status\_code}}
+\index{e\_gen\_list\_status\_code@{e\_gen\_list\_status\_code}!gen\_list.h@{gen\_list.h}}
+\doxysubsubsection{\texorpdfstring{e\_gen\_list\_status\_code}{e\_gen\_list\_status\_code}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8}{e\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEN\_LIST\_OK@{GEN\_LIST\_OK}!gen\_list.h@{gen\_list.h}}\index{gen\_list.h@{gen\_list.h}!GEN\_LIST\_OK@{GEN\_LIST\_OK}}}\Hypertarget{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a0a7a4df14c8fcd54024b507e885f55e7}\label{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a0a7a4df14c8fcd54024b507e885f55e7} 
+GEN\+\_\+\+LIST\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEN\_LIST\_MALLOC\_ERR@{GEN\_LIST\_MALLOC\_ERR}!gen\_list.h@{gen\_list.h}}\index{gen\_list.h@{gen\_list.h}!GEN\_LIST\_MALLOC\_ERR@{GEN\_LIST\_MALLOC\_ERR}}}\Hypertarget{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a00ddc75d4640d1db1baa2c958456aafa}\label{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a00ddc75d4640d1db1baa2c958456aafa} 
+GEN\+\_\+\+LIST\+\_\+\+MALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEN\_LIST\_IS\_NULL\_ERR@{GEN\_LIST\_IS\_NULL\_ERR}!gen\_list.h@{gen\_list.h}}\index{gen\_list.h@{gen\_list.h}!GEN\_LIST\_IS\_NULL\_ERR@{GEN\_LIST\_IS\_NULL\_ERR}}}\Hypertarget{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a41c5d338db4e610189032facf0ee7ae7}\label{gen__list_8h_a04a613fe7274ac299230d0d4a6486fc8a41c5d338db4e610189032facf0ee7ae7} 
+GEN\+\_\+\+LIST\+\_\+\+IS\+\_\+\+NULL\+\_\+\+ERR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
 \doxysubsection{Function Documentation}
 \Hypertarget{gen__list_8h_a03b4701bb3af070176c8057c8c068f11}\label{gen__list_8h_a03b4701bb3af070176c8057c8c068f11} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_create@{gen\_list\_create}}
@@ -260,7 +299,8 @@ Initialize an empty list.
 \begin{DoxyReturn}{Returns}
 Pointer to the created list, or NULL if allocation fails. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -290,7 +330,8 @@ Pointer to a newly allocated list, or NULL on error.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a45339f17ba107cf89ced205c9ba29a79}{t\+\_\+string\+\_\+to\+\_\+element} 
 \end{DoxySeeAlso}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -324,7 +365,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=320pt]{d3/d09/gen__list_8h_a4acf718ea226522128b6f12296f7c821_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -400,19 +442,18 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=333pt]{d3/d09/gen__list_8h_abe06ed3bda440c2bdaf89881a83fddf8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d3/d09/gen__list_8h_abe06ed3bda440c2bdaf89881a83fddf8_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}\label{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747} 
+\Hypertarget{gen__list_8h_af3f8c8cb8a34ba114f6e0ede0454008a}\label{gen__list_8h_af3f8c8cb8a34ba114f6e0ede0454008a} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_for\_each@{gen\_list\_for\_each}}
 \index{gen\_list\_for\_each@{gen\_list\_for\_each}!gen\_list.h@{gen\_list.h}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_for\_each()}{gen\_list\_for\_each()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+for\+\_\+each (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}}}]{func }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} gen\+\_\+list\+\_\+for\+\_\+each (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func}}}]{func }\end{DoxyParamCaption})}
 
 
 
@@ -428,13 +469,14 @@ Apply a function to all elements of the list.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a884bc438360ab582b2c03305e14c196d}{t\+\_\+apply\+\_\+func} 
 
-\doxylink{gen__list_8h_a0264017867021c6816bc65f1a79632b6}{gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx} 
+\doxylink{gen__list_8h_a8be2cca1d82589c16b7874a64796cb41}{gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx} 
 \end{DoxySeeAlso}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=337pt]{d3/d09/gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747_cgraph}
+\includegraphics[width=337pt]{d3/d09/gen__list_8h_af3f8c8cb8a34ba114f6e0ede0454008a_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -442,14 +484,14 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d3/d09/gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747_icgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_af3f8c8cb8a34ba114f6e0ede0454008a_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__list_8h_a0264017867021c6816bc65f1a79632b6}\label{gen__list_8h_a0264017867021c6816bc65f1a79632b6} 
+\Hypertarget{gen__list_8h_a8be2cca1d82589c16b7874a64796cb41}\label{gen__list_8h_a8be2cca1d82589c16b7874a64796cb41} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_for\_each\_ctx@{gen\_list\_for\_each\_ctx}}
 \index{gen\_list\_for\_each\_ctx@{gen\_list\_for\_each\_ctx}!gen\_list.h@{gen\_list.h}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_for\_each\_ctx()}{gen\_list\_for\_each\_ctx()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx}}}]{func,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} gen\+\_\+list\+\_\+for\+\_\+each\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx}}}]{func,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})}
 
 
 
@@ -467,13 +509,14 @@ Apply a function to all elements of the list, with context.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a29007a278e224f0a7c4221b4db83e76d}{t\+\_\+apply\+\_\+func\+\_\+ctx} 
 
-\doxylink{gen__list_8h_ae40d5a3c9a9f7dcdfcf22ffdf4d63747}{gen\+\_\+list\+\_\+for\+\_\+each} 
+\doxylink{gen__list_8h_af3f8c8cb8a34ba114f6e0ede0454008a}{gen\+\_\+list\+\_\+for\+\_\+each} 
 \end{DoxySeeAlso}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d3/d09/gen__list_8h_a0264017867021c6816bc65f1a79632b6_cgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_a8be2cca1d82589c16b7874a64796cb41_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{gen__list_8h_a88eccd5115040464ae1ab2ea4f6fb565}\label{gen__list_8h_a88eccd5115040464ae1ab2ea4f6fb565} 
@@ -497,8 +540,7 @@ list size.
 \begin{DoxySeeAlso}{See also}
 \doxylink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list} 
 \end{DoxySeeAlso}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -693,8 +735,7 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{gen\_list\_peek\_index()}{gen\_list\_peek\_index()}}
 {\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+peek\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{int}]{idx }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -707,8 +748,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{gen\_list\_peek\_top()}{gen\_list\_peek\_top()}}
 {\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} gen\+\_\+list\+\_\+peek\+\_\+top (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -741,18 +781,19 @@ Remove the first node of the list and return its value.
 \begin{DoxyReturn}{Returns}
 Value stored in the first node, or NULL if the list is empty. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d3/d09/gen__list_8h_a452a14292622fab76140e1e9ca0a57e7_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__list_8h_a9df831ac7dc242f94206af62e0387df1}\label{gen__list_8h_a9df831ac7dc242f94206af62e0387df1} 
+\Hypertarget{gen__list_8h_ab220d27656ee60bd47c175d49e9b7630}\label{gen__list_8h_ab220d27656ee60bd47c175d49e9b7630} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_push\_back@{gen\_list\_push\_back}}
 \index{gen\_list\_push\_back@{gen\_list\_push\_back}!gen\_list.h@{gen\_list.h}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_push\_back()}{gen\_list\_push\_back()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} gen\+\_\+list\+\_\+push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -765,18 +806,19 @@ Insert a value at the end of the list.
 {\em value} & Pointer to the value to insert. \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d3/d09/gen__list_8h_a9df831ac7dc242f94206af62e0387df1_icgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_ab220d27656ee60bd47c175d49e9b7630_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__list_8h_a10328f908d6be67ff4b38b53f7a727a1}\label{gen__list_8h_a10328f908d6be67ff4b38b53f7a727a1} 
+\Hypertarget{gen__list_8h_afaff7b55fa096faad82dc3709598c699}\label{gen__list_8h_afaff7b55fa096faad82dc3709598c699} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_push\_front@{gen\_list\_push\_front}}
 \index{gen\_list\_push\_front@{gen\_list\_push\_front}!gen\_list.h@{gen\_list.h}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_push\_front()}{gen\_list\_push\_front()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+push\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} gen\+\_\+list\+\_\+push\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -789,18 +831,19 @@ Insert a value at the beginning of the list.
 {\em value} & Pointer to the value to insert. \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d3/d09/gen__list_8h_a10328f908d6be67ff4b38b53f7a727a1_icgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_afaff7b55fa096faad82dc3709598c699_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{gen__list_8h_a04d57cee48d7b2923f943142ca7346ef}\label{gen__list_8h_a04d57cee48d7b2923f943142ca7346ef} 
+\Hypertarget{gen__list_8h_a9f8ae6f8de0a5f8be747fb6592f745b1}\label{gen__list_8h_a9f8ae6f8de0a5f8be747fb6592f745b1} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_remove\_if@{gen\_list\_remove\_if}}
 \index{gen\_list\_remove\_if@{gen\_list\_remove\_if}!gen\_list.h@{gen\_list.h}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_remove\_if()}{gen\_list\_remove\_if()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+remove\+\_\+if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} gen\+\_\+list\+\_\+remove\+\_\+if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_a4531065fe6787efbf5eab36f3823e40c}{t\+\_\+predicate}}}]{predicate,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
 
 
 
@@ -820,11 +863,11 @@ Remove nodes that satisfy a predicate.
 
 \doxylink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer} 
 \end{DoxySeeAlso}
-\Hypertarget{gen__list_8h_af9c742479ba0e82feda98fd6fca35f95}\label{gen__list_8h_af9c742479ba0e82feda98fd6fca35f95} 
+\Hypertarget{gen__list_8h_a80cccb451c13d7575997087129a26132}\label{gen__list_8h_a80cccb451c13d7575997087129a26132} 
 \index{gen\_list.h@{gen\_list.h}!gen\_list\_remove\_if\_ctx@{gen\_list\_remove\_if\_ctx}}
 \index{gen\_list\_remove\_if\_ctx@{gen\_list\_remove\_if\_ctx}!gen\_list.h@{gen\_list.h}}
 \doxysubsubsection{\texorpdfstring{gen\_list\_remove\_if\_ctx()}{gen\_list\_remove\_if\_ctx()}}
-{\footnotesize\ttfamily void gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a7ef561452cd2dd006a2c3d06ee3a3a2b}{t\+\_\+gen\+\_\+list\+\_\+status\+\_\+code}} gen\+\_\+list\+\_\+remove\+\_\+if\+\_\+ctx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{gen__list_8h_ad2be4dbe7531c2a410f35968ae79dba6}{t\+\_\+predicate\+\_\+ctx}}}]{predicate,  }\item[{void \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\mbox{\hyperlink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer}}}]{element\+\_\+destroyer }\end{DoxyParamCaption})}
 
 
 
@@ -846,11 +889,12 @@ Remove nodes that satisfy a predicate with context.
 
 \doxylink{gen__list_8h_aeb46e1336eaae7764e923d581d6bac03}{t\+\_\+element\+\_\+destroyer} 
 \end{DoxySeeAlso}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d3/d09/gen__list_8h_af9c742479ba0e82feda98fd6fca35f95_icgraph}
+\includegraphics[width=350pt]{d3/d09/gen__list_8h_a80cccb451c13d7575997087129a26132_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{gen__list_8h_ac8c3259db15c53ed58adcf78608c03bf}\label{gen__list_8h_ac8c3259db15c53ed58adcf78608c03bf} 

@@ -1,13 +1,17 @@
 <map id="src/pipe_manager/pipe_manager.c" name="src/pipe_manager/pipe_manager.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="165,5,336,45"/>
-<area shape="rect" id="Node000002" href="$dc/d98/pipe__manager__internal_8h.html" title=" " alt="" coords="159,93,343,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,46,253,79,248,79,248,46"/>
-<area shape="rect" id="Node000003" href="$db/db2/pipe__manager_8h.html" title=" " alt="" coords="5,167,195,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="228,121,138,163,136,158,225,116"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="219,167,282,192"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="253,119,253,153,248,153,248,119"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="307,167,381,192"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="267,117,320,156,316,160,264,121"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="65,240,135,265"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,192,103,226,97,226,97,192"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="173,5,343,45"/>
+<area shape="rect" id="Node000002" href="$dc/d98/pipe__manager__internal_8h.html" title=" " alt="" coords="166,93,350,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,46,261,79,255,79,255,46"/>
+<area shape="rect" id="Node000003" href="$db/db2/pipe__manager_8h.html" title=" " alt="" coords="13,167,202,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,121,146,163,143,158,233,116"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="227,167,289,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="261,119,261,153,255,153,255,119"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="314,167,389,192"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="275,117,327,156,324,160,271,121"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,240,76,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,194,63,232,59,228,94,191"/>
+<area shape="rect" id="Node000005" href="$d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="101,240,247,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="120,191,156,228,152,232,116,194"/>
+<area shape="rect" id="Node000006" href="$db/d16/config_8h.html" title=" " alt="" coords="131,313,217,339"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="177,266,177,300,171,300,171,266"/>
 </map>

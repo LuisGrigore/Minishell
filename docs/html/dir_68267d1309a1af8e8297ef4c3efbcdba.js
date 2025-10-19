@@ -12,5 +12,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "redirect_manager", "dir_0a087bf1eb18f7b93d6c6227b1a2417c.html", "dir_0a087bf1eb18f7b93d6c6227b1a2417c" ],
     [ "signal_manager", "dir_b8d680f5ed71d40b8e0a803a3d719ec3.html", "dir_b8d680f5ed71d40b8e0a803a3d719ec3" ],
     [ "utils", "dir_313caf1132e152dd9b58bea13a4052ca.html", "dir_313caf1132e152dd9b58bea13a4052ca" ],
+    [ "config.h", "db/d16/config_8h.html", "db/d16/config_8h" ],
     [ "minishell.c", "d7/d66/minishell_8c.html", "d7/d66/minishell_8c" ]
 ];

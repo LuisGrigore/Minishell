@@ -1,0 +1,9 @@
+<map id="gen_list_push_front" name="gen_list_push_front">
+<area shape="rect" id="Node000001" title="Insert a value at the beginning of the list." alt="" coords="297,31,447,56"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="176,31,249,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,46,250,46,250,41,283,41"/>
+<area shape="rect" id="Node000003" href="$d0/dfa/command__functs__builtin__b_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="19,5,114,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,37,114,29,115,24,163,32"/>
+<area shape="rect" id="Node000004" href="$d5/db5/command__functs__builtin__a_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="5,55,128,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="163,54,129,60,128,55,162,49"/>
+</map>

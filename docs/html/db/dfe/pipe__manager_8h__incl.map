@@ -1,5 +1,9 @@
 <map id="src/include/pipe_manager.h" name="src/include/pipe_manager.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,205,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="70,79,141,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,31,108,65,103,65,103,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="7,5,207,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,33,63,70,59,67,94,29"/>
+<area shape="rect" id="Node000003" href="$d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="101,79,247,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,29,156,67,152,70,116,33"/>
+<area shape="rect" id="Node000004" href="$db/d16/config_8h.html" title=" " alt="" coords="131,152,217,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="177,104,177,138,171,138,171,104"/>
 </map>

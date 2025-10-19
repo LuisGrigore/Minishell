@@ -1,7 +1,8 @@
 \doxysection{src/pipe\+\_\+manager/pipe\+\_\+manager.c File Reference}
 \hypertarget{pipe__manager_8c}{}\label{pipe__manager_8c}\index{src/pipe\_manager/pipe\_manager.c@{src/pipe\_manager/pipe\_manager.c}}
 {\ttfamily \#include "{}pipe\+\_\+manager\+\_\+internal.\+h"{}}\newline
-Include dependency graph for pipe\+\_\+manager.\+c\+:\nopagebreak
+Include dependency graph for pipe\+\_\+manager.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,18 +16,18 @@ Include dependency graph for pipe\+\_\+manager.\+c\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Initializes a pipe manager for a given number of commands. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pipe__manager_8c_a2f5e16a3793a99370d799a52fd8f038d}{pipe\+\_\+manager\+\_\+destroy}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
 \begin{DoxyCompactList}\small\item\em Destroys a pipe manager and frees its resources. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{pipe__manager_8c_aa351fff220374c902293f15c9bd146d1}{pipe\+\_\+manager\+\_\+setup\+\_\+command}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm, size\+\_\+t index)
+int \mbox{\hyperlink{pipe__manager_8c_a8dff8bddc285e799e220d90832667165}{pipe\+\_\+manager\+\_\+setup\+\_\+command}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm, size\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Sets up the pipes for a specific command in the pipeline. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{pipe__manager_8c_aa2eac0040287a9597e3ab34c71e7e98d}{pipe\+\_\+manager\+\_\+close\+\_\+all}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
+int \mbox{\hyperlink{pipe__manager_8c_ae1343f55a733560642c093c92e51f355}{pipe\+\_\+manager\+\_\+close\+\_\+all}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
 \begin{DoxyCompactList}\small\item\em Closes all pipes managed by the pipe manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{pipe__manager_8c_aa2eac0040287a9597e3ab34c71e7e98d}\label{pipe__manager_8c_aa2eac0040287a9597e3ab34c71e7e98d} 
+\Hypertarget{pipe__manager_8c_ae1343f55a733560642c093c92e51f355}\label{pipe__manager_8c_ae1343f55a733560642c093c92e51f355} 
 \index{pipe\_manager.c@{pipe\_manager.c}!pipe\_manager\_close\_all@{pipe\_manager\_close\_all}}
 \index{pipe\_manager\_close\_all@{pipe\_manager\_close\_all}!pipe\_manager.c@{pipe\_manager.c}}
 \doxysubsubsection{\texorpdfstring{pipe\_manager\_close\_all()}{pipe\_manager\_close\_all()}}
-{\footnotesize\ttfamily void pipe\+\_\+manager\+\_\+close\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int pipe\+\_\+manager\+\_\+close\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm }\end{DoxyParamCaption})}
 
 
 
@@ -70,11 +71,11 @@ Initializes a pipe manager for a given number of commands.
 \begin{DoxyReturn}{Returns}
 Pointer to the newly created pipe manager. 
 \end{DoxyReturn}
-\Hypertarget{pipe__manager_8c_aa351fff220374c902293f15c9bd146d1}\label{pipe__manager_8c_aa351fff220374c902293f15c9bd146d1} 
+\Hypertarget{pipe__manager_8c_a8dff8bddc285e799e220d90832667165}\label{pipe__manager_8c_a8dff8bddc285e799e220d90832667165} 
 \index{pipe\_manager.c@{pipe\_manager.c}!pipe\_manager\_setup\_command@{pipe\_manager\_setup\_command}}
 \index{pipe\_manager\_setup\_command@{pipe\_manager\_setup\_command}!pipe\_manager.c@{pipe\_manager.c}}
 \doxysubsubsection{\texorpdfstring{pipe\_manager\_setup\_command()}{pipe\_manager\_setup\_command()}}
-{\footnotesize\ttfamily void pipe\+\_\+manager\+\_\+setup\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int pipe\+\_\+manager\+\_\+setup\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
 
 
 

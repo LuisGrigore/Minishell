@@ -1,0 +1,12 @@
+<map id="command_push_redirect" name="command_push_redirect">
+<area shape="rect" id="Node000001" title="Adds a redirection to the command." alt="" coords="5,31,188,56"/>
+<area shape="rect" id="Node000002" href="$d5/d02/gen__link__list__insertion_8c.html#ab220d27656ee60bd47c175d49e9b7630" title="Insert a value at the end of the list." alt="" coords="236,5,385,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,30,222,26,223,31,189,35"/>
+<area shape="rect" id="Node000003" href="$d1/d76/redirect__manager_8c.html#a4c33ef90e489d46f3c14ff827e59995e" title="Creates a new redirect structure." alt="" coords="251,55,371,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,51,237,56,237,62,188,56"/>
+<area shape="rect" id="Node000004" href="$d5/dd7/ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="433,29,516,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="370,55,419,48,420,53,371,61"/>
+<area shape="rect" id="Node000005" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="564,55,639,80"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="371,65,550,65,550,70,371,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="517,48,551,55,550,60,516,53"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="handle_arg_token" name="handle_arg_token">
+<area shape="rect" id="Node000001" title="Create or update a command object from a TOKEN_ARG token." alt="" coords="5,129,143,155"/>
+<area shape="rect" id="Node000002" href="$d5/d2b/command__lifecycle_8c.html#a527646ae11a157773c11c7836bed583e" title="Creates a new command structure." alt="" coords="214,53,349,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,127,190,95,230,81,232,86,192,101,109,132"/>
+<area shape="rect" id="Node000005" href="$de/d8a/command__operations_8c.html#a60d081e014646c033bef4b7a9b229948" title="Adds an argument to the command." alt="" coords="205,155,358,180"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="143,148,191,154,191,159,143,153"/>
+<area shape="rect" id="Node000006" href="$de/dcf/ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="455,105,534,131"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="143,135,441,118,442,124,143,141"/>
+<area shape="rect" id="Node000009" href="$dc/d5a/lexer__token_8c.html#aae8a2dff7df2534dd84d5037ca923efd" title=" " alt="" coords="191,204,372,229"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="102,152,192,190,215,198,213,203,190,195,100,157"/>
+<area shape="rect" id="Node000003" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="457,5,533,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,51,443,27,444,32,339,56"/>
+<area shape="rect" id="Node000004" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="434,55,555,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="349,64,421,64,420,70,349,69"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="336,152,442,127,443,133,338,157"/>
+<area shape="rect" id="Node000008" href="$d5/d02/gen__link__list__insertion_8c.html#ab220d27656ee60bd47c175d49e9b7630" title="Insert a value at the end of the list." alt="" coords="420,155,569,180"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="358,165,406,165,406,170,358,170"/>
+<area shape="rect" id="Node000007" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="617,105,692,131"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="534,115,604,115,604,121,534,121"/>
+</map>
