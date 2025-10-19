@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniShell: include/environment.h Source File</title>
+<title>MiniShell: src/include/environment.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('de/d26/environment_8h_source.html','..
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: lgrigore &lt;lgrigore@student.42madrid.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/10/01 14:01:41 by lgrigore         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2025/10/04 14:47:41 by lgrigore         ###   ########.fr       */</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -152,8 +152,11 @@ $(document).ready(function(){initNavTree('de/d26/environment_8h_source.html','..
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keywordtype">bool</span>                        <a class="code hl_function" href="../../de/d26/environment_8h.html#acd7c8a8bc6dcb9bbe4d1bf01bc8ce5a9">env_has</a>(<a class="code hl_struct" href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">t_gen_list</a> *env, <span class="keywordtype">char</span> *name);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keywordtype">char</span> *<a class="code hl_function" href="../../de/d26/environment_8h.html#a11ca2b9b5f44c8a4b33e6470b6404705">env_expand_vars</a>(<a class="code hl_struct" href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">t_gen_list</a> *env, <span class="keywordtype">char</span> *line);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aenvironment_8h_html_a070d87ba3c4a4664d9e477e542e7358c"><div class="ttname"><a href="../../de/d26/environment_8h.html#a070d87ba3c4a4664d9e477e542e7358c">env_set</a></div><div class="ttdeci">int env_set(t_gen_list *env, char *name, char *value)</div><div class="ttdoc">Add or update an environment variable.</div><div class="ttdef"><b>Definition</b> environment_operations.c:15</div></div>
+<div class="ttc" id="aenvironment_8h_html_a11ca2b9b5f44c8a4b33e6470b6404705"><div class="ttname"><a href="../../de/d26/environment_8h.html#a11ca2b9b5f44c8a4b33e6470b6404705">env_expand_vars</a></div><div class="ttdeci">char * env_expand_vars(t_gen_list *env, char *line)</div><div class="ttdef"><b>Definition</b> environment_var_expansion.c:53</div></div>
 <div class="ttc" id="aenvironment_8h_html_a562e5d4f7de17fdbeea11feecda2ebc3"><div class="ttname"><a href="../../de/d26/environment_8h.html#a562e5d4f7de17fdbeea11feecda2ebc3">env_serialize</a></div><div class="ttdeci">char ** env_serialize(t_gen_list *env)</div><div class="ttdoc">Serialize environment variables into a null-terminated string array.</div><div class="ttdef"><b>Definition</b> environment_serialization_deserialization.c:32</div></div>
 <div class="ttc" id="aenvironment_8h_html_a5a194ea505a37e1c0ff6c349851f7c56"><div class="ttname"><a href="../../de/d26/environment_8h.html#a5a194ea505a37e1c0ff6c349851f7c56">env_unset</a></div><div class="ttdeci">void env_unset(t_gen_list *env, char *name)</div><div class="ttdoc">Remove an environment variable by name.</div><div class="ttdef"><b>Definition</b> environment_operations.c:38</div></div>
 <div class="ttc" id="aenvironment_8h_html_a5da2d3c514cffffe7e48122742dd4d44"><div class="ttname"><a href="../../de/d26/environment_8h.html#a5da2d3c514cffffe7e48122742dd4d44">env_deserialize</a></div><div class="ttdeci">t_gen_list * env_deserialize(char **str_array)</div><div class="ttdoc">Convert a string array into an environment variable list.</div><div class="ttdef"><b>Definition</b> environment_serialization_deserialization.c:39</div></div>
@@ -167,7 +170,7 @@ $(document).ready(function(){initNavTree('de/d26/environment_8h_source.html','..
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../de/d26/environment_8h.html">environment.h</a></li>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../de/d26/environment_8h.html">environment.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

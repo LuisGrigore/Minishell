@@ -23,6 +23,7 @@ var gen__list_8h =
     [ "gen_list_iter_destroy", "d3/d09/gen__list_8h.html#af49c314a5f17ea28e0367327486eb66b", null ],
     [ "gen_list_iter_next", "d3/d09/gen__list_8h.html#a4608f925c54b6539f8cee3d67edba91c", null ],
     [ "gen_list_iter_start", "d3/d09/gen__list_8h.html#a491520fc16d4760ca4596d256a4e3835", null ],
+    [ "gen_list_peek_index", "d3/d09/gen__list_8h.html#ab7ec0b6203ad0fa5bf63b4bfedeac50a", null ],
     [ "gen_list_peek_top", "d3/d09/gen__list_8h.html#af502cf585dc2431e5fbe27c79fed05cf", null ],
     [ "gen_list_pop_front", "d3/d09/gen__list_8h.html#a452a14292622fab76140e1e9ca0a57e7", null ],
     [ "gen_list_push_back", "d3/d09/gen__list_8h.html#a9df831ac7dc242f94206af62e0387df1", null ],

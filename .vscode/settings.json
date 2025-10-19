@@ -33,6 +33,10 @@
 		"string_view": "c",
 		"initializer_list": "c",
 		"gen_list.h": "c",
-		"parser.h": "c"
+		"parser.h": "c",
+		"redirect_manager_internal.h": "c",
+		"redirect_manager.h": "c",
+		"command_internal.h": "c",
+		"ms_status_codes.h": "c"
 	}
 }

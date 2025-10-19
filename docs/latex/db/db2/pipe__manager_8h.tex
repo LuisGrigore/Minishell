@@ -1,0 +1,116 @@
+\doxysection{src/include/pipe\+\_\+manager.h File Reference}
+\hypertarget{pipe__manager_8h}{}\label{pipe__manager_8h}\index{src/include/pipe\_manager.h@{src/include/pipe\_manager.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for pipe\+\_\+manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{db/dfe/pipe__manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d4b/pipe__manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{s\+\_\+pipe\+\_\+manager}} \mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}}
+\begin{DoxyCompactList}\small\item\em Struct representing a pipe manager for multiple commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pipe__manager_8h_a325391200230503859957f71f9b41ddc}{pipe\+\_\+manager\+\_\+init}} (size\+\_\+t n\+\_\+cmds)
+\begin{DoxyCompactList}\small\item\em Initializes a pipe manager for a given number of commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}{pipe\+\_\+manager\+\_\+destroy}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
+\begin{DoxyCompactList}\small\item\em Destroys a pipe manager and frees its resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe__manager_8h_aa351fff220374c902293f15c9bd146d1}{pipe\+\_\+manager\+\_\+setup\+\_\+command}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Sets up the pipes for a specific command in the pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe__manager_8h_aa2eac0040287a9597e3ab34c71e7e98d}{pipe\+\_\+manager\+\_\+close\+\_\+all}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
+\begin{DoxyCompactList}\small\item\em Closes all pipes managed by the pipe manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}\label{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf} 
+\index{pipe\_manager.h@{pipe\_manager.h}!t\_pipe\_manager@{t\_pipe\_manager}}
+\index{t\_pipe\_manager@{t\_pipe\_manager}!pipe\_manager.h@{pipe\_manager.h}}
+\doxysubsubsection{\texorpdfstring{t\_pipe\_manager}{t\_pipe\_manager}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{s\+\_\+pipe\+\_\+manager}} \mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}}}
+
+
+
+Struct representing a pipe manager for multiple commands. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pipe__manager_8h_aa2eac0040287a9597e3ab34c71e7e98d}\label{pipe__manager_8h_aa2eac0040287a9597e3ab34c71e7e98d} 
+\index{pipe\_manager.h@{pipe\_manager.h}!pipe\_manager\_close\_all@{pipe\_manager\_close\_all}}
+\index{pipe\_manager\_close\_all@{pipe\_manager\_close\_all}!pipe\_manager.h@{pipe\_manager.h}}
+\doxysubsubsection{\texorpdfstring{pipe\_manager\_close\_all()}{pipe\_manager\_close\_all()}}
+{\footnotesize\ttfamily void pipe\+\_\+manager\+\_\+close\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm }\end{DoxyParamCaption})}
+
+
+
+Closes all pipes managed by the pipe manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pm} & Pointer to the pipe manager. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}\label{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d} 
+\index{pipe\_manager.h@{pipe\_manager.h}!pipe\_manager\_destroy@{pipe\_manager\_destroy}}
+\index{pipe\_manager\_destroy@{pipe\_manager\_destroy}!pipe\_manager.h@{pipe\_manager.h}}
+\doxysubsubsection{\texorpdfstring{pipe\_manager\_destroy()}{pipe\_manager\_destroy()}}
+{\footnotesize\ttfamily void pipe\+\_\+manager\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm }\end{DoxyParamCaption})}
+
+
+
+Destroys a pipe manager and frees its resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pm} & Pointer to the pipe manager to destroy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe__manager_8h_a325391200230503859957f71f9b41ddc}\label{pipe__manager_8h_a325391200230503859957f71f9b41ddc} 
+\index{pipe\_manager.h@{pipe\_manager.h}!pipe\_manager\_init@{pipe\_manager\_init}}
+\index{pipe\_manager\_init@{pipe\_manager\_init}!pipe\_manager.h@{pipe\_manager.h}}
+\doxysubsubsection{\texorpdfstring{pipe\_manager\_init()}{pipe\_manager\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*} pipe\+\_\+manager\+\_\+init (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n\+\_\+cmds }\end{DoxyParamCaption})}
+
+
+
+Initializes a pipe manager for a given number of commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+cmds} & Number of commands in the pipeline. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created pipe manager. 
+\end{DoxyReturn}
+\Hypertarget{pipe__manager_8h_aa351fff220374c902293f15c9bd146d1}\label{pipe__manager_8h_aa351fff220374c902293f15c9bd146d1} 
+\index{pipe\_manager.h@{pipe\_manager.h}!pipe\_manager\_setup\_command@{pipe\_manager\_setup\_command}}
+\index{pipe\_manager\_setup\_command@{pipe\_manager\_setup\_command}!pipe\_manager.h@{pipe\_manager.h}}
+\doxysubsubsection{\texorpdfstring{pipe\_manager\_setup\_command()}{pipe\_manager\_setup\_command()}}
+{\footnotesize\ttfamily void pipe\+\_\+manager\+\_\+setup\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}}]{pm,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Sets up the pipes for a specific command in the pipeline. 
+
+This function configures the file descriptors for the command at the given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pm} & Pointer to the pipe manager. \\
+\hline
+{\em index} & Index of the command in the pipeline. \\
+\hline
+\end{DoxyParams}

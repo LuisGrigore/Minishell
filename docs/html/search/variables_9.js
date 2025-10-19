@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['value_0',['value',['../d2/dcf/gen__link__list__internal_8h.html#af0201fc8bf11256ef9450c8017f22314',1,'s_node::value'],['../d5/df3/lexer_8h.html#a21b454c179e1e31383371d09385b9c59',1,'s_token::value']]],
-  ['var_5fname_1',['var_name',['../d0/d0e/environment__internal_8h.html#ad8af13ad7fe31ef6d7504f3ce4560f72',1,'s_env_var']]],
-  ['var_5fvalue_2',['var_value',['../d0/d0e/environment__internal_8h.html#af7904f8f58e150edf67f237e52d25409',1,'s_env_var']]]
+  ['tail_0',['tail',['../d2/dcf/gen__link__list__internal_8h.html#a0ba83f9d5ef3faa95b9ef2da58c5ae0a',1,'s_gen_list']]],
+  ['type_1',['type',['../d8/d53/lexer__internal_8h.html#a350680c70abb7e7173240477e92dc0a3',1,'s_token']]]
 ];

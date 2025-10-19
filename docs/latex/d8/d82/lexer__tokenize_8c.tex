@@ -1,5 +1,5 @@
-\doxysection{parser/lexer/lexer\+\_\+tokenize.c File Reference}
-\hypertarget{lexer__tokenize_8c}{}\label{lexer__tokenize_8c}\index{parser/lexer/lexer\_tokenize.c@{parser/lexer/lexer\_tokenize.c}}
+\doxysection{src/lexer/lexer\+\_\+tokenize.c File Reference}
+\hypertarget{lexer__tokenize_8c}{}\label{lexer__tokenize_8c}\index{src/lexer/lexer\_tokenize.c@{src/lexer/lexer\_tokenize.c}}
 {\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
 Include dependency graph for lexer\+\_\+tokenize.\+c\+:\nopagebreak
 \begin{figure}[H]
@@ -22,7 +22,17 @@ Include dependency graph for lexer\+\_\+tokenize.\+c\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{lexer\_tokenize()}{lexer\_tokenize()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} lexer\+\_\+tokenize (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Splits a raw command line into a list of tokens.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A null-\/terminated string containing the input command line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a t\+\_\+gen\+\_\+list containing t\+\_\+token\texorpdfstring{$\ast$}{*} elements, or NULL if tokenization fails.
+\end{DoxyReturn}
+Each token corresponds to a command, argument, or operator, as defined in t\+\_\+token\+\_\+type. Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,6 +43,6 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=347pt]{d8/d82/lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198_icgraph}
+\includegraphics[width=350pt]{d8/d82/lexer__tokenize_8c_a4bfce5ffa605cc5bb32062712d702198_icgraph}
 \end{center}
 \end{figure}

@@ -1,19 +1,25 @@
 <map id="gen_list_push_back" name="gen_list_push_back">
-<area shape="rect" id="Node000001" title="Insert a value at the end of the list." alt="" coords="535,107,684,132"/>
-<area shape="rect" id="Node000002" href="$d8/d4a/environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="108,51,232,76"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="586,98,543,59,515,40,486,26,430,11,385,9,339,15,281,26,237,38,199,53,197,48,235,33,279,21,338,10,385,4,431,6,488,21,518,35,546,54,590,94"/>
-<area shape="rect" id="Node000004" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="308,36,459,76"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="550,106,454,78,455,73,551,101"/>
-<area shape="rect" id="Node000005" href="$d4/dcd/redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="311,100,456,140"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="520,122,456,122,456,117,520,117"/>
-<area shape="rect" id="Node000006" href="$d8/d82/lexer__tokenize_8c.html#a4bfce5ffa605cc5bb32062712d702198" title=" " alt="" coords="325,164,441,190"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="548,138,487,154,437,167,436,162,486,149,547,133"/>
-<area shape="rect" id="Node000008" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="280,214,487,239"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="584,143,541,175,488,205,455,216,453,211,486,200,538,170,581,139"/>
-<area shape="rect" id="Node000003" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,140,60,166"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,86,55,142,52,138,137,82"/>
-<area shape="rect" id="Node000007" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="125,164,215,190"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="312,180,215,180,215,174,312,174"/>
-<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="111,169,60,160,61,155,112,164"/>
-<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="314,213,214,190,215,184,315,208"/>
+<area shape="rect" id="Node000001" title="Insert a value at the end of the list." alt="" coords="883,105,1032,131"/>
+<area shape="rect" id="Node000002" href="$de/d8a/command__operations_8c.html#a5c7fab53ffa7870460b806b693fe7e36" title="Adds an argument to the command." alt="" coords="667,129,820,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="869,131,821,136,820,131,868,125"/>
+<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="397,80,604,105"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="920,101,879,84,834,70,759,62,683,64,613,72,555,83,554,77,612,67,682,58,759,56,835,65,881,79,922,97"/>
+<area shape="rect" id="Node000007" href="$de/d8a/command__operations_8c.html#a1661f772d30dd0f52b9277ed320877d8" title="Adds a redirection to the command." alt="" coords="652,80,835,105"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="868,110,835,106,835,101,869,105"/>
+<area shape="rect" id="Node000008" href="$d8/d4a/environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="439,229,563,255"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="941,144,898,192,869,216,836,234,801,246,765,254,691,262,622,261,563,255,563,250,622,255,691,256,764,249,800,241,834,229,866,211,894,188,937,140"/>
+<area shape="rect" id="Node000009" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="668,179,819,219"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="914,139,836,170,803,182,801,177,834,165,912,134"/>
+<area shape="rect" id="Node000010" href="$d8/d82/lexer__tokenize_8c.html#a4bfce5ffa605cc5bb32062712d702198" title=" " alt="" coords="443,5,559,31"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="928,99,885,71,834,47,761,30,687,20,617,17,559,17,559,12,617,12,687,15,762,24,836,42,888,66,931,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="666,129,563,108,565,103,667,124"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="260,80,349,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="383,95,350,95,350,90,383,90"/>
+<area shape="rect" id="Node000005" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="108,95,212,120"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,101,213,105,212,99,246,96"/>
+<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,148,60,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="117,128,61,152,59,147,115,123"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="638,95,604,95,604,90,638,90"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="424,232,60,168,61,163,425,226"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="454,38,340,82,338,78,452,33"/>
 </map>

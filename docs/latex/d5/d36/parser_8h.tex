@@ -1,5 +1,5 @@
-\doxysection{include/parser.h File Reference}
-\hypertarget{parser_8h}{}\label{parser_8h}\index{include/parser.h@{include/parser.h}}
+\doxysection{src/include/parser.h File Reference}
+\hypertarget{parser_8h}{}\label{parser_8h}\index{src/include/parser.h@{src/include/parser.h}}
 {\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
 Include dependency graph for parser.\+h\+:\nopagebreak
 \begin{figure}[H]
@@ -12,13 +12,11 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=302pt]{d0/d0e/parser_8h__dep__incl}
+\includegraphics[width=350pt]{d0/d0e/parser_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser_8h_ae411b47cf3a6fe75994d31c5574c60ce}{parse\+\_\+tokens\+\_\+to\+\_\+commands}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens)
 \item 
 \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser_8h_a371904874bcb2b8fc0d621fd3932bb82}{parse\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line)
 \end{DoxyCompactItemize}
@@ -31,37 +29,43 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsubsection{\texorpdfstring{parse\_line()}{parse\_line()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} parse\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{d5/d36/parser_8h_a371904874bcb2b8fc0d621fd3932bb82_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=224pt]{d5/d36/parser_8h_a371904874bcb2b8fc0d621fd3932bb82_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{parser_8h_ae411b47cf3a6fe75994d31c5574c60ce}\label{parser_8h_ae411b47cf3a6fe75994d31c5574c60ce} 
-\index{parser.h@{parser.h}!parse\_tokens\_to\_commands@{parse\_tokens\_to\_commands}}
-\index{parse\_tokens\_to\_commands@{parse\_tokens\_to\_commands}!parser.h@{parser.h}}
-\doxysubsubsection{\texorpdfstring{parse\_tokens\_to\_commands()}{parse\_tokens\_to\_commands()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} parse\+\_\+tokens\+\_\+to\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens }\end{DoxyParamCaption})}
+Parses a raw command line string into a structured list of commands.
 
-Here is the call graph for this function\+:\nopagebreak
+This function is the high-\/level entry point for transforming user input into executable command objects. It performs the following steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Tokenizes the input string using.
+\item Converts the list of tokens into command objects.
+\item Cleans up the intermediate token list.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A null-\/terminated string containing the user input.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list (t\+\_\+gen\+\_\+list) of t\+\_\+command\texorpdfstring{$\ast$}{*} objects representing the parsed commands, or NULL if parsing fails at any stage.
+\end{DoxyReturn}
+Example\+: Input\+: "{}ls -\/l \texorpdfstring{$\vert$}{|} grep txt $>$ out.\+txt"{} Output\+: A list of two t\+\_\+command structures\+:
+\begin{DoxyItemize}
+\item Command 1\+: "{}ls"{} with argument "{}-\/l"{}
+\item Command 2\+: "{}grep"{} with argument "{}txt"{} and output redirection to "{}out.\+txt"{}
+\end{DoxyItemize}
+
+The caller is responsible for destroying the returned command list using the appropriate cleanup function. Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d5/d36/parser_8h_ae411b47cf3a6fe75994d31c5574c60ce_cgraph}
+\includegraphics[width=350pt]{d5/d36/parser_8h_a371904874bcb2b8fc0d621fd3932bb82_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d5/d36/parser_8h_ae411b47cf3a6fe75994d31c5574c60ce_icgraph}
+\includegraphics[width=338pt]{d5/d36/parser_8h_a371904874bcb2b8fc0d621fd3932bb82_icgraph}
 \end{center}
 \end{figure}

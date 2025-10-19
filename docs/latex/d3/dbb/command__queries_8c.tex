@@ -1,0 +1,82 @@
+\doxysection{src/command/command\+\_\+queries.c File Reference}
+\hypertarget{command__queries_8c}{}\label{command__queries_8c}\index{src/command/command\_queries.c@{src/command/command\_queries.c}}
+{\ttfamily \#include "{}command\+\_\+internal.\+h"{}}\newline
+Include dependency graph for command\+\_\+queries.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd2/command__queries_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{command__queries_8c_afdcf5a4d1d62499353c0b8bae8ae8a32}{command\+\_\+is\+\_\+built\+\_\+in}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{command__queries_8c_ab2cd9b8993b0aeeefa903952bfb6ad46}{command\+\_\+get\+\_\+name}} (\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}command)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{command__queries_8c_ab2cd9b8993b0aeeefa903952bfb6ad46}\label{command__queries_8c_ab2cd9b8993b0aeeefa903952bfb6ad46} 
+\index{command\_queries.c@{command\_queries.c}!command\_get\_name@{command\_get\_name}}
+\index{command\_get\_name@{command\_get\_name}!command\_queries.c@{command\_queries.c}}
+\doxysubsubsection{\texorpdfstring{command\_get\_name()}{command\_get\_name()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} command\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})}
+
+Retrieves the name of the given command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to a t\+\_\+command structure representing the command whose name should be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a null-\/terminated string containing the command name. The caller should not modify or free this string unless explicitly documented in the implementation. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dbb/command__queries_8c_ab2cd9b8993b0aeeefa903952bfb6ad46_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dbb/command__queries_8c_ab2cd9b8993b0aeeefa903952bfb6ad46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{command__queries_8c_afdcf5a4d1d62499353c0b8bae8ae8a32}\label{command__queries_8c_afdcf5a4d1d62499353c0b8bae8ae8a32} 
+\index{command\_queries.c@{command\_queries.c}!command\_is\_built\_in@{command\_is\_built\_in}}
+\index{command\_is\_built\_in@{command\_is\_built\_in}!command\_queries.c@{command\_queries.c}}
+\doxysubsubsection{\texorpdfstring{command\_is\_built\_in()}{command\_is\_built\_in()}}
+{\footnotesize\ttfamily bool command\+\_\+is\+\_\+built\+\_\+in (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})}
+
+Checks whether a given command is a built-\/in shell command.
+
+A built-\/in command is executed directly by the shell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Pointer to a t\+\_\+command structure representing the command to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{command_8h_a343be1e180affa75a4a3b4bb5b2225e3}{t\+\_\+command} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if the command is built-\/in, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dbb/command__queries_8c_afdcf5a4d1d62499353c0b8bae8ae8a32_icgraph}
+\end{center}
+\end{figure}

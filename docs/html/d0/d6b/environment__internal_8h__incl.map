@@ -1,5 +1,5 @@
-<map id="environment/environment_internal.h" name="environment/environment_internal.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="191,5,383,45"/>
+<map id="src/environment/environment_internal.h" name="src/environment/environment_internal.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="179,5,394,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,101,197,126"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,48,140,97,137,92,245,43"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="222,93,351,133"/>

@@ -1,7 +1,6 @@
-\doxysection{parser/lexer/lexer\+\_\+internal.h File Reference}
-\hypertarget{lexer__internal_8h}{}\label{lexer__internal_8h}\index{parser/lexer/lexer\_internal.h@{parser/lexer/lexer\_internal.h}}
+\doxysection{src/lexer/lexer\+\_\+internal.h File Reference}
+\hypertarget{lexer__internal_8h}{}\label{lexer__internal_8h}\index{src/lexer/lexer\_internal.h@{src/lexer/lexer\_internal.h}}
 {\ttfamily \#include "{}../include/lexer.\+h"{}}\newline
-{\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
 {\ttfamily \#include "{}../external/libft/libft.\+h"{}}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 Include dependency graph for lexer\+\_\+internal.\+h\+:\nopagebreak
@@ -18,6 +17,11 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \includegraphics[width=350pt]{d0/d92/lexer__internal_8h__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{s\+\_\+token}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,6 +39,26 @@ int \mbox{\hyperlink{lexer__internal_8h_a8a7ddaa1bfaaee00238451371f498d23}{match
 \item 
 \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} \mbox{\hyperlink{lexer__internal_8h_aa1004a8899af22ed07900fb0ca3c562e}{operator\+\_\+type}} (const char \texorpdfstring{$\ast$}{*}op, size\+\_\+t len)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Class Documentation}
+\index{s\_token@{s\_token}}\label{structs__token}
+\Hypertarget{lexer__internal_8h_structs__token}
+\doxysubsubsection{struct s\+\_\+token}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{lexer__internal_8h_a350680c70abb7e7173240477e92dc0a3}\label{lexer__internal_8h_a350680c70abb7e7173240477e92dc0a3}} 
+\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}&
+type&
+\\
+\hline
+
+\mbox{\Hypertarget{lexer__internal_8h_a21b454c179e1e31383371d09385b9c59}\label{lexer__internal_8h_a21b454c179e1e31383371d09385b9c59}} 
+char \texorpdfstring{$\ast$}{*}&
+value&
+\\
+\hline
+
+\end{DoxyFields}
 
 
 \doxysubsection{Function Documentation}

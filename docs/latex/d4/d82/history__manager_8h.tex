@@ -1,0 +1,57 @@
+\doxysection{src/include/history\+\_\+manager.h File Reference}
+\hypertarget{history__manager_8h}{}\label{history__manager_8h}\index{src/include/history\_manager.h@{src/include/history\_manager.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for history\+\_\+manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{dd/d9b/history__manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{dd/d54/history__manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{history__manager_8h_ae4c6832c0cbcf2b08c46bb98e0646bed}{history\+\_\+add}} (char \texorpdfstring{$\ast$}{*}line)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{history__manager_8h_ae4c6832c0cbcf2b08c46bb98e0646bed}\label{history__manager_8h_ae4c6832c0cbcf2b08c46bb98e0646bed} 
+\index{history\_manager.h@{history\_manager.h}!history\_add@{history\_add}}
+\index{history\_add@{history\_add}!history\_manager.h@{history\_manager.h}}
+\doxysubsubsection{\texorpdfstring{history\_add()}{history\_add()}}
+{\footnotesize\ttfamily bool history\+\_\+add (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
+
+Adds a command line to the shell history, with minimal validation.
+
+The function first checks the given line\+:
+\begin{DoxyItemize}
+\item Filters out empty or whitespace-\/only commands.
+\item Avoids adding lines starting/ending with {\ttfamily \texorpdfstring{$\vert$}{|}}.
+\item Ensures that unclosed quotes are not stored.
+\end{DoxyItemize}
+
+If the command passes these checks, it is appended to the history using {\ttfamily add\+\_\+history()}. Otherwise, nothing is added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A null-\/terminated string containing the command to be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the command was successfully added to the history, false if it was rejected. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{d4/d82/history__manager_8h_ae4c6832c0cbcf2b08c46bb98e0646bed_icgraph}
+\end{center}
+\end{figure}

@@ -1,5 +1,9 @@
 var lexer__internal_8h =
 [
+    [ "s_token", "d8/d53/lexer__internal_8h.html#df/d44/structs__token", [
+      [ "type", "d8/d53/lexer__internal_8h.html#a350680c70abb7e7173240477e92dc0a3", null ],
+      [ "value", "d8/d53/lexer__internal_8h.html#a21b454c179e1e31383371d09385b9c59", null ]
+    ] ],
     [ "create_token", "d8/d53/lexer__internal_8h.html#ad45a6a77df02fcbb4b2deb3ee46f6a8c", null ],
     [ "destroy_token", "d8/d53/lexer__internal_8h.html#af0886495b353f179f845206ad2969d3e", null ],
     [ "ft_strndup", "d8/d53/lexer__internal_8h.html#a2d5f42a11a38830b809bced1fc209c20", null ],

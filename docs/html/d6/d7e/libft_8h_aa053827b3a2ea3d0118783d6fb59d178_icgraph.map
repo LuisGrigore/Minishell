@@ -1,14 +1,15 @@
 <map id="ft_strlcpy" name="ft_strlcpy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="648,45,731,70"/>
-<area shape="rect" id="Node000002" href="$d4/dcd/redirect__asignation_8c.html#a18e2207c2ccc7fe3089b5f522400281c" title=" " alt="" coords="500,19,600,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="634,50,600,44,600,38,635,45"/>
-<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="245,70,452,95"/>
-<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="634,64,452,78,452,72,634,59"/>
-<area shape="rect" id="Node000003" href="$d4/dcd/redirect__asignation_8c.html#a1dcc7a29a8a1d5240c49fbf25ce60d9c" title=" " alt="" coords="276,5,421,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="486,33,421,30,422,25,486,27"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="488,51,453,60,403,72,401,67,451,55,487,46"/>
-<area shape="rect" id="Node000005" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="108,70,197,95"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="231,85,198,85,198,80,231,80"/>
-<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,70,60,95"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="94,85,60,85,60,80,94,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1051,5,1133,31"/>
+<area shape="rect" id="Node000002" href="$d1/d76/redirect__manager_8c.html#a4c33ef90e489d46f3c14ff827e59995e" title="Creates a new redirect structure." alt="" coords="883,5,1003,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1037,21,1003,21,1003,15,1037,15"/>
+<area shape="rect" id="Node000003" href="$de/d8a/command__operations_8c.html#a1661f772d30dd0f52b9277ed320877d8" title="Adds a redirection to the command." alt="" coords="652,5,835,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="869,21,835,21,835,15,869,15"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html#ae411b47cf3a6fe75994d31c5574c60ce" title=" " alt="" coords="397,5,604,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="638,21,604,21,604,15,638,15"/>
+<area shape="rect" id="Node000005" href="$d2/d72/parser_8c.html#a371904874bcb2b8fc0d621fd3932bb82" title=" " alt="" coords="260,5,349,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="383,21,350,21,350,15,383,15"/>
+<area shape="rect" id="Node000006" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="108,5,212,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="247,21,212,21,212,15,247,15"/>
+<area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
