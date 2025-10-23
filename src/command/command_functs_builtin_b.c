@@ -60,9 +60,18 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
 	if (command == NULL)
 		return ;
 	current_dir = env_get(envioroment, "PWD");
+    if(!current_dir);
+    {
+        current_dir = getcwd(NULL, 0);
+        if (!current_dir)
+        {
+            perror("pwd");
+            return;
+        }
+    }
 	printf("%s\n", current_dir);
 	free(current_dir);
-	exit(0);
+	//exit(0);
 }
 void	env_execute(t_command *command, t_gen_list *envioroment)
 {
@@ -77,7 +86,7 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 	i = 0;
 	while(i < gen_list_get_size(envioroment))
 	{
-		printf("%s", serialized_env[i]);
+		printf("%s\n", serialized_env[i]);
 		i++;
 	}
 	free_double_pointer(serialized_env);

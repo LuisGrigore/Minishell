@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:09:07 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/23 16:31:56 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/23 17:01:13 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,8 @@ static int parse_single_quote(t_pstate *st)
 static int parse_double_quote(t_pstate *st)
 {
 	(*(st->i))++;
-	while (*(st->i) < st->len && st->line[*(st->i)] != '"') {
+	while (*(st->i) < st->len && st->line[*(st->i)] != '"') 
+    {
 		if (st->line[*(st->i)] == '\\' && *(st->i) + 1 < st->len) {
 			if (append_char(st, st->line[*(st->i) + 1]) < 0)
 				return -1;

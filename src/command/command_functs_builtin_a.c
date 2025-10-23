@@ -17,7 +17,8 @@ void export_execute(t_command *command, t_gen_list *envioroment)
     gen_list_iter_destroy(it);
     if (!arg)
         return;
-    new_variable = ft_split2((char *)gen_list_peek_top(command->args), '=');
+    new_variable = ft_split2(arg, '=');
+    printf("%s\n,%s\n",new_variable[0],new_variable[1]);
     if (!new_variable || !new_variable[0] || !new_variable[1])
         return;
     env_set(envioroment, new_variable[0], new_variable[1]);

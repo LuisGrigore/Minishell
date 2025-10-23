@@ -15,11 +15,13 @@ int match_two_char_op(const char *s, size_t pos, const char *op) {
 
 
 t_token_type operator_type(const char *op, size_t len) {
-    if (len == 1) {
+    if (len == 1) 
+    {
         if (op[0] == '|') return TOKEN_PIPE;
         if (op[0] == '<') return TOKEN_REDIR_IN;
         if (op[0] == '>') return TOKEN_REDIR_OUT;
-    } else if (len == 2) {
+    } else if (len == 2) 
+    {
         if (op[0] == '<' && op[1] == '<') return TOKEN_HEREDOC;
         if (op[0] == '>' && op[1] == '>') return TOKEN_REDIR_APPEND;
     }
