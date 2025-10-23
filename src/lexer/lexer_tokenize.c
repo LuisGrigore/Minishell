@@ -6,11 +6,19 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:09:07 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/19 20:43:01 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:31:56 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer_internal.h"
+/* forward declarations removed — prototypes are placed after typedefs */
+static int handle_loop_char(t_pstate *st);
+static void pstate_init(t_pstate *st, const char *line, size_t *i, size_t len,
+	char **buf, size_t *bcap, size_t *blen);
+static int finalize_parse_word(t_pstate *st, char *buf, size_t start, char **out_word);
+static int lexer_init_state(const char *line, t_gen_list *tokens_list,
+	size_t *i, t_lstate *ls);
+static int run_token_loop(t_lstate *ls);
 static size_t skip_spaces(const char *line, size_t i, size_t len)
 {
 	while (i < len && is_space(line[i]))
@@ -60,15 +68,10 @@ static int push_one_char_op(const char *line, size_t *i,
 
 /* parse_word: allocate *out_word, advance *i. Returns 1 on success,
    -1 on allocation error, -2 on unclosed quote syntax error. */
-typedef struct s_pstate {
-	const char *line;
-	size_t *i;
-	size_t len;
-	char **buf;
-	size_t *bcap;
-	size_t *blen;
-} t_pstate;
 
+
+/* Forward prototypes needed because some functions are used before their
+ * definitions in this file. */
 static int ensure_capacity(t_pstate *st, size_t need)
 {
 	size_t nc;
@@ -81,20 +84,16 @@ static int ensure_capacity(t_pstate *st, size_t need)
 		nc = *(st->bcap) * 2;
 	else
 		nc = 64;
-
 	while (nc <= need)
 		nc *= 2;
-
 	tmp = malloc(nc);
 	if (!tmp)
 		return -1;
-
 	if (*(st->buf))
 	{
 		ft_memcpy(tmp, *(st->buf), *(st->blen));
 		free(*(st->buf));
 	}
-
 	*(st->buf) = tmp;
 	*(st->bcap) = nc;
 	return 0;
@@ -111,7 +110,8 @@ static int append_char(t_pstate *st, char ch)
 static int parse_single_quote(t_pstate *st)
 {
 	(*(st->i))++;
-	while (*(st->i) < st->len && st->line[*(st->i)] != '\'') {
+	while (*(st->i) < st->len && st->line[*(st->i)] != '\'') 
+    {
 		if (append_char(st, st->line[*(st->i)]) < 0)
 			return -1;
 		(*(st->i))++;
@@ -276,28 +276,17 @@ static int finalize_parse_word(t_pstate *st, char *buf, size_t start, char **out
 	return 1;
 }
 
-typedef struct s_lstate {
-	const char *line;
-	size_t *i;
-	size_t len;
-	t_gen_list *tokens_list;
-	bool next_is_redir_arg_val;
-	bool expect_cmd_val;
-	bool *next_is_redir_arg;
-	bool *expect_cmd;
-} t_lstate;
 
-static int process_next_token(t_lstate *ls)
-{
-	return MS_OK; /* placeholder, replaced by helpers below */
-}
+
+
+/* process_next_token placeholder removed (real impl below) */
 
 static int skip_and_check_eof(t_lstate *ls)
 {
 	*(ls->i) = skip_spaces(ls->line, *(ls->i), ls->len);
 	if (*(ls->i) >= ls->len)
 		return MS_OK;
-	return 0;
+	return 1;
 }
 
 static int try_two_char_ops(t_lstate *ls)
@@ -309,7 +298,7 @@ static int try_two_char_ops(t_lstate *ls)
 		return LEXER_ERR;
 	if (r == 1)
 		return MS_OK;
-	return 0;
+	return 1;
 }
 
 static int try_one_char_ops(t_lstate *ls)
@@ -321,13 +310,10 @@ static int try_one_char_ops(t_lstate *ls)
 		return LEXER_ERR;
 	if (r == 1)
 		return MS_OK;
-	return 0;
+	return 1;
 }
 
-static int parse_word_and_push(t_lstate *ls)
-{
-	return MS_OK; /* replaced by helpers below */
-}
+/* parse_word_and_push placeholder removed (real impl below) */
 
 static int parse_word_and_get(t_lstate *ls, char **out_word)
 {
@@ -385,16 +371,19 @@ static int parse_word_and_push(t_lstate *ls)
 static int process_next_token(t_lstate *ls)
 {
 	int r;
-
 	r = skip_and_check_eof(ls);
 	if (r == MS_OK)
 		return MS_OK;
 	r = try_two_char_ops(ls);
-	if (r == MS_OK || r == LEXER_ERR)
-		return r;
+	if (r == MS_OK)
+		return MS_OK;
+	if (r == LEXER_ERR)
+		return LEXER_ERR;
 	r = try_one_char_ops(ls);
-	if (r == MS_OK || r == LEXER_ERR)
-		return r;
+	if (r == MS_OK)
+		return MS_OK;
+	if (r == LEXER_ERR)
+		return LEXER_ERR;
 	return parse_word_and_push(ls);
 }
 
@@ -403,7 +392,6 @@ int lexer_tokenize(const char *line, t_gen_list *tokens_list)
 	size_t i;
 	t_lstate ls;
 	int r;
-
 	i = 0;
 	r = lexer_init_state(line, tokens_list, &i, &ls);
 	if (r != MS_OK)
@@ -431,9 +419,11 @@ static int lexer_init_state(const char *line, t_gen_list *tokens_list,
 static int run_token_loop(t_lstate *ls)
 {
 	int r;
+	size_t prev_i;
 
 	while (*(ls->i) < ls->len)
 	{
+		prev_i = *(ls->i);
 		r = process_next_token(ls);
 		if (r == LEXER_SYNTAX_ERR)
 			return LEXER_SYNTAX_ERR;
@@ -442,6 +432,12 @@ static int run_token_loop(t_lstate *ls)
 			if (ls->tokens_list)
 				gen_list_destroy(ls->tokens_list, free);
 			return LEXER_ERR;
+		}
+
+		if (*(ls->i) == prev_i)
+		{
+			/* No progress: advance by one to avoid hang (safety). */
+			(*(ls->i))++;
 		}
 	}
 	return MS_OK;
