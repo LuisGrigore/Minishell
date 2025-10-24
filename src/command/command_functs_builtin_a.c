@@ -18,12 +18,11 @@ void export_execute(t_command *command, t_gen_list *envioroment)
     if (!arg)
         return;
     new_variable = ft_split2(arg, '=');
-    printf("%s\n,%s\n",new_variable[0],new_variable[1]);
     if (!new_variable || !new_variable[0] || !new_variable[1])
         return;
     env_set(envioroment, new_variable[0], new_variable[1]);
-    for (size_t i = 0; i < 2; i++)
-        free(new_variable[i]);
+    free(new_variable[0]);
+    free(new_variable[1]);
     free(new_variable);
 }
 void unset_execute(t_command *command, t_gen_list *envioroment)

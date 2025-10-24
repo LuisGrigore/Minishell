@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_internal.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:57:13 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/04 12:43:36 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/24 04:45:51 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void						env_execute(t_command *command,
 								t_gen_list *envioroment);
 void						echo_execute(t_command *command,
 								t_gen_list *envioroment);
+char 						*new_directory(char *current, char *target);
+								
 
 #endif

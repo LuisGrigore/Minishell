@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/03 16:50:09 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/24 06:56:00 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     char **cmd2;
     char **env;
     char *path;
-
+	
+	
     if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
     {
         perror("No command args ");

@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:13:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/05 20:25:20 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/24 06:51:50 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ static int check_in(char *fd);
 static int	check_outfile(char *fd, t_redirect_type type)
 {
 	int	result;
-
+    
+    if(!fd)
+        return (-1);
 	result = open(fd, O_RDONLY);
 	if (result >= 0)
 	{
