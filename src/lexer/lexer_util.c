@@ -11,7 +11,8 @@ char *ft_strndup(const char *s, size_t n)
     i = 0;
     if (!p) 
         return (NULL);
-    while (i < n && s[i]) {
+    while (i < n && s[i]) 
+    {
         p[i] = s[i];
         i++;
     }
@@ -72,7 +73,7 @@ t_token_type operator_type(const char *op, size_t len) {
         if (op[0] == '<' && op[1] == '<') 
             return (TOKEN_HEREDOC);
         if (op[0] == '>' && op[1] == '>') 
-            return (TOKEN_REDIR_APPEND);
+            return (TOKEN_REDIR_APPEND);   
     }
     return (TOKEN_ARG); // fallback
 }

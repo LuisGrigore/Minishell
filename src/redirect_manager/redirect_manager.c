@@ -6,15 +6,21 @@
 t_redirect *redirect_create(t_redirect_type redirect_type, char *file_name)
 {
     t_redirect *r = malloc(sizeof(t_redirect));
+   
     if (!r) return NULL;
     r->redirect_simbol = redirect_type;
-    if (file_name) {
+    if (file_name) 
+    {
         r->file = malloc(ft_strlen(file_name) + 1);
-        if (!r->file) { free(r); return NULL; }
+        if (!r->file) 
+        { 
+            free(r); 
+            return NULL; 
+        }
         ft_strlcpy(r->file, file_name, ft_strlen(file_name) + 1);
-    } else {
+    } 
+    else 
         r->file = NULL;
-    }
     return r;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/27 16:38:02 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int parse_tokens_to_commands(t_gen_list *tokens, t_gen_list *commands)
     t_command *current_cmd = NULL;
     t_gen_list_iter *it = gen_list_iter_start(tokens);
     t_token *tok;
-
     while ((tok = (t_token *)gen_list_iter_next(it)) != NULL)
     {
         // Caso: encontramos un comando
@@ -77,7 +76,6 @@ int parse_tokens_to_commands(t_gen_list *tokens, t_gen_list *commands)
                 if (!current_cmd)
                     goto error;
             }
-
             t_redirect_type r_type = NONE;
             if (lexer_is_token_type(tok, TOKEN_REDIR_IN))
                 r_type = LEFT_REDIRECT;
