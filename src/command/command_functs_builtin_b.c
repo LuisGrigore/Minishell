@@ -5,7 +5,6 @@ void cd_execute(t_command *command, t_gen_list *environment)
     t_gen_list_iter *it;
     char *old_directory;
     char *target;
-    char *joined_path;
 
     if (!command->args || gen_list_get_size(command->args) < 2)
     {
@@ -38,7 +37,7 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
 	if (command == NULL)
 		return ;
 	current_dir = env_get(envioroment, "PWD");
-    if(!current_dir);
+    if(!current_dir)
     {
         current_dir = getcwd(NULL, 0);
         if (!current_dir)
@@ -54,7 +53,7 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
 void	env_execute(t_command *command, t_gen_list *envioroment)
 {
 	char **serialized_env;
-	int i;
+	size_t i;
 	if (!command)
 	{
 		perror("env :");

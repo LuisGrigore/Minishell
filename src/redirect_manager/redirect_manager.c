@@ -29,7 +29,6 @@ static void heredoc_exec(char *delimiter)
     char *input;
     char *temp_dir;
     int fd;
-    size_t len;
 
     // Calculamos tamaño necesario para el path: TEMPDIR + "/minishel_temp" + '\0'
 	//getenv("TEMPDIR")

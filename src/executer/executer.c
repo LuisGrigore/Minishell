@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/06 23:47:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/24 12:05:59 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ static void command_destroy_data(void *command_ptr)
 	command_destroy((t_command *) command_ptr);
 }
 
-static int handle_parser_errors(int status_code)
+/*static int handle_parser_errors(int status_code)
 {
 	return(MS_OK);
-}
+}*/
 
 int execute_line(char *line, t_gen_list *env)
 {

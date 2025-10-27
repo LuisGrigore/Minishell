@@ -43,8 +43,8 @@ int match_two_char_op(const char *s, size_t pos, const char *op)
 
     if (!s || !op)
         return 0;
-    slen = strlen(s);
-    olen = strlen(op);
+    slen = ft_strlen(s);
+    olen = ft_strlen(op);
     if (pos + 1 >= slen || olen < 2)
         return (0);
     if (s[pos] == op[0])
