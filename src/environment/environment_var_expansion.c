@@ -19,19 +19,14 @@ static char *get_var_name(char *line, size_t start, size_t *len)
 static char *append_value_with_quotes(char *result, char *value)
 {
     char *tmp;
-    char *quoted;
     char *new_result;
 
-    quoted = ft_strjoin("\"", value);
-    tmp = quoted;
-    quoted = ft_strjoin(quoted, "\"");
-    free(tmp);
+ 
 
     tmp = result;
-    new_result = ft_strjoin(result, quoted);
+    new_result = ft_strjoin(result, value);
     free(tmp);
-    free(quoted);
-    return new_result;
+    return (new_result);
 }
 
 static char *append_char(char *result, char c)

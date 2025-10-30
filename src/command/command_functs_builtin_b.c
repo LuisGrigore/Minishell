@@ -12,7 +12,7 @@ void cd_execute(t_command *command, t_gen_list *environment)
         fprintf(stderr, "cd: missing argument\n");
         return;
     }
-    old_directory = env_get(environment, "PWD");
+    old_directory = getenv("PWD");
     it = gen_list_iter_start(command->args);
     gen_list_iter_next(it);
     target = gen_list_iter_next(it);
@@ -25,33 +25,11 @@ void cd_execute(t_command *command, t_gen_list *environment)
             return;
         }
         if (old_directory)
-            env_set(environment, old_directory, "OLDPWD");
-        env_set(environment, ft_strdup(target), "PWD");
-        free(old_directory);
+            env_set(environment, "OLDPWD", old_directory);
+        env_set(environment, "PWD", new_directory(old_directory, target));
         return;
     }
-    if (old_directory)
-    {
-        joined_path = ft_strjoin(old_directory, target);
-        if (access(joined_path, F_OK) == 0)
-        {
-            if (chdir(joined_path) == -1)
-            {
-                perror("cd");
-                free(joined_path);
-                free(old_directory);
-                return;
-            }
-            env_set(environment, old_directory, "OLDPWD");
-            env_set(environment, joined_path, "PWD");
-            free(joined_path);
-            free(old_directory);
-            return;
-        }
-        free(joined_path);
-    }
     fprintf(stderr, "cd: no such file or directory: %s\n", target);
-    free(old_directory);
 }
 
 void	pwd_execute(t_command *command, t_gen_list *envioroment)
@@ -60,6 +38,15 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
 	if (command == NULL)
 		return ;
 	current_dir = env_get(envioroment, "PWD");
+    if(!current_dir);
+    {
+        current_dir = getcwd(NULL, 0);
+        if (!current_dir)
+        {
+            perror("pwd");
+            return;
+        }
+    }
 	printf("%s\n", current_dir);
 	free(current_dir);
 	exit(0);
@@ -77,7 +64,7 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 	i = 0;
 	while(i < gen_list_get_size(envioroment))
 	{
-		printf("%s", serialized_env[i]);
+		printf("%s\n", serialized_env[i]);
 		i++;
 	}
 	free_double_pointer(serialized_env);

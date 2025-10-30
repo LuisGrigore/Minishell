@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_life_cycle.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:36:58 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:57:04 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/24 05:12:08 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ static void destroy_token_data(void *token_ptr)
 
 t_token *create_token(t_token_type type, char *value)
 {
-    t_token *tok = malloc(sizeof(t_token));
-    if (!tok) return NULL;
+    t_token *tok;
+    tok = NULL;
+    tok = malloc(sizeof(t_token));
+    if (!tok) 
+        return (NULL);
     tok->type = type;
     tok->value = value;
-    return tok;
+    return (tok);
 }
 
 //public
