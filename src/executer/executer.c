@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/30 16:04:33 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:16:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,11 @@ int execute_line(char *line, t_gen_list *env)
 		return (EXECUTER_ERR);
 	if (gen_list_get_size(commands) == 1 && command_is_built_in((t_command *) gen_list_peek_top(commands)))
 	{   
-        aux = command_exec((t_command *) gen_list_peek_top(commands), env);
-		if( aux == -1)
+        status_code = command_exec((t_command *) gen_list_peek_top(commands), env);
+		if( status_code != MS_OK)
         {
             gen_list_destroy(commands, command_destroy_data);
-            return(-1);   
+            return(status_code);   
         }
             
 		return(MS_OK);

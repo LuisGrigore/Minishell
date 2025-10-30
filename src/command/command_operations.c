@@ -54,11 +54,11 @@ int	command_exec(t_command *command, t_gen_list *environment)
 		close(stdout_backup);
 		return (status_code);
 	}
-	aux = command->command_funct(command, environment);
-	if (aux == -1)
+	status_code = command->command_funct(command, environment);
+	if (status_code != MS_OK)
 	{
 		env_destroy(environment);
-		return (-1);
+		return (status_code);
 	}
 	dup2(stdin_backup, STDIN_FILENO);
 	dup2(stdout_backup, STDOUT_FILENO);
