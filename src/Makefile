@@ -1,5 +1,5 @@
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = 
 INCLUDES =  -I. -I./command -I./environment -I./executer -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./history_manager -I./include -I./lexer -I./parser -I./pipe_manager -I./redirect_manager -I./signal_manager
 
 OBJ_DIR = obj

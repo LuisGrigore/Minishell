@@ -37,7 +37,6 @@ static void redirect_execute_data(void *redirect_ptr)
 int	command_exec(t_command *command, t_gen_list *environment)
 {
 	int	status_code;
-	int aux;
 	int						stdin_backup;
 	int						stdout_backup;
 
