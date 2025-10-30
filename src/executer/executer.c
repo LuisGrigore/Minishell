@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/19 18:56:40 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:45:00 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
 
 //TODO :: hacer que devuelva int con error y tal
-static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
+static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {
     size_t n = gen_list_get_size(commands);
     t_pipe_manager *pm = NULL;
@@ -23,19 +23,19 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     size_t i = 0;
 
     if (n == 0)
-        return;
+        return(-1);
 
     pm = pipe_manager_init(n);
     if (!pm)
-        return;
+        return(-1);
 
     it = gen_list_iter_start(commands);
     if (!it)
-        return (pipe_manager_destroy(pm), (void)0);
+        return (pipe_manager_destroy(pm), -1);
 
     pids = malloc(sizeof(pid_t) * n);
     if (!pids)
-        return (gen_list_iter_destroy(it), pipe_manager_destroy(pm), (void)0);
+        return (gen_list_iter_destroy(it), pipe_manager_destroy(pm), -1);
 
     while ((cmd = gen_list_iter_next(it)) != NULL)
     {
@@ -46,7 +46,12 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
             pipe_manager_close_all(pm);
 
             if (command_exec(cmd, env) == -1)
-                exit(1);
+            {   
+                free(pids);
+                gen_list_iter_destroy(it);
+                pipe_manager_destroy((pm));
+                return(-1);
+            }
             exit(0);
         }
         else
@@ -66,6 +71,7 @@ static void execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     pipe_manager_destroy(pm);
 	//Borra el archivo temporal despues de haber esperado a los procesos hijos
     unlink(PATH_HEREDOC_TEMP_FILE);
+        return(0);
 }
 
 static void command_destroy_data(void *command_ptr)
@@ -73,10 +79,10 @@ static void command_destroy_data(void *command_ptr)
 	command_destroy((t_command *) command_ptr);
 }
 
-static int handle_parser_errors(int status_code)
+/*static int handle_parser_errors(int status_code)
 {
 	return(MS_OK);
-}
+}*/
 
 int execute_line(char *line, t_gen_list *env)
 {
@@ -91,10 +97,15 @@ int execute_line(char *line, t_gen_list *env)
 		return (EXECUTER_ERR);
 	if (gen_list_get_size(commands) == 1 && command_is_built_in((t_command *) gen_list_peek_top(commands)))
 	{
-		command_exec((t_command *) gen_list_peek_top(commands), env);
+		if(command_exec((t_command *) gen_list_peek_top(commands), env) == -1)
+        {
+            gen_list_destroy(commands, command_destroy_data);
+            return(-1);   
+        }
+            
 		return(MS_OK);
 	}
-	execute_commands_with_pipes(commands, env);
+	status_code = execute_commands_with_pipes(commands, env);
 	gen_list_destroy(commands, command_destroy_data);
-	return (MS_OK);
+	return (status_code);
 }

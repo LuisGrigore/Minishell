@@ -7,24 +7,24 @@ int export_execute(t_command *command, t_gen_list *envioroment)
     char *arg;
     char **new_variable;
 
-    if (!command || !command->args || gen_list_is_empty(command->args) || !envioroment)
-        return (COMMAND_MALFORMED_ERR);
+    if (!command || !command->args || gen_list_is_empty(command->args)|| !envioroment)
+        return(-1);
     it = gen_list_iter_start(command->args);
     if (!it)
-        return (MS_ALLOCATION_ERR);
+        return(-1);
     arg = gen_list_iter_next(it);
     arg = gen_list_iter_next(it);
     gen_list_iter_destroy(it);
     if (!arg)
-        return;
+        return(-1);
     new_variable = ft_split2(arg, '=');
     if (!new_variable || !new_variable[0] || !new_variable[1])
-        return (COMMAND_MALFORMED_ERR);
+        return(-1);
     env_set(envioroment, new_variable[0], new_variable[1]);
     free(new_variable[0]);
     free(new_variable[1]);
     free(new_variable);
-    return (MS_OK);
+    return(0);
 }
 int unset_execute(t_command *command, t_gen_list *envioroment)
 {
@@ -32,16 +32,16 @@ int unset_execute(t_command *command, t_gen_list *envioroment)
     char *arg;
 
     if (!command || !command->args || !envioroment)
-        return (COMMAND_MALFORMED_ERR);
+        return(-1);
     it = gen_list_iter_start(command->args);
     if (!it)
-        return (MS_ALLOCATION_ERR);
+        return(-1);
     arg = gen_list_iter_next(it);
     arg = gen_list_iter_next(it);
     if (arg)
         env_unset(envioroment, arg);
     gen_list_iter_destroy(it);
-    return (MS_OK);
+    return(0);
 }
 
 int echo_execute(t_command *command, t_gen_list *envioroment)
@@ -52,10 +52,10 @@ int echo_execute(t_command *command, t_gen_list *envioroment)
 
     (void)envioroment;
     if (!command || !command->args)
-        return (COMMAND_MALFORMED_ERR);
+        return(-1);
     it = gen_list_iter_start(command->args);
     if (!it)
-        return (MS_ALLOCATION_ERR);
+        return(-1);
     arg = gen_list_iter_next(it);
     arg = gen_list_iter_next(it);
     newline = 1;
@@ -75,5 +75,5 @@ int echo_execute(t_command *command, t_gen_list *envioroment)
     if (newline)
         ft_printf("\n");
     gen_list_iter_destroy(it);
-    return (MS_OK);
+    return(0);
 }

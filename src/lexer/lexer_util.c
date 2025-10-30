@@ -11,7 +11,8 @@ char *ft_strndup(const char *s, size_t n)
     i = 0;
     if (!p) 
         return (NULL);
-    while (i < n && s[i]) {
+    while (i < n && s[i]) 
+    {
         p[i] = s[i];
         i++;
     }
@@ -43,12 +44,12 @@ int match_two_char_op(const char *s, size_t pos, const char *op)
 
     if (!s || !op)
         return 0;
-    slen = strlen(s);
-    olen = strlen(op);
+    slen = ft_strlen(s);
+    olen = ft_strlen(op);
     if (pos + 1 >= slen || olen < 2)
         return (0);
     if (s[pos] == op[0])
-    {
+    {  
         if (s[pos + 1] == op[1])
             return (1);
         return (0);
@@ -72,7 +73,7 @@ t_token_type operator_type(const char *op, size_t len) {
         if (op[0] == '<' && op[1] == '<') 
             return (TOKEN_HEREDOC);
         if (op[0] == '>' && op[1] == '>') 
-            return (TOKEN_REDIR_APPEND);
+            return (TOKEN_REDIR_APPEND);   
     }
     return (TOKEN_ARG); // fallback
 }

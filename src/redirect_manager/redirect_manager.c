@@ -6,15 +6,21 @@
 t_redirect *redirect_create(t_redirect_type redirect_type, char *file_name)
 {
     t_redirect *r = malloc(sizeof(t_redirect));
+   
     if (!r) return NULL;
     r->redirect_simbol = redirect_type;
-    if (file_name) {
+    if (file_name) 
+    {
         r->file = malloc(ft_strlen(file_name) + 1);
-        if (!r->file) { free(r); return NULL; }
+        if (!r->file) 
+        { 
+            free(r); 
+            return NULL; 
+        }
         ft_strlcpy(r->file, file_name, ft_strlen(file_name) + 1);
-    } else {
+    } 
+    else 
         r->file = NULL;
-    }
     return r;
 }
 
@@ -29,7 +35,6 @@ static void heredoc_exec(char *delimiter)
     char *input;
     char *temp_dir;
     int fd;
-    size_t len;
 
     // Calculamos tamaño necesario para el path: TEMPDIR + "/minishel_temp" + '\0'
 	//getenv("TEMPDIR")
@@ -39,6 +44,8 @@ static void heredoc_exec(char *delimiter)
 
 
     // Abrimos el archivo en modo escritura
+    if(!delimiter)
+        return;
     fd = open(temp_dir, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd < 0)
         return;

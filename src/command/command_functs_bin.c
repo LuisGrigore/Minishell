@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/30 15:37:02 by lgrigore         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2025/10/30 15:43:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "command_internal.h"
 
@@ -52,10 +53,7 @@ static char	*find_command(char **env, char *cmd)
 	{
 		final_path = get_final_path(path[y], cmd);
 		if (access(final_path, X_OK) == 0)
-		{
-			free_double_pointer(path);
 			return (final_path);
-		}
 		free(final_path);
 		y++;
 	}
@@ -80,19 +78,20 @@ int bin_execute(t_command *cmd, t_gen_list *envioroment)
     if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
     {
         perror("No command args ");
-        exit(1);
+        return(-1);
     }
 
     env = env_serialize(envioroment);
     cmd2 = gen_list_serialize_to_string_array(cmd->args,serialize_arg);
 
     path = find_command(env, cmd2[0]);
-	if (!path)
-	{
-		perror("Path not found ");
-		free_double_pointer(cmd2);
-		return (MS_FILE_ERR);
-	}
+    if (!path)
+    {
+        perror("Path not found ");
+		free_double_pointer(env);
+        free_double_pointer(cmd2);
+        return(-1);
+    }
 
     signals_restore();
 

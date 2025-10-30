@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manger_internal_execution.c               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:13:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/24 06:51:50 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:31:11 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	check_outfile(char *fd, t_redirect_type type)
 	int	result;
     
     if(!fd)
-        return (-1);
+        return(-1);       
 	result = open(fd, O_RDONLY);
 	if (result >= 0)
 	{
@@ -70,10 +70,14 @@ void file_dup(t_redirect *redirect)
 
     }
 }
+
 int check_in(char *fd)
 {
     int result;
     
+    if(!fd)
+        return(-1);   
+
     result = open(fd, O_RDWR);
     if(result == -1)
         return(-1);
