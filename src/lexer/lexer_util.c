@@ -49,7 +49,7 @@ int match_two_char_op(const char *s, size_t pos, const char *op)
     if (pos + 1 >= slen || olen < 2)
         return (0);
     if (s[pos] == op[0])
-    {
+    {  
         if (s[pos + 1] == op[1])
             return (1);
         return (0);

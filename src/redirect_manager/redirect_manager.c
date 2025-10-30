@@ -44,6 +44,8 @@ static void heredoc_exec(char *delimiter)
 
 
     // Abrimos el archivo en modo escritura
+    if(!delimiter)
+        return;
     fd = open(temp_dir, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd < 0)
         return;

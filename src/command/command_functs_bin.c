@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/24 06:56:00 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:56:56 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,7 @@ static char	*find_command(char **env, char *cmd)
 	{
 		final_path = get_final_path(path[y], cmd);
 		if (access(final_path, X_OK) == 0)
-		{
-			free_double_pointer(path);
 			return (final_path);
-		}
 		free(final_path);
 		y++;
 	}
@@ -70,7 +67,7 @@ static char *serialize_arg(void *arg_ptr)
 }
 
 
-void bin_execute(t_command *cmd, t_gen_list *envioroment)
+int bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
     char **cmd2;
     char **env;
@@ -80,7 +77,7 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
     {
         perror("No command args ");
-        exit(1);
+        return(-1);
     }
 
     env = env_serialize(envioroment);
@@ -90,8 +87,9 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     if (!path)
     {
         perror("Path not found ");
+		free_double_pointer(env);
         free_double_pointer(cmd2);
-        exit(127);
+        return(-1);
     }
 
     signals_restore();

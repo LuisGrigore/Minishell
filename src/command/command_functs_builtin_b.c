@@ -1,6 +1,6 @@
 #include "command_internal.h"
 
-void cd_execute(t_command *command, t_gen_list *environment)
+int cd_execute(t_command *command, t_gen_list *environment)
 {
     t_gen_list_iter *it;
     char *old_directory;
@@ -9,7 +9,7 @@ void cd_execute(t_command *command, t_gen_list *environment)
     if (!command->args || gen_list_get_size(command->args) < 2)
     {
         fprintf(stderr, "cd: missing argument\n");
-        return;
+        return(-1);
     }
     old_directory = getenv("PWD");
     it = gen_list_iter_start(command->args);
@@ -21,21 +21,22 @@ void cd_execute(t_command *command, t_gen_list *environment)
         {
             perror("cd");
             free(old_directory);
-            return;
+            return(0);
         }
         if (old_directory)
             env_set(environment, "OLDPWD", old_directory);
         env_set(environment, "PWD", new_directory(old_directory, target));
-        return;
+        return(0);
     }
     fprintf(stderr, "cd: no such file or directory: %s\n", target);
+    return(-1);
 }
 
-void	pwd_execute(t_command *command, t_gen_list *envioroment)
+int	pwd_execute(t_command *command, t_gen_list *envioroment)
 {
 	char *current_dir;
 	if (command == NULL)
-		return ;
+		return(-1);
 	current_dir = env_get(envioroment, "PWD");
     if(!current_dir)
     {
@@ -43,21 +44,21 @@ void	pwd_execute(t_command *command, t_gen_list *envioroment)
         if (!current_dir)
         {
             perror("pwd");
-            return;
+            return(-1);
         }
     }
 	printf("%s\n", current_dir);
 	free(current_dir);
-	exit(0);
+	return(0);
 }
-void	env_execute(t_command *command, t_gen_list *envioroment)
+int	env_execute(t_command *command, t_gen_list *envioroment)
 {
 	char **serialized_env;
 	size_t i;
 	if (!command)
 	{
 		perror("env :");
-		return;
+		return(-1);
 	}
 	serialized_env = env_serialize(envioroment);
 	i = 0;
@@ -67,4 +68,5 @@ void	env_execute(t_command *command, t_gen_list *envioroment)
 		i++;
 	}
 	free_double_pointer(serialized_env);
+    return(0);
 }

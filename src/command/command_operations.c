@@ -18,7 +18,7 @@ static int handle_list_errors(t_gen_list_status_code list_status_code)
 
 int command_push_arg(t_command *command, char *arg)
 {
-	return handle_list_errors(gen_list_push_back(command->args, ft_strdup(arg)));
+	return (handle_list_errors(gen_list_push_back(command->args, ft_strdup(arg))));
 }
 
 int command_push_redirect(t_command *command, t_redirect_type redirect_type, char *file_name)
@@ -53,7 +53,11 @@ int	command_exec(t_command *command, t_gen_list *environment)
 		close(stdout_backup);
 		return (status_code);
 	}
-	command->command_funct(command, environment);
+	if(command->command_funct(command, environment) == -1);
+	{
+		env_destroy(environment);
+		return (-1);
+	}
 	dup2(stdin_backup, STDIN_FILENO);
 	dup2(stdout_backup, STDOUT_FILENO);
 	close(stdin_backup);
