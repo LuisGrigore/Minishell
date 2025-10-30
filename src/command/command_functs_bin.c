@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:12:54 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/24 06:56:00 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:37:02 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char *serialize_arg(void *arg_ptr)
 }
 
 
-void bin_execute(t_command *cmd, t_gen_list *envioroment)
+int bin_execute(t_command *cmd, t_gen_list *envioroment)
 {
     char **cmd2;
     char **env;
@@ -87,21 +87,20 @@ void bin_execute(t_command *cmd, t_gen_list *envioroment)
     cmd2 = gen_list_serialize_to_string_array(cmd->args,serialize_arg);
 
     path = find_command(env, cmd2[0]);
-    if (!path)
-    {
-        perror("Path not found ");
-        free_double_pointer(cmd2);
-        exit(127);
-    }
+	if (!path)
+	{
+		perror("Path not found ");
+		free_double_pointer(cmd2);
+		return (MS_FILE_ERR);
+	}
 
     signals_restore();
 
-    execve(path, cmd2, env);
-
-    perror("Failed to execute command ");
-    free(path);
-    free_double_pointer(cmd2);
-    exit(1);
+	execve(path, cmd2, env);
+	perror("Failed to execute command ");
+	free(path);
+	free_double_pointer(cmd2);
+	return (COMMAND_ERR);
 }
 
 
