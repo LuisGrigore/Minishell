@@ -37,6 +37,7 @@ static void redirect_execute_data(void *redirect_ptr)
 int	command_exec(t_command *command, t_gen_list *environment)
 {
 	int	status_code;
+	int aux;
 	int						stdin_backup;
 	int						stdout_backup;
 
@@ -53,7 +54,8 @@ int	command_exec(t_command *command, t_gen_list *environment)
 		close(stdout_backup);
 		return (status_code);
 	}
-	if(command->command_funct(command, environment) == -1);
+	aux = command->command_funct(command, environment);
+	if (aux == -1)
 	{
 		env_destroy(environment);
 		return (-1);
