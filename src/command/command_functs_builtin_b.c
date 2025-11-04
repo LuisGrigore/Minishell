@@ -10,7 +10,7 @@ int cd_execute(t_command *command, t_gen_list *environment)
     if (!command || !command->args || gen_list_get_size(command->args) < 2)
     {
         fprintf(stderr, "cd: missing argument\n");
-        return(MS_OK);
+        return(-1);
     }
     old_directory = getenv("PWD");
     it = gen_list_iter_start(command->args);
@@ -20,24 +20,24 @@ int cd_execute(t_command *command, t_gen_list *environment)
     {
         if (chdir(target) == -1)
         {
-            perror("bash: cd:");
+            ft_printf("bash: cd:");
             free(old_directory);
-            return(MS_OK);
+            return(BINBUILTIN_ERROR);
         }
         if (old_directory)
             env_set(environment, "OLDPWD", old_directory);
         env_set(environment, "PWD", ft_strdup(getcwd(NULL,0)));
-        return(MS_OK);
+        return(0);
     }
-    fprintf(stderr,"bash: cd: %s: no such file or directory \n", target);
-    return(MS_OK);
+    fprintf(stderr,"bash: cd: %s: no such file or directory\n", target);
+    return(BINBUILTIN_ERROR);
 }
 
 int	pwd_execute(t_command *command, t_gen_list *environment)
 {
 	char *current_dir;
 	if (command == NULL)
-		return(-1);
+		return(BINBUILTIN_ERROR);
 	current_dir = env_get(environment, "PWD");
     if(!current_dir)
     {
@@ -50,7 +50,7 @@ int	pwd_execute(t_command *command, t_gen_list *environment)
     }
 	printf("%s\n", current_dir);
 	free(current_dir);
-	return(0);
+	return(BINBUILTIN_SUCCESS);
 }
 int	env_execute(t_command *command, t_gen_list *environment)
 {
@@ -59,7 +59,7 @@ int	env_execute(t_command *command, t_gen_list *environment)
 	if (!command)
 	{
 		perror("env :");
-		return(COMMAND_ERR);
+		return(COMMAND_ERROR);
 	}
 	serialized_env = env_serialize(environment);
 	i = 0;
@@ -69,5 +69,5 @@ int	env_execute(t_command *command, t_gen_list *environment)
 		i++;
 	}
 	free_double_pointer(serialized_env);
-    return(MS_OK);
+    return(BINBUILTIN_SUCCESS);
 }
