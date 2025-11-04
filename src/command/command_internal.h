@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_internal.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/10/30 15:44:17 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:35:46 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ struct s_command
 
 
 int						pwd_execute(t_command *command,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 int						bin_execute(t_command *cmd,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 int						cd_execute(t_command *command,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 int						pwd_execute(t_command *command,
 								t_gen_list *envioroment);
 int						export_execute(t_command *command,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 int						unset_execute(t_command *command,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 int						env_execute(t_command *command,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 int						echo_execute(t_command *command,
-								t_gen_list *envioroment);
+								t_gen_list *environment);
 char 						*new_directory(char *current, char *target);
 								
 

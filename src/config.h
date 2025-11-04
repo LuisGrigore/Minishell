@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 23:42:36 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:28:15 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 */
 #define SYSTEM_STATUS_BEGIN 0
 #define COMMAND_STATUS_BEGIN 100
+#define BINBUILTIN_STATUS_BEGIN 150
 #define ENVIRONMENT_STATUS_BEGIN 200
 #define EXECUTER_STATUS_BEGIN 300
 #define HISTORY_MANAGER_STATUS_BEGIN 400

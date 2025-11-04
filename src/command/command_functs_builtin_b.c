@@ -1,5 +1,6 @@
 #include "command_internal.h"
 
+//TODO: manejar el cd sin argumentos (home) y manejar bien las rutas relativas y absolutas
 int cd_execute(t_command *command, t_gen_list *environment)
 {
     t_gen_list_iter *it;
@@ -9,7 +10,7 @@ int cd_execute(t_command *command, t_gen_list *environment)
     if (!command || !command->args || gen_list_get_size(command->args) < 2)
     {
         fprintf(stderr, "cd: missing argument\n");
-        return(-1);
+        return(MS_OK);
     }
     old_directory = getenv("PWD");
     it = gen_list_iter_start(command->args);
@@ -19,54 +20,54 @@ int cd_execute(t_command *command, t_gen_list *environment)
     {
         if (chdir(target) == -1)
         {
-            perror("cd");
+            perror("bash: cd:");
             free(old_directory);
-            return(0);
+            return(MS_OK);
         }
         if (old_directory)
             env_set(environment, "OLDPWD", old_directory);
-        env_set(environment, "PWD", new_directory(old_directory, target));
-        return(0);
+        env_set(environment, "PWD", ft_strdup(getcwd(NULL,0)));
+        return(MS_OK);
     }
-    fprintf(stderr, "cd: no such file or directory: %s\n", target);
-    return(-1);
+    fprintf(stderr,"bash: cd: %s: no such file or directory \n", target);
+    return(MS_OK);
 }
 
-int	pwd_execute(t_command *command, t_gen_list *envioroment)
+int	pwd_execute(t_command *command, t_gen_list *environment)
 {
 	char *current_dir;
 	if (command == NULL)
 		return(-1);
-	current_dir = env_get(envioroment, "PWD");
+	current_dir = env_get(environment, "PWD");
     if(!current_dir)
     {
         current_dir = getcwd(NULL, 0);
         if (!current_dir)
         {
             perror("pwd");
-            return(-1);
+            return(ENVIRONMENT_ERR);
         }
     }
 	printf("%s\n", current_dir);
 	free(current_dir);
 	return(0);
 }
-int	env_execute(t_command *command, t_gen_list *envioroment)
+int	env_execute(t_command *command, t_gen_list *environment)
 {
 	char **serialized_env;
 	size_t i;
 	if (!command)
 	{
 		perror("env :");
-		return(-1);
+		return(COMMAND_ERR);
 	}
-	serialized_env = env_serialize(envioroment);
+	serialized_env = env_serialize(environment);
 	i = 0;
-	while(i < gen_list_get_size(envioroment))
+	while(i < gen_list_get_size(environment))
 	{
 		printf("%s\n", serialized_env[i]);
 		i++;
 	}
 	free_double_pointer(serialized_env);
-    return(0);
+    return(MS_OK);
 }

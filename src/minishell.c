@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/27 18:41:33 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:46:07 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,30 @@ static void	handle_errors(int status_code)
 		perror("Signal error");
 		exit(EXIT_FAILURE);
 	}
-	else
+	else if(status_code / 100 == 1)
+		exit(EXIT_FAILURE);
+	
+	else if(status_code / 100 == 2)
 	{
-		perror("Unknown error");
+		perror("Environment error");
 		exit(EXIT_FAILURE);
 	}
+	else if(status_code / 100 == 3)
+	{
+		perror("Lexer error");
+		exit(EXIT_FAILURE);
+	}
+	else if(status_code / 100 == 4)
+	{
+		perror("Parser error");
+		exit(EXIT_FAILURE);
+	}
+	else if(status_code / 100 == 5)
+	{
+		perror("Executer error");
+		exit(EXIT_FAILURE);
+	}
+
 }
 
 int	main(int args, char **environment_var_str_array)

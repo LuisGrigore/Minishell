@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/10/30 15:43:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:43:49 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char *serialize_arg(void *arg_ptr)
 }
 
 
-int bin_execute(t_command *cmd, t_gen_list *envioroment)
+int bin_execute(t_command *cmd, t_gen_list *environment)
 {
     char **cmd2;
     char **env;
@@ -77,26 +77,21 @@ int bin_execute(t_command *cmd, t_gen_list *envioroment)
 	
     if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
     {
-        perror("No command args ");
-        return(-1);
+        return(COMMAND_MALFORMED_ERR);
     }
 
-    env = env_serialize(envioroment);
+    env = env_serialize(environment);
     cmd2 = gen_list_serialize_to_string_array(cmd->args,serialize_arg);
-
     path = find_command(env, cmd2[0]);
     if (!path)
     {
-        perror("Path not found ");
+		ft_printf("bash: %s: command not found\n", cmd2[0]);
 		free_double_pointer(env);
         free_double_pointer(cmd2);
-        return(-1);
+        return(COMMAND_NOT_FOUND_ERR);
     }
-
     signals_restore();
-
 	execve(path, cmd2, env);
-	perror("Failed to execute command ");
 	free(path);
 	free_double_pointer(cmd2);
 	return (COMMAND_ERR);
