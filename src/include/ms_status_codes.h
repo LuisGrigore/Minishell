@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/30 18:28:59 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/04 18:31:30 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ typedef enum e_ms_status_code
 	MS_SIGNAL_ERR,
 	MS_FILE_ERR,
 	//Command
-	COMMAND_ERR = COMMAND_STATUS_BEGIN,
+	COMMAND_SUCCESS = COMMAND_STATUS_BEGIN,
+	COMMAND_ERROR,
 	COMMAND_MALFORMED_ERR,
 	COMMAND_NOT_FOUND_ERR,
 	COMMAND_PERMISSION_ERR,
 	COMMAND_IS_DIR_ERR,
-	BINBUILTIN_ERR = BINBUILTIN_STATUS_BEGIN,
+	BINBUILTIN_SUCCESS = BINBUILTIN_STATUS_BEGIN,
+	BINBUILTIN_ERROR,
 	BINBUILTIN_NOT_FOUND_ERR,
 	BINBUILTIN_PERMISSION_ERR,
 	
