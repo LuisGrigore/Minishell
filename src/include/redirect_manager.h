@@ -66,7 +66,7 @@ void redirect_destroy(t_redirect *redirect);
 **  Operations
 ** ============================================================
 */
-
+int redirect_error_control(t_gen_list *list, int(*func)(void *));
 /**
  * @brief Executes a redirection operation.
  *

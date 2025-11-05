@@ -36,8 +36,17 @@ int cd_execute(t_command *command, t_gen_list *environment)
 int	pwd_execute(t_command *command, t_gen_list *environment)
 {
 	char *current_dir;
-	if (command == NULL)
-		return(BINBUILTIN_ERROR);
+    char *arg;
+    t_gen_list_iter *it;
+    it = gen_list_iter_start(command->args);
+    gen_list_iter_next(it);
+    arg = gen_list_iter_next(it);
+    if (arg && arg[0] == '-')
+    {
+        gen_list_iter_destroy(it);
+        printf("bash: pwd: %s option not supported\n", arg);
+        return(BINBUILTIN_ERROR);
+    }
 	current_dir = env_get(environment, "PWD");
     if(!current_dir)
     {
@@ -49,6 +58,7 @@ int	pwd_execute(t_command *command, t_gen_list *environment)
         }
     }
 	printf("%s\n", current_dir);
+    gen_list_iter_destroy(it);
 	free(current_dir);
 	return(BINBUILTIN_SUCCESS);
 }

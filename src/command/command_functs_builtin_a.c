@@ -26,6 +26,7 @@ int export_execute(t_command *command, t_gen_list *environment)
     free(new_variable);
     return(BINBUILTIN_SUCCESS);
 }
+
 int unset_execute(t_command *command, t_gen_list *environment)
 {
     t_gen_list_iter *it;
@@ -38,8 +39,11 @@ int unset_execute(t_command *command, t_gen_list *environment)
         return(GEN_LIST_IS_NULL_ERR);
     arg = gen_list_iter_next(it);
     arg = gen_list_iter_next(it);
-    if (arg)
+    while(arg)
+    {
         env_unset(environment, arg);
+        arg = gen_list_iter_next(it);
+    }
     gen_list_iter_destroy(it);
     return(BINBUILTIN_SUCCESS);
 }

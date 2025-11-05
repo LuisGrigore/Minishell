@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "lexer_internal.h": "c"
+        "lexer_internal.h": "c",
+        "redirect_manager_internal.h": "c"
     }
 }

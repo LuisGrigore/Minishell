@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/04 18:31:30 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:25:04 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ typedef enum e_ms_status_code
 	BINBUILTIN_SUCCESS = BINBUILTIN_STATUS_BEGIN,
 	BINBUILTIN_ERROR,
 	BINBUILTIN_NOT_FOUND_ERR,
-	BINBUILTIN_PERMISSION_ERR,
-	
-	
+	BINBUILTIN_PERMISSION_ERR,	
 	//Environment
 	ENVIRONMENT_ERR = ENVIRONMENT_STATUS_BEGIN,
 	//Executer
@@ -51,7 +49,7 @@ typedef enum e_ms_status_code
 	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
 	//Redirect Manager
-	REDIRECT_MANAGER_ERR = REDIRECT_MANAGER_STATUS_BEGIN,
+	REDIRECT_MANAGER_SUCCESS = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_MANAGER_ERR_INVALID_FD,
 	REDIRECT_MANAGER_ERR_SYNTAX,
 	

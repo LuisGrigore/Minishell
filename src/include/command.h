@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/06 23:37:45 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:43:16 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

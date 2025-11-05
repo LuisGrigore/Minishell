@@ -102,6 +102,7 @@ int redirect_execute(t_redirect *redirect)
 	    heredoc_exec(redirect->file);
 	//Modificar a partir de aqui(a menos de que encuentres algun error o lo que sea).
 	else 
-	    file_dup(redirect);
-	return (0);
+	  return (file_dup(redirect));
+	
+      return (0);
 }

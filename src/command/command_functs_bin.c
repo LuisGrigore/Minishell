@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/10/30 18:43:49 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/04 20:00:09 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int bin_execute(t_command *cmd, t_gen_list *environment)
     path = find_command(env, cmd2[0]);
     if (!path)
     {
-		ft_printf("bash: %s: command not found\n", cmd2[0]);
+		ft_printf("bash: %s: ", cmd2[0]);
 		free_double_pointer(env);
         free_double_pointer(cmd2);
         return(COMMAND_NOT_FOUND_ERR);
@@ -94,7 +94,7 @@ int bin_execute(t_command *cmd, t_gen_list *environment)
 	execve(path, cmd2, env);
 	free(path);
 	free_double_pointer(cmd2);
-	return (COMMAND_ERR);
+	return (COMMAND_ERROR);
 }
 
 

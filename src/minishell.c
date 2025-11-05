@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/30 18:46:07 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:29:53 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ static void	handle_errors(int status_code)
 		perror("Parser error");
 		exit(EXIT_FAILURE);
 	}
-	else if(status_code / 100 == 5)
+	else if(status_code / 100 == 8)
 	{
-		perror("Executer error");
+		perror("Invalide file descriptor");
 		exit(EXIT_FAILURE);
 	}
 

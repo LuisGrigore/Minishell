@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/30 17:24:08 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/05 19:17:44 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
 {
     size_t n = gen_list_get_size(commands);
     t_pipe_manager *pm = NULL;
-    int status_code;
     t_gen_list_iter *it;
     t_command *cmd;
     pid_t *pids;
     size_t i = 0;
+    int status_code;
 
     if (n == 0)
-        return(GEN_LIST_IS_NULL_ERR);
+        return(-1);
 
     pm = pipe_manager_init(n);
     if (!pm)
-        return(PIPE_MANAGER_IS_NULL);
+        return(-1);
 
     it = gen_list_iter_start(commands);
     if (!it)
@@ -46,13 +46,12 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
             pipe_manager_setup_command(pm, i);
             pipe_manager_close_all(pm);
             status_code = command_exec(cmd, env);
-
             if (status_code != MS_OK)
-            {   
+            {
                 free(pids);
                 gen_list_iter_destroy(it);
-                pipe_manager_destroy(pm);
-                return (status_code);
+                pipe_manager_destroy((pm));
+                return(status_code);
             }
             exit(0);
         }
@@ -73,7 +72,7 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     pipe_manager_destroy(pm);
 	//Borra el archivo temporal despues de haber esperado a los procesos hijos
     unlink(PATH_HEREDOC_TEMP_FILE);
-        return(MS_OK);
+        return(0);
 }
 
 static void command_destroy_data(void *command_ptr)
@@ -104,7 +103,7 @@ int execute_line(char *line, t_gen_list *env)
 		if( status_code != MS_OK)
         {
             gen_list_destroy(commands, command_destroy_data);
-            return(status_code);   
+            return(MS_OK);   
         }
             
 		return(MS_OK);
