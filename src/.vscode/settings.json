@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "lexer_internal.h": "c",
-        "redirect_manager_internal.h": "c"
+        "redirect_manager_internal.h": "c",
+        "gen_list.h": "c"
     }
 }

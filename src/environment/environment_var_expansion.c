@@ -53,6 +53,7 @@ char *env_expand_vars(t_gen_list *env, char *line)
     char *result;
     char *var_name;
     char *value;
+    size_t $position;
     size_t i;
     size_t len;
 
@@ -60,9 +61,10 @@ char *env_expand_vars(t_gen_list *env, char *line)
         return NULL;
     result = ft_strdup("");
     i = 0;
+    $position = special_char(line, "$");
     while (line[i])
     {
-        if (line[i] == '$')
+        if (i == $position)
         {
             var_name = get_var_name(line, i + 1, &len);
             if (var_name)
@@ -76,6 +78,7 @@ char *env_expand_vars(t_gen_list *env, char *line)
                 }
             }
             i += len + 1;
+            $position += (size_t)special_char(line +(int)$position + 1, "$") + 1;
         }
         else
         {

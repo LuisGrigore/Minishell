@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_internal.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:03:49 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:48:06 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../../include/environment.h"
 # include "../../external/libft/libft.h"
+# include "../include/util.h"
 # include <stdlib.h>
 
 /* ============================================================

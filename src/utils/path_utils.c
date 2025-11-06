@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:26:13 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/01 14:02:32 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:53:30 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
