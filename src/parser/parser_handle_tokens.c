@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/19 19:15:28 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:11:02 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_command	*handle_command_token(t_token *tok, t_command *current_cmd)
 	if (!arg_copy)
 		return (NULL);
 	command_push_arg(current_cmd, arg_copy);
+	free(arg_copy);
 	return (current_cmd);
 }
 
@@ -43,6 +44,7 @@ t_command	*handle_arg_token(t_token *tok, t_command *current_cmd)
 	if (!arg_copy)
 		return (NULL);
 	command_push_arg(current_cmd, arg_copy);
+	free(arg_copy);
 	return (current_cmd);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 16:51:29 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:25:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,13 @@ static void command_destroy_data(void *command_ptr)
 	command_destroy((t_command *) command_ptr);
 }
 
-/*static int handle_parser_errors(int status_code)
-{
-	return(MS_OK);
-}*/
 
 int execute_line(char *line, t_gen_list *env)
 {
 	int status_code;
 	t_gen_list *commands;
     int exit_status;
+	char *status_code_str;
 
 
     exit_status = 0;
@@ -106,15 +103,21 @@ int execute_line(char *line, t_gen_list *env)
         {
             if(status_code != BINBUILTIN_SUCCESS)
                 exit_status = 1;
-            env_set(env, "?", ft_itoa(exit_status));
+			status_code_str = ft_itoa(exit_status);
+            env_set(env, "?", status_code_str);
+			free(status_code_str);
             gen_list_destroy(commands, command_destroy_data);
-            return(MS_OK);   
+			if(status_code == BINBUILTIN_SUCCESS)
+            	return(MS_OK);
+			return(status_code);
         }
             
 		return(MS_OK);
 	}
 	status_code = execute_commands_with_pipes(commands, env, &exit_status);
 	gen_list_destroy(commands, command_destroy_data);
-    env_set(env, "?", ft_itoa(exit_status));
+    status_code_str = ft_itoa(exit_status);
+    env_set(env, "?", status_code_str);
+	free(status_code_str);
 	return (status_code);
 }

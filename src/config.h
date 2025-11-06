@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/30 18:28:15 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:04:37 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@
 #define PARSER_STATUS_BEGIN 600
 #define REDIRECT_MANAGER_STATUS_BEGIN 800
 #define SIGNAL_MANAGER_STATUS_BEGIN 900
+#define EXIT_USER_DEFINED_STATUS_CODE_BEGIN 1000
 
 #endif

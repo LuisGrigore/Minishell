@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ms_status_codes.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/05 16:25:04 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:04:32 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ typedef enum e_ms_status_code
 	BINBUILTIN_SUCCESS = BINBUILTIN_STATUS_BEGIN,
 	BINBUILTIN_ERROR,
 	BINBUILTIN_NOT_FOUND_ERR,
-	BINBUILTIN_PERMISSION_ERR,	
+	BINBUILTIN_PERMISSION_ERR,
+	BUILTIN_TOO_MANY_ARGS,
 	//Environment
 	ENVIRONMENT_ERR = ENVIRONMENT_STATUS_BEGIN,
 	//Executer
@@ -52,6 +53,8 @@ typedef enum e_ms_status_code
 	REDIRECT_MANAGER_SUCCESS = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_MANAGER_ERR_INVALID_FD,
 	REDIRECT_MANAGER_ERR_SYNTAX,
+	//Exit
+	EXIT_USER_DEFINED_STATUS_CODE = EXIT_USER_DEFINED_STATUS_CODE_BEGIN,
 	
 } t_ms_status_code;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/05 18:29:53 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:01:29 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ static void	handle_errors(int status_code)
 	if (status_code == MS_OK)
 	{
 		return;
+	}
+	if (status_code >= EXIT_USER_DEFINED_STATUS_CODE)
+	{
+		exit(status_code - EXIT_USER_DEFINED_STATUS_CODE);
 	}
 	if (status_code == MS_ALLOCATION_ERR)
 	{
@@ -105,10 +109,9 @@ int	main(int args, char **environment_var_str_array)
 	while (!finish)
 	{
 		input = get_input(environment_vars);
-		if ((ft_strlen(input) != 0 && ft_strncmp(input, "exit",
-					ft_strlen(input)) == 0) || input == NULL)
+		if (input == NULL)
 			finish = true;
-		else if (ft_strlen(input) != 0)
+		if (ft_strlen(input) != 0)
 		{
 			history_add(input);
 			expanded_input = env_expand_vars(environment_vars,input);

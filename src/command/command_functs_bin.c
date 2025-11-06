@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "command_internal.h"
 
 static char	*get_final_path(char *path, char *cmd)
@@ -61,41 +60,37 @@ static char	*find_command(char **env, char *cmd)
 	return (NULL);
 }
 
-static char *serialize_arg(void *arg_ptr)
+static char	*serialize_arg(void *arg_ptr)
 {
-	char *arg = (char *) arg_ptr;
+	char	*arg;
+
+	arg = (char *)arg_ptr;
 	return (ft_strdup(arg));
 }
 
-
-int bin_execute(t_command *cmd, t_gen_list *environment)
+int	bin_execute(t_command *cmd, t_gen_list *environment)
 {
-    char **cmd2;
-    char **env;
-    char *path;
-	
-	
-    if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
-    {
-        return(COMMAND_MALFORMED_ERR);
-    }
+	char	**cmd2;
+	char	**env;
+	char	*path;
 
-    env = env_serialize(environment);
-    cmd2 = gen_list_serialize_to_string_array(cmd->args,serialize_arg);
-    path = find_command(env, cmd2[0]);
-    if (!path)
-    {
+	if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
+	{
+		return (COMMAND_MALFORMED_ERR);
+	}
+	env = env_serialize(environment);
+	cmd2 = gen_list_serialize_to_string_array(cmd->args, serialize_arg);
+	path = find_command(env, cmd2[0]);
+	if (!path)
+	{
 		ft_printf("bash: %s: ", cmd2[0]);
 		free_double_pointer(env);
-        free_double_pointer(cmd2);
-        return(COMMAND_NOT_FOUND_ERR);
-    }
-    signals_restore();
+		free_double_pointer(cmd2);
+		return (COMMAND_NOT_FOUND_ERR);
+	}
+	signals_restore();
 	execve(path, cmd2, env);
 	free(path);
 	free_double_pointer(cmd2);
 	return (COMMAND_ERROR);
 }
-
-
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_parse_quotes.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:00:00 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/28 19:00:00 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:34:29 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ int handle_loop_char(t_pstate *st)
     }
     if (append_char(st, c) < 0)
         return -1;
-    if(*(st->i) >= 2 && is_operator_char(st->line[*(st->i) - 2] && !is_space(st->line[*(st->i)])))
+    /* fix parentheses: check previous-previous char for operator and current is not space */
+    if (*(st->i) >= 2 && is_operator_char(st->line[*(st->i) - 2]) && !is_space(st->line[*(st->i)]))
         return 0;
     (*(st->i))++;
     return 1;
