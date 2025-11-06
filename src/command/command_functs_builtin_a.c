@@ -20,6 +20,8 @@ int export_execute(t_command *command, t_gen_list *environment)
     new_variable = ft_split2(arg, '=');
     if (!new_variable || !new_variable[0] || !new_variable[1])
         return(BINBUILTIN_ERROR);
+    if(check_option_of_export(new_variable, environment) == -1)
+        return(BINBUILTIN_ERROR);
     env_set(environment, new_variable[0], new_variable[1]);
     free(new_variable[0]);
     free(new_variable[1]);
@@ -81,3 +83,4 @@ int echo_execute(t_command *command, t_gen_list *environment)
     gen_list_iter_destroy(it);
     return(BINBUILTIN_SUCCESS);
 }
+

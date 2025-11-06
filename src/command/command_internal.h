@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/10/30 18:35:46 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:04:47 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int						env_execute(t_command *command,
 								t_gen_list *environment);
 int						echo_execute(t_command *command,
 								t_gen_list *environment);
-char 						*new_directory(char *current, char *target);
+int check_option_of_export(char **new_variable, t_gen_list *env);
 								
 
 #endif

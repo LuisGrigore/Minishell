@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_serialization_deserialization.c        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 13:37:05 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:09:25 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ t_gen_list	*env_deserialize(char **str_array)
 		free(split);
 		i++;
 	}
+	env_set(env_var_list, "?", "0");
 	return (env_var_list);
 }

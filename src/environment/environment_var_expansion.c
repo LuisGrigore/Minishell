@@ -8,20 +8,23 @@ static char *get_var_name(char *line, size_t start, size_t *len)
 
     j = 0;
     while (line[start + j] && (ft_isalnum(line[start + j]) || line[start + j] == '_' ||line[start + j] == '?'))
+    {
         j++;
+        if( line[start + j - 1] == '?')
+            break;
+    }
+        
     *len = j;
     if (j == 0)
         return NULL;
     name = ft_substr(line, start, j);
-    return name;
+    return (name);
 }
 
 static char *append_value_with_quotes(char *result, char *value)
 {
     char *tmp;
     char *new_result;
-
- 
 
     tmp = result;
     new_result = ft_strjoin(result, value);
