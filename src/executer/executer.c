@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 23:25:43 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:51:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int execute_line(char *line, t_gen_list *env)
 	commands = gen_list_create();
 	if (!commands)
 		return (MS_ALLOCATION_ERR);
-	status_code = parse_line(line, commands);
+    status_code = parse_line(line, commands, env);
 	if(status_code != MS_OK)
 		return (EXECUTER_ERR);
 	if (gen_list_get_size(commands) == 1 && command_is_built_in((t_command *) gen_list_peek_top(commands)))

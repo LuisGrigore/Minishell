@@ -21,6 +21,10 @@
  * @param commands Output list where parsed t_command* objects will be appended.
  * @return MS_OK on success, or an error status otherwise.
  */
-int parse_line(char *line, t_gen_list *commands);
+/*
+ * parse_line now also receives the environment list so lexer can expand
+ * variables according to quoting rules during tokenization.
+ */
+int parse_line(char *line, t_gen_list *commands, t_gen_list *env);
 
 #endif

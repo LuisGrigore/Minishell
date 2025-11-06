@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_operations.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/24 06:06:28 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:59:37 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	env_set(t_gen_list *env, char *name, char *value)
 
 void	env_unset(t_gen_list *envioroment, char *name)
 {
-	t_env_var *found;
+	//t_env_var *found;
 
-	found = (t_env_var *)gen_list_find_ctx(envioroment, var_name_filter, name);
+	//found = (t_env_var *)gen_list_find_ctx(envioroment, var_name_filter, name);
 	gen_list_remove_if_ctx(envioroment, var_name_filter, (void *)name,
 		destroy_environment_var);
 }

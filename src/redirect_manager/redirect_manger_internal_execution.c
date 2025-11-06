@@ -12,27 +12,27 @@
 
 #include "redirect_manager_internal.h"
 
-static int check_in(char *fd);
+static int	check_in(char *fd);
 
 static int	check_outfile(char *fd, t_redirect_type type)
 {
 	int	result;
-    
-    if(!fd)
-        return(REDIRECT_MANAGER_ERR_SYNTAX);       
+
+	if (!fd)
+		return (REDIRECT_MANAGER_ERR_SYNTAX);
 	result = open(fd, O_RDONLY);
 	if (result >= 0)
 	{
-        close(result);
-        if(type == DOUBLE_RIGHT_REDIRECT)     
-            result = open(fd ,O_WRONLY | O_APPEND);
-        else   
-		    result = open( fd, 1 | O_CREAT | O_TRUNC, 0777);
+		close(result);
+		if (type == DOUBLE_RIGHT_REDIRECT)
+			result = open(fd, O_WRONLY | O_APPEND);
+		else
+			result = open(fd, 1 | O_CREAT | O_TRUNC, 0777);
 	}
 	if (result == -1)
 	{
 		if (access(fd, F_OK) != -1)
-            return (REDIRECT_MANAGER_ERR_INVALID_FD);
+			return (REDIRECT_MANAGER_ERR_INVALID_FD);
 		else
 		{
 			close(result);
@@ -42,53 +42,50 @@ static int	check_outfile(char *fd, t_redirect_type type)
 	return (result);
 }
 
-int file_dup(t_redirect *redirect)
+int	file_dup(t_redirect *redirect)
 {
-    int fd;
+	int	fd;
 
-    if(redirect->redirect_simbol == LEFT_REDIRECT)
-    {
-        fd = check_in(redirect->file);
-        if(fd > 800)
-            return(fd);
-        else
-        {
-            dup2(fd, STDIN_FILENO);
-            return(REDIRECT_MANAGER_SUCCESS) ;
-        }
-    }
-    else
-    {
-        fd = check_outfile(redirect->file, redirect->redirect_simbol);
-        if(fd > 800)
-            return(fd);
-        else
-        {
-            dup2(fd, STDOUT_FILENO);
-            return(REDIRECT_MANAGER_SUCCESS);
-        }
-
-    }
+	if (redirect->redirect_simbol == LEFT_REDIRECT)
+	{
+		fd = check_in(redirect->file);
+		if (fd > 800)
+			return (fd);
+		else
+		{
+			dup2(fd, STDIN_FILENO);
+			return (REDIRECT_MANAGER_SUCCESS);
+		}
+	}
+	else
+	{
+		fd = check_outfile(redirect->file, redirect->redirect_simbol);
+		if (fd > 800)
+			return (fd);
+		else
+		{
+			dup2(fd, STDOUT_FILENO);
+			return (REDIRECT_MANAGER_SUCCESS);
+		}
+	}
 }
 
-int check_in(char *fd)
+int	check_in(char *fd)
 {
-    int result;
-    
-    if(!fd)
-        return(REDIRECT_MANAGER_ERR_INVALID_FD);   
+	int	result;
 
-    result = open(fd, O_RDWR);
-    if(result == -1)
-        return(REDIRECT_MANAGER_ERR_INVALID_FD);
-    return(result);
-    
+	if (!fd)
+		return (REDIRECT_MANAGER_ERR_INVALID_FD);
+	result = open(fd, O_RDWR);
+	if (result == -1)
+		return (REDIRECT_MANAGER_ERR_INVALID_FD);
+	return (result);
 }
-int redirect_error_control(t_gen_list *list, int(*func)(void *))
+int	redirect_error_control(t_gen_list *list, int (*func)(void *))
 {
-	t_gen_list_iter	*it;
-	void			*val;
-    int status_code;
+	t_gen_list_iter *it;
+	void *val;
+	int status_code;
 
 	if (!list || !func)
 		return (GEN_LIST_IS_NULL_ERR);
@@ -99,11 +96,11 @@ int redirect_error_control(t_gen_list *list, int(*func)(void *))
 	while (val)
 	{
 		status_code = func(val);
-        if(status_code != REDIRECT_MANAGER_SUCCESS)
-        {
-            gen_list_iter_destroy(it);
-            return (status_code);
-        }
+		if (status_code != REDIRECT_MANAGER_SUCCESS)
+		{
+			gen_list_iter_destroy(it);
+			return (status_code);
+		}
 		val = gen_list_iter_next(it);
 	}
 	gen_list_iter_destroy(it);

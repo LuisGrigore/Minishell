@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_process.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:00:00 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/24 07:14:31 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:51:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int parse_word_and_get(t_lstate *ls, char **out_word)
     int pr;
 
     *out_word = NULL;
-    pr = parse_word(ls->line, ls->i, ls->len, out_word);
+    pr = parse_word(ls->line, ls->i, ls->len, ls->env, out_word);
     if (pr == -1)
         return LEXER_ERR;
     if (pr == -2)

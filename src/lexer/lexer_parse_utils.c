@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_parse_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:00:00 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/24 07:14:31 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:51:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer_internal.h"
 
 void pstate_init(t_pstate *st, const char *line, size_t *i, size_t len,
-    char **buf, size_t *bcap, size_t *blen)
+    char **buf, size_t *bcap, size_t *blen, t_gen_list *env)
 {
     st->line = line;
     st->i = i;
@@ -21,6 +21,7 @@ void pstate_init(t_pstate *st, const char *line, size_t *i, size_t len,
     st->buf = buf;
     st->bcap = bcap;
     st->blen = blen;
+    st->env = env;
 }
 
 int ensure_capacity(t_pstate *st, size_t need)

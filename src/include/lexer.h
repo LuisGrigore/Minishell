@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 23:41:57 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:51:09 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,12 @@ typedef struct s_token t_token;
  * Each token corresponds to a command, argument, or operator,
  * as defined in t_token_type.
  */
-int lexer_tokenize(const char *line, t_gen_list *tokens_list);
+/*
+ * Tokenize the input line. The lexer now needs access to the environment
+ * so it can expand variables according to quoting rules (single vs double
+ * quotes). Pass the environment list; it may be NULL if not available.
+ */
+int lexer_tokenize(const char *line, t_gen_list *tokens_list, t_gen_list *env);
 
 /**
  * Frees all memory associated with a token list.

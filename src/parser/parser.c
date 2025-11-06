@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/30 15:45:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:51:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	parse_tokens_to_commands(t_gen_list *tokens, t_gen_list *commands)
 	return (finalize_parsing(current_cmd, it, commands, status));
 }
 
-int	parse_line(char *line, t_gen_list *commands)
+int	parse_line(char *line, t_gen_list *commands, t_gen_list *env)
 {
 	int			status_code;
 	t_gen_list	*tokens;
@@ -101,7 +101,7 @@ int	parse_line(char *line, t_gen_list *commands)
 	tokens = gen_list_create();
 	if (!tokens)
 		return (MS_ALLOCATION_ERR);
-	status_code = lexer_tokenize(line, tokens);
+	status_code = lexer_tokenize(line, tokens, env);
 	if (status_code != MS_OK)
 	{
 		lexer_destroy(tokens);

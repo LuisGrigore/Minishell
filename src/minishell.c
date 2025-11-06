@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 21:01:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:57:25 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main(int args, char **environment_var_str_array)
 	t_gen_list	*environment_vars;
 	bool		finish;
 	char		*input;
-	char		*expanded_input;
+	//char		*expanded_input;
 
 	if (args == 1)
 		environment_vars = env_deserialize(environment_var_str_array + 2);
@@ -114,12 +114,9 @@ int	main(int args, char **environment_var_str_array)
 		if (ft_strlen(input) != 0)
 		{
 			history_add(input);
-			expanded_input = env_expand_vars(environment_vars,input);
+			handle_errors(execute_line(input, environment_vars));
 			free(input);
 			input = NULL;
-			handle_errors(execute_line(expanded_input, environment_vars));
-			free(expanded_input);
-			expanded_input = NULL;
 		}
 	}
 	env_destroy(environment_vars);

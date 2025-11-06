@@ -11,18 +11,18 @@
 /* ************************************************************************** */
 
 #ifndef REDIRECT_INTERNAL_H
-#define REDIRECT_INTERNAL_H
-#include "../include/redirect_manager.h"
+# define REDIRECT_INTERNAL_H
+# include "../config.h"
 # include "../external/libft/libft.h"
+# include "../include/redirect_manager.h"
 # include "ms_status_codes.h"
-#include "../config.h"
 
-struct s_redirect
+struct				s_redirect
 {
 	char			*file;
 	t_redirect_type	redirect_simbol;
 };
 
-int file_dup(t_redirect *redirect);
+int					file_dup(t_redirect *redirect);
 
 #endif

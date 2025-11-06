@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 
 #ifndef PIPE_MANAGER_INTERNAL_H
-#define PIPE_MANAGER_INTERNAL_H
+# define PIPE_MANAGER_INTERNAL_H
 
-#include "../include/pipe_manager.h"
+# include "../include/pipe_manager.h"
 # include <fcntl.h>
 # include <unistd.h>
 
-struct s_pipe_manager
+struct		s_pipe_manager
 {
-    size_t n_cmds;
-    int (*pipes)[2];
+	size_t	n_cmds;
+	int (*pipes)[2];
 };
 
 #endif

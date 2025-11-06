@@ -89,6 +89,7 @@ int	exit_execute(t_command *command, t_gen_list *environment)
 	int exit_code;
 
 	exit_code = 0;
+	(void) environment;
 	if (gen_list_get_size (command->args) == 2)
 	{
 		gen_list_pop_front(command->args);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_queries.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 04:47:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 18:15:45 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 23:56:37 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_option_of_export(char **new_variable, t_gen_list *env)
 	{
 		if (!ft_isalnum(new_variable[0][i]))
 		{
-			if (new_variable[0][i] != '+' || i != ft_strlen(new_variable[0])
+			if (new_variable[0][i] != '+' || i != (int)ft_strlen(new_variable[0])
 				- 1)
 				return (-1);
 			else
