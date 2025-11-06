@@ -7,7 +7,7 @@ static char *get_var_name(char *line, size_t start, size_t *len)
     char *name;
 
     j = 0;
-    while (line[start + j] && (ft_isalnum(line[start + j]) || line[start + j] == '_'))
+    while (line[start + j] && (ft_isalnum(line[start + j]) || line[start + j] == '_' ||line[start + j] == '?'))
         j++;
     *len = j;
     if (j == 0)

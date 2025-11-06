@@ -4,7 +4,6 @@ static t_command_funct get_command_function(char *cmd_name)
 {
     if (!cmd_name || ft_strlen(cmd_name) == 0)
         return NULL;
-
     if (ft_strncmp(cmd_name, "echo", 5) == 0)
         return echo_execute;
     else if (ft_strncmp(cmd_name, "cd", 3) == 0)

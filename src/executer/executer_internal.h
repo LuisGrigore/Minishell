@@ -8,6 +8,7 @@
 #include "../include/redirect_manager.h"
 #include "../include/pipe_manager.h"
 #include "../config.h"
+#include "../include/environment.h"
 
 #include "../external/libft/libft.h"
 

@@ -6,14 +6,14 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/05 19:17:44 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/06 16:51:29 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
 
 //TODO :: hacer que devuelva int con error y tal
-static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
+static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env, int *exit_status)
 {
     size_t n = gen_list_get_size(commands);
     t_pipe_manager *pm = NULL;
@@ -65,7 +65,7 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env)
     pipe_manager_close_all(pm);
 
     for (size_t j = 0; j < i; j++)
-        waitpid(pids[j], NULL, 0);
+        waitpid(pids[j], exit_status, 0);
 
     gen_list_iter_destroy(it);
     free(pids);
@@ -89,8 +89,10 @@ int execute_line(char *line, t_gen_list *env)
 {
 	int status_code;
 	t_gen_list *commands;
+    int exit_status;
 
 
+    exit_status = 0;
 	commands = gen_list_create();
 	if (!commands)
 		return (MS_ALLOCATION_ERR);
@@ -102,13 +104,17 @@ int execute_line(char *line, t_gen_list *env)
         status_code = command_exec((t_command *) gen_list_peek_top(commands), env);
 		if( status_code != MS_OK)
         {
+            if(status_code != BINBUILTIN_SUCCESS)
+                exit_status = 1;
+            env_set(env, "?", ft_itoa(exit_status));
             gen_list_destroy(commands, command_destroy_data);
             return(MS_OK);   
         }
             
 		return(MS_OK);
 	}
-	status_code = execute_commands_with_pipes(commands, env);
+	status_code = execute_commands_with_pipes(commands, env, &exit_status);
 	gen_list_destroy(commands, command_destroy_data);
+    env_set(env, "?", ft_itoa(exit_status));
 	return (status_code);
 }
