@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/04 20:00:09 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/07 19:58:23 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	bin_execute(t_command *cmd, t_gen_list *environment)
 	path = find_command(env, cmd2[0]);
 	if (!path)
 	{
-		ft_printf("bash: %s: ", cmd2[0]);
+		//ft_printf("bash: %s: ", cmd2[0]);
 		free_double_pointer(env);
 		free_double_pointer(cmd2);
 		return (COMMAND_NOT_FOUND_ERR);

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 18:08:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 19:38:51 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,9 @@ static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini
             exit(status_code);
 
         // Builtin status codes
-        case BINBUILTIN_SUCCESS:
-            printf("BINBUILTIN_SUCCESS\n");
-            return;
+
         case BINBUILTIN_ERROR:
             printf("BINBUILTIN_ERROR\n");
-            exit(status_code);
-        case BINBUILTIN_NOT_FOUND_ERR:
-            printf("BINBUILTIN_NOT_FOUND_ERR\n");
-            exit(status_code);
-        case BINBUILTIN_PERMISSION_ERR:
-            printf("BINBUILTIN_PERMISSION_ERR\n");
             exit(status_code);
         case BUILTIN_TOO_MANY_ARGS:
             printf("BUILTIN_TOO_MANY_ARGS\n");
@@ -173,50 +165,65 @@ static void	handle_errors(int status_code, t_mini_state *mini_state)
 {
 	if (status_code == MS_OK)
 	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 0);
 		return;
 	}
 	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
-		exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		if (ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
+		{
+			exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		}
+		
 	}
 	if (status_code == MS_OPEN_ERR)
 	{
-		fprintf(stderr, "bash: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
+		fprintf(stderr, "minishell: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
         return;
 	}
 	if (status_code == MS_ALLOCATION_ERR)
 	{
 		perror("Malloc error");
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
 		exit(EXIT_FAILURE);
 	}
 	else if (status_code == MS_SIGNAL_ERR)
 	{
 		perror("Signal error");
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
 		exit(EXIT_FAILURE);
 	}
-	else if(status_code / 100 == 1)
-		exit(EXIT_FAILURE);
-	
-	else if(status_code / 100 == 2)
+	else if(status_code == PARSER_ERR)
 	{
-		perror("Environment error");
-		exit(EXIT_FAILURE);
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		//exit(EXIT_FAILURE);
 	}
-	else if(status_code / 100 == 3)
+	else if(status_code == LEXER_ERR)
 	{
-		perror("Lexer error");
-		exit(EXIT_FAILURE);
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		//exit(EXIT_FAILURE);
 	}
-	else if(status_code / 100 == 4)
+	else if(status_code == EXECUTER_ERR)
 	{
-		perror("Parser error");
-		exit(EXIT_FAILURE);
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		//exit(EXIT_FAILURE);
 	}
-	else if(status_code / 100 == 8)
+	else if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR ||
+		 status_code == REDIRECT_INVALID_FD_ERR)
 	{
-		perror("Invalide file descriptor");
-		exit(EXIT_FAILURE);
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		//exit(EXIT_FAILURE);
 	}
+	else if(status_code == COMMAND_NOT_FOUND_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 127);
+		fprintf(stderr, "%s: command not found\n", mini_state_get_last_opened_file(mini_state));
+		//exit(EXIT_FAILURE);
+	}
+	else
+		printf("Unhandled error code: %d\n", status_code);
 
 }
 
@@ -227,7 +234,6 @@ int	main(int args, char **environment_var_str_array)
 	t_mini_state	*mini_state;
 	bool		finish;
 	char		*input;
-	//char		*expanded_input;
 
 	mini_state = mini_state_create(args, environment_var_str_array);
 	if (!mini_state)

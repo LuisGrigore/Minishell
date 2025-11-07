@@ -27,7 +27,7 @@ int	export_execute(t_command *command, t_gen_list *environment)
 	free(new_variable[0]);
 	free(new_variable[1]);
 	free(new_variable);
-	return (BINBUILTIN_SUCCESS);
+	return (MS_OK);
 }
 
 int	unset_execute(t_command *command, t_gen_list *environment)
@@ -48,7 +48,7 @@ int	unset_execute(t_command *command, t_gen_list *environment)
 		arg = gen_list_iter_next(it);
 	}
 	gen_list_iter_destroy(it);
-	return (BINBUILTIN_SUCCESS);
+	return (MS_OK);
 }
 
 int	echo_execute(t_command *command, t_gen_list *environment)
@@ -83,5 +83,5 @@ int	echo_execute(t_command *command, t_gen_list *environment)
 	if (newline)
 		ft_printf("\n");
 	gen_list_iter_destroy(it);
-	return (BINBUILTIN_SUCCESS);
+	return (MS_OK);
 }

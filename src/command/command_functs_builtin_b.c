@@ -8,12 +8,12 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 	char			*target;
 	if (gen_list_get_size(command->args) > 2)
 	{
-		fprintf(stderr, "cd: too many arguments\n");
+		//fprintf(stderr, "cd: too many arguments\n");
 		return (BINBUILTIN_ERROR);
 	}
 	if (!command || !command->args || gen_list_get_size(command->args) < 2)
 	{
-		fprintf(stderr, "cd: missing argument\n");
+		//fprintf(stderr, "cd: missing argument\n");
 		return (-1);
 	}
 	old_directory = getenv("PWD");
@@ -24,7 +24,7 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 	{
 		if (chdir(target) == -1)
 		{
-			ft_printf("bash: cd:");
+			//ft_printf("bash: cd:");
 			free(old_directory);
 			return (BINBUILTIN_ERROR);
 		}
@@ -33,7 +33,7 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 		env_set(environment, "PWD", ft_strdup(getcwd(NULL, 0)));
 		return (0);
 	}
-	fprintf(stderr, "bash: cd: %s: No such file or directory\n", target);
+	//fprintf(stderr, "bash: cd: %s: No such file or directory\n", target);
 	return (BINBUILTIN_ERROR);
 }
 
@@ -49,7 +49,7 @@ int	pwd_execute(t_command *command, t_gen_list *environment)
 	if (arg && arg[0] == '-')
 	{
 		gen_list_iter_destroy(it);
-		printf("bash: pwd: %s option not supported\n", arg);
+		//printf("bash: pwd: %s option not supported\n", arg);
 		return (BINBUILTIN_ERROR);
 	}
 	current_dir = env_get(environment, "PWD");
@@ -65,7 +65,7 @@ int	pwd_execute(t_command *command, t_gen_list *environment)
 	printf("%s\n", current_dir);
 	gen_list_iter_destroy(it);
 	free(current_dir);
-	return (BINBUILTIN_SUCCESS);
+	return (MS_OK);
 }
 int	env_execute(t_command *command, t_gen_list *environment)
 {
@@ -85,7 +85,7 @@ int	env_execute(t_command *command, t_gen_list *environment)
 		i++;
 	}
 	free_double_pointer(serialized_env);
-	return (BINBUILTIN_SUCCESS);
+	return (MS_OK);
 }
 
 int	exit_execute(t_command *command, t_gen_list *environment)
