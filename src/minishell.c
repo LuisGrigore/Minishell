@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 16:37:41 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 18:08:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 #include "include/ms_status_codes.h"
 # include "external/gen_list/gen_list.h"
 #include "external/libft/libft.h"
+#include "include/mini_state.h"
 
 #include "readline/readline.h"
 #include <stdbool.h>
 #include <stdio.h>
+#include <errno.h>
 
-static void handle_errors_debug(t_ms_status_code status_code)
+static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini_state)
 {
     switch (status_code)
     {
@@ -49,7 +51,7 @@ static void handle_errors_debug(t_ms_status_code status_code)
             printf("MS_SIGNAL_ERR\n");
             exit(status_code);
         case MS_OPEN_ERR:
-			perror("bash: FILE_NAME");
+			fprintf(stderr, "bash: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
             return;
 
         // Command status codes
@@ -133,9 +135,9 @@ static void handle_errors_debug(t_ms_status_code status_code)
             exit(status_code);
 
         // Exit status codes
-        case EXIT_USER_DEFINED_STATUS_CODE:
-            printf("EXIT_USER_DEFINED_STATUS_CODE\n");
-            exit(status_code - EXIT_USER_DEFINED_STATUS_CODE_BEGIN);
+        case EXTERNALY_DEFINED_STATUS_CODE:
+            printf("EXTERNALY_DEFINED_STATUS_CODE\n");
+            exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
 
         default:
             printf("UNKNOWN_ERROR_CODE: %d\n", status_code);
@@ -167,16 +169,20 @@ char *get_input(t_gen_list *env)
 	free(line_tag);
 	return (input);
 }
-//TOD :: revisar esto
-static void	handle_errors(int status_code)
+static void	handle_errors(int status_code, t_mini_state *mini_state)
 {
 	if (status_code == MS_OK)
 	{
 		return;
 	}
-	if (status_code >= EXIT_USER_DEFINED_STATUS_CODE)
+	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
-		exit(status_code - EXIT_USER_DEFINED_STATUS_CODE);
+		exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
+	}
+	if (status_code == MS_OPEN_ERR)
+	{
+		fprintf(stderr, "bash: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
+        return;
 	}
 	if (status_code == MS_ALLOCATION_ERR)
 	{
@@ -214,63 +220,32 @@ static void	handle_errors(int status_code)
 
 }
 
-typedef struct s_mini_state
-{
-	t_gen_list	*environment_vars;
-	char *last_command;
-	char *last_opened_file;
-} t_mini_state;
 
-t_mini_state *mini_state_create(int args, char **environment_var_str_array)
-{
-	t_mini_state *state;
-
-	state = malloc(sizeof(t_mini_state));
-	if (args == 1)
-		state->environment_vars = env_deserialize(environment_var_str_array + 2);
-	else
-		state ->environment_vars = env_deserialize(environment_var_str_array + 1);
-	if (!state->environment_vars)
-		return NULL;
-	state->last_command = NULL;
-	state->last_opened_file = NULL;
-	return (state);
-}
-
-void mini_state_destroy(t_mini_state *state)
-{
-	if (!state)
-		return ;
-	env_destroy(state->environment_vars);
-	free(state->last_command);
-	free(state->last_opened_file);
-	free(state);
-}
 
 int	main(int args, char **environment_var_str_array)
 {
-	t_mini_state	*state;
+	t_mini_state	*mini_state;
 	bool		finish;
 	char		*input;
 	//char		*expanded_input;
 
-	state = mini_state_create(args, environment_var_str_array);
-	if (!state)
-		handle_errors(MS_ALLOCATION_ERR);
-	handle_errors(signals_init_interactive());
+	mini_state = mini_state_create(args, environment_var_str_array);
+	if (!mini_state)
+		handle_errors(MS_ALLOCATION_ERR, mini_state);
+	handle_errors(signals_init_interactive(), mini_state);
 	finish = false;
 	while (!finish)
 	{
-		input = get_input(state->environment_vars);
+		input = get_input(mini_state_get_environment_vars(mini_state));
 		if (input == NULL)
 			finish = true;
 		if (ft_strlen(input) != 0)
 		{
 			history_add(input);
-			handle_errors_debug(execute_line(input, state->environment_vars));
+			handle_errors(execute_line(input, mini_state), mini_state);
 			free(input);
 			input = NULL;
 		}
 	}
-	mini_state_destroy(state);
+	mini_state_destroy(mini_state);
 }

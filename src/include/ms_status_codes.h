@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 15:31:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 18:03:42 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef enum e_ms_status_code
 	//Eliminar el resto de errores de redirect
 		REDIRECT_INVALID_FD_ERR,
 	//Exit
-	EXIT_USER_DEFINED_STATUS_CODE = EXIT_USER_DEFINED_STATUS_CODE_BEGIN,
+	EXTERNALY_DEFINED_STATUS_CODE,
 	
 } t_ms_status_code;
 

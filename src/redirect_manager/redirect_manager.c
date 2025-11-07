@@ -92,7 +92,7 @@ static int	heredoc_exec(char *delimiter)
 	* luego se mete por la salida estandard al comando que sea(cat recibe cosas por la salida estandard en cambio echo solo por los argumentos).
  *(O eso creo por lo que he visto por ahi).
  */
-int	redirect_execute(t_redirect *redirect)
+int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 {
 	int fd;
 
@@ -105,6 +105,7 @@ int	redirect_execute(t_redirect *redirect)
 	if (redirect->symbol == LEFT_REDIRECT)
 	{
 		fd = open(redirect->file, O_RDONLY);
+		mini_state_set_last_opened_file(mini_state, redirect->file);
 		if (fd < 0)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDIN_FILENO);
@@ -112,6 +113,7 @@ int	redirect_execute(t_redirect *redirect)
 	else if(redirect->symbol == DOUBLE_RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_APPEND, 0644);
+		mini_state_set_last_opened_file(mini_state, redirect->file);
 		if (fd < 0)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);
@@ -119,6 +121,7 @@ int	redirect_execute(t_redirect *redirect)
 	else if(redirect->symbol == RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+		mini_state_set_last_opened_file(mini_state, redirect->file);
 		if (fd < 0)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);

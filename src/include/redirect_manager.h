@@ -1,6 +1,7 @@
 #ifndef REDIRECT_ASIGNATION_H
 # define REDIRECT_ASIGNATION_H
 # include "../external/gen_list/gen_list.h"
+# include "mini_state.h"
 
 
 /* ============================================================
@@ -78,7 +79,7 @@ void redirect_destroy(t_redirect *redirect);
  *         0 if the redirection was executed successfully.
  *        -1 if an error occurred during redirection.
  */
-int redirect_execute(t_redirect *redirect);
+int redirect_execute(t_redirect *redirect, t_mini_state *mini_state);
 
 
 /* ============================================================

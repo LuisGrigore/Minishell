@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/10/06 23:38:23 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 18:07:47 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_env_var	t_env_var;
  * @see t_env_var
  */
 int							env_set(t_gen_list *env, char *name, char *value);
+void env_set_last_status_code(t_gen_list *env, int status_code);
 
 /**
  * @brief Remove an environment variable by name.

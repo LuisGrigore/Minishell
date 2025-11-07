@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 23:51:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 18:08:25 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
 
 //TODO :: hacer que devuelva int con error y tal
-static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env, int *exit_status)
+static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini_state, int *exit_status)
 {
     size_t n = gen_list_get_size(commands);
     t_pipe_manager *pm = NULL;
@@ -45,7 +45,7 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_gen_list *env, i
         {
             pipe_manager_setup_command(pm, i);
             pipe_manager_close_all(pm);
-            status_code = command_exec(cmd, env);
+            status_code = command_exec(cmd, mini_state);
             if (status_code != MS_OK)
             {
                 free(pids);
@@ -81,14 +81,14 @@ static void command_destroy_data(void *command_ptr)
 }
 
 
-int execute_line(char *line, t_gen_list *env)
+int execute_line(char *line, t_mini_state *mini_state)
 {
 	int status_code;
 	t_gen_list *commands;
     int exit_status;
-	char *status_code_str;
+	t_gen_list *env;
 
-
+	env = mini_state_get_environment_vars(mini_state);
     exit_status = 0;
 	commands = gen_list_create();
 	if (!commands)
@@ -98,14 +98,12 @@ int execute_line(char *line, t_gen_list *env)
 		return (EXECUTER_ERR);
 	if (gen_list_get_size(commands) == 1 && command_is_built_in((t_command *) gen_list_peek_top(commands)))
 	{   
-        status_code = command_exec((t_command *) gen_list_peek_top(commands), env);
+        status_code = command_exec((t_command *) gen_list_peek_top(commands), mini_state);
 		if( status_code != MS_OK)
         {
             if(status_code != BINBUILTIN_SUCCESS)
                 exit_status = 1;
-			status_code_str = ft_itoa(exit_status);
-            env_set(env, "?", status_code_str);
-			free(status_code_str);
+			env_set_last_status_code(env, exit_status);
             gen_list_destroy(commands, command_destroy_data);
 			if(status_code == BINBUILTIN_SUCCESS)
             	return(MS_OK);
@@ -114,10 +112,8 @@ int execute_line(char *line, t_gen_list *env)
             
 		return(MS_OK);
 	}
-	status_code = execute_commands_with_pipes(commands, env, &exit_status);
+	status_code = execute_commands_with_pipes(commands, mini_state, &exit_status);
 	gen_list_destroy(commands, command_destroy_data);
-    status_code_str = ft_itoa(exit_status);
-    env_set(env, "?", status_code_str);
-	free(status_code_str);
+    env_set_last_status_code(env, exit_status);
 	return (status_code);
 }

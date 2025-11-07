@@ -38,6 +38,7 @@
 		"redirect_manager.h": "c",
 		"command_internal.h": "c",
 		"ms_status_codes.h": "c",
-		"parser_internal.h": "c"
+		"parser_internal.h": "c",
+		"config.h": "c"
 	}
 }

@@ -3,7 +3,7 @@
 
 #include "../external/gen_list/gen_list.h"
 #include "ms_status_codes.h"
-
+#include "mini_state.h"
 
 /**
  * Executes a single command line, similar to how Bash interprets and runs commands.
@@ -30,6 +30,6 @@
  * redirections, and pipes, but it relies only on the provided state variables
  * rather than a full environment.
  */
-int execute_line(char *line, t_gen_list *env);
+int execute_line(char *line, t_mini_state *mini_state);
 
 #endif

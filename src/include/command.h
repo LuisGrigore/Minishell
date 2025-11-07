@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/05 17:43:16 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:53:50 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "../external/gen_list/gen_list.h"
 # include "redirect_manager.h"
 # include "ms_status_codes.h"
+# include "mini_state.h"
 
 
 /* ============================================================
@@ -107,7 +108,7 @@ int command_push_redirect(t_command *command, t_redirect_type redirect_type, cha
  * @param environment Pointer to the environment variable list.
  * @return 0 on success, -1 on error.
  */
-int command_exec(t_command *command, t_gen_list *environment);
+int command_exec(t_command *command, t_mini_state *mini_state);
 
 /* ============================================================
 **  Debug

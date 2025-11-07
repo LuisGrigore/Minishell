@@ -103,5 +103,5 @@ int	exit_execute(t_command *command, t_gen_list *environment)
 	{
 		return (BUILTIN_TOO_MANY_ARGS);
 	}
-	return (EXIT_USER_DEFINED_STATUS_CODE + exit_code);
+	return (EXTERNALY_DEFINED_STATUS_CODE + exit_code);
 }
