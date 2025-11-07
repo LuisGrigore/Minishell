@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 21:01:26 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/08 00:38:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,6 @@ static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini
             printf("COMMAND_TOO_MANY_ARGS_ERR\n");
             exit(status_code);
 
-        // Environment status codes
-        case ENVIRONMENT_ERR:
-            printf("ENVIRONMENT_ERR\n");
-            exit(status_code);
-
         // Executer status codes
         case EXECUTER_ERR:
             printf("EXECUTER_ERR\n");
@@ -110,19 +105,12 @@ static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini
             exit(status_code);
 
         // Redirect status codes
-        case REDIRECT_MANAGER_SUCCESS:
-            printf("REDIRECT_MANAGER_SUCCESS\n");
-            return;
         case REDIRECT_MALFORMED_ERR:
             printf("REDIRECT_MALFORMED_ERR\n");
             exit(status_code);
         case REDIRECT_NO_HEADERDOC_DELIMITER_ERR:
             printf("REDIRECT_NO_HEADERDOC_DELIMITER_ERR\n");
             exit(status_code);
-        case REDIRECT_INVALID_FD_ERR:
-            printf("REDIRECT_INVALID_FD_ERR\n");
-            exit(status_code);
-
         // Exit status codes
         case EXTERNALY_DEFINED_STATUS_CODE:
             printf("EXTERNALY_DEFINED_STATUS_CODE\n");
@@ -207,8 +195,7 @@ static void	handle_errors(int status_code, t_mini_state *mini_state)
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
 		//exit(EXIT_FAILURE);
 	}
-	else if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR ||
-		 status_code == REDIRECT_INVALID_FD_ERR)
+	else if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR )
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
 		//exit(EXIT_FAILURE);
@@ -217,6 +204,18 @@ static void	handle_errors(int status_code, t_mini_state *mini_state)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 127);
 		fprintf(stderr, "%s: command not found\n", mini_state_get_last_opened_file(mini_state));
+		//exit(EXIT_FAILURE);
+	}
+	else if(status_code == COMMAND_PERMISSION_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 126);
+		fprintf(stderr, "%s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
+		//exit(EXIT_FAILURE);
+	}
+	else if(status_code == COMMAND_IS_DIR_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 126);
+		fprintf(stderr, "%s: Is a directory\n", mini_state_get_last_opened_file(mini_state));
 		//exit(EXIT_FAILURE);
 	}
 	else

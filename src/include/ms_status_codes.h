@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 21:01:11 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/08 00:18:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ typedef enum e_ms_status_code
 	COMMAND_MISSING_ARGS_ERR,
 	COMMAND_TOO_MANY_ARGS_ERR,
 	COMMAND_INVALID_ARGS_ERR,
-	//Environment
-	ENVIRONMENT_ERR = ENVIRONMENT_STATUS_BEGIN,
 	//Executer
 	EXECUTER_ERR = EXECUTER_STATUS_BEGIN,
 	//Lexer
@@ -49,11 +47,8 @@ typedef enum e_ms_status_code
 	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
 	//Redirect
-	REDIRECT_MANAGER_SUCCESS = REDIRECT_MANAGER_STATUS_BEGIN,
-	REDIRECT_MALFORMED_ERR,
+	REDIRECT_MALFORMED_ERR = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_NO_HEADERDOC_DELIMITER_ERR,
-	//Eliminar el resto de errores de redirect
-		REDIRECT_INVALID_FD_ERR,
 	//Exit
 	EXTERNALY_DEFINED_STATUS_CODE,
 	
