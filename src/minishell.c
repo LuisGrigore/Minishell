@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 20:41:40 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:01:26 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,6 @@ static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini
 
         // Builtin status codes
 
-        case BINBUILTIN_ERROR:
-            printf("BINBUILTIN_ERROR\n");
-            exit(status_code);
         case COMMAND_TOO_MANY_ARGS_ERR:
             printf("COMMAND_TOO_MANY_ARGS_ERR\n");
             exit(status_code);

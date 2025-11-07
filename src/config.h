@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 18:03:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:01:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 */
 #define SYSTEM_STATUS_BEGIN 0
 #define COMMAND_STATUS_BEGIN 100
-#define BINBUILTIN_STATUS_BEGIN 150
 #define ENVIRONMENT_STATUS_BEGIN 200
 #define EXECUTER_STATUS_BEGIN 300
 #define HISTORY_MANAGER_STATUS_BEGIN 400

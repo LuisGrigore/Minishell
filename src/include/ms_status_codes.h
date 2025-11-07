@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 20:42:57 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:01:11 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef enum e_ms_status_code
 	MS_CLOSE_ERR,
 	MS_SIGNAL_ERR,
 	MS_OPEN_ERR,
+	MS_PATH_ERR,
 	//Command
 	COMMAND_SUCCESS = COMMAND_STATUS_BEGIN,
 	COMMAND_ERR,
@@ -36,7 +37,6 @@ typedef enum e_ms_status_code
 	COMMAND_MISSING_ARGS_ERR,
 	COMMAND_TOO_MANY_ARGS_ERR,
 	COMMAND_INVALID_ARGS_ERR,
-	BINBUILTIN_ERROR = BINBUILTIN_STATUS_BEGIN,
 	//Environment
 	ENVIRONMENT_ERR = ENVIRONMENT_STATUS_BEGIN,
 	//Executer
