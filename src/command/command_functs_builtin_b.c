@@ -1,6 +1,5 @@
 #include "command_internal.h"
 
-// TODO: manejar el cd sin argumentos (home) y manejar bien las rutas relativas y absolutas
 int	cd_execute(t_command *command, t_gen_list *environment)
 {
 	t_gen_list_iter	*it;
@@ -8,12 +7,10 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 	char			*target;
 	if (gen_list_get_size(command->args) > 2)
 	{
-		//fprintf(stderr, "cd: too many arguments\n");
 		return (BINBUILTIN_ERROR);
 	}
 	if (!command || !command->args || gen_list_get_size(command->args) < 2)
 	{
-		//fprintf(stderr, "cd: missing argument\n");
 		return (-1);
 	}
 	old_directory = getenv("PWD");
@@ -24,7 +21,6 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 	{
 		if (chdir(target) == -1)
 		{
-			//ft_printf("bash: cd:");
 			free(old_directory);
 			return (BINBUILTIN_ERROR);
 		}
@@ -33,7 +29,6 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 		env_set(environment, "PWD", ft_strdup(getcwd(NULL, 0)));
 		return (0);
 	}
-	//fprintf(stderr, "bash: cd: %s: No such file or directory\n", target);
 	return (BINBUILTIN_ERROR);
 }
 
@@ -49,7 +44,6 @@ int	pwd_execute(t_command *command, t_gen_list *environment)
 	if (arg && arg[0] == '-')
 	{
 		gen_list_iter_destroy(it);
-		//printf("bash: pwd: %s option not supported\n", arg);
 		return (BINBUILTIN_ERROR);
 	}
 	current_dir = env_get(environment, "PWD");
@@ -75,7 +69,7 @@ int	env_execute(t_command *command, t_gen_list *environment)
 	if (!command)
 	{
 		perror("env :");
-		return (COMMAND_ERROR);
+		return (COMMAND_ERR);
 	}
 	serialized_env = env_serialize(environment);
 	i = 0;
@@ -101,7 +95,7 @@ int	exit_execute(t_command *command, t_gen_list *environment)
 	}
 	else if (gen_list_get_size (command->args) > 2)
 	{
-		return (BUILTIN_TOO_MANY_ARGS);
+		return (COMMAND_TOO_MANY_ARGS_ERR);
 	}
 	return (EXTERNALY_DEFINED_STATUS_CODE + exit_code);
 }

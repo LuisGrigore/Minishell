@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 19:02:00 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 20:42:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ typedef enum e_ms_status_code
 	MS_OPEN_ERR,
 	//Command
 	COMMAND_SUCCESS = COMMAND_STATUS_BEGIN,
-	COMMAND_ERROR,
+	COMMAND_ERR,
 	COMMAND_MALFORMED_ERR,
 	COMMAND_NOT_FOUND_ERR,
 	COMMAND_PERMISSION_ERR,
 	COMMAND_IS_DIR_ERR,
+	COMMAND_MISSING_ARGS_ERR,
+	COMMAND_TOO_MANY_ARGS_ERR,
+	COMMAND_INVALID_ARGS_ERR,
 	BINBUILTIN_ERROR = BINBUILTIN_STATUS_BEGIN,
-	BUILTIN_TOO_MANY_ARGS,
 	//Environment
 	ENVIRONMENT_ERR = ENVIRONMENT_STATUS_BEGIN,
 	//Executer

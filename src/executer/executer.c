@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 18:54:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 20:37:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,23 +108,11 @@ int execute_line(char *line, t_mini_state *mini_state)
         status_code = command_exec((t_command *) gen_list_peek_top(commands), mini_state);
 		gen_list_destroy(commands, command_destroy_data);
 		return (status_code);
-		// if( status_code != MS_OK)
-        // {
-        //     if(status_code != BINBUILTIN_SUCCESS)
-        //         exit_status = 1;
-		// 	env_set_last_status_code(env, exit_status);
-        //     gen_list_destroy(commands, command_destroy_data);
-		// 	if(status_code == BINBUILTIN_SUCCESS)
-        //     	return(MS_OK);
-		// 	return(status_code);
-        // }
-            
-		//return(MS_OK);
+
 	}
 	status_code = execute_commands_with_pipes(commands, mini_state, &exit_status);
 	gen_list_destroy(commands, command_destroy_data);
 	if (status_code == MS_OK)
 		return (EXTERNALY_DEFINED_STATUS_CODE + exit_status);
-    //env_set_last_status_code(env, exit_status);
 	return (status_code);
 }

@@ -7,22 +7,25 @@ int	export_execute(t_command *command, t_gen_list *environment)
 	char			*arg;
 	char			**new_variable;
 
-	if (!command || !command->args || gen_list_is_empty(command->args)
-		|| !environment)
-		return (EXECUTER_ERR);
+	if (!command || !environment)
+		return (COMMAND_ERR);
+	if (!command->args)
+		return (COMMAND_MALFORMED_ERR);
+	if (gen_list_get_size(command->args) < 2)
+		return (COMMAND_MISSING_ARGS_ERR);
+	if (gen_list_get_size(command->args) > 2)
+		return (COMMAND_TOO_MANY_ARGS_ERR);
 	it = gen_list_iter_start(command->args);
 	if (!it)
-		return (GEN_LIST_IS_NULL_ERR);
+		return (MS_ALLOCATION_ERR);
 	arg = gen_list_iter_next(it);
 	arg = gen_list_iter_next(it);
 	gen_list_iter_destroy(it);
-	if (!arg)
-		return (EXECUTER_ERR);
 	new_variable = ft_split2(arg, '=');
 	if (!new_variable || !new_variable[0] || !new_variable[1])
-		return (BINBUILTIN_ERROR);
+		return (MS_ALLOCATION_ERR);
 	if (check_option_of_export(new_variable, environment) == -1)
-		return (BINBUILTIN_ERROR);
+		return (COMMAND_INVALID_ARGS_ERR);
 	env_set(environment, new_variable[0], new_variable[1]);
 	free(new_variable[0]);
 	free(new_variable[1]);
@@ -35,11 +38,13 @@ int	unset_execute(t_command *command, t_gen_list *environment)
 	t_gen_list_iter	*it;
 	char			*arg;
 
-	if (!command || !command->args || !environment)
-		return (-1);
+	if (!command || !environment)
+		return (COMMAND_ERR);
+	if (!command->args)
+		return (COMMAND_MALFORMED_ERR);
 	it = gen_list_iter_start(command->args);
 	if (!it)
-		return (GEN_LIST_IS_NULL_ERR);
+		return (MS_ALLOCATION_ERR);
 	arg = gen_list_iter_next(it);
 	arg = gen_list_iter_next(it);
 	while (arg)
@@ -59,11 +64,13 @@ int	echo_execute(t_command *command, t_gen_list *environment)
 	char			*next_arg;
 
 	(void)environment;
-	if (!command || !command->args)
-		return (-1);
+	if (!command )
+		return (COMMAND_ERR);
+	if (!command->args)
+		return (COMMAND_MALFORMED_ERR);
 	it = gen_list_iter_start(command->args);
 	if (!it)
-		return (GEN_LIST_IS_NULL_ERR);
+		return (MS_ALLOCATION_ERR);
 	arg = gen_list_iter_next(it);
 	arg = gen_list_iter_next(it);
 	newline = 1;

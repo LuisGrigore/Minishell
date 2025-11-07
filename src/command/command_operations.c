@@ -12,7 +12,7 @@ static int	handle_list_errors(t_gen_list_status_code list_status_code)
 	case GEN_LIST_IS_NULL_ERR:
 		return (COMMAND_MALFORMED_ERR);
 	default:
-		return (COMMAND_ERROR);
+		return (COMMAND_ERR);
 	}
 }
 

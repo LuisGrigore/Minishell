@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 19:38:51 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 20:41:40 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini
         case COMMAND_SUCCESS:
             printf("COMMAND_SUCCESS\n");
             return;
-        case COMMAND_ERROR:
-            printf("COMMAND_ERROR\n");
+        case COMMAND_ERR:
+            printf("COMMAND_ERR\n");
             exit(status_code);
         case COMMAND_MALFORMED_ERR:
             printf("COMMAND_MALFORMED_ERR\n");
@@ -79,8 +79,8 @@ static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini
         case BINBUILTIN_ERROR:
             printf("BINBUILTIN_ERROR\n");
             exit(status_code);
-        case BUILTIN_TOO_MANY_ARGS:
-            printf("BUILTIN_TOO_MANY_ARGS\n");
+        case COMMAND_TOO_MANY_ARGS_ERR:
+            printf("COMMAND_TOO_MANY_ARGS_ERR\n");
             exit(status_code);
 
         // Environment status codes
@@ -168,7 +168,7 @@ static void	handle_errors(int status_code, t_mini_state *mini_state)
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 0);
 		return;
 	}
-	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
+	else if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
 		if (ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
@@ -177,13 +177,13 @@ static void	handle_errors(int status_code, t_mini_state *mini_state)
 		}
 		
 	}
-	if (status_code == MS_OPEN_ERR)
+	else if (status_code == MS_OPEN_ERR)
 	{
 		fprintf(stderr, "minishell: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
         return;
 	}
-	if (status_code == MS_ALLOCATION_ERR)
+	else if (status_code == MS_ALLOCATION_ERR)
 	{
 		perror("Malloc error");
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
