@@ -6,7 +6,11 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 	t_gen_list_iter	*it;
 	char			*old_directory;
 	char			*target;
-
+	if (gen_list_get_size(command->args) > 2)
+	{
+		fprintf(stderr, "cd: too many arguments\n");
+		return (BINBUILTIN_ERROR);
+	}
 	if (!command || !command->args || gen_list_get_size(command->args) < 2)
 	{
 		fprintf(stderr, "cd: missing argument\n");
@@ -29,7 +33,7 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 		env_set(environment, "PWD", ft_strdup(getcwd(NULL, 0)));
 		return (0);
 	}
-	fprintf(stderr, "bash: cd: %s: no such file or directory\n", target);
+	fprintf(stderr, "bash: cd: %s: No such file or directory\n", target);
 	return (BINBUILTIN_ERROR);
 }
 

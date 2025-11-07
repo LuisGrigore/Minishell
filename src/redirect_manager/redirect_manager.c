@@ -10,7 +10,7 @@ t_redirect	*redirect_create(t_redirect_type redirect_type, char *file_name)
 	r = malloc(sizeof(t_redirect));
 	if (!r)
 		return (NULL);
-	r->redirect_simbol = redirect_type;
+	r->symbol = redirect_type;
 	if (file_name)
 	{
 		r->file = malloc(ft_strlen(file_name) + 1);
@@ -32,24 +32,18 @@ void	redirect_destroy(t_redirect *redirect)
 	free(redirect);
 }
 
-static void	heredoc_exec(char *delimiter)
+static int	heredoc_exec(char *delimiter)
 {
 	char	*input;
 	char	*temp_dir;
 	int		fd;
 
-	// Calculamos tamaño necesario para el path: TEMPDIR + "/minishel_temp" + '\0'
-	// getenv("TEMPDIR")
 	temp_dir = PATH_HEREDOC_TEMP_FILE;
-	if (!temp_dir)
-		return ;
-	// Abrimos el archivo en modo escritura
 	if (!delimiter)
-		return ;
+		return REDIRECT_NO_HEADERDOC_DELIMITER_ERR;
 	fd = open(temp_dir, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
-		return ;
-	// signals_init_heredoc();
+		return MS_OPEN_ERR;
 	while (1)
 	{
 		input = readline(">");
@@ -60,15 +54,14 @@ static void	heredoc_exec(char *delimiter)
 		write(fd, "\n", 1);
 		free(input);
 	}
-	// signals_init_interactive();
 	close(fd);
-	// Reabrimos el archivo en modo lectura y redirigimos stdin
 	fd = open(temp_dir, O_RDONLY);
 	if (fd >= 0)
 	{
 		dup2(fd, STDIN_FILENO);
 		close(fd);
 	}
+	return (MS_OK);
 }
 
 /*
@@ -101,10 +94,35 @@ static void	heredoc_exec(char *delimiter)
  */
 int	redirect_execute(t_redirect *redirect)
 {
-	if (redirect->redirect_simbol == DOUBLE_LEFT_REDIRECT)
-		heredoc_exec(redirect->file);
-	// Modificar a partir de aqui(a menos de que encuentres algun error o lo que sea).
-	else
-		return (file_dup(redirect));
-	return (0);
+	int fd;
+
+	if (redirect->symbol == DOUBLE_LEFT_REDIRECT)
+	{
+		return heredoc_exec(redirect->file);
+	}
+	if (redirect->file == NULL)
+		return (REDIRECT_MALFORMED_ERR);
+	if (redirect->symbol == LEFT_REDIRECT)
+	{
+		fd = open(redirect->file, O_RDONLY);
+		if (fd < 0)
+			return (MS_OPEN_ERR);
+		dup2(fd, STDIN_FILENO);
+	}
+	else if(redirect->symbol == DOUBLE_RIGHT_REDIRECT)
+	{
+		fd = open(redirect->file, O_WRONLY | O_CREAT | O_APPEND, 0644);
+		if (fd < 0)
+			return (MS_OPEN_ERR);
+		dup2(fd, STDOUT_FILENO);
+	}
+	else if(redirect->symbol == RIGHT_REDIRECT)
+	{
+		fd = open(redirect->file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+		if (fd < 0)
+			return (MS_OPEN_ERR);
+		dup2(fd, STDOUT_FILENO);
+	}
+	close(fd);
+	return (MS_OK);
 }

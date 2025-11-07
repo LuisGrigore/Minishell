@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manager_internal.h                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/05 19:08:25 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:09:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 struct				s_redirect
 {
 	char			*file;
-	t_redirect_type	redirect_simbol;
+	t_redirect_type	symbol;
 };
 
-int					file_dup(t_redirect *redirect);
+
 
 #endif

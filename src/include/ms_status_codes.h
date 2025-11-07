@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 21:04:32 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/07 15:31:48 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef enum e_ms_status_code
 	MS_ALLOCATION_ERR,
 	MS_CLOSE_ERR,
 	MS_SIGNAL_ERR,
-	MS_FILE_ERR,
+	MS_OPEN_ERR,
 	//Command
 	COMMAND_SUCCESS = COMMAND_STATUS_BEGIN,
 	COMMAND_ERROR,
@@ -49,10 +49,12 @@ typedef enum e_ms_status_code
 	//Parser
 	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
-	//Redirect Manager
+	//Redirect
 	REDIRECT_MANAGER_SUCCESS = REDIRECT_MANAGER_STATUS_BEGIN,
-	REDIRECT_MANAGER_ERR_INVALID_FD,
-	REDIRECT_MANAGER_ERR_SYNTAX,
+	REDIRECT_MALFORMED_ERR,
+	REDIRECT_NO_HEADERDOC_DELIMITER_ERR,
+	//Eliminar el resto de errores de redirect
+		REDIRECT_INVALID_FD_ERR,
 	//Exit
 	EXIT_USER_DEFINED_STATUS_CODE = EXIT_USER_DEFINED_STATUS_CODE_BEGIN,
 	

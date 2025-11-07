@@ -7,7 +7,7 @@ void	print_redirect(void *redir_ptr)
 	if (!redir)
 		return ;
 	const char *type_str;
-	switch (redir->redirect_simbol)
+	switch (redir->symbol)
 	{
 	case LEFT_REDIRECT:
 		type_str = "<";

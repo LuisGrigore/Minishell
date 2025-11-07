@@ -28,16 +28,30 @@ int	command_push_redirect(t_command *command, t_redirect_type redirect_type,
 	return (handle_list_errors(gen_list_push_back(command->redirects,
 				redirect_create(redirect_type, file_name))));
 }
-// TODO :: Ajustar esto para que funcione con los errores que devuelve redirect_execute,hay que hacer que redirect_execute_data devuelva errores tambien y crear un gen_list_for_each que pueda iterar con una funcion que devuelve error
-static int	redirect_execute_data(void *redirect_ptr)
-{
-	t_redirect	*redirect;
 
-	redirect = (t_redirect *)redirect_ptr;
-	return (redirect_execute(redirect));
+static int command_redirects_execute(t_command *command)
+{
+	t_gen_list_iter *it;
+	t_redirect *current_redirect;
+	int status_code;
+
+	if (!command->redirects)
+		return (COMMAND_MALFORMED_ERR);
+	it = gen_list_iter_start(command->redirects);
+	if (!it)
+		return (MS_ALLOCATION_ERR);
+	status_code = MS_OK;
+	while (1)
+	{
+		current_redirect = (t_redirect *) gen_list_iter_next(it);
+		if(!current_redirect || status_code != MS_OK)
+			break ;
+		status_code = redirect_execute(current_redirect);
+	}
+	gen_list_iter_destroy(it);
+	return (status_code);
 }
 
-// TODO :: Hacer que laas funciones de commando devuelvan un int para manejo de errores.
 int	command_exec(t_command *command, t_gen_list *environment)
 {
 	int	status_code;
@@ -48,8 +62,7 @@ int	command_exec(t_command *command, t_gen_list *environment)
 	stdout_backup = dup(STDOUT_FILENO);
 	if (stdin_backup == -1 || stdout_backup == -1)
 		return (MS_ALLOCATION_ERR);
-	status_code = redirect_error_control(command->redirects,
-			redirect_execute_data);
+	status_code = command_redirects_execute(command);
 	if (status_code != MS_OK)
 	{
 		dup2(stdin_backup, STDIN_FILENO);
