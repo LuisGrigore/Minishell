@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/08 00:38:05 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/08 03:01:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,104 +23,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <errno.h>
-
-static void handle_errors_debug(t_ms_status_code status_code, t_mini_state *mini_state)
-{
-    switch (status_code)
-    {
-        // System status codes
-        case MS_OK:
-            printf("MS_OK\n");
-            return;
-        case MS_FORK_ERR:
-            printf("MS_FORK_ERR\n");
-            exit(status_code);
-        case MS_PIPE_ERR:
-            printf("MS_PIPE_ERR\n");
-            exit(status_code);
-        case MS_DUP2_ERR:
-            printf("MS_DUP2_ERR\n");
-            exit(status_code);
-        case MS_ALLOCATION_ERR:
-            printf("MS_ALLOCATION_ERR\n");
-            exit(status_code);
-        case MS_CLOSE_ERR:
-            printf("MS_CLOSE_ERR\n");
-            exit(status_code);
-        case MS_SIGNAL_ERR:
-            printf("MS_SIGNAL_ERR\n");
-            exit(status_code);
-        case MS_OPEN_ERR:
-			fprintf(stderr, "bash: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
-            return;
-
-        // Command status codes
-        case COMMAND_SUCCESS:
-            printf("COMMAND_SUCCESS\n");
-            return;
-        case COMMAND_ERR:
-            printf("COMMAND_ERR\n");
-            exit(status_code);
-        case COMMAND_MALFORMED_ERR:
-            printf("COMMAND_MALFORMED_ERR\n");
-            exit(status_code);
-        case COMMAND_NOT_FOUND_ERR:
-            printf("COMMAND_NOT_FOUND_ERR\n");
-            exit(status_code);
-        case COMMAND_PERMISSION_ERR:
-            printf("COMMAND_PERMISSION_ERR\n");
-            exit(status_code);
-        case COMMAND_IS_DIR_ERR:
-            printf("COMMAND_IS_DIR_ERR\n");
-            exit(status_code);
-
-        // Builtin status codes
-
-        case COMMAND_TOO_MANY_ARGS_ERR:
-            printf("COMMAND_TOO_MANY_ARGS_ERR\n");
-            exit(status_code);
-
-        // Executer status codes
-        case EXECUTER_ERR:
-            printf("EXECUTER_ERR\n");
-            exit(status_code);
-
-        // Lexer status codes
-        case LEXER_ERR:
-            printf("LEXER_ERR\n");
-            exit(status_code);
-        case LEXER_NULL_ERR:
-            printf("LEXER_NULL_ERR\n");
-            exit(status_code);
-        case LEXER_SYNTAX_ERR:
-            printf("LEXER_SYNTAX_ERR\n");
-            exit(status_code);
-
-        // Parser status codes
-        case PARSER_ERR:
-            printf("PARSER_ERR\n");
-            exit(status_code);
-        case PARSER_NULL_ERR:
-            printf("PARSER_NULL_ERR\n");
-            exit(status_code);
-
-        // Redirect status codes
-        case REDIRECT_MALFORMED_ERR:
-            printf("REDIRECT_MALFORMED_ERR\n");
-            exit(status_code);
-        case REDIRECT_NO_HEADERDOC_DELIMITER_ERR:
-            printf("REDIRECT_NO_HEADERDOC_DELIMITER_ERR\n");
-            exit(status_code);
-        // Exit status codes
-        case EXTERNALY_DEFINED_STATUS_CODE:
-            printf("EXTERNALY_DEFINED_STATUS_CODE\n");
-            exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
-
-        default:
-            printf("UNKNOWN_ERROR_CODE: %d\n", status_code);
-            exit(EXIT_FAILURE);
-    }
-}
 
 
 char	*get_line_tag(t_gen_list *env)
@@ -146,21 +48,13 @@ char *get_input(t_gen_list *env)
 	free(line_tag);
 	return (input);
 }
-static void	handle_errors(int status_code, t_mini_state *mini_state)
+
+static void handle_system_status_codes(int status_code, t_mini_state *mini_state)
 {
 	if (status_code == MS_OK)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 0);
 		return;
-	}
-	else if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
-	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
-		if (ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
-		{
-			exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
-		}
-		
 	}
 	else if (status_code == MS_OPEN_ERR)
 	{
@@ -180,46 +74,101 @@ static void	handle_errors(int status_code, t_mini_state *mini_state)
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
 		exit(EXIT_FAILURE);
 	}
-	else if(status_code == PARSER_ERR)
-	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
-		//exit(EXIT_FAILURE);
-	}
-	else if(status_code == LEXER_ERR)
-	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
-		//exit(EXIT_FAILURE);
-	}
-	else if(status_code == EXECUTER_ERR)
-	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
-		//exit(EXIT_FAILURE);
-	}
-	else if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR )
-	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
-		//exit(EXIT_FAILURE);
-	}
-	else if(status_code == COMMAND_NOT_FOUND_ERR)
+	else
+		fprintf(stderr, "Unhandled system status code: %d\n", status_code);
+}
+
+static void handle_command_status_codes(int status_code, t_mini_state *mini_state)
+{
+	if(status_code == COMMAND_NOT_FOUND_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 127);
 		fprintf(stderr, "%s: command not found\n", mini_state_get_last_opened_file(mini_state));
-		//exit(EXIT_FAILURE);
 	}
 	else if(status_code == COMMAND_PERMISSION_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 126);
 		fprintf(stderr, "%s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
-		//exit(EXIT_FAILURE);
 	}
 	else if(status_code == COMMAND_IS_DIR_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 126);
 		fprintf(stderr, "%s: Is a directory\n", mini_state_get_last_opened_file(mini_state));
-		//exit(EXIT_FAILURE);
+	}
+	else if(status_code == COMMAND_TOO_MANY_ARGS_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		fprintf(stderr, "minishell: too many arguments\n");
+	}
+	else if(status_code == COMMAND_MISSING_ARGS_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		fprintf(stderr, "minishell: missing arguments\n");
+	}
+	else if(status_code == COMMAND_NUMERIC_ARG_REQUIRED_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		fprintf(stderr, "minishell: numeric argument required\n");
 	}
 	else
-		printf("Unhandled error code: %d\n", status_code);
+		fprintf(stderr, "Unhandled command status code: %d\n", status_code);
+}
+
+static void handle_executer_status_codes(int status_code, t_mini_state *mini_state)
+{
+	if(status_code == EXECUTER_ERR)
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+	else
+		fprintf(stderr, "Unhandled executer status code: %d\n", status_code);
+}
+
+static void handle_lexer_status_codes(int status_code, t_mini_state *mini_state)
+{
+	if(status_code == LEXER_ERR)
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+	else
+		fprintf(stderr, "Unhandled lexer status code: %d\n", status_code);
+}
+static void handle_parser_status_codes(int status_code, t_mini_state *mini_state)
+{
+	if(status_code == PARSER_ERR)
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+	else
+		fprintf(stderr, "Unhandled parser status code: %d\n", status_code);
+}
+
+static void handle_redirect_status_codes(int status_code, t_mini_state *mini_state)
+{
+	if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR )
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+	else
+		fprintf(stderr, "Unhandled redirect status code: %d\n", status_code);
+}
+
+static void	handle_status_codes(int status_code, t_mini_state *mini_state)
+{
+	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		if (ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
+		{
+			exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		}
+	}
+	else if (status_code >= SYSTEM_STATUS_BEGIN && status_code <= SYSTEM_STATUS_END)
+		handle_system_status_codes(status_code, mini_state);
+	else if (status_code >= COMMAND_STATUS_BEGIN && status_code <= COMMAND_STATUS_END)
+		handle_command_status_codes(status_code, mini_state);
+	else if (status_code >= EXECUTER_STATUS_BEGIN && status_code <= EXECUTER_STATUS_END)
+		handle_executer_status_codes(status_code, mini_state);
+	else if (status_code >= LEXER_STATUS_BEGIN && status_code <= LEXER_STATUS_END)
+		handle_lexer_status_codes(status_code, mini_state);
+	else if (status_code >= PARSER_STATUS_BEGIN && status_code <= PARSER_STATUS_END)
+		handle_parser_status_codes(status_code, mini_state);
+	else if (status_code >= REDIRECT_MANAGER_STATUS_BEGIN && status_code <= REDIRECT_MANAGER_STATUS_END)
+		handle_redirect_status_codes(status_code, mini_state);
+	else
+		fprintf(stderr, "Unhandled status code: %d\n", status_code);
 
 }
 
@@ -233,8 +182,9 @@ int	main(int args, char **environment_var_str_array)
 
 	mini_state = mini_state_create(args, environment_var_str_array);
 	if (!mini_state)
-		handle_errors(MS_ALLOCATION_ERR, mini_state);
-	handle_errors(signals_init_interactive(), mini_state);
+		handle_status_codes(MS_ALLOCATION_ERR, mini_state);
+	handle_status_codes(signals_init_interactive(), mini_state);
+//	env_set(mini_state_get_environment_vars(mini_state),"EMPTY", " ");
 	finish = false;
 	while (!finish)
 	{
@@ -244,7 +194,7 @@ int	main(int args, char **environment_var_str_array)
 		if (ft_strlen(input) != 0)
 		{
 			history_add(input);
-			handle_errors(execute_line(input, mini_state), mini_state);
+			handle_status_codes(execute_line(input, mini_state), mini_state);
 			free(input);
 			input = NULL;
 		}

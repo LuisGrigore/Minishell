@@ -79,18 +79,38 @@ int	env_execute(t_command *command, t_gen_list *environment)
 	return (MS_OK);
 }
 
+static int is_numeric_string(const char *str)
+{
+	int i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	exit_execute(t_command *command, t_gen_list *environment)
 {
-	int exit_code;
+	int		exit_code;
+	char	*arg;
 
 	exit_code = 0;
 	(void) environment;
-	if (gen_list_get_size (command->args) == 2)
+	if (gen_list_get_size(command->args) == 2)
 	{
 		gen_list_pop_front(command->args);
-		exit_code = ft_atoi((char *)gen_list_pop_front(command->args));
+		arg = gen_list_pop_front(command->args);
+		if (!is_numeric_string(arg))
+			return (COMMAND_NUMERIC_ARG_REQUIRED_ERR);
+		exit_code = ft_atoi(arg);
 	}
-	else if (gen_list_get_size (command->args) > 2)
+	else if (gen_list_get_size(command->args) > 2)
 	{
 		return (COMMAND_TOO_MANY_ARGS_ERR);
 	}

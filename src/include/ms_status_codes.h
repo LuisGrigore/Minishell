@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/08 00:18:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/08 02:55:40 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef enum e_ms_status_code
 	COMMAND_MISSING_ARGS_ERR,
 	COMMAND_TOO_MANY_ARGS_ERR,
 	COMMAND_INVALID_ARGS_ERR,
+	COMMAND_NUMERIC_ARG_REQUIRED_ERR,
 	//Executer
 	EXECUTER_ERR = EXECUTER_STATUS_BEGIN,
 	//Lexer
@@ -50,7 +51,7 @@ typedef enum e_ms_status_code
 	REDIRECT_MALFORMED_ERR = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_NO_HEADERDOC_DELIMITER_ERR,
 	//Exit
-	EXTERNALY_DEFINED_STATUS_CODE,
+	EXTERNALY_DEFINED_STATUS_CODE = EXTERNALY_DEFINED_STATUS_BEGIN,
 	
 } t_ms_status_code;
 
