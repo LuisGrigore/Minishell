@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/08 03:01:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:57:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,6 @@ int	main(int args, char **environment_var_str_array)
 	if (!mini_state)
 		handle_status_codes(MS_ALLOCATION_ERR, mini_state);
 	handle_status_codes(signals_init_interactive(), mini_state);
-//	env_set(mini_state_get_environment_vars(mini_state),"EMPTY", " ");
 	finish = false;
 	while (!finish)
 	{
