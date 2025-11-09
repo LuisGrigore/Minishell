@@ -22,13 +22,15 @@ int	export_execute(t_command *command, t_gen_list *environment)
 	arg = gen_list_iter_next(it);
 	gen_list_iter_destroy(it);
 	new_variable = ft_split2(arg, '=');
-	if (!new_variable || !new_variable[0] || !new_variable[1])
+	if (!new_variable || !new_variable[0])
 		return (MS_ALLOCATION_ERR);
 	if (check_option_of_export(new_variable, environment) == -1)
 		return (COMMAND_INVALID_ARGS_ERR);
-	env_set(environment, new_variable[0], new_variable[1]);
+	if(ft_strchr(arg, '='))
+		env_set(environment, new_variable[0], new_variable[1]);
 	free(new_variable[0]);
-	free(new_variable[1]);
+	if(new_variable[1])
+		free(new_variable[1]);
 	free(new_variable);
 	return (MS_OK);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/08 17:57:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:37:46 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,8 +149,8 @@ static void	handle_status_codes(int status_code, t_mini_state *mini_state)
 {
 	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
-		if (ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
+		env_set_last_status_code( mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		if (mini_state_get_last_command(mini_state) && ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
 		{
 			exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
 		}
