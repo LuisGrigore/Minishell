@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 21:01:57 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:35:28 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,12 @@ static void handle_system_status_codes(int status_code, t_mini_state *mini_state
 	else if (status_code == MS_OPEN_ERR)
 	{
 		fprintf(stderr, "minishell: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+        return;
+	}
+	else if(status_code == MS_PATH_ERR)
+	{
+		fprintf(stderr, "minishell: %s: No such file or directory\n", mini_state_get_last_command(mini_state));
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
         return;
 	}
