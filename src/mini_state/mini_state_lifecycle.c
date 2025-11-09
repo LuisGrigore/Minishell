@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:42:50 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 16:43:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:03:25 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_mini_state *mini_state_create(int args, char **environment_var_str_array)
 		return NULL;
 	state->last_command = NULL;
 	state->last_opened_file = NULL;
+	state->exit_after_last_command = false;
 	return (state);
 }
 

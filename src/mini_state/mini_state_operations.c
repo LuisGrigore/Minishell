@@ -6,11 +6,13 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:43:27 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 16:47:13 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:06:53 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mini_state_internal.h"
+
+#include <stdio.h>
 
 char *mini_state_get_last_command(t_mini_state *state)
 {
@@ -51,4 +53,18 @@ void mini_state_set_last_opened_file(t_mini_state *state, const char *file_name)
 		state->last_opened_file = ft_strdup(file_name);
 	else
 		state->last_opened_file = NULL;
+}
+
+bool mini_state_get_exit_after_last_command(t_mini_state *state)
+{
+	if (!state)
+		return (false);
+	return (state->exit_after_last_command);
+}
+
+void mini_state_set_exit_after_last_command(t_mini_state *state, bool value)
+{
+	if (!state)
+		return ;
+	state->exit_after_last_command = value;
 }
