@@ -52,11 +52,13 @@ int	export_execute(t_command *command, t_gen_list *environment)
 	{
 		if(ft_isdigit(arg[0]))
 			return(COMMAND_MALFORMED_ERR);
-		new_variable = ft_split2(arg, '=');
+		if(ft_strlen(arg) == 1 && arg[0] == '=')
+			return(COMMAND_MALFORMED_ERR);
+		new_variable = simple_split(arg, '=');
 		if (!new_variable || !new_variable[0])
 			return (MS_ALLOCATION_ERR);
 		if (check_option_of_export(new_variable, environment) == -1)
-			return (COMMAND_INVALID_ARGS_ERR);
+			return (COMMAND_MALFORMED_ERR);
 		if(ft_strchr(arg, '='))
 			env_set(environment, new_variable[0], new_variable[1]);
 		free(new_variable[0]);

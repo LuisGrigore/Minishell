@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 21:24:42 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:43:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ t_gen_list	*env_deserialize(char **str_array)
 	t_env_var	*env;
 	size_t		i;
 
-	size_t		j;
-
 	if (!str_array)
 		return (NULL);
 	env_var_list = gen_list_create();
@@ -88,7 +86,7 @@ t_gen_list	*env_deserialize(char **str_array)
 	i = 0;
 	while (str_array[i])
 	{
-		split = split_var(str_array[i]);//ft_split(str_array[i], '=');
+		split = simple_split(str_array[i], '=');
 		if (!split)
 		{
 			i++;
@@ -96,18 +94,10 @@ t_gen_list	*env_deserialize(char **str_array)
 		}
 		env = init_environment_var(split[0], split[1]);
 		if (env)
-		{
 			gen_list_push_back(env_var_list, env);
-		}
 		else
-		{
-			j = 0;
-			while (split[j])
-			{
-				free(split[j]);
-				j++;
-			}
-		}
+			free_double_pointer(split);
+		
 		free(split);
 		i++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 16:07:34 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 20:48:36 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,15 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini
 
     if (n == 0)
         return(MS_OK);
-
     pm = pipe_manager_init(n);
     if (!pm)
         return(MS_ALLOCATION_ERR);
-
     it = gen_list_iter_start(commands);
     if (!it)
         return (pipe_manager_destroy(pm), MS_ALLOCATION_ERR);
-
     pids = malloc(sizeof(pid_t) * n);
     if (!pids)
         return (gen_list_iter_destroy(it), pipe_manager_destroy(pm), MS_ALLOCATION_ERR);
-
     while ((cmd = gen_list_iter_next(it)) != NULL)
     {
         pid_t pid = fork();
