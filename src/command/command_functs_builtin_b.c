@@ -100,7 +100,7 @@ static int is_numeric_string(const char *str)
 	return (1);
 }
 
-int exit_code_without_quotes(char *arg)
+static int exit_code_without_quotes(char *arg)
 {
 	char *temp;
 	int i;

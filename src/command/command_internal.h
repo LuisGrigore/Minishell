@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/06 20:31:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:00:30 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,5 @@ int					unset_execute(t_command *command, t_gen_list *environment);
 int					env_execute(t_command *command, t_gen_list *environment);
 int					echo_execute(t_command *command, t_gen_list *environment);
 int					exit_execute(t_command *command, t_gen_list *environment);
-int					check_option_of_export(char **new_variable,
-						t_gen_list *env);
 
 #endif

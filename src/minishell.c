@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 18:33:44 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:01:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,6 @@ int	main(int args, char **environment_var_str_array)
 		{
 			history_add(input);
 			handle_status_codes(execute_line(input, mini_state), mini_state, input);
-			//free(input);
 			input = NULL;
 		}
 	}
