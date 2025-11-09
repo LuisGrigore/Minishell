@@ -6,16 +6,15 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 16:10:21 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:07:23 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENVIRONMENT_H
 # define ENVIRONMENT_H
 
-# include "../external/gen_list/gen_list.h"
 # include <stdbool.h>
-#include "ms_status_codes.h"
+# include "ms_status_codes.h"
 
 
 /* ============================================================
@@ -24,11 +23,11 @@
 */
 
 /**
- * @brief Represents a single environment variable.
- *
- * Each environment variable consists of a name and its associated value.
+ * @brief Opaque type representing the environment.
+ * 
+ * The internal implementation details are hidden from the user.
  */
-typedef struct s_env_var	t_env_var;
+typedef struct s_environment	t_environment;
 
 /* ============================================================
 **  Environment Operations
@@ -51,9 +50,27 @@ typedef struct s_env_var	t_env_var;
  * @see env_has
  * @see t_env_var
  */
-int							env_set(t_gen_list *env, char *name, char *value);
-void env_set_last_status_code(t_gen_list *env, int status_code);
-int env_get_last_status_code(t_gen_list *env);
+/**
+ * @brief Creates a new environment instance.
+ * 
+ * @return A new environment instance, or NULL if allocation fails.
+ */
+t_environment *env_create(void);
+
+/**
+ * @brief Add or update an environment variable.
+ *
+ * If the variable does not exist, it is created and added to the environment.
+ * If the variable already exists, its value is updated.
+ *
+ * @param env Environment instance.
+ * @param name Name of the variable (must not be NULL).
+ * @param value Value of the variable (can be NULL for empty).
+ * @return 1 on success, or an error code otherwise.
+ */
+int							env_set(t_environment *env, char *name, char *value);
+void env_set_last_status_code(t_environment *env, int status_code);
+int env_get_last_status_code(t_environment *env);
 
 /**
  * @brief Remove an environment variable by name.
@@ -68,20 +85,20 @@ int env_get_last_status_code(t_gen_list *env);
  * @see env_has
  * @see t_env_var
  */
-void						env_unset(t_gen_list *env, char *name);
+void						env_unset(t_environment *env, char *name);
 
 /**
- * @brief Destroy the entire environment list and free resources.
+ * @brief Destroy the environment instance and free all resources.
  *
- * Frees all variables, their names and values, then frees the list itself.
+ * Frees all variables, their names and values, then frees the environment itself.
  *
- * @param env Environment variable list.
+ * @param env Environment instance.
  *
+ * @see env_create
  * @see env_set
  * @see env_unset
- * @see t_env_var
  */
-void						env_destroy(t_gen_list *env);
+void						env_destroy(t_environment *env);
 
 /* ============================================================
 **  Serialization / Deserialization
@@ -100,21 +117,20 @@ void						env_destroy(t_gen_list *env);
  * @see env_deserialize
  * @see t_env_var
  */
-char						**env_serialize(t_gen_list *env);
+char						**env_serialize(t_environment *env);
 
 /**
- * @brief Convert a string array into an environment variable list.
+ * @brief Convert a string array into an environment instance.
  *
  * Each string must follow the "NAME=VALUE" format.
  *
  * @param str_array Null-terminated array of strings.
- * @return Pointer to a newly allocated environment variable list,
+ * @return A new environment instance initialized with the provided variables,
  *         or NULL on error.
  *
  * @see env_serialize
- * @see t_env_var
  */
-t_gen_list					*env_deserialize(char **str_array);
+t_environment					*env_deserialize(char **str_array);
 
 /* ============================================================
 **  Query Functions
@@ -135,37 +151,34 @@ t_gen_list					*env_deserialize(char **str_array);
  * @see env_has
  * @see t_env_var
  */
-char						*env_get(t_gen_list *env, char *name);
+char						*env_get(t_environment *env, char *name);
 
 /**
  * @brief Check if an environment variable exists by name.
  *
- * @param env Environment variable list.
+ * @param env Environment instance.
  * @param name Name of the variable.
  * @return true if the variable exists, false otherwise.
  *
  * @see env_set
  * @see env_unset
  * @see env_get
- * @see t_env_var
  */
-bool						env_has(t_gen_list *env, char *name);
+bool						env_has(t_environment *env, char *name);
 
 /**
  * Expands environment variables in a given string.
  *
  * This function scans the input `line` for environment variable references
  * prefixed with `$` and replaces them with their corresponding values from
- * the provided environment list `env`. The resulting string preserves other
+ * the provided environment. The resulting string preserves other
  * characters as-is and handles multiple variable expansions in the same line.
  *
  * Example:
  *   If `line` is "Hello $USER" and the environment has USER="Alice",
  *   the function will return "Hello Alice".
  *
- * @param env Pointer to a t_env_var list representing the environment.
- * @see t_env_var
- *
+ * @param env Environment instance.
  * @param line Pointer to a null-terminated string that may contain
  *             environment variable references to expand.
  *
@@ -176,6 +189,6 @@ bool						env_has(t_gen_list *env, char *name);
  * @note This function handles only simple variable expansions (e.g., $VAR)
  *       and does not process complex shell syntax like ${VAR}.
  */
-char *env_expand_vars(t_gen_list *env, char *line);
+char *env_expand_vars(t_environment *env, char *line);
 
 #endif

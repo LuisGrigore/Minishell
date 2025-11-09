@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 21:35:28 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:06:50 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #include <errno.h>
 
 
-char	*get_line_tag(t_gen_list *env)
+char	*get_line_tag(t_environment *env)
 {
 	char	*username;
 	char	*line_tag;
@@ -38,7 +38,7 @@ char	*get_line_tag(t_gen_list *env)
 	return (line_tag);
 }
 
-char *get_input(t_gen_list *env)
+char *get_input(t_environment *env)
 {
 	char *line_tag;
 	char *input;

@@ -25,6 +25,6 @@
  * parse_line now also receives the environment list so lexer can expand
  * variables according to quoting rules during tokenization.
  */
-int parse_line(char *line, t_gen_list *commands, t_gen_list *env);
+int parse_line(char *line, t_gen_list *commands, t_environment *env);
 
 #endif

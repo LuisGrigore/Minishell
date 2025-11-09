@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:09:07 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 23:55:25 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:45:14 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 // }
 
 
-int lexer_tokenize(const char *line, t_gen_list *tokens_list, t_gen_list *env)
+int lexer_tokenize(const char *line, t_gen_list *tokens_list, t_environment *env)
 {
 	size_t i;
 	t_lstate ls;
@@ -57,7 +57,7 @@ int lexer_tokenize(const char *line, t_gen_list *tokens_list, t_gen_list *env)
 	return run_token_loop(&ls);
 }
  int lexer_init_state(const char *line, t_gen_list *tokens_list,
-	size_t *i, t_lstate *ls, t_gen_list *env)
+	size_t *i, t_lstate *ls, t_environment *env)
 {
 	if (!tokens_list)
 		return LEXER_NULL_ERR;

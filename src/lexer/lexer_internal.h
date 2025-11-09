@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:45:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 23:51:09 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:47:02 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_pstate
     char **buf;
     size_t *bcap;
     size_t *blen;
-    t_gen_list *env;
+    t_environment *env;
 } t_pstate;
 
 typedef struct s_lstate 
@@ -41,7 +41,7 @@ typedef struct s_lstate
     size_t *i;
     size_t len;
     t_gen_list *tokens_list;
-    t_gen_list *env;
+    t_environment *env;
     bool next_is_redir_arg_val;
     bool expect_cmd_val;
     bool *next_is_redir_arg;
@@ -61,7 +61,7 @@ t_token_type operator_type(const char *op, size_t len);
 
 /* lexer_parse_utils.c */
 void pstate_init(t_pstate *st, const char *line, size_t *i, size_t len, 
-    char **buf, size_t *bcap, size_t *blen, t_gen_list *env);
+    char **buf, size_t *bcap, size_t *blen, t_environment *env);
 int ensure_capacity(t_pstate *st, size_t need);
 int append_char(t_pstate *st, char ch);
 size_t skip_spaces(const char *line, size_t i, size_t len);
@@ -75,7 +75,7 @@ int handle_loop_char(t_pstate *st);
 
 /* lexer_parse_word.c */
 /* parse_word now receives the environment so it can expand variables */
-int parse_word(const char *line, size_t *i, size_t len, t_gen_list *env, char **out_word);
+int parse_word(const char *line, size_t *i, size_t len, t_environment *env, char **out_word);
 int build_out_word(t_pstate *st, size_t start, char **out_word);
 int finalize_parse_word(t_pstate *st, char *buf, size_t start, char **out_word);
 
@@ -86,7 +86,7 @@ int push_one_char_op(const char *line, size_t *i, t_gen_list *tokens_list, bool 
 /* lexer_process.c */
 int process_next_token(t_lstate *ls);
 int parse_word_and_push(t_lstate *ls);
-int lexer_init_state(const char *line, t_gen_list *tokens_list, size_t *i, t_lstate *ls, t_gen_list *env);
+int lexer_init_state(const char *line, t_gen_list *tokens_list, size_t *i, t_lstate *ls, t_environment *env);
 int run_token_loop(t_lstate *ls);
 t_token_type determine_type_and_clear(t_lstate *ls);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 20:48:36 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:42:35 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int execute_line(char *line, t_mini_state *mini_state)
 	int status_code;
 	t_gen_list *commands;
     int exit_status;
-	t_gen_list *env;
+	t_environment *env;
 
 	env = mini_state_get_environment_vars(mini_state);
     exit_status = 0;

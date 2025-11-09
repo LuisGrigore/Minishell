@@ -1,6 +1,6 @@
 #include "command_internal.h"
 
-int	cd_execute(t_command *command, t_gen_list *environment)
+int	cd_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*old_directory;
@@ -34,7 +34,7 @@ int	cd_execute(t_command *command, t_gen_list *environment)
 	return (MS_PATH_ERR);
 }
 
-int	pwd_execute(t_command *command, t_gen_list *environment)
+int	pwd_execute(t_command *command, t_environment *environment)
 {
 	char			*current_dir;
 	char			*arg;
@@ -60,7 +60,7 @@ int	pwd_execute(t_command *command, t_gen_list *environment)
 	free(current_dir);
 	return (MS_OK);
 }
-int	env_execute(t_command *command, t_gen_list *environment)
+int	env_execute(t_command *command, t_environment *environment)
 {
 	char	**serialized_env;
 	size_t	i;
@@ -70,7 +70,7 @@ int	env_execute(t_command *command, t_gen_list *environment)
 
 	serialized_env = env_serialize(environment);
 	i = 0;
-	while (i < gen_list_get_size(environment))
+	while (serialized_env[i] != NULL)
 	{
 		if(serialized_env[i][0] == '?')
 		{
@@ -125,7 +125,7 @@ static int exit_code_without_quotes(char *arg)
 	free(temp);
 	return(result);
 }
-int	exit_execute(t_command *command, t_gen_list *environment)
+int	exit_execute(t_command *command, t_environment *environment)
 {
 	int		exit_code;
 	char	*arg;

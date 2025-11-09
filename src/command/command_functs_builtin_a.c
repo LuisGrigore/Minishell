@@ -1,7 +1,7 @@
 #include "command_internal.h"
 #include <stdio.h>
 
-static int	check_option_of_export(char **new_variable, t_gen_list *env)
+static int	check_option_of_export(char **new_variable, t_environment *env)
 {
 	char	*temp;
 	int		i;
@@ -33,7 +33,7 @@ static int	check_option_of_export(char **new_variable, t_gen_list *env)
 	return (free(temp), free(temp2), 0);
 }
 
-int	export_execute(t_command *command, t_gen_list *environment)
+int	export_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;
@@ -71,7 +71,7 @@ int	export_execute(t_command *command, t_gen_list *environment)
 	return (MS_OK);
 }
 
-int	unset_execute(t_command *command, t_gen_list *environment)
+int	unset_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;
@@ -94,7 +94,7 @@ int	unset_execute(t_command *command, t_gen_list *environment)
 	return (MS_OK);
 }
 
-int	echo_execute(t_command *command, t_gen_list *environment)
+int	echo_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:00:00 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 23:54:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:44:52 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int finalize_parse_word(t_pstate *st, char *buf, size_t start, char **out_word)
     return 1;
 }
 
-int parse_word(const char *line, size_t *i, size_t len, t_gen_list *env, char **out_word)
+int parse_word(const char *line, size_t *i, size_t len, t_environment *env, char **out_word)
 {
     size_t start;
     char *buf;

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:43:27 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 16:06:53 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:39:32 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ char *mini_state_get_last_opened_file(t_mini_state *state)
 		return (NULL);
 	return (state->last_opened_file);
 }
-t_gen_list *mini_state_get_environment_vars(t_mini_state *state)
+//t_gen_list *mini_state_get_environment_vars(t_mini_state *state)
+t_environment *mini_state_get_environment_vars(t_mini_state *state)
+
 {
 	if (!state)
 		return (NULL);

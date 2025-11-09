@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_internal.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 18:48:06 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:07:24 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ENVIRONMENT_INTERNAL_H
 
 # include "../../include/environment.h"
+# include "../../external/gen_list/gen_list.h"
 # include "../../external/libft/libft.h"
 # include "../include/util.h"
 # include <stdlib.h>
@@ -23,6 +24,7 @@
 ** ============================================================
 */
 
+
 /**
  * @brief Represents a single environment variable (internal use).
  *
@@ -30,10 +32,15 @@
  *
  * @see t_env_var
  */
-struct		s_env_var
+typedef struct		s_env_var
 {
 	char	*var_name;
 	char	*var_value;
+} t_env_var;
+
+struct		s_environment
+{
+	t_gen_list	*variables;
 };
 
 /* ============================================================

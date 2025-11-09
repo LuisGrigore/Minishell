@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/09 21:00:30 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:06:30 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdbool.h>
 # include <stdlib.h>
 
-typedef int			(*t_command_funct)(t_command *, t_gen_list *);
+typedef int			(*t_command_funct)(t_command *, t_environment *);
 
 struct				s_command
 {
@@ -32,14 +32,14 @@ struct				s_command
 	t_command_funct	command_funct;
 };
 
-int					pwd_execute(t_command *command, t_gen_list *environment);
-int					bin_execute(t_command *cmd, t_gen_list *environment);
-int					cd_execute(t_command *command, t_gen_list *environment);
-int					pwd_execute(t_command *command, t_gen_list *envioroment);
-int					export_execute(t_command *command, t_gen_list *environment);
-int					unset_execute(t_command *command, t_gen_list *environment);
-int					env_execute(t_command *command, t_gen_list *environment);
-int					echo_execute(t_command *command, t_gen_list *environment);
-int					exit_execute(t_command *command, t_gen_list *environment);
+int					pwd_execute(t_command *command, t_environment *environment);
+int					bin_execute(t_command *cmd, t_environment *environment);
+int					cd_execute(t_command *command, t_environment *environment);
+int					pwd_execute(t_command *command, t_environment *envioroment);
+int					export_execute(t_command *command, t_environment *environment);
+int					unset_execute(t_command *command, t_environment *environment);
+int					env_execute(t_command *command, t_environment *environment);
+int					echo_execute(t_command *command, t_environment *environment);
+int					exit_execute(t_command *command, t_environment *environment);
 
 #endif

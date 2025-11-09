@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/09 17:56:36 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:05:55 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ static char	*serialize_arg(void *arg_ptr)
 	return (ft_strdup(arg));
 }
 
-int	bin_execute(t_command *cmd, t_gen_list *environment)
+int	bin_execute(t_command *cmd, t_environment *environment)
 {
 	char	**cmd2;
 	char	**env;

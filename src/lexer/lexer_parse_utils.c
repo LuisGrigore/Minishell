@@ -6,14 +6,14 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:00:00 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/06 23:51:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:45:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer_internal.h"
 
 void pstate_init(t_pstate *st, const char *line, size_t *i, size_t len,
-    char **buf, size_t *bcap, size_t *blen, t_gen_list *env)
+    char **buf, size_t *bcap, size_t *blen, t_environment *env)
 {
     st->line = line;
     st->i = i;

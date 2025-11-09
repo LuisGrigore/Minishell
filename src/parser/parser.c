@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 23:51:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:43:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	parse_tokens_to_commands(t_gen_list *tokens, t_gen_list *commands)
 	return (finalize_parsing(current_cmd, it, commands, status));
 }
 
-int	parse_line(char *line, t_gen_list *commands, t_gen_list *env)
+int	parse_line(char *line, t_gen_list *commands, t_environment *env)
 {
 	int			status_code;
 	t_gen_list	*tokens;
