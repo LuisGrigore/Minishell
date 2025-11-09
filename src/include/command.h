@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/07 16:53:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:26:49 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@
 */
 
 /**
- * @brief Represents a command
+ * @brief Represents a shell command with its arguments and redirections
+ * 
+ * This structure encapsulates all information needed to execute a command,
+ * including its name, arguments, and any input/output redirections.
  * 
  * @see command_create
+ * @see command_destroy
  */
 typedef struct s_command	t_command;
 

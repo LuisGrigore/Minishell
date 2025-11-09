@@ -1,0 +1,5 @@
+<map id="env_destroy" name="env_destroy">
+<area shape="rect" id="Node000001" title="Destroy the environment instance and free all resources." alt="" coords="200,5,303,31"/>
+<area shape="rect" id="Node000002" href="$d5/df2/mini__state__lifecycle_8c.html#af7aca4ced2371df8c6102fdcbd151402" title="Destroys a shell state instance and frees all associated resources." alt="" coords="5,5,152,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,21,152,21,152,15,186,15"/>
+</map>

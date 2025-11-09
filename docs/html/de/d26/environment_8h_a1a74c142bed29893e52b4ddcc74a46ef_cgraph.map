@@ -1,0 +1,31 @@
+<map id="env_set_last_status_code" name="env_set_last_status_code">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,195,81"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a6c6fd104285eb2b697886a98655e1938" title="Add or update an environment variable." alt="" coords="243,80,316,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,79,230,83,229,89,194,84"/>
+<area shape="rect" id="Node000014" href="$d1/d7c/ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="248,19,311,44"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="161,53,234,38,235,43,162,59"/>
+<area shape="rect" id="Node000003" href="$de/dcf/ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="405,5,484,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,77,328,58,363,40,391,29,393,34,365,44,330,63,301,82"/>
+<area shape="rect" id="Node000005" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="379,104,510,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="317,95,366,103,365,108,316,101"/>
+<area shape="rect" id="Node000009" href="$d5/d02/gen__link__list__insertion_8c.html#afaff7b55fa096faad82dc3709598c699" title="Insert a value at the beginning of the list." alt="" coords="370,153,519,179"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="301,103,365,138,386,146,384,151,363,143,299,108"/>
+<area shape="rect" id="Node000010" href="$dd/da9/envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title=" " alt="" coords="364,227,525,252"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="292,104,323,144,366,188,408,218,405,222,362,192,319,147,288,107"/>
+<area shape="rect" id="Node000012" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title=" " alt="" coords="383,55,507,80"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="316,84,369,76,369,82,317,90"/>
+<area shape="rect" id="Node000004" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="615,5,690,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="484,15,601,15,601,21,484,21"/>
+<area shape="rect" id="Node000006" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="573,203,732,228"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="502,127,527,138,542,151,552,164,560,176,575,188,589,195,586,200,572,192,557,180,547,167,538,155,524,143,500,132"/>
+<area shape="rect" id="Node000007" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="583,104,722,129"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="510,114,570,114,570,119,510,119"/>
+<area shape="rect" id="Node000008" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="583,153,722,179"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="500,127,586,147,584,153,498,132"/>
+<area shape="rect" id="Node000011" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="615,252,691,277"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="526,246,601,256,601,261,525,252"/>
+<area shape="poly" id="edge12_Node000012_Node000004" title=" " alt="" coords="498,52,601,27,602,33,500,57"/>
+<area shape="rect" id="Node000013" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="607,55,698,80"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="507,65,594,65,594,70,507,70"/>
+<area shape="poly" id="edge15_Node000014_Node000003" title=" " alt="" coords="311,26,392,20,392,25,311,32"/>
+</map>

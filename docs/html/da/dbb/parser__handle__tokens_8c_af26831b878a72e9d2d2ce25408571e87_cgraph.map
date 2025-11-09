@@ -1,5 +1,5 @@
 <map id="handle_command_token" name="handle_command_token">
-<area shape="rect" id="Node000001" title="Create or update a command object from a TOKEN_CMD token." alt="" coords="5,129,187,155"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,129,187,155"/>
 <area shape="rect" id="Node000002" href="$d5/d2b/command__lifecycle_8c.html#a527646ae11a157773c11c7836bed583e" title="Creates a new command structure." alt="" coords="258,53,393,79"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,127,272,81,274,86,136,132"/>
 <area shape="rect" id="Node000005" href="$de/d8a/command__operations_8c.html#a60d081e014646c033bef4b7a9b229948" title="Adds an argument to the command." alt="" coords="249,155,402,180"/>

@@ -1,11 +1,13 @@
 \doxysection{src/include/redirect\+\_\+manager.h File Reference}
 \hypertarget{redirect__manager_8h}{}\label{redirect__manager_8h}\index{src/include/redirect\_manager.h@{src/include/redirect\_manager.h}}
 {\ttfamily \#include "{}../external/gen\+\_\+list/gen\+\_\+list.\+h"{}}\newline
-Include dependency graph for redirect\+\_\+manager.\+h\+:\nopagebreak
+{\ttfamily \#include "{}mini\+\_\+state.\+h"{}}\newline
+Include dependency graph for redirect\+\_\+manager.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{d9/d92/redirect__manager_8h__incl}
+\includegraphics[width=314pt]{d9/d92/redirect__manager_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -43,7 +45,7 @@ enum \mbox{\hyperlink{redirect__manager_8h_a9dc0708214e56f772055d28dd779e09c}{e\
 \begin{DoxyCompactList}\small\item\em Creates a new redirect structure. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{redirect__manager_8h_a2e2201e448b4d07a14082c4c826a0153}{redirect\+\_\+destroy}} (\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redirect)
 \begin{DoxyCompactList}\small\item\em Destroys a redirect structure and frees its memory. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d}{redirect\+\_\+execute}} (\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redirect)
+int \mbox{\hyperlink{redirect__manager_8h_aa700beec51c833209c96cfb0d4a950bc}{redirect\+\_\+execute}} (\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}redirect, \mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}mini\+\_\+state)
 \begin{DoxyCompactList}\small\item\em Executes a redirection operation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{redirect__manager_8h_a4f6d537ff6673d94cec55d0deb3d4297}{print\+\_\+redirect}} (void \texorpdfstring{$\ast$}{*}redir\+\_\+ptr)
 \begin{DoxyCompactList}\small\item\em Prints a redirect for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -121,8 +123,7 @@ Displays the type of redirection and the associated file name. Used mainly for d
 {\em redir\+\_\+ptr} & Generic pointer to a t\+\_\+redirect structure. \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -183,11 +184,11 @@ Safely releases both the redirect object and its associated file name.
 {\em redirect} & Pointer to the redirect structure to destroy. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d}\label{redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d} 
+\Hypertarget{redirect__manager_8h_aa700beec51c833209c96cfb0d4a950bc}\label{redirect__manager_8h_aa700beec51c833209c96cfb0d4a950bc} 
 \index{redirect\_manager.h@{redirect\_manager.h}!redirect\_execute@{redirect\_execute}}
 \index{redirect\_execute@{redirect\_execute}!redirect\_manager.h@{redirect\_manager.h}}
 \doxysubsubsection{\texorpdfstring{redirect\_execute()}{redirect\_execute()}}
-{\footnotesize\ttfamily int redirect\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redirect }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int redirect\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{redirect__manager_8h_aa0a54f0f7fe7d432d2a6f820246de5c6}{t\+\_\+redirect}} \texorpdfstring{$\ast$}{*}}]{redirect,  }\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{mini\+\_\+state }\end{DoxyParamCaption})}
 
 
 
@@ -209,6 +210,6 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=269pt]{d2/dcf/redirect__manager_8h_a71d0e3f695af97d47632d7bd2b2b2b4d_cgraph}
+\includegraphics[width=350pt]{d2/dcf/redirect__manager_8h_aa700beec51c833209c96cfb0d4a950bc_cgraph}
 \end{center}
 \end{figure}

@@ -1,5 +1,5 @@
 <map id="handle_redirect" name="handle_redirect">
-<area shape="rect" id="Node000001" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="5,229,128,255"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,128,255"/>
 <area shape="rect" id="Node000002" href="$d5/d2b/command__lifecycle_8c.html#a527646ae11a157773c11c7836bed583e" title="Creates a new command structure." alt="" coords="200,55,335,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,228,107,162,137,122,174,89,186,82,189,87,178,93,141,126,112,165,76,230"/>
 <area shape="rect" id="Node000005" href="$d5/d2b/command__lifecycle_8c.html#acf24c1b5ff2095e586b1b28ef93b16ef" title="Destroys a command structure and frees memory." alt="" coords="196,104,339,129"/>

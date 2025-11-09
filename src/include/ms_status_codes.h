@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/08 02:55:40 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:38:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,13 @@ typedef enum e_ms_status_code
 	//Redirect
 	REDIRECT_MALFORMED_ERR = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_NO_HEADERDOC_DELIMITER_ERR,
+	//Pipe
+	PIPE_MANAGER_IS_NULL = PIPE_MANAGER_STATUS_BEGIN,
+	PIPE_MANAGER_MALFORMED,
 	//Exit
 	EXTERNALY_DEFINED_STATUS_CODE = EXTERNALY_DEFINED_STATUS_BEGIN,
 	
 } t_ms_status_code;
+
 
 #endif

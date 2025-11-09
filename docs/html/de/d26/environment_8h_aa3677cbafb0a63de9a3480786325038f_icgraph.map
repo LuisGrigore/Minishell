@@ -1,0 +1,13 @@
+<map id="env_get" name="env_get">
+<area shape="rect" id="Node000001" title="Get the value of an environment variable by name." alt="" coords="477,55,552,80"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a0c20f3f965537481c767625d9c3c5258" title=" " alt="" coords="239,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="463,55,429,45,386,33,387,28,430,39,465,50"/>
+<area shape="rect" id="Node000003" href="$d7/d66/minishell_8c.html#ab4a0aee9bd63c76a7bab9ee110c2947a" title=" " alt="" coords="283,55,385,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="464,70,385,70,385,65,464,65"/>
+<area shape="rect" id="Node000006" href="$d0/dfa/command__functs__builtin__b_8c.html#a4b471292f64a3207d6ed110c64874043" title=" " alt="" coords="281,104,387,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="465,84,430,94,384,106,382,101,429,89,463,79"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#ad40459f9ec39e6c5d594fe1d5d20193d" title=" " alt="" coords="108,55,191,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="269,70,191,70,191,65,269,65"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,70,60,70,60,65,94,65"/>
+</map>

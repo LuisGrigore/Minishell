@@ -1,5 +1,5 @@
 <map id="command_destroy" name="command_destroy">
 <area shape="rect" id="Node000001" title="Destroys a command structure and frees memory." alt="" coords="176,5,319,31"/>
-<area shape="rect" id="Node000002" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="5,5,128,31"/>
+<area shape="rect" id="Node000002" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title=" " alt="" coords="5,5,128,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,21,128,21,128,15,162,15"/>
 </map>

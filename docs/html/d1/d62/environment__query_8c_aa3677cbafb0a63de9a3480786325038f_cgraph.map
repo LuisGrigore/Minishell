@@ -1,0 +1,20 @@
+<map id="env_get" name="env_get">
+<area shape="rect" id="Node000001" title="Get the value of an environment variable by name." alt="" coords="5,141,80,167"/>
+<area shape="rect" id="Node000002" href="$de/dcf/ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="154,141,233,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,151,140,151,140,157,80,157"/>
+<area shape="rect" id="Node000004" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="128,68,259,93"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="69,139,153,97,155,102,71,144"/>
+<area shape="rect" id="Node000008" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title=" " alt="" coords="131,191,255,216"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="81,164,142,184,140,189,79,169"/>
+<area shape="rect" id="Node000003" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="349,153,423,179"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,154,335,160,335,166,233,159"/>
+<area shape="rect" id="Node000005" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="307,55,465,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="259,73,293,71,293,76,259,79"/>
+<area shape="rect" id="Node000006" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="317,104,455,129"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="259,90,305,99,304,104,258,95"/>
+<area shape="rect" id="Node000007" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="317,5,455,31"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="230,65,306,39,329,32,330,37,308,45,231,71"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="255,189,335,173,336,178,256,194"/>
+<area shape="rect" id="Node000009" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="341,203,431,228"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="256,205,327,209,327,214,256,210"/>
+</map>

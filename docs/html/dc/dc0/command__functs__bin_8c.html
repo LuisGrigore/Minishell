@@ -96,70 +96,81 @@ $(document).ready(function(){initNavTree('dc/dc0/command__functs__bin_8c.html','
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d58/command__internal_8h_source.html">command_internal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d40/ms__status__codes_8h_source.html">include/ms_status_codes.h</a>&quot;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for command_functs_bin.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/dd5/command__functs__bin_8c__incl.png" border="0" usemap="#asrc_2command_2command__functs__bin_8c" alt=""/></div>
 <map name="asrc_2command_2command__functs__bin_8c" id="asrc_2command_2command__functs__bin_8c">
-<area shape="rect" title=" " alt="" coords="518,5,696,45"/>
-<area shape="rect" href="../../d3/d58/command__internal_8h.html" title=" " alt="" coords="529,93,685,119"/>
-<area shape="poly" title=" " alt="" coords="610,46,610,79,604,79,604,46"/>
-<area shape="rect" href="../../d0/d09/command_8h.html" title=" " alt="" coords="467,167,630,192"/>
-<area shape="poly" title=" " alt="" coords="599,121,569,158,564,155,595,117"/>
-<area shape="rect" href="../../d3/d09/gen__list_8h.html" title=" " alt="" coords="442,313,585,353"/>
-<area shape="poly" title=" " alt="" coords="619,117,633,139,644,166,651,215,650,244,643,267,620,292,593,310,590,305,617,288,638,264,645,243,646,215,639,167,628,141,614,120"/>
-<area shape="rect" title=" " alt="" coords="87,401,170,427"/>
-<area shape="poly" title=" " alt="" coords="529,112,391,118,233,129,98,146,52,156,28,169,12,195,8,224,14,255,28,286,67,344,108,389,104,393,63,348,23,288,9,256,3,224,7,193,24,165,50,151,97,140,233,124,391,113,529,107"/>
-<area shape="rect" title=" " alt="" coords="682,401,753,427"/>
-<area shape="poly" title=" " alt="" coords="624,117,645,138,665,165,690,225,706,287,715,344,719,387,714,388,710,344,701,288,685,227,661,168,641,141,620,121"/>
-<area shape="rect" href="../../de/d26/environment_8h.html" title=" " alt="" coords="38,167,218,192"/>
-<area shape="poly" title=" " alt="" coords="531,121,219,167,219,162,530,116"/>
-<area shape="rect" href="../../d8/d3c/util_8h.html" title=" " alt="" coords="990,167,1109,192"/>
-<area shape="poly" title=" " alt="" coords="679,116,978,164,977,169,678,121"/>
-<area shape="rect" href="../../d4/dfd/signal__manager_8h.html" title=" " alt="" coords="243,167,443,192"/>
-<area shape="poly" title=" " alt="" coords="565,121,400,166,399,160,564,116"/>
-<area shape="rect" href="../../d6/d7e/libft_8h.html" title=" " alt="" coords="808,167,966,192"/>
-<area shape="poly" title=" " alt="" coords="653,116,829,161,828,166,651,121"/>
-<area shape="poly" title=" " alt="" coords="524,194,494,213,481,226,471,241,467,256,470,272,487,301,482,304,465,273,462,256,466,239,477,223,491,209,521,190"/>
-<area shape="rect" href="../../d2/dcf/redirect__manager_8h.html" title=" " alt="" coords="481,240,629,265"/>
-<area shape="poly" title=" " alt="" coords="552,192,555,226,550,227,547,193"/>
-<area shape="rect" href="../../d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="259,240,406,265"/>
-<area shape="poly" title=" " alt="" coords="515,195,381,238,380,233,513,189"/>
-<area shape="poly" title=" " alt="" coords="443,352,184,404,183,399,442,347"/>
-<area shape="poly" title=" " alt="" coords="564,351,676,394,674,399,562,356"/>
-<area shape="poly" title=" " alt="" coords="551,267,532,302,528,300,547,264"/>
-<area shape="rect" href="../../db/d16/config_8h.html" title=" " alt="" coords="290,321,375,346"/>
-<area shape="poly" title=" " alt="" coords="335,266,335,307,330,307,330,266"/>
-<area shape="poly" title=" " alt="" coords="143,190,188,226,248,263,293,281,340,296,430,317,428,322,339,301,291,286,246,268,185,231,140,194"/>
-<area shape="poly" title=" " alt="" coords="131,192,131,387,126,387,126,192"/>
-<area shape="poly" title=" " alt="" coords="162,190,287,233,286,238,160,195"/>
-<area shape="poly" title=" " alt="" coords="344,193,339,227,334,226,339,192"/>
-<area shape="poly" title=" " alt="" coords="949,190,986,201,1019,217,1030,227,1038,239,1039,252,1033,267,1008,299,977,327,942,349,905,368,831,394,767,409,766,403,830,389,903,363,939,345,974,322,1004,296,1029,264,1034,251,1033,240,1026,230,1016,221,984,206,947,195"/>
-<area shape="rect" title=" " alt="" coords="1094,240,1157,265"/>
-<area shape="poly" title=" " alt="" coords="926,189,1082,236,1081,241,925,195"/>
-<area shape="rect" title=" " alt="" coords="755,240,830,265"/>
-<area shape="poly" title=" " alt="" coords="873,194,820,234,817,229,870,190"/>
-<area shape="rect" title=" " alt="" coords="854,240,920,265"/>
-<area shape="poly" title=" " alt="" coords="890,192,890,226,884,226,884,192"/>
-<area shape="rect" title=" " alt="" coords="944,240,1019,265"/>
-<area shape="poly" title=" " alt="" coords="904,190,957,229,954,234,901,194"/>
+<area shape="rect" title=" " alt="" coords="1131,5,1309,45"/>
+<area shape="rect" href="../../d3/d58/command__internal_8h.html" title=" " alt="" coords="642,93,798,119"/>
+<area shape="poly" title=" " alt="" coords="1131,43,807,94,806,89,1130,38"/>
+<area shape="rect" href="../../d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="845,475,992,500"/>
+<area shape="poly" title=" " alt="" coords="1215,46,1197,105,1190,141,1187,178,1187,335,1182,365,1169,391,1150,413,1125,431,1067,459,1006,476,1005,471,1065,454,1122,427,1146,409,1165,388,1177,363,1181,334,1181,178,1184,140,1192,103,1210,45"/>
+<area shape="rect" title=" " alt="" coords="1222,93,1290,119"/>
+<area shape="poly" title=" " alt="" coords="1231,44,1247,79,1242,82,1226,47"/>
+<area shape="rect" title=" " alt="" coords="1315,93,1400,119"/>
+<area shape="poly" title=" " alt="" coords="1254,43,1326,84,1324,89,1252,48"/>
+<area shape="rect" href="../../d3/d09/gen__list_8h.html" title=" " alt="" coords="487,313,630,353"/>
+<area shape="poly" title=" " alt="" coords="697,121,662,141,629,169,605,200,588,235,567,301,562,299,583,233,601,197,625,165,659,137,694,116"/>
+<area shape="rect" title=" " alt="" coords="517,475,600,500"/>
+<area shape="poly" title=" " alt="" coords="642,109,464,114,359,122,254,134,158,152,80,177,50,193,27,210,13,230,8,252,8,335,11,365,19,387,35,406,60,424,95,440,143,453,266,471,396,480,504,483,504,488,396,485,265,476,142,458,93,445,57,429,32,410,15,390,6,366,3,335,3,251,8,227,23,206,47,188,78,172,157,147,254,128,359,116,464,109,642,104"/>
+<area shape="rect" title=" " alt="" coords="71,401,142,427"/>
+<area shape="poly" title=" " alt="" coords="642,109,556,112,452,121,340,140,231,169,164,194,139,212,114,241,98,278,93,317,96,356,102,388,97,389,91,357,88,317,93,276,110,239,136,208,162,190,230,164,339,134,451,116,555,107,642,104"/>
+<area shape="rect" href="../../d6/d7e/libft_8h.html" title=" " alt="" coords="242,167,401,192"/>
+<area shape="poly" title=" " alt="" coords="656,121,400,167,399,162,655,116"/>
+<area shape="rect" href="../../d0/d09/command_8h.html" title=" " alt="" coords="639,167,801,192"/>
+<area shape="poly" title=" " alt="" coords="723,119,723,153,717,153,717,119"/>
+<area shape="rect" href="../../de/d26/environment_8h.html" title=" " alt="" coords="641,401,821,427"/>
+<area shape="poly" title=" " alt="" coords="754,116,788,135,804,149,815,165,824,175,835,180,846,185,854,194,856,212,848,241,797,355,781,377,762,395,758,391,777,373,792,352,843,240,850,211,849,196,843,189,833,185,821,179,811,168,800,152,785,140,752,121"/>
+<area shape="rect" href="../../d4/dfd/signal__manager_8h.html" title=" " alt="" coords="947,321,1147,346"/>
+<area shape="poly" title=" " alt="" coords="798,107,871,113,948,123,1014,140,1039,151,1057,165,1067,182,1074,200,1076,239,1070,277,1060,308,1055,307,1064,276,1071,239,1068,201,1062,184,1053,168,1037,156,1013,145,947,128,871,118,798,113"/>
+<area shape="rect" href="../../d8/d3c/util_8h.html" title=" " alt="" coords="923,167,1042,192"/>
+<area shape="poly" title=" " alt="" coords="763,116,928,160,926,166,762,121"/>
+<area shape="poly" title=" " alt="" coords="561,354,561,461,556,461,556,354"/>
+<area shape="poly" title=" " alt="" coords="487,350,156,407,155,402,487,344"/>
+<area shape="poly" title=" " alt="" coords="243,189,213,196,184,206,157,221,134,242,114,276,105,316,103,355,105,387,100,388,98,355,100,315,109,275,130,238,154,217,182,201,211,191,241,184"/>
+<area shape="rect" title=" " alt="" coords="243,240,306,265"/>
+<area shape="poly" title=" " alt="" coords="316,194,292,230,288,227,311,191"/>
+<area shape="rect" title=" " alt="" coords="331,240,405,265"/>
+<area shape="poly" title=" " alt="" coords="331,191,355,227,351,230,327,194"/>
+<area shape="rect" title=" " alt="" coords="429,240,496,265"/>
+<area shape="poly" title=" " alt="" coords="345,190,429,231,426,236,343,194"/>
+<area shape="rect" title=" " alt="" coords="144,240,219,265"/>
+<area shape="poly" title=" " alt="" coords="300,194,217,236,215,231,298,190"/>
+<area shape="poly" title=" " alt="" coords="690,194,651,214,613,242,590,271,573,302,569,299,585,268,609,238,648,209,688,190"/>
+<area shape="rect" href="../../d2/dcf/redirect__manager_8h.html" title=" " alt="" coords="622,240,770,265"/>
+<area shape="poly" title=" " alt="" coords="719,193,707,228,702,226,714,191"/>
+<area shape="rect" href="../../d9/db0/mini__state_8h.html" title=" " alt="" coords="679,321,782,346"/>
+<area shape="poly" title=" " alt="" coords="740,190,765,210,785,239,788,260,782,280,757,313,753,310,777,277,783,259,780,241,761,214,737,194"/>
+<area shape="poly" title=" " alt="" coords="743,190,774,210,805,238,845,296,876,358,899,416,914,461,909,462,894,418,871,360,840,299,801,242,771,214,740,194"/>
+<area shape="poly" title=" " alt="" coords="677,268,605,309,603,304,674,263"/>
+<area shape="poly" title=" " alt="" coords="704,264,722,307,718,309,699,267"/>
+<area shape="poly" title=" " alt="" coords="733,346,733,387,728,387,728,346"/>
+<area shape="poly" title=" " alt="" coords="704,429,600,472,598,467,702,424"/>
+<area shape="poly" title=" " alt="" coords="762,424,876,467,874,472,760,429"/>
+<area shape="rect" href="../../db/d16/config_8h.html" title=" " alt="" coords="876,548,961,573"/>
+<area shape="poly" title=" " alt="" coords="921,500,921,534,916,534,916,500"/>
+<area shape="poly" title=" " alt="" coords="1039,348,939,466,935,462,1035,344"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9b93e7663cca775fbe6c13fea90699f1" id="r_a9b93e7663cca775fbe6c13fea90699f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/command__functs__bin_8c.html#a9b93e7663cca775fbe6c13fea90699f1">bin_execute</a> (<a class="el" href="../../d0/d09/command_8h.html#a343be1e180affa75a4a3b4bb5b2225e3">t_command</a> *cmd, <a class="el" href="../../d3/d09/gen__list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *envioroment)</td></tr>
-<tr class="separator:a9b93e7663cca775fbe6c13fea90699f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28424d2afec3baf17003dc75676459d5" id="r_a28424d2afec3baf17003dc75676459d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/command__functs__bin_8c.html#a28424d2afec3baf17003dc75676459d5">bin_execute</a> (<a class="el" href="../../d0/d09/command_8h.html#a343be1e180affa75a4a3b4bb5b2225e3">t_command</a> *cmd, <a class="el" href="../../de/d26/environment_8h.html#a5ffba7f2f799b29cda5336b21a9990e6">t_environment</a> *environment)</td></tr>
+<tr class="separator:a28424d2afec3baf17003dc75676459d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9b93e7663cca775fbe6c13fea90699f1" name="a9b93e7663cca775fbe6c13fea90699f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b93e7663cca775fbe6c13fea90699f1">&#9670;&#160;</a></span>bin_execute()</h2>
+<a id="a28424d2afec3baf17003dc75676459d5" name="a28424d2afec3baf17003dc75676459d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28424d2afec3baf17003dc75676459d5">&#9670;&#160;</a></span>bin_execute()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void bin_execute </td>
+          <td class="memname">int bin_execute </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/d09/command_8h.html#a343be1e180affa75a4a3b4bb5b2225e3">t_command</a> *&#160;</td>
           <td class="paramname"><em>cmd</em>, </td>
@@ -167,8 +178,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d3/d09/gen__list_8h.html#a34f302945ae5df15b46569be320d7022">t_gen_list</a> *&#160;</td>
-          <td class="paramname"><em>envioroment</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../de/d26/environment_8h.html#a5ffba7f2f799b29cda5336b21a9990e6">t_environment</a> *&#160;</td>
+          <td class="paramname"><em>environment</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -180,10 +191,10 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dc/dc0/command__functs__bin_8c_a9b93e7663cca775fbe6c13fea90699f1_cgraph.png" border="0" usemap="#adc/dc0/command__functs__bin_8c_a9b93e7663cca775fbe6c13fea90699f1_cgraph" alt=""/></div>
-<map name="adc/dc0/command__functs__bin_8c_a9b93e7663cca775fbe6c13fea90699f1_cgraph" id="adc/dc0/command__functs__bin_8c_a9b93e7663cca775fbe6c13fea90699f1_cgraph">
+<div class="center"><img src="../../dc/dc0/command__functs__bin_8c_a28424d2afec3baf17003dc75676459d5_cgraph.png" border="0" usemap="#adc/dc0/command__functs__bin_8c_a28424d2afec3baf17003dc75676459d5_cgraph" alt=""/></div>
+<map name="adc/dc0/command__functs__bin_8c_a28424d2afec3baf17003dc75676459d5_cgraph" id="adc/dc0/command__functs__bin_8c_a28424d2afec3baf17003dc75676459d5_cgraph">
 <area shape="rect" title=" " alt="" coords="5,131,105,156"/>
-<area shape="rect" href="../../d8/d4a/environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="175,29,283,55"/>
+<area shape="rect" href="../../d8/d4a/environment__serialization__deserialization_8c.html#a103d5f5668d1f16aaad9e8e97d5aa7f8" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="175,29,283,55"/>
 <area shape="poly" title=" " alt="" coords="71,128,107,101,152,72,180,58,183,62,155,76,110,105,74,133"/>
 <area shape="rect" href="../../d2/d81/gen__link__list__serialization_8c.html#ad17a22acfef0c3126bdfe6637bf4ff4d" title="Convert a generic list into an array of strings." alt="" coords="353,47,488,87"/>
 <area shape="poly" title=" " alt="" coords="102,128,153,115,339,78,340,84,154,121,103,133"/>
@@ -191,7 +202,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="106,141,139,141,139,146,106,146"/>
 <area shape="rect" href="../../d9/d6d/gen__link__list__predicates_8c.html#a2f7e656dcfadd2f1e532fb6fbf295f77" title="Check if the list is empty." alt="" coords="159,180,299,205"/>
 <area shape="poly" title=" " alt="" coords="102,153,171,174,170,179,100,159"/>
-<area shape="rect" href="../../da/d5a/signal__manager_8c.html#a1e813db4dcd5f64bada3b68ae2f2adb8" title="Restores the original signal configuration." alt="" coords="169,229,290,255"/>
+<area shape="rect" href="../../da/d5a/signal__manager_8c.html#a1e813db4dcd5f64bada3b68ae2f2adb8" title="Restores default signal handling." alt="" coords="169,229,290,255"/>
 <area shape="poly" title=" " alt="" coords="72,154,108,184,155,214,171,222,169,227,152,219,105,188,69,158"/>
 <area shape="poly" title=" " alt="" coords="284,46,340,54,339,59,283,52"/>
 <area shape="rect" href="../../d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="536,5,695,31"/>

@@ -1,13 +1,14 @@
 <map id="gen_list_peek_top" name="gen_list_peek_top">
-<area shape="rect" id="Node000001" title=" " alt="" coords="383,55,523,80"/>
-<area shape="rect" id="Node000002" href="$d3/dbb/command__queries_8c.html#ab2cd9b8993b0aeeefa903952bfb6ad46" title=" " alt="" coords="176,5,335,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,54,306,33,308,28,389,49"/>
-<area shape="rect" id="Node000004" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="203,55,307,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="369,70,308,70,308,65,369,65"/>
-<area shape="rect" id="Node000006" href="$d5/db5/command__functs__builtin__a_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="194,104,317,129"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="389,86,308,107,306,101,388,81"/>
-<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="5,5,128,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,21,128,21,128,15,162,15"/>
-<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="39,55,94,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="190,70,94,70,94,65,190,65"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="485,56,625,81"/>
+<area shape="rect" id="Node000002" href="$de/d8a/command__operations_8c.html#ad0e71bcd54e4d0b86b88ac322e5b7a95" title="Executes the command with the given environment." alt="" coords="296,5,420,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="491,55,407,33,409,28,493,50"/>
+<area shape="rect" id="Node000003" href="$d7/d11/executer_8c.html#ace8a67c98248189482ba249d14142e05" title=" " alt="" coords="117,31,221,56"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="471,66,221,49,222,44,471,61"/>
+<area shape="rect" id="Node000005" href="$d3/dbb/command__queries_8c.html#ab2cd9b8993b0aeeefa903952bfb6ad46" title=" " alt="" coords="279,107,437,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="493,87,409,109,407,104,491,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="282,31,222,39,221,34,282,26"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="104,46,60,46,60,41,104,41"/>
+<area shape="rect" id="Node000006" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title=" " alt="" coords="108,107,231,132"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="265,122,231,122,231,117,265,117"/>
 </map>

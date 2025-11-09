@@ -3,12 +3,12 @@ var indexSectionsWithContent =
   0: "abcdefghilmnoprstuv📚",
   1: "s",
   2: "cefghlmprsu",
-  3: "bcdefghilmoprsuv",
-  4: "acfhinprstv",
+  3: "abcdefghilmoprsuv",
+  4: "abcefhilnprstv",
   5: "t",
   6: "e",
   7: "cdeglmnprt",
-  8: "bcehlprs",
+  8: "bcelprs",
   9: "dm"
 };
 

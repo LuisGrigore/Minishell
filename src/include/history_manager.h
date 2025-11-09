@@ -4,22 +4,28 @@
 #include <stdbool.h>
 
 /**
- * Adds a command line to the shell history, with minimal validation.
+ * @brief Adds a valid command line to the shell history
  *
- * The function first checks the given line:
- *   - Filters out empty or whitespace-only commands.
- *   - Avoids adding lines starting/ending with `|`.
- *   - Ensures that unclosed quotes are not stored.
+ * Validates and stores command lines in the shell history for later recall.
+ * Performs the following validations before storing:
+ *   - Rejects empty or whitespace-only commands
+ *   - Rejects lines starting/ending with pipe operator
+ *   - Rejects commands with unclosed quotes
+ *   - Removes duplicate consecutive entries
  *
- * If the command passes these checks, it is appended to the history
- * using `add_history()`. Otherwise, nothing is added.
+ * @param line The command line to store in history
+ * @return true if stored successfully, false if rejected
  *
- * @param line A null-terminated string containing the command to be stored.
- *
- * @return true if the command was successfully added to the history,
- *         false if it was rejected.
+ * @see history_clean
  */
 bool history_add(char *line);
+
+/**
+ * @brief Cleans up the history manager resources
+ *
+ * Frees all allocated memory associated with the command history
+ * and resets the history state. Should be called before the shell exits.
+ */
 void history_clean(void);
 
 #endif

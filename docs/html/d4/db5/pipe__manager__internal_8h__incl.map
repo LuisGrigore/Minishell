@@ -1,15 +1,16 @@
 <map id="src/pipe_manager/pipe_manager_internal.h" name="src/pipe_manager/pipe_manager_internal.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="173,5,343,45"/>
-<area shape="rect" id="Node000002" href="$db/db2/pipe__manager_8h.html" title=" " alt="" coords="13,93,202,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,48,143,89,141,84,221,43"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="227,93,289,119"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="261,46,261,79,255,79,255,46"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="314,93,389,119"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="282,44,328,82,325,86,279,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="239,5,410,45"/>
+<area shape="rect" id="Node000002" href="$db/db2/pipe__manager_8h.html" title=" " alt="" coords="79,93,269,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="290,48,210,89,207,84,287,43"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="293,93,356,119"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="327,46,327,79,322,79,322,46"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="381,93,455,119"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="349,44,395,82,392,86,346,48"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,167,76,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,121,63,158,59,155,94,117"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,121,76,162,73,158,151,116"/>
 <area shape="rect" id="Node000004" href="$d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="101,167,247,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="120,117,156,155,152,158,116,121"/>
-<area shape="rect" id="Node000005" href="$db/d16/config_8h.html" title=" " alt="" coords="131,240,217,265"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="177,192,177,226,171,226,171,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="177,119,177,153,171,153,171,119"/>
+<area shape="rect" id="Node000005" href="$db/d16/config_8h.html" title=" " alt="" coords="186,240,271,265"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="204,117,236,136,250,149,262,166,266,182,264,200,249,230,244,228,259,198,261,183,257,168,246,153,233,140,202,121"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="185,191,214,228,209,231,181,194"/>
 </map>

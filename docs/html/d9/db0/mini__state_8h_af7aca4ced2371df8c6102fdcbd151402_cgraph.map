@@ -1,0 +1,11 @@
+<map id="mini_state_destroy" name="mini_state_destroy">
+<area shape="rect" id="Node000001" title="Destroys a shell state instance and frees all associated resources." alt="" coords="5,31,152,56"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a742dcf1005765c9baea22dacc6d3c0aa" title="Destroy the environment instance and free all resources." alt="" coords="200,31,303,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,41,187,41,187,46,152,46"/>
+<area shape="rect" id="Node000003" href="$dd/da9/envioroment__internal_8c.html#a566453675d237f5c5986b669cea3e6fc" title=" " alt="" coords="351,5,540,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,34,337,30,337,35,303,39"/>
+<area shape="rect" id="Node000004" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a4acf718ea226522128b6f12296f7c821" title="Destroy the entire list and its nodes." alt="" coords="381,55,510,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="303,47,367,55,367,60,303,52"/>
+<area shape="rect" id="Node000005" href="$d2/d73/gen__link__list__retrieval_8c.html#a452a14292622fab76140e1e9ca0a57e7" title="Remove the first node of the list and return its value." alt="" coords="588,55,731,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="510,65,574,65,574,70,510,70"/>
+</map>

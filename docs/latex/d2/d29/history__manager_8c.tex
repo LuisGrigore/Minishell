@@ -12,7 +12,9 @@ Include dependency graph for history\+\_\+manager.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{history__manager_8c_ae4c6832c0cbcf2b08c46bb98e0646bed}{history\+\_\+add}} (char \texorpdfstring{$\ast$}{*}line)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds a valid command line to the shell history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{history__manager_8c_a2b5d2f0a64b689bb2dfdda69601229ed}{history\+\_\+clean}} (void)
+\begin{DoxyCompactList}\small\item\em Cleans up the history manager resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -22,29 +24,45 @@ bool \mbox{\hyperlink{history__manager_8c_ae4c6832c0cbcf2b08c46bb98e0646bed}{his
 \doxysubsubsection{\texorpdfstring{history\_add()}{history\_add()}}
 {\footnotesize\ttfamily bool history\+\_\+add (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line }\end{DoxyParamCaption})}
 
-Adds a command line to the shell history, with minimal validation.
 
-The function first checks the given line\+:
+
+Adds a valid command line to the shell history. 
+
+Validates and stores command lines in the shell history for later recall. Performs the following validations before storing\+:
 \begin{DoxyItemize}
-\item Filters out empty or whitespace-\/only commands.
-\item Avoids adding lines starting/ending with {\ttfamily \texorpdfstring{$\vert$}{|}}.
-\item Ensures that unclosed quotes are not stored.
+\item Rejects empty or whitespace-\/only commands
+\item Rejects lines starting/ending with pipe operator
+\item Rejects commands with unclosed quotes
+\item Removes duplicate consecutive entries
 \end{DoxyItemize}
-
-If the command passes these checks, it is appended to the history using {\ttfamily add\+\_\+history()}. Otherwise, nothing is added.
 
 
 \begin{DoxyParams}{Parameters}
-{\em line} & A null-\/terminated string containing the command to be stored.\\
+{\em line} & The command line to store in history \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the command was successfully added to the history, false if it was rejected. 
+true if stored successfully, false if rejected
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+\begin{DoxySeeAlso}{See also}
+\doxylink{history__manager_8h_a2b5d2f0a64b689bb2dfdda69601229ed}{history\+\_\+clean} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=231pt]{d2/d29/history__manager_8c_ae4c6832c0cbcf2b08c46bb98e0646bed_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{history__manager_8c_a2b5d2f0a64b689bb2dfdda69601229ed}\label{history__manager_8c_a2b5d2f0a64b689bb2dfdda69601229ed} 
+\index{history\_manager.c@{history\_manager.c}!history\_clean@{history\_clean}}
+\index{history\_clean@{history\_clean}!history\_manager.c@{history\_manager.c}}
+\doxysubsubsection{\texorpdfstring{history\_clean()}{history\_clean()}}
+{\footnotesize\ttfamily void history\+\_\+clean (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Cleans up the history manager resources. 
+
+Frees all allocated memory associated with the command history and resets the history state. Should be called before the shell exits. 

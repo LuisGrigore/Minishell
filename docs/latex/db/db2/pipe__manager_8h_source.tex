@@ -10,7 +10,7 @@
 \DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/10/03\ 15:38:45\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/10/06\ 14:02:59\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/11/09\ 23:36:14\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
 \DoxyCodeLine{00012\ }
@@ -19,25 +19,20 @@
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ms__status__codes_8h}{ms\_status\_codes.h}}"{}}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ PIPE\_MANAGER\_STATUS\_BEGIN\ 700}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../config.h"{}}}
+\DoxyCodeLine{00019\ }
 \DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d}{e\_pipe\_manager\_status\_code}}}
-\DoxyCodeLine{00022\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11dad235aba9f490bd304930f98407d1fe01}{PIPE\_MANAGER\_IS\_NULL}}\ =\ \mbox{\hyperlink{pipe__manager_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f}{PIPE\_MANAGER\_STATUS\_BEGIN}},}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11da70af0ad2bd7af95e90ea0252fa25ff6c}{PIPE\_MANAGER\_MALFORMED}}}
-\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{pipe__manager_8h_a3645f9efef26f43573896c238d631bb4}{t\_pipe\_manager\_status\_code}};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{s\_pipe\_manager}}\ \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00038\ \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *\mbox{\hyperlink{pipe__manager_8h_a325391200230503859957f71f9b41ddc}{pipe\_manager\_init}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{pipe__manager__internal_8h_a39790f2453fadce78bffb14c559720ad}{n\_cmds}});}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}{pipe\_manager\_destroy}}(\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *pm);}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe__manager_8h_a8dff8bddc285e799e220d90832667165}{pipe\_manager\_setup\_command}}(\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *pm,\ \textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00063\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe__manager_8h_ae1343f55a733560642c093c92e51f355}{pipe\_manager\_close\_all}}(\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *pm);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{s\_pipe\_manager}}\ \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00042\ \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *\mbox{\hyperlink{pipe__manager_8h_a325391200230503859957f71f9b41ddc}{pipe\_manager\_init}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{pipe__manager__internal_8h_a39790f2453fadce78bffb14c559720ad}{n\_cmds}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}{pipe\_manager\_destroy}}(\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *pm);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe__manager_8h_a8dff8bddc285e799e220d90832667165}{pipe\_manager\_setup\_command}}(\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *pm,\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe__manager_8h_ae1343f55a733560642c093c92e51f355}{pipe\_manager\_close\_all}}(\mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{t\_pipe\_manager}}\ *pm);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

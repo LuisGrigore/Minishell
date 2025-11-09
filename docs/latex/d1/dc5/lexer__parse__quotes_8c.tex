@@ -1,0 +1,138 @@
+\doxysection{src/lexer/lexer\+\_\+parse\+\_\+quotes.c File Reference}
+\hypertarget{lexer__parse__quotes_8c}{}\label{lexer__parse__quotes_8c}\index{src/lexer/lexer\_parse\_quotes.c@{src/lexer/lexer\_parse\_quotes.c}}
+{\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include "{}../include/environment.\+h"{}}\newline
+Include dependency graph for lexer\+\_\+parse\+\_\+quotes.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/lexer__parse__quotes_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lexer__parse__quotes_8c_a8a49b0534690310f2eb3ac6a0c6b1206}{parse\+\_\+single\+\_\+quote}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st)
+\item 
+int \mbox{\hyperlink{lexer__parse__quotes_8c_a4fe23dc409b7a530c9740190ddb93630}{parse\+\_\+double\+\_\+quote}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st)
+\item 
+int \mbox{\hyperlink{lexer__parse__quotes_8c_a9a970a9a020dff8f6d56ad2a27cf0704}{parse\+\_\+backslash\+\_\+escape}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st)
+\item 
+int \mbox{\hyperlink{lexer__parse__quotes_8c_aa130f54fb2462f0e528000dccc79c5bd}{handle\+\_\+loop\+\_\+char}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st)
+\item 
+int \mbox{\hyperlink{lexer__parse__quotes_8c_a886300cd0b0601d0c79f04f79bdcd5a5}{parse\+\_\+word\+\_\+loop}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lexer__parse__quotes_8c_aa130f54fb2462f0e528000dccc79c5bd}\label{lexer__parse__quotes_8c_aa130f54fb2462f0e528000dccc79c5bd} 
+\index{lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}!handle\_loop\_char@{handle\_loop\_char}}
+\index{handle\_loop\_char@{handle\_loop\_char}!lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}}
+\doxysubsubsection{\texorpdfstring{handle\_loop\_char()}{handle\_loop\_char()}}
+{\footnotesize\ttfamily int handle\+\_\+loop\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_aa130f54fb2462f0e528000dccc79c5bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_aa130f54fb2462f0e528000dccc79c5bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__quotes_8c_a9a970a9a020dff8f6d56ad2a27cf0704}\label{lexer__parse__quotes_8c_a9a970a9a020dff8f6d56ad2a27cf0704} 
+\index{lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}!parse\_backslash\_escape@{parse\_backslash\_escape}}
+\index{parse\_backslash\_escape@{parse\_backslash\_escape}!lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}}
+\doxysubsubsection{\texorpdfstring{parse\_backslash\_escape()}{parse\_backslash\_escape()}}
+{\footnotesize\ttfamily int parse\+\_\+backslash\+\_\+escape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a9a970a9a020dff8f6d56ad2a27cf0704_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a9a970a9a020dff8f6d56ad2a27cf0704_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__quotes_8c_a4fe23dc409b7a530c9740190ddb93630}\label{lexer__parse__quotes_8c_a4fe23dc409b7a530c9740190ddb93630} 
+\index{lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}!parse\_double\_quote@{parse\_double\_quote}}
+\index{parse\_double\_quote@{parse\_double\_quote}!lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}}
+\doxysubsubsection{\texorpdfstring{parse\_double\_quote()}{parse\_double\_quote()}}
+{\footnotesize\ttfamily int parse\+\_\+double\+\_\+quote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a4fe23dc409b7a530c9740190ddb93630_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a4fe23dc409b7a530c9740190ddb93630_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__quotes_8c_a8a49b0534690310f2eb3ac6a0c6b1206}\label{lexer__parse__quotes_8c_a8a49b0534690310f2eb3ac6a0c6b1206} 
+\index{lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}!parse\_single\_quote@{parse\_single\_quote}}
+\index{parse\_single\_quote@{parse\_single\_quote}!lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}}
+\doxysubsubsection{\texorpdfstring{parse\_single\_quote()}{parse\_single\_quote()}}
+{\footnotesize\ttfamily int parse\+\_\+single\+\_\+quote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a8a49b0534690310f2eb3ac6a0c6b1206_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a8a49b0534690310f2eb3ac6a0c6b1206_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__quotes_8c_a886300cd0b0601d0c79f04f79bdcd5a5}\label{lexer__parse__quotes_8c_a886300cd0b0601d0c79f04f79bdcd5a5} 
+\index{lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}!parse\_word\_loop@{parse\_word\_loop}}
+\index{parse\_word\_loop@{parse\_word\_loop}!lexer\_parse\_quotes.c@{lexer\_parse\_quotes.c}}
+\doxysubsubsection{\texorpdfstring{parse\_word\_loop()}{parse\_word\_loop()}}
+{\footnotesize\ttfamily int parse\+\_\+word\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc5/lexer__parse__quotes_8c_a886300cd0b0601d0c79f04f79bdcd5a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{d1/dc5/lexer__parse__quotes_8c_a886300cd0b0601d0c79f04f79bdcd5a5_icgraph}
+\end{center}
+\end{figure}

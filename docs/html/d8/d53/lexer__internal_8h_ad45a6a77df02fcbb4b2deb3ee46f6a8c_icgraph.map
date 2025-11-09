@@ -1,11 +1,25 @@
 <map id="create_token" name="create_token">
-<area shape="rect" id="Node000001" title=" " alt="" coords="561,5,668,31"/>
-<area shape="rect" id="Node000002" href="$d8/d82/lexer__tokenize_8c.html#ae0425f73dab89cafb7d7f3051b66b979" title=" " alt="" coords="397,5,513,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="548,21,513,21,513,15,548,15"/>
-<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#acb7fb50758c9c06855f6773f2bf296c3" title=" " alt="" coords="260,5,349,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,21,350,21,350,15,384,15"/>
-<area shape="rect" id="Node000004" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="108,5,212,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,21,212,21,212,15,247,15"/>
-<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1367,56,1473,81"/>
+<area shape="rect" id="Node000002" href="$d5/d83/lexer__operators_8c.html#abc84ef1e9fe1c87d6b1b0337fede7b90" title=" " alt="" coords="1144,5,1319,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1358,55,1279,33,1280,28,1359,50"/>
+<area shape="rect" id="Node000010" href="$d5/d83/lexer__operators_8c.html#a68e78c10b56308620a43718d944a1689" title=" " alt="" coords="941,56,1084,81"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1353,71,1084,71,1084,66,1353,66"/>
+<area shape="rect" id="Node000011" href="$d5/d83/lexer__operators_8c.html#ab49cdcd97806f90e844b6adce1a5c7b2" title=" " alt="" coords="1160,107,1303,132"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1359,88,1280,109,1279,104,1358,82"/>
+<area shape="rect" id="Node000003" href="$d1/dfa/lexer__process_8c.html#a7cfd3e0bba4f716e96d1045e59c4ea18" title=" " alt="" coords="929,7,1096,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1130,21,1096,21,1096,16,1130,16"/>
+<area shape="rect" id="Node000004" href="$d1/dfa/lexer__process_8c.html#a8968e8da19414d88e2bce3436ead0cba" title=" " alt="" coords="731,56,881,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="946,38,861,59,859,53,945,33"/>
+<area shape="rect" id="Node000005" href="$d8/d82/lexer__tokenize_8c.html#acd2ee39ae33125542481c28135f44c40" title=" " alt="" coords="561,56,683,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="717,71,683,71,683,66,717,66"/>
+<area shape="rect" id="Node000006" href="$d8/d82/lexer__tokenize_8c.html#ab562ee9a2e025ca53828502196763bbc" title=" " alt="" coords="397,56,513,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="547,71,514,71,514,66,547,66"/>
+<area shape="rect" id="Node000007" href="$d2/d72/parser_8c.html#a6f550f89c332f75aeaca78125799e641" title=" " alt="" coords="260,56,349,81"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="384,71,350,71,350,66,384,66"/>
+<area shape="rect" id="Node000008" href="$d7/d11/executer_8c.html#ace8a67c98248189482ba249d14142e05" title=" " alt="" coords="108,56,212,81"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="247,71,212,71,212,66,247,66"/>
+<area shape="rect" id="Node000009" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,56,60,81"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="94,71,60,71,60,66,94,66"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="927,71,881,71,881,66,927,66"/>
+<area shape="poly" id="edge12_Node000011_Node000004" title=" " alt="" coords="1146,118,1042,110,929,97,861,84,862,79,930,91,1043,104,1147,112"/>
 </map>

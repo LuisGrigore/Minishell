@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 22:42:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:24:22 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int execute_line(char *line, t_mini_state *mini_state)
     int exit_status;
 	t_environment *env;
 
-	env = mini_state_get_environment_vars(mini_state);
+	env = mini_state_get_environment(mini_state);
     exit_status = 0;
 	commands = gen_list_create();
 	if (!commands)

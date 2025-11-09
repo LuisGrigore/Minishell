@@ -1,8 +1,7 @@
 \doxysection{src/include/signal\+\_\+manager.h File Reference}
 \hypertarget{signal__manager_8h}{}\label{signal__manager_8h}\index{src/include/signal\_manager.h@{src/include/signal\_manager.h}}
 {\ttfamily \#include "{}ms\+\_\+status\+\_\+codes.\+h"{}}\newline
-Include dependency graph for signal\+\_\+manager.\+h\+:
-\nopagebreak
+Include dependency graph for signal\+\_\+manager.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,11 +19,11 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{signal__manager_8h_a2a108e74d973e7c0823ce0a3eacc4635}{signals\+\_\+init\+\_\+interactive}} (void)
-\begin{DoxyCompactList}\small\item\em Configures signals for the shell\textquotesingle{}s interactive mode. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets up signal handlers for interactive shell mode. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{signal__manager_8h_a4ee72b4356f8f0e63d6c2d32afd19705}{signals\+\_\+init\+\_\+heredoc}} (void)
-\begin{DoxyCompactList}\small\item\em Configures signals for heredoc mode. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets up signal handlers for heredoc input mode. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{signal__manager_8h_a1e813db4dcd5f64bada3b68ae2f2adb8}{signals\+\_\+restore}} (void)
-\begin{DoxyCompactList}\small\item\em Restores the original signal configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Restores default signal handling. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -36,9 +35,22 @@ int \mbox{\hyperlink{signal__manager_8h_a1e813db4dcd5f64bada3b68ae2f2adb8}{signa
 
 
 
-Configures signals for heredoc mode. 
+Sets up signal handlers for heredoc input mode. 
 
-This function is used when reading a heredoc. It typically handles SIGINT to cancel the heredoc input without affecting the main shell. \Hypertarget{signal__manager_8h_a2a108e74d973e7c0823ce0a3eacc4635}\label{signal__manager_8h_a2a108e74d973e7c0823ce0a3eacc4635} 
+Configures special signal handling while reading heredoc input\+:
+\begin{DoxyItemize}
+\item SIGINT (Ctrl+C)\+: Cancels heredoc input
+\item SIGQUIT (Ctrl+)\+: Ignored
+\item SIGTSTP (Ctrl+Z)\+: Ignored
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+0 on success, error code on failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{ms__status__codes_8h}{ms\+\_\+status\+\_\+codes.\+h} 
+\end{DoxySeeAlso}
+\Hypertarget{signal__manager_8h_a2a108e74d973e7c0823ce0a3eacc4635}\label{signal__manager_8h_a2a108e74d973e7c0823ce0a3eacc4635} 
 \index{signal\_manager.h@{signal\_manager.h}!signals\_init\_interactive@{signals\_init\_interactive}}
 \index{signals\_init\_interactive@{signals\_init\_interactive}!signal\_manager.h@{signal\_manager.h}}
 \doxysubsubsection{\texorpdfstring{signals\_init\_interactive()}{signals\_init\_interactive()}}
@@ -46,9 +58,22 @@ This function is used when reading a heredoc. It typically handles SIGINT to can
 
 
 
-Configures signals for the shell\textquotesingle{}s interactive mode. 
+Sets up signal handlers for interactive shell mode. 
 
-This function is used when the shell is waiting for user input. Typically, it ignores SIGQUIT and handles SIGINT to interrupt the current line without exiting the shell. Here is the caller graph for this function\+:
+Configures signal handling for the main shell prompt\+:
+\begin{DoxyItemize}
+\item SIGINT (Ctrl+C)\+: Interrupts current line, displays new prompt
+\item SIGQUIT (Ctrl+)\+: Ignored
+\item SIGTSTP (Ctrl+Z)\+: Ignored
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+0 on success, error code on failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{ms__status__codes_8h}{ms\+\_\+status\+\_\+codes.\+h} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -64,9 +89,22 @@ This function is used when the shell is waiting for user input. Typically, it ig
 
 
 
-Restores the original signal configuration. 
+Restores default signal handling. 
 
-This function is used to return the shell to its default signal behavior after having changed the configuration for execution, heredoc, or interactive mode. Here is the caller graph for this function\+:
+Resets signal handlers to their original configuration. Should be called\+:
+\begin{DoxyItemize}
+\item Before executing external commands
+\item After heredoc input is complete
+\item Before shell exit
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+0 on success, error code on failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{ms__status__codes_8h}{ms\+\_\+status\+\_\+codes.\+h} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}

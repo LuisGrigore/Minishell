@@ -14,11 +14,13 @@ Include dependency graph for path\+\_\+utils.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{path__utils_8c_a5785980ed2eeb3f96606b8ff04163808}{ft\+\_\+ispace}} (char c)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a character is whitespace. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{path__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061}{special\+\_\+char}} (char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}c)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks for special shell characters. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{path__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c}{get\+\_\+next\+\_\+argument}} (char \texorpdfstring{$\ast$}{*}c, char \texorpdfstring{$\ast$}{*}str)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Extracts the next command argument. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{path__utils_8c_a0f0deb747a1a26044c5adc062d8c2123}{simple\+\_\+split}} (char \texorpdfstring{$\ast$}{*}arg, char c)
+\begin{DoxyCompactList}\small\item\em Basic string splitting function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -28,17 +30,86 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{path__utils_8c_a57f8722a65ce8e8
 \doxysubsubsection{\texorpdfstring{ft\_ispace()}{ft\_ispace()}}
 {\footnotesize\ttfamily int ft\+\_\+ispace (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
 
+
+
+Checks if a character is whitespace. 
+
+Tests for space, tab, newline, carriage return, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if whitespace, 0 otherwise 
+\end{DoxyReturn}
 \Hypertarget{path__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c}\label{path__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c} 
 \index{path\_utils.c@{path\_utils.c}!get\_next\_argument@{get\_next\_argument}}
 \index{get\_next\_argument@{get\_next\_argument}!path\_utils.c@{path\_utils.c}}
 \doxysubsubsection{\texorpdfstring{get\_next\_argument()}{get\_next\_argument()}}
 {\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} get\+\_\+next\+\_\+argument (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{c,  }\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Extracts the next command argument. 
+
+Parses the input string to find the next complete argument, handling quotes and escapes properly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Pointer to store the last character processed \\
+\hline
+{\em str} & Input string to parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next argument or NULL if no more arguments 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=296pt]{df/df0/path__utils_8c_a57f8722a65ce8e86c5486e4a21b7506c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{path__utils_8c_a0f0deb747a1a26044c5adc062d8c2123}\label{path__utils_8c_a0f0deb747a1a26044c5adc062d8c2123} 
+\index{path\_utils.c@{path\_utils.c}!simple\_split@{simple\_split}}
+\index{simple\_split@{simple\_split}!path\_utils.c@{path\_utils.c}}
+\doxysubsubsection{\texorpdfstring{simple\_split()}{simple\_split()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} simple\+\_\+split (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{arg,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Basic string splitting function. 
+
+Splits a string on a delimiter character. Unlike ft\+\_\+split2, this version doesn\textquotesingle{}t handle quotes specially.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & String to split \\
+\hline
+{\em c} & Delimiter character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of strings, NULL-\/terminated, or NULL on error 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{df/df0/path__utils_8c_a0f0deb747a1a26044c5adc062d8c2123_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/df0/path__utils_8c_a0f0deb747a1a26044c5adc062d8c2123_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{path__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061}\label{path__utils_8c_a0a3aaf9949360fa6bba7d3a64e5a0061} 
@@ -47,7 +118,24 @@ Here is the call graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{special\_char()}{special\_char()}}
 {\footnotesize\ttfamily int special\+\_\+char (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char \texorpdfstring{$\ast$}{*}}]{c }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Checks for special shell characters. 
+
+Detects characters that have special meaning in shell syntax like pipes, redirections, quotes, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to check \\
+\hline
+{\em c} & Character found if special character exists \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if special character found, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

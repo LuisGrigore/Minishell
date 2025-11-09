@@ -128,13 +128,13 @@ Include dependency graph for signal_manager.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2a108e74d973e7c0823ce0a3eacc4635" id="r_a2a108e74d973e7c0823ce0a3eacc4635"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5a/signal__manager_8c.html#a2a108e74d973e7c0823ce0a3eacc4635">signals_init_interactive</a> (void)</td></tr>
-<tr class="memdesc:a2a108e74d973e7c0823ce0a3eacc4635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures signals for the shell's interactive mode.  <br /></td></tr>
+<tr class="memdesc:a2a108e74d973e7c0823ce0a3eacc4635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up signal handlers for interactive shell mode.  <br /></td></tr>
 <tr class="separator:a2a108e74d973e7c0823ce0a3eacc4635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee72b4356f8f0e63d6c2d32afd19705" id="r_a4ee72b4356f8f0e63d6c2d32afd19705"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5a/signal__manager_8c.html#a4ee72b4356f8f0e63d6c2d32afd19705">signals_init_heredoc</a> (void)</td></tr>
-<tr class="memdesc:a4ee72b4356f8f0e63d6c2d32afd19705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures signals for heredoc mode.  <br /></td></tr>
+<tr class="memdesc:a4ee72b4356f8f0e63d6c2d32afd19705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up signal handlers for heredoc input mode.  <br /></td></tr>
 <tr class="separator:a4ee72b4356f8f0e63d6c2d32afd19705"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e813db4dcd5f64bada3b68ae2f2adb8" id="r_a1e813db4dcd5f64bada3b68ae2f2adb8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5a/signal__manager_8c.html#a1e813db4dcd5f64bada3b68ae2f2adb8">signals_restore</a> (void)</td></tr>
-<tr class="memdesc:a1e813db4dcd5f64bada3b68ae2f2adb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the original signal configuration.  <br /></td></tr>
+<tr class="memdesc:a1e813db4dcd5f64bada3b68ae2f2adb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores default signal handling.  <br /></td></tr>
 <tr class="separator:a1e813db4dcd5f64bada3b68ae2f2adb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -154,8 +154,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures signals for heredoc mode. </p>
-<p>This function is used when reading a heredoc. It typically handles SIGINT to cancel the heredoc input without affecting the main shell. </p>
+<p>Sets up signal handlers for heredoc input mode. </p>
+<p>Configures special signal handling while reading heredoc input:</p><ul>
+<li>SIGINT (Ctrl+C): Cancels heredoc input</li>
+<li>SIGQUIT (Ctrl+): Ignored</li>
+<li>SIGTSTP (Ctrl+Z): Ignored</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, error code on failure </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a> </dd></dl>
 
 </div>
 </div>
@@ -175,14 +181,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures signals for the shell's interactive mode. </p>
-<p>This function is used when the shell is waiting for user input. Typically, it ignores SIGQUIT and handles SIGINT to interrupt the current line without exiting the shell. </p>
+<p>Sets up signal handlers for interactive shell mode. </p>
+<p>Configures signal handling for the main shell prompt:</p><ul>
+<li>SIGINT (Ctrl+C): Interrupts current line, displays new prompt</li>
+<li>SIGQUIT (Ctrl+): Ignored</li>
+<li>SIGTSTP (Ctrl+Z): Ignored</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, error code on failure </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a> </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d5a/signal__manager_8c_a2a108e74d973e7c0823ce0a3eacc4635_icgraph.png" border="0" usemap="#ada/d5a/signal__manager_8c_a2a108e74d973e7c0823ce0a3eacc4635_icgraph" alt=""/></div>
 <map name="ada/d5a/signal__manager_8c_a2a108e74d973e7c0823ce0a3eacc4635_icgraph" id="ada/d5a/signal__manager_8c_a2a108e74d973e7c0823ce0a3eacc4635_icgraph">
-<area shape="rect" title="Configures signals for the shell&#39;s interactive mode." alt="" coords="108,5,281,31"/>
+<area shape="rect" title="Sets up signal handlers for interactive shell mode." alt="" coords="108,5,281,31"/>
 <area shape="rect" href="../../d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
@@ -206,15 +218,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Restores the original signal configuration. </p>
-<p>This function is used to return the shell to its default signal behavior after having changed the configuration for execution, heredoc, or interactive mode. </p>
+<p>Restores default signal handling. </p>
+<p>Resets signal handlers to their original configuration. Should be called:</p><ul>
+<li>Before executing external commands</li>
+<li>After heredoc input is complete</li>
+<li>Before shell exit</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, error code on failure </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a> </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d5a/signal__manager_8c_a1e813db4dcd5f64bada3b68ae2f2adb8_icgraph.png" border="0" usemap="#ada/d5a/signal__manager_8c_a1e813db4dcd5f64bada3b68ae2f2adb8_icgraph" alt=""/></div>
 <map name="ada/d5a/signal__manager_8c_a1e813db4dcd5f64bada3b68ae2f2adb8_icgraph" id="ada/d5a/signal__manager_8c_a1e813db4dcd5f64bada3b68ae2f2adb8_icgraph">
-<area shape="rect" title="Restores the original signal configuration." alt="" coords="153,5,275,31"/>
-<area shape="rect" href="../../dc/dc0/command__functs__bin_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="5,5,105,31"/>
+<area shape="rect" title="Restores default signal handling." alt="" coords="153,5,275,31"/>
+<area shape="rect" href="../../dc/dc0/command__functs__bin_8c.html#a28424d2afec3baf17003dc75676459d5" title=" " alt="" coords="5,5,105,31"/>
 <area shape="poly" title=" " alt="" coords="140,21,106,21,106,15,140,15"/>
 </map>
 </div>

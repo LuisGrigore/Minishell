@@ -1,0 +1,11 @@
+<map id="env_serialize" name="env_serialize">
+<area shape="rect" id="Node000001" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="5,55,113,80"/>
+<area shape="rect" id="Node000002" href="$d2/d81/gen__link__list__serialization_8c.html#ad17a22acfef0c3126bdfe6637bf4ff4d" title="Convert a generic list into an array of strings." alt="" coords="161,47,296,87"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,65,147,65,147,70,113,70"/>
+<area shape="rect" id="Node000003" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="344,5,503,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="295,48,359,32,360,37,297,53"/>
+<area shape="rect" id="Node000004" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="354,55,493,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="296,65,340,65,340,70,296,70"/>
+<area shape="rect" id="Node000005" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="354,104,493,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="297,82,360,98,359,103,295,87"/>
+</map>

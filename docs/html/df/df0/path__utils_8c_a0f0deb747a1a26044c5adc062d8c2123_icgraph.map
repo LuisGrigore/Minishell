@@ -1,0 +1,11 @@
+<map id="simple_split" name="simple_split">
+<area shape="rect" id="Node000001" title="Basic string splitting function." alt="" coords="467,31,568,56"/>
+<area shape="rect" id="Node000002" href="$d8/d4a/environment__serialization__deserialization_8c.html#afd1bf9663998daee10331bdea7d750a5" title="Convert a string array into an environment instance." alt="" coords="295,5,419,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="453,36,419,30,419,25,453,31"/>
+<area shape="rect" id="Node000005" href="$d5/db5/command__functs__builtin__a_8c.html#a267568dbf2f34e6d69e0e6cec93d4723" title=" " alt="" coords="295,55,418,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="453,56,419,61,418,56,452,50"/>
+<area shape="rect" id="Node000003" href="$d5/df2/mini__state__lifecycle_8c.html#aea6c6e2afc0fee418ff6183c25d56319" title="Creates a new shell state instance." alt="" coords="108,5,247,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="281,21,247,21,247,15,281,15"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

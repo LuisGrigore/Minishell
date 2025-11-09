@@ -1,0 +1,7 @@
+<map id="exit_execute" name="exit_execute">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,111,56"/>
+<area shape="rect" id="Node000002" href="$d2/d49/gen__link__list__get__size_8c.html#a88eccd5115040464ae1ab2ea4f6fb565" title="Gets the current size of the list." alt="" coords="163,5,297,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,33,149,27,149,33,111,38"/>
+<area shape="rect" id="Node000003" href="$d2/d73/gen__link__list__retrieval_8c.html#a452a14292622fab76140e1e9ca0a57e7" title="Remove the first node of the list and return its value." alt="" coords="159,55,301,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,48,145,53,145,58,111,53"/>
+</map>

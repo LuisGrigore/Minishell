@@ -9,51 +9,43 @@
 \DoxyCodeLine{00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
 \DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/10/01\ 15:57:13\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/10/04\ 12:43:36\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ Invalid\ date\ \ \ \ \ \ \ \ by\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/11/09\ 23:06:30\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ COMMAND\_INTERNAL\_H}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ COMMAND\_INTERNAL\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ define\ COMMAND\_INTERNAL\_H}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../include/command.h"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../include/environment.h"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../include/util.h"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../include/signal\_manager.h"{}}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#\ include\ "{}../external/gen\_list/gen\_list.h"{}}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../external/libft/libft.h"{}}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ include\ "{}../external/gen\_list/gen\_list.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ include\ "{}../external/libft/libft.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#\ include\ "{}../include/command.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#\ include\ "{}../include/environment.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#\ include\ "{}../include/signal\_manager.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#\ include\ "{}../include/util.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#\ include\ <stdbool.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#\ include\ <stdlib.h>}}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ void\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*\mbox{\hyperlink{command__internal_8h_ae18307f65fae1da5035e40073801a9a0}{t\_command\_funct}})(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *,\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *);}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ int\ \ \ \ \ \ \ \ \ (*\mbox{\hyperlink{command__internal_8h_a988ecd77b6a032442cf0275eea770ff7}{t\_command\_funct}})(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *);}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{s\_command}}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ \ \ \ \ \ \ \ \ \ \ \ \ \ }\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{s\_command}}}
 \DoxyCodeLine{00028\ \{}
 \DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ *\mbox{\hyperlink{command__internal_8h_ad650fccbaed7fdf5e65aafc9e4fedeae}{args}};}
 \DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ \ \ \ \ \ \ \ *\mbox{\hyperlink{command__internal_8h_a82f3acd25a4af3e90640d8e7d9fe4793}{redirects}};}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_affa3281487eb072f48d5e527ea06dd1c}{is\_builtin}};}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{command__internal_8h_ae18307f65fae1da5035e40073801a9a0}{t\_command\_funct}}\ \ \mbox{\hyperlink{command__internal_8h_a4035892ffaf86e4740da691c477ebfa4}{command\_funct}};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a988ecd77b6a032442cf0275eea770ff7}{t\_command\_funct}}\ \ \mbox{\hyperlink{command__internal_8h_a4035892ffaf86e4740da691c477ebfa4}{command\_funct}};}
 \DoxyCodeLine{00033\ \};}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a0f6eaa743e63abad6ac6be049d6179c6}{pwd\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a9b93e7663cca775fbe6c13fea90699f1}{bin\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *cmd,}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_ac40e1776b69522eaf80d953ec441231d}{cd\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a0f6eaa743e63abad6ac6be049d6179c6}{pwd\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_abba1603056020c33ad3f11e82b14fcfe}{export\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a24640ac75761d535d770cf4255c336da}{unset\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a509bc3c56be844c9b30a2ff165913928}{env\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a0fad0803ff59cff11ab2eb8de7eac854}{echo\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *envioroment);}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a4b471292f64a3207d6ed110c64874043}{pwd\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a28424d2afec3baf17003dc75676459d5}{bin\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *cmd,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a229fa76f1a2274bfe725c1c2682b2e35}{cd\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a4b471292f64a3207d6ed110c64874043}{pwd\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *envioroment);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a267568dbf2f34e6d69e0e6cec93d4723}{export\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_af6e5c77d9ee466a6a05910a0e967f6c7}{unset\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a824da6eadd5d2d45587870853f13218a}{env\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_a8bfa6f3309aa5f3ac7f08f37670e2e4f}{echo\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{command__internal_8h_ad4c8ebe69a36608c19704100145ad345}{exit\_execute}}(\mbox{\hyperlink{command__internal_8h_d8/db2/structs__command}{t\_command}}\ *command,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *environment);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

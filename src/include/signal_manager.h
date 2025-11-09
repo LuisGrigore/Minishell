@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/06 14:10:02 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:26:50 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,42 @@
 #include "ms_status_codes.h"
 
 /**
- * @brief Configures signals for the shell's interactive mode.
- * 
- * This function is used when the shell is waiting for user input.
- * Typically, it ignores SIGQUIT and handles SIGINT to interrupt the
- * current line without exiting the shell.
+ * @brief Sets up signal handlers for interactive shell mode
+ *
+ * Configures signal handling for the main shell prompt:
+ * - SIGINT (Ctrl+C): Interrupts current line, displays new prompt
+ * - SIGQUIT (Ctrl+\): Ignored
+ * - SIGTSTP (Ctrl+Z): Ignored
+ *
+ * @return 0 on success, error code on failure
+ * @see ms_status_codes.h
  */
 int signals_init_interactive(void);
 
 /**
- * @brief Configures signals for heredoc mode.
- * 
- * This function is used when reading a heredoc. It typically handles
- * SIGINT to cancel the heredoc input without affecting the main shell.
+ * @brief Sets up signal handlers for heredoc input mode
+ *
+ * Configures special signal handling while reading heredoc input:
+ * - SIGINT (Ctrl+C): Cancels heredoc input
+ * - SIGQUIT (Ctrl+\): Ignored
+ * - SIGTSTP (Ctrl+Z): Ignored
+ *
+ * @return 0 on success, error code on failure
+ * @see ms_status_codes.h
  */
 int signals_init_heredoc(void);
 
 /**
- * @brief Restores the original signal configuration.
- * 
- * This function is used to return the shell to its default signal
- * behavior after having changed the configuration for execution,
- * heredoc, or interactive mode.
+ * @brief Restores default signal handling
+ *
+ * Resets signal handlers to their original configuration.
+ * Should be called:
+ * - Before executing external commands
+ * - After heredoc input is complete
+ * - Before shell exit
+ *
+ * @return 0 on success, error code on failure
+ * @see ms_status_codes.h
  */
 int signals_restore(void);
 

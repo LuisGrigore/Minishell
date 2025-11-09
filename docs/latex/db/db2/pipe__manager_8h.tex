@@ -2,12 +2,13 @@
 \hypertarget{pipe__manager_8h}{}\label{pipe__manager_8h}\index{src/include/pipe\_manager.h@{src/include/pipe\_manager.h}}
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include "{}ms\+\_\+status\+\_\+codes.\+h"{}}\newline
+{\ttfamily \#include "{}../config.\+h"{}}\newline
 Include dependency graph for pipe\+\_\+manager.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=262pt]{db/dfe/pipe__manager_8h__incl}
+\includegraphics[width=282pt]{db/dfe/pipe__manager_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -17,45 +18,22 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \includegraphics[width=350pt]{de/d4b/pipe__manager_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{pipe__manager_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f}{PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN}}~700
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef enum \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d}{e\+\_\+pipe\+\_\+manager\+\_\+status\+\_\+code}} \mbox{\hyperlink{pipe__manager_8h_a3645f9efef26f43573896c238d631bb4}{t\+\_\+pipe\+\_\+manager\+\_\+status\+\_\+code}}
-\item 
 typedef struct \mbox{\hyperlink{pipe__manager__internal_8h_de/d4c/structs__pipe__manager}{s\+\_\+pipe\+\_\+manager}} \mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}}
-\begin{DoxyCompactList}\small\item\em Struct representing a pipe manager for multiple commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d}{e\+\_\+pipe\+\_\+manager\+\_\+status\+\_\+code}} \{ \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11dad235aba9f490bd304930f98407d1fe01}{PIPE\+\_\+\+MANAGER\+\_\+\+IS\+\_\+\+NULL}} = PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN
-, \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11da70af0ad2bd7af95e90ea0252fa25ff6c}{PIPE\+\_\+\+MANAGER\+\_\+\+MALFORMED}}
- \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Manages pipe connections between multiple commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pipe__manager_8h_a325391200230503859957f71f9b41ddc}{pipe\+\_\+manager\+\_\+init}} (size\+\_\+t n\+\_\+cmds)
-\begin{DoxyCompactList}\small\item\em Initializes a pipe manager for a given number of commands. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates a new pipe manager for a command pipeline. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}{pipe\+\_\+manager\+\_\+destroy}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
-\begin{DoxyCompactList}\small\item\em Destroys a pipe manager and frees its resources. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cleans up pipe manager resources. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{pipe__manager_8h_a8dff8bddc285e799e220d90832667165}{pipe\+\_\+manager\+\_\+setup\+\_\+command}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm, size\+\_\+t index)
-\begin{DoxyCompactList}\small\item\em Sets up the pipes for a specific command in the pipeline. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Configures pipes for a command in the pipeline. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{pipe__manager_8h_ae1343f55a733560642c093c92e51f355}{pipe\+\_\+manager\+\_\+close\+\_\+all}} (\mbox{\hyperlink{pipe__manager_8h_ae13e24616ec01f9ae9a8ed189816c7bf}{t\+\_\+pipe\+\_\+manager}} \texorpdfstring{$\ast$}{*}pm)
-\begin{DoxyCompactList}\small\item\em Closes all pipes managed by the pipe manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{pipe__manager_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f}\label{pipe__manager_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f} 
-\index{pipe\_manager.h@{pipe\_manager.h}!PIPE\_MANAGER\_STATUS\_BEGIN@{PIPE\_MANAGER\_STATUS\_BEGIN}}
-\index{PIPE\_MANAGER\_STATUS\_BEGIN@{PIPE\_MANAGER\_STATUS\_BEGIN}!pipe\_manager.h@{pipe\_manager.h}}
-\doxysubsubsection{\texorpdfstring{PIPE\_MANAGER\_STATUS\_BEGIN}{PIPE\_MANAGER\_STATUS\_BEGIN}}
-{\footnotesize\ttfamily \#define PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN~700}
-
+\begin{DoxyCompactList}\small\item\em Closes all pipe file descriptors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -67,34 +45,9 @@ int \mbox{\hyperlink{pipe__manager_8h_ae1343f55a733560642c093c92e51f355}{pipe\+\
 
 
 
-Struct representing a pipe manager for multiple commands. 
+Manages pipe connections between multiple commands. 
 
-\Hypertarget{pipe__manager_8h_a3645f9efef26f43573896c238d631bb4}\label{pipe__manager_8h_a3645f9efef26f43573896c238d631bb4} 
-\index{pipe\_manager.h@{pipe\_manager.h}!t\_pipe\_manager\_status\_code@{t\_pipe\_manager\_status\_code}}
-\index{t\_pipe\_manager\_status\_code@{t\_pipe\_manager\_status\_code}!pipe\_manager.h@{pipe\_manager.h}}
-\doxysubsubsection{\texorpdfstring{t\_pipe\_manager\_status\_code}{t\_pipe\_manager\_status\_code}}
-{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d}{e\+\_\+pipe\+\_\+manager\+\_\+status\+\_\+code}} \mbox{\hyperlink{pipe__manager_8h_a3645f9efef26f43573896c238d631bb4}{t\+\_\+pipe\+\_\+manager\+\_\+status\+\_\+code}}}
-
-
-
-\doxysubsection{Enumeration Type Documentation}
-\Hypertarget{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d}\label{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d} 
-\index{pipe\_manager.h@{pipe\_manager.h}!e\_pipe\_manager\_status\_code@{e\_pipe\_manager\_status\_code}}
-\index{e\_pipe\_manager\_status\_code@{e\_pipe\_manager\_status\_code}!pipe\_manager.h@{pipe\_manager.h}}
-\doxysubsubsection{\texorpdfstring{e\_pipe\_manager\_status\_code}{e\_pipe\_manager\_status\_code}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11d}{e\+\_\+pipe\+\_\+manager\+\_\+status\+\_\+code}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PIPE\_MANAGER\_IS\_NULL@{PIPE\_MANAGER\_IS\_NULL}!pipe\_manager.h@{pipe\_manager.h}}\index{pipe\_manager.h@{pipe\_manager.h}!PIPE\_MANAGER\_IS\_NULL@{PIPE\_MANAGER\_IS\_NULL}}}\Hypertarget{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11dad235aba9f490bd304930f98407d1fe01}\label{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11dad235aba9f490bd304930f98407d1fe01} 
-PIPE\+\_\+\+MANAGER\+\_\+\+IS\+\_\+\+NULL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PIPE\_MANAGER\_MALFORMED@{PIPE\_MANAGER\_MALFORMED}!pipe\_manager.h@{pipe\_manager.h}}\index{pipe\_manager.h@{pipe\_manager.h}!PIPE\_MANAGER\_MALFORMED@{PIPE\_MANAGER\_MALFORMED}}}\Hypertarget{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11da70af0ad2bd7af95e90ea0252fa25ff6c}\label{pipe__manager_8h_a80e5f7cf7a3908283294801b9029f11da70af0ad2bd7af95e90ea0252fa25ff6c} 
-PIPE\+\_\+\+MANAGER\+\_\+\+MALFORMED&\\
-\hline
-
-\end{DoxyEnumFields}
-
+Handles the creation, setup, and cleanup of pipes for command chains. Ensures proper file descriptor management and data flow between piped commands. 
 
 \doxysubsection{Function Documentation}
 \Hypertarget{pipe__manager_8h_ae1343f55a733560642c093c92e51f355}\label{pipe__manager_8h_ae1343f55a733560642c093c92e51f355} 
@@ -105,13 +58,21 @@ PIPE\+\_\+\+MANAGER\+\_\+\+MALFORMED&\\
 
 
 
-Closes all pipes managed by the pipe manager. 
+Closes all pipe file descriptors. 
+
+Should be called in the parent process after forking all child processes to prevent file descriptor leaks.
 
 
 \begin{DoxyParams}{Parameters}
-{\em pm} & Pointer to the pipe manager. \\
+{\em pm} & Pipe manager instance \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or error code on failure
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{ms__status__codes_8h}{ms\+\_\+status\+\_\+codes.\+h} 
+\end{DoxySeeAlso}
 \Hypertarget{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}\label{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d} 
 \index{pipe\_manager.h@{pipe\_manager.h}!pipe\_manager\_destroy@{pipe\_manager\_destroy}}
 \index{pipe\_manager\_destroy@{pipe\_manager\_destroy}!pipe\_manager.h@{pipe\_manager.h}}
@@ -120,11 +81,13 @@ Closes all pipes managed by the pipe manager.
 
 
 
-Destroys a pipe manager and frees its resources. 
+Cleans up pipe manager resources. 
+
+Closes all pipe file descriptors and frees allocated memory. Should be called after pipeline execution is complete.
 
 
 \begin{DoxyParams}{Parameters}
-{\em pm} & Pointer to the pipe manager to destroy. \\
+{\em pm} & Pipe manager to destroy \\
 \hline
 \end{DoxyParams}
 \Hypertarget{pipe__manager_8h_a325391200230503859957f71f9b41ddc}\label{pipe__manager_8h_a325391200230503859957f71f9b41ddc} 
@@ -135,16 +98,21 @@ Destroys a pipe manager and frees its resources.
 
 
 
-Initializes a pipe manager for a given number of commands. 
+Creates a new pipe manager for a command pipeline. 
+
+Allocates and initializes all necessary pipes for a chain of commands. The number of pipes created will be n\+\_\+cmds -\/ 1.
 
 
 \begin{DoxyParams}{Parameters}
-{\em n\+\_\+cmds} & Number of commands in the pipeline. \\
+{\em n\+\_\+cmds} & Number of commands that will be connected by pipes \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Pointer to the newly created pipe manager. 
+New pipe manager instance, or NULL if allocation fails
 \end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pipe__manager_8h_a2f5e16a3793a99370d799a52fd8f038d}{pipe\+\_\+manager\+\_\+destroy} 
+\end{DoxySeeAlso}
 \Hypertarget{pipe__manager_8h_a8dff8bddc285e799e220d90832667165}\label{pipe__manager_8h_a8dff8bddc285e799e220d90832667165} 
 \index{pipe\_manager.h@{pipe\_manager.h}!pipe\_manager\_setup\_command@{pipe\_manager\_setup\_command}}
 \index{pipe\_manager\_setup\_command@{pipe\_manager\_setup\_command}!pipe\_manager.h@{pipe\_manager.h}}
@@ -153,14 +121,20 @@ Pointer to the newly created pipe manager.
 
 
 
-Sets up the pipes for a specific command in the pipeline. 
+Configures pipes for a command in the pipeline. 
 
-This function configures the file descriptors for the command at the given index.
+Sets up input/output file descriptors for the command at the given index. For commands in the middle of the pipeline, connects input to the previous command\textquotesingle{}s output and output to the next command\textquotesingle{}s input.
 
 
 \begin{DoxyParams}{Parameters}
-{\em pm} & Pointer to the pipe manager. \\
+{\em pm} & Pipe manager instance \\
 \hline
-{\em index} & Index of the command in the pipeline. \\
+{\em index} & Position of the command in the pipeline (0-\/based) \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or error code on failure
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{ms__status__codes_8h}{ms\+\_\+status\+\_\+codes.\+h} 
+\end{DoxySeeAlso}

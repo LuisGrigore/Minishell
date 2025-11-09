@@ -1,13 +1,15 @@
 <map id="src/include/util.h" name="src/include/util.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1347,5,1477,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="2059,5,2189,31"/>
 <area shape="rect" id="Node000002" href="$d3/d58/command__internal_8h.html" title=" " alt="" coords="715,79,893,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1334,32,894,88,893,83,1333,27"/>
-<area shape="rect" id="Node000010" href="$da/dd3/history__manager__internal_8h.html" title=" " alt="" coords="1208,79,1413,119"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1388,41,1337,81,1333,76,1385,37"/>
-<area shape="rect" id="Node000012" href="$d5/dce/ft__split2_80_8c.html" title=" " alt="" coords="1437,86,1589,111"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1440,37,1500,84,1497,88,1436,41"/>
-<area shape="rect" id="Node000013" href="$df/df0/path__utils_8c.html" title=" " alt="" coords="1613,86,1765,111"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1466,32,1650,83,1648,89,1465,37"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2046,27,894,95,893,89,2045,21"/>
+<area shape="rect" id="Node000010" href="$d0/d0e/environment__internal_8h.html" title=" " alt="" coords="1782,79,1997,119"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="2078,37,1947,81,1945,76,2076,32"/>
+<area shape="rect" id="Node000015" href="$da/dd3/history__manager__internal_8h.html" title=" " alt="" coords="2021,79,2227,119"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="2127,44,2127,79,2121,79,2121,44"/>
+<area shape="rect" id="Node000017" href="$d5/dce/ft__split2_80_8c.html" title=" " alt="" coords="2251,86,2403,111"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="2167,33,2298,83,2296,88,2165,38"/>
+<area shape="rect" id="Node000018" href="$df/df0/path__utils_8c.html" title=" " alt="" coords="2427,86,2579,111"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="2194,31,2415,76,2450,83,2449,89,2414,81,2193,36"/>
 <area shape="rect" id="Node000003" href="$d3/d22/command__debug_8c.html" title=" " alt="" coords="5,167,184,207"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="701,112,470,135,196,169,185,171,184,166,196,164,469,130,701,106"/>
 <area shape="rect" id="Node000004" href="$dc/dc0/command__functs__bin_8c.html" title=" " alt="" coords="208,167,387,207"/>
@@ -22,6 +24,14 @@
 <area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="885,120,1042,164,1041,169,883,125"/>
 <area shape="rect" id="Node000009" href="$d3/dbb/command__queries_8c.html" title=" " alt="" coords="1221,167,1400,207"/>
 <area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="907,114,1210,164,1222,166,1221,171,1209,169,906,119"/>
-<area shape="rect" id="Node000011" href="$d2/d29/history__manager_8c.html" title=" " alt="" coords="1424,167,1579,207"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1366,122,1461,164,1458,169,1364,127"/>
+<area shape="rect" id="Node000011" href="$dd/da9/envioroment__internal_8c.html" title=" " alt="" coords="1425,167,1639,207"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1798,124,1611,169,1610,164,1797,119"/>
+<area shape="rect" id="Node000012" href="$dc/d4a/environment__operations_8c.html" title=" " alt="" coords="1663,167,1878,207"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1853,129,1798,169,1795,164,1850,125"/>
+<area shape="rect" id="Node000013" href="$d1/d62/environment__query_8c.html" title=" " alt="" coords="1902,167,2117,207"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="1929,125,1984,164,1981,169,1926,129"/>
+<area shape="rect" id="Node000014" href="$d8/d4a/environment__serialization__deserialization_8c.html" title=" " alt="" coords="2141,167,2363,207"/>
+<area shape="poly" id="edge13_Node000010_Node000014" title=" " alt="" coords="1983,119,2173,164,2172,169,1981,124"/>
+<area shape="rect" id="Node000016" href="$d2/d29/history__manager_8c.html" title=" " alt="" coords="2387,167,2541,207"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="2212,119,2390,164,2389,169,2211,125"/>
 </map>

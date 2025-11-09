@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/08 02:36:52 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:37:22 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@
 
 #define REDIRECT_MANAGER_STATUS_BEGIN 700
 #define REDIRECT_MANAGER_STATUS_END 799
+
+#define PIPE_MANAGER_STATUS_BEGIN 800
+#define PIPE_MANAGER_STATUS_END 899
 
 #define EXTERNALY_DEFINED_STATUS_BEGIN 1000
 

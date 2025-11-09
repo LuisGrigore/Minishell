@@ -1,0 +1,9 @@
+<map id="mini_state_set_last_command" name="mini_state_set_last_command">
+<area shape="rect" id="Node000001" title="Updates the last executed command." alt="" coords="432,5,581,45"/>
+<area shape="rect" id="Node000002" href="$de/d8a/command__operations_8c.html#ad0e71bcd54e4d0b86b88ac322e5b7a95" title="Executes the command with the given environment." alt="" coords="260,13,384,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,28,384,28,384,23,418,23"/>
+<area shape="rect" id="Node000003" href="$d7/d11/executer_8c.html#ace8a67c98248189482ba249d14142e05" title=" " alt="" coords="108,13,212,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,28,212,28,212,23,246,23"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>

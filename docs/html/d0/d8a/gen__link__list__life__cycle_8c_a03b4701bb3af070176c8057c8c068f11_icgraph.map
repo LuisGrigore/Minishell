@@ -1,23 +1,27 @@
 <map id="gen_list_create" name="gen_list_create">
-<area shape="rect" id="Node000001" title="Initialize an empty list." alt="" coords="536,192,657,217"/>
-<area shape="rect" id="Node000002" href="$d5/d2b/command__lifecycle_8c.html#a527646ae11a157773c11c7836bed583e" title="Creates a new command structure." alt="" coords="345,67,480,92"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="565,186,486,131,432,94,435,90,490,126,568,182"/>
-<area shape="rect" id="Node000006" href="$d8/d4a/environment__serialization__deserialization_8c.html#a5da2d3c514cffffe7e48122742dd4d44" title="Convert a string array into an environment variable list." alt="" coords="351,141,475,167"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="536,191,459,169,460,164,537,186"/>
-<area shape="rect" id="Node000008" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="147,205,251,231"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="522,210,251,219,251,214,522,204"/>
-<area shape="rect" id="Node000009" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="337,242,488,282"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="543,224,478,245,476,239,541,219"/>
-<area shape="rect" id="Node000010" href="$d2/d72/parser_8c.html#acb7fb50758c9c06855f6773f2bf296c3" title=" " alt="" coords="368,307,457,332"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="575,229,537,263,489,296,458,310,456,305,487,292,533,259,571,225"/>
-<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#a0ba548c1c29592caf86cb481cf9b4c6d" title="Create or update a command object from a TOKEN_ARG token." alt="" coords="130,5,267,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,65,289,45,248,33,249,28,290,39,359,60"/>
-<area shape="rect" id="Node000004" href="$da/dbb/parser__handle__tokens_8c.html#af26831b878a72e9d2d2ce25408571e87" title="Create or update a command object from a TOKEN_CMD token." alt="" coords="108,55,289,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="331,77,290,75,290,70,332,72"/>
-<area shape="rect" id="Node000005" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="137,104,260,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="332,96,261,109,260,103,331,91"/>
-<area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,180,60,205"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="337,164,61,193,60,187,336,159"/>
-<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="133,211,60,199,60,194,134,205"/>
-<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="356,305,336,296,271,264,219,233,222,228,274,259,338,292,358,300"/>
+<area shape="rect" id="Node000001" title="Initialize an empty list." alt="" coords="723,191,844,216"/>
+<area shape="rect" id="Node000002" href="$d5/d2b/command__lifecycle_8c.html#a527646ae11a157773c11c7836bed583e" title="Creates a new command structure." alt="" coords="532,67,667,92"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="752,185,673,130,619,94,622,90,676,125,755,180"/>
+<area shape="rect" id="Node000006" href="$dc/d4a/environment__operations_8c.html#aef0eb9b1d29071cfd060d46df0865a4a" title="Add or update an environment variable." alt="" coords="552,140,647,165"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="723,189,646,168,647,163,724,184"/>
+<area shape="rect" id="Node000010" href="$d7/d11/executer_8c.html#ace8a67c98248189482ba249d14142e05" title=" " alt="" coords="333,204,437,229"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="709,208,438,218,438,212,709,203"/>
+<area shape="rect" id="Node000011" href="$d2/d81/gen__link__list__serialization_8c.html#a962ed812fb9b3ad6be6364ec7ff3340c" title="Convert a null&#45;terminated array of strings into a generic list." alt="" coords="524,241,675,281"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="730,223,665,243,663,238,728,218"/>
+<area shape="rect" id="Node000012" href="$d2/d72/parser_8c.html#a6f550f89c332f75aeaca78125799e641" title=" " alt="" coords="555,305,644,331"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="761,228,723,262,676,295,645,309,643,304,673,290,720,258,758,224"/>
+<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#a0ba548c1c29592caf86cb481cf9b4c6d" title=" " alt="" coords="317,5,454,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="544,65,475,45,435,33,436,28,477,39,545,60"/>
+<area shape="rect" id="Node000004" href="$da/dbb/parser__handle__tokens_8c.html#af26831b878a72e9d2d2ce25408571e87" title=" " alt="" coords="295,55,476,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="518,77,476,75,476,70,518,72"/>
+<area shape="rect" id="Node000005" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title=" " alt="" coords="324,104,447,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="519,96,447,109,447,103,518,91"/>
+<area shape="rect" id="Node000007" href="$d8/d4a/environment__serialization__deserialization_8c.html#afd1bf9663998daee10331bdea7d750a5" title="Convert a string array into an environment instance." alt="" coords="323,153,447,179"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="538,159,448,165,447,160,538,154"/>
+<area shape="rect" id="Node000008" href="$d5/df2/mini__state__lifecycle_8c.html#aea6c6e2afc0fee418ff6183c25d56319" title="Creates a new shell state instance." alt="" coords="108,153,247,179"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="309,169,247,169,247,163,309,163"/>
+<area shape="rect" id="Node000009" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,179,60,204"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="95,183,61,189,60,184,94,178"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="319,215,60,196,60,191,320,209"/>
+<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="543,303,523,295,458,262,406,232,408,227,460,258,525,290,545,298"/>
 </map>

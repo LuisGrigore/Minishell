@@ -1,0 +1,24 @@
+<map id="parse_word_loop" name="parse_word_loop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,106,137,132"/>
+<area shape="rect" id="Node000002" href="$d1/dc5/lexer__parse__quotes_8c.html#aa130f54fb2462f0e528000dccc79c5bd" title=" " alt="" coords="185,57,321,82"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,104,192,83,193,88,120,109"/>
+<area shape="rect" id="Node000009" href="$dd/d5a/lexer__util_8c.html#aed920c4ccf5ae57509ab4f9ca6fdc2db" title=" " alt="" coords="188,106,319,132"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="137,116,174,116,174,122,137,122"/>
+<area shape="rect" id="Node000010" href="$dd/d5a/lexer__util_8c.html#a8701968ceb20a387aa8bfc7d411f6e07" title=" " alt="" coords="214,156,293,181"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="120,129,202,152,200,157,118,134"/>
+<area shape="rect" id="Node000003" href="$d9/db7/lexer__parse__utils_8c.html#ae42dc004a1f176186c4f70f3796a5110" title=" " alt="" coords="600,57,705,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,54,317,33,369,16,420,6,461,3,502,6,553,16,590,30,623,47,620,52,588,35,551,21,501,11,461,8,421,12,370,21,319,38,277,59"/>
+<area shape="rect" id="Node000006" href="$d1/dc5/lexer__parse__quotes_8c.html#a9a970a9a020dff8f6d56ad2a27cf0704" title=" " alt="" coords="369,32,552,57"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="321,59,355,54,356,60,322,64"/>
+<area shape="rect" id="Node000007" href="$d1/dc5/lexer__parse__quotes_8c.html#a4fe23dc409b7a530c9740190ddb93630" title=" " alt="" coords="384,81,537,106"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="322,75,370,80,370,86,321,80"/>
+<area shape="rect" id="Node000008" href="$d1/dc5/lexer__parse__quotes_8c.html#a8a49b0534690310f2eb3ac6a0c6b1206" title=" " alt="" coords="387,130,535,156"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="294,80,322,91,346,104,370,116,391,124,390,129,368,121,344,109,320,96,292,85"/>
+<area shape="rect" id="Node000004" href="$d9/db7/lexer__parse__utils_8c.html#aa34e23a92a4bc5e7ff575db0d4bc0311" title=" " alt="" coords="753,57,881,82"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="706,67,740,67,740,72,706,72"/>
+<area shape="rect" id="Node000005" href="$d5/dee/ft__memcpy_8c.html#a41a6f05af30cf85ff63a08e383826322" title=" " alt="" coords="929,57,1024,82"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="881,67,915,67,915,72,881,72"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="553,54,587,58,586,63,552,59"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="537,81,586,75,586,80,538,87"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="516,128,551,116,616,86,618,91,553,121,518,133"/>
+</map>

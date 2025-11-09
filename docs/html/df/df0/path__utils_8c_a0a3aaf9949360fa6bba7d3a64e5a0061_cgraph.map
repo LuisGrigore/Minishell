@@ -1,5 +1,5 @@
 <map id="special_char" name="special_char">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,108,56"/>
+<area shape="rect" id="Node000001" title="Checks for special shell characters." alt="" coords="5,31,108,56"/>
 <area shape="rect" id="Node000002" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="164,5,239,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,32,150,24,151,29,109,37"/>
 <area shape="rect" id="Node000003" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="156,55,247,80"/>

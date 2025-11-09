@@ -15,21 +15,33 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 \#define \mbox{\hyperlink{config_8h_aeeb90ad2178c7baa026a4465449a4c4e}{SYSTEM\+\_\+\+STATUS\+\_\+\+BEGIN}}~0
 \item 
+\#define \mbox{\hyperlink{config_8h_a26d1a0331f9d632e45f3eefbeda45612}{SYSTEM\+\_\+\+STATUS\+\_\+\+END}}~99
+\item 
 \#define \mbox{\hyperlink{config_8h_a9e5a8ceb01d47e0e509d465916c27f48}{COMMAND\+\_\+\+STATUS\+\_\+\+BEGIN}}~100
 \item 
-\#define \mbox{\hyperlink{config_8h_a13c749adb79f8578f19825062ef885c9}{ENVIRONMENT\+\_\+\+STATUS\+\_\+\+BEGIN}}~200
+\#define \mbox{\hyperlink{config_8h_aa4baac99ff193866e1f86679c074fd21}{COMMAND\+\_\+\+STATUS\+\_\+\+END}}~199
 \item 
 \#define \mbox{\hyperlink{config_8h_a9c62aea2550ce8322f34b36f777dafd6}{EXECUTER\+\_\+\+STATUS\+\_\+\+BEGIN}}~300
 \item 
-\#define \mbox{\hyperlink{config_8h_aa8f8a1a903840842c9bac650de839c2b}{HISTORY\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN}}~400
+\#define \mbox{\hyperlink{config_8h_a7ec117cca3c8ea40217dd9366e584df4}{EXECUTER\+\_\+\+STATUS\+\_\+\+END}}~399
 \item 
 \#define \mbox{\hyperlink{config_8h_ace33f2c32c7ff7a623e226e531db6c6c}{LEXER\+\_\+\+STATUS\+\_\+\+BEGIN}}~500
 \item 
+\#define \mbox{\hyperlink{config_8h_a2907d524faf188094e62d557423f49bb}{LEXER\+\_\+\+STATUS\+\_\+\+END}}~599
+\item 
 \#define \mbox{\hyperlink{config_8h_acf513a79924a05b6523f069b905c57a1}{PARSER\+\_\+\+STATUS\+\_\+\+BEGIN}}~600
 \item 
-\#define \mbox{\hyperlink{config_8h_aac49b6666b0bb560a9020e71fb192e42}{REDIRECT\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN}}~800
+\#define \mbox{\hyperlink{config_8h_a758d86326363a3deeea7797791de54d4}{PARSER\+\_\+\+STATUS\+\_\+\+END}}~699
 \item 
-\#define \mbox{\hyperlink{config_8h_a03c46fa9de3fd14cdf3ec453f221ac75}{SIGNAL\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN}}~900
+\#define \mbox{\hyperlink{config_8h_aac49b6666b0bb560a9020e71fb192e42}{REDIRECT\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN}}~700
+\item 
+\#define \mbox{\hyperlink{config_8h_aab65177e4f739b6db4740a0c26dc9c58}{REDIRECT\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+END}}~799
+\item 
+\#define \mbox{\hyperlink{config_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f}{PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN}}~800
+\item 
+\#define \mbox{\hyperlink{config_8h_a5314c500f8cc7ebcf0f63d62de40324b}{PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+END}}~899
+\item 
+\#define \mbox{\hyperlink{config_8h_a5619cccc6c436216f0b5359ee93d0227}{EXTERNALY\+\_\+\+DEFINED\+\_\+\+STATUS\+\_\+\+BEGIN}}~1000
 \end{DoxyCompactItemize}
 
 
@@ -40,11 +52,11 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection{\texorpdfstring{COMMAND\_STATUS\_BEGIN}{COMMAND\_STATUS\_BEGIN}}
 {\footnotesize\ttfamily \#define COMMAND\+\_\+\+STATUS\+\_\+\+BEGIN~100}
 
-\Hypertarget{config_8h_a13c749adb79f8578f19825062ef885c9}\label{config_8h_a13c749adb79f8578f19825062ef885c9} 
-\index{config.h@{config.h}!ENVIRONMENT\_STATUS\_BEGIN@{ENVIRONMENT\_STATUS\_BEGIN}}
-\index{ENVIRONMENT\_STATUS\_BEGIN@{ENVIRONMENT\_STATUS\_BEGIN}!config.h@{config.h}}
-\doxysubsubsection{\texorpdfstring{ENVIRONMENT\_STATUS\_BEGIN}{ENVIRONMENT\_STATUS\_BEGIN}}
-{\footnotesize\ttfamily \#define ENVIRONMENT\+\_\+\+STATUS\+\_\+\+BEGIN~200}
+\Hypertarget{config_8h_aa4baac99ff193866e1f86679c074fd21}\label{config_8h_aa4baac99ff193866e1f86679c074fd21} 
+\index{config.h@{config.h}!COMMAND\_STATUS\_END@{COMMAND\_STATUS\_END}}
+\index{COMMAND\_STATUS\_END@{COMMAND\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_STATUS\_END}{COMMAND\_STATUS\_END}}
+{\footnotesize\ttfamily \#define COMMAND\+\_\+\+STATUS\+\_\+\+END~199}
 
 \Hypertarget{config_8h_a9c62aea2550ce8322f34b36f777dafd6}\label{config_8h_a9c62aea2550ce8322f34b36f777dafd6} 
 \index{config.h@{config.h}!EXECUTER\_STATUS\_BEGIN@{EXECUTER\_STATUS\_BEGIN}}
@@ -52,11 +64,17 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection{\texorpdfstring{EXECUTER\_STATUS\_BEGIN}{EXECUTER\_STATUS\_BEGIN}}
 {\footnotesize\ttfamily \#define EXECUTER\+\_\+\+STATUS\+\_\+\+BEGIN~300}
 
-\Hypertarget{config_8h_aa8f8a1a903840842c9bac650de839c2b}\label{config_8h_aa8f8a1a903840842c9bac650de839c2b} 
-\index{config.h@{config.h}!HISTORY\_MANAGER\_STATUS\_BEGIN@{HISTORY\_MANAGER\_STATUS\_BEGIN}}
-\index{HISTORY\_MANAGER\_STATUS\_BEGIN@{HISTORY\_MANAGER\_STATUS\_BEGIN}!config.h@{config.h}}
-\doxysubsubsection{\texorpdfstring{HISTORY\_MANAGER\_STATUS\_BEGIN}{HISTORY\_MANAGER\_STATUS\_BEGIN}}
-{\footnotesize\ttfamily \#define HISTORY\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN~400}
+\Hypertarget{config_8h_a7ec117cca3c8ea40217dd9366e584df4}\label{config_8h_a7ec117cca3c8ea40217dd9366e584df4} 
+\index{config.h@{config.h}!EXECUTER\_STATUS\_END@{EXECUTER\_STATUS\_END}}
+\index{EXECUTER\_STATUS\_END@{EXECUTER\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{EXECUTER\_STATUS\_END}{EXECUTER\_STATUS\_END}}
+{\footnotesize\ttfamily \#define EXECUTER\+\_\+\+STATUS\+\_\+\+END~399}
+
+\Hypertarget{config_8h_a5619cccc6c436216f0b5359ee93d0227}\label{config_8h_a5619cccc6c436216f0b5359ee93d0227} 
+\index{config.h@{config.h}!EXTERNALY\_DEFINED\_STATUS\_BEGIN@{EXTERNALY\_DEFINED\_STATUS\_BEGIN}}
+\index{EXTERNALY\_DEFINED\_STATUS\_BEGIN@{EXTERNALY\_DEFINED\_STATUS\_BEGIN}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{EXTERNALY\_DEFINED\_STATUS\_BEGIN}{EXTERNALY\_DEFINED\_STATUS\_BEGIN}}
+{\footnotesize\ttfamily \#define EXTERNALY\+\_\+\+DEFINED\+\_\+\+STATUS\+\_\+\+BEGIN~1000}
 
 \Hypertarget{config_8h_ace33f2c32c7ff7a623e226e531db6c6c}\label{config_8h_ace33f2c32c7ff7a623e226e531db6c6c} 
 \index{config.h@{config.h}!LEXER\_STATUS\_BEGIN@{LEXER\_STATUS\_BEGIN}}
@@ -64,11 +82,23 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection{\texorpdfstring{LEXER\_STATUS\_BEGIN}{LEXER\_STATUS\_BEGIN}}
 {\footnotesize\ttfamily \#define LEXER\+\_\+\+STATUS\+\_\+\+BEGIN~500}
 
+\Hypertarget{config_8h_a2907d524faf188094e62d557423f49bb}\label{config_8h_a2907d524faf188094e62d557423f49bb} 
+\index{config.h@{config.h}!LEXER\_STATUS\_END@{LEXER\_STATUS\_END}}
+\index{LEXER\_STATUS\_END@{LEXER\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{LEXER\_STATUS\_END}{LEXER\_STATUS\_END}}
+{\footnotesize\ttfamily \#define LEXER\+\_\+\+STATUS\+\_\+\+END~599}
+
 \Hypertarget{config_8h_acf513a79924a05b6523f069b905c57a1}\label{config_8h_acf513a79924a05b6523f069b905c57a1} 
 \index{config.h@{config.h}!PARSER\_STATUS\_BEGIN@{PARSER\_STATUS\_BEGIN}}
 \index{PARSER\_STATUS\_BEGIN@{PARSER\_STATUS\_BEGIN}!config.h@{config.h}}
 \doxysubsubsection{\texorpdfstring{PARSER\_STATUS\_BEGIN}{PARSER\_STATUS\_BEGIN}}
 {\footnotesize\ttfamily \#define PARSER\+\_\+\+STATUS\+\_\+\+BEGIN~600}
+
+\Hypertarget{config_8h_a758d86326363a3deeea7797791de54d4}\label{config_8h_a758d86326363a3deeea7797791de54d4} 
+\index{config.h@{config.h}!PARSER\_STATUS\_END@{PARSER\_STATUS\_END}}
+\index{PARSER\_STATUS\_END@{PARSER\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{PARSER\_STATUS\_END}{PARSER\_STATUS\_END}}
+{\footnotesize\ttfamily \#define PARSER\+\_\+\+STATUS\+\_\+\+END~699}
 
 \Hypertarget{config_8h_a241aca04b168d69b124c5bf852fce4a4}\label{config_8h_a241aca04b168d69b124c5bf852fce4a4} 
 \index{config.h@{config.h}!PATH\_HEREDOC\_TEMP\_FILE@{PATH\_HEREDOC\_TEMP\_FILE}}
@@ -76,21 +106,39 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection{\texorpdfstring{PATH\_HEREDOC\_TEMP\_FILE}{PATH\_HEREDOC\_TEMP\_FILE}}
 {\footnotesize\ttfamily \#define PATH\+\_\+\+HEREDOC\+\_\+\+TEMP\+\_\+\+FILE~"{}./minishell\+\_\+heredoc.\+temp"{}}
 
+\Hypertarget{config_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f}\label{config_8h_a0b47fc2b5c9cd48182f7ed11f4eb393f} 
+\index{config.h@{config.h}!PIPE\_MANAGER\_STATUS\_BEGIN@{PIPE\_MANAGER\_STATUS\_BEGIN}}
+\index{PIPE\_MANAGER\_STATUS\_BEGIN@{PIPE\_MANAGER\_STATUS\_BEGIN}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{PIPE\_MANAGER\_STATUS\_BEGIN}{PIPE\_MANAGER\_STATUS\_BEGIN}}
+{\footnotesize\ttfamily \#define PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN~800}
+
+\Hypertarget{config_8h_a5314c500f8cc7ebcf0f63d62de40324b}\label{config_8h_a5314c500f8cc7ebcf0f63d62de40324b} 
+\index{config.h@{config.h}!PIPE\_MANAGER\_STATUS\_END@{PIPE\_MANAGER\_STATUS\_END}}
+\index{PIPE\_MANAGER\_STATUS\_END@{PIPE\_MANAGER\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{PIPE\_MANAGER\_STATUS\_END}{PIPE\_MANAGER\_STATUS\_END}}
+{\footnotesize\ttfamily \#define PIPE\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+END~899}
+
 \Hypertarget{config_8h_aac49b6666b0bb560a9020e71fb192e42}\label{config_8h_aac49b6666b0bb560a9020e71fb192e42} 
 \index{config.h@{config.h}!REDIRECT\_MANAGER\_STATUS\_BEGIN@{REDIRECT\_MANAGER\_STATUS\_BEGIN}}
 \index{REDIRECT\_MANAGER\_STATUS\_BEGIN@{REDIRECT\_MANAGER\_STATUS\_BEGIN}!config.h@{config.h}}
 \doxysubsubsection{\texorpdfstring{REDIRECT\_MANAGER\_STATUS\_BEGIN}{REDIRECT\_MANAGER\_STATUS\_BEGIN}}
-{\footnotesize\ttfamily \#define REDIRECT\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN~800}
+{\footnotesize\ttfamily \#define REDIRECT\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN~700}
 
-\Hypertarget{config_8h_a03c46fa9de3fd14cdf3ec453f221ac75}\label{config_8h_a03c46fa9de3fd14cdf3ec453f221ac75} 
-\index{config.h@{config.h}!SIGNAL\_MANAGER\_STATUS\_BEGIN@{SIGNAL\_MANAGER\_STATUS\_BEGIN}}
-\index{SIGNAL\_MANAGER\_STATUS\_BEGIN@{SIGNAL\_MANAGER\_STATUS\_BEGIN}!config.h@{config.h}}
-\doxysubsubsection{\texorpdfstring{SIGNAL\_MANAGER\_STATUS\_BEGIN}{SIGNAL\_MANAGER\_STATUS\_BEGIN}}
-{\footnotesize\ttfamily \#define SIGNAL\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+BEGIN~900}
+\Hypertarget{config_8h_aab65177e4f739b6db4740a0c26dc9c58}\label{config_8h_aab65177e4f739b6db4740a0c26dc9c58} 
+\index{config.h@{config.h}!REDIRECT\_MANAGER\_STATUS\_END@{REDIRECT\_MANAGER\_STATUS\_END}}
+\index{REDIRECT\_MANAGER\_STATUS\_END@{REDIRECT\_MANAGER\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{REDIRECT\_MANAGER\_STATUS\_END}{REDIRECT\_MANAGER\_STATUS\_END}}
+{\footnotesize\ttfamily \#define REDIRECT\+\_\+\+MANAGER\+\_\+\+STATUS\+\_\+\+END~799}
 
 \Hypertarget{config_8h_aeeb90ad2178c7baa026a4465449a4c4e}\label{config_8h_aeeb90ad2178c7baa026a4465449a4c4e} 
 \index{config.h@{config.h}!SYSTEM\_STATUS\_BEGIN@{SYSTEM\_STATUS\_BEGIN}}
 \index{SYSTEM\_STATUS\_BEGIN@{SYSTEM\_STATUS\_BEGIN}!config.h@{config.h}}
 \doxysubsubsection{\texorpdfstring{SYSTEM\_STATUS\_BEGIN}{SYSTEM\_STATUS\_BEGIN}}
 {\footnotesize\ttfamily \#define SYSTEM\+\_\+\+STATUS\+\_\+\+BEGIN~0}
+
+\Hypertarget{config_8h_a26d1a0331f9d632e45f3eefbeda45612}\label{config_8h_a26d1a0331f9d632e45f3eefbeda45612} 
+\index{config.h@{config.h}!SYSTEM\_STATUS\_END@{SYSTEM\_STATUS\_END}}
+\index{SYSTEM\_STATUS\_END@{SYSTEM\_STATUS\_END}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_STATUS\_END}{SYSTEM\_STATUS\_END}}
+{\footnotesize\ttfamily \#define SYSTEM\+\_\+\+STATUS\+\_\+\+END~99}
 

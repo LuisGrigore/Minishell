@@ -101,37 +101,38 @@ Include dependency graph for pipe_manager.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/df1/pipe__manager_8c__incl.png" border="0" usemap="#asrc_2pipe__manager_2pipe__manager_8c" alt=""/></div>
 <map name="asrc_2pipe__manager_2pipe__manager_8c" id="asrc_2pipe__manager_2pipe__manager_8c">
-<area shape="rect" title=" " alt="" coords="173,5,343,45"/>
-<area shape="rect" href="../../dc/d98/pipe__manager__internal_8h.html" title=" " alt="" coords="166,93,350,119"/>
-<area shape="poly" title=" " alt="" coords="261,46,261,79,255,79,255,46"/>
-<area shape="rect" href="../../db/db2/pipe__manager_8h.html" title=" " alt="" coords="13,167,202,192"/>
-<area shape="poly" title=" " alt="" coords="235,121,146,163,143,158,233,116"/>
-<area shape="rect" title=" " alt="" coords="227,167,289,192"/>
-<area shape="poly" title=" " alt="" coords="261,119,261,153,255,153,255,119"/>
-<area shape="rect" title=" " alt="" coords="314,167,389,192"/>
-<area shape="poly" title=" " alt="" coords="275,117,327,156,324,160,271,121"/>
+<area shape="rect" title=" " alt="" coords="239,5,410,45"/>
+<area shape="rect" href="../../dc/d98/pipe__manager__internal_8h.html" title=" " alt="" coords="233,93,417,119"/>
+<area shape="poly" title=" " alt="" coords="327,46,327,79,322,79,322,46"/>
+<area shape="rect" href="../../db/db2/pipe__manager_8h.html" title=" " alt="" coords="79,167,269,192"/>
+<area shape="poly" title=" " alt="" coords="302,121,212,163,210,158,299,116"/>
+<area shape="rect" title=" " alt="" coords="293,167,356,192"/>
+<area shape="poly" title=" " alt="" coords="327,119,327,153,322,153,322,119"/>
+<area shape="rect" title=" " alt="" coords="381,167,455,192"/>
+<area shape="poly" title=" " alt="" coords="341,117,394,156,390,160,338,121"/>
 <area shape="rect" title=" " alt="" coords="5,240,76,265"/>
-<area shape="poly" title=" " alt="" coords="98,194,63,232,59,228,94,191"/>
+<area shape="poly" title=" " alt="" coords="154,194,76,236,73,231,151,190"/>
 <area shape="rect" href="../../d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="101,240,247,265"/>
-<area shape="poly" title=" " alt="" coords="120,191,156,228,152,232,116,194"/>
-<area shape="rect" href="../../db/d16/config_8h.html" title=" " alt="" coords="131,313,217,339"/>
-<area shape="poly" title=" " alt="" coords="177,266,177,300,171,300,171,266"/>
+<area shape="poly" title=" " alt="" coords="177,192,177,226,171,226,171,192"/>
+<area shape="rect" href="../../db/d16/config_8h.html" title=" " alt="" coords="186,313,271,339"/>
+<area shape="poly" title=" " alt="" coords="204,190,236,209,250,223,262,239,266,256,264,273,249,304,244,301,259,272,261,256,257,241,246,226,233,213,202,194"/>
+<area shape="poly" title=" " alt="" coords="185,264,214,301,209,304,181,267"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a325391200230503859957f71f9b41ddc" id="r_a325391200230503859957f71f9b41ddc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/db2/pipe__manager_8h.html#ae13e24616ec01f9ae9a8ed189816c7bf">t_pipe_manager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4f/pipe__manager_8c.html#a325391200230503859957f71f9b41ddc">pipe_manager_init</a> (size_t n_cmds)</td></tr>
-<tr class="memdesc:a325391200230503859957f71f9b41ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a pipe manager for a given number of commands.  <br /></td></tr>
+<tr class="memdesc:a325391200230503859957f71f9b41ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new pipe manager for a command pipeline.  <br /></td></tr>
 <tr class="separator:a325391200230503859957f71f9b41ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f5e16a3793a99370d799a52fd8f038d" id="r_a2f5e16a3793a99370d799a52fd8f038d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4f/pipe__manager_8c.html#a2f5e16a3793a99370d799a52fd8f038d">pipe_manager_destroy</a> (<a class="el" href="../../db/db2/pipe__manager_8h.html#ae13e24616ec01f9ae9a8ed189816c7bf">t_pipe_manager</a> *pm)</td></tr>
-<tr class="memdesc:a2f5e16a3793a99370d799a52fd8f038d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a pipe manager and frees its resources.  <br /></td></tr>
+<tr class="memdesc:a2f5e16a3793a99370d799a52fd8f038d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up pipe manager resources.  <br /></td></tr>
 <tr class="separator:a2f5e16a3793a99370d799a52fd8f038d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dff8bddc285e799e220d90832667165" id="r_a8dff8bddc285e799e220d90832667165"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4f/pipe__manager_8c.html#a8dff8bddc285e799e220d90832667165">pipe_manager_setup_command</a> (<a class="el" href="../../db/db2/pipe__manager_8h.html#ae13e24616ec01f9ae9a8ed189816c7bf">t_pipe_manager</a> *pm, size_t index)</td></tr>
-<tr class="memdesc:a8dff8bddc285e799e220d90832667165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the pipes for a specific command in the pipeline.  <br /></td></tr>
+<tr class="memdesc:a8dff8bddc285e799e220d90832667165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures pipes for a command in the pipeline.  <br /></td></tr>
 <tr class="separator:a8dff8bddc285e799e220d90832667165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1343f55a733560642c093c92e51f355" id="r_ae1343f55a733560642c093c92e51f355"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4f/pipe__manager_8c.html#ae1343f55a733560642c093c92e51f355">pipe_manager_close_all</a> (<a class="el" href="../../db/db2/pipe__manager_8h.html#ae13e24616ec01f9ae9a8ed189816c7bf">t_pipe_manager</a> *pm)</td></tr>
-<tr class="memdesc:ae1343f55a733560642c093c92e51f355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all pipes managed by the pipe manager.  <br /></td></tr>
+<tr class="memdesc:ae1343f55a733560642c093c92e51f355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all pipe file descriptors.  <br /></td></tr>
 <tr class="separator:ae1343f55a733560642c093c92e51f355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -151,13 +152,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Closes all pipes managed by the pipe manager. </p>
+<p>Closes all pipe file descriptors. </p>
+<p>Should be called in the parent process after forking all child processes to prevent file descriptor leaks.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pm</td><td>Pointer to the pipe manager. </td></tr>
+    <tr><td class="paramname">pm</td><td>Pipe manager instance </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, or error code on failure</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a> </dd></dl>
 
 </div>
 </div>
@@ -177,10 +181,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destroys a pipe manager and frees its resources. </p>
+<p>Cleans up pipe manager resources. </p>
+<p>Closes all pipe file descriptors and frees allocated memory. Should be called after pipeline execution is complete.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pm</td><td>Pointer to the pipe manager to destroy. </td></tr>
+    <tr><td class="paramname">pm</td><td>Pipe manager to destroy </td></tr>
   </table>
   </dd>
 </dl>
@@ -203,14 +208,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a pipe manager for a given number of commands. </p>
+<p>Creates a new pipe manager for a command pipeline. </p>
+<p>Allocates and initializes all necessary pipes for a chain of commands. The number of pipes created will be n_cmds - 1.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n_cmds</td><td>Number of commands in the pipeline. </td></tr>
+    <tr><td class="paramname">n_cmds</td><td>Number of commands that will be connected by pipes </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the newly created pipe manager. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New pipe manager instance, or NULL if allocation fails</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/db2/pipe__manager_8h.html#a2f5e16a3793a99370d799a52fd8f038d" title="Cleans up pipe manager resources.">pipe_manager_destroy</a> </dd></dl>
 
 </div>
 </div>
@@ -240,15 +247,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets up the pipes for a specific command in the pipeline. </p>
-<p>This function configures the file descriptors for the command at the given index.</p>
+<p>Configures pipes for a command in the pipeline. </p>
+<p>Sets up input/output file descriptors for the command at the given index. For commands in the middle of the pipeline, connects input to the previous command's output and output to the next command's input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pm</td><td>Pointer to the pipe manager. </td></tr>
-    <tr><td class="paramname">index</td><td>Index of the command in the pipeline. </td></tr>
+    <tr><td class="paramname">pm</td><td>Pipe manager instance </td></tr>
+    <tr><td class="paramname">index</td><td>Position of the command in the pipeline (0-based) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, or error code on failure</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a> </dd></dl>
 
 </div>
 </div>

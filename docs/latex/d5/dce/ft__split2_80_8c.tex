@@ -16,7 +16,7 @@ Include dependency graph for ft\+\_\+split2.0.c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015}{ft\+\_\+split2}} (char const \texorpdfstring{$\ast$}{*}s, char c)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enhanced string split that handles quoted sections. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -26,17 +26,27 @@ char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ft__s
 \doxysubsubsection{\texorpdfstring{ft\_split2()}{ft\_split2()}}
 {\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} ft\+\_\+split2 (\begin{DoxyParamCaption}\item[{char const \texorpdfstring{$\ast$}{*}}]{s,  }\item[{char}]{c }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Enhanced string split that handles quoted sections. 
+
+Similar to ft\+\_\+split but preserves text within quotes as a single token.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to split \\
+\hline
+{\em c} & Delimiter character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of strings, NULL-\/terminated, or NULL on error 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=229pt]{d5/dce/ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=264pt]{d5/dce/ft__split2_80_8c_af54f55774b34b2395f5ca1da01d9f015_icgraph}
 \end{center}
 \end{figure}

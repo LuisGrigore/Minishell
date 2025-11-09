@@ -10,7 +10,7 @@
 \DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ \ By:\ lgrigore\ <lgrigore@student.42madrid.com\ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/10/01\ 13:45:17\ by\ lgrigore\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/10/03\ 18:59:07\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/11/09\ 22:47:02\ by\ lgrigore\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
 \DoxyCodeLine{00012\ }
@@ -21,21 +21,79 @@
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../external/libft/libft.h"{}}}
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
 \DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Estructuras\ */}}
 \DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{s\_token}}}
 \DoxyCodeLine{00022\ \{}
 \DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ \ \ \ \mbox{\hyperlink{lexer__internal_8h_a350680c70abb7e7173240477e92dc0a3}{type}};}
 \DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{lexer__internal_8h_a21b454c179e1e31383371d09385b9c59}{value}};}
 \DoxyCodeLine{00025\ \};}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{t\_token}}\ *\mbox{\hyperlink{lexer__internal_8h_ad45a6a77df02fcbb4b2deb3ee46f6a8c}{create\_token}}(\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ type,\ \textcolor{keywordtype}{char}\ *value);}
-\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lexer__internal_8h_af0886495b353f179f845206ad2969d3e}{destroy\_token}}(\mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{t\_token}}\ *token);}
-\DoxyCodeLine{00029\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{lexer__internal_8h_a2d5f42a11a38830b809bced1fc209c20}{ft\_strndup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ n);}
-\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8701968ceb20a387aa8bfc7d411f6e07}{is\_space}}(\textcolor{keywordtype}{char}\ c);}
-\DoxyCodeLine{00031\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_aed920c4ccf5ae57509ab4f9ca6fdc2db}{is\_operator\_char}}(\textcolor{keywordtype}{char}\ c);}
-\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8a7ddaa1bfaaee00238451371f498d23}{match\_two\_char\_op}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op);}
-\DoxyCodeLine{00033\ \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ \mbox{\hyperlink{lexer__internal_8h_aa1004a8899af22ed07900fb0ca3c562e}{operator\_type}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op,\ \textcolor{keywordtype}{size\_t}\ len);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{s\_pstate}}\ }
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{lexer__internal_8h_ada86c3685c7bcd7488b47e81860019c5}{line}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *\mbox{\hyperlink{lexer__internal_8h_a1fdea107c6368e4fb2105f87ea034b6d}{i}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{lexer__internal_8h_a03cee1d8389d8601e72cfc0f3515bbae}{len}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{lexer__internal_8h_a48a8188cf3703afa9970c38284178ff4}{buf}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *\mbox{\hyperlink{lexer__internal_8h_a4b168909de3cd2ff7f01a837e40d267f}{bcap}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *\mbox{\hyperlink{lexer__internal_8h_a5f4a919f93c14c271779df651cc29084}{blen}};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *\mbox{\hyperlink{lexer__internal_8h_a00a0e7d0841df3f1750aab1b2328fb58}{env}};}
+\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\_pstate}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{lexer__internal_8h_d2/da4/structs__lstate}{s\_lstate}}\ }
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{lexer__internal_8h_a24b0d8fb52e1e1e478979ae30ffe21f2}{line}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *\mbox{\hyperlink{lexer__internal_8h_a0b0fe369dc831b48c7a50c93bb73dd43}{i}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{lexer__internal_8h_a93fc7c74f3cc96dde3400ff6f370ed68}{len}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *\mbox{\hyperlink{lexer__internal_8h_a4cf6a82d296d34f9663e07751237510a}{tokens\_list}};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *\mbox{\hyperlink{lexer__internal_8h_a5992ec4a26ae27f29a7d8ebd9e9ff862}{env}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{lexer__internal_8h_a2b56a8e7100d601bd1a900d0fd4f122f}{next\_is\_redir\_arg\_val}};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{lexer__internal_8h_abec4c9841ac56cd95957f240f5f6c2ff}{expect\_cmd\_val}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ *\mbox{\hyperlink{lexer__internal_8h_a42bfb71617abce732ebc1c563bf93e14}{next\_is\_redir\_arg}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ *\mbox{\hyperlink{lexer__internal_8h_ad763402d2d74b4b98ac1c1d78415043f}{expect\_cmd}};}
+\DoxyCodeLine{00049\ \}\ \mbox{\hyperlink{lexer__internal_8h_a3b44418917b2cfaf4e1d03d8baa16028}{t\_lstate}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ lexer\_token.c\ */}}
+\DoxyCodeLine{00052\ \mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{t\_token}}\ *\mbox{\hyperlink{lexer__internal_8h_ad45a6a77df02fcbb4b2deb3ee46f6a8c}{create\_token}}(\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ type,\ \textcolor{keywordtype}{char}\ *value);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lexer__internal_8h_af0886495b353f179f845206ad2969d3e}{destroy\_token}}(\mbox{\hyperlink{lexer__internal_8h_df/d44/structs__token}{t\_token}}\ *token);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ lexer\_utils.c\ */}}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{lexer__internal_8h_a2d5f42a11a38830b809bced1fc209c20}{ft\_strndup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8701968ceb20a387aa8bfc7d411f6e07}{is\_space}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_aed920c4ccf5ae57509ab4f9ca6fdc2db}{is\_operator\_char}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8a7ddaa1bfaaee00238451371f498d23}{match\_two\_char\_op}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op);}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ \mbox{\hyperlink{lexer__internal_8h_aa1004a8899af22ed07900fb0ca3c562e}{operator\_type}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *op,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{/*\ lexer\_parse\_utils.c\ */}}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lexer__internal_8h_a5a0c59df25f94cf8528710be8fd0c073}{pstate\_init}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line,\ \textcolor{keywordtype}{size\_t}\ *i,\ \textcolor{keywordtype}{size\_t}\ len,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{char}\ **buf,\ \textcolor{keywordtype}{size\_t}\ *bcap,\ \textcolor{keywordtype}{size\_t}\ *blen,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *env);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_aa34e23a92a4bc5e7ff575db0d4bc0311}{ensure\_capacity}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st,\ \textcolor{keywordtype}{size\_t}\ need);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_ae42dc004a1f176186c4f70f3796a5110}{append\_char}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st,\ \textcolor{keywordtype}{char}\ ch);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{lexer__internal_8h_af81f8ad981f2855bef0a36ea31ba9542}{skip\_spaces}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line,\ \textcolor{keywordtype}{size\_t}\ i,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/*\ lexer\_parse\_quotes.c\ */}}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8a49b0534690310f2eb3ac6a0c6b1206}{parse\_single\_quote}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a4fe23dc409b7a530c9740190ddb93630}{parse\_double\_quote}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a9a970a9a020dff8f6d56ad2a27cf0704}{parse\_backslash\_escape}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a886300cd0b0601d0c79f04f79bdcd5a5}{parse\_word\_loop}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st);}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_aa130f54fb2462f0e528000dccc79c5bd}{handle\_loop\_char}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{/*\ lexer\_parse\_word.c\ */}}
+\DoxyCodeLine{00077\ \textcolor{comment}{/*\ parse\_word\ now\ receives\ the\ environment\ so\ it\ can\ expand\ variables\ */}}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a0ab81aebcbf5c09cd1e34ff70499b724}{parse\_word}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line,\ \textcolor{keywordtype}{size\_t}\ *i,\ \textcolor{keywordtype}{size\_t}\ len,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *env,\ \textcolor{keywordtype}{char}\ **out\_word);}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_af6670d9089bd1ad287d77bec4b9ccfec}{build\_out\_word}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st,\ \textcolor{keywordtype}{size\_t}\ start,\ \textcolor{keywordtype}{char}\ **out\_word);}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_ab12888be235ba9dd05d8012e97a49c12}{finalize\_parse\_word}}(\mbox{\hyperlink{lexer__internal_8h_d4/d28/structs__pstate}{t\_pstate}}\ *st,\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ start,\ \textcolor{keywordtype}{char}\ **out\_word);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*\ lexer\_operators.c\ */}}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_ab49cdcd97806f90e844b6adce1a5c7b2}{push\_two\_char\_op}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line,\ \textcolor{keywordtype}{size\_t}\ *i,\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *tokens\_list,\ \textcolor{keywordtype}{bool}\ *next\_is\_redir\_arg);}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a68e78c10b56308620a43718d944a1689}{push\_one\_char\_op}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line,\ \textcolor{keywordtype}{size\_t}\ *i,\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *tokens\_list,\ \textcolor{keywordtype}{bool}\ *next\_is\_redir\_arg,\ \textcolor{keywordtype}{bool}\ *expect\_cmd);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{/*\ lexer\_process.c\ */}}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a8968e8da19414d88e2bce3436ead0cba}{process\_next\_token}}(\mbox{\hyperlink{lexer__internal_8h_d2/da4/structs__lstate}{t\_lstate}}\ *ls);}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_a7cfd3e0bba4f716e96d1045e59c4ea18}{parse\_word\_and\_push}}(\mbox{\hyperlink{lexer__internal_8h_d2/da4/structs__lstate}{t\_lstate}}\ *ls);}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_aaeff444b34c1170c976a29ba2d91c720}{lexer\_init\_state}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *line,\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *tokens\_list,\ \textcolor{keywordtype}{size\_t}\ *i,\ \mbox{\hyperlink{lexer__internal_8h_d2/da4/structs__lstate}{t\_lstate}}\ *ls,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *env);}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lexer__internal_8h_acd2ee39ae33125542481c28135f44c40}{run\_token\_loop}}(\mbox{\hyperlink{lexer__internal_8h_d2/da4/structs__lstate}{t\_lstate}}\ *ls);}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\_token\_type}}\ \mbox{\hyperlink{lexer__internal_8h_afe7316e72f56320e035dfe7dbb8efcb4}{determine\_type\_and\_clear}}(\mbox{\hyperlink{lexer__internal_8h_d2/da4/structs__lstate}{t\_lstate}}\ *ls);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

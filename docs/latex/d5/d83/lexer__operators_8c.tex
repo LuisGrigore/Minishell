@@ -1,0 +1,89 @@
+\doxysection{src/lexer/lexer\+\_\+operators.c File Reference}
+\hypertarget{lexer__operators_8c}{}\label{lexer__operators_8c}\index{src/lexer/lexer\_operators.c@{src/lexer/lexer\_operators.c}}
+{\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
+Include dependency graph for lexer\+\_\+operators.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d17/lexer__operators_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lexer__operators_8c_abc84ef1e9fe1c87d6b1b0337fede7b90}{create\+\_\+and\+\_\+push\+\_\+token}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}list, \mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}} type, char \texorpdfstring{$\ast$}{*}word)
+\item 
+int \mbox{\hyperlink{lexer__operators_8c_ab49cdcd97806f90e844b6adce1a5c7b2}{push\+\_\+two\+\_\+char\+\_\+op}} (const char \texorpdfstring{$\ast$}{*}line, size\+\_\+t \texorpdfstring{$\ast$}{*}i, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens\+\_\+list, bool \texorpdfstring{$\ast$}{*}next\+\_\+is\+\_\+redir\+\_\+arg)
+\item 
+int \mbox{\hyperlink{lexer__operators_8c_a68e78c10b56308620a43718d944a1689}{push\+\_\+one\+\_\+char\+\_\+op}} (const char \texorpdfstring{$\ast$}{*}line, size\+\_\+t \texorpdfstring{$\ast$}{*}i, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens\+\_\+list, bool \texorpdfstring{$\ast$}{*}next\+\_\+is\+\_\+redir\+\_\+arg, bool \texorpdfstring{$\ast$}{*}expect\+\_\+cmd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lexer__operators_8c_abc84ef1e9fe1c87d6b1b0337fede7b90}\label{lexer__operators_8c_abc84ef1e9fe1c87d6b1b0337fede7b90} 
+\index{lexer\_operators.c@{lexer\_operators.c}!create\_and\_push\_token@{create\_and\_push\_token}}
+\index{create\_and\_push\_token@{create\_and\_push\_token}!lexer\_operators.c@{lexer\_operators.c}}
+\doxysubsubsection{\texorpdfstring{create\_and\_push\_token()}{create\_and\_push\_token()}}
+{\footnotesize\ttfamily void create\+\_\+and\+\_\+push\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{list,  }\item[{\mbox{\hyperlink{lexer_8h_aaa12264c004e358b28290c09bb20969a}{t\+\_\+token\+\_\+type}}}]{type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{word }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d83/lexer__operators_8c_abc84ef1e9fe1c87d6b1b0337fede7b90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d83/lexer__operators_8c_abc84ef1e9fe1c87d6b1b0337fede7b90_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__operators_8c_a68e78c10b56308620a43718d944a1689}\label{lexer__operators_8c_a68e78c10b56308620a43718d944a1689} 
+\index{lexer\_operators.c@{lexer\_operators.c}!push\_one\_char\_op@{push\_one\_char\_op}}
+\index{push\_one\_char\_op@{push\_one\_char\_op}!lexer\_operators.c@{lexer\_operators.c}}
+\doxysubsubsection{\texorpdfstring{push\_one\_char\_op()}{push\_one\_char\_op()}}
+{\footnotesize\ttfamily int push\+\_\+one\+\_\+char\+\_\+op (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{i,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens\+\_\+list,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{next\+\_\+is\+\_\+redir\+\_\+arg,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{expect\+\_\+cmd }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{d5/d83/lexer__operators_8c_a68e78c10b56308620a43718d944a1689_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d83/lexer__operators_8c_a68e78c10b56308620a43718d944a1689_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__operators_8c_ab49cdcd97806f90e844b6adce1a5c7b2}\label{lexer__operators_8c_ab49cdcd97806f90e844b6adce1a5c7b2} 
+\index{lexer\_operators.c@{lexer\_operators.c}!push\_two\_char\_op@{push\_two\_char\_op}}
+\index{push\_two\_char\_op@{push\_two\_char\_op}!lexer\_operators.c@{lexer\_operators.c}}
+\doxysubsubsection{\texorpdfstring{push\_two\_char\_op()}{push\_two\_char\_op()}}
+{\footnotesize\ttfamily int push\+\_\+two\+\_\+char\+\_\+op (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{i,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens\+\_\+list,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{next\+\_\+is\+\_\+redir\+\_\+arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d83/lexer__operators_8c_ab49cdcd97806f90e844b6adce1a5c7b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d83/lexer__operators_8c_ab49cdcd97806f90e844b6adce1a5c7b2_icgraph}
+\end{center}
+\end{figure}

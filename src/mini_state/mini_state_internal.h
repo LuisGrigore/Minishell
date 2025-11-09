@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 22:38:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:18:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 typedef struct s_mini_state
 {
-	//t_gen_list	*environment_vars;
 	t_environment	*environment_vars;
 	char *last_command;
 	char *last_opened_file;

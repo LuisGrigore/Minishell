@@ -9,8 +9,12 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ms__status__codes_8h}{ms\_status\_codes.h}}"{}}}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{parser_8h_acb7fb50758c9c06855f6773f2bf296c3}{parse\_line}}(\textcolor{keywordtype}{char}\ *line,\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *commands);}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ parse\_line\ now\ also\ receives\ the\ environment\ list\ so\ lexer\ can\ expand}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ variables\ according\ to\ quoting\ rules\ during\ tokenization.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{parser_8h_a6f550f89c332f75aeaca78125799e641}{parse\_line}}(\textcolor{keywordtype}{char}\ *line,\ \mbox{\hyperlink{gen__link__list__internal_8h_dd/d43/structs__gen__list}{t\_gen\_list}}\ *commands,\ \mbox{\hyperlink{environment__internal_8h_d2/ddb/structs__environment}{t\_environment}}\ *env);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

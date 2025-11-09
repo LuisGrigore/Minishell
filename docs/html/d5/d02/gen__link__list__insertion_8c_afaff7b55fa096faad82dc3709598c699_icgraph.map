@@ -1,9 +1,17 @@
 <map id="gen_list_push_front" name="gen_list_push_front">
-<area shape="rect" id="Node000001" title="Insert a value at the beginning of the list." alt="" coords="297,31,447,56"/>
-<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="176,31,249,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,46,250,46,250,41,283,41"/>
-<area shape="rect" id="Node000003" href="$d0/dfa/command__functs__builtin__b_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="19,5,114,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,37,114,29,115,24,163,32"/>
-<area shape="rect" id="Node000004" href="$d5/db5/command__functs__builtin__a_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="5,55,128,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="163,54,129,60,128,55,162,49"/>
+<area shape="rect" id="Node000001" title="Insert a value at the beginning of the list." alt="" coords="653,80,803,105"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a6c6fd104285eb2b697886a98655e1938" title="Add or update an environment variable." alt="" coords="532,80,605,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="639,95,606,95,606,90,639,90"/>
+<area shape="rect" id="Node000003" href="$d0/dfa/command__functs__builtin__b_8c.html#a229fa76f1a2274bfe725c1c2682b2e35" title=" " alt="" coords="342,5,437,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="537,74,483,44,436,30,438,25,485,40,539,70"/>
+<area shape="rect" id="Node000004" href="$d8/d4a/environment__serialization__deserialization_8c.html#afd1bf9663998daee10331bdea7d750a5" title="Convert a string array into an environment instance." alt="" coords="327,55,451,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="518,88,451,79,452,73,518,83"/>
+<area shape="rect" id="Node000007" href="$dc/d4a/environment__operations_8c.html#a1a74c142bed29893e52b4ddcc74a46ef" title=" " alt="" coords="295,104,484,129"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="519,102,484,107,484,101,518,97"/>
+<area shape="rect" id="Node000008" href="$d5/db5/command__functs__builtin__a_8c.html#a267568dbf2f34e6d69e0e6cec93d4723" title=" " alt="" coords="328,153,451,179"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="538,115,485,143,448,156,446,151,483,138,536,110"/>
+<area shape="rect" id="Node000005" href="$d5/df2/mini__state__lifecycle_8c.html#aea6c6e2afc0fee418ff6183c25d56319" title="Creates a new shell state instance." alt="" coords="108,55,247,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="313,70,247,70,247,65,313,65"/>
+<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="94,70,60,70,60,65,94,65"/>
 </map>

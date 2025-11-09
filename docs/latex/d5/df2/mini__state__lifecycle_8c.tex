@@ -1,0 +1,82 @@
+\doxysection{src/mini\+\_\+state/mini\+\_\+state\+\_\+lifecycle.c File Reference}
+\hypertarget{mini__state__lifecycle_8c}{}\label{mini__state__lifecycle_8c}\index{src/mini\_state/mini\_state\_lifecycle.c@{src/mini\_state/mini\_state\_lifecycle.c}}
+{\ttfamily \#include "{}mini\+\_\+state\+\_\+internal.\+h"{}}\newline
+Include dependency graph for mini\+\_\+state\+\_\+lifecycle.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d44/mini__state__lifecycle_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mini__state__lifecycle_8c_aea6c6e2afc0fee418ff6183c25d56319}{mini\+\_\+state\+\_\+create}} (int args, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}environment\+\_\+var\+\_\+str\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Creates a new shell state instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mini__state__lifecycle_8c_af7aca4ced2371df8c6102fdcbd151402}{mini\+\_\+state\+\_\+destroy}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Destroys a shell state instance and frees all associated resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mini__state__lifecycle_8c_aea6c6e2afc0fee418ff6183c25d56319}\label{mini__state__lifecycle_8c_aea6c6e2afc0fee418ff6183c25d56319} 
+\index{mini\_state\_lifecycle.c@{mini\_state\_lifecycle.c}!mini\_state\_create@{mini\_state\_create}}
+\index{mini\_state\_create@{mini\_state\_create}!mini\_state\_lifecycle.c@{mini\_state\_lifecycle.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_create()}{mini\_state\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*} mini\+\_\+state\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{args,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{environment\+\_\+var\+\_\+str\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+Creates a new shell state instance. 
+
+Initializes a new shell state with the provided environment variables and command line arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Number of command line arguments \\
+\hline
+{\em environment\+\_\+var\+\_\+str\+\_\+array} & Array of environment variables in "{}\+KEY=\+VALUE"{} format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created shell state, or NULL on allocation failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df2/mini__state__lifecycle_8c_aea6c6e2afc0fee418ff6183c25d56319_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d5/df2/mini__state__lifecycle_8c_aea6c6e2afc0fee418ff6183c25d56319_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mini__state__lifecycle_8c_af7aca4ced2371df8c6102fdcbd151402}\label{mini__state__lifecycle_8c_af7aca4ced2371df8c6102fdcbd151402} 
+\index{mini\_state\_lifecycle.c@{mini\_state\_lifecycle.c}!mini\_state\_destroy@{mini\_state\_destroy}}
+\index{mini\_state\_destroy@{mini\_state\_destroy}!mini\_state\_lifecycle.c@{mini\_state\_lifecycle.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_destroy()}{mini\_state\_destroy()}}
+{\footnotesize\ttfamily void mini\+\_\+state\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Destroys a shell state instance and frees all associated resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state to destroy \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/df2/mini__state__lifecycle_8c_af7aca4ced2371df8c6102fdcbd151402_cgraph}
+\end{center}
+\end{figure}

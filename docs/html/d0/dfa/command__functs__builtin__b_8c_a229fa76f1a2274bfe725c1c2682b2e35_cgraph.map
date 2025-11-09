@@ -1,0 +1,33 @@
+<map id="cd_execute" name="cd_execute">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,253,100,279"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a6c6fd104285eb2b697886a98655e1938" title="Add or update an environment variable." alt="" coords="179,129,252,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,251,185,161,188,165,72,255"/>
+<area shape="rect" id="Node000003" href="$de/dcf/ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="372,5,451,31"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="57,252,88,187,114,149,146,115,198,80,254,54,309,36,358,24,359,29,311,41,256,59,200,85,150,119,118,152,93,190,61,254"/>
+<area shape="rect" id="Node000007" href="$d5/dc3/gen__link__list__iteration_8c.html#a4608f925c54b6539f8cee3d67edba91c" title="Get the next value from the list using the iterator and advance it." alt="" coords="550,253,689,279"/>
+<area shape="poly" id="edge16_Node000001_Node000007" title=" " alt="" coords="100,263,536,263,536,269,100,269"/>
+<area shape="rect" id="Node000008" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#a491520fc16d4760ca4596d256a4e3835" title="Initialize an iterator at the start of the list." alt="" coords="550,303,689,328"/>
+<area shape="poly" id="edge17_Node000001_Node000008" title=" " alt="" coords="100,267,536,306,536,311,100,273"/>
+<area shape="rect" id="Node000014" href="$d2/d49/gen__link__list__get__size_8c.html#a88eccd5115040464ae1ab2ea4f6fb565" title="Gets the current size of the list." alt="" coords="148,355,283,380"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="71,277,106,304,149,333,173,346,171,351,147,338,103,308,68,281"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,127,268,85,297,61,329,40,358,27,360,32,332,44,301,65,272,89,230,131"/>
+<area shape="rect" id="Node000005" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="346,203,477,228"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="246,152,332,188,356,196,354,201,330,192,244,157"/>
+<area shape="rect" id="Node000009" href="$d5/d02/gen__link__list__insertion_8c.html#afaff7b55fa096faad82dc3709598c699" title="Insert a value at the beginning of the list." alt="" coords="337,153,486,179"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="252,144,323,153,323,158,252,149"/>
+<area shape="rect" id="Node000010" href="$dd/da9/envioroment__internal_8c.html#a07737b43515e692334bfcdfc797f5d5c" title=" " alt="" coords="331,104,492,129"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="252,135,316,126,317,132,252,140"/>
+<area shape="rect" id="Node000012" href="$dd/da9/envioroment__internal_8c.html#a8076868c04fd9fc3091d42bc8bd5a7bb" title=" " alt="" coords="349,55,473,80"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="242,127,330,89,350,82,352,87,332,94,244,132"/>
+<area shape="rect" id="Node000004" href="$d7/d85/ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="582,5,657,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="451,15,568,15,568,21,451,21"/>
+<area shape="rect" id="Node000006" href="$d9/dea/gen__link__list__iteration__life__cycle_8c.html#af49c314a5f17ea28e0367327486eb66b" title="Destroys allocated iterator." alt="" coords="540,203,699,228"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="477,213,526,213,526,218,477,218"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="465,226,554,247,553,253,464,231"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="432,226,480,257,541,289,558,296,556,301,539,294,478,261,429,230"/>
+<area shape="rect" id="Node000011" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="581,104,657,129"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="492,114,568,114,568,119,492,119"/>
+<area shape="poly" id="edge12_Node000012_Node000004" title=" " alt="" coords="465,52,568,27,569,33,466,57"/>
+<area shape="rect" id="Node000013" href="$d0/d75/ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="574,55,665,80"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="474,65,560,65,560,70,474,70"/>
+</map>

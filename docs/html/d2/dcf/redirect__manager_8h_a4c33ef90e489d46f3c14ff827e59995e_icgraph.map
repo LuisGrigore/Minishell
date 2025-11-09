@@ -2,6 +2,6 @@
 <area shape="rect" id="Node000001" title="Creates a new redirect structure." alt="" coords="407,5,527,31"/>
 <area shape="rect" id="Node000002" href="$de/d8a/command__operations_8c.html#ae8e333414be93525618fc7ce5406226c" title="Adds a redirection to the command." alt="" coords="176,5,359,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,21,359,21,359,15,393,15"/>
-<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="5,5,128,31"/>
+<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title=" " alt="" coords="5,5,128,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,21,128,21,128,15,162,15"/>
 </map>

@@ -105,12 +105,17 @@ $(document).ready(function(){initNavTree('d5/d36/parser_8h_source.html','../../'
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d36/parser_8h.html#acb7fb50758c9c06855f6773f2bf296c3">parse_line</a>(<span class="keywordtype">char</span> *line, <a class="code hl_struct" href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">t_gen_list</a> *commands);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * parse_line now also receives the environment list so lexer can expand</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * variables according to quoting rules during tokenization.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d36/parser_8h.html#a6f550f89c332f75aeaca78125799e641">parse_line</a>(<span class="keywordtype">char</span> *line, <a class="code hl_struct" href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">t_gen_list</a> *commands, <a class="code hl_struct" href="../../d0/d0e/environment__internal_8h.html#d2/ddb/structs__environment">t_environment</a> *env);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aenvironment__internal_8h_html_d2/ddb/structs__environment"><div class="ttname"><a href="../../d0/d0e/environment__internal_8h.html#d2/ddb/structs__environment">s_environment</a></div><div class="ttdef"><b>Definition</b> environment_internal.h:29</div></div>
 <div class="ttc" id="agen__link__list__internal_8h_html_dd/d43/structs__gen__list"><div class="ttname"><a href="../../d2/dcf/gen__link__list__internal_8h.html#dd/d43/structs__gen__list">s_gen_list</a></div><div class="ttdoc">Generic singly linked list container.</div><div class="ttdef"><b>Definition</b> gen_link_list_internal.h:42</div></div>
 <div class="ttc" id="ams__status__codes_8h_html"><div class="ttname"><a href="../../d2/d40/ms__status__codes_8h.html">ms_status_codes.h</a></div></div>
-<div class="ttc" id="aparser_8h_html_acb7fb50758c9c06855f6773f2bf296c3"><div class="ttname"><a href="../../d5/d36/parser_8h.html#acb7fb50758c9c06855f6773f2bf296c3">parse_line</a></div><div class="ttdeci">int parse_line(char *line, t_gen_list *commands)</div><div class="ttdef"><b>Definition</b> parser.c:96</div></div>
+<div class="ttc" id="aparser_8h_html_a6f550f89c332f75aeaca78125799e641"><div class="ttname"><a href="../../d5/d36/parser_8h.html#a6f550f89c332f75aeaca78125799e641">parse_line</a></div><div class="ttdeci">int parse_line(char *line, t_gen_list *commands, t_environment *env)</div><div class="ttdef"><b>Definition</b> parser.c:96</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

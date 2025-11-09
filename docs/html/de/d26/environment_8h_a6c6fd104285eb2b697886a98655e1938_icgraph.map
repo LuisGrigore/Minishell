@@ -1,0 +1,15 @@
+<map id="env_set" name="env_set">
+<area shape="rect" id="Node000001" title="Add or update an environment variable." alt="" coords="532,80,605,105"/>
+<area shape="rect" id="Node000002" href="$d0/dfa/command__functs__builtin__b_8c.html#a229fa76f1a2274bfe725c1c2682b2e35" title=" " alt="" coords="342,5,437,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="537,74,483,44,436,30,438,25,485,40,539,70"/>
+<area shape="rect" id="Node000003" href="$d8/d4a/environment__serialization__deserialization_8c.html#afd1bf9663998daee10331bdea7d750a5" title="Convert a string array into an environment instance." alt="" coords="327,55,451,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="518,88,451,79,452,73,518,83"/>
+<area shape="rect" id="Node000006" href="$dc/d4a/environment__operations_8c.html#a1a74c142bed29893e52b4ddcc74a46ef" title=" " alt="" coords="295,104,484,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="519,102,484,107,484,101,518,97"/>
+<area shape="rect" id="Node000007" href="$d5/db5/command__functs__builtin__a_8c.html#a267568dbf2f34e6d69e0e6cec93d4723" title=" " alt="" coords="328,153,451,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="538,115,485,143,448,156,446,151,483,138,536,110"/>
+<area shape="rect" id="Node000004" href="$d5/df2/mini__state__lifecycle_8c.html#aea6c6e2afc0fee418ff6183c25d56319" title="Creates a new shell state instance." alt="" coords="108,55,247,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="313,70,247,70,247,65,313,65"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,70,60,70,60,65,94,65"/>
+</map>

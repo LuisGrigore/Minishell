@@ -1,9 +1,9 @@
 <map id="command_push_arg" name="command_push_arg">
 <area shape="rect" id="Node000001" title="Adds an argument to the command." alt="" coords="235,55,388,80"/>
-<area shape="rect" id="Node000002" href="$da/dbb/parser__handle__tokens_8c.html#a0ba548c1c29592caf86cb481cf9b4c6d" title="Create or update a command object from a TOKEN_ARG token." alt="" coords="27,5,165,31"/>
+<area shape="rect" id="Node000002" href="$da/dbb/parser__handle__tokens_8c.html#a0ba548c1c29592caf86cb481cf9b4c6d" title=" " alt="" coords="27,5,165,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,54,152,33,153,28,243,49"/>
-<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#af26831b878a72e9d2d2ce25408571e87" title="Create or update a command object from a TOKEN_CMD token." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="Node000003" href="$da/dbb/parser__handle__tokens_8c.html#af26831b878a72e9d2d2ce25408571e87" title=" " alt="" coords="5,55,187,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,70,187,70,187,65,221,65"/>
-<area shape="rect" id="Node000004" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title="Handle a redirection token and attach the redirection to the current command object." alt="" coords="35,104,157,129"/>
+<area shape="rect" id="Node000004" href="$da/dbb/parser__handle__tokens_8c.html#a89637773a91a74e1608a942b074aa848" title=" " alt="" coords="35,104,157,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,86,153,107,152,101,242,80"/>
 </map>

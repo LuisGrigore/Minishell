@@ -1,11 +1,11 @@
 <map id="destroy_environment_var" name="destroy_environment_var">
-<area shape="rect" id="Node000001" title="Destroy a single environment variable." alt="" coords="320,31,509,56"/>
-<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#ae4211ec5d85586513118f0d5e787347d" title="Destroy the entire environment list and free resources." alt="" coords="169,5,272,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,32,272,27,272,22,307,27"/>
-<area shape="rect" id="Node000004" href="$dc/d4a/environment__operations_8c.html#aa155b7428061814751ff8a6fd7ba7961" title="Remove an environment variable by name." alt="" coords="176,55,265,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,59,266,65,265,59,306,54"/>
-<area shape="rect" id="Node000003" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="36,5,91,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="155,21,91,21,91,15,155,15"/>
-<area shape="rect" id="Node000005" href="$d5/db5/command__functs__builtin__a_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="5,55,121,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="162,70,122,70,122,65,162,65"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="351,31,540,56"/>
+<area shape="rect" id="Node000002" href="$dc/d4a/environment__operations_8c.html#a742dcf1005765c9baea22dacc6d3c0aa" title="Destroy the environment instance and free all resources." alt="" coords="200,5,303,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="337,32,302,27,303,22,337,27"/>
+<area shape="rect" id="Node000004" href="$dc/d4a/environment__operations_8c.html#ae7d4eecc603af2c6c202cd0134b892b3" title="Remove an environment variable by name." alt="" coords="207,55,296,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="338,59,297,65,296,59,337,54"/>
+<area shape="rect" id="Node000003" href="$d5/df2/mini__state__lifecycle_8c.html#af7aca4ced2371df8c6102fdcbd151402" title="Destroys a shell state instance and frees all associated resources." alt="" coords="5,5,152,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,21,152,21,152,15,186,15"/>
+<area shape="rect" id="Node000005" href="$d5/db5/command__functs__builtin__a_8c.html#af6e5c77d9ee466a6a05910a0e967f6c7" title=" " alt="" coords="21,55,137,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="193,70,137,70,137,65,193,65"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="env_create" name="env_create">
+<area shape="rect" id="Node000001" title="Add or update an environment variable." alt="" coords="5,31,100,56"/>
+<area shape="rect" id="Node000002" href="$d2/d18/ft__calloc_8c.html#a55cb9602200ccf92a7f43e58c6ee2679" title=" " alt="" coords="171,5,247,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,33,157,24,158,29,100,38"/>
+<area shape="rect" id="Node000003" href="$d0/d8a/gen__link__list__life__cycle_8c.html#a03b4701bb3af070176c8057c8c068f11" title="Initialize an empty list." alt="" coords="148,55,269,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,48,135,53,134,59,100,53"/>
+</map>

@@ -72,7 +72,7 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 		close(stdout_backup);
 		return (status_code);
 	}
-	status_code = command->command_funct(command, mini_state_get_environment_vars(mini_state));
+	status_code = command->command_funct(command, mini_state_get_environment(mini_state));
 	dup2(stdin_backup, STDIN_FILENO);
 	dup2(stdout_backup, STDOUT_FILENO);
 	close(stdin_backup);

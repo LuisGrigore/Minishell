@@ -1,0 +1,11 @@
+<map id="src/include/mini_state.h" name="src/include/mini_state.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,5,205,31"/>
+<area shape="rect" id="Node000002" href="$de/d26/environment_8h.html" title=" " alt="" coords="26,79,206,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,31,119,65,113,65,113,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,88,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,106,69,144,65,140,103,102"/>
+<area shape="rect" id="Node000004" href="$d2/d40/ms__status__codes_8h.html" title=" " alt="" coords="112,152,259,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="129,102,167,140,163,144,126,106"/>
+<area shape="rect" id="Node000005" href="$db/d16/config_8h.html" title=" " alt="" coords="143,225,228,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="188,178,188,212,183,212,183,178"/>
+</map>

@@ -1,62 +1,63 @@
 <map id="gen_list_iter_destroy" name="gen_list_iter_destroy">
-<area shape="rect" id="Node000001" title="Destroys allocated iterator." alt="" coords="860,255,1019,280"/>
-<area shape="rect" id="Node000002" href="$d5/db5/command__functs__builtin__a_8c.html#a0fad0803ff59cff11ab2eb8de7eac854" title=" " alt="" coords="675,5,786,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="927,243,911,202,886,151,852,98,810,52,778,33,780,28,814,48,857,95,891,148,916,200,932,241"/>
-<area shape="rect" id="Node000003" href="$d5/db5/command__functs__builtin__a_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="296,55,419,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="923,244,905,214,879,180,848,147,811,120,761,98,709,82,655,71,602,64,501,59,419,63,419,58,501,54,602,58,656,65,711,77,763,93,813,116,851,143,883,177,909,211,928,241"/>
-<area shape="rect" id="Node000004" href="$d5/d2f/gen__link__list__find_8c.html#a2102327ee709da7dafad283f5b02ce00" title="Find the first element that satisfies a predicate." alt="" coords="679,131,783,156"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="904,250,752,159,755,154,906,245"/>
-<area shape="rect" id="Node000006" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="665,205,796,231"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="871,254,785,233,786,228,872,249"/>
-<area shape="rect" id="Node000017" href="$d5/dc3/gen__link__list__iteration_8c.html#af3f8c8cb8a34ba114f6e0ede0454008a" title="Apply a function to all elements of the list." alt="" coords="663,255,799,280"/>
-<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="846,270,799,270,799,265,846,265"/>
-<area shape="rect" id="Node000022" href="$d5/dc3/gen__link__list__iteration_8c.html#a8be2cca1d82589c16b7874a64796cb41" title="Apply a function to all elements of the list, with context." alt="" coords="649,304,812,329"/>
-<area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="872,286,786,307,785,301,871,281"/>
-<area shape="rect" id="Node000023" href="$db/df9/gen__link__list__peek_8c.html#ab7ec0b6203ad0fa5bf63b4bfedeac50a" title=" " alt="" coords="653,353,808,379"/>
-<area shape="poly" id="edge26_Node000001_Node000023" title=" " alt="" coords="909,290,865,317,813,343,779,356,777,351,811,338,862,312,906,285"/>
-<area shape="rect" id="Node000024" href="$d2/d81/gen__link__list__serialization_8c.html#ad17a22acfef0c3126bdfe6637bf4ff4d" title="Convert a generic list into an array of strings." alt="" coords="663,403,798,443"/>
-<area shape="poly" id="edge27_Node000001_Node000024" title=" " alt="" coords="921,292,875,342,845,368,813,392,789,406,787,401,811,388,842,364,871,338,917,289"/>
-<area shape="rect" id="Node000028" href="$d5/db5/command__functs__builtin__a_8c.html#a24640ac75761d535d770cf4255c336da" title=" " alt="" coords="673,468,789,493"/>
-<area shape="poly" id="edge32_Node000001_Node000028" title=" " alt="" coords="930,294,912,331,887,375,854,419,814,457,790,470,788,466,810,453,850,416,883,372,908,328,925,292"/>
-<area shape="rect" id="Node000005" href="$d9/d6d/gen__link__list__predicates_8c.html#aff7b5a65d01554d98152316c483dd48d" title="Check if the list contains an element that satisfies a predicate." alt="" coords="485,107,587,132"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="664,138,588,128,588,123,665,133"/>
-<area shape="rect" id="Node000007" href="$d1/d62/environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="499,205,573,231"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="651,221,573,221,573,215,651,215"/>
-<area shape="rect" id="Node000014" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="499,156,573,181"/>
-<area shape="poly" id="edge14_Node000006_Node000014" title=" " alt="" coords="666,205,572,180,573,175,668,199"/>
-<area shape="rect" id="Node000015" href="$d9/d6d/gen__link__list__predicates_8c.html#ad2f1293414d02a15559f1d375673af51" title="Check if the list contains an element that satisfies a predicate." alt="" coords="471,256,601,281"/>
-<area shape="poly" id="edge17_Node000006_Node000015" title=" " alt="" coords="668,237,586,259,585,253,667,232"/>
-<area shape="rect" id="Node000008" href="$d0/dfa/command__functs__builtin__b_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="310,104,405,129"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="485,203,469,195,445,173,421,151,387,132,390,127,424,147,448,169,472,190,487,199"/>
-<area shape="rect" id="Node000009" href="$d3/da8/environment__var__expansion_8c.html#a11ca2b9b5f44c8a4b33e6470b6404705" title=" " alt="" coords="108,156,244,181"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="485,208,422,195,329,183,244,176,245,170,330,178,423,190,486,203"/>
-<area shape="rect" id="Node000011" href="$d7/d66/minishell_8c.html#a1ddc47c338525ab6e1e320a3386b7f13" title=" " alt="" coords="306,205,409,231"/>
-<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="485,221,409,221,409,215,485,215"/>
-<area shape="rect" id="Node000013" href="$d0/dfa/command__functs__builtin__b_8c.html#a0f6eaa743e63abad6ac6be049d6179c6" title=" " alt="" coords="304,255,411,280"/>
-<area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="486,234,405,257,403,252,485,229"/>
-<area shape="rect" id="Node000010" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,205,60,231"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="126,188,61,211,59,206,124,183"/>
-<area shape="rect" id="Node000012" href="$d7/d66/minishell_8c.html#a2249ba20e336058b07d91d198527907b" title=" " alt="" coords="135,205,217,231"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="292,221,218,221,218,215,292,215"/>
-<area shape="poly" id="edge12_Node000012_Node000010" title=" " alt="" coords="120,221,60,221,60,215,120,215"/>
-<area shape="poly" id="edge16_Node000014_Node000003" title=" " alt="" coords="485,155,469,145,454,132,445,119,436,106,421,94,400,82,402,78,424,89,440,103,449,116,458,128,472,141,488,150"/>
-<area shape="poly" id="edge15_Node000014_Node000008" title=" " alt="" coords="485,157,401,132,402,127,487,152"/>
-<area shape="rect" id="Node000016" href="$d1/d62/environment__query_8c.html#ae287a3a3537fd254879ea2caf5fd8395" title="Check if an environment variable exists by name." alt="" coords="319,304,395,329"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="476,288,396,309,395,304,474,282"/>
-<area shape="rect" id="Node000018" href="$de/d8a/command__operations_8c.html#adf6495f1ffb8a1e6ed217cb77472bf1c" title="Executes the command with the given environment." alt="" coords="474,307,598,332"/>
-<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="670,286,585,309,584,304,669,281"/>
-<area shape="rect" id="Node000020" href="$d3/d22/command__debug_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="474,357,598,383"/>
-<area shape="poly" id="edge23_Node000017_Node000020" title=" " alt="" coords="662,288,651,294,636,306,627,318,618,332,603,346,577,360,574,355,600,341,614,328,623,315,632,302,648,289,659,283"/>
-<area shape="rect" id="Node000019" href="$d7/d11/executer_8c.html#a18e60d48cf2841e0b47fd72bb4ab4c1d" title=" " alt="" coords="124,304,228,329"/>
-<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="466,337,423,343,357,348,292,343,227,332,228,327,292,338,357,342,422,338,465,332"/>
-<area shape="poly" id="edge22_Node000019_Node000010" title=" " alt="" coords="144,298,51,233,54,229,147,294"/>
-<area shape="rect" id="Node000021" href="$dd/d71/parser__debug_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="292,405,423,431"/>
-<area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="476,389,406,408,405,403,474,384"/>
-<area shape="rect" id="Node000025" href="$dc/dc0/command__functs__bin_8c.html#a9b93e7663cca775fbe6c13fea90699f1" title=" " alt="" coords="307,455,407,480"/>
-<area shape="poly" id="edge28_Node000024_Node000025" title=" " alt="" coords="650,432,471,451,408,461,407,456,470,446,650,427"/>
-<area shape="rect" id="Node000026" href="$d8/d4a/environment__serialization__deserialization_8c.html#a4382a7abfba4179c0505a0654e94009b" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="482,461,590,487"/>
-<area shape="poly" id="edge29_Node000024_Node000026" title=" " alt="" coords="651,447,586,464,585,459,649,442"/>
-<area shape="poly" id="edge30_Node000026_Node000025" title=" " alt="" coords="468,474,408,472,408,467,468,469"/>
-<area shape="rect" id="Node000027" href="$d0/dfa/command__functs__builtin__b_8c.html#a509bc3c56be844c9b30a2ff165913928" title=" " alt="" coords="305,504,409,529"/>
-<area shape="poly" id="edge31_Node000026_Node000027" title=" " alt="" coords="470,492,411,507,409,502,468,487"/>
+<area shape="rect" id="Node000001" title="Destroys allocated iterator." alt="" coords="923,403,1081,428"/>
+<area shape="rect" id="Node000002" href="$d5/db5/command__functs__builtin__a_8c.html#a8bfa6f3309aa5f3ac7f08f37670e2e4f" title=" " alt="" coords="738,28,849,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="996,389,986,326,965,243,949,198,928,153,903,112,873,75,844,56,847,51,876,71,908,109,933,151,954,196,970,241,991,325,1001,389"/>
+<area shape="rect" id="Node000003" href="$d5/db5/command__functs__builtin__a_8c.html#a267568dbf2f34e6d69e0e6cec93d4723" title=" " alt="" coords="329,5,451,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="985,392,940,319,909,278,873,240,821,198,765,162,706,130,646,102,534,60,444,33,446,28,535,55,648,97,708,125,768,157,824,194,876,236,913,274,945,316,990,389"/>
+<area shape="rect" id="Node000004" href="$d5/d2f/gen__link__list__find_8c.html#a2102327ee709da7dafad283f5b02ce00" title="Find the first element that satisfies a predicate." alt="" coords="741,377,845,403"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="908,407,845,399,846,394,909,401"/>
+<area shape="rect" id="Node000006" href="$d5/d2f/gen__link__list__find_8c.html#abe06ed3bda440c2bdaf89881a83fddf8" title="Find the first element that satisfies a predicate with context." alt="" coords="728,251,859,276"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="972,397,873,323,812,279,815,274,876,319,975,392"/>
+<area shape="rect" id="Node000012" href="$d0/dfa/command__functs__builtin__b_8c.html#a4b471292f64a3207d6ed110c64874043" title=" " alt="" coords="337,351,443,376"/>
+<area shape="poly" id="edge31_Node000001_Node000012" title=" " alt="" coords="964,399,922,381,874,367,754,352,635,349,527,353,444,360,443,354,527,347,635,343,755,347,875,362,923,376,966,394"/>
+<area shape="rect" id="Node000020" href="$d5/dc3/gen__link__list__iteration_8c.html#af3f8c8cb8a34ba114f6e0ede0454008a" title="Apply a function to all elements of the list." alt="" coords="725,427,861,452"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="909,429,862,434,861,429,909,423"/>
+<area shape="rect" id="Node000023" href="$d5/dc3/gen__link__list__iteration_8c.html#a8be2cca1d82589c16b7874a64796cb41" title="Apply a function to all elements of the list, with context." alt="" coords="712,476,875,501"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="957,436,876,466,837,479,836,473,874,461,955,431"/>
+<area shape="rect" id="Node000024" href="$db/df9/gen__link__list__peek_8c.html#ab7ec0b6203ad0fa5bf63b4bfedeac50a" title=" " alt="" coords="716,525,871,551"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="979,439,933,478,876,515,845,528,843,523,873,510,930,473,976,435"/>
+<area shape="rect" id="Node000025" href="$d2/d81/gen__link__list__serialization_8c.html#ad17a22acfef0c3126bdfe6637bf4ff4d" title="Convert a generic list into an array of strings." alt="" coords="726,575,861,615"/>
+<area shape="poly" id="edge26_Node000001_Node000025" title=" " alt="" coords="987,441,942,501,911,535,876,564,854,577,851,573,873,560,907,531,938,498,983,438"/>
+<area shape="rect" id="Node000029" href="$d5/db5/command__functs__builtin__a_8c.html#af6e5c77d9ee466a6a05910a0e967f6c7" title=" " alt="" coords="735,640,851,665"/>
+<area shape="poly" id="edge32_Node000001_Node000029" title=" " alt="" coords="995,442,978,483,954,534,920,585,876,629,853,643,850,638,873,625,915,582,949,531,974,481,990,440"/>
+<area shape="rect" id="Node000005" href="$d9/d6d/gen__link__list__predicates_8c.html#aff7b5a65d01554d98152316c483dd48d" title="Check if the list contains an element that satisfies a predicate." alt="" coords="547,377,650,403"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="727,393,651,393,651,387,727,387"/>
+<area shape="rect" id="Node000007" href="$d1/d62/environment__query_8c.html#aa3677cbafb0a63de9a3480786325038f" title="Get the value of an environment variable by name." alt="" coords="561,227,636,252"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="714,256,636,246,636,241,714,251"/>
+<area shape="rect" id="Node000013" href="$dc/d4a/environment__operations_8c.html#a6c6fd104285eb2b697886a98655e1938" title="Add or update an environment variable." alt="" coords="562,129,635,155"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="759,246,619,157,622,153,762,241"/>
+<area shape="rect" id="Node000018" href="$d9/d6d/gen__link__list__predicates_8c.html#ad2f1293414d02a15559f1d375673af51" title="Check if the list contains an element that satisfies a predicate." alt="" coords="533,276,664,301"/>
+<area shape="poly" id="edge19_Node000006_Node000018" title=" " alt="" coords="714,276,665,283,664,277,714,271"/>
+<area shape="rect" id="Node000008" href="$dc/d4a/environment__operations_8c.html#a0c20f3f965537481c767625d9c3c5258" title=" " alt="" coords="295,203,485,228"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="547,236,485,229,486,224,548,231"/>
+<area shape="rect" id="Node000009" href="$d7/d66/minishell_8c.html#ab4a0aee9bd63c76a7bab9ee110c2947a" title=" " alt="" coords="339,252,441,277"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="548,248,442,261,441,256,547,243"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="550,256,535,265,520,284,512,302,504,321,487,340,466,352,444,359,443,354,464,347,484,336,500,319,507,300,515,281,532,261,548,251"/>
+<area shape="rect" id="Node000010" href="$d7/d66/minishell_8c.html#ad40459f9ec39e6c5d594fe1d5d20193d" title=" " alt="" coords="136,203,219,228"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="324,252,218,227,219,222,326,247"/>
+<area shape="rect" id="Node000011" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,179,60,204"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="122,209,60,198,61,193,123,204"/>
+<area shape="poly" id="edge18_Node000013_Node000003" title=" " alt="" coords="551,125,532,112,516,94,508,76,500,60,484,44,451,29,453,24,487,40,504,57,513,74,521,91,535,108,554,121"/>
+<area shape="rect" id="Node000014" href="$d0/dfa/command__functs__builtin__b_8c.html#a229fa76f1a2274bfe725c1c2682b2e35" title=" " alt="" coords="343,55,437,80"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="559,126,484,94,437,80,438,75,486,89,561,121"/>
+<area shape="rect" id="Node000015" href="$d8/d4a/environment__serialization__deserialization_8c.html#afd1bf9663998daee10331bdea7d750a5" title="Convert a string array into an environment instance." alt="" coords="328,104,452,129"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="548,139,452,127,452,121,549,133"/>
+<area shape="rect" id="Node000017" href="$dc/d4a/environment__operations_8c.html#a1a74c142bed29893e52b4ddcc74a46ef" title=" " alt="" coords="295,153,485,179"/>
+<area shape="poly" id="edge17_Node000013_Node000017" title=" " alt="" coords="549,150,485,158,484,152,548,145"/>
+<area shape="rect" id="Node000016" href="$d5/df2/mini__state__lifecycle_8c.html#aea6c6e2afc0fee418ff6183c25d56319" title="Creates a new shell state instance." alt="" coords="108,129,247,155"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="315,128,247,136,247,131,314,123"/>
+<area shape="poly" id="edge16_Node000016_Node000011" title=" " alt="" coords="128,162,61,185,59,180,126,157"/>
+<area shape="rect" id="Node000019" href="$d1/d62/environment__query_8c.html#a03d89417aa9be3c8716614354c3af210" title="Check if an environment variable exists by name." alt="" coords="352,301,428,327"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="520,301,429,312,428,307,519,296"/>
+<area shape="rect" id="Node000021" href="$d3/d22/command__debug_8c.html#aaeba1075474bbabf46d3efc68664c129" title=" " alt="" coords="537,427,661,452"/>
+<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="711,442,661,442,661,437,711,437"/>
+<area shape="rect" id="Node000022" href="$dd/d71/parser__debug_8c.html#a4f53155213d3a8705691b8cc5d483a5d" title=" " alt="" coords="325,427,455,452"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="523,442,456,442,456,437,523,437"/>
+<area shape="rect" id="Node000026" href="$dc/dc0/command__functs__bin_8c.html#a28424d2afec3baf17003dc75676459d5" title=" " alt="" coords="340,607,440,632"/>
+<area shape="poly" id="edge27_Node000025_Node000026" title=" " alt="" coords="712,603,441,619,440,614,712,597"/>
+<area shape="rect" id="Node000027" href="$d8/d4a/environment__serialization__deserialization_8c.html#a103d5f5668d1f16aaad9e8e97d5aa7f8" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="545,557,653,583"/>
+<area shape="poly" id="edge28_Node000025_Node000027" title=" " alt="" coords="712,587,653,580,653,574,713,582"/>
+<area shape="poly" id="edge29_Node000027_Node000026" title=" " alt="" coords="532,588,441,610,440,605,530,583"/>
+<area shape="rect" id="Node000028" href="$d0/dfa/command__functs__builtin__b_8c.html#a824da6eadd5d2d45587870853f13218a" title=" " alt="" coords="338,557,442,583"/>
+<area shape="poly" id="edge30_Node000027_Node000028" title=" " alt="" coords="531,573,442,573,442,567,531,567"/>
 </map>

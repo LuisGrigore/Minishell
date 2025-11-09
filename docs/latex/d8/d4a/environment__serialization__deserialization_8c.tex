@@ -1,7 +1,8 @@
 \doxysection{src/environment/environment\+\_\+serialization\+\_\+deserialization.c File Reference}
 \hypertarget{environment__serialization__deserialization_8c}{}\label{environment__serialization__deserialization_8c}\index{src/environment/environment\_serialization\_deserialization.c@{src/environment/environment\_serialization\_deserialization.c}}
 {\ttfamily \#include "{}environment\+\_\+internal.\+h"{}}\newline
-Include dependency graph for environment\+\_\+serialization\+\_\+deserialization.\+c\+:\nopagebreak
+Include dependency graph for environment\+\_\+serialization\+\_\+deserialization.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,22 +12,22 @@ Include dependency graph for environment\+\_\+serialization\+\_\+deserialization
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b}{env\+\_\+serialize}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}envioroment)
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__serialization__deserialization_8c_a103d5f5668d1f16aaad9e8e97d5aa7f8}{env\+\_\+serialize}} (\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}env)
 \begin{DoxyCompactList}\small\item\em Serialize environment variables into a null-\/terminated string array. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str\+\_\+array)
-\begin{DoxyCompactList}\small\item\em Convert a string array into an environment variable list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{environment__serialization__deserialization_8c_afd1bf9663998daee10331bdea7d750a5}{env\+\_\+deserialize}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Convert a string array into an environment instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44}\label{environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44} 
+\Hypertarget{environment__serialization__deserialization_8c_afd1bf9663998daee10331bdea7d750a5}\label{environment__serialization__deserialization_8c_afd1bf9663998daee10331bdea7d750a5} 
 \index{environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}!env\_deserialize@{env\_deserialize}}
 \index{env\_deserialize@{env\_deserialize}!environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}}
 \doxysubsubsection{\texorpdfstring{env\_deserialize()}{env\_deserialize()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*} env\+\_\+deserialize (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{str\+\_\+array }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*} env\+\_\+deserialize (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{str\+\_\+array }\end{DoxyParamCaption})}
 
 
 
-Convert a string array into an environment variable list. 
+Convert a string array into an environment instance. 
 
 Each string must follow the "{}\+NAME=\+VALUE"{} format.
 
@@ -36,33 +37,32 @@ Each string must follow the "{}\+NAME=\+VALUE"{} format.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Pointer to a newly allocated environment variable list, or NULL on error.
+A new environment instance initialized with the provided variables, or NULL on error.
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{environment_8h_a562e5d4f7de17fdbeea11feecda2ebc3}{env\+\_\+serialize} 
-
-\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\doxylink{environment_8h_a103d5f5668d1f16aaad9e8e97d5aa7f8}{env\+\_\+serialize} 
 \end{DoxySeeAlso}
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d8/d4a/environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_cgraph}
+\includegraphics[width=350pt]{d8/d4a/environment__serialization__deserialization_8c_afd1bf9663998daee10331bdea7d750a5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=250pt]{d8/d4a/environment__serialization__deserialization_8c_a5da2d3c514cffffe7e48122742dd4d44_icgraph}
+\includegraphics[width=350pt]{d8/d4a/environment__serialization__deserialization_8c_afd1bf9663998daee10331bdea7d750a5_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b}\label{environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b} 
+\Hypertarget{environment__serialization__deserialization_8c_a103d5f5668d1f16aaad9e8e97d5aa7f8}\label{environment__serialization__deserialization_8c_a103d5f5668d1f16aaad9e8e97d5aa7f8} 
 \index{environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}!env\_serialize@{env\_serialize}}
 \index{env\_serialize@{env\_serialize}!environment\_serialization\_deserialization.c@{environment\_serialization\_deserialization.c}}
 \doxysubsubsection{\texorpdfstring{env\_serialize()}{env\_serialize()}}
-{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} env\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} env\+\_\+serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
 
 
 
@@ -79,21 +79,23 @@ Each environment variable is represented as "{}\+NAME=\+VALUE"{}.
 Dynamically allocated null-\/terminated array of strings, or NULL on allocation failure.
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{environment_8h_a5da2d3c514cffffe7e48122742dd4d44}{env\+\_\+deserialize} 
+\doxylink{environment_8h_afd1bf9663998daee10331bdea7d750a5}{env\+\_\+deserialize} 
 
-\doxylink{environment_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
+\doxylink{environment__internal_8h_acf492e955776c85b7354a3f5ee5f3215}{t\+\_\+env\+\_\+var} 
 \end{DoxySeeAlso}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d8/d4a/environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_cgraph}
+\includegraphics[width=350pt]{d8/d4a/environment__serialization__deserialization_8c_a103d5f5668d1f16aaad9e8e97d5aa7f8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=275pt]{d8/d4a/environment__serialization__deserialization_8c_a4382a7abfba4179c0505a0654e94009b_icgraph}
+\includegraphics[width=275pt]{d8/d4a/environment__serialization__deserialization_8c_a103d5f5668d1f16aaad9e8e97d5aa7f8_icgraph}
 \end{center}
 \end{figure}

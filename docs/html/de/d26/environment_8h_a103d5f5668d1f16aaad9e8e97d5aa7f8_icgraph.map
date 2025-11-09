@@ -1,0 +1,7 @@
+<map id="env_serialize" name="env_serialize">
+<area shape="rect" id="Node000001" title="Serialize environment variables into a null&#45;terminated string array." alt="" coords="157,31,265,56"/>
+<area shape="rect" id="Node000002" href="$dc/dc0/command__functs__bin_8c.html#a28424d2afec3baf17003dc75676459d5" title=" " alt="" coords="7,5,107,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,35,107,29,108,24,144,30"/>
+<area shape="rect" id="Node000003" href="$d0/dfa/command__functs__builtin__b_8c.html#a824da6eadd5d2d45587870853f13218a" title=" " alt="" coords="5,55,109,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,56,110,62,109,57,143,51"/>
+</map>

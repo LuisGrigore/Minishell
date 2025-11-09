@@ -6,12 +6,13 @@ var command__internal_8h =
       [ "is_builtin", "d3/d58/command__internal_8h.html#affa3281487eb072f48d5e527ea06dd1c", null ],
       [ "redirects", "d3/d58/command__internal_8h.html#a82f3acd25a4af3e90640d8e7d9fe4793", null ]
     ] ],
-    [ "t_command_funct", "d3/d58/command__internal_8h.html#ae18307f65fae1da5035e40073801a9a0", null ],
-    [ "bin_execute", "d3/d58/command__internal_8h.html#a9b93e7663cca775fbe6c13fea90699f1", null ],
-    [ "cd_execute", "d3/d58/command__internal_8h.html#ac40e1776b69522eaf80d953ec441231d", null ],
-    [ "echo_execute", "d3/d58/command__internal_8h.html#a0fad0803ff59cff11ab2eb8de7eac854", null ],
-    [ "env_execute", "d3/d58/command__internal_8h.html#a509bc3c56be844c9b30a2ff165913928", null ],
-    [ "export_execute", "d3/d58/command__internal_8h.html#abba1603056020c33ad3f11e82b14fcfe", null ],
-    [ "pwd_execute", "d3/d58/command__internal_8h.html#a0f6eaa743e63abad6ac6be049d6179c6", null ],
-    [ "unset_execute", "d3/d58/command__internal_8h.html#a24640ac75761d535d770cf4255c336da", null ]
+    [ "t_command_funct", "d3/d58/command__internal_8h.html#a988ecd77b6a032442cf0275eea770ff7", null ],
+    [ "bin_execute", "d3/d58/command__internal_8h.html#a28424d2afec3baf17003dc75676459d5", null ],
+    [ "cd_execute", "d3/d58/command__internal_8h.html#a229fa76f1a2274bfe725c1c2682b2e35", null ],
+    [ "echo_execute", "d3/d58/command__internal_8h.html#a8bfa6f3309aa5f3ac7f08f37670e2e4f", null ],
+    [ "env_execute", "d3/d58/command__internal_8h.html#a824da6eadd5d2d45587870853f13218a", null ],
+    [ "exit_execute", "d3/d58/command__internal_8h.html#ad4c8ebe69a36608c19704100145ad345", null ],
+    [ "export_execute", "d3/d58/command__internal_8h.html#a267568dbf2f34e6d69e0e6cec93d4723", null ],
+    [ "pwd_execute", "d3/d58/command__internal_8h.html#a4b471292f64a3207d6ed110c64874043", null ],
+    [ "unset_execute", "d3/d58/command__internal_8h.html#af6e5c77d9ee466a6a05910a0e967f6c7", null ]
 ];

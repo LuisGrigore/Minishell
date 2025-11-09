@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:06:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:24:22 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,32 +54,32 @@ static void handle_system_status_codes(int status_code, t_mini_state *mini_state
 {
 	if (status_code == MS_OK)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 0);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 0);
 		return;
 	}
 	else if (status_code == MS_OPEN_ERR)
 	{
 		fprintf(stderr, "minishell: %s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
         return;
 	}
 	else if(status_code == MS_PATH_ERR)
 	{
 		fprintf(stderr, "minishell: %s: No such file or directory\n", mini_state_get_last_command(mini_state));
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
         return;
 	}
 	else if (status_code == MS_ALLOCATION_ERR)
 	{
 		perror("Malloc error");
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		mini_state_destroy(mini_state);
 		exit(EXIT_FAILURE);
 	}
 	else if (status_code == MS_SIGNAL_ERR)
 	{
 		perror("Signal error");
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		mini_state_destroy(mini_state);
 		exit(EXIT_FAILURE);
 	}
@@ -91,42 +91,42 @@ static void handle_command_status_codes(int status_code, t_mini_state *mini_stat
 {
 	if(status_code == COMMAND_NOT_FOUND_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 127);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 127);
 		fprintf(stderr, "%s: command not found\n", mini_state_get_last_opened_file(mini_state));
 	}
 	else if(status_code == COMMAND_PERMISSION_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 126);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 126);
 		fprintf(stderr, "%s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
 	}
 	else if(status_code == COMMAND_IS_DIR_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 126);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 126);
 		fprintf(stderr, "%s: Is a directory\n", mini_state_get_last_opened_file(mini_state));
 	}
 	else if(status_code == COMMAND_TOO_MANY_ARGS_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		fprintf(stderr, "minishell: %s: too many arguments\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_MISSING_ARGS_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		fprintf(stderr, "minishell: %s: missing arguments\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_NUMERIC_ARG_REQUIRED_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
 		fprintf(stderr, "minishell: %s: numeric argument required\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_MALFORMED_ERR)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		fprintf(stderr, "minishell: %s: argument malformed \n", mini_state_get_last_command(mini_state));
 	}
 	else
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		fprintf(stderr, "minishell: %s: Unassigned error \n", mini_state_get_last_command(mini_state));
 		
 	}
@@ -135,7 +135,7 @@ static void handle_command_status_codes(int status_code, t_mini_state *mini_stat
 static void handle_executer_status_codes(int status_code, t_mini_state *mini_state)
 {
 	if(status_code == EXECUTER_ERR)
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
 	else
 		fprintf(stderr, "Unhandled executer status code: %d\n", status_code);
 }
@@ -143,14 +143,14 @@ static void handle_executer_status_codes(int status_code, t_mini_state *mini_sta
 static void handle_lexer_status_codes(int status_code, t_mini_state *mini_state)
 {
 	if(status_code == LEXER_ERR)
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
 	else
 		fprintf(stderr, "Unhandled lexer status code: %d\n", status_code);
 }
 static void handle_parser_status_codes(int status_code, t_mini_state *mini_state)
 {
 	if(status_code == PARSER_ERR)
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
 	else
 		fprintf(stderr, "Unhandled parser status code: %d\n", status_code);
 }
@@ -158,7 +158,7 @@ static void handle_parser_status_codes(int status_code, t_mini_state *mini_state
 static void handle_redirect_status_codes(int status_code, t_mini_state *mini_state)
 {
 	if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR )
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
 	else
 		fprintf(stderr, "Unhandled redirect status code: %d\n", status_code);
 }
@@ -170,7 +170,7 @@ static void	handle_status_codes(int status_code, t_mini_state *mini_state, char 
 
 	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
-		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
+		env_set_last_status_code(mini_state_get_environment(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
 		if (mini_state_get_last_command(mini_state) && ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
 		{
 			mini_state_destroy(mini_state);
@@ -194,7 +194,7 @@ static void	handle_status_codes(int status_code, t_mini_state *mini_state, char 
 		fprintf(stderr, "Unhandled status code: %d\n", status_code);
 	if(mini_state_get_exit_after_last_command(mini_state))
 	{
-		exit_status = env_get_last_status_code(mini_state_get_environment_vars(mini_state));
+		exit_status = env_get_last_status_code(mini_state_get_environment(mini_state));
 		mini_state_destroy(mini_state);
 		history_clean();
 		exit(exit_status);
@@ -216,7 +216,7 @@ int	main(int args, char **environment_var_str_array)
 	finish = false;
 	while (!finish)
 	{
-		input = get_input(mini_state_get_environment_vars(mini_state));
+		input = get_input(mini_state_get_environment(mini_state));
 		if (input == NULL)
 			finish = true;
 		if (ft_strlen(input) != 0)

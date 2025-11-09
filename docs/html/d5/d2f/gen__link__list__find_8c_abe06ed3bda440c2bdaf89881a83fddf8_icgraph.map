@@ -1,27 +1,32 @@
 <map id="gen_list_find_ctx" name="gen_list_find_ctx">
-<area shape="rect" id="Node000001" title="Find the first element that satisfies a predicate with context." alt="" coords="641,179,772,204"/>
-<area shape="rect" id="Node000002" href="$d1/d62/environment__query_8c.html#a3c0925ae26f46b352c177af3402af290" title="Get the value of an environment variable by name." alt="" coords="491,104,565,129"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="661,176,558,132,560,127,664,171"/>
-<area shape="rect" id="Node000009" href="$dc/d4a/environment__operations_8c.html#a070d87ba3c4a4664d9e477e542e7358c" title="Add or update an environment variable." alt="" coords="491,179,565,204"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="628,194,565,194,565,189,628,189"/>
-<area shape="rect" id="Node000011" href="$d9/d6d/gen__link__list__predicates_8c.html#ad2f1293414d02a15559f1d375673af51" title="Check if the list contains an element that satisfies a predicate." alt="" coords="463,228,593,253"/>
-<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="647,210,576,230,574,225,646,205"/>
-<area shape="rect" id="Node000003" href="$d0/dfa/command__functs__builtin__b_8c.html#a83ed98a644bedb28f7fe6e05b83fc4b8" title=" " alt="" coords="306,153,401,179"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,133,400,156,399,151,477,128"/>
-<area shape="rect" id="Node000004" href="$d3/da8/environment__var__expansion_8c.html#a11ca2b9b5f44c8a4b33e6470b6404705" title=" " alt="" coords="108,5,244,31"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="500,97,461,68,414,44,371,32,327,25,244,19,244,14,327,19,372,27,416,40,464,64,503,93"/>
-<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#a1ddc47c338525ab6e1e320a3386b7f13" title=" " alt="" coords="302,55,405,80"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="477,105,399,83,400,78,478,100"/>
-<area shape="rect" id="Node000008" href="$d0/dfa/command__functs__builtin__b_8c.html#a0f6eaa743e63abad6ac6be049d6179c6" title=" " alt="" coords="300,104,407,129"/>
-<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="477,119,407,119,407,114,477,114"/>
-<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,35,61,41,60,36,94,30"/>
-<area shape="rect" id="Node000007" href="$d7/d66/minishell_8c.html#a2249ba20e336058b07d91d198527907b" title=" " alt="" coords="135,55,217,80"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="288,70,217,70,217,65,288,65"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="121,61,60,50,61,45,121,56"/>
-<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="477,187,400,175,401,170,478,181"/>
-<area shape="rect" id="Node000010" href="$d5/db5/command__functs__builtin__a_8c.html#abba1603056020c33ad3f11e82b14fcfe" title=" " alt="" coords="292,203,415,228"/>
-<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="478,201,415,210,415,204,477,196"/>
-<area shape="rect" id="Node000012" href="$d1/d62/environment__query_8c.html#ae287a3a3537fd254879ea2caf5fd8395" title="Check if an environment variable exists by name." alt="" coords="315,252,391,277"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="449,254,392,262,391,257,449,249"/>
+<area shape="rect" id="Node000001" title="Find the first element that satisfies a predicate with context." alt="" coords="712,227,843,252"/>
+<area shape="rect" id="Node000002" href="$d1/d62/environment__query_8c.html#aa3677cbafb0a63de9a3480786325038f" title="Get the value of an environment variable by name." alt="" coords="561,80,636,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="748,220,614,107,617,103,752,215"/>
+<area shape="rect" id="Node000008" href="$dc/d4a/environment__operations_8c.html#a6c6fd104285eb2b697886a98655e1938" title="Add or update an environment variable." alt="" coords="562,227,635,252"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="698,242,636,242,636,237,698,237"/>
+<area shape="rect" id="Node000014" href="$d9/d6d/gen__link__list__predicates_8c.html#ad2f1293414d02a15559f1d375673af51" title="Check if the list contains an element that satisfies a predicate." alt="" coords="533,325,664,351"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="743,261,624,327,622,323,740,256"/>
+<area shape="rect" id="Node000003" href="$dc/d4a/environment__operations_8c.html#a0c20f3f965537481c767625d9c3c5258" title=" " alt="" coords="295,5,485,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="559,76,484,45,447,33,449,28,486,39,561,71"/>
+<area shape="rect" id="Node000004" href="$d7/d66/minishell_8c.html#ab4a0aee9bd63c76a7bab9ee110c2947a" title=" " alt="" coords="339,55,441,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="547,89,441,76,442,71,548,84"/>
+<area shape="rect" id="Node000007" href="$d0/dfa/command__functs__builtin__b_8c.html#a4b471292f64a3207d6ed110c64874043" title=" " alt="" coords="337,104,443,129"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="548,101,444,113,443,108,547,96"/>
+<area shape="rect" id="Node000005" href="$d7/d66/minishell_8c.html#ad40459f9ec39e6c5d594fe1d5d20193d" title=" " alt="" coords="136,80,219,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="325,78,219,90,218,85,325,72"/>
+<area shape="rect" id="Node000006" href="$d7/d66/minishell_8c.html#a1f494297c6ab1aa9469d0f8f58c13c35" title=" " alt="" coords="5,129,60,155"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="128,112,61,135,59,130,126,107"/>
+<area shape="rect" id="Node000009" href="$d0/dfa/command__functs__builtin__b_8c.html#a229fa76f1a2274bfe725c1c2682b2e35" title=" " alt="" coords="343,153,437,179"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="558,223,484,193,437,179,438,174,486,187,560,218"/>
+<area shape="rect" id="Node000010" href="$d8/d4a/environment__serialization__deserialization_8c.html#afd1bf9663998daee10331bdea7d750a5" title="Convert a string array into an environment instance." alt="" coords="328,203,452,228"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="548,236,452,225,452,220,549,231"/>
+<area shape="rect" id="Node000012" href="$dc/d4a/environment__operations_8c.html#a1a74c142bed29893e52b4ddcc74a46ef" title=" " alt="" coords="295,252,485,277"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="549,248,485,256,484,251,548,243"/>
+<area shape="rect" id="Node000013" href="$d5/db5/command__functs__builtin__a_8c.html#a267568dbf2f34e6d69e0e6cec93d4723" title=" " alt="" coords="329,301,451,327"/>
+<area shape="poly" id="edge13_Node000008_Node000013" title=" " alt="" coords="561,261,486,293,449,304,447,299,484,287,559,256"/>
+<area shape="rect" id="Node000011" href="$d5/df2/mini__state__lifecycle_8c.html#aea6c6e2afc0fee418ff6183c25d56319" title="Creates a new shell state instance." alt="" coords="108,153,247,179"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="321,202,232,181,234,176,322,197"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="94,155,60,149,61,144,95,150"/>
+<area shape="rect" id="Node000015" href="$d1/d62/environment__query_8c.html#a03d89417aa9be3c8716614354c3af210" title="Check if an environment variable exists by name." alt="" coords="352,351,428,376"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="520,350,429,361,428,356,519,345"/>
 </map>

@@ -14,16 +14,16 @@ Include dependency graph for parser.\+c\+:
 \item 
 int \mbox{\hyperlink{parser_8c_a084b366ab1420e880a6d585e5c70f81b}{parse\+\_\+tokens\+\_\+to\+\_\+commands}} (\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}tokens, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
 \item 
-int \mbox{\hyperlink{parser_8c_acb7fb50758c9c06855f6773f2bf296c3}{parse\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands)
+int \mbox{\hyperlink{parser_8c_a6f550f89c332f75aeaca78125799e641}{parse\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line, \mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}commands, \mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}env)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{parser_8c_acb7fb50758c9c06855f6773f2bf296c3}\label{parser_8c_acb7fb50758c9c06855f6773f2bf296c3} 
+\Hypertarget{parser_8c_a6f550f89c332f75aeaca78125799e641}\label{parser_8c_a6f550f89c332f75aeaca78125799e641} 
 \index{parser.c@{parser.c}!parse\_line@{parse\_line}}
 \index{parse\_line@{parse\_line}!parser.c@{parser.c}}
 \doxysubsubsection{\texorpdfstring{parse\_line()}{parse\_line()}}
-{\footnotesize\ttfamily int parse\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int parse\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands,  }\item[{\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
 
 Tokenize and parse a single command-\/line string into a list of commands.
 
@@ -50,7 +50,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d2/d72/parser_8c_acb7fb50758c9c06855f6773f2bf296c3_cgraph}
+\includegraphics[width=350pt]{d2/d72/parser_8c_a6f550f89c332f75aeaca78125799e641_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -58,7 +58,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=338pt]{d2/d72/parser_8c_acb7fb50758c9c06855f6773f2bf296c3_icgraph}
+\includegraphics[width=338pt]{d2/d72/parser_8c_a6f550f89c332f75aeaca78125799e641_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{parser_8c_a084b366ab1420e880a6d585e5c70f81b}\label{parser_8c_a084b366ab1420e880a6d585e5c70f81b} 
@@ -67,8 +67,7 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{parse\_tokens\_to\_commands()}{parse\_tokens\_to\_commands()}}
 {\footnotesize\ttfamily int parse\+\_\+tokens\+\_\+to\+\_\+commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{\mbox{\hyperlink{gen__list_8h_a34f302945ae5df15b46569be320d7022}{t\+\_\+gen\+\_\+list}} \texorpdfstring{$\ast$}{*}}]{commands }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

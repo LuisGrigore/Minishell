@@ -1,0 +1,73 @@
+\doxysection{src/lexer/lexer\+\_\+parse\+\_\+word.c File Reference}
+\hypertarget{lexer__parse__word_8c}{}\label{lexer__parse__word_8c}\index{src/lexer/lexer\_parse\_word.c@{src/lexer/lexer\_parse\_word.c}}
+{\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
+Include dependency graph for lexer\+\_\+parse\+\_\+word.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dd5/lexer__parse__word_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lexer__parse__word_8c_af6670d9089bd1ad287d77bec4b9ccfec}{build\+\_\+out\+\_\+word}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st, size\+\_\+t start, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out\+\_\+word)
+\item 
+int \mbox{\hyperlink{lexer__parse__word_8c_ab12888be235ba9dd05d8012e97a49c12}{finalize\+\_\+parse\+\_\+word}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st, char \texorpdfstring{$\ast$}{*}buf, size\+\_\+t start, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out\+\_\+word)
+\item 
+int \mbox{\hyperlink{lexer__parse__word_8c_a0ab81aebcbf5c09cd1e34ff70499b724}{parse\+\_\+word}} (const char \texorpdfstring{$\ast$}{*}line, size\+\_\+t \texorpdfstring{$\ast$}{*}i, size\+\_\+t len, \mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}env, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out\+\_\+word)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lexer__parse__word_8c_af6670d9089bd1ad287d77bec4b9ccfec}\label{lexer__parse__word_8c_af6670d9089bd1ad287d77bec4b9ccfec} 
+\index{lexer\_parse\_word.c@{lexer\_parse\_word.c}!build\_out\_word@{build\_out\_word}}
+\index{build\_out\_word@{build\_out\_word}!lexer\_parse\_word.c@{lexer\_parse\_word.c}}
+\doxysubsubsection{\texorpdfstring{build\_out\_word()}{build\_out\_word()}}
+{\footnotesize\ttfamily int build\+\_\+out\+\_\+word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{size\+\_\+t}]{start,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out\+\_\+word }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4c/lexer__parse__word_8c_af6670d9089bd1ad287d77bec4b9ccfec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__word_8c_ab12888be235ba9dd05d8012e97a49c12}\label{lexer__parse__word_8c_ab12888be235ba9dd05d8012e97a49c12} 
+\index{lexer\_parse\_word.c@{lexer\_parse\_word.c}!finalize\_parse\_word@{finalize\_parse\_word}}
+\index{finalize\_parse\_word@{finalize\_parse\_word}!lexer\_parse\_word.c@{lexer\_parse\_word.c}}
+\doxysubsubsection{\texorpdfstring{finalize\_parse\_word()}{finalize\_parse\_word()}}
+{\footnotesize\ttfamily int finalize\+\_\+parse\+\_\+word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t}]{start,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out\+\_\+word }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{df/d4c/lexer__parse__word_8c_ab12888be235ba9dd05d8012e97a49c12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{df/d4c/lexer__parse__word_8c_ab12888be235ba9dd05d8012e97a49c12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__word_8c_a0ab81aebcbf5c09cd1e34ff70499b724}\label{lexer__parse__word_8c_a0ab81aebcbf5c09cd1e34ff70499b724} 
+\index{lexer\_parse\_word.c@{lexer\_parse\_word.c}!parse\_word@{parse\_word}}
+\index{parse\_word@{parse\_word}!lexer\_parse\_word.c@{lexer\_parse\_word.c}}
+\doxysubsubsection{\texorpdfstring{parse\_word()}{parse\_word()}}
+{\footnotesize\ttfamily int parse\+\_\+word (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{i,  }\item[{size\+\_\+t}]{len,  }\item[{\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}}]{env,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out\+\_\+word }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d4c/lexer__parse__word_8c_a0ab81aebcbf5c09cd1e34ff70499b724_cgraph}
+\end{center}
+\end{figure}

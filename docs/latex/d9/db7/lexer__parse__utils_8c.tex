@@ -1,0 +1,105 @@
+\doxysection{src/lexer/lexer\+\_\+parse\+\_\+utils.c File Reference}
+\hypertarget{lexer__parse__utils_8c}{}\label{lexer__parse__utils_8c}\index{src/lexer/lexer\_parse\_utils.c@{src/lexer/lexer\_parse\_utils.c}}
+{\ttfamily \#include "{}lexer\+\_\+internal.\+h"{}}\newline
+Include dependency graph for lexer\+\_\+parse\+\_\+utils.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d2e/lexer__parse__utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lexer__parse__utils_8c_a5a0c59df25f94cf8528710be8fd0c073}{pstate\+\_\+init}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st, const char \texorpdfstring{$\ast$}{*}line, size\+\_\+t \texorpdfstring{$\ast$}{*}i, size\+\_\+t len, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf, size\+\_\+t \texorpdfstring{$\ast$}{*}bcap, size\+\_\+t \texorpdfstring{$\ast$}{*}blen, \mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}env)
+\item 
+int \mbox{\hyperlink{lexer__parse__utils_8c_aa34e23a92a4bc5e7ff575db0d4bc0311}{ensure\+\_\+capacity}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st, size\+\_\+t need)
+\item 
+int \mbox{\hyperlink{lexer__parse__utils_8c_ae42dc004a1f176186c4f70f3796a5110}{append\+\_\+char}} (\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}st, char ch)
+\item 
+size\+\_\+t \mbox{\hyperlink{lexer__parse__utils_8c_af81f8ad981f2855bef0a36ea31ba9542}{skip\+\_\+spaces}} (const char \texorpdfstring{$\ast$}{*}line, size\+\_\+t i, size\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lexer__parse__utils_8c_ae42dc004a1f176186c4f70f3796a5110}\label{lexer__parse__utils_8c_ae42dc004a1f176186c4f70f3796a5110} 
+\index{lexer\_parse\_utils.c@{lexer\_parse\_utils.c}!append\_char@{append\_char}}
+\index{append\_char@{append\_char}!lexer\_parse\_utils.c@{lexer\_parse\_utils.c}}
+\doxysubsubsection{\texorpdfstring{append\_char()}{append\_char()}}
+{\footnotesize\ttfamily int append\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{char}]{ch }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db7/lexer__parse__utils_8c_ae42dc004a1f176186c4f70f3796a5110_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db7/lexer__parse__utils_8c_ae42dc004a1f176186c4f70f3796a5110_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__utils_8c_aa34e23a92a4bc5e7ff575db0d4bc0311}\label{lexer__parse__utils_8c_aa34e23a92a4bc5e7ff575db0d4bc0311} 
+\index{lexer\_parse\_utils.c@{lexer\_parse\_utils.c}!ensure\_capacity@{ensure\_capacity}}
+\index{ensure\_capacity@{ensure\_capacity}!lexer\_parse\_utils.c@{lexer\_parse\_utils.c}}
+\doxysubsubsection{\texorpdfstring{ensure\_capacity()}{ensure\_capacity()}}
+{\footnotesize\ttfamily int ensure\+\_\+capacity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{size\+\_\+t}]{need }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{d9/db7/lexer__parse__utils_8c_aa34e23a92a4bc5e7ff575db0d4bc0311_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db7/lexer__parse__utils_8c_aa34e23a92a4bc5e7ff575db0d4bc0311_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__utils_8c_a5a0c59df25f94cf8528710be8fd0c073}\label{lexer__parse__utils_8c_a5a0c59df25f94cf8528710be8fd0c073} 
+\index{lexer\_parse\_utils.c@{lexer\_parse\_utils.c}!pstate\_init@{pstate\_init}}
+\index{pstate\_init@{pstate\_init}!lexer\_parse\_utils.c@{lexer\_parse\_utils.c}}
+\doxysubsubsection{\texorpdfstring{pstate\_init()}{pstate\_init()}}
+{\footnotesize\ttfamily void pstate\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer__internal_8h_a76b27d92bd8cc432278f0d13176f00a1}{t\+\_\+pstate}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{i,  }\item[{size\+\_\+t}]{len,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{bcap,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{blen,  }\item[{\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{d9/db7/lexer__parse__utils_8c_a5a0c59df25f94cf8528710be8fd0c073_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lexer__parse__utils_8c_af81f8ad981f2855bef0a36ea31ba9542}\label{lexer__parse__utils_8c_af81f8ad981f2855bef0a36ea31ba9542} 
+\index{lexer\_parse\_utils.c@{lexer\_parse\_utils.c}!skip\_spaces@{skip\_spaces}}
+\index{skip\_spaces@{skip\_spaces}!lexer\_parse\_utils.c@{lexer\_parse\_utils.c}}
+\doxysubsubsection{\texorpdfstring{skip\_spaces()}{skip\_spaces()}}
+{\footnotesize\ttfamily size\+\_\+t skip\+\_\+spaces (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{d9/db7/lexer__parse__utils_8c_af81f8ad981f2855bef0a36ea31ba9542_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db7/lexer__parse__utils_8c_af81f8ad981f2855bef0a36ea31ba9542_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,201 @@
+\doxysection{src/mini\+\_\+state/mini\+\_\+state\+\_\+operations.c File Reference}
+\hypertarget{mini__state__operations_8c}{}\label{mini__state__operations_8c}\index{src/mini\_state/mini\_state\_operations.c@{src/mini\_state/mini\_state\_operations.c}}
+{\ttfamily \#include "{}mini\+\_\+state\+\_\+internal.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for mini\+\_\+state\+\_\+operations.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dbc/mini__state__operations_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mini__state__operations_8c_a87cd55208bf3df5900f7ce17f37dcd61}{mini\+\_\+state\+\_\+get\+\_\+last\+\_\+command}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Gets the last executed command. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mini__state__operations_8c_ad3fa924a865b573e0e2cb4af20f87207}{mini\+\_\+state\+\_\+get\+\_\+last\+\_\+opened\+\_\+file}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Gets the path of the last opened file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mini__state__operations_8c_adaed53bb570691f97b671dbad4c339c4}{mini\+\_\+state\+\_\+get\+\_\+environment}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Gets the current environment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mini__state__operations_8c_affe2e663af533c8ec6b089e95b26da6b}{mini\+\_\+state\+\_\+set\+\_\+last\+\_\+command}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state, const char \texorpdfstring{$\ast$}{*}command)
+\begin{DoxyCompactList}\small\item\em Updates the last executed command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mini__state__operations_8c_a08e93255e6b4844210976c0672e6b38a}{mini\+\_\+state\+\_\+set\+\_\+last\+\_\+opened\+\_\+file}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state, const char \texorpdfstring{$\ast$}{*}file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Updates the last opened file path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mini__state__operations_8c_a60faa2ad9382690fdcc7e96e74f012b4}{mini\+\_\+state\+\_\+get\+\_\+exit\+\_\+after\+\_\+last\+\_\+command}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Checks if the shell should exit after the current command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mini__state__operations_8c_a467dcbd8684a39c585b1ea02d3e24457}{mini\+\_\+state\+\_\+set\+\_\+exit\+\_\+after\+\_\+last\+\_\+command}} (\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}state, bool value)
+\begin{DoxyCompactList}\small\item\em Sets whether the shell should exit after the current command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mini__state__operations_8c_adaed53bb570691f97b671dbad4c339c4}\label{mini__state__operations_8c_adaed53bb570691f97b671dbad4c339c4} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_get\_environment@{mini\_state\_get\_environment}}
+\index{mini\_state\_get\_environment@{mini\_state\_get\_environment}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_get\_environment()}{mini\_state\_get\_environment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{environment_8h_a5ffba7f2f799b29cda5336b21a9990e6}{t\+\_\+environment}} \texorpdfstring{$\ast$}{*} mini\+\_\+state\+\_\+get\+\_\+environment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Gets the current environment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the environment variables structure 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d6e/mini__state__operations_8c_adaed53bb570691f97b671dbad4c339c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mini__state__operations_8c_a60faa2ad9382690fdcc7e96e74f012b4}\label{mini__state__operations_8c_a60faa2ad9382690fdcc7e96e74f012b4} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_get\_exit\_after\_last\_command@{mini\_state\_get\_exit\_after\_last\_command}}
+\index{mini\_state\_get\_exit\_after\_last\_command@{mini\_state\_get\_exit\_after\_last\_command}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_get\_exit\_after\_last\_command()}{mini\_state\_get\_exit\_after\_last\_command()}}
+{\footnotesize\ttfamily bool mini\+\_\+state\+\_\+get\+\_\+exit\+\_\+after\+\_\+last\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Checks if the shell should exit after the current command. 
+
+Used to handle exit conditions like the \textquotesingle{}exit\textquotesingle{} command or critical errors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the shell should exit, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{mini__state__operations_8c_a87cd55208bf3df5900f7ce17f37dcd61}\label{mini__state__operations_8c_a87cd55208bf3df5900f7ce17f37dcd61} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_get\_last\_command@{mini\_state\_get\_last\_command}}
+\index{mini\_state\_get\_last\_command@{mini\_state\_get\_last\_command}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_get\_last\_command()}{mini\_state\_get\_last\_command()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} mini\+\_\+state\+\_\+get\+\_\+last\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Gets the last executed command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String containing the last command executed, or NULL if none 
+\end{DoxyReturn}
+\Hypertarget{mini__state__operations_8c_ad3fa924a865b573e0e2cb4af20f87207}\label{mini__state__operations_8c_ad3fa924a865b573e0e2cb4af20f87207} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_get\_last\_opened\_file@{mini\_state\_get\_last\_opened\_file}}
+\index{mini\_state\_get\_last\_opened\_file@{mini\_state\_get\_last\_opened\_file}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_get\_last\_opened\_file()}{mini\_state\_get\_last\_opened\_file()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} mini\+\_\+state\+\_\+get\+\_\+last\+\_\+opened\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Gets the path of the last opened file. 
+
+Used primarily for error reporting and debugging purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String containing the path of the last opened file, or NULL if none 
+\end{DoxyReturn}
+\Hypertarget{mini__state__operations_8c_a467dcbd8684a39c585b1ea02d3e24457}\label{mini__state__operations_8c_a467dcbd8684a39c585b1ea02d3e24457} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_set\_exit\_after\_last\_command@{mini\_state\_set\_exit\_after\_last\_command}}
+\index{mini\_state\_set\_exit\_after\_last\_command@{mini\_state\_set\_exit\_after\_last\_command}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_set\_exit\_after\_last\_command()}{mini\_state\_set\_exit\_after\_last\_command()}}
+{\footnotesize\ttfamily void mini\+\_\+state\+\_\+set\+\_\+exit\+\_\+after\+\_\+last\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets whether the shell should exit after the current command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+{\em value} & true to request shell exit, false to continue execution \\
+\hline
+\end{DoxyParams}
+\Hypertarget{mini__state__operations_8c_affe2e663af533c8ec6b089e95b26da6b}\label{mini__state__operations_8c_affe2e663af533c8ec6b089e95b26da6b} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_set\_last\_command@{mini\_state\_set\_last\_command}}
+\index{mini\_state\_set\_last\_command@{mini\_state\_set\_last\_command}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_set\_last\_command()}{mini\_state\_set\_last\_command()}}
+{\footnotesize\ttfamily void mini\+\_\+state\+\_\+set\+\_\+last\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{command }\end{DoxyParamCaption})}
+
+
+
+Updates the last executed command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+{\em command} & String containing the command being executed \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d6e/mini__state__operations_8c_affe2e663af533c8ec6b089e95b26da6b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d6e/mini__state__operations_8c_affe2e663af533c8ec6b089e95b26da6b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mini__state__operations_8c_a08e93255e6b4844210976c0672e6b38a}\label{mini__state__operations_8c_a08e93255e6b4844210976c0672e6b38a} 
+\index{mini\_state\_operations.c@{mini\_state\_operations.c}!mini\_state\_set\_last\_opened\_file@{mini\_state\_set\_last\_opened\_file}}
+\index{mini\_state\_set\_last\_opened\_file@{mini\_state\_set\_last\_opened\_file}!mini\_state\_operations.c@{mini\_state\_operations.c}}
+\doxysubsubsection{\texorpdfstring{mini\_state\_set\_last\_opened\_file()}{mini\_state\_set\_last\_opened\_file()}}
+{\footnotesize\ttfamily void mini\+\_\+state\+\_\+set\+\_\+last\+\_\+opened\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mini__state_8h_abd291253ea17a9b4929d7021e8484eb3}{t\+\_\+mini\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Updates the last opened file path. 
+
+Used to track file operations for error reporting and debugging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the shell state \\
+\hline
+{\em file\+\_\+name} & Path of the file being opened \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d6e/mini__state__operations_8c_a08e93255e6b4844210976c0672e6b38a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d7/d6e/mini__state__operations_8c_a08e93255e6b4844210976c0672e6b38a_icgraph}
+\end{center}
+\end{figure}
