@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_operations.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 16:10:02 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:22:21 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
