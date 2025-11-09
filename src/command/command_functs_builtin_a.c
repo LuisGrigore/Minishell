@@ -32,22 +32,8 @@ static int	check_option_of_export(char **new_variable, t_environment *env)
 	new_variable[1] = ft_strjoin(temp, temp2);
 	return (free(temp), free(temp2), 0);
 }
-
-int	export_execute(t_command *command, t_environment *environment)
+static int export_loop(char *arg, char **new_variable, t_environment *environment, t_gen_list_iter *it)
 {
-	t_gen_list_iter	*it;
-	char			*arg;
-	char			**new_variable;
-
-	if (!command || !environment)
-		return (COMMAND_ERR);
-	if (!command->args)
-		return (COMMAND_MALFORMED_ERR);
-	it = gen_list_iter_start(command->args);
-	if (!it)
-		return (MS_ALLOCATION_ERR);
-	arg = gen_list_iter_next(it);
-	arg = gen_list_iter_next(it);
 	while(arg)
 	{
 		if(ft_isdigit(arg[0]))
@@ -58,7 +44,12 @@ int	export_execute(t_command *command, t_environment *environment)
 		if (!new_variable || !new_variable[0])
 			return (MS_ALLOCATION_ERR);
 		if (check_option_of_export(new_variable, environment) == -1)
-			return (COMMAND_MALFORMED_ERR);
+			{
+				if(new_variable[1])
+					free(new_variable[1]);
+				free(new_variable[0]);
+				return (free(new_variable),COMMAND_MALFORMED_ERR);
+			}
 		if(ft_strchr(arg, '='))
 			env_set(environment, new_variable[0], new_variable[1]);
 		free(new_variable[0]);
@@ -67,8 +58,27 @@ int	export_execute(t_command *command, t_environment *environment)
 		free(new_variable);
 		arg = gen_list_iter_next(it);
 	}
-	gen_list_iter_destroy(it);
 	return (MS_OK);
+}
+int	export_execute(t_command *command, t_environment *environment)
+{
+	t_gen_list_iter	*it;
+	char			*arg;
+	char			**new_variable;
+	int	status_code;
+
+	if (!command || !environment)
+		return (COMMAND_ERR);
+	if (!command->args)
+		return (COMMAND_MALFORMED_ERR);
+	it = gen_list_iter_start(command->args);
+	if (!it)
+		return (MS_ALLOCATION_ERR);
+	arg = gen_list_iter_next(it);
+	arg = gen_list_iter_next(it);
+	status_code = export_loop(arg, new_variable, environment, it);
+	gen_list_iter_destroy(it);
+	return(status_code);
 }
 
 int	unset_execute(t_command *command, t_environment *environment)
@@ -93,15 +103,24 @@ int	unset_execute(t_command *command, t_environment *environment)
 	gen_list_iter_destroy(it);
 	return (MS_OK);
 }
-
-int	echo_execute(t_command *command, t_environment *environment)
+static void echo_loop(char *arg, t_gen_list_iter *it)
+{
+	char			*next_arg;
+	while (arg)
+	{
+		ft_printf("%s", arg);
+		next_arg = gen_list_iter_next(it);
+		if (next_arg)
+			ft_printf(" ");
+		arg = next_arg;
+	}
+}
+int	echo_execute(t_command *command, t_environment*environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;
 	int				newline;
-	char			*next_arg;
 
-	(void)environment;
 	if (!command )
 		return (COMMAND_ERR);
 	if (!command->args)
@@ -117,14 +136,7 @@ int	echo_execute(t_command *command, t_environment *environment)
 		newline = 0;
 		arg = gen_list_iter_next(it);
 	}
-	while (arg)
-	{
-		ft_printf("%s", arg);
-		next_arg = gen_list_iter_next(it);
-		if (next_arg)
-			ft_printf(" ");
-		arg = next_arg;
-	}
+	echo_loop(arg, it);
 	if (newline)
 		ft_printf("\n");
 	gen_list_iter_destroy(it);

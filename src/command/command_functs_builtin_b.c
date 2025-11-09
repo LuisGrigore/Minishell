@@ -1,10 +1,8 @@
 #include "command_internal.h"
 
-int	cd_execute(t_command *command, t_environment *environment)
+static int cd_args_checker(t_command *command, t_environment *environment , t_gen_list_iter **it)
 {
-	t_gen_list_iter	*it;
-	char			*old_directory;
-	char			*target;
+
 	if (!command || !environment)
 		return (COMMAND_ERR);
 	if (!command->args)
@@ -13,23 +11,34 @@ int	cd_execute(t_command *command, t_environment *environment)
 		return (COMMAND_TOO_MANY_ARGS_ERR);
 	if (gen_list_get_size(command->args) < 2)
 		return (COMMAND_MISSING_ARGS_ERR);
-	old_directory = getenv("PWD");
-	it = gen_list_iter_start(command->args);
-	if (!it)
+	*it = gen_list_iter_start(command->args);
+	if (*it == NULL)
 		return (MS_ALLOCATION_ERR);
+	return(MS_OK);
+}
+int	cd_execute(t_command *command, t_environment *environment)
+{
+	t_gen_list_iter	*it;
+	char			*old_directory;
+	char			*target;
+	int				checker_status;
+
+	checker_status = cd_args_checker(command, environment, &it);
+	if(checker_status != MS_OK)
+		return(checker_status);
+	old_directory = getenv("PWD");
 	gen_list_iter_next(it);
 	target = gen_list_iter_next(it);
+	gen_list_iter_destroy(it);
 	if (access(target, F_OK) == 0)
 	{
 		if (chdir(target) == -1)
-		{
-			free(old_directory);
-			return (MS_PATH_ERR);
-		}
+			return (free(old_directory), MS_PATH_ERR);
 		if (old_directory)
 			env_set(environment, "OLDPWD", old_directory);
-		env_set(environment, "PWD", ft_strdup(getcwd(NULL, 0)));
-		return (MS_OK);
+		target = getcwd(NULL, 0);
+		env_set(environment, "PWD", target);
+		return (free(target),MS_OK);
 	}
 	return (MS_PATH_ERR);
 }
