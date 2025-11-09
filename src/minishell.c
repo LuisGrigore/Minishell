@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 16:56:34 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:33:44 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,20 +101,29 @@ static void handle_command_status_codes(int status_code, t_mini_state *mini_stat
 	else if(status_code == COMMAND_TOO_MANY_ARGS_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
-		fprintf(stderr, "minishell: too many arguments\n");
+		fprintf(stderr, "minishell: %s: too many arguments\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_MISSING_ARGS_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
-		fprintf(stderr, "minishell: missing arguments\n");
+		fprintf(stderr, "minishell: %s: missing arguments\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_NUMERIC_ARG_REQUIRED_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 2);
-		fprintf(stderr, "minishell: numeric argument required\n");
+		fprintf(stderr, "minishell: %s: numeric argument required\n", mini_state_get_last_command(mini_state));
+	}
+	else if(status_code == COMMAND_MALFORMED_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		fprintf(stderr, "minishell: %s: argument malformed \n", mini_state_get_last_command(mini_state));
 	}
 	else
-		fprintf(stderr, "Unhandled command status code: %d\n", status_code);
+	{
+		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		fprintf(stderr, "minishell: %s: Unassigned error \n", mini_state_get_last_command(mini_state));
+		
+	}
 }
 
 static void handle_executer_status_codes(int status_code, t_mini_state *mini_state)

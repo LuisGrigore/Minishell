@@ -88,13 +88,38 @@ static int is_numeric_string(const char *str)
 		i++;
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]) && str[i] != '"' && str[i] != '\'')
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
+int exit_code_without_quotes(char *arg)
+{
+	char *temp;
+	int i;
+	int j;
+	int result;
+
+	i = 0;
+	j = 0;
+	temp = ft_calloc(ft_strlen(arg), sizeof(char));
+	while(arg[i])
+	{
+		if(arg[i] == '"' || arg[i] == '\'')
+			i++;
+		else
+		{
+			temp[j] = arg[i];
+			j++;
+			i++;
+		}	
+	}
+	result = ft_atoi(temp);
+	free(temp);
+	return(result);
+}
 int	exit_execute(t_command *command, t_gen_list *environment)
 {
 	int		exit_code;
@@ -107,8 +132,8 @@ int	exit_execute(t_command *command, t_gen_list *environment)
 		gen_list_pop_front(command->args);
 		arg = gen_list_pop_front(command->args);
 		if (!is_numeric_string(arg))
-			return (COMMAND_NUMERIC_ARG_REQUIRED_ERR);
-		exit_code = ft_atoi(arg);
+			return (COMMAND_NUMERIC_ARG_REQUIRED_ERR); 
+		exit_code = exit_code_without_quotes(arg);
 	}
 	else if (gen_list_get_size(command->args) > 2)
 	{

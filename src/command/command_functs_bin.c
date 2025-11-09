@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/08 00:34:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:56:36 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,18 +155,4 @@ int	bin_execute(t_command *cmd, t_gen_list *environment)
 	}
 	signals_restore();
 	execve(path, cmd2, env);
-	/* execve returned -> error occurred */
-	{
-		int err = errno;
-		free(path);
-		free_double_pointer(cmd2);
-		free_double_pointer(env);
-		if (err == EACCES)
-			return (COMMAND_PERMISSION_ERR);
-		if (err == ENOENT)
-			return (COMMAND_NOT_FOUND_ERR);
-		if (err == EISDIR)
-			return (COMMAND_IS_DIR_ERR);
-		return (COMMAND_ERR);
-	}
 }

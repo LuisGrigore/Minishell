@@ -11,27 +11,29 @@ int	export_execute(t_command *command, t_gen_list *environment)
 		return (COMMAND_ERR);
 	if (!command->args)
 		return (COMMAND_MALFORMED_ERR);
-	if (gen_list_get_size(command->args) < 2)
-		return (COMMAND_MISSING_ARGS_ERR);
-	if (gen_list_get_size(command->args) > 2)
-		return (COMMAND_TOO_MANY_ARGS_ERR);
 	it = gen_list_iter_start(command->args);
 	if (!it)
 		return (MS_ALLOCATION_ERR);
 	arg = gen_list_iter_next(it);
 	arg = gen_list_iter_next(it);
+	while(arg)
+	{
+		if(ft_isdigit(arg[0]))
+			return(COMMAND_MALFORMED_ERR);
+		new_variable = ft_split2(arg, '=');
+		if (!new_variable || !new_variable[0])
+			return (MS_ALLOCATION_ERR);
+		if (check_option_of_export(new_variable, environment) == -1)
+			return (COMMAND_INVALID_ARGS_ERR);
+		if(ft_strchr(arg, '='))
+			env_set(environment, new_variable[0], new_variable[1]);
+		free(new_variable[0]);
+		if(new_variable[1])
+			free(new_variable[1]);
+		free(new_variable);
+		arg = gen_list_iter_next(it);
+	}
 	gen_list_iter_destroy(it);
-	new_variable = ft_split2(arg, '=');
-	if (!new_variable || !new_variable[0])
-		return (MS_ALLOCATION_ERR);
-	if (check_option_of_export(new_variable, environment) == -1)
-		return (COMMAND_INVALID_ARGS_ERR);
-	if(ft_strchr(arg, '='))
-		env_set(environment, new_variable[0], new_variable[1]);
-	free(new_variable[0]);
-	if(new_variable[1])
-		free(new_variable[1]);
-	free(new_variable);
 	return (MS_OK);
 }
 
