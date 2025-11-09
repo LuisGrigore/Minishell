@@ -72,6 +72,11 @@ int	env_execute(t_command *command, t_gen_list *environment)
 	i = 0;
 	while (i < gen_list_get_size(environment))
 	{
+		if(serialized_env[i][0] == '?')
+		{
+			i++;
+			continue;
+		}
 		printf("%s\n", serialized_env[i]);
 		i++;
 	}
@@ -139,5 +144,5 @@ int	exit_execute(t_command *command, t_gen_list *environment)
 	{
 		return (COMMAND_TOO_MANY_ARGS_ERR);
 	}
-	return (EXTERNALY_DEFINED_STATUS_CODE + exit_code);
+	return (EXTERNALY_DEFINED_STATUS_CODE + ((exit_code + 256) % 256));
 }
