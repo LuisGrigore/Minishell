@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_serialization_deserialization.c        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 17:09:25 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:24:42 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,41 @@ char	**env_serialize(t_gen_list *envioroment)
 	return (gen_list_serialize_to_string_array(envioroment, env_var_to_string));
 }
 
+static char **split_var(char *var)
+{
+	int i;
+	char **resul;
+	size_t len;
+
+	if (!var)
+		return (NULL);
+	len = ft_strlen(var);
+	i = 0;
+	resul = malloc(sizeof(char *) * 3);
+	if (!resul)
+		return (NULL);
+	while (var[i] && var[i] != '=')
+		i++;
+	resul[0] = ft_substr(var, 0, i);
+	if (!resul[0])
+	{
+		free(resul);
+		return (NULL);
+	}
+	if (i < (int)len && var[i] == '=')
+		resul[1] = ft_substr(var, i + 1, len - i - 1);
+	else
+		resul[1] = ft_strdup("");
+	if (!resul[1])
+	{
+		free(resul[0]);
+		free(resul);
+		return (NULL);
+	}
+	resul[2] = NULL;
+	return (resul);
+}
+
 t_gen_list	*env_deserialize(char **str_array)
 {
 	t_gen_list	*env_var_list;
@@ -53,7 +88,7 @@ t_gen_list	*env_deserialize(char **str_array)
 	i = 0;
 	while (str_array[i])
 	{
-		split = ft_split(str_array[i], '=');
+		split = split_var(str_array[i]);//ft_split(str_array[i], '=');
 		if (!split)
 		{
 			i++;
@@ -72,13 +107,6 @@ t_gen_list	*env_deserialize(char **str_array)
 				free(split[j]);
 				j++;
 			}
-		}
-		j = 0;
-		while (split[j])
-		{
-			if (j > 1)
-				free(split[j]);
-			j++;
 		}
 		free(split);
 		i++;
