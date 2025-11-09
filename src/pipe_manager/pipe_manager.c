@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:42:28 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/06 23:57:04 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:30:43 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void	pipe_manager_destroy(t_pipe_manager *pm)
 int	pipe_manager_setup_command(t_pipe_manager *pm, size_t index)
 {
 	int	dup_ret;
-
+	
+	dup_ret = 0;
 	if (!pm)
 		return (PIPE_MANAGER_IS_NULL);
 	if (pm->n_cmds <= 1)
