@@ -57,3 +57,8 @@ bool history_add(char *line)
 	add_history(line);
 	return (true);
 }
+
+void history_clean(void)
+{
+	clear_history();
+}

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 16:47:51 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:07:03 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ char *mini_state_get_last_opened_file(t_mini_state *state);
 t_gen_list *mini_state_get_environment_vars(t_mini_state *state);
 void mini_state_set_last_command(t_mini_state *state, const char *command);
 void mini_state_set_last_opened_file(t_mini_state *state, const char *file_name);
+bool mini_state_get_exit_after_last_command(t_mini_state *state);
+void mini_state_set_exit_after_last_command(t_mini_state *state, bool value);
 
 #endif

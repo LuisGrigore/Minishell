@@ -57,7 +57,6 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 	int	status_code;
 	int	stdin_backup;
 	int	stdout_backup;
-
 	mini_state_set_last_command(mini_state,
 		(char *)gen_list_peek_top(command->args));
 	stdin_backup = dup(STDIN_FILENO);

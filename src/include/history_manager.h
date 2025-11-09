@@ -20,5 +20,6 @@
  *         false if it was rejected.
  */
 bool history_add(char *line);
+void history_clean(void);
 
 #endif

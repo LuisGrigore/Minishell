@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/08 00:19:56 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:07:34 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,19 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini
             pipe_manager_setup_command(pm, i);
             pipe_manager_close_all(pm);
             status_code = command_exec(cmd, mini_state);
-            if (status_code != MS_OK)
-            {
-                free(pids);
-                gen_list_iter_destroy(it);
-                pipe_manager_destroy((pm));
-                return(status_code);
-            }
-            exit(0);
+            // if (status_code != MS_OK)
+            // {
+            //     free(pids);
+            //     gen_list_iter_destroy(it);
+            //     pipe_manager_destroy((pm));
+            //     return(status_code);
+            // }
+			free(pids);
+            gen_list_iter_destroy(it);
+            pipe_manager_destroy((pm));
+			mini_state_set_exit_after_last_command(mini_state, true);
+			return(status_code);
+            //exit(0);
         }
         else
         {

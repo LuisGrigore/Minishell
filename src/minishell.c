@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/08 17:57:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:23:00 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char *get_input(t_gen_list *env)
 	line_tag = get_line_tag(env);
 	input = readline(line_tag);
 	free(line_tag);
+	line_tag=NULL;
 	return (input);
 }
 
@@ -66,12 +67,14 @@ static void handle_system_status_codes(int status_code, t_mini_state *mini_state
 	{
 		perror("Malloc error");
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		mini_state_destroy(mini_state);
 		exit(EXIT_FAILURE);
 	}
 	else if (status_code == MS_SIGNAL_ERR)
 	{
 		perror("Signal error");
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), 1);
+		mini_state_destroy(mini_state);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -145,13 +148,18 @@ static void handle_redirect_status_codes(int status_code, t_mini_state *mini_sta
 		fprintf(stderr, "Unhandled redirect status code: %d\n", status_code);
 }
 
-static void	handle_status_codes(int status_code, t_mini_state *mini_state)
+static void	handle_status_codes(int status_code, t_mini_state *mini_state, char *input)
 {
+	int exit_status;
+	free(input);
+
 	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
 		env_set_last_status_code(mini_state_get_environment_vars(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
-		if (ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
+		if (mini_state_get_last_command(mini_state) && ft_strncmp(mini_state_get_last_command(mini_state), "exit", 4) == 0)
 		{
+			mini_state_destroy(mini_state);
+			history_clean();
 			exit(status_code - EXTERNALY_DEFINED_STATUS_CODE);
 		}
 	}
@@ -169,7 +177,13 @@ static void	handle_status_codes(int status_code, t_mini_state *mini_state)
 		handle_redirect_status_codes(status_code, mini_state);
 	else
 		fprintf(stderr, "Unhandled status code: %d\n", status_code);
-
+	if(mini_state_get_exit_after_last_command(mini_state))
+	{
+		exit_status = env_get_last_status_code(mini_state_get_environment_vars(mini_state));
+		mini_state_destroy(mini_state);
+		history_clean();
+		exit(exit_status);
+	}
 }
 
 
@@ -182,8 +196,8 @@ int	main(int args, char **environment_var_str_array)
 
 	mini_state = mini_state_create(args, environment_var_str_array);
 	if (!mini_state)
-		handle_status_codes(MS_ALLOCATION_ERR, mini_state);
-	handle_status_codes(signals_init_interactive(), mini_state);
+		handle_status_codes(MS_ALLOCATION_ERR, mini_state, NULL);
+	handle_status_codes(signals_init_interactive(), mini_state,NULL);
 	finish = false;
 	while (!finish)
 	{
@@ -193,10 +207,9 @@ int	main(int args, char **environment_var_str_array)
 		if (ft_strlen(input) != 0)
 		{
 			history_add(input);
-			handle_status_codes(execute_line(input, mini_state), mini_state);
-			free(input);
+			handle_status_codes(execute_line(input, mini_state), mini_state, input);
+			//free(input);
 			input = NULL;
 		}
 	}
-	mini_state_destroy(mini_state);
 }

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 18:07:14 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:10:02 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,18 @@ void env_set_last_status_code(t_gen_list *env, int status_code)
 	status_code_str = ft_itoa(status_code);
     env_set(env, "?", status_code_str);
 	free(status_code_str);
+}
+int env_get_last_status_code(t_gen_list *env)
+{
+	char *status_code_str;
+	int status_code;
+
+	status_code_str = env_get(env, "?");
+	if (!status_code_str)
+		return (0);
+	status_code = ft_atoi(status_code_str);
+	free(status_code_str);
+	return (status_code);
 }
 
 void	env_unset(t_gen_list *envioroment, char *name)
