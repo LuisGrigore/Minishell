@@ -56,11 +56,8 @@ static int	heredoc_exec(char *delimiter)
 	}
 	close(fd);
 	fd = open(temp_dir, O_RDONLY);
-	if (fd >= 0)
-	{
-		dup2(fd, STDIN_FILENO);
-		close(fd);
-	}
+	dup2(fd, STDIN_FILENO);
+	close(fd);
 	return (MS_OK);
 }
 
@@ -92,25 +89,10 @@ static int	heredoc_exec(char *delimiter)
 	* luego se mete por la salida estandard al comando que sea(cat recibe cosas por la salida estandard en cambio echo solo por los argumentos).
  *(O eso creo por lo que he visto por ahi).
  */
-int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
-{
-	int fd;
 
-	if (redirect->symbol == DOUBLE_LEFT_REDIRECT)
-	{
-		return heredoc_exec(redirect->file);
-	}
-	if (redirect->file == NULL)
-		return (REDIRECT_MALFORMED_ERR);
-	if (redirect->symbol == LEFT_REDIRECT)
-	{
-		fd = open(redirect->file, O_RDONLY);
-		mini_state_set_last_opened_file(mini_state, redirect->file);
-		if (fd < 0)
-			return (MS_OPEN_ERR);
-		dup2(fd, STDIN_FILENO);
-	}
-	else if(redirect->symbol == DOUBLE_RIGHT_REDIRECT)
+ static int file_dup_outfile_redirect(int fd, t_redirect *redirect, t_mini_state *mini_state)
+{
+	if(redirect->symbol == DOUBLE_RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_APPEND, 0644);
 		mini_state_set_last_opened_file(mini_state, redirect->file);
@@ -126,6 +108,32 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);
 	}
+	return(MS_OK);
+}
+int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
+{
+	int fd;
+	int status_code;
+
+	if (redirect->symbol == DOUBLE_LEFT_REDIRECT)
+	{
+		return heredoc_exec(redirect->file);
+	}
+	if (redirect->file == NULL)
+		return (REDIRECT_MALFORMED_ERR);
+	if (redirect->symbol == LEFT_REDIRECT)
+	{
+		fd = open(redirect->file, O_RDONLY);
+		mini_state_set_last_opened_file(mini_state, redirect->file);
+		if (fd < 0)
+			return (MS_OPEN_ERR);
+		dup2(fd, STDIN_FILENO);
+	}
+
+	status_code = file_dup_outfile_redirect(fd, redirect, mini_state);
+	if(status_code != MS_OK)
+		return(status_code);
 	close(fd);
 	return (MS_OK);
 }
+
