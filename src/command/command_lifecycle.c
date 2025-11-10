@@ -45,8 +45,9 @@ t_command	*command_create(char *name)
 	new_command->redirects = gen_list_create();
 	new_command->command_funct = get_command_function(name);
 	new_command->is_builtin = is_command_builtin(name);
-	free(name);
 	return (new_command);
+	if(name)
+		free(name);
 }
 
 static void	redirect_destroy_data(void *redirect_ptr)
