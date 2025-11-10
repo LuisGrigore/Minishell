@@ -6,88 +6,40 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:45:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 22:47:02 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:59:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOKENIZER_INTERNAL_H
-#define TOKENIZER_INTERNAL_H
+#ifndef LEXER_INTERNAL_H
+# define LEXER_INTERNAL_H
 
-#include "../include/lexer.h"
-#include "../external/libft/libft.h"
-#include <stdlib.h>
+# include "../external/libft/libft.h"
+# include "../include/lexer.h"
+# include <stdlib.h>
 
-/* Estructuras */
-struct s_token
+struct				s_token
 {
-    t_token_type    type;
-    char            *value;
+	t_token_type	type;
+	char			*value;
 };
 
-typedef struct s_pstate 
-{
-    const char *line;
-    size_t *i;
-    size_t len;
-    char **buf;
-    size_t *bcap;
-    size_t *blen;
-    t_environment *env;
-} t_pstate;
+t_token				*create_token(t_token_type type, char *value);
+void				destroy_token(t_token *token);
+char				*ft_strndup(const char *s, size_t n);
+int					is_space(char c);
+int					is_operator_char(char c);
+t_token_type		operator_type(const char *op, size_t len);
+bool				is_word_start_char(char c);
 
-typedef struct s_lstate 
-{
-    const char *line;
-    size_t *i;
-    size_t len;
-    t_gen_list *tokens_list;
-    t_environment *env;
-    bool next_is_redir_arg_val;
-    bool expect_cmd_val;
-    bool *next_is_redir_arg;
-    bool *expect_cmd;
-} t_lstate;
-
-/* lexer_token.c */
-t_token *create_token(t_token_type type, char *value);
-void destroy_token(t_token *token);
-
-/* lexer_utils.c */
-char *ft_strndup(const char *s, size_t n);
-int is_space(char c);
-int is_operator_char(char c);
-int match_two_char_op(const char *s, size_t pos, const char *op);
-t_token_type operator_type(const char *op, size_t len);
-
-/* lexer_parse_utils.c */
-void pstate_init(t_pstate *st, const char *line, size_t *i, size_t len, 
-    char **buf, size_t *bcap, size_t *blen, t_environment *env);
-int ensure_capacity(t_pstate *st, size_t need);
-int append_char(t_pstate *st, char ch);
-size_t skip_spaces(const char *line, size_t i, size_t len);
-
-/* lexer_parse_quotes.c */
-int parse_single_quote(t_pstate *st);
-int parse_double_quote(t_pstate *st);
-int parse_backslash_escape(t_pstate *st);
-int parse_word_loop(t_pstate *st);
-int handle_loop_char(t_pstate *st);
-
-/* lexer_parse_word.c */
-/* parse_word now receives the environment so it can expand variables */
-int parse_word(const char *line, size_t *i, size_t len, t_environment *env, char **out_word);
-int build_out_word(t_pstate *st, size_t start, char **out_word);
-int finalize_parse_word(t_pstate *st, char *buf, size_t start, char **out_word);
-
-/* lexer_operators.c */
-int push_two_char_op(const char *line, size_t *i, t_gen_list *tokens_list, bool *next_is_redir_arg);
-int push_one_char_op(const char *line, size_t *i, t_gen_list *tokens_list, bool *next_is_redir_arg, bool *expect_cmd);
-
-/* lexer_process.c */
-int process_next_token(t_lstate *ls);
-int parse_word_and_push(t_lstate *ls);
-int lexer_init_state(const char *line, t_gen_list *tokens_list, size_t *i, t_lstate *ls, t_environment *env);
-int run_token_loop(t_lstate *ls);
-t_token_type determine_type_and_clear(t_lstate *ls);
+int					add_operator_token(char **current_char, t_gen_list *tokens,
+						char *line);
+int					add_word_token(char **current_char, t_gen_list *tokens,
+						t_environment *env);
+int					build_word(t_environment *env, char *p, size_t *i,
+						char **buf);
+char				*append_segment(char *buf, char *seg);
+char				*append_literal_char(char *buf, char c);
+int					expand_variable(t_environment *env, char *p, size_t *i,
+						char **buf);
 
 #endif

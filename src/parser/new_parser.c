@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 19:22:32 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:45:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int new_parse_line (char *line, t_gen_list *commands, t_environment *env)
 	if (!tokens)
 		return (MS_ALLOCATION_ERR);
 	// status_code = lexer_tokenize(line, tokens, env);
-	status_code = new_tokenize_line(line, tokens, env);
+	status_code = tokenize_line(line, tokens, env);
 	//print_tokens(tokens);
 	if (status_code != MS_OK)
 	{
