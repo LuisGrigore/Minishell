@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_link_list_peek.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:56 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/28 18:45:03 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:51:17 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ void *gen_list_peek_top(t_gen_list *list)
 	if (!list || gen_list_is_empty(list))
 		return NULL;
 	return(list->head->value);
+}
+
+void *gen_list_peek_bottom(t_gen_list *list)
+{
+	if (!list || gen_list_is_empty(list))
+		return (NULL);
+	return (list->tail->value);
 }
 
 void *gen_list_peek_index(t_gen_list *list, int idx)

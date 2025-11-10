@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:24:35 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 15:23:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:51:56 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,30 @@ char *expand_word(t_environment *env, char *word)
 		{
 			i++;
 			j = 0;
-			while (word[i] && (ft_isalnum(word[i]) || word[i] == '_'))
-				var_name[j++] = word[i++];
-			var_name[j] = '\0';
-
-			if (j > 0)
+			if (word[i] == '?')
 			{
-				var_value = env_get(env, var_name);
-				if (var_value)
-				{
-					temp = result;
-					result = ft_strjoin(result, var_value);
-					free(temp);
-					free(var_value);
-					if (!result)
-						return (NULL);
-				}
+				var_value = env_get(env, "?");
+				i++;
+			}
+			else
+			{
+				while (word[i] && (ft_isalnum(word[i]) || word[i] == '_'))
+					var_name[j++] = word[i++];
+				var_name[j] = '\0';
+				if (j > 0)
+					var_value = env_get(env, var_name);
+				else
+					var_value = NULL;
+			}
+			
+			if (var_value)
+			{
+				temp = result;
+				result = ft_strjoin(result, var_value);
+				free(temp);
+				free(var_value);
+				if (!result)
+					return (NULL);
 			}
 			i--;
 		}
@@ -75,117 +83,261 @@ char *expand_word(t_environment *env, char *word)
 	return (result);
 }
 
-int handle_single_quoted_word(char **current_char, t_gen_list *tokens, char *line)
+
+
+
+char *handle_single_quotes(char **current_char, char *line)
 {
-    size_t start;
-    size_t end;
-    char *value;
-    t_token *token;
-
-    if (!current_char || !*current_char || !tokens || !line)
-        return (LEXER_NULL_ERR);
-    (*current_char)++;
-    start = 0;
-    end = start;
-    while ((*current_char)[end] && (*current_char)[end] != '\'')
-        end++;
-    if ((*current_char)[end] != '\'')
-        return (LEXER_UNCLOSED_QUOTE_ERR);
-    value = ft_strndup(*current_char, end);
-    if (!value)
-        return (MS_ALLOCATION_ERR);
-    token = create_token(TOKEN_WORD, value);
-    if (!token)
-    {
-        free(value);
-        return (MS_ALLOCATION_ERR);
-    }
-    gen_list_push_back(tokens, token);
-    *current_char += end + 1;
-    return (MS_OK);
+	char *start;
+	
+	*current_char ++;
+	start = *current_char;
+	while (**current_char != '\0' && **current_char != '\'')
+		*current_char++;
+	if (**current_char != '\0')
+		return NULL;
+	return ft_substr(line, (line - start), *current_char - start);
+		
 }
-
-int handle_double_quoted_word(char **current_char, t_gen_list *tokens, char *line, t_environment *env)
-{
-	size_t start;
-	size_t end;
-	char *value;
-	char *expanded_value;
-	t_token *token;
-
-	start = 1;
-	end = start;
-	while (line[end] != '\"' && line[end] != '\0')
-		end++;
-	if (line[end] == '\0')
-		return (LEXER_UNCLOSED_QUOTE_ERR);
-	value = ft_strndup(&line[start], end - start);
-	if (!value)
-		return (MS_ALLOCATION_ERR);
-	expanded_value = expand_word(env, value);
-	free(value);
-	if (!expanded_value)
-		return (MS_ALLOCATION_ERR);
-	if (*expanded_value == '\0')
-	{
-		free(expanded_value);
-		*current_char += (end - start) + 2;
-		return (MS_OK);
-	}
-	token = create_token(TOKEN_WORD, expanded_value);
-	if (!token)
-	{
-		free(expanded_value);
-		return (MS_ALLOCATION_ERR);
-	}
-	gen_list_push_back(tokens, token);
-	*current_char += (end - start) + 2;
-	return (MS_OK);
-}
-int handle_unquoted_word(char **current_char, t_gen_list *tokens, char *line, t_environment *env)
-{
-	size_t start;
-	size_t end;
-	char *value;
-	char *expanded_value;
-	t_token *token;
-
-	start = 0;
-	end = start;
-	while (line[end] != '\0' && !is_space(line[end]) && !is_operator_char(line[end]))
-		end++;
-	value = ft_strndup(&line[start], end - start);
-	if (!value)
-		return (MS_ALLOCATION_ERR);
-	expanded_value = expand_word(env, value);
-	free(value);
-	if (!expanded_value)
-		return (MS_ALLOCATION_ERR);
-	if (*expanded_value == '\0')
-	{
-		free(expanded_value);
-		*current_char += end;
-		return (MS_OK);
-	}
-	token = create_token(TOKEN_WORD, expanded_value);
-	if (!token)
-	{
-		free(expanded_value);
-		return (MS_ALLOCATION_ERR);
-	}
-	gen_list_push_back(tokens, token);
-	*current_char += end;
-	return (MS_OK);
-}
-
 
 int add_word_token(char **current_char, t_gen_list *tokens, char *line, t_environment *env)
 {	
-	if (**current_char == '\'')
-		return (handle_single_quoted_word(current_char, tokens, line));
-	if (**current_char == '\"')
-		return (handle_double_quoted_word(current_char, tokens, line, env));
-	return (handle_unquoted_word(current_char, tokens, line, env));
+	char *p;
+	size_t i;
+	char *buf;
+	char *seg;
+	char *tmp;
+	char *var;
+	size_t j;
+	t_token *token;
+
+	if (!current_char || !*current_char || !tokens)
+		return (LEXER_NULL_ERR);
+
+	p = *current_char;
+	i = 0;
+	buf = ft_strdup("");
+	if (!buf)
+		return (MS_ALLOCATION_ERR);
+
+	while (p[i] && !is_space(p[i]) && !is_operator_char(p[i]))
+	{
+		if (p[i] == '\'')
+		{
+			/* single quoted: take literal untile nxt ' */
+			size_t start = ++i;
+			while (p[i] && p[i] != '\'')
+				i++;
+			if (!p[i])
+			{
+				free(buf);
+				return (LEXER_UNCLOSED_QUOTE_ERR);
+			}
+			seg = ft_strndup(&p[start], i - start);
+			if (!seg)
+			{
+				free(buf);
+				return (MS_ALLOCATION_ERR);
+			}
+			tmp = ft_strjoin(buf, seg);
+			free(buf);
+			free(seg);
+			if (!tmp)
+				return (MS_ALLOCATION_ERR);
+			buf = tmp;
+			i++; /* skip closing ' */
+		}
+		else if (p[i] == '"')
+		{
+			/* double quoted: allow expansion inside */
+			size_t start = ++i;
+			while (p[i] && p[i] != '"')
+			{
+				if (p[i] == '$')
+				{
+					/* append preceding chunk */
+					if (i > start)
+					{
+						seg = ft_strndup(&p[start], i - start);
+						if (!seg)
+						{
+							free(buf);
+							return (MS_ALLOCATION_ERR);
+						}
+						tmp = ft_strjoin(buf, seg);
+						free(buf);
+						free(seg);
+						if (!tmp)
+							return (MS_ALLOCATION_ERR);
+						buf = tmp;
+					}
+					/* parse variable */
+					i++;
+					if (p[i] == '?')
+					{
+						var = env_get(env, "?");
+						i++;
+						if (var)
+						{
+							tmp = ft_strjoin(buf, var);
+							free(buf);
+							free(var);
+							if (!tmp)
+								return (MS_ALLOCATION_ERR);
+							buf = tmp;
+						}
+						start = i;
+					}
+					else
+					{
+						j = 0;
+						char name[256];
+						while (p[i] && (ft_isalnum(p[i]) || p[i] == '_') && j + 1 < sizeof(name))
+							name[j++] = p[i++];
+						name[j] = '\0';
+						if (j > 0)
+						{
+							var = env_get(env, name);
+							if (var)
+							{
+								tmp = ft_strjoin(buf, var);
+								free(buf);
+								free(var);
+								if (!tmp)
+									return (MS_ALLOCATION_ERR);
+								buf = tmp;
+							}
+							start = i;
+						}
+						else
+						{
+							/* '$' not followed by name: treat as literal '$' */
+							tmp = ft_strjoin(buf, "$");
+							free(buf);
+							if (!tmp)
+								return (MS_ALLOCATION_ERR);
+							buf = tmp;
+							/* don't consume the next char (i already points to it) */
+							start = i;
+						}
+					}
+					continue;
+				}
+				i++;
+			}
+			if (!p[i])
+			{
+				free(buf);
+				return (LEXER_UNCLOSED_QUOTE_ERR);
+			}
+			/* append remaining inside-double-quotes chunk */
+			if (i > start)
+			{
+				seg = ft_strndup(&p[start], i - start);
+				if (!seg)
+				{
+					free(buf);
+					return (MS_ALLOCATION_ERR);
+				}
+				tmp = ft_strjoin(buf, seg);
+				free(buf);
+				free(seg);
+				if (!tmp)
+					return (MS_ALLOCATION_ERR);
+				buf = tmp;
+			}
+			i++; /* skip closing " */
+		}
+		else
+		{
+			/* unquoted: copy until special or handle $ */
+			size_t start = i;
+			while (p[i] && !is_space(p[i]) && !is_operator_char(p[i]) && p[i] != '\'' && p[i] != '"' && p[i] != '$')
+				i++;
+			if (i > start)
+			{
+				seg = ft_strndup(&p[start], i - start);
+				if (!seg)
+				{
+					free(buf);
+					return (MS_ALLOCATION_ERR);
+				}
+				tmp = ft_strjoin(buf, seg);
+				free(buf);
+				free(seg);
+				if (!tmp)
+					return (MS_ALLOCATION_ERR);
+				buf = tmp;
+			}
+			if (p[i] == '$')
+			{
+				i++;
+				if (p[i] == '?')
+				{
+					var = env_get(env, "?");
+					i++;
+					if (var)
+					{
+						tmp = ft_strjoin(buf, var);
+						free(buf);
+						free(var);
+						if (!tmp)
+							return (MS_ALLOCATION_ERR);
+						buf = tmp;
+					}
+				}
+				else
+				{
+					j = 0;
+					char name[256];
+					while (p[i] && (ft_isalnum(p[i]) || p[i] == '_') && j + 1 < sizeof(name))
+						name[j++] = p[i++];
+					name[j] = '\0';
+					if (j > 0)
+					{
+						var = env_get(env, name);
+						if (var)
+						{
+							tmp = ft_strjoin(buf, var);
+							free(buf);
+							free(var);
+							if (!tmp)
+								return (MS_ALLOCATION_ERR);
+							buf = tmp;
+						}
+					}
+					else
+					{
+						/* treat lone '$' as literal */
+						tmp = ft_strjoin(buf, "$");
+						free(buf);
+						if (!tmp)
+							return (MS_ALLOCATION_ERR);
+						buf = tmp;
+					}
+				}
+			}
+		}
+	}
+
+	/* advance the caller pointer */
+	*current_char += i;
+
+	if (!buf)
+		return (MS_ALLOCATION_ERR);
+	if (*buf == '\0')
+	{
+		free(buf);
+		return (MS_OK);
+	}
+	token = create_token(TOKEN_WORD, buf);
+	if (!token)
+	{
+		free(buf);
+		return (MS_ALLOCATION_ERR);
+	}
+	gen_list_push_back(tokens, token);
+	return (MS_OK);
 }
 
 int add_operator_token(char **current_char, t_gen_list *tokens, char *line)

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:30:11 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/05 23:01:33 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:49:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,6 +164,14 @@ t_gen_list_status_code							gen_list_push_front(t_gen_list *list,
 void							*gen_list_pop_front(t_gen_list *list);
 
 /**
+ * @brief Remove the last node of the list and return its value.
+ *
+ * @param list List from which to remove the last node.
+ * @return Value stored in the last node, or NULL if the list is empty.
+ */
+void	*gen_list_pop_back(t_gen_list *list);
+
+/**
 * @brief Remove nodes that satisfy a predicate.
 *
 * @param list List to modify.
@@ -253,6 +261,7 @@ void							*gen_list_find_ctx(t_gen_list *list,
 size_t							gen_list_get_size(t_gen_list *list);
 
 void							*gen_list_peek_top(t_gen_list *list);
+void *gen_list_peek_bottom(t_gen_list *list);
 void							*gen_list_peek_index(t_gen_list *list, int idx);
 
 /**

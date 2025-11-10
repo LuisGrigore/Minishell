@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/10 00:04:56 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:34:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,6 @@ static void	handle_status_codes(int status_code, t_mini_state *mini_state, char 
 {
 	int exit_status;
 	free(input);
-
 	if (status_code >= EXTERNALY_DEFINED_STATUS_CODE)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), status_code - EXTERNALY_DEFINED_STATUS_CODE);
@@ -213,6 +212,7 @@ int	main(int args, char **environment_var_str_array)
 	if (!mini_state)
 		handle_status_codes(MS_ALLOCATION_ERR, mini_state, NULL);
 	handle_status_codes(signals_init_interactive(), mini_state,NULL);
+	env_set_last_status_code(mini_state_get_environment(mini_state),0);
 	finish = false;
 	while (!finish)
 	{
