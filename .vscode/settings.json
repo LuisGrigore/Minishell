@@ -41,6 +41,7 @@
 		"parser_internal.h": "c",
 		"config.h": "c",
 		"errno.h": "c",
-		"stdbool.h": "c"
+		"stdbool.h": "c",
+		"lexer_internal.h": "c"
 	}
 }

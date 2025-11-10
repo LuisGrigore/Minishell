@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 17:35:45 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:23:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,28 +96,28 @@ int	parse_tokens_to_commands(t_gen_list *tokens, t_gen_list *commands)
 	return (finalize_parsing(current_cmd, it, commands, status));
 }
 
-int	parse_line(char *line, t_gen_list *commands, t_environment *env)
-{
-	int			status_code;
-	t_gen_list	*tokens;
+// int	parse_line(char *line, t_gen_list *commands, t_environment *env)
+// {
+// 	//int			status_code;
+// 	t_gen_list	*tokens;
 
-	tokens = gen_list_create();
-	if (!tokens)
-		return (MS_ALLOCATION_ERR);
-	// status_code = lexer_tokenize(line, tokens, env);
-	status_code = new_tokenize_line(line, tokens, env);
-	print_tokens(tokens);
-	// if (status_code != MS_OK)
-	// {
-	// 	lexer_destroy(tokens);
-	// 	return (PARSER_ERR);
-	// }
-	// status_code = parse_tokens_to_commands(tokens, commands);
-	// if (status_code != MS_OK)
-	// {
-	// 	lexer_destroy(tokens);
-	// 	return (PARSER_ERR);
-	// }
-	// lexer_destroy(tokens);
-	return (MS_OK);
-}
+// 	tokens = gen_list_create();
+// 	if (!tokens)
+// 		return (MS_ALLOCATION_ERR);
+// 	// status_code = lexer_tokenize(line, tokens, env);
+// 	status_code = new_tokenize_line(line, tokens, env);
+// 	print_tokens(tokens);
+// 	// if (status_code != MS_OK)
+// 	// {
+// 	// 	lexer_destroy(tokens);
+// 	// 	return (PARSER_ERR);
+// 	// }
+// 	// status_code = parse_tokens_to_commands(tokens, commands);
+// 	// if (status_code != MS_OK)
+// 	// {
+// 	// 	lexer_destroy(tokens);
+// 	// 	return (PARSER_ERR);
+// 	// }
+// 	// lexer_destroy(tokens);
+// 	return (MS_OK);
+// }

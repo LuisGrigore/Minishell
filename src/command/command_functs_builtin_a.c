@@ -32,8 +32,10 @@ static int	check_option_of_export(char **new_variable, t_environment *env)
 	new_variable[1] = ft_strjoin(temp, temp2);
 	return (free(temp), free(temp2), 0);
 }
-static int export_loop(char *arg, char **new_variable, t_environment *environment, t_gen_list_iter *it)
+static int export_loop(char *arg, t_environment *environment, t_gen_list_iter *it)
 {
+	char **new_variable;
+
 	while(arg)
 	{
 		if(ft_isdigit(arg[0]))
@@ -64,7 +66,7 @@ int	export_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;
-	char			**new_variable;
+	//char			**new_variable;
 	int	status_code;
 
 	if (!command || !environment)
@@ -76,7 +78,7 @@ int	export_execute(t_command *command, t_environment *environment)
 		return (MS_ALLOCATION_ERR);
 	arg = gen_list_iter_next(it);
 	arg = gen_list_iter_next(it);
-	status_code = export_loop(arg, new_variable, environment, it);
+	status_code = export_loop(arg, environment, it);
 	gen_list_iter_destroy(it);
 	return(status_code);
 }
@@ -121,6 +123,7 @@ int	echo_execute(t_command *command, t_environment*environment)
 	char			*arg;
 	int				newline;
 
+	(void) environment;
 	if (!command )
 		return (COMMAND_ERR);
 	if (!command->args)

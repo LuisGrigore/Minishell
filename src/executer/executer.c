@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/10 16:15:20 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:22:14 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini
     t_pipe_manager *pm = NULL;
     t_gen_list_iter *it;
     pid_t *pids;
-    size_t i = 0;
+    //size_t i = 0;
     int status_code;
 
     status_code = execute_init(commands, &pm, &it, &pids);

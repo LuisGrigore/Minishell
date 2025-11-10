@@ -6,24 +6,24 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 17:37:10 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:22:32 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
 
-static t_redirect_type	get_redirect_type(t_token *tok)
-{
-	if (lexer_is_token_type(tok, TOKEN_REDIR_IN))
-		return (LEFT_REDIRECT);
-	if (lexer_is_token_type(tok, TOKEN_REDIR_OUT))
-		return (RIGHT_REDIRECT);
-	if (lexer_is_token_type(tok, TOKEN_REDIR_APPEND))
-		return (DOUBLE_RIGHT_REDIRECT);
-	if (lexer_is_token_type(tok, TOKEN_HEREDOC))
-		return (DOUBLE_LEFT_REDIRECT);
-	return (NONE);
-}
+// static t_redirect_type	get_redirect_type(t_token *tok)
+// {
+// 	if (lexer_is_token_type(tok, TOKEN_REDIR_IN))
+// 		return (LEFT_REDIRECT);
+// 	if (lexer_is_token_type(tok, TOKEN_REDIR_OUT))
+// 		return (RIGHT_REDIRECT);
+// 	if (lexer_is_token_type(tok, TOKEN_REDIR_APPEND))
+// 		return (DOUBLE_RIGHT_REDIRECT);
+// 	if (lexer_is_token_type(tok, TOKEN_HEREDOC))
+// 		return (DOUBLE_LEFT_REDIRECT);
+// 	return (NONE);
+// }
 static void	noop_destroy(void *p)
 {
 	(void)p;

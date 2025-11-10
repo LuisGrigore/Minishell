@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/09 23:05:55 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:26:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,4 +155,5 @@ int	bin_execute(t_command *cmd, t_environment *environment)
 	}
 	signals_restore();
 	execve(path, cmd2, env);
+	return (COMMAND_ERR);
 }

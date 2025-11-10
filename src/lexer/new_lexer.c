@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:24:35 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 19:01:49 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:23:55 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,7 @@ static int build_word(t_environment *env, char *p, size_t *i, char **buf)
 
 /* ------------------------------ PUBLIC ENTRY ------------------------------ */
 
-int add_word_token(char **current_char, t_gen_list *tokens, char *line, t_environment *env)
+int add_word_token(char **current_char, t_gen_list *tokens, /*char *line,*/ t_environment *env)
 {
     char *p;
     char *buf;
@@ -290,10 +290,10 @@ int tokenize_aux(char *current_char, t_gen_list *tokens, char *line, t_environme
         return (LEXER_NULL_ERR);
     while (*current_char && is_space(*current_char))
         current_char++;
-        if (*current_char == '\0')
+    if (*current_char == '\0')
         return (MS_OK);
     if (is_word_start_char(*current_char))
-        status_code = add_word_token(&current_char, tokens, current_char, env);
+        status_code = add_word_token(&current_char, tokens,/* current_char,*/ env);
     else if (is_operator_char(*current_char))
         status_code = add_operator_token(&current_char, tokens, current_char);
     else

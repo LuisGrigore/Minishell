@@ -1,11 +1,11 @@
 CC      = cc
-CFLAGS  = 
+CFLAGS  = -Wall -Wextra -Werror
 INCLUDES =  -I. -I./command -I./environment -I./executer -I./external/gen_list -I./external/gen_list/gen_link_list -I./external/libft -I./history_manager -I./include -I./lexer -I./mini_state -I./parser -I./pipe_manager -I./redirect_manager -I./signal_manager
 
 OBJ_DIR = obj
 NAME    = minishell
 
-SRCS    = ./history_manager/history_manager.c ./executer/executer.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/new_parser.c ./parser/parser_debug.c ./parser/parser_handle_tokens.c ./parser/parser.c ./mini_state/mini_state_operations.c ./mini_state/mini_state_lifecycle.c ./signal_manager/signal_manager_utils.c ./signal_manager/signal_manager.c ./redirect_manager/redirect_manager_debug.c ./redirect_manager/redirect_manager.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./lexer/lexer_debug.c ./lexer/lexer_util.c ./lexer/lexer_process.c ./lexer/lexer_operators.c ./lexer/lexer_parse_utils.c ./lexer/lexer_parse_word.c ./lexer/lexer_life_cycle.c ./lexer/new_lexer.c ./lexer/lexer_parse_quotes.c ./lexer/lexer_token.c ./lexer/lexer_tokenize.c ./command/command_functs_builtin_b.c ./command/command_queries.c ./command/command_operations.c ./command/command_functs_builtin_a.c ./command/command_functs_bin.c ./command/command_lifecycle.c ./command/command_debug.c ./pipe_manager/pipe_manager.c ./minishell.c 
+SRCS    = ./history_manager/history_manager.c ./executer/executer.c ./utils/ft_split2.0.c ./utils/path_utils.c ./parser/new_parser.c ./parser/parser_debug.c ./parser/parser_handle_tokens.c ./parser/parser.c ./mini_state/mini_state_operations.c ./mini_state/mini_state_lifecycle.c ./signal_manager/signal_manager_utils.c ./signal_manager/signal_manager.c ./redirect_manager/redirect_manager_debug.c ./redirect_manager/redirect_manager.c ./environment/environment_operations.c ./environment/environment_serialization_deserialization.c ./environment/envioroment_internal.c ./environment/environment_query.c ./lexer/lexer_debug.c ./lexer/lexer_util.c ./lexer/lexer_operators.c ./lexer/lexer_parse_utils.c ./lexer/lexer_life_cycle.c ./lexer/new_lexer.c ./lexer/lexer_token.c ./command/command_functs_builtin_b.c ./command/command_queries.c ./command/command_operations.c ./command/command_functs_builtin_a.c ./command/command_functs_bin.c ./command/command_lifecycle.c ./command/command_debug.c ./pipe_manager/pipe_manager.c ./minishell.c 
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 LINK_FLAGS = -lreadline -lncurses
 SUBSYSTEM_PATH = ./external/libft ./external/gen_list
