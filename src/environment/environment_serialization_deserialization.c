@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_serialization_deserialization.c        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:07:23 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:02:09 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,12 @@ char	**env_serialize(t_environment *env)
 		return (NULL);
 	return (gen_list_serialize_to_string_array(env->variables, env_var_to_string));
 }
-
-t_environment	*env_deserialize(char **str_array)
+static void		env_loop_asignation(char **str_array, t_environment *env)
 {
-	t_environment	*env;
 	char		**split;
 	t_env_var	*env_var;
 	size_t		i;
 
-	if (!str_array)
-		return (NULL);
-	
-	env = env_create();
-	if (!env)
-		return (NULL);
-	
 	i = 0;
 	while (str_array[i])
 	{
@@ -64,10 +55,22 @@ t_environment	*env_deserialize(char **str_array)
 			gen_list_push_back(env->variables, env_var);
 		else
 			free_double_pointer(split);
-		
 		free(split);
 		i++;
 	}
+}
+t_environment	*env_deserialize(char **str_array)
+{
+	t_environment	*env;
+
+
+	if (!str_array)
+		return (NULL);
+	
+	env = env_create();
+	if (!env)
+		return (NULL);
+	env_loop_asignation(str_array, env);
 	env_set(env, "?", "0");
 	return (env);
 }
