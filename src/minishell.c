@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:24:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 00:04:56 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,17 +92,17 @@ static void handle_command_status_codes(int status_code, t_mini_state *mini_stat
 	if(status_code == COMMAND_NOT_FOUND_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 127);
-		fprintf(stderr, "%s: command not found\n", mini_state_get_last_opened_file(mini_state));
+		fprintf(stderr, "minishell :%s: command not found\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_PERMISSION_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 126);
-		fprintf(stderr, "%s: %s\n", mini_state_get_last_opened_file(mini_state), strerror(errno));
+		fprintf(stderr, "minishell: %s: %s\n", mini_state_get_last_command(mini_state), strerror(errno));
 	}
 	else if(status_code == COMMAND_IS_DIR_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 126);
-		fprintf(stderr, "%s: Is a directory\n", mini_state_get_last_opened_file(mini_state));
+		fprintf(stderr, "minishell :%s: Is a directory\n", mini_state_get_last_command(mini_state));
 	}
 	else if(status_code == COMMAND_TOO_MANY_ARGS_ERR)
 	{

@@ -3,83 +3,95 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:24:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 00:58:36 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
 
-//TODO :: hacer que devuelva int con error y tal
-static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini_state, int *exit_status)
-{
-    size_t n = gen_list_get_size(commands);
-    t_pipe_manager *pm = NULL;
-    t_gen_list_iter *it;
-    t_command *cmd;
-    pid_t *pids;
-    size_t i = 0;
-    int status_code;
 
+static void execute_end(t_pipe_manager *pm, pid_t *pids, size_t i, int *exit_status)
+{
+    size_t j;
+    int tmp_status;
+    
+    j = 0;    
+    pipe_manager_close_all(pm);
+    while (j < i - 1)
+    {
+        waitpid(pids[j], &tmp_status, 0);
+        j++;
+    }
+    waitpid(pids[i - 1], exit_status, 0);
+    if (WIFEXITED(*exit_status))
+        *exit_status = WEXITSTATUS(*exit_status);
+    free(pids);
+    pipe_manager_destroy(pm);
+    unlink(PATH_HEREDOC_TEMP_FILE);
+}
+static int execute_init(t_gen_list *commands, t_pipe_manager **pm, t_gen_list_iter **it, pid_t **pids)
+{
+    size_t n;
+
+    n = gen_list_get_size (commands);
     if (n == 0)
         return(MS_OK);
-    pm = pipe_manager_init(n);
+    *pm = pipe_manager_init(n);
     if (!pm)
         return(MS_ALLOCATION_ERR);
-    it = gen_list_iter_start(commands);
-    if (!it)
-        return (pipe_manager_destroy(pm), MS_ALLOCATION_ERR);
-    pids = malloc(sizeof(pid_t) * n);
-    if (!pids)
-        return (gen_list_iter_destroy(it), pipe_manager_destroy(pm), MS_ALLOCATION_ERR);
-    while ((cmd = gen_list_iter_next(it)) != NULL)
+   *it = gen_list_iter_start(commands);
+    if (*it == NULL)
+        return (pipe_manager_destroy(*pm), MS_ALLOCATION_ERR);
+    *pids = malloc(sizeof(pid_t) * n);
+    if (*pids == NULL)
+        return (gen_list_iter_destroy(*it), pipe_manager_destroy(*pm), MS_ALLOCATION_ERR);
+    return(-1);
+}
+static int execute_fork_loop(pid_t *pids, t_gen_list_iter *it, t_mini_state *mini_state, t_pipe_manager *pm)
+{
+    t_command *cmd;
+    int status_code;
+    size_t i;
+    
+    i = 0;
+     while ((cmd = gen_list_iter_next(it)) != NULL)
     {
-        pid_t pid = fork();
-        if (pid == 0) // hijo
+        pids[i] = fork();
+        if (pids[i] == 0) // hijo
         {
             pipe_manager_setup_command(pm, i);
             pipe_manager_close_all(pm);
             status_code = command_exec(cmd, mini_state);
-            // if (status_code != MS_OK)
-            // {
-            //     free(pids);
-            //     gen_list_iter_destroy(it);
-            //     pipe_manager_destroy((pm));
-            //     return(status_code);
-            // }
 			free(pids);
             gen_list_iter_destroy(it);
             pipe_manager_destroy((pm));
 			mini_state_set_exit_after_last_command(mini_state, true);
 			return(status_code);
-            //exit(0);
-        }
-        else
-        {
-            pids[i] = pid;
         }
         i++;
     }
+    return(-1);
+}
+//TODO :: hacer que devuelva int con error y tal
+static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini_state, int *exit_status)
+{
+    t_pipe_manager *pm = NULL;
+    t_gen_list_iter *it;
+    pid_t *pids;
+    size_t i = 0;
+    int status_code;
 
-    pipe_manager_close_all(pm);
-
-    // Esperar a todos los procesos excepto el último
-    for (size_t j = 0; j < i - 1; j++)
-    {
-        int tmp_status;
-        waitpid(pids[j], &tmp_status, 0);
-    }
-    // Esperar al último proceso y guardar su estado
-    waitpid(pids[i - 1], exit_status, 0);
-    if (WIFEXITED(*exit_status))
-        *exit_status = WEXITSTATUS(*exit_status);
-
+    status_code = execute_init(commands, &pm, &it, &pids);
+    if(status_code != -1)
+        return(status_code);
+    status_code = execute_fork_loop(pids, it, mini_state, pm);
+    if(status_code != -1)
+        return(status_code);
+    execute_end(pm, pids, gen_list_get_size(commands), exit_status);
     gen_list_iter_destroy(it);
-    free(pids);
-    pipe_manager_destroy(pm);
-    unlink(PATH_HEREDOC_TEMP_FILE);
     return(MS_OK);
 }
 
