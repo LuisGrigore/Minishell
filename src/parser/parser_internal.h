@@ -19,7 +19,6 @@
 # include "../include/parser.h"
 # include <stdlib.h>
 
-
 t_command	*handle_command_token(t_token *tok, t_command *current_cmd);
 t_command	*handle_arg_token(t_token *tok, t_command *current_cmd);
 t_command	*handle_redirect(t_token *tok, t_token *file_tok,

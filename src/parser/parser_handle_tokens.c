@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/07 00:19:37 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:35:45 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ t_command	*handle_command_token(t_token *tok, t_command *current_cmd)
 
 t_command	*handle_arg_token(t_token *tok, t_command *current_cmd)
 {
-
 	if (!current_cmd)
 	{
 		current_cmd = command_create(NULL);
@@ -74,7 +73,8 @@ t_command	*handle_redirect(t_token *tok, t_token *file_tok,
 	}
 	r_type = get_redirect_type(tok);
 	redir_target = NULL;
-	if (file_tok && lexer_is_token_type(file_tok, TOKEN_ARG))
+	if (file_tok && (lexer_is_token_type(file_tok, TOKEN_ARG)
+			|| lexer_is_token_type(file_tok, TOKEN_WORD)))
 		redir_target = lexer_get_token_content(file_tok);
 	if (!command_get_name(current_cmd))
 	{

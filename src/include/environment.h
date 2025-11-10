@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:07:23 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/09 23:53:53 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@
 */
 
 /**
- * @brief Opaque type representing the environment.
+ * @brief Type representing the environment.
  * 
- * The internal implementation details are hidden from the user.
  */
 typedef struct s_environment	t_environment;
 
@@ -37,10 +36,10 @@ typedef struct s_environment	t_environment;
 /**
  * @brief Add or update an environment variable.
  *
- * If the variable does not exist, it is created and added to the list.
+ * If the variable does not exist, it is created.
  * If the variable already exists, its value is updated.
  *
- * @param env Environment variable list.
+ * @param env Environment.
  * @param name Name of the variable (must not be NULL).
  * @param value Value of the variable (can be NULL for empty).
  * @return 1 on success, or an error code otherwise.

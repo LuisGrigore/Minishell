@@ -3,9 +3,9 @@
 
 void	print_tokens(t_gen_list *tokens)
 {
-	t_gen_list_iter		*it;
-	t_token		*tok;
-	const char	*type_str;
+	t_gen_list_iter *it;
+	t_token *tok;
+	const char *type_str;
 
 	if (!tokens)
 		return ;

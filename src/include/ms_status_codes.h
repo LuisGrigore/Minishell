@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:38:04 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:48:24 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef enum e_ms_status_code
 	LEXER_ERR = LEXER_STATUS_BEGIN,
 	LEXER_NULL_ERR,
 	LEXER_SYNTAX_ERR,
+	LEXER_UNSUPORTED_CHARACTER_ERR,
+	LEXER_UNCLOSED_QUOTE_ERR,
 	//Parser
 	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
