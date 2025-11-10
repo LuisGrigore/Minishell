@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/10 00:58:36 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:29:19 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ static int execute_fork_loop(pid_t *pids, t_gen_list_iter *it, t_mini_state *min
     size_t i;
     
     i = 0;
-     while ((cmd = gen_list_iter_next(it)) != NULL)
+    cmd = gen_list_iter_next(it);
+     while (cmd)
     {
         pids[i] = fork();
         if (pids[i] == 0) // hijo
@@ -72,18 +73,19 @@ static int execute_fork_loop(pid_t *pids, t_gen_list_iter *it, t_mini_state *min
 			return(status_code);
         }
         i++;
+          cmd = gen_list_iter_next(it);
     }
     return(-1);
 }
 //TODO :: hacer que devuelva int con error y tal
 static  int execute_commands_with_pipes(t_gen_list *commands, t_mini_state *mini_state, int *exit_status)
 {
-    t_pipe_manager *pm = NULL;
+    t_pipe_manager *pm;
     t_gen_list_iter *it;
     pid_t *pids;
-    size_t i = 0;
     int status_code;
 
+    pm = NULL;
     status_code = execute_init(commands, &pm, &it, &pids);
     if(status_code != -1)
         return(status_code);
@@ -99,7 +101,6 @@ static void command_destroy_data(void *command_ptr)
 {
 	command_destroy((t_command *) command_ptr);
 }
-
 
 int execute_line(char *line, t_mini_state *mini_state)
 {
@@ -121,7 +122,6 @@ int execute_line(char *line, t_mini_state *mini_state)
         status_code = command_exec((t_command *) gen_list_peek_top(commands), mini_state);
 		gen_list_destroy(commands, command_destroy_data);
 		return (status_code);
-
 	}
 	status_code = execute_commands_with_pipes(commands, mini_state, &exit_status);
 	gen_list_destroy(commands, command_destroy_data);
