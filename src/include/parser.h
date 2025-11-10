@@ -26,5 +26,6 @@
  * variables according to quoting rules during tokenization.
  */
 int parse_line(char *line, t_gen_list *commands, t_environment *env);
+int new_parse_line (char *line, t_gen_list *commands, t_environment *env);
 
 #endif

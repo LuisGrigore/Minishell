@@ -41,8 +41,8 @@ int	signals_init_interactive(void)
 static void sigint_handler_heredoc(int sig)
 {
     (void)sig;
-    g_signal = SIGINT;       // marcar la señal recibida
-    write(1, "\n", 1);       // nueva línea para que el heredoc se "interrumpa"
+    g_signal = SIGINT;
+    write(1, "\n", 1);
 }
 
 int	signals_init_heredoc(void)
