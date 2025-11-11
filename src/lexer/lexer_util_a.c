@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:38:09 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 15:02:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:39:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_token_type	operator_type(const char *op, size_t len)
 		if (op[0] == '>' && op[1] == '>')
 			return (TOKEN_REDIR_APPEND);
 	}
-	return (TOKEN_ARG);
+	return (INVALID_OPERATOR);
 }
 
 bool	is_word_start_char(char c)

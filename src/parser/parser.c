@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 16:22:28 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:49:06 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	handle_redir_wrapper(t_token *tok, t_gen_list_iter *it,
 	file_tok = gen_list_iter_next(it);
 	*cmd = handle_redirect(tok, file_tok, *cmd, it);
 	if (!*cmd)
-		return (PARSER_ERR);
+		return (PARSER_SYNTAX_ERR);
 	return (MS_OK);
 }
 
@@ -32,14 +32,14 @@ static int	handle_word_or_arg(t_token *tok, t_command **cmd)
 	else
 		*cmd = handle_arg_token(tok, *cmd);
 	if (!*cmd)
-		return (PARSER_ERR);
+		return (PARSER_SYNTAX_ERR);
 	return (MS_OK);
 }
 
 static int	push_finished_cmd(t_command *cmd, t_gen_list *commands)
 {
 	if (!cmd)
-		return (PARSER_ERR);
+		return (PARSER_SYNTAX_ERR);
 	gen_list_push_back(commands, cmd);
 	return (MS_OK);
 }
@@ -84,8 +84,8 @@ int	parse_command(t_gen_list *command_tokens, t_gen_list *commands)
 	while (tok && status == MS_OK)
 	{
 		status = process_token(tok, it, commands, &cmd);
-		if (status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE))
-			status = PARSER_ERR;
+		if ((status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE)) || lexer_is_token_type(tok, INVALID_OPERATOR))
+			status = PARSER_SYNTAX_ERR;
 		tok = gen_list_iter_next(it);
 	}
 	if (status == MS_OK && cmd)

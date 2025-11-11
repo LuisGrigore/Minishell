@@ -25,8 +25,6 @@ typedef enum e_redirect_type
     RIGHT_REDIRECT,
     DOUBLE_LEFT_REDIRECT,
     DOUBLE_RIGHT_REDIRECT,
-    NONE,
-    ERROR,
 } t_redirect_type;
 
 /**

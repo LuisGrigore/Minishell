@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 16:22:02 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:39:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@
 typedef enum e_token_type
 {
 	TOKEN_WORD,
-    TOKEN_CMD,
-    TOKEN_ARG,
+    //TOKEN_CMD,
+    //TOKEN_ARG,
+	INVALID_OPERATOR,
     TOKEN_PIPE,
     TOKEN_REDIR_IN,
     TOKEN_REDIR_OUT,

@@ -14,11 +14,8 @@ void	print_tokens(t_gen_list *tokens)
 	{
 		switch (tok->type)
 		{
-		case TOKEN_CMD:
-			type_str = "CMD";
-			break ;
-		case TOKEN_ARG:
-			type_str = "ARG";
+		case TOKEN_WORD:
+			type_str = "WORD";
 			break ;
 		case TOKEN_PIPE:
 			type_str = "PIPE";

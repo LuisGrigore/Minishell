@@ -21,12 +21,6 @@ void	print_redirect(void *redir_ptr)
 	case DOUBLE_RIGHT_REDIRECT:
 		type_str = ">>";
 		break ;
-	case NONE:
-		type_str = "NONE";
-		break ;
-	case ERROR:
-		type_str = "ERROR";
-		break ;
 	default:
 		type_str = "UNKNOWN";
 		break ;

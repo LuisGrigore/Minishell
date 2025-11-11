@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/11 15:03:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:52:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,11 @@ static void handle_parser_status_codes(int status_code, t_mini_state *mini_state
 {
 	if(status_code == PARSER_ERR)
 		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
+	else if(status_code == PARSER_SYNTAX_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
+		fprintf(stderr, "Syntax error near: \n");
+	}
 	else
 		fprintf(stderr, "Unhandled parser status code: %d\n", status_code);
 }

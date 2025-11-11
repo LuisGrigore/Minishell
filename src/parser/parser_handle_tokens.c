@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 15:26:26 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:48:34 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,7 @@ static t_redirect_type	get_redirect_type(t_token *tok)
 		return (RIGHT_REDIRECT);
 	if (lexer_is_token_type(tok, TOKEN_REDIR_APPEND))
 		return (DOUBLE_RIGHT_REDIRECT);
-	if (lexer_is_token_type(tok, TOKEN_HEREDOC))
-		return (DOUBLE_LEFT_REDIRECT);
-	return (NONE);
+	return (DOUBLE_LEFT_REDIRECT);
 }
 
 t_command	*handle_redirect(t_token *tok, t_token *file_tok,
@@ -73,9 +71,9 @@ t_command	*handle_redirect(t_token *tok, t_token *file_tok,
 	}
 	r_type = get_redirect_type(tok);
 	redir_target = NULL;
-	if (file_tok && (lexer_is_token_type(file_tok, TOKEN_ARG)
-			|| lexer_is_token_type(file_tok, TOKEN_WORD)))
-		redir_target = lexer_get_token_content(file_tok);
+	if (!(file_tok && (lexer_is_token_type(file_tok, TOKEN_WORD))))
+		return (NULL);
+	redir_target = lexer_get_token_content(file_tok);
 	if (!command_get_name(current_cmd))
 	{
 		name_aux = lexer_get_token_content((t_token *)gen_list_iter_next(it));
