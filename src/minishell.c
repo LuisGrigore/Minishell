@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/11 17:34:23 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:15:54 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,8 +167,13 @@ static void handle_parser_status_codes(int status_code, t_mini_state *mini_state
 
 static void handle_redirect_status_codes(int status_code, t_mini_state *mini_state)
 {
-	if(status_code == REDIRECT_MALFORMED_ERR || status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR )
+	if(status_code == REDIRECT_MALFORMED_ERR)
 		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
+	else if(status_code == REDIRECT_NO_HEADERDOC_DELIMITER_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
+		fprintf(stderr, "minishell: bash: warning: here-document\n");
+	}
 	else
 		fprintf(stderr, "Unhandled redirect status code: %d\n", status_code);
 }

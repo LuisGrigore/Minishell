@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:26:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:29:39 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define SIGNAL_MANAGER_H
 
 #include "ms_status_codes.h"
+#include <signal.h>
+#include <unistd.h>
+
 
 /**
  * @brief Sets up signal handlers for interactive shell mode

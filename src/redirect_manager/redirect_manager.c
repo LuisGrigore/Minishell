@@ -31,22 +31,14 @@ void	redirect_destroy(t_redirect *redirect)
 	free(redirect->file);
 	free(redirect);
 }
-	/*while (1)
-	{
-		write(0, ">", 1);
-		input = get_next_line(0);
-		if (!(input)|| (delimiter && ft_strncmp(input, delimiter,
-					ft_strlen(input) - 1) == 0))
-			break ;
-		write(fd, input, ft_strlen(input));
-		free(input);
-	}*/
+
 static int	heredoc_exec(char *delimiter)
 {
 	char	*input;
 	char	*temp_dir;
 	int		fd;
 
+	signals_restore();
 	temp_dir = PATH_HEREDOC_TEMP_FILE;
 	if (!delimiter)
 		return REDIRECT_NO_HEADERDOC_DELIMITER_ERR;
@@ -57,47 +49,22 @@ static int	heredoc_exec(char *delimiter)
 	{
 		input = readline(">");
 		if (!input || (delimiter && ft_strncmp(input, delimiter,
-					ft_strlen(delimiter)) == 0))
+					ft_strlen(delimiter)) == 0 && ft_strlen(delimiter) == ft_strlen(input)))
 			break ;
 		write(fd, input, ft_strlen(input));
 		write(fd, "\n", 1);
 		free(input);
 	}
+	signals_restore();
 	close(fd);
 	fd = open(temp_dir, O_RDONLY);
 	dup2(fd, STDIN_FILENO);
 	close(fd);
+	if (!input)
+		return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
 	return (MS_OK);
 }
 
-/*
- *En esta funcion solo abre los archivos necesarios y redirige la entrada y salida segun convenga,
-	pero no las vuelvas
- *a dejar como estaban ni nada,
-	eso se hace despues de la ejecucion del comando(en command_exec) no aqui,
-	de la misma forma,
- *no hagas unlink ni modifiques el archivo temporal que se crea para el heredoc,
-	eso se borra despues de esperar a los posibles
- *procesos hijo(en executer).Echales un vistazo si hace falta.
- *
- *Que devuelva 0 si ha ejecutado el redirect sin errores(no aplica para <<).
- *
- *Que devuelva
-	-1 si ha habido algun error a la hora de de abrir el archivo o redirigir etc.
- *
- *Comprueba cada cosa con la bash original(asegurate que no sea fish ni otra vaina) porque hay cosas un poco raras que no te esperarias
- * por ejemplo si hace,
- * 				<< EOF echo
- * 				> hola
- * 				> EOF
- * ,en bash, no devuelve nada, en cambio si lo haces con cat en vez de echo si,
-	porque cuando usas << lo que pasa es que se crea
-
-	* como un archivo temporal y se le va metiendo lo que escribes linea a linea hasta que encuenta el delimitador
-
-	* luego se mete por la salida estandard al comando que sea(cat recibe cosas por la salida estandard en cambio echo solo por los argumentos).
- *(O eso creo por lo que he visto por ahi).
- */
 
  static int file_dup_outfile_redirect(int fd, t_redirect *redirect, t_mini_state *mini_state)
 {
