@@ -33,9 +33,10 @@ char	**env_serialize(t_environment *env)
 {
 	if (!env || !env->variables)
 		return (NULL);
-	return (gen_list_serialize_to_string_array(env->variables, env_var_to_string));
+	return (gen_list_serialize_to_string_array(env->variables,
+			env_var_to_string));
 }
-static void		env_loop_asignation(char **str_array, t_environment *env)
+static void	env_loop_asignation(char **str_array, t_environment *env)
 {
 	char		**split;
 	t_env_var	*env_var;
@@ -63,10 +64,8 @@ t_environment	*env_deserialize(char **str_array)
 {
 	t_environment	*env;
 
-
 	if (!str_array)
 		return (NULL);
-	
 	env = env_create();
 	if (!env)
 		return (NULL);

@@ -11,17 +11,17 @@
 /* ************************************************************************** */
 
 #ifndef MINI_STATE_H
-#define MINI_STATE_H
+# define MINI_STATE_H
 
-#include "../include/environment.h"
+# include "../include/environment.h"
 
 /**
  * @brief Opaque structure representing the shell's state.
- * 
+ *
  * Contains the current state of the shell including environment variables,
  * last executed command, last opened file, and exit status flags.
  */
-typedef struct s_mini_state t_mini_state;
+typedef struct s_mini_state	t_mini_state;
 
 /**
  * @brief Creates a new shell state instance.
@@ -30,17 +30,20 @@ typedef struct s_mini_state t_mini_state;
  * command line arguments.
  *
  * @param args Number of command line arguments
- * @param environment_var_str_array Array of environment variables in "KEY=VALUE" format
- * @return Pointer to the newly created shell state, or NULL on allocation failure
+
+	* @param environment_var_str_array Array of environment variables in "KEY=VALUE" format
+ * @return Pointer to the newly created shell state,
+	or NULL on allocation failure
  */
-t_mini_state *mini_state_create(int args, char **environment_var_str_array);
+t_mini_state				*mini_state_create(int args,
+								char **environment_var_str_array);
 
 /**
  * @brief Destroys a shell state instance and frees all associated resources.
  *
  * @param state Pointer to the shell state to destroy
  */
-void mini_state_destroy(t_mini_state *state);
+void						mini_state_destroy(t_mini_state *state);
 
 /**
  * @brief Gets the last executed command.
@@ -48,7 +51,7 @@ void mini_state_destroy(t_mini_state *state);
  * @param state Pointer to the shell state
  * @return String containing the last command executed, or NULL if none
  */
-char *mini_state_get_last_command(t_mini_state *state);
+char						*mini_state_get_last_command(t_mini_state *state);
 
 /**
  * @brief Gets the path of the last opened file.
@@ -58,7 +61,7 @@ char *mini_state_get_last_command(t_mini_state *state);
  * @param state Pointer to the shell state
  * @return String containing the path of the last opened file, or NULL if none
  */
-char *mini_state_get_last_opened_file(t_mini_state *state);
+char						*mini_state_get_last_opened_file(t_mini_state *state);
 
 /**
  * @brief Gets the current environment.
@@ -66,7 +69,7 @@ char *mini_state_get_last_opened_file(t_mini_state *state);
  * @param state Pointer to the shell state
  * @return Pointer to the environment variables structure
  */
-t_environment *mini_state_get_environment(t_mini_state *state);
+t_environment				*mini_state_get_environment(t_mini_state *state);
 
 /**
  * @brief Updates the last executed command.
@@ -74,7 +77,8 @@ t_environment *mini_state_get_environment(t_mini_state *state);
  * @param state Pointer to the shell state
  * @param command String containing the command being executed
  */
-void mini_state_set_last_command(t_mini_state *state, const char *command);
+void						mini_state_set_last_command(t_mini_state *state,
+								const char *command);
 
 /**
  * @brief Updates the last opened file path.
@@ -84,7 +88,8 @@ void mini_state_set_last_command(t_mini_state *state, const char *command);
  * @param state Pointer to the shell state
  * @param file_name Path of the file being opened
  */
-void mini_state_set_last_opened_file(t_mini_state *state, const char *file_name);
+void						mini_state_set_last_opened_file(t_mini_state *state,
+								const char *file_name);
 
 /**
  * @brief Checks if the shell should exit after the current command.
@@ -94,7 +99,7 @@ void mini_state_set_last_opened_file(t_mini_state *state, const char *file_name)
  * @param state Pointer to the shell state
  * @return true if the shell should exit, false otherwise
  */
-bool mini_state_get_exit_after_last_command(t_mini_state *state);
+bool						mini_state_get_exit_after_last_command(t_mini_state *state);
 
 /**
  * @brief Sets whether the shell should exit after the current command.
@@ -102,6 +107,7 @@ bool mini_state_get_exit_after_last_command(t_mini_state *state);
  * @param state Pointer to the shell state
  * @param value true to request shell exit, false to continue execution
  */
-void mini_state_set_exit_after_last_command(t_mini_state *state, bool value);
+void						mini_state_set_exit_after_last_command(t_mini_state *state,
+								bool value);
 
 #endif

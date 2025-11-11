@@ -12,8 +12,8 @@ static int	check_option_of_export(char **new_variable, t_environment *env)
 	{
 		if (!ft_isalnum(new_variable[0][i]))
 		{
-			if (new_variable[0][i] != '+' || i != (int)ft_strlen(new_variable[0])
-				- 1)
+			if (new_variable[0][i] != '+'
+				|| i != (int)ft_strlen(new_variable[0]) - 1)
 				return (-1);
 			else
 				break ;
@@ -32,30 +32,31 @@ static int	check_option_of_export(char **new_variable, t_environment *env)
 	new_variable[1] = ft_strjoin(temp, temp2);
 	return (free(temp), free(temp2), 0);
 }
-static int export_loop(char *arg, t_environment *environment, t_gen_list_iter *it)
+static int	export_loop(char *arg, t_environment *environment,
+		t_gen_list_iter *it)
 {
-	char **new_variable;
+	char	**new_variable;
 
-	while(arg)
+	while (arg)
 	{
-		if(ft_isdigit(arg[0]))
-			return(COMMAND_MALFORMED_ERR);
-		if(ft_strlen(arg) == 1 && arg[0] == '=')
-			return(COMMAND_MALFORMED_ERR);
+		if (ft_isdigit(arg[0]))
+			return (COMMAND_MALFORMED_ERR);
+		if (ft_strlen(arg) == 1 && arg[0] == '=')
+			return (COMMAND_MALFORMED_ERR);
 		new_variable = simple_split(arg, '=');
 		if (!new_variable || !new_variable[0])
 			return (MS_ALLOCATION_ERR);
 		if (check_option_of_export(new_variable, environment) == -1)
-			{
-				if(new_variable[1])
-					free(new_variable[1]);
-				free(new_variable[0]);
-				return (free(new_variable),COMMAND_MALFORMED_ERR);
-			}
-		if(ft_strchr(arg, '='))
+		{
+			if (new_variable[1])
+				free(new_variable[1]);
+			free(new_variable[0]);
+			return (free(new_variable), COMMAND_MALFORMED_ERR);
+		}
+		if (ft_strchr(arg, '='))
 			env_set(environment, new_variable[0], new_variable[1]);
 		free(new_variable[0]);
-		if(new_variable[1])
+		if (new_variable[1])
 			free(new_variable[1]);
 		free(new_variable);
 		arg = gen_list_iter_next(it);
@@ -66,9 +67,9 @@ int	export_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;
-	//char			**new_variable;
-	int	status_code;
+	int				status_code;
 
+	// char			**new_variable;
 	if (!command || !environment)
 		return (COMMAND_ERR);
 	if (!command->args)
@@ -80,7 +81,7 @@ int	export_execute(t_command *command, t_environment *environment)
 	arg = gen_list_iter_next(it);
 	status_code = export_loop(arg, environment, it);
 	gen_list_iter_destroy(it);
-	return(status_code);
+	return (status_code);
 }
 
 int	unset_execute(t_command *command, t_environment *environment)
@@ -105,9 +106,10 @@ int	unset_execute(t_command *command, t_environment *environment)
 	gen_list_iter_destroy(it);
 	return (MS_OK);
 }
-static void echo_loop(char *arg, t_gen_list_iter *it)
+static void	echo_loop(char *arg, t_gen_list_iter *it)
 {
-	char			*next_arg;
+	char	*next_arg;
+
 	while (arg)
 	{
 		ft_printf("%s", arg);
@@ -117,14 +119,14 @@ static void echo_loop(char *arg, t_gen_list_iter *it)
 		arg = next_arg;
 	}
 }
-int	echo_execute(t_command *command, t_environment*environment)
+int	echo_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;
 	char			*arg;
 	int				newline;
 
-	(void) environment;
-	if (!command )
+	(void)environment;
+	if (!command)
 		return (COMMAND_ERR);
 	if (!command->args)
 		return (COMMAND_MALFORMED_ERR);

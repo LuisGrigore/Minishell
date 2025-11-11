@@ -11,24 +11,23 @@
 /* ************************************************************************** */
 
 #include "mini_state_internal.h"
-
 #include <stdio.h>
 
-char *mini_state_get_last_command(t_mini_state *state)
+char	*mini_state_get_last_command(t_mini_state *state)
 {
 	if (!state)
 		return (NULL);
 	return (state->last_command);
 }
 
-char *mini_state_get_last_opened_file(t_mini_state *state)
+char	*mini_state_get_last_opened_file(t_mini_state *state)
 {
 	if (!state)
 		return (NULL);
 	return (state->last_opened_file);
 }
-//t_gen_list *mini_state_get_environment(t_mini_state *state)
-t_environment *mini_state_get_environment(t_mini_state *state)
+// t_gen_list *mini_state_get_environment(t_mini_state *state)
+t_environment	*mini_state_get_environment(t_mini_state *state)
 
 {
 	if (!state)
@@ -36,7 +35,7 @@ t_environment *mini_state_get_environment(t_mini_state *state)
 	return (state->environment_vars);
 }
 
-void mini_state_set_last_command(t_mini_state *state, const char *command)
+void	mini_state_set_last_command(t_mini_state *state, const char *command)
 {
 	if (!state)
 		return ;
@@ -46,7 +45,8 @@ void mini_state_set_last_command(t_mini_state *state, const char *command)
 	else
 		state->last_command = NULL;
 }
-void mini_state_set_last_opened_file(t_mini_state *state, const char *file_name)
+void	mini_state_set_last_opened_file(t_mini_state *state,
+		const char *file_name)
 {
 	if (!state)
 		return ;
@@ -57,14 +57,14 @@ void mini_state_set_last_opened_file(t_mini_state *state, const char *file_name)
 		state->last_opened_file = NULL;
 }
 
-bool mini_state_get_exit_after_last_command(t_mini_state *state)
+bool	mini_state_get_exit_after_last_command(t_mini_state *state)
 {
 	if (!state)
 		return (false);
 	return (state->exit_after_last_command);
 }
 
-void mini_state_set_exit_after_last_command(t_mini_state *state, bool value)
+void	mini_state_set_exit_after_last_command(t_mini_state *state, bool value)
 {
 	if (!state)
 		return ;

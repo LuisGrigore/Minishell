@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef MS_ERRORS_H
-#define MS_ERRORS_H
+# define MS_ERRORS_H
 
-#include "../config.h"
+# include "../config.h"
 
 typedef enum e_ms_status_code
 {
-	//System
+	// System
 	MS_OK = SYSTEM_STATUS_BEGIN,
 	MS_FORK_ERR,
 	MS_PIPE_ERR,
@@ -27,7 +27,7 @@ typedef enum e_ms_status_code
 	MS_SIGNAL_ERR,
 	MS_OPEN_ERR,
 	MS_PATH_ERR,
-	//Command
+	// Command
 	COMMAND_SUCCESS = COMMAND_STATUS_BEGIN,
 	COMMAND_ERR,
 	COMMAND_MALFORMED_ERR,
@@ -39,28 +39,27 @@ typedef enum e_ms_status_code
 	COMMAND_INVALID_ARGS_ERR,
 	COMMAND_NUMERIC_ARG_REQUIRED_ERR,
 	COMMAND_NO_SUCH_FILE_OR_DIR_ERR,
-	//Executer
+	// Executer
 	EXECUTER_ERR = EXECUTER_STATUS_BEGIN,
-	//Lexer
+	// Lexer
 	LEXER_ERR = LEXER_STATUS_BEGIN,
 	LEXER_NULL_ERR,
 	LEXER_SYNTAX_ERR,
 	LEXER_UNSUPORTED_CHARACTER_ERR,
 	LEXER_UNCLOSED_QUOTE_ERR,
-	//Parser
+	// Parser
 	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
 	PARSER_SYNTAX_ERR,
-	//Redirect
+	// Redirect
 	REDIRECT_MALFORMED_ERR = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_NO_HEADERDOC_DELIMITER_ERR,
-	//Pipe
+	// Pipe
 	PIPE_MANAGER_IS_NULL = PIPE_MANAGER_STATUS_BEGIN,
 	PIPE_MANAGER_MALFORMED,
-	//Exit
+	// Exit
 	EXTERNALY_DEFINED_STATUS_CODE = EXTERNALY_DEFINED_STATUS_BEGIN,
-	
-} t_ms_status_code;
 
+}	t_ms_status_code;
 
 #endif

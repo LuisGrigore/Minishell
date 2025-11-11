@@ -33,8 +33,8 @@ static void	remove_current_node(t_gen_list *list, t_node **current,
 	*current = next;
 }
 
-t_gen_list_status_code	gen_list_remove_if(t_gen_list *list, t_predicate predicate,
-		t_element_destroyer element_destroyer)
+t_gen_list_status_code	gen_list_remove_if(t_gen_list *list,
+		t_predicate predicate, t_element_destroyer element_destroyer)
 {
 	t_node	*current;
 	t_node	*prev;
@@ -60,8 +60,9 @@ t_gen_list_status_code	gen_list_remove_if(t_gen_list *list, t_predicate predicat
 	return (GEN_LIST_OK);
 }
 
-t_gen_list_status_code	gen_list_remove_if_ctx(t_gen_list *list, t_predicate_ctx predicate,
-		void *context, t_element_destroyer element_destroyer)
+t_gen_list_status_code	gen_list_remove_if_ctx(t_gen_list *list,
+		t_predicate_ctx predicate, void *context,
+		t_element_destroyer element_destroyer)
 {
 	t_node	*current;
 	t_node	*prev;

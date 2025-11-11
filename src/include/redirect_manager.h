@@ -3,7 +3,6 @@
 # include "../external/gen_list/gen_list.h"
 # include "mini_state.h"
 
-
 /* ============================================================
 **  Data Structures
 ** ============================================================
@@ -21,11 +20,11 @@
  */
 typedef enum e_redirect_type
 {
-    LEFT_REDIRECT,
-    RIGHT_REDIRECT,
-    DOUBLE_LEFT_REDIRECT,
-    DOUBLE_RIGHT_REDIRECT,
-} t_redirect_type;
+	LEFT_REDIRECT,
+	RIGHT_REDIRECT,
+	DOUBLE_LEFT_REDIRECT,
+	DOUBLE_RIGHT_REDIRECT,
+}							t_redirect_type;
 
 /**
  * @struct s_redirect
@@ -33,7 +32,7 @@ typedef enum e_redirect_type
  *
  * Contains the redirection type and the target file or heredoc delimiter.
  */
-typedef struct s_redirect t_redirect;
+typedef struct s_redirect	t_redirect;
 
 /* ============================================================
 **  Lifecycle
@@ -42,24 +41,27 @@ typedef struct s_redirect t_redirect;
 
 /**
  * @brief Creates a new redirect structure.
- * 
- * Allocates and initializes a redirect object with the given type and target file.
+ *
+
+	* Allocates and initializes a redirect object with the given type and target file.
  * The file name is typically duplicated internally to ensure memory safety.
- * 
+ *
  * @param redirect_type The type of the redirection (see t_redirect_type).
  * @param file_name The target file name or heredoc delimiter.
- * @return A pointer to the newly created redirect structure, or NULL on failure.
+ * @return A pointer to the newly created redirect structure,
+	or NULL on failure.
  */
-t_redirect *redirect_create(t_redirect_type redirect_type, char *file_name);
+t_redirect					*redirect_create(t_redirect_type redirect_type,
+								char *file_name);
 
 /**
  * @brief Destroys a redirect structure and frees its memory.
- * 
+ *
  * Safely releases both the redirect object and its associated file name.
- * 
+ *
  * @param redirect Pointer to the redirect structure to destroy.
  */
-void redirect_destroy(t_redirect *redirect);
+void						redirect_destroy(t_redirect *redirect);
 
 /* ============================================================
 **  Operations
@@ -73,12 +75,12 @@ void redirect_destroy(t_redirect *redirect);
  * @param redirect Pointer to a t_redirect.
  * @see t_redirect
  *
- * @return 
+ * @return
  *         0 if the redirection was executed successfully.
  *        -1 if an error occurred during redirection.
  */
-int redirect_execute(t_redirect *redirect, t_mini_state *mini_state, int stdin_backup);
-
+int							redirect_execute(t_redirect *redirect,
+								t_mini_state *mini_state, int stdin_backup);
 
 /* ============================================================
 **  Debug
@@ -87,13 +89,12 @@ int redirect_execute(t_redirect *redirect, t_mini_state *mini_state, int stdin_b
 
 /**
  * @brief Prints a redirect for debugging purposes.
- * 
+ *
  * Displays the type of redirection and the associated file name.
  * Used mainly for development and testing.
- * 
+ *
  * @param redir_ptr Generic pointer to a t_redirect structure.
  */
-void print_redirect(void *redir_ptr);
-
+void						print_redirect(void *redir_ptr);
 
 #endif

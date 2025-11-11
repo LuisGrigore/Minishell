@@ -25,14 +25,14 @@ t_gen_list	*gen_list_create(void)
 	return (list);
 }
 
-void gen_list_destroy(t_gen_list *list, t_element_destroyer element_destroyer)
+void	gen_list_destroy(t_gen_list *list,
+		t_element_destroyer element_destroyer)
 {
-	
-    if (!list)
-        return ;
-    while (list->size > 0)
+	if (!list)
+		return ;
+	while (list->size > 0)
 	{
-        element_destroyer(gen_list_pop_front(list));
+		element_destroyer(gen_list_pop_front(list));
 	}
 	free(list);
 }

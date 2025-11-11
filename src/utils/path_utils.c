@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/util.h"
 #include "../external/libft/libft.h"
+#include "../include/util.h"
 #include "unistd.h"
 
 int	ft_ispace(char c)
@@ -61,24 +61,23 @@ char	*get_next_argument(char *c, char *str)
 	}
 	return (str + i + (int)len);
 }
-char **simple_split(char *arg, char c)
+char	**simple_split(char *arg, char c)
 {
-	size_t i;
-	char **result;
+	size_t	i;
+	char	**result;
 
 	i = 0;
-	if(!arg || !c)
-		return(NULL);
-	result = ft_calloc(3,sizeof(char *));
-	while(arg[i])
+	if (!arg || !c)
+		return (NULL);
+	result = ft_calloc(3, sizeof(char *));
+	while (arg[i])
 	{
-		if(arg[i] == c)
-			break;
+		if (arg[i] == c)
+			break ;
 		i++;
 	}
 	result[0] = ft_substr(arg, 0, i);
-	if(arg[i] == c)
-		result[1] = ft_substr(arg, i + 1, ft_strlen(arg)- i);
-	return(result);
-	
+	if (arg[i] == c)
+		result[1] = ft_substr(arg, i + 1, ft_strlen(arg) - i);
+	return (result);
 }

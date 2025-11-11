@@ -11,13 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef PIPE_MANAGER_H
-#define PIPE_MANAGER_H
+# define PIPE_MANAGER_H
 
-#include <stdlib.h>
-#include "ms_status_codes.h"
-#include "../config.h"
-
-
+# include "../config.h"
+# include "ms_status_codes.h"
+# include <stdlib.h>
 
 /**
  * @brief Manages pipe connections between multiple commands
@@ -26,7 +24,7 @@
  * Ensures proper file descriptor management and data flow between
  * piped commands.
  */
-typedef struct s_pipe_manager t_pipe_manager;
+typedef struct s_pipe_manager	t_pipe_manager;
 
 /**
  * @brief Creates a new pipe manager for a command pipeline
@@ -39,7 +37,7 @@ typedef struct s_pipe_manager t_pipe_manager;
  *
  * @see pipe_manager_destroy
  */
-t_pipe_manager *pipe_manager_init(size_t n_cmds);
+t_pipe_manager					*pipe_manager_init(size_t n_cmds);
 
 /**
  * @brief Cleans up pipe manager resources
@@ -49,7 +47,7 @@ t_pipe_manager *pipe_manager_init(size_t n_cmds);
  *
  * @param pm Pipe manager to destroy
  */
-void pipe_manager_destroy(t_pipe_manager *pm);
+void							pipe_manager_destroy(t_pipe_manager *pm);
 
 /**
  * @brief Configures pipes for a command in the pipeline
@@ -64,7 +62,8 @@ void pipe_manager_destroy(t_pipe_manager *pm);
  *
  * @see ms_status_codes.h
  */
-int pipe_manager_setup_command(t_pipe_manager *pm, size_t index);
+int								pipe_manager_setup_command(t_pipe_manager *pm,
+									size_t index);
 
 /**
  * @brief Closes all pipe file descriptors
@@ -77,6 +76,6 @@ int pipe_manager_setup_command(t_pipe_manager *pm, size_t index);
  *
  * @see ms_status_codes.h
  */
-int pipe_manager_close_all(t_pipe_manager *pm);
+int								pipe_manager_close_all(t_pipe_manager *pm);
 
 #endif

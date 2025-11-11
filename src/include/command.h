@@ -13,10 +13,9 @@
 #ifndef COMMAND_H
 # define COMMAND_H
 # include "../external/gen_list/gen_list.h"
-# include "redirect_manager.h"
-# include "ms_status_codes.h"
 # include "mini_state.h"
-
+# include "ms_status_codes.h"
+# include "redirect_manager.h"
 
 /* ============================================================
 **  Data Structures
@@ -25,10 +24,10 @@
 
 /**
  * @brief Represents a shell command with its arguments and redirections
- * 
+ *
  * This structure encapsulates all information needed to execute a command,
  * including its name, arguments, and any input/output redirections.
- * 
+ *
  * @see command_create
  * @see command_destroy
  */
@@ -41,18 +40,18 @@ typedef struct s_command	t_command;
 
 /**
  * @brief Creates a new command structure.
- * 
+ *
  * @param name Name of the command.
  * @return Pointer to the newly created command.
  */
-t_command *command_create(char *name);
+t_command					*command_create(char *name);
 
 /**
  * @brief Destroys a command structure and frees memory.
- * 
+ *
  * @param command Pointer to the command to destroy.
  */
-void command_destroy(t_command *command);
+void						command_destroy(t_command *command);
 
 /* ============================================================
 **  Command Queries
@@ -69,7 +68,7 @@ void command_destroy(t_command *command);
  *@see t_command
  * @return true if the command is built-in, false otherwise.
  */
-bool command_is_built_in(t_command *command);
+bool						command_is_built_in(t_command *command);
 
 /**
  * Retrieves the name of the given command.
@@ -81,7 +80,7 @@ bool command_is_built_in(t_command *command);
  *         command name. The caller should not modify or free this
  *         string unless explicitly documented in the implementation.
  */
-char *command_get_name(t_command *command);
+char						*command_get_name(t_command *command);
 
 /* ============================================================
 **  Command Operations
@@ -90,36 +89,37 @@ char *command_get_name(t_command *command);
 
 /**
  * @brief Adds an argument to the command.
- * 
+ *
  * @param command Pointer to the command.
  * @param arg Argument string to add.
  */
-int command_push_arg(t_command *command, char *arg);
+int							command_push_arg(t_command *command, char *arg);
 
 /**
  * @brief Adds a redirection to the command.
- * 
+ *
  * @param command Pointer to the command.
  * @param redirect_type Type of redirection (input, output, append).
  * @param file_name Target file for the redirection.
  */
-int command_push_redirect(t_command *command, t_redirect_type redirect_type, char *file_name);
+int							command_push_redirect(t_command *command,
+								t_redirect_type redirect_type, char *file_name);
 
 /**
  * @brief Executes the command with the given environment.
- * 
+ *
  * @param command Pointer to the command.
  * @param environment Pointer to the environment variable list.
  * @return 0 on success, -1 on error.
  */
-int command_exec(t_command *command, t_mini_state *mini_state);
+int							command_exec(t_command *command,
+								t_mini_state *mini_state);
 
 /* ============================================================
 **  Debug
 ** ============================================================
 */
 
-void print_command(t_command *cmd, int index);
-
+void						print_command(t_command *cmd, int index);
 
 #endif

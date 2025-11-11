@@ -75,7 +75,7 @@ void	pipe_manager_destroy(t_pipe_manager *pm)
 int	pipe_manager_setup_command(t_pipe_manager *pm, size_t index)
 {
 	int	dup_ret;
-	
+
 	dup_ret = 0;
 	if (!pm)
 		return (PIPE_MANAGER_IS_NULL);

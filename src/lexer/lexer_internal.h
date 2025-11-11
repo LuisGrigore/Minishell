@@ -30,7 +30,7 @@ int					is_space(char c);
 int					is_operator_char(char c);
 t_token_type		operator_type(const char *op, size_t len);
 bool				is_word_start_char(char c);
-bool is_unsuported_char(char c);
+bool				is_unsuported_char(char c);
 
 int					add_operator_token(char **current_char, t_gen_list *tokens,
 						char *line);

@@ -41,15 +41,16 @@ static int	heredoc_exec(char *delimiter)
 	signals_restore();
 	temp_dir = PATH_HEREDOC_TEMP_FILE;
 	if (!delimiter)
-		return REDIRECT_NO_HEADERDOC_DELIMITER_ERR;
+		return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
 	fd = open(temp_dir, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
-		return MS_OPEN_ERR;
+		return (MS_OPEN_ERR);
 	while (1)
 	{
 		input = readline(">");
 		if (!input || (delimiter && ft_strncmp(input, delimiter,
-					ft_strlen(delimiter)) == 0 && ft_strlen(delimiter) == ft_strlen(input)))
+					ft_strlen(delimiter)) == 0
+				&& ft_strlen(delimiter) == ft_strlen(input)))
 			break ;
 		write(fd, input, ft_strlen(input));
 		write(fd, "\n", 1);
@@ -65,10 +66,10 @@ static int	heredoc_exec(char *delimiter)
 	return (MS_OK);
 }
 
-
- static int file_dup_outfile_redirect(int fd, t_redirect *redirect, t_mini_state *mini_state)
+static int	file_dup_outfile_redirect(int fd, t_redirect *redirect,
+		t_mini_state *mini_state)
 {
-	if(redirect->symbol == DOUBLE_RIGHT_REDIRECT)
+	if (redirect->symbol == DOUBLE_RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_APPEND, 0644);
 		mini_state_set_last_opened_file(mini_state, redirect->file);
@@ -76,7 +77,7 @@ static int	heredoc_exec(char *delimiter)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);
 	}
-	else if(redirect->symbol == RIGHT_REDIRECT)
+	else if (redirect->symbol == RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 		mini_state_set_last_opened_file(mini_state, redirect->file);
@@ -84,17 +85,18 @@ static int	heredoc_exec(char *delimiter)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);
 	}
-	return(MS_OK);
+	return (MS_OK);
 }
-int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state, int stdin_bakup)
+int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state,
+		int stdin_bakup)
 {
-	int fd;
-	int status_code;
+	int	fd;
+	int	status_code;
 
 	if (redirect->symbol == DOUBLE_LEFT_REDIRECT)
 	{
 		dup2(stdin_bakup, 0);
-		return heredoc_exec(redirect->file);
+		return (heredoc_exec(redirect->file));
 	}
 	if (redirect->file == NULL)
 		return (REDIRECT_MALFORMED_ERR);
@@ -106,11 +108,9 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state, int stdin_b
 			return (MS_OPEN_ERR);
 		dup2(fd, STDIN_FILENO);
 	}
-
 	status_code = file_dup_outfile_redirect(fd, redirect, mini_state);
-	if(status_code != MS_OK)
-		return(status_code);
+	if (status_code != MS_OK)
+		return (status_code);
 	close(fd);
 	return (MS_OK);
 }
-

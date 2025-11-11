@@ -1,7 +1,7 @@
 #ifndef HISTORY_MANAGER_H
-#define HISTORY_MANAGER_H
+# define HISTORY_MANAGER_H
 
-#include <stdbool.h>
+# include <stdbool.h>
 
 /**
  * @brief Adds a valid command line to the shell history
@@ -18,7 +18,7 @@
  *
  * @see history_clean
  */
-bool history_add(char *line);
+bool	history_add(char *line);
 
 /**
  * @brief Cleans up the history manager resources
@@ -26,6 +26,6 @@ bool history_add(char *line);
  * Frees all allocated memory associated with the command history
  * and resets the history state. Should be called before the shell exits.
  */
-void history_clean(void);
+void	history_clean(void);
 
 #endif

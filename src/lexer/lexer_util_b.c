@@ -12,11 +12,11 @@
 
 #include "lexer_internal.h"
 
-bool is_unsuported_char(char c)
+bool	is_unsuported_char(char c)
 {
 	if (c == '\\' || c == ';')
-		return true;
-	return false;
+		return (true);
+	return (false);
 }
 
 char	*append_segment(char *buf, char *seg)

@@ -44,7 +44,7 @@ void	destroy_environment_var(void *envioroment_var)
 	t_env_var	*aux;
 
 	if (!envioroment_var)
-		return;
+		return ;
 	aux = (t_env_var *)envioroment_var;
 	free(aux->var_name);
 	free(aux->var_value);

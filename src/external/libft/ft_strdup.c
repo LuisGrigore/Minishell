@@ -17,7 +17,7 @@ static char	*ft_strcpy(char *str, char *dest)
 	int	i;
 
 	i = 0;
-	if(!str || !dest)
+	if (!str || !dest)
 		return (NULL);
 	while (str[i])
 	{
@@ -32,7 +32,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*p1;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	p1 = malloc(ft_strlen(s) + 1);
 	if (!p1)

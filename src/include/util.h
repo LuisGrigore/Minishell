@@ -68,6 +68,6 @@ char	*get_next_argument(char *c, char *str);
  * @param c Delimiter character
  * @return Array of strings, NULL-terminated, or NULL on error
  */
-char **simple_split(char *arg, char c);
+char	**simple_split(char *arg, char c);
 
 #endif

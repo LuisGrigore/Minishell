@@ -25,7 +25,8 @@ char	*env_get(t_environment *env, char *name)
 
 	if (!env || !env->variables)
 		return (NULL);
-	found_var = (t_env_var *) gen_list_find_ctx(env->variables, var_name_filter, name);
+	found_var = (t_env_var *)gen_list_find_ctx(env->variables, var_name_filter,
+			name);
 	if (!found_var)
 		return (NULL);
 	return (ft_strdup(found_var->var_value));

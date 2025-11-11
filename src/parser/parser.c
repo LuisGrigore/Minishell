@@ -12,7 +12,6 @@
 
 #include "parser_internal.h"
 
-
 static int	handle_redir_wrapper(t_token *tok, t_gen_list_iter *it,
 		t_command **cmd)
 {
@@ -84,7 +83,8 @@ int	parse_command(t_gen_list *command_tokens, t_gen_list *commands)
 	while (tok && status == MS_OK)
 	{
 		status = process_token(tok, it, commands, &cmd);
-		if ((status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE)) || lexer_is_token_type(tok, INVALID_OPERATOR))
+		if ((status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE))
+			|| lexer_is_token_type(tok, INVALID_OPERATOR))
 			status = PARSER_SYNTAX_ERR;
 		tok = gen_list_iter_next(it);
 	}
@@ -96,13 +96,12 @@ int	parse_command(t_gen_list *command_tokens, t_gen_list *commands)
 	return (status);
 }
 
-
-static t_gen_list *get_current_command_tokens(t_gen_list *tokens)
+static t_gen_list	*get_current_command_tokens(t_gen_list *tokens)
 {
-	t_token *current_token;
-	t_gen_list *current_command_tokens;
-	t_gen_list *discard_tokens;
-	
+	t_token		*current_token;
+	t_gen_list	*current_command_tokens;
+	t_gen_list	*discard_tokens;
+
 	current_command_tokens = gen_list_create();
 	discard_tokens = gen_list_create();
 	if (!current_command_tokens)
@@ -111,11 +110,11 @@ static t_gen_list *get_current_command_tokens(t_gen_list *tokens)
 	{
 		current_token = (t_token *)gen_list_pop_front(tokens);
 		if (!current_token)
-			break;
+			break ;
 		if (lexer_is_token_type(current_token, TOKEN_PIPE))
 		{
-			gen_list_push_front(discard_tokens,current_token);
-			break;
+			gen_list_push_front(discard_tokens, current_token);
+			break ;
 		}
 		gen_list_push_back(current_command_tokens, current_token);
 	}
@@ -125,8 +124,8 @@ static t_gen_list *get_current_command_tokens(t_gen_list *tokens)
 
 static int	parser_aux(t_gen_list *tokens, t_gen_list *commands)
 {
-	t_gen_list		*current_command_tokens;
-	int				status;
+	t_gen_list	*current_command_tokens;
+	int			status;
 
 	if (gen_list_is_empty(tokens))
 		return (MS_OK);
@@ -138,7 +137,8 @@ static int	parser_aux(t_gen_list *tokens, t_gen_list *commands)
 	status = parse_command(current_command_tokens, commands);
 	if (status != MS_OK)
 		return (lexer_destroy(current_command_tokens), status);
-	return (lexer_destroy(current_command_tokens), parser_aux(tokens, commands));
+	return (lexer_destroy(current_command_tokens), parser_aux(tokens,
+			commands));
 }
 
 int	parse_line(char *line, t_gen_list *commands, t_environment *env)
@@ -150,7 +150,7 @@ int	parse_line(char *line, t_gen_list *commands, t_environment *env)
 	if (!tokens)
 		return (MS_ALLOCATION_ERR);
 	status = tokenize_line(line, tokens, env);
-	//print_tokens(tokens);
+	// print_tokens(tokens);
 	if (status != MS_OK)
 	{
 		lexer_destroy(tokens);

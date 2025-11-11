@@ -11,12 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef SIGNAL_MANAGER_H
-#define SIGNAL_MANAGER_H
+# define SIGNAL_MANAGER_H
 
-#include "ms_status_codes.h"
-#include <signal.h>
-#include <unistd.h>
-
+# include "ms_status_codes.h"
+# include <signal.h>
+# include <unistd.h>
 
 /**
  * @brief Sets up signal handlers for interactive shell mode
@@ -29,7 +28,7 @@
  * @return 0 on success, error code on failure
  * @see ms_status_codes.h
  */
-int signals_init_interactive(void);
+int	signals_init_interactive(void);
 
 /**
  * @brief Sets up signal handlers for heredoc input mode
@@ -42,7 +41,7 @@ int signals_init_interactive(void);
  * @return 0 on success, error code on failure
  * @see ms_status_codes.h
  */
-int signals_init_heredoc(void);
+int	signals_init_heredoc(void);
 
 /**
  * @brief Restores default signal handling
@@ -56,6 +55,6 @@ int signals_init_heredoc(void);
  * @return 0 on success, error code on failure
  * @see ms_status_codes.h
  */
-int signals_restore(void);
+int	signals_restore(void);
 
 #endif

@@ -30,19 +30,22 @@ static char	*get_final_path(char *path, char *cmd)
  * find_command: search for 'cmd' in PATH (env array) or treat it as given path.
  * If found and executable returns an allocated string with the full path.
  * If not found returns NULL and sets *err_out to 0.
- * If found but not executable sets *err_out to EACCES (permission) or EISDIR (is dir).
- */
-static char *find_command(char **env, char *cmd, int *err_out)
-{
-	int y = 0;
-	char **path = NULL;
-	char *final_path;
-	int seen_permission_error = 0;
-	struct stat st;
 
+	* If found but not executable sets *err_out to EACCES (permission) or EISDIR (is dir).
+ */
+static char	*find_command(char **env, char *cmd, int *err_out)
+{
+	int			y;
+	char		**path;
+	char		*final_path;
+	int			seen_permission_error;
+	struct stat	st;
+
+	y = 0;
+	path = NULL;
+	seen_permission_error = 0;
 	if (err_out)
 		*err_out = 0;
-
 	/* If cmd contains a slash treat it as a path */
 	if (ft_strchr(cmd, '/'))
 	{
@@ -64,7 +67,6 @@ static char *find_command(char **env, char *cmd, int *err_out)
 			*err_out = EACCES;
 		return (NULL);
 	}
-
 	/* find PATH= in env */
 	while (env && env[y] && ft_strncmp(env[y], "PATH=", 5) != 0)
 		y++;
@@ -87,7 +89,6 @@ static char *find_command(char **env, char *cmd, int *err_out)
 		}
 		return (NULL);
 	}
-
 	path = ft_split(env[y] + 5, ':');
 	y = 0;
 	while (path && path[y])
@@ -97,7 +98,7 @@ static char *find_command(char **env, char *cmd, int *err_out)
 		{
 			free(final_path);
 			y++;
-			continue;
+			continue ;
 		}
 		if (access(final_path, F_OK) == 0)
 		{
@@ -134,6 +135,7 @@ int	bin_execute(t_command *cmd, t_environment *environment)
 	char	**cmd2;
 	char	**env;
 	char	*path;
+	int		find_err;
 
 	if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
 	{
@@ -141,7 +143,7 @@ int	bin_execute(t_command *cmd, t_environment *environment)
 	}
 	env = env_serialize(environment);
 	cmd2 = gen_list_serialize_to_string_array(cmd->args, serialize_arg);
-	int find_err = 0;
+	find_err = 0;
 	path = find_command(env, cmd2[0], &find_err);
 	if (!path)
 	{

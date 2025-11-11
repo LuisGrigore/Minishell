@@ -1,8 +1,8 @@
 #include "command_internal.h"
 
-static int cd_args_checker(t_command *command, t_environment *environment , t_gen_list_iter **it)
+static int	cd_args_checker(t_command *command, t_environment *environment,
+		t_gen_list_iter **it)
 {
-
 	if (!command || !environment)
 		return (COMMAND_ERR);
 	if (!command->args)
@@ -14,7 +14,7 @@ static int cd_args_checker(t_command *command, t_environment *environment , t_ge
 	*it = gen_list_iter_start(command->args);
 	if (*it == NULL)
 		return (MS_ALLOCATION_ERR);
-	return(MS_OK);
+	return (MS_OK);
 }
 int	cd_execute(t_command *command, t_environment *environment)
 {
@@ -24,8 +24,8 @@ int	cd_execute(t_command *command, t_environment *environment)
 	int				checker_status;
 
 	checker_status = cd_args_checker(command, environment, &it);
-	if(checker_status != MS_OK)
-		return(checker_status);
+	if (checker_status != MS_OK)
+		return (checker_status);
 	old_directory = getenv("PWD");
 	gen_list_iter_next(it);
 	target = gen_list_iter_next(it);
@@ -38,7 +38,7 @@ int	cd_execute(t_command *command, t_environment *environment)
 			env_set(environment, "OLDPWD", old_directory);
 		target = getcwd(NULL, 0);
 		env_set(environment, "PWD", target);
-		return (free(target),MS_OK);
+		return (free(target), MS_OK);
 	}
 	return (MS_PATH_ERR);
 }
@@ -76,15 +76,14 @@ int	env_execute(t_command *command, t_environment *environment)
 
 	if (!command || !environment)
 		return (COMMAND_ERR);
-
 	serialized_env = env_serialize(environment);
 	i = 0;
 	while (serialized_env[i] != NULL)
 	{
-		if(serialized_env[i][0] == '?')
+		if (serialized_env[i][0] == '?')
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		printf("%s\n", serialized_env[i]);
 		i++;
@@ -93,9 +92,9 @@ int	env_execute(t_command *command, t_environment *environment)
 	return (MS_OK);
 }
 
-static int is_numeric_string(const char *str)
+static int	is_numeric_string(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
@@ -109,30 +108,30 @@ static int is_numeric_string(const char *str)
 	return (1);
 }
 
-static int exit_code_without_quotes(char *arg)
+static int	exit_code_without_quotes(char *arg)
 {
-	char *temp;
-	int i;
-	int j;
-	int result;
+	char	*temp;
+	int		i;
+	int		j;
+	int		result;
 
 	i = 0;
 	j = 0;
 	temp = ft_calloc(ft_strlen(arg), sizeof(char));
-	while(arg[i])
+	while (arg[i])
 	{
-		if(arg[i] == '"' || arg[i] == '\'')
+		if (arg[i] == '"' || arg[i] == '\'')
 			i++;
 		else
 		{
 			temp[j] = arg[i];
 			j++;
 			i++;
-		}	
+		}
 	}
 	result = ft_atoi(temp);
 	free(temp);
-	return(result);
+	return (result);
 }
 int	exit_execute(t_command *command, t_environment *environment)
 {
@@ -140,13 +139,13 @@ int	exit_execute(t_command *command, t_environment *environment)
 	char	*arg;
 
 	exit_code = 0;
-	(void) environment;
+	(void)environment;
 	if (gen_list_get_size(command->args) == 2)
 	{
 		gen_list_pop_front(command->args);
 		arg = gen_list_pop_front(command->args);
 		if (!is_numeric_string(arg))
-			return (COMMAND_NUMERIC_ARG_REQUIRED_ERR); 
+			return (COMMAND_NUMERIC_ARG_REQUIRED_ERR);
 		exit_code = exit_code_without_quotes(arg);
 	}
 	else if (gen_list_get_size(command->args) > 2)

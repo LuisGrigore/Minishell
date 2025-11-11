@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef SIGNAL_MANAGER_INTERNAL_H
-#define SIGNAL_MANAGER_INTERNAL_H
+# define SIGNAL_MANAGER_INTERNAL_H
 
-#include "../include/signal_manager.h"
-#include "readline/readline.h"
-#include <signal.h>
-#include <unistd.h>
+# include "../include/signal_manager.h"
+# include "readline/readline.h"
+# include <signal.h>
+# include <unistd.h>
 
 #endif

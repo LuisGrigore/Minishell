@@ -72,5 +72,6 @@ t_token_type	operator_type(const char *op, size_t len)
 
 bool	is_word_start_char(char c)
 {
-	return (!is_space(c) && !is_operator_char(c) && c != '\0' && !is_unsuported_char(c));
+	return (!is_space(c) && !is_operator_char(c) && c != '\0'
+		&& !is_unsuported_char(c));
 }

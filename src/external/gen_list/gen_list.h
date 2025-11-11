@@ -25,7 +25,7 @@ typedef enum e_gen_list_status_code
 	GEN_LIST_OK,
 	GEN_LIST_MALLOC_ERR,
 	GEN_LIST_IS_NULL_ERR,
-} t_gen_list_status_code;
+}								t_gen_list_status_code;
 
 /* ============================================================
 **  Data Structures
@@ -143,7 +143,7 @@ void							gen_list_destroy(t_gen_list *list,
  * @param list List where the value will be inserted.
  * @param value Pointer to the value to insert.
  */
-t_gen_list_status_code							gen_list_push_back(t_gen_list *list,
+t_gen_list_status_code			gen_list_push_back(t_gen_list *list,
 									void *value);
 
 /**
@@ -152,7 +152,7 @@ t_gen_list_status_code							gen_list_push_back(t_gen_list *list,
  * @param list List where the value will be inserted.
  * @param value Pointer to the value to insert.
  */
-t_gen_list_status_code							gen_list_push_front(t_gen_list *list,
+t_gen_list_status_code			gen_list_push_front(t_gen_list *list,
 									void *value);
 
 /**
@@ -169,7 +169,7 @@ void							*gen_list_pop_front(t_gen_list *list);
  * @param list List from which to remove the last node.
  * @return Value stored in the last node, or NULL if the list is empty.
  */
-void	*gen_list_pop_back(t_gen_list *list);
+void							*gen_list_pop_back(t_gen_list *list);
 
 /**
 * @brief Remove nodes that satisfy a predicate.
@@ -181,7 +181,7 @@ can be NULL.
 * @see t_predicate
 * @see t_element_destroyer
 */
-t_gen_list_status_code							gen_list_remove_if(t_gen_list *list,
+t_gen_list_status_code			gen_list_remove_if(t_gen_list *list,
 									t_predicate predicate,
 									t_element_destroyer element_destroyer);
 
@@ -196,7 +196,7 @@ can be NULL.
 * @see t_predicate_ctx
 * @see t_element_destroyer
 */
-t_gen_list_status_code							gen_list_remove_if_ctx(t_gen_list *list,
+t_gen_list_status_code			gen_list_remove_if_ctx(t_gen_list *list,
 									t_predicate_ctx predicate, void *context,
 									t_element_destroyer element_destroyer);
 
@@ -211,7 +211,7 @@ t_gen_list_status_code							gen_list_remove_if_ctx(t_gen_list *list,
  * @see t_apply_func
  * @see gen_list_for_each_ctx
  */
-t_gen_list_status_code							gen_list_for_each(t_gen_list *list,
+t_gen_list_status_code			gen_list_for_each(t_gen_list *list,
 									t_apply_func func);
 
 /**
@@ -223,11 +223,11 @@ t_gen_list_status_code							gen_list_for_each(t_gen_list *list,
  * @see t_apply_func_ctx
  * @see gen_list_for_each
  */
-t_gen_list_status_code							gen_list_for_each_ctx(t_gen_list *list,
+t_gen_list_status_code			gen_list_for_each_ctx(t_gen_list *list,
 									t_apply_func_ctx func, void *context);
 
-//TODO :: Crear un for each que tome una funcion que devuelva un estado de error y que tome el estado de exito para que tambien pueda gestionarse los errores
-									
+// TODO :: Crear un for each que tome una funcion que devuelva un estado de error y que tome el estado de exito para que tambien pueda gestionarse los errores
+
 /**
  * @brief Find the first element that satisfies a predicate.
  *
@@ -261,7 +261,7 @@ void							*gen_list_find_ctx(t_gen_list *list,
 size_t							gen_list_get_size(t_gen_list *list);
 
 void							*gen_list_peek_top(t_gen_list *list);
-void *gen_list_peek_bottom(t_gen_list *list);
+void							*gen_list_peek_bottom(t_gen_list *list);
 void							*gen_list_peek_index(t_gen_list *list, int idx);
 
 /**

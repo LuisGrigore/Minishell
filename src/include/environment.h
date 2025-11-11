@@ -13,9 +13,8 @@
 #ifndef ENVIRONMENT_H
 # define ENVIRONMENT_H
 
-# include <stdbool.h>
 # include "ms_status_codes.h"
-
+# include <stdbool.h>
 
 /* ============================================================
 **  Data Structures
@@ -24,7 +23,7 @@
 
 /**
  * @brief Type representing the environment.
- * 
+ *
  */
 typedef struct s_environment	t_environment;
 
@@ -51,10 +50,10 @@ typedef struct s_environment	t_environment;
  */
 /**
  * @brief Creates a new environment instance.
- * 
+ *
  * @return A new environment instance, or NULL if allocation fails.
  */
-t_environment *env_create(void);
+t_environment					*env_create(void);
 
 /**
  * @brief Add or update an environment variable.
@@ -67,9 +66,11 @@ t_environment *env_create(void);
  * @param value Value of the variable (can be NULL for empty).
  * @return 1 on success, or an error code otherwise.
  */
-int							env_set(t_environment *env, char *name, char *value);
-void env_set_last_status_code(t_environment *env, int status_code);
-int env_get_last_status_code(t_environment *env);
+int								env_set(t_environment *env, char *name,
+									char *value);
+void							env_set_last_status_code(t_environment *env,
+									int status_code);
+int								env_get_last_status_code(t_environment *env);
 
 /**
  * @brief Remove an environment variable by name.
@@ -84,12 +85,13 @@ int env_get_last_status_code(t_environment *env);
  * @see env_has
  * @see t_env_var
  */
-void						env_unset(t_environment *env, char *name);
+void							env_unset(t_environment *env, char *name);
 
 /**
  * @brief Destroy the environment instance and free all resources.
  *
- * Frees all variables, their names and values, then frees the environment itself.
+ * Frees all variables, their names and values,
+	then frees the environment itself.
  *
  * @param env Environment instance.
  *
@@ -97,7 +99,7 @@ void						env_unset(t_environment *env, char *name);
  * @see env_set
  * @see env_unset
  */
-void						env_destroy(t_environment *env);
+void							env_destroy(t_environment *env);
 
 /* ============================================================
 **  Serialization / Deserialization
@@ -116,7 +118,7 @@ void						env_destroy(t_environment *env);
  * @see env_deserialize
  * @see t_env_var
  */
-char						**env_serialize(t_environment *env);
+char							**env_serialize(t_environment *env);
 
 /**
  * @brief Convert a string array into an environment instance.
@@ -150,7 +152,7 @@ t_environment					*env_deserialize(char **str_array);
  * @see env_has
  * @see t_env_var
  */
-char						*env_get(t_environment *env, char *name);
+char							*env_get(t_environment *env, char *name);
 
 /**
  * @brief Check if an environment variable exists by name.
@@ -163,7 +165,7 @@ char						*env_get(t_environment *env, char *name);
  * @see env_unset
  * @see env_get
  */
-bool						env_has(t_environment *env, char *name);
+bool							env_has(t_environment *env, char *name);
 
 /**
  * Expands environment variables in a given string.
@@ -188,6 +190,7 @@ bool						env_has(t_environment *env, char *name);
  * @note This function handles only simple variable expansions (e.g., $VAR)
  *       and does not process complex shell syntax like ${VAR}.
  */
-char *env_expand_vars(t_environment *env, char *line);
+char							*env_expand_vars(t_environment *env,
+									char *line);
 
 #endif

@@ -24,6 +24,4 @@ struct				s_redirect
 	t_redirect_type	symbol;
 };
 
-
-
 #endif

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static  volatile sig_atomic_t	g_signal = 0;
+static volatile sig_atomic_t	g_signal = 0;
 
 static void	sigint_handler(int sig)
 {
@@ -28,7 +28,7 @@ static int	set_signal(int sig, void (*handler)(int))
 
 int	signals_init_interactive(void)
 {
-	t_ms_status_code ret;
+	t_ms_status_code	ret;
 
 	ret = set_signal(SIGINT, sigint_handler);
 	if (ret != MS_OK)
@@ -37,12 +37,11 @@ int	signals_init_interactive(void)
 	return (ret);
 }
 
-
-static void sigint_handler_heredoc(int sig)
+static void	sigint_handler_heredoc(int sig)
 {
-    (void)sig;
-    g_signal = SIGINT;
-    write(1, "\n", 1);
+	(void)sig;
+	g_signal = SIGINT;
+	write(1, "\n", 1);
 }
 
 int	signals_init_heredoc(void)
@@ -58,7 +57,7 @@ int	signals_init_heredoc(void)
 
 int	signals_restore(void)
 {
-	t_ms_status_code	ret;
+	t_ms_status_code ret;
 
 	ret = set_signal(SIGINT, SIG_DFL);
 	if (ret != MS_OK)

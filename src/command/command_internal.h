@@ -36,10 +36,14 @@ int					pwd_execute(t_command *command, t_environment *environment);
 int					bin_execute(t_command *cmd, t_environment *environment);
 int					cd_execute(t_command *command, t_environment *environment);
 int					pwd_execute(t_command *command, t_environment *envioroment);
-int					export_execute(t_command *command, t_environment *environment);
-int					unset_execute(t_command *command, t_environment *environment);
+int					export_execute(t_command *command,
+						t_environment *environment);
+int					unset_execute(t_command *command,
+						t_environment *environment);
 int					env_execute(t_command *command, t_environment *environment);
-int					echo_execute(t_command *command, t_environment *environment);
-int					exit_execute(t_command *command, t_environment *environment);
+int					echo_execute(t_command *command,
+						t_environment *environment);
+int					exit_execute(t_command *command,
+						t_environment *environment);
 
 #endif

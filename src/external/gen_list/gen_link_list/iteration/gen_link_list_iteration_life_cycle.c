@@ -30,6 +30,6 @@ t_gen_list_iter	*gen_list_iter_start(t_gen_list *list)
 void	gen_list_iter_destroy(t_gen_list_iter *it)
 {
 	if (!it)
-		return;
+		return ;
 	free(it);
 }

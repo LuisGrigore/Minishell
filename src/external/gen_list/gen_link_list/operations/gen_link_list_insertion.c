@@ -17,7 +17,7 @@ t_gen_list_status_code	gen_list_push_back(t_gen_list *list, void *value)
 	t_node	*node;
 
 	if (!list)
-		return GEN_LIST_IS_NULL_ERR;
+		return (GEN_LIST_IS_NULL_ERR);
 	node = malloc(sizeof(t_node));
 	if (!node)
 		return (GEN_LIST_MALLOC_ERR);
@@ -42,7 +42,7 @@ t_gen_list_status_code	gen_list_push_front(t_gen_list *list, void *value)
 	t_node	*node;
 
 	if (!list)
-		return GEN_LIST_IS_NULL_ERR;
+		return (GEN_LIST_IS_NULL_ERR);
 	node = malloc(sizeof(t_node));
 	if (!node)
 		return (GEN_LIST_MALLOC_ERR);

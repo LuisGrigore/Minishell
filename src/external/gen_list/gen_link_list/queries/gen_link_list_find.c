@@ -14,8 +14,8 @@
 
 void	*gen_list_find(t_gen_list *list, t_predicate predicate)
 {
-	void *value;
-	t_gen_list_iter *it;
+	void			*value;
+	t_gen_list_iter	*it;
 
 	if (!list || !predicate)
 		return (NULL);
@@ -34,8 +34,8 @@ void	*gen_list_find(t_gen_list *list, t_predicate predicate)
 void	*gen_list_find_ctx(t_gen_list *list, t_predicate_ctx predicate,
 		void *context)
 {
-	void *value;
-	t_gen_list_iter *it;
+	void			*value;
+	t_gen_list_iter	*it;
 
 	if (!list || !predicate)
 		return (NULL);

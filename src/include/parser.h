@@ -2,8 +2,7 @@
 # define PARSER_H
 
 # include "../external/gen_list/gen_list.h"
-#include "ms_status_codes.h"
-
+# include "ms_status_codes.h"
 
 /**
  * Tokenize and parse a single command-line string into a list of commands.
@@ -25,7 +24,7 @@
  * parse_line now also receives the environment list so lexer can expand
  * variables according to quoting rules during tokenization.
  */
-int parse_line(char *line, t_gen_list *commands, t_environment *env);
-int parse_line (char *line, t_gen_list *commands, t_environment *env);
+int	parse_line(char *line, t_gen_list *commands, t_environment *env);
+int	parse_line(char *line, t_gen_list *commands, t_environment *env);
 
 #endif

@@ -29,7 +29,8 @@ static bool	is_command_builtin(char *cmd_name)
 	if (ft_strncmp(cmd_name, "echo", 5) == 0 || ft_strncmp(cmd_name, "cd",
 			3) == 0 || ft_strncmp(cmd_name, "pwd", 4) == 0
 		|| ft_strncmp(cmd_name, "export", 7) == 0 || ft_strncmp(cmd_name,
-			"unset", 6) == 0 || ft_strncmp(cmd_name, "env", 4) == 0 || ft_strncmp(cmd_name, "exit", 5) == 0)
+			"unset", 6) == 0 || ft_strncmp(cmd_name, "env", 4) == 0
+		|| ft_strncmp(cmd_name, "exit", 5) == 0)
 		return (true);
 	return (false);
 }
@@ -46,7 +47,7 @@ t_command	*command_create(char *name)
 	new_command->command_funct = get_command_function(name);
 	new_command->is_builtin = is_command_builtin(name);
 	return (new_command);
-	if(name)
+	if (name)
 		free(name);
 }
 

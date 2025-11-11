@@ -12,7 +12,7 @@
 
 #include "../gen_link_list_internal.h"
 
-//TODO pop_back
+// TODO pop_back
 
 void	*gen_list_pop_front(t_gen_list *list)
 {

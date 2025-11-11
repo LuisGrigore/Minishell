@@ -44,8 +44,8 @@ t_gen_list_status_code	gen_list_for_each(t_gen_list *list, t_apply_func func)
 	return (GEN_LIST_OK);
 }
 
-t_gen_list_status_code	gen_list_for_each_ctx(t_gen_list *list, t_apply_func_ctx func,
-		void *context)
+t_gen_list_status_code	gen_list_for_each_ctx(t_gen_list *list,
+		t_apply_func_ctx func, void *context)
 {
 	t_gen_list_iter	*it;
 	void			*val;

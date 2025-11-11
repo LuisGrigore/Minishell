@@ -50,7 +50,7 @@ static char	*check_cmd(char *cmd)
 	return (cmd);
 }
 
-bool history_add(char *line)
+bool	history_add(char *line)
 {
 	if (check_cmd(line) == NULL)
 		return (false);
@@ -58,7 +58,7 @@ bool history_add(char *line)
 	return (true);
 }
 
-void history_clean(void)
+void	history_clean(void)
 {
 	clear_history();
 }

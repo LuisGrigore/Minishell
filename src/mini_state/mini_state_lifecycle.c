@@ -12,24 +12,26 @@
 
 #include "mini_state_internal.h"
 
-t_mini_state *mini_state_create(int args, char **environment_var_str_array)
+t_mini_state	*mini_state_create(int args, char **environment_var_str_array)
 {
-	t_mini_state *state;
+	t_mini_state	*state;
 
 	state = (t_mini_state *)malloc(sizeof(t_mini_state));
 	if (args == 1)
-		state->environment_vars = env_deserialize(environment_var_str_array + 2);
+		state->environment_vars = env_deserialize(environment_var_str_array
+				+ 2);
 	else
-		state ->environment_vars = env_deserialize(environment_var_str_array + 1);
+		state->environment_vars = env_deserialize(environment_var_str_array
+				+ 1);
 	if (!state->environment_vars)
-		return NULL;
+		return (NULL);
 	state->last_command = NULL;
 	state->last_opened_file = NULL;
 	state->exit_after_last_command = false;
 	return (state);
 }
 
-void mini_state_destroy(t_mini_state *state)
+void	mini_state_destroy(t_mini_state *state)
 {
 	if (!state)
 		return ;
