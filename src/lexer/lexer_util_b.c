@@ -6,11 +6,18 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:56:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 20:01:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:01:33 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer_internal.h"
+
+bool is_unsuported_char(char c)
+{
+	if (c == '\\' || c == ';')
+		return true;
+	return false;
+}
 
 char	*append_segment(char *buf, char *seg)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lexer_util.c                                       :+:      :+:    :+:   */
+/*   lexer_util_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:38:09 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 19:46:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:02:29 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ t_token_type	operator_type(const char *op, size_t len)
 
 bool	is_word_start_char(char c)
 {
-	return (!is_space(c) && !is_operator_char(c) && c != '\0');
+	return (!is_space(c) && !is_operator_char(c) && c != '\0' && !is_unsuported_char(c));
 }

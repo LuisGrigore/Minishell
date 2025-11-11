@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:45:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 19:59:19 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:01:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int					is_space(char c);
 int					is_operator_char(char c);
 t_token_type		operator_type(const char *op, size_t len);
 bool				is_word_start_char(char c);
+bool is_unsuported_char(char c);
 
 int					add_operator_token(char **current_char, t_gen_list *tokens,
 						char *line);
