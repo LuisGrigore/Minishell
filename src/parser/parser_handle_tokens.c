@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 17:35:45 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:26:26 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_command	*handle_command_token(t_token *tok, t_command *current_cmd)
 {
 	if (!current_cmd)
 	{
-		current_cmd = command_create(ft_strdup(lexer_get_token_content(tok)));
+		current_cmd = command_create(lexer_get_token_content(tok));
 		if (!current_cmd)
 			return (NULL);
 	}
