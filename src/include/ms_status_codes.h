@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 14:48:24 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:56:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef enum e_ms_status_code
 	//Parser
 	PARSER_ERR = PARSER_STATUS_BEGIN,
 	PARSER_NULL_ERR,
+	PARSER_SYNTAX_ERR,
 	//Redirect
 	REDIRECT_MALFORMED_ERR = REDIRECT_MANAGER_STATUS_BEGIN,
 	REDIRECT_NO_HEADERDOC_DELIMITER_ERR,
