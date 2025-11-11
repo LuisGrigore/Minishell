@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 15:56:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:33:26 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef enum e_ms_status_code
 	COMMAND_TOO_MANY_ARGS_ERR,
 	COMMAND_INVALID_ARGS_ERR,
 	COMMAND_NUMERIC_ARG_REQUIRED_ERR,
+	COMMAND_NO_SUCH_FILE_OR_DIR_ERR,
 	//Executer
 	EXECUTER_ERR = EXECUTER_STATUS_BEGIN,
 	//Lexer

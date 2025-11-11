@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:56:27 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/11 16:52:27 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:34:23 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,12 @@ static void handle_command_status_codes(int status_code, t_mini_state *mini_stat
 	else if(status_code == COMMAND_MALFORMED_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
-		fprintf(stderr, "minishell: %s: argument malformed \n", mini_state_get_last_command(mini_state));
+		fprintf(stderr, "minishell: %s: not a valid identifier\n", mini_state_get_last_command(mini_state));
+	}
+	else if(status_code == COMMAND_NO_SUCH_FILE_OR_DIR_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment(mini_state), 127);
+		fprintf(stderr, "minishell: %s: No such file or directory\n", mini_state_get_last_command(mini_state));
 	}
 	else
 	{
@@ -154,7 +159,7 @@ static void handle_parser_status_codes(int status_code, t_mini_state *mini_state
 	else if(status_code == PARSER_SYNTAX_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
-		fprintf(stderr, "Syntax error near: \n");
+		fprintf(stderr, "minishell: syntax error \n");
 	}
 	else
 		fprintf(stderr, "Unhandled parser status code: %d\n", status_code);

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/10 19:26:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:33:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,8 @@ int	bin_execute(t_command *cmd, t_environment *environment)
 			return (COMMAND_PERMISSION_ERR);
 		if (find_err == EISDIR)
 			return (COMMAND_IS_DIR_ERR);
+		if (find_err == ENOENT)
+			return (COMMAND_NO_SUCH_FILE_OR_DIR_ERR);
 		return (COMMAND_NOT_FOUND_ERR);
 	}
 	signals_restore();
