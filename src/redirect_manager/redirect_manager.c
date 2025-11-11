@@ -31,7 +31,16 @@ void	redirect_destroy(t_redirect *redirect)
 	free(redirect->file);
 	free(redirect);
 }
-
+	/*while (1)
+	{
+		write(0, ">", 1);
+		input = get_next_line(0);
+		if (!(input)|| (delimiter && ft_strncmp(input, delimiter,
+					ft_strlen(input) - 1) == 0))
+			break ;
+		write(fd, input, ft_strlen(input));
+		free(input);
+	}*/
 static int	heredoc_exec(char *delimiter)
 {
 	char	*input;
@@ -110,13 +119,14 @@ static int	heredoc_exec(char *delimiter)
 	}
 	return(MS_OK);
 }
-int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
+int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state, int stdin_bakup)
 {
 	int fd;
 	int status_code;
 
 	if (redirect->symbol == DOUBLE_LEFT_REDIRECT)
 	{
+		dup2(stdin_bakup, 0);
 		return heredoc_exec(redirect->file);
 	}
 	if (redirect->file == NULL)

@@ -79,7 +79,7 @@ void redirect_destroy(t_redirect *redirect);
  *         0 if the redirection was executed successfully.
  *        -1 if an error occurred during redirection.
  */
-int redirect_execute(t_redirect *redirect, t_mini_state *mini_state);
+int redirect_execute(t_redirect *redirect, t_mini_state *mini_state, int stdin_backup);
 
 
 /* ============================================================
@@ -96,5 +96,6 @@ int redirect_execute(t_redirect *redirect, t_mini_state *mini_state);
  * @param redir_ptr Generic pointer to a t_redirect structure.
  */
 void print_redirect(void *redir_ptr);
+
 
 #endif
