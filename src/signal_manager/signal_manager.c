@@ -41,7 +41,7 @@ static void	sigint_handler_heredoc(int sig)
 {
 	(void)sig;
 	g_signal = SIGINT;
-	write(1, "\n", 1);
+	write(1, "", 1);
 }
 
 int	signals_init_heredoc(void)

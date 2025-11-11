@@ -38,7 +38,7 @@ static int	heredoc_exec(char *delimiter)
 	char	*temp_dir;
 	int		fd;
 
-	signals_restore();
+	signals_init_heredoc();
 	temp_dir = PATH_HEREDOC_TEMP_FILE;
 	if (!delimiter)
 		return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
@@ -56,7 +56,7 @@ static int	heredoc_exec(char *delimiter)
 		write(fd, "\n", 1);
 		free(input);
 	}
-	signals_restore();
+	signals_init_interactive();
 	close(fd);
 	fd = open(temp_dir, O_RDONLY);
 	dup2(fd, STDIN_FILENO);
