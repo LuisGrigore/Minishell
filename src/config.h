@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:37:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:39:42 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **  PATHS
 ** ============================================================
 */
-# define PATH_HEREDOC_TEMP_FILE "./minishell_heredoc.temp"
+# define PATH_HEREDOC_TEMP_FILE "./temp/minishell_heredoc.temp"
 
 /* ============================================================
 **  STATUS_CODES

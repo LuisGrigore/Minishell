@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:26:49 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:06:23 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,6 @@ int							command_exec(t_command *command,
 */
 
 void						print_command(t_command *cmd, int index);
+int command_heredocs_create(t_gen_list *commands, t_mini_state *mini_state);
 
 #endif

@@ -80,7 +80,7 @@ void						redirect_destroy(t_redirect *redirect);
  *        -1 if an error occurred during redirection.
  */
 int							redirect_execute(t_redirect *redirect,
-								t_mini_state *mini_state, int stdin_backup);
+								t_mini_state *mini_state);
 
 /* ============================================================
 **  Debug
@@ -96,5 +96,7 @@ int							redirect_execute(t_redirect *redirect,
  * @param redir_ptr Generic pointer to a t_redirect structure.
  */
 void						print_redirect(void *redir_ptr);
+
+int                         redirect_heredoc_check(t_gen_list *redirects, t_mini_state *mini_state);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/11 15:27:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:51:18 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static void	execute_end(t_pipe_manager *pm, pid_t *pids, size_t i,
 		*exit_status = WEXITSTATUS(*exit_status);
 	free(pids);
 	pipe_manager_destroy(pm);
-	unlink(PATH_HEREDOC_TEMP_FILE);
 }
 static int	execute_init(t_gen_list *commands, t_pipe_manager **pm,
 		t_gen_list_iter **it, pid_t **pids)
@@ -97,6 +96,7 @@ static int	execute_commands_with_pipes(t_gen_list *commands,
 	if (status_code != -1)
 		return (status_code);
 	execute_end(pm, pids, gen_list_get_size(commands), exit_status);
+	destroy_temp_fles(mini_state);
 	gen_list_iter_destroy(it);
 	return (MS_OK);
 }
@@ -122,11 +122,19 @@ int	execute_line(char *line, t_mini_state *mini_state)
 	// print_command((t_command *)gen_list_pop_front(commands),0);
 	if (status_code != MS_OK)
 		return (status_code);
+    status_code = command_heredocs_create(commands, mini_state);
+    if(status_code != MS_OK)
+    {
+        destroy_temp_fles(mini_state);
+        gen_list_destroy(commands, command_destroy_data);
+        return(status_code);
+    }
 	if (gen_list_get_size(commands) == 1
 		&& command_is_built_in((t_command *)gen_list_peek_top(commands)))
 	{
 		status_code = command_exec((t_command *)gen_list_peek_top(commands),
 				mini_state);
+        destroy_temp_fles(mini_state);
 		gen_list_destroy(commands, command_destroy_data);
 		return (status_code);
 	}

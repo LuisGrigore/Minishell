@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_state.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:24:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:49:03 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,8 @@ bool						mini_state_get_exit_after_last_command(t_mini_state *state);
  */
 void						mini_state_set_exit_after_last_command(t_mini_state *state,
 								bool value);
+void                        mini_state_set_heredoc_temp_file(t_mini_state *state, int files);
+
+void destroy_temp_fles(t_mini_state *state);
 
 #endif

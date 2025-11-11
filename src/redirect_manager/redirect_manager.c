@@ -1,4 +1,17 @@
-#include "readline/readline.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   redirect_manager.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/11 20:17:24 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/11 20:17:25 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "redirect_manager_internal.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,40 +45,6 @@ void	redirect_destroy(t_redirect *redirect)
 	free(redirect);
 }
 
-static int	heredoc_exec(char *delimiter)
-{
-	char	*input;
-	char	*temp_dir;
-	int		fd;
-
-	signals_init_heredoc();
-	temp_dir = PATH_HEREDOC_TEMP_FILE;
-	if (!delimiter)
-		return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
-	fd = open(temp_dir, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (fd < 0)
-		return (MS_OPEN_ERR);
-	while (1)
-	{
-		input = readline(">");
-		if (!input || (delimiter && ft_strncmp(input, delimiter,
-					ft_strlen(delimiter)) == 0
-				&& ft_strlen(delimiter) == ft_strlen(input)))
-			break ;
-		write(fd, input, ft_strlen(input));
-		write(fd, "\n", 1);
-		free(input);
-	}
-	signals_init_interactive();
-	close(fd);
-	fd = open(temp_dir, O_RDONLY);
-	dup2(fd, STDIN_FILENO);
-	close(fd);
-	if (!input)
-		return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
-	return (MS_OK);
-}
-
 static int	file_dup_outfile_redirect(int fd, t_redirect *redirect,
 		t_mini_state *mini_state)
 {
@@ -87,20 +66,14 @@ static int	file_dup_outfile_redirect(int fd, t_redirect *redirect,
 	}
 	return (MS_OK);
 }
-int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state,
-		int stdin_bakup)
+int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 {
 	int	fd;
 	int	status_code;
 
-	if (redirect->symbol == DOUBLE_LEFT_REDIRECT)
-	{
-		dup2(stdin_bakup, 0);
-		return (heredoc_exec(redirect->file));
-	}
 	if (redirect->file == NULL)
 		return (REDIRECT_MALFORMED_ERR);
-	if (redirect->symbol == LEFT_REDIRECT)
+	if (redirect->symbol == LEFT_REDIRECT || redirect->symbol == DOUBLE_LEFT_REDIRECT)
 	{
 		fd = open(redirect->file, O_RDONLY);
 		mini_state_set_last_opened_file(mini_state, redirect->file);

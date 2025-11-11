@@ -30,7 +30,7 @@ int	command_push_redirect(t_command *command, t_redirect_type redirect_type,
 }
 
 static int	command_redirects_execute(t_command *command,
-		t_mini_state *mini_state, int stdin_backup)
+		t_mini_state *mini_state)
 {
 	t_gen_list_iter	*it;
 	t_redirect		*current_redirect;
@@ -47,8 +47,7 @@ static int	command_redirects_execute(t_command *command,
 		current_redirect = (t_redirect *)gen_list_iter_next(it);
 		if (!current_redirect || status_code != MS_OK)
 			break ;
-		status_code = redirect_execute(current_redirect, mini_state,
-				stdin_backup);
+		status_code = redirect_execute(current_redirect, mini_state);
 	}
 	gen_list_iter_destroy(it);
 	return (status_code);
@@ -66,7 +65,7 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 	stdout_backup = dup(STDOUT_FILENO);
 	if (stdin_backup == -1 || stdout_backup == -1)
 		return (MS_ALLOCATION_ERR);
-	status_code = command_redirects_execute(command, mini_state, stdin_backup);
+	status_code = command_redirects_execute(command, mini_state);
 	if (status_code != MS_OK)
 	{
 		dup2(stdin_backup, STDIN_FILENO);
@@ -83,3 +82,23 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 	close(stdout_backup);
 	return (status_code);
 }
+int command_heredocs_create(t_gen_list *commands, t_mini_state *mini_state)
+{
+    t_gen_list_iter *it;
+    t_command  *actual_command;
+    int status_code;
+
+    status_code = MS_OK;
+    it = gen_list_iter_start(commands);
+    actual_command = gen_list_iter_next(it);
+    while(actual_command)
+    {
+		status_code = redirect_heredoc_check(actual_command->redirects, mini_state);
+        actual_command = gen_list_iter_next(it);
+        if(status_code != MS_OK)
+            break ;        
+    }
+    gen_list_iter_destroy(it);
+    return(status_code);
+}
+

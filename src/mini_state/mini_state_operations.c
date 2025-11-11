@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_state_operations.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:43:27 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:24:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:48:02 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,21 @@ void	mini_state_set_exit_after_last_command(t_mini_state *state, bool value)
 	if (!state)
 		return ;
 	state->exit_after_last_command = value;
+}
+void mini_state_set_heredoc_temp_file(t_mini_state *state, int files)
+{
+	if(!state)
+		return ;
+	state->heredoc_temp_files = files;
+}
+void destroy_temp_fles(t_mini_state *state)
+{
+	char *temp;
+	while(state->heredoc_temp_files > 0)
+	{
+		temp = ft_strjoin(PATH_HEREDOC_TEMP_FILE, ft_itoa(state->heredoc_temp_files));
+		unlink(temp);
+		state->heredoc_temp_files--;
+		free(temp);
+	}
 }
