@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_state_lifecycle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:42:50 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 16:03:25 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:04:34 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
