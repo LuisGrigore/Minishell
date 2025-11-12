@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_build_word.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:54:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 20:01:40 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:33:35 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,39 +41,10 @@ static int	process_unquoted_chunk(t_environment *env, char *p, size_t *i,
 	return (MS_OK);
 }
 
-static int	process_double_quoted_chunk(t_environment *env, char *p, size_t *i,
-		char **buf)
+static int	expand_buffer(char **buf, char *p, size_t *i, size_t start)
 {
-	size_t	start;
 	char	*seg;
-	int		status;
 
-	*i = *i + 1;
-	start = *i;
-	while (p[*i] && p[*i] != '"')
-	{
-		if (p[*i] == '$')
-		{
-			if (*i > start)
-			{
-				seg = ft_strndup(&p[start], *i - start);
-				if (!seg)
-					return (MS_ALLOCATION_ERR);
-				*buf = append_segment(*buf, seg);
-				if (!*buf)
-					return (MS_ALLOCATION_ERR);
-			}
-			*i = *i + 1;
-			status = expand_variable(env, p, i, buf);
-			if (status != MS_OK)
-				return (status);
-			start = *i;
-			continue ;
-		}
-		*i = *i + 1;
-	}
-	if (!p[*i])
-		return (LEXER_UNCLOSED_QUOTE_ERR);
 	if (*i > start)
 	{
 		seg = ft_strndup(&p[start], *i - start);
@@ -84,6 +55,35 @@ static int	process_double_quoted_chunk(t_environment *env, char *p, size_t *i,
 			return (MS_ALLOCATION_ERR);
 	}
 	*i = *i + 1;
+	return (MS_OK);
+}
+
+static int	process_double_quoted_chunk(t_environment *env, char *p, size_t *i,
+		char **buf)
+{
+	size_t	start;
+	int		status;
+
+	*i = *i + 1;
+	start = *i;
+	while (p[*i] && p[*i] != '"')
+	{
+		if (p[*i] == '$')
+		{
+			if (expand_buffer(buf, p, i, start) != MS_OK)
+				return (MS_ALLOCATION_ERR);
+			status = expand_variable(env, p, i, buf);
+			if (status != MS_OK)
+				return (status);
+			start = *i;
+			continue ;
+		}
+		*i = *i + 1;
+	}
+	if (!p[*i])
+		return (LEXER_UNCLOSED_QUOTE_ERR);
+	if (expand_buffer(buf, p, i, start) != MS_OK)
+		return (MS_ALLOCATION_ERR);
 	return (MS_OK);
 }
 

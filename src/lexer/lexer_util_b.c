@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_util_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:56:55 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 15:01:33 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:16:32 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,29 @@ char	*append_literal_char(char *buf, char c)
 	return (append_segment(buf, ft_strdup(s)));
 }
 
+static int	expand_variable_end(size_t j, t_environment *env, char **buf,
+		char *name)
+{
+	char	*var;
+
+	if (j == 0)
+	{
+		*buf = append_literal_char(*buf, '$');
+		if (*buf)
+			return (MS_OK);
+		else
+			return (MS_ALLOCATION_ERR);
+	}
+	var = env_get(env, name);
+	if (var)
+	{
+		*buf = append_segment(*buf, var);
+		if (!*buf)
+			return (MS_ALLOCATION_ERR);
+	}
+	return (MS_OK);
+}
+
 int	expand_variable(t_environment *env, char *p, size_t *i, char **buf)
 {
 	char	name[256];
@@ -66,17 +89,5 @@ int	expand_variable(t_environment *env, char *p, size_t *i, char **buf)
 		*i = *i + 1;
 	}
 	name[j] = '\0';
-	if (j == 0)
-	{
-		*buf = append_literal_char(*buf, '$');
-		return (*buf ? MS_OK : MS_ALLOCATION_ERR);
-	}
-	var = env_get(env, name);
-	if (var)
-	{
-		*buf = append_segment(*buf, var);
-		if (!*buf)
-			return (MS_ALLOCATION_ERR);
-	}
-	return (MS_OK);
+	return (expand_variable_end(j, env, buf, name));
 }
