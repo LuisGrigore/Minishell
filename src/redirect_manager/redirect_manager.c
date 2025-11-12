@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manager.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:17:24 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 04:35:09 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:53:21 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,12 @@ void	redirect_destroy(t_redirect *redirect)
 	free(redirect);
 }
 
-static int	file_dup_outfile_redirect(int fd, t_redirect *redirect,
-		t_mini_state *mini_state)
+static int	file_dup_outfile_redirect(int fd, t_redirect *redirect
+		)
 {
 	if (redirect->symbol == DOUBLE_RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_APPEND, 0644);
-		mini_state_set_last_opened_file(mini_state, redirect->file);
 		if (fd < 0)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);
@@ -57,7 +56,6 @@ static int	file_dup_outfile_redirect(int fd, t_redirect *redirect,
 	else if (redirect->symbol == RIGHT_REDIRECT)
 	{
 		fd = open(redirect->file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-		mini_state_set_last_opened_file(mini_state, redirect->file);
 		if (fd < 0)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDOUT_FILENO);
@@ -70,18 +68,20 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 	int	fd;
 	int	status_code;
 
+	fd = -1;
 	if (redirect->file == NULL)
 		return (REDIRECT_MALFORMED_ERR);
+	mini_state_set_last_opened_file(mini_state, redirect->file);
 	if (redirect->symbol == LEFT_REDIRECT
 		|| redirect->symbol == DOUBLE_LEFT_REDIRECT)
 	{
 		fd = open(redirect->file, O_RDONLY);
-		mini_state_set_last_opened_file(mini_state, redirect->file);
+		
 		if (fd < 0)
 			return (MS_OPEN_ERR);
 		dup2(fd, STDIN_FILENO);
 	}
-	status_code = file_dup_outfile_redirect(fd, redirect, mini_state);
+	status_code = file_dup_outfile_redirect(fd, redirect);
 	if (status_code != MS_OK)
 		return (status_code);
 	close(fd);

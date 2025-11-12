@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_operations_a.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:41:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 05:56:11 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:56:56 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,13 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 	{
 		dup2(stdin_backup, STDIN_FILENO);
 		dup2(stdout_backup, STDOUT_FILENO);
-		close(stdin_backup);
-		close(stdout_backup);
-		return (close(stdin_backup), status_code);
+		return (close(stdout_backup),close(stdin_backup), status_code);
 	}
 	status_code = command->command_funct(command,
 			mini_state_get_environment(mini_state));
 	dup2(stdin_backup, STDIN_FILENO);
 	dup2(stdout_backup, STDOUT_FILENO);
-	close(stdin_backup);
-	return (close(stdout_backup), status_code);
+	return (close(stdin_backup),close(stdout_backup), status_code);
 }
 
 int	command_heredocs_create(t_gen_list *commands, t_mini_state *mini_state)
