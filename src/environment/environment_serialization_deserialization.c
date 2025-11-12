@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 18:02:09 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:57:33 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	**env_serialize(t_environment *env)
 	return (gen_list_serialize_to_string_array(env->variables,
 			env_var_to_string));
 }
+
 static void	env_loop_asignation(char **str_array, t_environment *env)
 {
 	char		**split;
@@ -60,6 +61,7 @@ static void	env_loop_asignation(char **str_array, t_environment *env)
 		i++;
 	}
 }
+
 t_environment	*env_deserialize(char **str_array)
 {
 	t_environment	*env;
