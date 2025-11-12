@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   signal_manager.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 04:45:25 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/12 04:52:10 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "signal_manager_internal.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static volatile sig_atomic_t	g_signal = 0;
 
@@ -14,7 +24,7 @@ static void	sigint_handler(int sig)
 	rl_redisplay();
 }
 
-static int	set_signal(int sig, void (*handler)(int))
+int	set_signal(int sig, void (*handler)(int))
 {
 	struct sigaction	sa;
 
@@ -52,16 +62,5 @@ int	signals_init_heredoc(void)
 	if (ret != MS_OK)
 		return (ret);
 	ret = set_signal(SIGQUIT, SIG_IGN);
-	return (ret);
-}
-
-int	signals_restore(void)
-{
-	t_ms_status_code ret;
-
-	ret = set_signal(SIGINT, SIG_DFL);
-	if (ret != MS_OK)
-		return (ret);
-	ret = set_signal(SIGQUIT, SIG_DFL);
 	return (ret);
 }
