@@ -1,47 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   command_functs_builtin_b.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 06:23:13 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/12 06:34:08 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "command_internal.h"
-
-static int	cd_args_checker(t_command *command, t_environment *environment,
-		t_gen_list_iter **it)
-{
-	if (!command || !environment)
-		return (COMMAND_ERR);
-	if (!command->args)
-		return (COMMAND_MALFORMED_ERR);
-	if (gen_list_get_size(command->args) > 2)
-		return (COMMAND_TOO_MANY_ARGS_ERR);
-	if (gen_list_get_size(command->args) < 2)
-		return (COMMAND_MISSING_ARGS_ERR);
-	*it = gen_list_iter_start(command->args);
-	if (*it == NULL)
-		return (MS_ALLOCATION_ERR);
-	return (MS_OK);
-}
-int	cd_execute(t_command *command, t_environment *environment)
-{
-	t_gen_list_iter	*it;
-	char			*old_directory;
-	char			*target;
-	int				checker_status;
-
-	checker_status = cd_args_checker(command, environment, &it);
-	if (checker_status != MS_OK)
-		return (checker_status);
-	old_directory = getenv("PWD");
-	gen_list_iter_next(it);
-	target = gen_list_iter_next(it);
-	gen_list_iter_destroy(it);
-	if (access(target, F_OK) == 0)
-	{
-		if (chdir(target) == -1)
-			return (free(old_directory), MS_PATH_ERR);
-		if (old_directory)
-			env_set(environment, "OLDPWD", old_directory);
-		target = getcwd(NULL, 0);
-		env_set(environment, "PWD", target);
-		return (free(target), MS_OK);
-	}
-	return (MS_PATH_ERR);
-}
 
 int	pwd_execute(t_command *command, t_environment *environment)
 {
@@ -58,6 +27,7 @@ int	pwd_execute(t_command *command, t_environment *environment)
 		return (COMMAND_ERR);
 	}
 	current_dir = env_get(environment, "PWD");
+	gen_list_iter_destroy(it);
 	if (!current_dir)
 	{
 		current_dir = getcwd(NULL, 0);
@@ -65,10 +35,10 @@ int	pwd_execute(t_command *command, t_environment *environment)
 			return (COMMAND_ERR);
 	}
 	printf("%s\n", current_dir);
-	gen_list_iter_destroy(it);
 	free(current_dir);
 	return (MS_OK);
 }
+
 int	env_execute(t_command *command, t_environment *environment)
 {
 	char	**serialized_env;
@@ -133,6 +103,7 @@ static int	exit_code_without_quotes(char *arg)
 	free(temp);
 	return (result);
 }
+
 int	exit_execute(t_command *command, t_environment *environment)
 {
 	int		exit_code;

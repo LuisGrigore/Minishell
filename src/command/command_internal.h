@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_internal.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/09 23:06:30 by lgrigore         ###   ########.fr       */
+/*   Created: 2025/09/12 06:00:00 by lgrigore          #+#    #+#             */
+/*   Updated: 2025/11/12 06:24:50 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

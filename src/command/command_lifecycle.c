@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   command_lifecycle.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 06:23:23 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/12 06:23:24 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "command_internal.h"
 
 static t_command_funct	get_command_function(char *cmd_name)

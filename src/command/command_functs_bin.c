@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/11/11 17:33:19 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 06:09:37 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static char	*find_command(char **env, char *cmd, int *err_out)
 	seen_permission_error = 0;
 	if (err_out)
 		*err_out = 0;
-	/* If cmd contains a slash treat it as a path */
 	if (ft_strchr(cmd, '/'))
 	{
 		if (stat(cmd, &st) == 0 && S_ISDIR(st.st_mode))
@@ -103,10 +102,7 @@ static char	*find_command(char **env, char *cmd, int *err_out)
 		if (access(final_path, F_OK) == 0)
 		{
 			if (access(final_path, X_OK) == 0)
-			{
-				free_double_pointer(path);
-				return (final_path);
-			}
+				return (free_double_pointer(path), final_path);
 			else
 				seen_permission_error = 1;
 		}
@@ -138,9 +134,7 @@ int	bin_execute(t_command *cmd, t_environment *environment)
 	int		find_err;
 
 	if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
-	{
 		return (COMMAND_MALFORMED_ERR);
-	}
 	env = env_serialize(environment);
 	cmd2 = gen_list_serialize_to_string_array(cmd->args, serialize_arg);
 	find_err = 0;
