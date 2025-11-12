@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:56 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 17:51:17 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 00:20:09 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	*gen_list_peek_bottom(t_gen_list *list)
 
 void	*gen_list_peek_index(t_gen_list *list, int idx)
 {
-	t_gen_list_iter *it;
-	int i;
-	void *result;
+	t_gen_list_iter	*it;
+	int				i;
+	void			*result;
 
 	it = gen_list_iter_start(list);
 	i = 0;

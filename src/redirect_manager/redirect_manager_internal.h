@@ -14,9 +14,9 @@
 # define REDIRECT_MANAGER_INTERNAL_H
 # include "../config.h"
 # include "../external/libft/libft.h"
+# include "../include/mini_state.h"
 # include "../include/redirect_manager.h"
 # include "../include/signal_manager.h"
-# include "../include/mini_state.h"
 # include "ms_status_codes.h"
 
 struct				s_redirect

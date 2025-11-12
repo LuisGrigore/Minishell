@@ -88,8 +88,7 @@ void	handle_status_codes(int status_code, t_mini_state *mini_state,
 	select_function_to_handle(status_code, mini_state);
 	if (mini_state_get_exit_after_last_command(mini_state))
 	{
-		exit_status = env_get_last_status_code(
-				mini_state_get_environment(mini_state));
+		exit_status = env_get_last_status_code(mini_state_get_environment(mini_state));
 		mini_state_destroy(mini_state);
 		history_clean();
 		exit(exit_status);

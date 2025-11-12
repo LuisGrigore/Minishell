@@ -25,5 +25,4 @@ t_command	*handle_redirect(t_token *tok, t_token *file_tok,
 				t_command *current_cmd, t_gen_list_iter *it);
 int			handle_pipe_token(t_command *current_cmd, t_gen_list *commands);
 
-
 #endif

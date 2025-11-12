@@ -22,7 +22,7 @@
 	similar to how Bash interprets and runs commands.
  *
 
-	* @param line A null-terminated string containing the command 
+	* @param line A null-terminated string containing the command
 				line to be parsed and executed.
  *             The command may include:
  *               - simple commands and arguments
@@ -43,10 +43,10 @@
  *         similar to Bash’s return codes.
  *
 
-	* This function parses and executes the provided 
+	* This function parses and executes the provided
 		command line using the given state
 
-	* environment. Its behavior 
+	* environment. Its behavior
 		mimics that of the Bash shell when handling execution,
  * redirections, and pipes, but it relies only on the provided state variables
  * rather than a full environment.

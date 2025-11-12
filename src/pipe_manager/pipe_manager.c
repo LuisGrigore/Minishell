@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:42:28 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 04:32:27 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 00:19:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static t_pipe_manager	*create_pipes(t_pipe_manager *pm, size_t n_cmds)
 {
 	size_t	j;
 
-	pm->pipes = malloc(sizeof(int [2]) * (n_cmds - 1));
+	pm->pipes = malloc(sizeof (int [2]) * (n_cmds - 1));
 	if (!pm->pipes)
 	{
 		free(pm);

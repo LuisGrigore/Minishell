@@ -46,7 +46,7 @@ static int	heredoc_create(t_redirect *redirect, char *delimiter, int *i)
 	{
 		input = readline(">");
 		if (!input || (delimiter && ft_strncmp(input, delimiter,
-					ft_strlen(input)) == 0  ))
+					ft_strlen(input)) == 0))
 			break ;
 		write(fd, input, ft_strlen(input));
 		write(fd, "\n", 1);
@@ -67,7 +67,7 @@ int	redirect_heredoc_check(t_gen_list *redirects, t_mini_state *mini_state)
 	it = gen_list_iter_start(redirects);
 	actual_redirect = gen_list_iter_next(it);
 	while (actual_redirect)
-	{	
+	{
 		if (actual_redirect->symbol == DOUBLE_LEFT_REDIRECT)
 			status_code = heredoc_create(actual_redirect, actual_redirect->file,
 					&i);
