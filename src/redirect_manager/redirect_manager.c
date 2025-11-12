@@ -6,11 +6,9 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:17:24 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/11 20:17:25 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:35:09 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "redirect_manager_internal.h"
 #include <stdio.h>
@@ -66,6 +64,7 @@ static int	file_dup_outfile_redirect(int fd, t_redirect *redirect,
 	}
 	return (MS_OK);
 }
+
 int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 {
 	int	fd;
@@ -73,7 +72,8 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 
 	if (redirect->file == NULL)
 		return (REDIRECT_MALFORMED_ERR);
-	if (redirect->symbol == LEFT_REDIRECT || redirect->symbol == DOUBLE_LEFT_REDIRECT)
+	if (redirect->symbol == LEFT_REDIRECT
+		|| redirect->symbol == DOUBLE_LEFT_REDIRECT)
 	{
 		fd = open(redirect->file, O_RDONLY);
 		mini_state_set_last_opened_file(mini_state, redirect->file);

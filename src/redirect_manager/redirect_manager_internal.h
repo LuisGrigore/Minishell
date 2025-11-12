@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manager_internal.h                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 18:21:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:35:37 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REDIRECT_INTERNAL_H
-# define REDIRECT_INTERNAL_H
+#ifndef REDIRECT_MANAGER_INTERNAL_H
+# define REDIRECT_MANAGER_INTERNAL_H
 # include "../config.h"
 # include "../external/libft/libft.h"
 # include "../include/redirect_manager.h"
