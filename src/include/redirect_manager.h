@@ -1,5 +1,17 @@
-#ifndef REDIRECT_ASIGNATION_H
-# define REDIRECT_ASIGNATION_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   redirect_manager.h                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 05:04:07 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/12 05:05:01 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef REDIRECT_MANAGER_H
+# define REDIRECT_MANAGER_H
 # include "../external/gen_list/gen_list.h"
 # include "mini_state.h"
 
@@ -31,7 +43,7 @@ typedef enum e_redirect_type
  * @brief Opaque structure representing a redirection.
  *
  * Contains the redirection type and the target file or heredoc delimiter.
- */
+*/
 typedef struct s_redirect	t_redirect;
 
 /* ============================================================
@@ -43,7 +55,7 @@ typedef struct s_redirect	t_redirect;
  * @brief Creates a new redirect structure.
  *
 
-	* Allocates and initializes a redirect object with the given type and target file.
+ * Allocates and initializes a redirect object with the given type and target.
  * The file name is typically duplicated internally to ensure memory safety.
  *
  * @param redirect_type The type of the redirection (see t_redirect_type).
@@ -97,6 +109,7 @@ int							redirect_execute(t_redirect *redirect,
  */
 void						print_redirect(void *redir_ptr);
 
-int                         redirect_heredoc_check(t_gen_list *redirects, t_mini_state *mini_state);
+int							redirect_heredoc_check(t_gen_list *redirects,
+								t_mini_state *mini_state);
 
 #endif

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ms_status_codes.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 17:33:26 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 05:02:46 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MS_ERRORS_H
-# define MS_ERRORS_H
+#ifndef MS_STATUS_CODES_H
+# define MS_STATUS_CODES_H
 
 # include "../config.h"
 
@@ -59,7 +59,6 @@ typedef enum e_ms_status_code
 	PIPE_MANAGER_MALFORMED,
 	// Exit
 	EXTERNALY_DEFINED_STATUS_CODE = EXTERNALY_DEFINED_STATUS_BEGIN,
-
 }	t_ms_status_code;
 
 #endif

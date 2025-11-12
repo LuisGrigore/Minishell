@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   executer.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 05:05:20 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/12 05:06:27 by dmaestro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef EXECUTER_H
 # define EXECUTER_H
 
@@ -10,7 +22,8 @@
 	similar to how Bash interprets and runs commands.
  *
 
-	* @param line A null-terminated string containing the command line to be parsed and executed.
+	* @param line A null-terminated string containing the command 
+				line to be parsed and executed.
  *             The command may include:
  *               - simple commands and arguments
  *               - operators for redirection and piping:
@@ -30,9 +43,11 @@
  *         similar to Bash’s return codes.
  *
 
-	* This function parses and executes the provided command line using the given state
+	* This function parses and executes the provided 
+		command line using the given state
 
-	* environment. Its behavior mimics that of the Bash shell when handling execution,
+	* environment. Its behavior 
+		mimics that of the Bash shell when handling execution,
  * redirections, and pipes, but it relies only on the provided state variables
  * rather than a full environment.
  */

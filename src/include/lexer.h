@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 16:39:43 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 05:03:24 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOKENIZER_H
-# define TOKENIZER_H
+#ifndef LEXER_H
+# define LEXER_H
 
 # include "../external/gen_list/gen_list.h"
 # include "environment.h"

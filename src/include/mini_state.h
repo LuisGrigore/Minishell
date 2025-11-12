@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 20:49:03 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 05:37:15 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ typedef struct s_mini_state	t_mini_state;
  *
  * @param args Number of command line arguments
 
-	* @param environment_var_str_array Array of environment variables in "KEY=VALUE" format
+	* @param environment_var_str_array Array of environment
+		variables in "KEY=VALUE" format
  * @return Pointer to the newly created shell state,
 	or NULL on allocation failure
  */
@@ -61,7 +62,8 @@ char						*mini_state_get_last_command(t_mini_state *state);
  * @param state Pointer to the shell state
  * @return String containing the path of the last opened file, or NULL if none
  */
-char						*mini_state_get_last_opened_file(t_mini_state *state);
+char						*mini_state_get_last_opened_file(
+								t_mini_state *state);
 
 /**
  * @brief Gets the current environment.
@@ -99,7 +101,8 @@ void						mini_state_set_last_opened_file(t_mini_state *state,
  * @param state Pointer to the shell state
  * @return true if the shell should exit, false otherwise
  */
-bool						mini_state_get_exit_after_last_command(t_mini_state *state);
+bool						mini_state_get_exit_after_last_command(
+								t_mini_state *state);
 
 /**
  * @brief Sets whether the shell should exit after the current command.
@@ -107,10 +110,11 @@ bool						mini_state_get_exit_after_last_command(t_mini_state *state);
  * @param state Pointer to the shell state
  * @param value true to request shell exit, false to continue execution
  */
-void						mini_state_set_exit_after_last_command(t_mini_state *state,
-								bool value);
-void                        mini_state_set_heredoc_temp_file(t_mini_state *state, int files);
+void						mini_state_set_exit_after_last_command(
+								t_mini_state *state, bool value);
+void						mini_state_set_heredoc_temp_file(
+								t_mini_state *state, int files);
 
-void destroy_temp_fles(t_mini_state *state);
+void						destroy_temp_fles(t_mini_state *state);
 
 #endif
