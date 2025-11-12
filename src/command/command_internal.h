@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 06:00:00 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 06:24:50 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 08:30:20 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int					echo_execute(t_command *command,
 						t_environment *environment);
 int					exit_execute(t_command *command,
 						t_environment *environment);
+char				*find_command(char **env, char *cmd, int *err_out);
 
 #endif
