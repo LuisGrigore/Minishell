@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:42:28 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 15:30:43 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:32:27 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static t_pipe_manager	*create_pipes(t_pipe_manager *pm, size_t n_cmds)
 {
 	size_t	j;
 
-	pm->pipes = malloc(sizeof(int[2]) * (n_cmds - 1));
+	pm->pipes = malloc(sizeof(int [2]) * (n_cmds - 1));
 	if (!pm->pipes)
 	{
 		free(pm);
@@ -70,49 +70,4 @@ void	pipe_manager_destroy(t_pipe_manager *pm)
 		return ;
 	free(pm->pipes);
 	free(pm);
-}
-
-int	pipe_manager_setup_command(t_pipe_manager *pm, size_t index)
-{
-	int	dup_ret;
-
-	dup_ret = 0;
-	if (!pm)
-		return (PIPE_MANAGER_IS_NULL);
-	if (pm->n_cmds <= 1)
-		return (MS_OK);
-	if (index > 0)
-		dup_ret = dup2(pm->pipes[index - 1][0], STDIN_FILENO);
-	if (dup_ret != -1 && index < pm->n_cmds - 1)
-		dup_ret = dup2(pm->pipes[index][1], STDOUT_FILENO);
-	if (dup_ret == -1)
-		return (MS_DUP2_ERR);
-	return (MS_OK);
-}
-
-int	pipe_manager_close_all(t_pipe_manager *pm)
-{
-	size_t	i;
-	int		close_ret;
-	int		error_flag;
-
-	if (!pm)
-		return (PIPE_MANAGER_IS_NULL);
-	if (!pm->pipes)
-		return (PIPE_MANAGER_MALFORMED);
-	error_flag = 0;
-	i = 0;
-	while (i < pm->n_cmds - 1)
-	{
-		close_ret = close(pm->pipes[i][0]);
-		if (close_ret == -1)
-			error_flag = 1;
-		close_ret = close(pm->pipes[i][1]);
-		if (close_ret == -1)
-			error_flag = 1;
-		i++;
-	}
-	if (error_flag)
-		return (MS_CLOSE_ERR);
-	return (MS_OK);
 }
