@@ -6,13 +6,24 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 08:16:32 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 08:19:38 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 08:32:32 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command_internal.h"
 #include <errno.h>
 #include <sys/stat.h>
+
+static char	*get_final_path(char *path, char *cmd)
+{
+	char	*aux;
+	char	*result;
+
+	aux = ft_strjoin(path, "/");
+	result = ft_strjoin(aux, cmd);
+	free(aux);
+	return (result);
+}
 
 static char	*abslote_route_command(char *cmd, int *err_out)
 {

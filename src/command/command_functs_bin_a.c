@@ -6,24 +6,13 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 12:20:05 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 08:29:17 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 08:32:22 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command_internal.h"
 #include "include/ms_status_codes.h"
 #include <errno.h>
-
-static char	*get_final_path(char *path, char *cmd)
-{
-	char	*aux;
-	char	*result;
-
-	aux = ft_strjoin(path, "/");
-	result = ft_strjoin(aux, cmd);
-	free(aux);
-	return (result);
-}
 
 static char	*serialize_arg(void *arg_ptr)
 {
