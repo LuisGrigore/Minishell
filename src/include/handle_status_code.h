@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_state_internal.h                              :+:      :+:    :+:   */
+/*   handle_status_code.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 16:39:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 18:26:47 by dmaestro         ###   ########.fr       */
+/*   Created: 2025/11/12 11:31:29 by dmaestro          #+#    #+#             */
+/*   Updated: 2025/11/12 16:36:39 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_STATE_INTERNAL_H
-# define MINI_STATE_INTERNAL_H
+#ifndef HANDLE_STATUS_CODE_H
+# define HANDLE_STATUS_CODE_H
 
-# include "../external/libft/libft.h"
-# include "../include/environment.h"
-# include "../include/mini_state.h"
+# include "mini_state.h"
 
-typedef struct s_mini_state
-{
-	t_environment	*environment_vars;
-	char			*last_command;
-	char			*last_opened_file;
-	bool			exit_after_last_command;
-	int				heredoc_temp_files;
-	int				heredoc_exec;
-}					t_mini_state;
+void	handle_status_codes(int status_code, t_mini_state *mini_state,
+			char *input);
 
 #endif

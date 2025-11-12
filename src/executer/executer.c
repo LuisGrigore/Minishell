@@ -6,104 +6,27 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/11 20:51:18 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:50:33 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executer_internal.h"
 
-static void	execute_end(t_pipe_manager *pm, pid_t *pids, size_t i,
-		int *exit_status)
-{
-	size_t	j;
-	int		tmp_status;
-
-	j = 0;
-	pipe_manager_close_all(pm);
-	while (j < i - 1)
-	{
-		waitpid(pids[j], &tmp_status, 0);
-		j++;
-	}
-	waitpid(pids[i - 1], exit_status, 0);
-	if (WIFEXITED(*exit_status))
-		*exit_status = WEXITSTATUS(*exit_status);
-	free(pids);
-	pipe_manager_destroy(pm);
-}
-static int	execute_init(t_gen_list *commands, t_pipe_manager **pm,
-		t_gen_list_iter **it, pid_t **pids)
-{
-	size_t	n;
-
-	n = gen_list_get_size(commands);
-	if (n == 0)
-		return (MS_OK);
-	*pm = pipe_manager_init(n);
-	if (!pm)
-		return (MS_ALLOCATION_ERR);
-	*it = gen_list_iter_start(commands);
-	if (*it == NULL)
-		return (pipe_manager_destroy(*pm), MS_ALLOCATION_ERR);
-	*pids = malloc(sizeof(pid_t) * n);
-	if (*pids == NULL)
-		return (gen_list_iter_destroy(*it), pipe_manager_destroy(*pm),
-			MS_ALLOCATION_ERR);
-	return (-1);
-}
-static int	execute_fork_loop(pid_t *pids, t_gen_list_iter *it,
-		t_mini_state *mini_state, t_pipe_manager *pm)
-{
-	t_command	*cmd;
-	int			status_code;
-	size_t		i;
-
-	i = 0;
-	cmd = gen_list_iter_next(it);
-	while (cmd)
-	{
-		pids[i] = fork();
-		if (pids[i] == 0) // hijo
-		{
-			pipe_manager_setup_command(pm, i);
-			pipe_manager_close_all(pm);
-			status_code = command_exec(cmd, mini_state);
-			free(pids);
-			gen_list_iter_destroy(it);
-			pipe_manager_destroy((pm));
-			mini_state_set_exit_after_last_command(mini_state, true);
-			return (status_code);
-		}
-		i++;
-		cmd = gen_list_iter_next(it);
-	}
-	return (-1);
-}
-// TODO :: hacer que devuelva int con error y tal
-static int	execute_commands_with_pipes(t_gen_list *commands,
-		t_mini_state *mini_state, int *exit_status)
-{
-	t_pipe_manager	*pm;
-	t_gen_list_iter	*it;
-	pid_t			*pids;
-	int				status_code;
-
-	pm = NULL;
-	status_code = execute_init(commands, &pm, &it, &pids);
-	if (status_code != -1)
-		return (status_code);
-	status_code = execute_fork_loop(pids, it, mini_state, pm);
-	if (status_code != -1)
-		return (status_code);
-	execute_end(pm, pids, gen_list_get_size(commands), exit_status);
-	destroy_temp_fles(mini_state);
-	gen_list_iter_destroy(it);
-	return (MS_OK);
-}
-
 static void	command_destroy_data(void *command_ptr)
 {
 	command_destroy((t_command *)command_ptr);
+}
+
+static int	no_fork_command_rutine(t_gen_list *commands,
+		t_mini_state *mini_state)
+{
+	int	status_code;
+
+	status_code = command_exec((t_command *)gen_list_peek_top(commands),
+			mini_state);
+	destroy_temp_fles(mini_state);
+	gen_list_destroy(commands, command_destroy_data);
+	return (status_code);
 }
 
 int	execute_line(char *line, t_mini_state *mini_state)
@@ -119,27 +42,16 @@ int	execute_line(char *line, t_mini_state *mini_state)
 	if (!commands)
 		return (MS_ALLOCATION_ERR);
 	status_code = parse_line(line, commands, env);
-	// print_command((t_command *)gen_list_pop_front(commands),0);
 	if (status_code != MS_OK)
-		return (status_code);
-    status_code = command_heredocs_create(commands, mini_state);
-    if(status_code != MS_OK)
-    {
-        destroy_temp_fles(mini_state);
-        gen_list_destroy(commands, command_destroy_data);
-        return(status_code);
-    }
+		return (gen_list_destroy(commands, command_destroy_data), status_code);
+	status_code = command_heredocs_create(commands, mini_state);
+	if (status_code != MS_OK)
+		return (destroy_temp_fles(mini_state), gen_list_destroy(commands,
+				command_destroy_data), status_code);
 	if (gen_list_get_size(commands) == 1
 		&& command_is_built_in((t_command *)gen_list_peek_top(commands)))
-	{
-		status_code = command_exec((t_command *)gen_list_peek_top(commands),
-				mini_state);
-        destroy_temp_fles(mini_state);
-		gen_list_destroy(commands, command_destroy_data);
-		return (status_code);
-	}
-	status_code = execute_commands_with_pipes(commands, mini_state,
-			&exit_status);
+		return (no_fork_command_rutine(commands, mini_state));
+	status_code = execute_with_pipes(commands, mini_state, &exit_status);
 	gen_list_destroy(commands, command_destroy_data);
 	if (status_code == MS_OK)
 		return (EXTERNALY_DEFINED_STATUS_CODE + exit_status);

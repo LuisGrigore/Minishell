@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 04:45:25 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 04:52:10 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 23:35:34 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ static void	sigint_handler(int sig)
 {
 	(void)sig;
 	g_signal = SIGINT;
-	write(1, "\n", 1);
 	rl_on_new_line();
+	rl_redisplay();
+	write(1, "\n", 1);
 	rl_replace_line("", 0);
+	rl_on_new_line();
 	rl_redisplay();
 }
 
@@ -51,7 +53,8 @@ static void	sigint_handler_heredoc(int sig)
 {
 	(void)sig;
 	g_signal = SIGINT;
-	write(1, "", 1);
+	write(1, "\n", 1);
+	close(0);
 }
 
 int	signals_init_heredoc(void)

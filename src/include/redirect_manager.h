@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:04:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 05:05:01 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:19:31 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef enum e_redirect_type
  * @brief Opaque structure representing a redirection.
  *
  * Contains the redirection type and the target file or heredoc delimiter.
-*/
+ */
 typedef struct s_redirect	t_redirect;
 
 /* ============================================================
@@ -93,21 +93,6 @@ void						redirect_destroy(t_redirect *redirect);
  */
 int							redirect_execute(t_redirect *redirect,
 								t_mini_state *mini_state);
-
-/* ============================================================
-**  Debug
-** ============================================================
-*/
-
-/**
- * @brief Prints a redirect for debugging purposes.
- *
- * Displays the type of redirection and the associated file name.
- * Used mainly for development and testing.
- *
- * @param redir_ptr Generic pointer to a t_redirect structure.
- */
-void						print_redirect(void *redir_ptr);
 
 int							redirect_heredoc_check(t_gen_list *redirects,
 								t_mini_state *mini_state);

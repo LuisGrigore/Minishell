@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:10:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 20:39:42 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:40:29 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **  PATHS
 ** ============================================================
 */
-# define PATH_HEREDOC_TEMP_FILE "./temp/minishell_heredoc.temp"
+# define PATH_HEREDOC_TEMP_FILE "./minishell_heredoc.temp"
 
 /* ============================================================
 **  STATUS_CODES

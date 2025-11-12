@@ -3,26 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   util.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:19:19 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:26:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:49:51 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTIL_H
 # define UTIL_H
-
-/**
- * @brief Enhanced string split that handles quoted sections
- *
- * Similar to ft_split but preserves text within quotes as a single token.
- *
- * @param s String to split
- * @param c Delimiter character
- * @return Array of strings, NULL-terminated, or NULL on error
- */
-char	**ft_split2(char const *s, char c);
 
 /**
  * @brief Checks if a character is whitespace

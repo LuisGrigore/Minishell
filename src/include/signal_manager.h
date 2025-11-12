@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signal_manager.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/11 18:29:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/12 23:27:42 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

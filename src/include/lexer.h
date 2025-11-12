@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 05:03:24 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:20:09 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,5 @@ char					*lexer_get_token_content(t_token *token);
  *         false otherwise.
  */
 bool					lexer_is_token_type(t_token *token, t_token_type type);
-
-/* ============================================================
-**  Debug
-** ============================================================
-*/
-
-void					print_tokens(t_gen_list *tokens);
 
 #endif

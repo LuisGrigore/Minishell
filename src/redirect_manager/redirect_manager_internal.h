@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 04:35:37 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:24:21 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../external/libft/libft.h"
 # include "../include/redirect_manager.h"
 # include "../include/signal_manager.h"
+# include "../include/mini_state.h"
 # include "ms_status_codes.h"
 
 struct				s_redirect

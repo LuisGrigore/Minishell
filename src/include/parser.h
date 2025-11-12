@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:38:09 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 05:38:10 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:22:02 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@
  * parse_line now also receives the environment list so lexer can expand
  * variables according to quoting rules during tokenization.
  */
-int	parse_line(char *line, t_gen_list *commands, t_environment *env);
 int	parse_line(char *line, t_gen_list *commands, t_environment *env);
 
 #endif

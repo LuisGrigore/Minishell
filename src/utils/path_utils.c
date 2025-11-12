@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:26:13 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 20:29:26 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:17:51 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_ispace(char c)
 		return (1);
 	return (0);
 }
+
 int	special_char(char *str, char *c)
 {
 	int		i;
@@ -61,6 +62,7 @@ char	*get_next_argument(char *c, char *str)
 	}
 	return (str + i + (int)len);
 }
+
 char	**simple_split(char *arg, char c)
 {
 	size_t	i;
