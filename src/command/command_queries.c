@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 04:47:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 19:51:03 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:19:35 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,45 +26,38 @@ char	*command_get_name(t_command *command)
 	return ((char *)gen_list_peek_top(command->args));
 }
 
-// void	print_command(void *cmd_ptr, void *index_ptr)
-// {
-// 	t_command *cmd = (t_command *)cmd_ptr;
-// 	int index = *(int *)index_ptr;
-// 	// DEBUG
-// 	printf("ptr:%p %p\n", cmd, cmd->command_funct);
-// 	if (!cmd)
-// 		return ;
+ void	sort_export(char **arr)
+{
+	int		i;
+	char	*temp;
+	int		n;
+	int		j;
 
-// 	printf("Command #%d:\n", index);
+	i = 0;
+	n = 0;
+	while (arr[n])
+		n++;
+	while (i < n - 1)
+	{
+		j = 0;
+		while (j < n - i - 1)
+		{
+			if (ft_strncmp(arr[j], arr[j + 1], ft_strlen(arr[j])) > 0)
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
 
-// 	// Imprimir args
-// 	if (cmd->args && !gen_list_is_empty(cmd->args))
-// 	{
-// 		printf("  Args:\n");
-
-// 		t_gen_list_iter *arg_it = gen_list_iter_start(cmd->args);
-// 		char *arg;
-// 		while ((arg = (char *)gen_list_iter_next(arg_it)) != NULL)
-// 		{
-// 			printf("    %s\n", arg);
-// 		}
-// 	}
-// 	else
-// 	{
-// 		printf("  Args: (none)\n");
-// 	}
-
-// 	// Imprimir redirects
-// 	if (cmd->redirects && !gen_list_is_empty(cmd->redirects))
-// 	{
-// 		printf("  Redirects:\n");
-// 		gen_list_for_each(cmd->redirects, print_redirect);
-// 	}
-// 	else
-// 	{
-// 		printf("  Redirects: (none)\n");
-// 	}
-
-// 	printf("\n");
-// 	*(int *)index_ptr++;
-// }
+void	double_pontier_free(char **env)
+{
+	if (env[1])
+		free(env[1]);
+	free(env[0]);
+	free(env);
+}

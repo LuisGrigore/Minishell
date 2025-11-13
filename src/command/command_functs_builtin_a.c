@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:40:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 20:06:49 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:20:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,7 @@ static int	export_loop(char *arg, t_environment *environment,
 	if (!new_variable || !new_variable[0])
 		return (MS_ALLOCATION_ERR);
 	if (check_option_of_export(new_variable, environment) == -1)
-	{
-		if (new_variable[1])
-			free(new_variable[1]);
-		free(new_variable[0]);
-		return (free(new_variable), COMMAND_MALFORMED_ERR);
-	}
+		return (double_pontier_free(new_variable), COMMAND_MALFORMED_ERR);
 	if (ft_strchr(arg, '=') && ft_strncmp(new_variable[0], "0", 1) == 0)
 		env_set(environment, new_variable[0], "");
 	else if (!ft_strchr(arg, '='))
@@ -89,34 +84,6 @@ static int	export_loop(char *arg, t_environment *environment,
 		free(new_variable[1]);
 	return (free(new_variable), export_loop(gen_list_iter_next(it), environment,
 			it));
-}
-
-static void	sort_export(char **arr)
-{
-	int		i;
-	char	*temp;
-	int		n;
-	int		j;
-
-	i = 0;
-	n = 0;
-	while (arr[n])
-		n++;
-	while (i < n - 1)
-	{
-		j = 0;
-		while (j < n - i - 1)
-		{
-			if (ft_strncmp(arr[j], arr[j + 1], ft_strlen(arr[j])) > 0)
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
 }
 
 static int	print_export(t_command *command, t_environment *environment)
@@ -131,8 +98,8 @@ static int	print_export(t_command *command, t_environment *environment)
 	i = 0;
 	while (serialized_env[i] != NULL)
 	{
-		if (ft_strncmp("declare -x ?", serialized_env[i],
-			ft_strlen("declare -x ?")) == 0)
+		if (ft_strncmp("declare -x ?", serialized_env[i], 
+			 ft_strlen("declare -x ?")) == 0)
 		{
 			i++;
 			continue ;
