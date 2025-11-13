@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   gen_link_list_iteration.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:56:57 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/28 19:38:49 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:05:13 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../gen_link_list_internal.h"
 
-// TODO :: crear un funcion igual pero prev en vez de next.
 void	*gen_list_iter_next(t_gen_list_iter *it)
 {
 	void	*val;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:41:17 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 16:20:09 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:08:50 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

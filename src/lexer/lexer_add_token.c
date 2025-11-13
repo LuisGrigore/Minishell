@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer_add_token.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 19:48:26 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 03:01:17 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:08:42 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
