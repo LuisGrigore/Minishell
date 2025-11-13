@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 19:37:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:56:55 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ int	parse_command(t_gen_list *command_tokens, t_gen_list *commands)
 	while (tok && status == MS_OK)
 	{
 		status = process_token(tok, it, commands, &cmd);
-		if ((status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE))
-			|| lexer_is_token_type(tok, INVALID_OPERATOR))
+		if (check_status_command_token(status, cmd, tok))
 			status = PARSER_SYNTAX_ERR;
 		tok = gen_list_iter_next(it);
 	}
