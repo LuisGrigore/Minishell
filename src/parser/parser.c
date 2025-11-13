@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 04:22:58 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:18:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static t_gen_list	*get_current_command_tokens(t_gen_list *tokens)
 		current_token = (t_token *)gen_list_pop_front(tokens);
 		if (!current_token)
 			break ;
-		if (lexer_is_token_type(current_token, TOKEN_PIPE))
+		if (lexer_is_token_type(current_token, TOKEN_PIPE) && !gen_list_peek_top(tokens))
 		{
 			gen_list_push_front(discard_tokens, current_token);
 			break ;
