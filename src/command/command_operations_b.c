@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:52:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 13:57:23 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:07:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ int	command_push_redirect(t_command *command, t_redirect_type redirect_type,
 {
 	return (handle_list_errors(gen_list_push_back(command->redirects,
 				redirect_create(redirect_type, file_name))));
+}
+void command_set_name(t_command *command, char *name)
+{
+	gen_list_push_front(command->args, ft_strdup(name));
+	command->command_funct = get_command_function(name);
 }

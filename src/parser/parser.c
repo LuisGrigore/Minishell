@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 17:22:06 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:12:19 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@ static int	handle_redir_wrapper(t_token *tok, t_gen_list_iter *it,
 	t_token	*file_tok;
 
 	file_tok = gen_list_iter_next(it);
-	*cmd = handle_redirect(tok, file_tok, *cmd, it);
+	if (!file_tok)
+		return (PARSER_SYNTAX_ERR);
+	if (!*cmd)
+	{
+		*cmd = command_create(NULL);
+		if (!*cmd)
+			return (MS_ALLOCATION_ERR);
+	}
+	*cmd = handle_redirect(tok, file_tok, *cmd);
 	if (!*cmd)
 		return (PARSER_SYNTAX_ERR);
 	return (MS_OK);
@@ -150,7 +158,6 @@ int	parse_line(char *line, t_gen_list *commands, t_environment *env)
 	if (!tokens)
 		return (MS_ALLOCATION_ERR);
 	status = tokenize_line(line, tokens, env);
-	// print_tokens(tokens);
 	if (status != MS_OK)
 	{
 		lexer_destroy(tokens);

@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:07:05 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 17:22:25 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 17:35:10 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 t_command	*handle_command_token(t_token *tok, t_command *current_cmd);
 t_command	*handle_arg_token(t_token *tok, t_command *current_cmd);
 t_command	*handle_redirect(t_token *tok, t_token *file_tok,
-				t_command *current_cmd, t_gen_list_iter *it);
+				t_command *current_cmd);
 int			handle_pipe_token(t_command *current_cmd, t_gen_list *commands);
 
 #endif

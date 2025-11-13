@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   command_lifecycle.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:23:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 08:30:42 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 17:59:30 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command_internal.h"
 
-static t_command_funct	get_command_function(char *cmd_name)
+t_command_funct	get_command_function(char *cmd_name)
 {
 	if (!cmd_name || ft_strlen(cmd_name) == 0)
 		return (NULL);

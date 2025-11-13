@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 14:04:06 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:00:12 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,5 @@ int							command_heredocs_asignate(t_gen_list *commands,
 								t_mini_state *mini_state);
 
 void	print_command(void *cmd_ptr, void *index_ptr);
+void command_set_name(t_command *command, char *name);
 #endif

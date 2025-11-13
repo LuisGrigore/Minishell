@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 04:47:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 13:21:58 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:09:45 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	command_is_built_in(t_command *command)
 
 char	*command_get_name(t_command *command)
 {
-	if (!command)
+	if (!command || gen_list_is_empty(command->args))
 		return (NULL);
 	return ((char *)gen_list_peek_top(command->args));
 }
@@ -33,6 +33,7 @@ void	print_command(void *cmd_ptr, void *index_ptr)
 	t_command *cmd = (t_command*) cmd_ptr;
 	int index = *(int *)index_ptr;
 	//DEBUG
+	printf("ptr:%p %p\n", cmd, cmd->command_funct);
 	if (!cmd)
 		return ;
 

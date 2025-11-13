@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 17:24:01 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:09:13 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,15 @@ int	execute_line(char *line, t_mini_state *mini_state)
 	int				exit_status;
 	t_environment	*env;
 
+	//int idx = 0;
+
 	env = mini_state_get_environment(mini_state);
 	exit_status = 0;
 	commands = gen_list_create();
 	if (!commands)
 		return (MS_ALLOCATION_ERR);
 	status_code = parse_line(line, commands, env);
+
 	//gen_list_for_each_ctx((void *)commands, print_command, (void *)&idx);
 	if (status_code != MS_OK)
 		return (gen_list_destroy(commands, command_destroy_data), status_code);
