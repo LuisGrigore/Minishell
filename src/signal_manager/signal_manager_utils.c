@@ -6,11 +6,12 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 04:46:57 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 18:51:56 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:42:47 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "signal_manager_internal.h"
+#include "fcntl.h"
 
 int	signals_restore(void)
 {

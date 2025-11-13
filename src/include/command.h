@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:11 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 16:20:38 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 02:04:13 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,8 @@ int							command_exec(t_command *command,
 								t_mini_state *mini_state);
 
 int							command_heredocs_create(t_gen_list *commands,
+								t_mini_state *mini_state);
+int							command_heredocs_asignate(t_gen_list *commands,
 								t_mini_state *mini_state);
 
 #endif

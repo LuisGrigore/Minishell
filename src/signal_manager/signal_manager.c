@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 04:45:25 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 23:35:34 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:46:08 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ static void	sigint_handler(int sig)
 {
 	(void)sig;
 	g_signal = SIGINT;
-	rl_on_new_line();
-	rl_redisplay();
 	write(1, "\n", 1);
-	rl_replace_line("", 0);
 	rl_on_new_line();
+	write(1, "", 1);
 	rl_redisplay();
+	
 }
 
 int	set_signal(int sig, void (*handler)(int))

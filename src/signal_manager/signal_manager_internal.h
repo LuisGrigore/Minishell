@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:50 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 21:20:04 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/12 23:57:08 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int	set_signal(int sig, void (*handler)(int));
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 23:27:42 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 00:13:38 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ int	signals_init_interactive(void);
  * @see ms_status_codes.h
  */
 int	signals_init_heredoc(void);
+
+void reopen_stdin(void);
+
+int	set_signal(int sig, void (*handler)(int));
 
 /**
  * @brief Restores default signal handling

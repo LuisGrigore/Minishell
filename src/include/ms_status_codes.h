@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:19:01 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 05:02:46 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:34:01 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef enum e_ms_status_code
 	MS_SIGNAL_ERR,
 	MS_OPEN_ERR,
 	MS_PATH_ERR,
+	MS_CNTRL_ERR,
 	// Command
 	COMMAND_SUCCESS = COMMAND_STATUS_BEGIN,
 	COMMAND_ERR,
