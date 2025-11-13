@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_status_code_b.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:13:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 03:00:38 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:49:37 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static int	handle_system_status_codes_a(int status_code,
 		t_mini_state *mini_state)
 {
+
 	if (status_code == MS_OK)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 0);
@@ -40,7 +41,7 @@ static int	handle_system_status_codes_a(int status_code,
 		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		return(destroy_temp_fles(mini_state), 1);
 	}
-	return (0);
+	return (MS_OK);
 }
 
 static void	handle_system_status_codes_b(int status_code,
@@ -48,7 +49,7 @@ static void	handle_system_status_codes_b(int status_code,
 {
 	if (status_code == MS_ALLOCATION_ERR)
 	{
-		perror("Malloc error");
+		ft_printf("Malloc error");
 		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		mini_state_destroy(mini_state);
 		exit(EXIT_FAILURE);

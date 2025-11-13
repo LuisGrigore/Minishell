@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 11:44:54 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:30:42 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	fork_heredocs_create(t_gen_list *commands, t_mini_state *mini_state)
 	return (status_code);
 }
 
+
+
 int	execute_line(char *line, t_mini_state *mini_state)
 {
 	int				status_code;
@@ -52,12 +54,15 @@ int	execute_line(char *line, t_mini_state *mini_state)
 	int				exit_status;
 	t_environment	*env;
 
+	int idx = 0;
+
 	env = mini_state_get_environment(mini_state);
 	exit_status = 0;
 	commands = gen_list_create();
 	if (!commands)
 		return (MS_ALLOCATION_ERR);
 	status_code = parse_line(line, commands, env);
+	//gen_list_for_each_ctx((void *)commands, print_command, (void *)&idx);
 	if (status_code != MS_OK)
 		return (gen_list_destroy(commands, command_destroy_data), status_code);
 	status_code = fork_heredocs_create(commands, mini_state);

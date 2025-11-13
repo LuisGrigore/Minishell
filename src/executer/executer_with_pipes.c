@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer_with_pipes.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:48:22 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 11:35:59 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:54:22 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static int	execute_fork_loop(pid_t *pids, t_gen_list_iter *it,
 
 	i = 0;
 	cmd = gen_list_iter_next(it);
+	if(!cmd)
+		return (MS_ALLOCATION_ERR);
 	while (cmd)
 	{
 		pids[i] = fork();
@@ -81,6 +83,23 @@ static int	execute_fork_loop(pid_t *pids, t_gen_list_iter *it,
 	}
 	return (-1);
 }
+			// if (!command_get_args(cmd) || gen_list_is_empty(command_get_args(cmd)))
+			// {
+			// 	free(pids);
+			// 	gen_list_iter_destroy(it);
+			// 	pipe_manager_destroy((pm));
+			// 	mini_state_set_exit_after_last_command(mini_state, true);
+			// 	return (MS_OK);
+			// }
+			// else
+			// {
+			// 	status_code = command_exec(cmd, mini_state);
+			// 	free(pids);
+			// 	gen_list_iter_destroy(it);
+			// 	pipe_manager_destroy((pm));
+			// 	mini_state_set_exit_after_last_command(mini_state, true);
+			// 	return (status_code);
+			// }
 
 int	execute_with_pipes(t_gen_list *commands, t_mini_state *mini_state,
 		int *exit_status)

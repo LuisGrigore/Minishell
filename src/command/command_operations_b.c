@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_operations_b.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:52:48 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 05:55:04 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:57:23 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

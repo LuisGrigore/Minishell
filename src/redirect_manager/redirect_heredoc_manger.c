@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_heredoc_manger.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 19:28:30 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 03:53:33 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:57:44 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,9 @@ int	redirect_heredoc_check(t_gen_list *redirects, t_mini_state *mini_state)
 	if (!redirects)
 		return (MS_OK);
 	it = gen_list_iter_start(redirects);
+	if(!it)
+		return (MS_ALLOCATION_ERR);
+	status_code = MS_OK;
 	actual_redirect = gen_list_iter_next(it);
 	while (actual_redirect)
 	{
@@ -116,7 +119,10 @@ int	redirect_heredoc_asignate(t_gen_list *redirects, t_mini_state *mini_state)
 	if (!redirects)
 		return (MS_OK);
 	it = gen_list_iter_start(redirects);
+	if (!it)
+		return (MS_ALLOCATION_ERR);
 	actual_redirect = gen_list_iter_next(it);
+	status_code = MS_OK;
 	while (actual_redirect)
 	{
 		if (actual_redirect->symbol == DOUBLE_LEFT_REDIRECT)

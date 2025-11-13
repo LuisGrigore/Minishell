@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manager.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:04:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 03:59:22 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:18:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,7 @@ int							redirect_heredoc_check(t_gen_list *redirects,
 								t_mini_state *mini_state);
 int							redirect_heredoc_asignate(t_gen_list *redirects,
 								t_mini_state *mini_state);
+
+void	print_redirect(void *redir_ptr);
 
 #endif

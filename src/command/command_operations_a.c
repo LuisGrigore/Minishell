@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_operations_a.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:41:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 05:38:04 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:56:04 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,11 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 		dup2(stdout_backup, STDOUT_FILENO);
 		return (close(stdout_backup), close(stdin_backup), status_code);
 	}
-	status_code = command->command_funct(command,
+	if (command->command_funct)
+		status_code = command->command_funct(command,
 			mini_state_get_environment(mini_state));
+	else
+			status_code = MS_OK;
 	dup2(stdin_backup, STDIN_FILENO);
 	dup2(stdout_backup, STDOUT_FILENO);
 	return (close(stdin_backup), close(stdout_backup), status_code);

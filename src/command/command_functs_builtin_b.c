@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_builtin_b.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:23:13 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 06:34:08 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:02:47 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,11 +113,13 @@ int	exit_execute(t_command *command, t_environment *environment)
 	(void)environment;
 	if (gen_list_get_size(command->args) == 2)
 	{
-		gen_list_pop_front(command->args);
+		free(gen_list_pop_front(command->args));
 		arg = gen_list_pop_front(command->args);
 		if (!is_numeric_string(arg))
-			return (COMMAND_NUMERIC_ARG_REQUIRED_ERR);
+			return (free(arg), COMMAND_NUMERIC_ARG_REQUIRED_ERR);
 		exit_code = exit_code_without_quotes(arg);
+		if(arg)
+			free(arg);
 	}
 	else if (gen_list_get_size(command->args) > 2)
 	{
