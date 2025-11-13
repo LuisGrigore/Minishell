@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_query.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:54:42 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 20:01:52 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:38:43 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static char	*env_var_to_string_export(void *element)
 	result = ft_strjoin(name_eq, "\"");
 	return (free(name_eq), result);
 }
+
 char	**env_serialize_export(t_environment *env)
 {
 	if (!env || !env->variables)

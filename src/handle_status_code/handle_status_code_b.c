@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:13:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 12:49:37 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:29:27 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ void	handle_status_codes(int status_code, t_mini_state *mini_state,
 	select_function_to_handle(status_code, mini_state);
 	if (mini_state_get_exit_after_last_command(mini_state))
 	{
-		exit_status = env_get_last_status_code(mini_state_get_environment(mini_state));
+		exit_status = env_get_last_status_code(
+				mini_state_get_environment(mini_state));
 		mini_state_destroy(mini_state);
 		history_clean();
 		exit(exit_status);

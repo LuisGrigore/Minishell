@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:17:24 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 13:18:01 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:33:05 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,31 +84,4 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 		return (status_code);
 	close(fd);
 	return (MS_OK);
-}
-
-void	print_redirect(void *redir_ptr)
-{
-	t_redirect *redir = (t_redirect *)redir_ptr;
-	if (!redir)
-		return ;
-	const char *type_str;
-	switch (redir->symbol)
-	{
-	case LEFT_REDIRECT:
-		type_str = "<";
-		break ;
-	case RIGHT_REDIRECT:
-		type_str = ">";
-		break ;
-	case DOUBLE_LEFT_REDIRECT:
-		type_str = "<<";
-		break ;
-	case DOUBLE_RIGHT_REDIRECT:
-		type_str = ">>";
-		break ;
-	default:
-		type_str = "UNKNOWN";
-		break ;
-	}
-	printf("    Redirect: %s %s\n", type_str, redir->file);
 }
