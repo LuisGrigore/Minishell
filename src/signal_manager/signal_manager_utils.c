@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "signal_manager_internal.h"
 #include "fcntl.h"
+#include "signal_manager_internal.h"
 
 int	signals_restore(void)
 {

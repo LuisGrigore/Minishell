@@ -31,7 +31,7 @@ static t_pipe_manager	*create_pipes(t_pipe_manager *pm, size_t n_cmds)
 {
 	size_t	j;
 
-	pm->pipes = malloc(sizeof (int [2]) * (n_cmds - 1));
+	pm->pipes = malloc(sizeof(int[2]) * (n_cmds - 1));
 	if (!pm->pipes)
 	{
 		free(pm);

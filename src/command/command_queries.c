@@ -26,13 +26,11 @@ char	*command_get_name(t_command *command)
 	return ((char *)gen_list_peek_top(command->args));
 }
 
-
-
 void	print_command(void *cmd_ptr, void *index_ptr)
 {
-	t_command *cmd = (t_command*) cmd_ptr;
+	t_command *cmd = (t_command *)cmd_ptr;
 	int index = *(int *)index_ptr;
-	//DEBUG
+	// DEBUG
 	printf("ptr:%p %p\n", cmd, cmd->command_funct);
 	if (!cmd)
 		return ;

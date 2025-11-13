@@ -46,6 +46,6 @@ int					echo_execute(t_command *command,
 int					exit_execute(t_command *command,
 						t_environment *environment);
 char				*find_command(char **env, char *cmd, int *err_out);
-t_command_funct	get_command_function(char *cmd_name);
+t_command_funct		get_command_function(char *cmd_name);
 
 #endif

@@ -118,7 +118,7 @@ int	exit_execute(t_command *command, t_environment *environment)
 		if (!is_numeric_string(arg))
 			return (free(arg), COMMAND_NUMERIC_ARG_REQUIRED_ERR);
 		exit_code = exit_code_without_quotes(arg);
-		if(arg)
+		if (arg)
 			free(arg);
 	}
 	else if (gen_list_get_size(command->args) > 2)

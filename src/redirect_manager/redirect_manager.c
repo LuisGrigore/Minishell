@@ -86,7 +86,6 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 	return (MS_OK);
 }
 
-
 void	print_redirect(void *redir_ptr)
 {
 	t_redirect *redir = (t_redirect *)redir_ptr;

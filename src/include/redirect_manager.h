@@ -99,6 +99,6 @@ int							redirect_heredoc_check(t_gen_list *redirects,
 int							redirect_heredoc_asignate(t_gen_list *redirects,
 								t_mini_state *mini_state);
 
-void	print_redirect(void *redir_ptr);
+void						print_redirect(void *redir_ptr);
 
 #endif

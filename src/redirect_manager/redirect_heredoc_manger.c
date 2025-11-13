@@ -19,15 +19,14 @@ static int	heredoc_create_end(char *temp_file, char *input, int fd)
 		free(temp_file);
 	close(fd);
 	if (!input)
-	{	
-		if(g_signal == SIGINT)	
-			return(MS_CNTRL_ERR);
+	{
+		if (g_signal == SIGINT)
+			return (MS_CNTRL_ERR);
 		else
 			return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
 	}
-		
-	if(input && *input =='\0')
-		return(free(input), MS_CNTRL_ERR);
+	if (input && *input == '\0')
+		return (free(input), MS_CNTRL_ERR);
 	if (input)
 		free(input);
 	return (MS_OK);
@@ -54,7 +53,7 @@ static int	heredoc_create(char *delimiter, int *i)
 	{
 		input = readline(">");
 		if (!input || (delimiter && (ft_strncmp(input, delimiter,
-					ft_strlen(input)) == 0) && ft_strlen(input) > 0))
+						ft_strlen(input)) == 0) && ft_strlen(input) > 0))
 			break ;
 		write(fd, input, ft_strlen(input));
 		write(fd, "\n", 1);
@@ -75,7 +74,7 @@ int	redirect_heredoc_check(t_gen_list *redirects, t_mini_state *mini_state)
 	if (!redirects)
 		return (MS_OK);
 	it = gen_list_iter_start(redirects);
-	if(!it)
+	if (!it)
 		return (MS_ALLOCATION_ERR);
 	status_code = MS_OK;
 	actual_redirect = gen_list_iter_next(it);

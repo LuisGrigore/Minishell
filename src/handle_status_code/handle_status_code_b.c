@@ -16,7 +16,6 @@
 static int	handle_system_status_codes_a(int status_code,
 		t_mini_state *mini_state)
 {
-
 	if (status_code == MS_OK)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 0);
@@ -36,10 +35,10 @@ static int	handle_system_status_codes_a(int status_code,
 		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		return (1);
 	}
-	else if(status_code == MS_CNTRL_ERR)
+	else if (status_code == MS_CNTRL_ERR)
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
-		return(destroy_temp_fles(mini_state), 1);
+		return (destroy_temp_fles(mini_state), 1);
 	}
 	return (MS_OK);
 }

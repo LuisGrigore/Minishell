@@ -43,7 +43,7 @@ int	fork_heredocs_create(t_gen_list *commands, t_mini_state *mini_state)
 	if (status_code == MS_OK)
 		status_code = command_heredocs_asignate(commands, mini_state);
 	else
-		return(PARSER_ERR);
+		return (PARSER_ERR);
 	return (status_code);
 }
 

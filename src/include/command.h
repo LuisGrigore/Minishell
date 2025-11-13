@@ -120,6 +120,6 @@ int							command_heredocs_create(t_gen_list *commands,
 int							command_heredocs_asignate(t_gen_list *commands,
 								t_mini_state *mini_state);
 
-void	print_command(void *cmd_ptr, void *index_ptr);
-void command_set_name(t_command *command, char *name);
+void						print_command(void *cmd_ptr, void *index_ptr);
+void						command_set_name(t_command *command, char *name);
 #endif

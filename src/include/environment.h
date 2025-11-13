@@ -118,8 +118,8 @@ void							env_destroy(t_environment *env);
  * @see env_deserialize
  * @see t_env_var
  */
-char	**env_serialize_env(t_environment *env);
-char	**env_serialize_export(t_environment *env);
+char							**env_serialize_env(t_environment *env);
+char							**env_serialize_export(t_environment *env);
 
 /**
  * @brief Convert a string array into an environment instance.

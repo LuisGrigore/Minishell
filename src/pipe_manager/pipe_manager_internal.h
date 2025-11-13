@@ -20,7 +20,7 @@
 struct		s_pipe_manager
 {
 	size_t	n_cmds;
-	int		(*pipes)[2];
+	int (*pipes)[2];
 };
 
 #endif

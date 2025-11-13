@@ -36,7 +36,7 @@ int	command_push_redirect(t_command *command, t_redirect_type redirect_type,
 	return (handle_list_errors(gen_list_push_back(command->redirects,
 				redirect_create(redirect_type, file_name))));
 }
-void command_set_name(t_command *command, char *name)
+void	command_set_name(t_command *command, char *name)
 {
 	gen_list_push_front(command->args, ft_strdup(name));
 	command->command_funct = get_command_function(name);

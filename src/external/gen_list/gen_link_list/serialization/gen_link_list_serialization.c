@@ -127,7 +127,7 @@ char	**gen_list_serialize_to_string_array(t_gen_list *list,
 		if (!arr[i])
 		{
 			elem = gen_list_iter_next(it);
-			continue;
+			continue ;
 		}
 		i++;
 		elem = gen_list_iter_next(it);

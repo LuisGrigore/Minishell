@@ -58,9 +58,9 @@ int	command_exec(t_command *command, t_mini_state *mini_state)
 	}
 	if (command->command_funct)
 		status_code = command->command_funct(command,
-			mini_state_get_environment(mini_state));
+				mini_state_get_environment(mini_state));
 	else
-			status_code = MS_OK;
+		status_code = MS_OK;
 	dup2(stdin_backup, STDIN_FILENO);
 	dup2(stdout_backup, STDOUT_FILENO);
 	return (close(stdin_backup), close(stdout_backup), status_code);

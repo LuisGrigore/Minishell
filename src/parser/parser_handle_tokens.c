@@ -43,7 +43,7 @@ t_command	*handle_arg_token(t_token *tok, t_command *current_cmd)
 	else
 	{
 		if (!command_get_name(current_cmd))
-			command_set_name(current_cmd,lexer_get_token_content(tok));
+			command_set_name(current_cmd, lexer_get_token_content(tok));
 		else
 			command_push_arg(current_cmd, lexer_get_token_content(tok));
 	}
@@ -72,8 +72,8 @@ static t_redirect_type	get_redirect_type(t_token *tok)
 t_command	*handle_redirect(t_token *tok, t_token *file_tok,
 		t_command *current_cmd)
 {
-	t_redirect_type	r_type;
-	char			*redir_target;
+	t_redirect_type r_type;
+	char *redir_target;
 
 	if (!current_cmd)
 	{

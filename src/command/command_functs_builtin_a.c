@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_builtin_a.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:40:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 17:31:41 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:21:46 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ static int	check_option_of_export(char **var_name, t_environment *env)
 	{
 		if (!ft_isalnum(var_name[0][i]))
 		{
-			if (var_name[0][i] != '+'
-				|| i != (int)ft_strlen(var_name[0]) - 1)
+			if (var_name[0][i] != '+' || i != (int)ft_strlen(var_name[0]) - 1)
 				return (-1);
 			else
 				break ;
@@ -64,7 +63,7 @@ static int	export_loop(char *arg, t_environment *environment,
 		t_gen_list_iter *it)
 {
 	char	**new_variable;
-	
+
 	if (!arg)
 		return (MS_OK);
 	if (checker_export_loop(arg) != MS_OK)
@@ -88,7 +87,8 @@ static int	export_loop(char *arg, t_environment *environment,
 	free(new_variable[0]);
 	if (new_variable[1])
 		free(new_variable[1]);
-	return (free(new_variable), export_loop(gen_list_iter_next(it),environment,it));
+	return (free(new_variable), export_loop(gen_list_iter_next(it), environment,
+			it));
 }
 
 static void	sort_export(char **arr)
@@ -119,7 +119,7 @@ static void	sort_export(char **arr)
 	}
 }
 
-static int print_export(t_command *command, t_environment *environment)
+static int	print_export(t_command *command, t_environment *environment)
 {
 	char	**serialized_env;
 	size_t	i;
@@ -131,7 +131,8 @@ static int print_export(t_command *command, t_environment *environment)
 	i = 0;
 	while (serialized_env[i] != NULL)
 	{
-		if (ft_strncmp("declare -x ?", serialized_env[i], ft_strlen("declare -x ?")) == 0 )
+		if (ft_strncmp("declare -x ?", serialized_env[i],
+			ft_strlen("declare-x ?")) == 0)
 		{
 			i++;
 			continue ;
@@ -148,13 +149,13 @@ int	export_execute(t_command *command, t_environment *environment)
 	t_gen_list_iter	*it;
 	char			*arg;
 	int				status_code;
-	
+
 	if (!command || !environment)
 		return (COMMAND_ERR);
 	if (!command->args)
 		return (COMMAND_MALFORMED_ERR);
 	if (gen_list_get_size(command->args) < 2)
-		return(print_export(command, environment));
+		return (print_export(command, environment));
 	it = gen_list_iter_start(command->args);
 	if (!it)
 		return (MS_ALLOCATION_ERR);

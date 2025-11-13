@@ -151,8 +151,8 @@ static int	parser_aux(t_gen_list *tokens, t_gen_list *commands)
 
 int	parse_line(char *line, t_gen_list *commands, t_environment *env)
 {
-	t_gen_list	*tokens;
-	int			status;
+	t_gen_list *tokens;
+	int status;
 
 	tokens = gen_list_create();
 	if (!tokens)
