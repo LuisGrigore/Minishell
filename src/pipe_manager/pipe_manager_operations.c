@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 04:18:59 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 04:20:21 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:29:10 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,12 @@ int	pipe_manager_close_all(t_pipe_manager *pm)
 	if (error_flag)
 		return (MS_CLOSE_ERR);
 	return (MS_OK);
+}
+
+void	pipe_manager_destroy(t_pipe_manager *pm)
+{
+	if (!pm)
+		return ;
+	free(pm->pipes);
+	free(pm);
 }

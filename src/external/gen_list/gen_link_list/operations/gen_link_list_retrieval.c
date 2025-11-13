@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_link_list_retrieval.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:24:06 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 17:51:16 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:44:05 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,9 @@ void	*gen_list_pop_back(t_gen_list *list)
 	if (!list->head->next)
 	{
 		val = list->head->value;
-		free(list->head);
 		list->head = NULL;
 		list->tail = NULL;
-		list->size--;
-		return (val);
+		return (list->size--, free(list->head), val);
 	}
 	current = list->head;
 	prev = NULL;
@@ -56,9 +54,7 @@ void	*gen_list_pop_back(t_gen_list *list)
 		current = current->next;
 	}
 	val = current->value;
-	free(current);
 	prev->next = NULL;
 	list->tail = prev;
-	list->size--;
-	return (val);
+	return (list->size--, free(current), val);
 }

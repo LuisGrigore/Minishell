@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_list.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:30:11 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/10 17:49:57 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:38:46 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,9 +225,6 @@ t_gen_list_status_code			gen_list_for_each(t_gen_list *list,
  */
 t_gen_list_status_code			gen_list_for_each_ctx(t_gen_list *list,
 									t_apply_func_ctx func, void *context);
-
-// TODO :: Crear un for each que tome una funcion que devuelva un estado de error y que tome el estado de exito para que tambien pueda gestionarse los errores
-
 /**
  * @brief Find the first element that satisfies a predicate.
  *
@@ -349,7 +346,8 @@ char							*gen_list_serialize_to_string(t_gen_list *list,
 one per element.
 * @see t_element_to_string
 */
-char							**gen_list_serialize_to_string_array(t_gen_list *list,
+char							**gen_list_serialize_to_string_array(
+									t_gen_list *list,
 									t_element_to_string element_to_string);
 
 /**
@@ -360,7 +358,8 @@ char							**gen_list_serialize_to_string_array(t_gen_list *list,
  * @return Pointer to a newly allocated list, or NULL on error.
  * @see t_string_to_element
  */
-t_gen_list						*gen_list_deserialize_from_string_array(char **array,
+t_gen_list						*gen_list_deserialize_from_string_array(
+									char **array,
 									t_string_to_element string_to_element);
 
 #endif
