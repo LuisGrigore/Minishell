@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:41:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 16:44:22 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:51:33 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,26 @@ int	command_heredocs_create(t_gen_list *commands, t_mini_state *mini_state)
 	while (actual_command)
 	{
 		status_code = redirect_heredoc_check(actual_command->redirects,
+				mini_state);
+		actual_command = gen_list_iter_next(it);
+		if (status_code != MS_OK)
+			break ;
+	}
+	gen_list_iter_destroy(it);
+	return (status_code);
+}
+int	command_heredocs_asignate(t_gen_list *commands, t_mini_state *mini_state)
+{
+	t_gen_list_iter	*it;
+	t_command		*actual_command;
+	int				status_code;
+
+	status_code = MS_OK;
+	it = gen_list_iter_start(commands);
+	actual_command = gen_list_iter_next(it);
+	while (actual_command)
+	{
+		status_code = redirect_heredoc_asignate(actual_command->redirects,
 				mini_state);
 		actual_command = gen_list_iter_next(it);
 		if (status_code != MS_OK)

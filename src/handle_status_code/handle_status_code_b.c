@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:13:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 15:46:48 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:36:34 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ static int	handle_system_status_codes_a(int status_code,
 			mini_state_get_last_command(mini_state));
 		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
 		return (1);
+	}
+	else if(status_code == MS_CNTRL_ERR)
+	{
+		env_set_last_status_code(mini_state_get_environment(mini_state), 1);
+		return(1);
 	}
 	return (0);
 }

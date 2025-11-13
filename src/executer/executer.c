@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:15:16 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 10:50:33 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 02:10:42 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ static int	no_fork_command_rutine(t_gen_list *commands,
 	gen_list_destroy(commands, command_destroy_data);
 	return (status_code);
 }
+int		fork_heredocs_create(t_gen_list *commands,t_mini_state *mini_state)
+{
+	pid_t pid;
+	int		status_code;
+
+	pid = fork();
+	if(pid == 0)
+		return(command_heredocs_create(commands, mini_state));
+	waitpid(pid, &status_code, 0);
+	if(status_code == MS_OK)
+		status_code = command_heredocs_asignate(commands, mini_state);
+	return(status_code);
+}
 
 int	execute_line(char *line, t_mini_state *mini_state)
 {
@@ -44,10 +57,9 @@ int	execute_line(char *line, t_mini_state *mini_state)
 	status_code = parse_line(line, commands, env);
 	if (status_code != MS_OK)
 		return (gen_list_destroy(commands, command_destroy_data), status_code);
-	status_code = command_heredocs_create(commands, mini_state);
-	if (status_code != MS_OK)
-		return (destroy_temp_fles(mini_state), gen_list_destroy(commands,
-				command_destroy_data), status_code);
+	status_code = fork_heredocs_create(commands, mini_state);
+	if (mini_state_get_exit_after_last_command(mini_state)|| status_code != MS_OK)
+		return (gen_list_destroy(commands,	command_destroy_data), status_code);
 	if (gen_list_get_size(commands) == 1
 		&& command_is_built_in((t_command *)gen_list_peek_top(commands)))
 		return (no_fork_command_rutine(commands, mini_state));
