@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 04:47:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 20:19:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:49:25 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*command_get_name(t_command *command)
 	return ((char *)gen_list_peek_top(command->args));
 }
 
- void	sort_export(char **arr)
+void	sort_export(char **arr)
 {
 	int		i;
 	char	*temp;

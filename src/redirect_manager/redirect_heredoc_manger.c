@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 19:28:30 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 12:57:44 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:46:07 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int	redirect_heredoc_check(t_gen_list *redirects, t_mini_state *mini_state)
 	mini_state_set_exit_after_last_command(mini_state, true);
 	return (status_code);
 }
+
 static int	assignate_temp_file(t_redirect *redirect, int *i)
 {
 	char	*temp_dir;

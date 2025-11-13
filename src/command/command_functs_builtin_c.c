@@ -6,34 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:12:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 19:51:59 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:48:50 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command_internal.h"
-
-int	unset_execute(t_command *command, t_environment *environment)
-{
-	t_gen_list_iter	*it;
-	char			*arg;
-
-	if (!command || !environment)
-		return (COMMAND_ERR);
-	if (!command->args)
-		return (COMMAND_MALFORMED_ERR);
-	it = gen_list_iter_start(command->args);
-	if (!it)
-		return (MS_ALLOCATION_ERR);
-	arg = gen_list_iter_next(it);
-	arg = gen_list_iter_next(it);
-	while (arg)
-	{
-		env_unset(environment, arg);
-		arg = gen_list_iter_next(it);
-	}
-	gen_list_iter_destroy(it);
-	return (MS_OK);
-}
 
 static void	echo_loop(char *arg, t_gen_list_iter *it)
 {
@@ -123,6 +100,7 @@ int	cd_no_args(char *old_pwd, t_environment *environment)
 	}
 	return (free(old_pwd), MS_PATH_ERR);
 }
+
 int	cd_execute(t_command *command, t_environment *environment)
 {
 	t_gen_list_iter	*it;

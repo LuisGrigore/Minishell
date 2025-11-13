@@ -6,58 +6,12 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:40:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 20:20:05 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:49:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "command_internal.h"
 #include <stdio.h>
-
-static int	check_option_of_export_end(char **new_variable, t_environment *env)
-{
-	char	*temp2;
-	char	*temp;
-
-	temp = ft_substr(new_variable[0], 0, ft_strlen(new_variable[0]) - 1);
-	free(new_variable[0]);
-	new_variable[0] = temp;
-	temp = env_get(env, new_variable[0]);
-	if (!temp)
-		return (0);
-	temp2 = new_variable[1];
-	new_variable[1] = ft_strjoin(temp, temp2);
-	return (free(temp), free(temp2), 0);
-}
-
-static int	check_option_of_export(char **var_name, t_environment *env)
-{
-	int	i;
-
-	i = 0;
-	while (var_name[0][i])
-	{
-		if (!ft_isalnum(var_name[0][i]))
-		{
-			if (var_name[0][i] != '+' || i != (int)ft_strlen(var_name[0]) - 1)
-				return (-1);
-			else
-				break ;
-		}
-		i++;
-		if (!var_name[0][i])
-			return (0);
-	}
-	return (check_option_of_export_end(var_name, env));
-}
-
-static int	checker_export_loop(char *arg)
-{
-	if (ft_isdigit(arg[0]))
-		return (COMMAND_MALFORMED_ERR);
-	if (ft_strlen(arg) == 1 && arg[0] == '=')
-		return (COMMAND_MALFORMED_ERR);
-	return (MS_OK);
-}
 
 static int	export_loop(char *arg, t_environment *environment,
 		t_gen_list_iter *it)
@@ -98,8 +52,8 @@ static int	print_export(t_command *command, t_environment *environment)
 	i = 0;
 	while (serialized_env[i] != NULL)
 	{
-		if (ft_strncmp("declare -x ?", serialized_env[i], 
-			 ft_strlen("declare -x ?")) == 0)
+		if (ft_strncmp("declare -x ?", serialized_env[i],
+				ft_strlen("declare -x ?")) == 0)
 		{
 			i++;
 			continue ;
