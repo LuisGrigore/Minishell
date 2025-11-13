@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_manager_internal.h                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 19:02:03 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 19:24:21 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:06:28 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ struct				s_redirect
 	char			*file;
 	t_redirect_type	symbol;
 };
+
+void	write_heredoc(int fd, char *input);
 
 #endif

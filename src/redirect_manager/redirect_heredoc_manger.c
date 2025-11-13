@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 19:28:30 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 20:46:07 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:06:08 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,7 @@ static int	heredoc_create(char *delimiter, int *i)
 		if (!input || (delimiter && (ft_strncmp(input, delimiter,
 						ft_strlen(input)) == 0) && ft_strlen(input) > 0))
 			break ;
-		write(fd, input, ft_strlen(input));
-		write(fd, "\n", 1);
-		free(input);
+		write_heredoc(fd, input);
 	}
 	signals_init_interactive();
 	return (heredoc_create_end(temp_dir, input, fd));

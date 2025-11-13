@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:17:24 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 20:45:48 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:06:20 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,11 @@ int	redirect_execute(t_redirect *redirect, t_mini_state *mini_state)
 		return (status_code);
 	close(fd);
 	return (MS_OK);
+}
+
+void	write_heredoc(int fd, char *input)
+{
+	write(fd, input, ft_strlen(input));
+	write(fd, "\n", 1);
+	free(input);
 }

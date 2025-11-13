@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 19:28:51 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 20:57:04 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:03:57 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int	push_finished_cmd(t_command *cmd, t_gen_list *commands)
 
 bool	check_status_command_token(int status, t_command *cmd, t_token *tok)
 {
-	return (status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE))
-			|| lexer_is_token_type(tok, INVALID_OPERATOR);
+	return ((status == MS_OK && !cmd && !lexer_is_token_type(tok, TOKEN_PIPE))
+		|| lexer_is_token_type(tok, INVALID_OPERATOR));
 }
