@@ -7,6 +7,7 @@ SRCS	= \
 	gen_link_list/iteration/gen_link_list_iteration.c \
 	gen_link_list/life_cycle/gen_link_list_life_cycle.c \
 	gen_link_list/serialization/gen_link_list_serialization.c \
+	gen_link_list/serialization/gen_link_list_serialization_a.c \
 	gen_link_list/operations/gen_link_list_deletion.c \
 	gen_link_list/operations/gen_link_list_insertion.c \
 	gen_link_list/operations/gen_link_list_retrieval.c \

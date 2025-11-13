@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 19:28:30 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 02:17:37 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 03:53:33 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ static int	heredoc_create_end(char *temp_file, char *input, int fd)
 		free(temp_file);
 	close(fd);
 	if (!input)
-		return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
+	{	
+		if(g_signal == SIGINT)	
+			return(MS_CNTRL_ERR);
+		else
+			return (REDIRECT_NO_HEADERDOC_DELIMITER_ERR);
+	}
+		
+	if(input && *input =='\0')
+		return(free(input), MS_CNTRL_ERR);
 	if (input)
 		free(input);
 	return (MS_OK);
@@ -45,8 +53,8 @@ static int	heredoc_create(char *delimiter, int *i)
 	while (1)
 	{
 		input = readline(">");
-		if (!input || (delimiter && ft_strncmp(input, delimiter,
-					ft_strlen(input)) == 0))
+		if (!input || (delimiter && (ft_strncmp(input, delimiter,
+					ft_strlen(input)) == 0) && ft_strlen(input) > 0))
 			break ;
 		write(fd, input, ft_strlen(input));
 		write(fd, "\n", 1);

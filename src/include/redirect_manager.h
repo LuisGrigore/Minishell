@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:04:07 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 02:02:23 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 03:59:22 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int							redirect_execute(t_redirect *redirect,
 
 int							redirect_heredoc_check(t_gen_list *redirects,
 								t_mini_state *mini_state);
-int							redirect_heredoc_asignate(t_gen_list *redirects, t_mini_state *mini_state);
+int							redirect_heredoc_asignate(t_gen_list *redirects,
+								t_mini_state *mini_state);
 
 #endif

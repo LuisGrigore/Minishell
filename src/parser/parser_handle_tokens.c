@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_handle_tokens.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 01:17:50 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 04:06:28 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,20 @@
 
 t_command	*handle_command_token(t_token *tok, t_command *current_cmd)
 {
-	char *word;
+	char	*word;
 
 	word = lexer_get_token_content(tok);
 	if (!current_cmd)
 	{
-		/* No hay comando: creamos uno con nombre directamente */
 		current_cmd = command_create(word);
 		if (!current_cmd)
 			return (NULL);
-		/* conservar la semántica original: añadir word como primer arg */
 		command_push_arg(current_cmd, word);
 		return (current_cmd);
 	}
-
-	/* Si ya tiene nombre, solo añadimos como argumento */
 	command_push_arg(current_cmd, word);
 	return (current_cmd);
 }
-
 
 t_command	*handle_arg_token(t_token *tok, t_command *current_cmd)
 {
@@ -91,10 +86,8 @@ t_command	*handle_redirect(t_token *tok, t_token *file_tok,
 	r_type = get_redirect_type(tok);
 	if (!(file_tok && lexer_is_token_type(file_tok, TOKEN_WORD)))
 		return (NULL);
-
 	redir_target = lexer_get_token_content(file_tok);
 	if (command_push_redirect(current_cmd, r_type, redir_target) != 0)
 		return (NULL);
 	return (current_cmd);
 }
-

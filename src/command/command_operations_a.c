@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 05:41:23 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 01:51:33 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 05:38:04 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	command_heredocs_create(t_gen_list *commands, t_mini_state *mini_state)
 	gen_list_iter_destroy(it);
 	return (status_code);
 }
+
 int	command_heredocs_asignate(t_gen_list *commands, t_mini_state *mini_state)
 {
 	t_gen_list_iter	*it;

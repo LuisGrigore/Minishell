@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:43:27 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 23:34:07 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:47:39 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,4 @@ void	mini_state_set_last_command(t_mini_state *state, const char *command)
 		state->last_command = ft_strdup(command);
 	else
 		state->last_command = NULL;
-}
-
-void	mini_state_set_heredoc_value(t_mini_state *state, int value)
-{
-	if (!state)
-		return ;
-	state->heredoc_exec = value;
 }

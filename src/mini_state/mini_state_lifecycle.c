@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:42:50 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 23:33:56 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:48:22 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,8 @@ t_mini_state	*mini_state_create(int args, char **environment_var_str_array)
 	state->last_command = NULL;
 	state->last_opened_file = NULL;
 	state->exit_after_last_command = false;
-	state->heredoc_exec = 0;
+	state->heredoc_temp_files = 0;
 	return (state);
-}
-
-int	mini_state_get_heredoc_exec(t_mini_state *state)
-{
-	if (!state)
-		return (0);
-	return (state->heredoc_exec);
 }
 
 void	mini_state_destroy(t_mini_state *state)

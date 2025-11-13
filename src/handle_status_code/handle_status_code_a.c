@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:13:38 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/12 23:35:09 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 02:59:36 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static void	handle_redirect_status_codes(int status_code,
 	{
 		env_set_last_status_code(mini_state_get_environment(mini_state), 2);
 		ft_printf("minishell: bash: warning: here-document\n");
+		destroy_temp_fles(mini_state);
 	}
 	else
 		ft_printf("Unhandled redirect status code: %d\n", status_code);

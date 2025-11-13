@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:06:18 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 00:13:38 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 03:58:59 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <signal.h>
 # include <unistd.h>
 
+extern volatile sig_atomic_t	g_signal;
 /**
  * @brief Sets up signal handlers for interactive shell mode
  *
@@ -28,7 +29,7 @@
  * @return 0 on success, error code on failure
  * @see ms_status_codes.h
  */
-int	signals_init_interactive(void);
+int								signals_init_interactive(void);
 
 /**
  * @brief Sets up signal handlers for heredoc input mode
@@ -41,11 +42,11 @@ int	signals_init_interactive(void);
  * @return 0 on success, error code on failure
  * @see ms_status_codes.h
  */
-int	signals_init_heredoc(void);
+int								signals_init_heredoc(void);
 
-void reopen_stdin(void);
+void							reopen_stdin(void);
 
-int	set_signal(int sig, void (*handler)(int));
+int								set_signal(int sig, void (*handler)(int));
 
 /**
  * @brief Restores default signal handling
@@ -59,6 +60,6 @@ int	set_signal(int sig, void (*handler)(int));
  * @return 0 on success, error code on failure
  * @see ms_status_codes.h
  */
-int	signals_restore(void);
+int								signals_restore(void);
 
 #endif

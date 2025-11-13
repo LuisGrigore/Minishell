@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:37 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 18:26:47 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:47:16 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_mini_state
 	char			*last_opened_file;
 	bool			exit_after_last_command;
 	int				heredoc_temp_files;
-	int				heredoc_exec;
 }					t_mini_state;
 
 #endif

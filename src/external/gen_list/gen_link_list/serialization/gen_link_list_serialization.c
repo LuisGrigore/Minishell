@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_link_list_serialization.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/10/01 14:05:39 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 04:34:28 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,31 +129,6 @@ char	**gen_list_serialize_to_string_array(t_gen_list *list,
 		i++;
 		elem = gen_list_iter_next(it);
 	}
-	gen_list_iter_destroy(it);
 	arr[i] = NULL;
-	return (arr);
-}
-
-t_gen_list	*gen_list_deserialize_from_string_array(char **array,
-		t_string_to_element conv)
-{
-	t_gen_list	*list;
-	void		*val;
-	size_t		i;
-
-	if (!array || !conv)
-		return (NULL);
-	list = gen_list_create();
-	if (!list)
-		return (NULL);
-	i = 0;
-	while (array[i])
-	{
-		val = conv(array[i]);
-		if (!val)
-			return (gen_list_destroy(list, free), NULL);
-		gen_list_push_back(list, val);
-		i++;
-	}
-	return (list);
+	return (gen_list_iter_destroy(it), arr);
 }
