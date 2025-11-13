@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:40:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 16:39:35 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:55:15 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,12 @@ static int	export_loop(char *arg, t_environment *environment,
 		free(new_variable[0]);
 		return (free(new_variable), COMMAND_MALFORMED_ERR);
 	}
-	if (ft_strchr(arg, '='))
+	if (ft_strchr(arg, '=') && ft_strncmp(new_variable[0], "0", 1) == 0)
 		env_set(environment, new_variable[0], "");
 	else if (!ft_strchr(arg, '='))
 		env_set(environment, new_variable[0], NULL);
+	else
+		env_set(environment, new_variable[0], new_variable[1]);
 	free(new_variable[0]);
 	if (new_variable[1])
 		free(new_variable[1]);
