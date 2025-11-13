@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_internal.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 06:00:00 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 17:59:37 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:15:09 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ int					exit_execute(t_command *command,
 						t_environment *environment);
 char				*find_command(char **env, char *cmd, int *err_out);
 t_command_funct		get_command_function(char *cmd_name);
+void				double_pontier_free(char **env);
+void				sort_export(char **arr);
 
 #endif
