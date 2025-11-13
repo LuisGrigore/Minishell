@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 18:12:01 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:25:42 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ static t_redirect_type	get_redirect_type(t_token *tok)
 t_command	*handle_redirect(t_token *tok, t_token *file_tok,
 		t_command *current_cmd)
 {
-	t_redirect_type r_type;
-	char *redir_target;
+	t_redirect_type	r_type;
+	char			*redir_target;
 
 	if (!current_cmd)
 	{

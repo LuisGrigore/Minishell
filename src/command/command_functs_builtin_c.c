@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_builtin_c.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:12:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 18:58:05 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:51:59 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ static int	cd_args_checker(t_command *command, t_environment *environment,
 	return (MS_OK);
 }
 
-int	cd_no_args(char *old_pwd, t_command *command, t_environment *environment)
+int	cd_no_args(char *old_pwd, t_environment *environment)
 {
 	char	*home;
 	char	*aux;
@@ -135,7 +135,7 @@ int	cd_execute(t_command *command, t_environment *environment)
 		return (checker_status);
 	old_directory = getcwd(NULL, 0);
 	if (gen_list_get_size(command->args) < 2)
-		return (gen_list_iter_destroy(it), cd_no_args(old_directory, command,
+		return (gen_list_iter_destroy(it), cd_no_args(old_directory,
 				environment));
 	gen_list_iter_next(it);
 	target = gen_list_iter_next(it);

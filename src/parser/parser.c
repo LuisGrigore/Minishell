@@ -6,50 +6,11 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:31:53 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 18:12:19 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:37:29 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
-
-static int	handle_redir_wrapper(t_token *tok, t_gen_list_iter *it,
-		t_command **cmd)
-{
-	t_token	*file_tok;
-
-	file_tok = gen_list_iter_next(it);
-	if (!file_tok)
-		return (PARSER_SYNTAX_ERR);
-	if (!*cmd)
-	{
-		*cmd = command_create(NULL);
-		if (!*cmd)
-			return (MS_ALLOCATION_ERR);
-	}
-	*cmd = handle_redirect(tok, file_tok, *cmd);
-	if (!*cmd)
-		return (PARSER_SYNTAX_ERR);
-	return (MS_OK);
-}
-
-static int	handle_word_or_arg(t_token *tok, t_command **cmd)
-{
-	if (!*cmd)
-		*cmd = handle_command_token(tok, *cmd);
-	else
-		*cmd = handle_arg_token(tok, *cmd);
-	if (!*cmd)
-		return (PARSER_SYNTAX_ERR);
-	return (MS_OK);
-}
-
-static int	push_finished_cmd(t_command *cmd, t_gen_list *commands)
-{
-	if (!cmd)
-		return (PARSER_SYNTAX_ERR);
-	gen_list_push_back(commands, cmd);
-	return (MS_OK);
-}
 
 static int	process_token(t_token *tok, t_gen_list_iter *it,
 		t_gen_list *commands, t_command **cmd)
@@ -100,8 +61,7 @@ int	parse_command(t_gen_list *command_tokens, t_gen_list *commands)
 		status = push_finished_cmd(cmd, commands);
 	if (status != MS_OK && cmd)
 		command_destroy(cmd);
-	gen_list_iter_destroy(it);
-	return (status);
+	return (gen_list_iter_destroy(it), status);
 }
 
 static t_gen_list	*get_current_command_tokens(t_gen_list *tokens)
@@ -151,8 +111,8 @@ static int	parser_aux(t_gen_list *tokens, t_gen_list *commands)
 
 int	parse_line(char *line, t_gen_list *commands, t_environment *env)
 {
-	t_gen_list *tokens;
-	int status;
+	t_gen_list	*tokens;
+	int			status;
 
 	tokens = gen_list_create();
 	if (!tokens)
