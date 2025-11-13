@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_builtin_a.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:40:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 16:55:15 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 17:31:41 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,27 +91,32 @@ static int	export_loop(char *arg, t_environment *environment,
 	return (free(new_variable), export_loop(gen_list_iter_next(it),environment,it));
 }
 
-static void sort_export(char **arr) {
-    int i = 0;
-    char *temp;
-	int n;
-	
+static void	sort_export(char **arr)
+{
+	int		i;
+	char	*temp;
+	int		n;
+	int		j;
+
+	i = 0;
 	n = 0;
 	while (arr[n])
 		n++;
-
-    while (i < n - 1) {
-        int j = 0;
-        while (j < n - i - 1) {
-            if (ft_strncmp(arr[j], arr[j + 1], ft_strlen(arr[j])) > 0) {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-            j++;
-        }
-        i++;
-    }
+	while (i < n - 1)
+	{
+		j = 0;
+		while (j < n - i - 1)
+		{
+			if (ft_strncmp(arr[j], arr[j + 1], ft_strlen(arr[j])) > 0)
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 static int print_export(t_command *command, t_environment *environment)
