@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_link_list_serialization.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 15:34:20 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:57:13 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,12 +124,8 @@ char	**gen_list_serialize_to_string_array(t_gen_list *list,
 	while (elem)
 	{
 		arr[i] = f(elem);
-		if (!arr[i])
-		{
-			elem = gen_list_iter_next(it);
-			continue ;
-		}
-		i++;
+		if (arr[i])
+			i++;
 		elem = gen_list_iter_next(it);
 	}
 	arr[i] = NULL;

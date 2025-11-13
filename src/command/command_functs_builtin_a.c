@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_builtin_a.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:40:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 19:21:46 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:00:19 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ static int	print_export(t_command *command, t_environment *environment)
 	while (serialized_env[i] != NULL)
 	{
 		if (ft_strncmp("declare -x ?", serialized_env[i],
-			ft_strlen("declare-x ?")) == 0)
+			ft_strlen("declare -x ?")) == 0)
 		{
 			i++;
 			continue ;

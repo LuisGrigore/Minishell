@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_internal.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:52:04 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/09 23:17:25 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:02:29 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ struct			s_environment
 t_env_var		*init_environment_var(char *name, char *value);
 void			destroy_environment_var(void *env_var);
 bool			var_name_filter(void *var_ptr, void *context);
+char			*env_var_to_string_env(void *element);
 
 #endif

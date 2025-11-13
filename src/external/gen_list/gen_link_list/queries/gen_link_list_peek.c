@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_link_list_peek.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:45:56 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 00:20:09 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:35:15 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ void	*gen_list_peek_index(t_gen_list *list, int idx)
 	it = gen_list_iter_start(list);
 	i = 0;
 	result = NULL;
-	while ((result = gen_list_iter_next(it)) != NULL)
+	result = gen_list_iter_next(it);
+	while (result != NULL)
 	{
 		if (i == idx)
 		{
 			break ;
 		}
 		i++;
+		result = gen_list_iter_next(it);
 	}
 	gen_list_iter_destroy(it);
 	return (result);

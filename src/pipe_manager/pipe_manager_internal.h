@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe_manager_internal.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:38:45 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 00:18:58 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:27:52 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 struct		s_pipe_manager
 {
 	size_t	n_cmds;
-	int (*pipes)[2];
+	int		(*pipes)[2];
 };
 
 #endif

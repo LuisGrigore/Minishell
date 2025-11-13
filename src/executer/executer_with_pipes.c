@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executer_with_pipes.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:48:22 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 13:54:22 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:30:18 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ static int	execute_fork_loop(pid_t *pids, t_gen_list_iter *it,
 			status_code = command_exec(cmd, mini_state);
 			free(pids);
 			gen_list_iter_destroy(it);
-			pipe_manager_destroy((pm));
 			mini_state_set_exit_after_last_command(mini_state, true);
-			return (status_code);
+			return (pipe_manager_destroy((pm)), status_code);
 		}
 		i++;
 		cmd = gen_list_iter_next(it);
