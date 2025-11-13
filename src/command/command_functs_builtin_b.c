@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:23:13 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 14:02:47 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:05:39 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	env_execute(t_command *command, t_environment *environment)
 
 	if (!command || !environment)
 		return (COMMAND_ERR);
-	serialized_env = env_serialize(environment);
+	serialized_env = env_serialize_env(environment);
 	i = 0;
 	while (serialized_env[i] != NULL)
 	{

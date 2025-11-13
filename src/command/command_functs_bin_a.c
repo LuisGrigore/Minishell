@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_functs_bin_a.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 12:20:05 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/12 08:32:22 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:47:51 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	bin_execute(t_command *cmd, t_environment *environment)
 
 	if (!cmd || !cmd->args || gen_list_is_empty(cmd->args))
 		return (COMMAND_MALFORMED_ERR);
-	env = env_serialize(environment);
+	env = env_serialize_env(environment);
 	cmd2 = gen_list_serialize_to_string_array(cmd->args, serialize_arg);
 	find_err = 0;
 	path = find_command(env, cmd2[0], &find_err);

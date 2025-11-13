@@ -6,7 +6,7 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:18:29 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/09 23:53:53 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:46:41 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,8 @@ void							env_destroy(t_environment *env);
  * @see env_deserialize
  * @see t_env_var
  */
-char							**env_serialize(t_environment *env);
+char	**env_serialize_env(t_environment *env);
+char	**env_serialize_export(t_environment *env);
 
 /**
  * @brief Convert a string array into an environment instance.
