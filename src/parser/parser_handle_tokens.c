@@ -6,23 +6,44 @@
 /*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:07:34 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 01:08:29 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:17:50 by lgrigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser_internal.h"
 
+// static int	handle_word_or_arg(t_token *tok, t_command **cmd)
+// {
+// 	if (!*cmd)
+// 		*cmd = handle_command_token(tok, *cmd);
+// 	else
+// 		*cmd = handle_arg_token(tok, *cmd);
+// 	if (!*cmd)
+// 		return (PARSER_SYNTAX_ERR);
+// 	return (MS_OK);
+// }
+
 t_command	*handle_command_token(t_token *tok, t_command *current_cmd)
 {
+	char *word;
+
+	word = lexer_get_token_content(tok);
 	if (!current_cmd)
 	{
-		current_cmd = command_create(lexer_get_token_content(tok));
+		/* No hay comando: creamos uno con nombre directamente */
+		current_cmd = command_create(word);
 		if (!current_cmd)
 			return (NULL);
+		/* conservar la semántica original: añadir word como primer arg */
+		command_push_arg(current_cmd, word);
+		return (current_cmd);
 	}
-	command_push_arg(current_cmd, lexer_get_token_content(tok));
+
+	/* Si ya tiene nombre, solo añadimos como argumento */
+	command_push_arg(current_cmd, word);
 	return (current_cmd);
 }
+
 
 t_command	*handle_arg_token(t_token *tok, t_command *current_cmd)
 {
