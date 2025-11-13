@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_serialization_deserialization.c        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrigore <lgrigore@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:53:46 by lgrigore          #+#    #+#             */
-/*   Updated: 2025/11/13 16:01:38 by lgrigore         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:03:01 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,19 @@ static char	*env_var_to_string_env(void *element)
 	free(name_eq);
 	return (result);
 }
+
 static char	*env_var_to_string_export(void *element)
 {
 	t_env_var	*env_var;
 	char		*name_eq;
 	char		*result;
-	char *declare;
+	char		*declare;
 
 	env_var = (t_env_var *)element;
 	if (!env_var)
 		return (NULL);
 	declare = ft_strdup("declare -x ");
-	name_eq = ft_strjoin(declare , env_var->var_name);
+	name_eq = ft_strjoin(declare, env_var->var_name);
 	free(declare);
 	if (!name_eq)
 		return (NULL);
@@ -52,7 +53,6 @@ static char	*env_var_to_string_export(void *element)
 	name_eq = ft_strjoin(result, env_var->var_value);
 	free(result);
 	result = ft_strjoin(name_eq, "\"");
-	
 	return (free(name_eq), result);
 }
 
