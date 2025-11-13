@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 06:12:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/13 18:11:50 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:58:05 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,15 @@ static void	echo_loop(char *arg, t_gen_list_iter *it)
 
 	while (arg)
 	{
-		if(ft_strncmp("-n", arg, 2) == 0)
+		if (ft_strncmp("-n", arg, 2) == 0)
 		{
 			next_arg = gen_list_iter_next(it);
 			arg = next_arg;
 		}
 		else
-			break;
-	
+			break ;
 	}
-	while(arg)
+	while (arg)
 	{
 		ft_printf("%s", arg);
 		next_arg = gen_list_iter_next(it);
@@ -77,7 +76,7 @@ int	echo_execute(t_command *command, t_environment *environment)
 	arg = gen_list_iter_next(it);
 	arg = gen_list_iter_next(it);
 	newline = 1;
-	if (arg && ft_strncmp(arg, "-n", 2) == 0 )
+	if (arg && ft_strncmp(arg, "-n", 2) == 0)
 	{
 		newline = 0;
 		arg = gen_list_iter_next(it);
@@ -107,7 +106,7 @@ static int	cd_args_checker(t_command *command, t_environment *environment,
 int	cd_no_args(char *old_pwd, t_command *command, t_environment *environment)
 {
 	char	*home;
-	char 	*aux;
+	char	*aux;
 
 	aux = env_get(environment, "USER");
 	chdir("/");
@@ -120,7 +119,7 @@ int	cd_no_args(char *old_pwd, t_command *command, t_environment *environment)
 		env_set(environment, "OLDPWD", old_pwd);
 		aux = getcwd(NULL, 0);
 		env_set(environment, "PWD", aux);
-		return (free(home), free(old_pwd),free(aux), MS_OK);
+		return (free(home), free(old_pwd), free(aux), MS_OK);
 	}
 	return (free(old_pwd), MS_PATH_ERR);
 }
@@ -136,7 +135,8 @@ int	cd_execute(t_command *command, t_environment *environment)
 		return (checker_status);
 	old_directory = getcwd(NULL, 0);
 	if (gen_list_get_size(command->args) < 2)
-		return (cd_no_args(old_directory, command, environment));
+		return (gen_list_iter_destroy(it), cd_no_args(old_directory, command,
+				environment));
 	gen_list_iter_next(it);
 	target = gen_list_iter_next(it);
 	gen_list_iter_destroy(it);
